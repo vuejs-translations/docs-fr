@@ -400,12 +400,20 @@ module.exports = {
         link: '#',
         items: [
           {
+            text: 'English',
+            link: 'https://v3.vuejs.org/'
+          },
+          {
             text: '中文',
             link: 'https://v3.cn.vuejs.org/'
           },
           {
-            text: 'EN',
-            link: 'https://v3.vuejs.org/'
+            text: '한국어',
+            link: 'https://v3.ko.vuejs.org/'
+          },
+          {
+            text: 'Plus de traductions',
+            link: 'https://v3.vuejs.org/guide/contributing/translations#community-translations'
           }
         ]
       }
