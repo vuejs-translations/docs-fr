@@ -111,7 +111,7 @@ export default {
 
 ### Ajouter de la réactivité
 
-Pour ajouter de la réactivité entre les valeurs provide et inject, nous pouvons utiliser un [ref](reactivity-fundamentals.html#creating-standalone-reactive-values-as-refs) ou [reactive](reactivity-fundamentals.html#declaring-reactive-state) lorsqu'on fournit une valeur.
+Pour ajouter de la réactivité entre les valeurs provide et inject, nous pouvons utiliser un [ref](reactivity-fundamentals.html#creation-de-valeurs-reactives-autonomes-en-tant-que-refs) ou [reactive](reactivity-fundamentals.html#declarer-un-etat-reactif) lorsqu'on fournit une valeur.
 
 En utilisant notre composant `MyMap`, notre code peut être mis à jour comme suit:
 

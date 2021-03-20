@@ -12,7 +12,7 @@ Tous les lifecycle hooks ont automatiquement leur contexte `this` lié à l'inst
 
 Appelé de manière synchrone immédiatement après l'initialisation de l'instance, avant l'observation des donnéess et la configuration des événements/observateurs.
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## created
 
@@ -22,7 +22,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   Appelé de manière synchrone après la création de l'instance. À ce stade, l'instance a terminé le traitement des options, ce qui signifie que les éléments suivants ont été configurés: observation des donnéess, propriétés computed, méthodes, callbacks des observateurs/événements. Cependant, la phase de montage n'a pas été lancée et la propriété `$el` ne sera pas encore disponible.
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## beforeMount
 
@@ -34,7 +34,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## mounted
 
@@ -57,7 +57,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## beforeUpdate
 
@@ -69,7 +69,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR), car seul le rendu initial est effectué côté serveur.**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## updated
 
@@ -94,7 +94,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## activated
 
@@ -107,7 +107,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
 - **Voir aussi:**
-  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#dynamic-components-with-keep-alive)
+  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
 
 ## deactivated
 
@@ -120,7 +120,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
 - **Voir aussi:**
-  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#dynamic-components-with-keep-alive)
+  - [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
 
 ## beforeUnmount
 
@@ -132,7 +132,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## unmounted
 
@@ -144,7 +144,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
   **Ce hook n'est pas appelé lors du rendu côté serveur (SSR).**
 
-- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+- **Voir aussi:** [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## errorCaptured
 
@@ -220,7 +220,7 @@ Appelé de manière synchrone immédiatement après l'initialisation de l'instan
 
 - **Détails:**
 
-  Appelé lorsque le rendu du DOM virtuel est déclenché.Similaire à [`renderTracked`](#rendertracked), reçoit un` événement de débogage` comme argument. Cet événement vous indique quelle opération a déclenché le nouveau rendu, l'objet cible et la clé de cette opération.
+  Appelé lorsque le rendu du DOM virtuel est déclenché. Similaire à [`renderTracked`](#rendertracked), reçoit un` événement de débogage` comme argument. Cet événement vous indique quelle opération a déclenché le nouveau rendu, l'objet cible et la clé de cette opération.
 
 - **Usage:**
 

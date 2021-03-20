@@ -6,7 +6,7 @@
 
 - **Détails:**
 
-  Met à jour le [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) de l'élément. Si vous avez besoin de mettre à jour une partie de `textContent`, vous devez utiliser plutôt l'[interpolation moustache](/guide/template-syntax.html#text) 
+  Met à jour le [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) de l'élément. Si vous avez besoin de mettre à jour une partie de `textContent`, vous devez utiliser plutôt l'[interpolation moustache](/guide/template-syntax.html#texte) 
 
 - **Exemple:**
 
@@ -16,7 +16,7 @@
   <span>{{msg}}</span>
   ```
 
-- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#text)
+- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#texte)
 
 ## v-html
 
@@ -38,7 +38,7 @@
   <div v-html="html"></div>
   ```
 
-- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#raw-html)
+- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#html-brut)
 
 ## v-show
 
@@ -62,7 +62,7 @@
 
   Cette directive déclenche des transitions lorsque sa condition change.
 
-  Lorsqu'ils sont utilisés ensemble, `v-if` a une priorité plus élevée que `v-for`. Nous ne recommandons pas d'utiliser ces deux directives ensemble sur un seul élément - voir le [list rendering guide](../guide/list.html#v-for-with-v-if) pour plus de détails.
+  Lorsqu'ils sont utilisés ensemble, `v-if` a une priorité plus élevée que `v-for`. Nous ne recommandons pas d'utiliser ces deux directives ensemble sur un seul élément - voir le [list rendering guide](../guide/list.html#v-for-avec-v-if) pour plus de détails.
 
 - **Voir aussi:** [Conditional Rendering - v-if](../guide/conditional.html#v-if)
 
@@ -233,7 +233,7 @@
 
 - **Voir aussi:**
   - [Event Handling](../guide/events.html)
-  - [Components - Custom Events](../guide/component-basics.html#listening-to-child-components-events)
+  - [Components - Custom Events](../guide/component-basics.html#ecoute-des-evenements-sur-les-composants-enfants)
 
 ## v-bind
 
@@ -307,7 +307,7 @@
 
 - **Voir aussi:**
   - [Class and Style Bindings](../guide/class-and-style.html)
-  - [Components - Props](../guide/component-basics.html#passing-data-to-child-components-with-props)
+  - [Components - Props](../guide/component-basics.html#transmission-de-donnees-aux-composants-enfants-avec-des-props)
 
 ## v-model
 
@@ -332,20 +332,20 @@
 
 - **Voir aussi:**
   - [Form Input Bindings](../guide/forms.html)
-  - [Components - Form Input Components using Custom Events](../guide/component-custom-events.html#v-model-arguments)
+  - [Components - Form Input Components using Custom Events](../guide/component-custom-events.html#arguments-de-v-model)
 
 ## v-slot
 
 - **Raccourci:** `#`
 
-- **Devrait être:** Une expression JavaScript qui est valide dans la position de l'argument d'uyne fonction. (Supporte la destructuration dans [supported environments](../guide/component-slots.html#destructuring-slot-props)). Optionnel - seulement nécessaire si l'on s'attend à ce que des props soient transmises au slot.
+- **Devrait être:** Une expression JavaScript qui est valide dans la position de l'argument d'uyne fonction. (Supporte la destructuration dans [supported environments](../guide/component-slots.html#destructuring-des-slots-props)). Optionnel - seulement nécessaire si l'on s'attend à ce que des props soient transmises au slot.
 
 - **Argument:** le nom du slot (optionel, par defaut à `default`)
 
 - **Limité à:**
 
   - `<template>`
-  - [compsants](../guide/component-slots.html#abbreviated-syntax-for-lone-default-slots) (pour un seul emplacement par défaut avec des props)
+  - [compsants](../guide/component-slots.html#syntaxe-abregee-pour-les-slots-par-defaut-isoles) (pour un seul emplacement par défaut avec des props)
 
 - **Usage:**
 
@@ -452,7 +452,7 @@
   ```
 
 - **Voir aussi:**
-  - [Data Binding Syntax - interpolations](../guide/template-syntax.html#text)
+  - [Data Binding Syntax - interpolations](../guide/template-syntax.html#texte)
 
 ## v-is
 

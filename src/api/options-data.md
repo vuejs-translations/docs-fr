@@ -48,13 +48,13 @@
 
   Avec la syntaxe basée sur les objets, vous pouvez utiliser les options suivantes:
 
-  - `type`: peut être l'un des constructeurs natifs suivants: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction de constructeur personnalisée ou un tableau. Vérifiera si un prop a un type donné, et lancera un avertissement si ce n'est pas le cas. [Plus d'informations](../guide/component-props.html#prop-types) sur les types des props.
+  - `type`: peut être l'un des constructeurs natifs suivants: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction de constructeur personnalisée ou un tableau. Vérifiera si un prop a un type donné, et lancera un avertissement si ce n'est pas le cas. [Plus d'informations](../guide/component-props.html#types-des-props) sur les types des props.
   - `default`: `any`
     Spécifie une valeur par défaut pour la prop. Si la prop n'est pas passé, cette valeur sera utilisée à la place. Les valeurs par défaut des objets ou des tableaux doivent être renvoyées à partir d'une "factory function".
   - `required`: `Boolean`
     Définit si la prop est requise. Dans un environnement hors production, un avertissement sera émis dans la console si cette valeur est à true que la prop n'est pas passé.
   - `validator`: `Function`
-    Fonction de validation personnalisée qui prend la valeur de la prop comme seul argument. Dans un environnement hors production, un avertissement sera émis dans la console si cette fonction retourne false (i.e. la validation a échouée). Vous pouvez en savoir plus sur la validation des props [ici](../guide/component-props.html#prop-validation).
+    Fonction de validation personnalisée qui prend la valeur de la prop comme seul argument. Dans un environnement hors production, un avertissement sera émis dans la console si cette fonction retourne false (i.e. la validation a échouée). Vous pouvez en savoir plus sur la validation des props [ici](../guide/component-props.html#validation-des-props).
 
 - **Exemple:**
 
@@ -247,7 +247,7 @@
   Notez que _vous ne devez pas utiliser de fonction fléchée pour définir un watcher_ (par exemple `searchQuery: newValue => this.updateAutocomplete(newValue)`). La raison est que les fonctions fléchées lient le contexte parent, donc `this` ne sera pas l'instance de composant comme prévu et` this.updateAutocomplete` sera undefined.
   :::
 
-- **Voir aussi:** [Watchers](../guide/computed.html#watchers)
+- **Voir aussi:** [Watchers](../guide/computed.html#observateurs)
 
 ## emits
 
@@ -295,4 +295,4 @@
   Les événements listés dans l'option `emits` **ne seront pas** hérités par l'élément racine du composant et seront également exclus de la propriété `$attrs`.
   :::
 
-* **Voir aussi:** [Attribute Inheritance](../guide/component-attrs.html#attribute-inheritance)
+* **Voir aussi:** [Attribute Inheritance](../guide/component-attrs.html#heritage-d-attributs)

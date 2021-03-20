@@ -245,7 +245,7 @@ Maintenant nous pouvons l’insérer dans le template d’un autre composant :
 </ol>
 ```
 
-Mais cela rendrait le même texte pour chaque todo, ce qui n'est pas super intéressant. Nous devrions pouvoir transmettre les données de la portée parente aux composants enfants. Modifions la définition du composant pour lui faire accepter une [prop](component-basics.html#passing-data-to-child-components-with-props):
+Mais cela rendrait le même texte pour chaque todo, ce qui n'est pas super intéressant. Nous devrions pouvoir transmettre les données de la portée parente aux composants enfants. Modifions la définition du composant pour lui faire accepter une [prop](component-basics.html#transmission-de-donnees-aux-composants-enfants-avec-des-props):
 
 ```js
 app.component('todo-item', {

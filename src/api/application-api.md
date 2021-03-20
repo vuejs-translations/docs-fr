@@ -178,7 +178,7 @@ En dehors de `el`, vous devez traiter ces arguments en lecture seule et ne jamai
 
   Appliquez un mixin dans tout le scope de l'application. Une fois enregistré, il peut être utilisé dans le tempate de n'importe quel composant de l'application. Cela peut être utilisé par les auteurs de plugins pour injecter un comportement personnalisé dans les composants. **Non recommandé dans le code de l'application**.
 
-- **Voir aussi:** [Global Mixin](../guide/mixins.html#global-mixin)
+- **Voir aussi:** [Global Mixin](../guide/mixins.html#mixin-global)
 
 ## mount
 
@@ -212,7 +212,7 @@ app.mount('#my-app')
 ```
 
 - **Voir aussi:**
-  - [Lifecycle Diagram](../guide/instance.html#lifecycle-diagram)
+  - [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## provide
 

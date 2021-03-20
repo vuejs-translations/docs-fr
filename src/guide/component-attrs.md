@@ -2,7 +2,7 @@
 
 > Cette page suppose que vous avez déjà lu les [Principes de base des composants](component-basics.md). Lisez-le d'abord si vous n'êtes pas familier avec les composants.
 
-Un attribut non-prop de composant est un attribut ou un écouteur d’événement qui est passé à un composant, mais qui n’a pas de propriété correspondante définie dans [props](component-props) ou [emits](component-custom-events.html#defining-custom-events). Des exemples courants de ceci incluent les attributs `class`, `style`, et `id`. Vous pouvez accéder à ces attributs via la propriété `$attrs`
+Un attribut non-prop de composant est un attribut ou un écouteur d’événement qui est passé à un composant, mais qui n’a pas de propriété correspondante définie dans [props](component-props) ou [emits](component-custom-events.html#definir-des-evenements-personalises). Des exemples courants de ceci incluent les attributs `class`, `style`, et `id`. Vous pouvez accéder à ces attributs via la propriété `$attrs`
 
 ## Héritage d'attributs
 

@@ -100,7 +100,7 @@
   app.mount('#transition-demo')
   ```
 
-- **Voir aussi:** [Enter & Leave Transitions](/guide/transitions-enterleave.html#transitioning-single-elements-components)
+- **Voir aussi:** [Enter & Leave Transitions](/guide/transitions-enterleave.html#transition-d-elements-composants-uniques)
 
 ## transition-group
 
@@ -207,7 +207,7 @@
   `<keep-alive>` ne fonctionne pas avec les composants fonctionnels car ils n'ont pas d'instances à mettre en cache.
   :::
 
-- **Voir aussi:** [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#dynamic-components-with-keep-alive)
+- **Voir aussi:** [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
 
 ## slot
 
@@ -221,7 +221,7 @@
 
   Pour un usage plus détaillé, consultez la section du guide ci-dessous.
 
-- **Voir aussi:** [Content Distribution with Slots](../guide/component-basics.html#content-distribution-with-slots)
+- **Voir aussi:** [Content Distribution with Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
 
 ## teleport
 

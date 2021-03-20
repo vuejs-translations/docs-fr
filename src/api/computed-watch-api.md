@@ -127,9 +127,9 @@ watch([fooRef, barRef], ([foo, bar], [prevFoo, prevBar]) => {
 
 ### Comportement partagé `watchEffect`
 
-`watch` partage des comportement avec [`watchEffect`](#watcheffect) en terme de [stoppage manuel](../guide/reactivity-computed-watchers.html#stopping-the-watcher), d'[invalidation des effets secondaires](../guide/reactivity-computed-watchers.html#side-effect-invalidation) (avec `onInvalidate` passé au callback comme troisième argument), de [flush timing](../guide/reactivity-computed-watchers.html#effect-flush-timing) et de [debogage](../guide/reactivity-computed-watchers.html#watcher-debugging).
+`watch` partage des comportement avec [`watchEffect`](#watcheffect) en terme de [stoppage manuel](../guide/reactivity-computed-watchers.html#stopper-l-observateur), d'[invalidation des effets secondaires](../guide/reactivity-computed-watchers.html#invalidation-des-effets-secondaires) (avec `onInvalidate` passé au callback comme troisième argument), de [flush timing](../guide/reactivity-computed-watchers.html#timing-des-effets) et de [debogage](../guide/reactivity-computed-watchers.html#debogage-des-observateurs).
 
-**Typing:**
+**Typage:**
 
 ```ts
 // observation d'une seule source

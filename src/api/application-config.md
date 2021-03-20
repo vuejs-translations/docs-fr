@@ -129,7 +129,7 @@ Définir des stratégies de fusion pour les options personnalisées.
 La stratégie de fusion reçoit la valeur de cette option définie sur les instances parent et enfant comme premier et deuxième arguments, respectivement. Le contexte de l'instance de l'application est transmise comme troisième argument.
 
 
-- **Voir aussi:** [Custom Option Merging Strategies](../guide/mixins.html#custom-option-merge-strategies)
+- **Voir aussi:** [Custom Option Merging Strategies](../guide/mixins.html#strategies-de-fusion-d-options-personnalisees)
 
 ## performance
 

@@ -67,4 +67,4 @@ Par exemple:
 
 - **Voir aussi:**
   - [Dynamic Components](../guide/component-dynamic-async.html)
-  - [DOM Template Parsing Caveats](../guide/component-basics.html#dom-template-parsing-caveats)
+  - [DOM Template Parsing Caveats](../guide/component-basics.html#mises-en-garde-concernant-le-parsing-des-templates-dom)

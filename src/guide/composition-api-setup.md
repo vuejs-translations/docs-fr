@@ -34,7 +34,7 @@ export default {
 Cependant, comme les `accessoires` sont réactifs, vous **ne pouvez pas utiliser la déstructuration ES6** car cela supprimera la réactivité des props.
 :::
 
-Si vous avez besoin de déstructurer vos props, vous pouvez le faire en utilisant [toRefs](reactivity-fundamentals.html#destructuring-reactive-state) à l'intérieur de la fonction `setup`:
+Si vous avez besoin de déstructurer vos props, vous pouvez le faire en utilisant [toRefs](reactivity-fundamentals.html#destructuration-des-etats-reactifs) à l'intérieur de la fonction `setup`:
 
 ```js
 // MyBook.vue
@@ -142,7 +142,7 @@ Si `setup` retourne un objet, les propriétés de l'objet sont accessibles dans 
 </script>
 ```
 
-Notez que les [refs](../api/refs-api.html#ref) renvoyés par `setup` sont [automatiquement déballés](/guide/reactivity-fundamentals.html#ref-unwrapping) lors de l'accès dans le template, vous ne devrez donc pas utiliser `.value` dans les templates.
+Notez que les [refs](../api/refs-api.html#ref) renvoyés par `setup` sont [automatiquement déballés](/guide/reactivity-fundamentals.html#acces-dans-une-ref) lors de l'accès dans le template, vous ne devrez donc pas utiliser `.value` dans les templates.
 
 ## Usage avec une fonction de rendu
 

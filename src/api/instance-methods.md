@@ -189,9 +189,9 @@
 
   Les observateurs `'sync'` doivent être utilisés avec parcimonie, car ils n'ont pas ces avantages.
   
-  Pour plus d'informations sur `flush` voir [Effect Flush Timing](../guide/reactivity-computed-watchers.html#effect-flush-timing).
+  Pour plus d'informations sur `flush` voir [Effect Flush Timing](../guide/reactivity-computed-watchers.html#timing-des-effets).
 
-- **Voir aussi:** [Watchers](../guide/computed.html#watchers)
+- **Voir aussi:** [Watchers](../guide/computed.html#observateurs)
 
 ## $emit
 
@@ -272,7 +272,7 @@
 
 - **Voir aussi:**
   - [`emits` option](./options-data.html#emits)
-  - [Emitting a Value With an Event](../guide/component-basics.html#emitting-a-value-with-an-event)
+  - [Emitting a Value With an Event](../guide/component-basics.html#emission-d-une-valeur-avec-un-evenement)
 
 ## $forceUpdate
 

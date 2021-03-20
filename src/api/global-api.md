@@ -162,7 +162,7 @@ const AsyncComp = defineAsyncComponent(() =>
 app.component('async-component', AsyncComp)
 ```
 
-Lorsque vous utilisez [enregistrement local](../guide/component-registration.html#local-registration), vous pouvez également fournir directement une fonction qui renvoie une `Promise`:
+Lorsque vous utilisez [enregistrement local](../guide/component-registration.html#enregistrement-local), vous pouvez également fournir directement une fonction qui renvoie une `Promise`:
 
 ```js
 import { createApp, defineAsyncComponent } from 'vue'

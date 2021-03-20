@@ -83,7 +83,7 @@ export default {
 Dans un code commité, la definition des props doit toujours être détaillé autant que possible, en spécifiant au moins le(s) type(s).
 
 ::: details Explications détaillés
-Detailler les [definitions des props](/guide/component-props.html#prop-validation) a deux avantages:
+Detailler les [definitions des props](/guide/component-props.html#validation-des-props) a deux avantages:
 
 - Elles documentent l'API du composant, de sorte qu'il soit facile de voir comment le composant est censé être utilisé.
 - En développement, Vue vous enverra un avertissement si des props aux formats incorrect sont fournis à un composant, vous aidant ainsi à détecter les potentielles sources d'erreurs.
@@ -897,7 +897,7 @@ Comme avantage supplémentaire, l'utilisation de PascalCase dans JSX (et les tem
 Cependant, pour les applications qui utilisent **uniquement** les définitions de composants globales via `app.component`, nous recommandons plutôt le kebab-case. Les raisons sont:
 
 - Il est rare que des composants globaux soient référencés en JavaScript, donc suivre une convention pour JavaScript a peu de sens.
-- Ces applications incluent toujours de nombreux templates du DOM, où [kebab-case **doit** être utilisé](#component-name-casing-in-templates-strongly-recommandée).
+- Ces applications incluent toujours de nombreux templates du DOM, où [kebab-case **doit** être utilisé](#la-casse-des-noms-des-composants-dans-les-templates-fortement-recommandee).
   :::
 
 <div class="style-example style-example-bad">

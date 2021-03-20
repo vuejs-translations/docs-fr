@@ -19,8 +19,8 @@
   :::
 
 - **Voir aussi:**
-  - [Diagramme de cycle de vie](../guide/instance.html#lifecycle-diagram)
-  - [Distribution de Contenu avec Slots](../guide/component-basics.html#content-distribution-with-slots)
+  - [Diagramme de cycle de vie](../guide/instance.html#diagramme-de-cycle-de-vie)
+  - [Distribution de Contenu avec Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
 
 ## render
 

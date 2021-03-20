@@ -78,7 +78,7 @@ Il est également possible d'appeler une méthode directement à partir d'un tem
 
 Si les méthodes `toTitleDate` ou `formatDate` accèdent à des données réactives, elles seront suivies en tant que dépendance de rendu, comme si elles avaient été utilisées directement dans le template.
 
-Les méthodes appelées à partir d'un modèle ne doivent pas avoir d'effets secondaires, tels que la modification des données ou le déclenchement de processus asynchrones. Si vous êtes tenté de faire cela, vous devriez probablement utiliser un [hook de cycle de vie](instance.html#lifecycle-hooks).
+Les méthodes appelées à partir d'un modèle ne doivent pas avoir d'effets secondaires, tels que la modification des données ou le déclenchement de processus asynchrones. Si vous êtes tenté de faire cela, vous devriez probablement utiliser un [hook de cycle de vie](instance.html#lifecycle-hooks-ancres-du-cycle-de-vie).
 
 ### Debouncing et Throttling
 

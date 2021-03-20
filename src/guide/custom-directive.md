@@ -54,7 +54,7 @@ Un objet de définition de directive peut fournir plusieurs fonctions de hook (t
 - `beforeUpdate`: appelée avant la mise à jour du VNode du composant conteneur
 
 :::tip Note
-Nous aborderons les VNodes plus en détail [plus tard](render-function.html#the-virtual-dom-tree), lorsque nous discuterons des fonctions de rendu.
+Nous aborderons les VNodes plus en détail [plus tard](render-function.html#l-arborescence-du-dom-virtuel), lorsque nous discuterons des fonctions de rendu.
 :::
 
 - `updated`: appelée après la mise à jour du VNode **du composant conteneur et des VNodes de ses enfants**.

@@ -63,4 +63,4 @@
   })
   ```
 
-- **Voir aussi:** [Disabling Attribute Inheritance](../guide/component-attrs.html#disabling-attribute-inheritance)
+- **Voir aussi:** [Disabling Attribute Inheritance](../guide/component-attrs.html#desactiver-l-heritage-d-attributs)

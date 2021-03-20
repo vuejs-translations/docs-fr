@@ -8,7 +8,7 @@ Jusqu'à présent, nous avons géré les transitions pour:
 Alors qu'en est-il lorsque nous avons toute une liste d'éléments que nous voulons rendre simultanément, par exemple avec `v-for`? Dans ce cas, nous utiliserons le composant `<transition-group>`. Avant de plonger dans un exemple, il y a quelques choses importantes à savoir sur ce composant:
 
 - Par défaut, il ne génère pas un élément wrapper, mais vous pouvez spécifier un élément à rendre avec l'attribut `tag`.
-- [Les modes de transitions](/guide/transitions-enterleave#transition-modes) ne sont pas disponibles, parce que nous n'alternons plus entre des éléments qui s'excluent mutuellement.
+- [Les modes de transitions](/guide/transitions-enterleave#modes-de-transition) ne sont pas disponibles, parce que nous n'alternons plus entre des éléments qui s'excluent mutuellement.
 - Les éléments à l'intérieur **doivent toujours** avoir un attribut `key` unique.
 - Les classes de transition CSS seront appliquées aux éléments internes et non au groupe / conteneur lui-même.
 

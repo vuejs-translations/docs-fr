@@ -141,7 +141,7 @@ Les modificateurs sont des suffixes spéciaux désignés par un point, qui indiq
 <form v-on:submit.prevent="onSubmit">...</form>
 ```
 
-Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](events.md#event-modifiers) et [pour` v-model`](forms.md#modifiers), lorsque nous explorerons ces fonctionnalités.
+Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](events.md#modificateurs-d-evenements) et [pour` v-model`](forms.md#modificateurs), lorsque nous explorerons ces fonctionnalités.
 ## Raccourcis
 
 Le préfixe `v-` sert de repère visuel pour identifier les attributs spécifiques à Vue dans vos templates. Ceci est utile lorsque vous utilisez Vue.js pour appliquer un comportement dynamique à un balisage existant, mais peut sembler verbeux pour certaines directives fréquemment utilisées. En même temps, le besoin du préfixe `v-` devient moins important lorsque vous construisez un [SPA](https://en.wikipedia.org/wiki/Single-page_application), où Vue gère chaque template. Par conséquent, Vue fournit des raccourcis spéciaux pour deux des directives les plus souvent utilisées, `v-bind` et` v-on`:

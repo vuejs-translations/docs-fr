@@ -30,5 +30,5 @@ Rather than managing this at the template level, one method for accomplishing th
 
 ## See also
 
-- [List Rendering - Displaying Filtered/Sorted Results](/guide/list.html#displaying-filtered-sorted-results)
-- [List Rendering - `v-for` with `v-if`](/guide/list.html#v-for-with-v-if)
+- [List Rendering - Displaying Filtered/Sorted Results](/guide/list.html#affichage-des-resultats-filtres-tries)
+- [List Rendering - `v-for` with `v-if`](/guide/list.html#v-for-avec-v-if)

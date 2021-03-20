@@ -169,7 +169,7 @@ watchEffect(
 
 ## `watch`
 
-L'API `watch` est l'équivalent exact de la propriété de composant [watch](computed.html#watchers). `watch` nécessite d'observer une source de données spécifique et applique les effets secondaires dans une fonction de callback distincte. Il est également paresseux (lazy) par défaut - c'est-à-dire que le callback n'est appelé que lorsque la source surveillée a changé.
+L'API `watch` est l'équivalent exact de la propriété de composant [watch](computed.html#observateurs). `watch` nécessite d'observer une source de données spécifique et applique les effets secondaires dans une fonction de callback distincte. Il est également paresseux (lazy) par défaut - c'est-à-dire que le callback n'est appelé que lorsque la source surveillée a changé.
 
 - Comparé à [watchEffect](#watcheffect), `watch` nous permet de:
 

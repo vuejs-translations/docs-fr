@@ -187,7 +187,7 @@ Crée une ref personnalisée avec un contrôle explicite sur le suivi de ses dé
   }
   ```
 
-**Typing:**
+**Typage:**
 
 ```ts
 function customRef<T>(factory: CustomRefFactory<T>): Ref<T>
@@ -213,7 +213,7 @@ foo.value = {}
 isReactive(foo.value) // false
 ```
 
-**Voir aussi**: [Creating Standalone Reactive Values as `refs`](../guide/reactivity-fundamentals.html#creating-standalone-reactive-values-as-refs)
+**Voir aussi**: [Creating Standalone Reactive Values as `refs`](../guide/reactivity-fundamentals.html#creation-de-valeurs-reactives-autonomes-en-tant-que-refs)
 
 ## `triggerRef`
 

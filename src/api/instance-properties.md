@@ -77,7 +77,7 @@
 
 - **Détails:**
 
-  Utilisé pour accéder automatiquement au contenu [distribué par slots](../guide/component-basics.html#content-distribution-with-slots). Chaque [slot nommé](../guide/component-slots.html#named-slots) a sa propre propriété correspondante (par exemple, le contenu de `v-slot:foo` sera trouvé à `this.$slots.foo()`). La propriété `default` contient soit des nœuds non inclus dans un slot nommé soit le contenu de `v-slot:default`.
+  Utilisé pour accéder automatiquement au contenu [distribué par slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots). Chaque [slot nommé](../guide/component-slots.html#slots-nommes) a sa propre propriété correspondante (par exemple, le contenu de `v-slot:foo` sera trouvé à `this.$slots.foo()`). La propriété `default` contient soit des nœuds non inclus dans un slot nommé soit le contenu de `v-slot:default`.
 
   L'accès à `this.$Slots` est plus utile lors de l'écriture d'un composant avec une [fonction render](../guide/render-function.html).
 
@@ -117,7 +117,7 @@
 
 - **Voir aussi:**
   - [Composant `<slot>`](built-in-components.html#slot)
-  - [Content Distribution with Slots](../guide/component-basics.html#content-distribution-with-slots)
+  - [Content Distribution with Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
   - [Render Functions - Slots](../guide/render-function.html#slots)
 
 ## $refs
