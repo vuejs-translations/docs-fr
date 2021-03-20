@@ -152,7 +152,7 @@ const sidebar = {
     },
     '/api/composition-api'
   ],
-  exemples: [
+  examples: [
     {
       title: 'Exemples',
       collapsable: false,
@@ -207,7 +207,7 @@ const sidebar = {
       ]
     }
   ],
-  contributions: [
+  contributing: [
     {
       title: 'Contribuer à la documentation',
       collapsable: false,
