@@ -387,7 +387,7 @@ module.exports = {
           },
           {
             text: 'Engagements Récurrents',
-            link: '/support-vuejs/#engagements-récurrents'
+            link: '/support-vuejs/#engagements-recurrents'
           },
           {
             text: 'T-Shirt Shop',
