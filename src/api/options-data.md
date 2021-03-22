@@ -36,7 +36,7 @@
   data: vm => ({ a: vm.myProp })
   ```
 
-- **Voir aussi:** [Reactivity in Depth](../guide/reactivity.html)
+- **Voir aussi:** [Réactivité en Profondeur](../guide/reactivity.html)
 
 ## props
 
@@ -169,7 +169,7 @@
   console.log(vm.a) // => 2
   ```
 
-- **Voir aussi:** [Event Handling](../guide/events.html)
+- **Voir aussi:** [Gestion des événements](../guide/events.html)
 
 ## watch
 
@@ -247,7 +247,7 @@
   Notez que _vous ne devez pas utiliser de fonction fléchée pour définir un watcher_ (par exemple `searchQuery: newValue => this.updateAutocomplete(newValue)`). La raison est que les fonctions fléchées lient le contexte parent, donc `this` ne sera pas l'instance de composant comme prévu et` this.updateAutocomplete` sera undefined.
   :::
 
-- **Voir aussi:** [Watchers](../guide/computed.html#observateurs)
+- **Voir aussi:** [Les Observateurs](../guide/computed.html#observateurs)
 
 ## emits
 
@@ -295,4 +295,4 @@
   Les événements listés dans l'option `emits` **ne seront pas** hérités par l'élément racine du composant et seront également exclus de la propriété `$attrs`.
   :::
 
-* **Voir aussi:** [Attribute Inheritance](../guide/component-attrs.html#heritage-d-attributs)
+* **Voir aussi:** [l'Héritage d'Attribut](../guide/component-attrs.html#heritage-d-attributs)

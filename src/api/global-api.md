@@ -12,7 +12,7 @@ Retourne une instance d'application qui fournit un contexte d'application. L'ens
 const app = Vue.createApp({})
 ```
 
-Vous pouvez enchaîner d'autres méthodes après `createApp`, elles peuvent être trouvées dans  [Application API](./application-api.html)
+Vous pouvez enchaîner d'autres méthodes après `createApp`, elles peuvent être trouvées dans [l'API de l'Application](./application-api.html)
 
 ### Arguments
 
@@ -49,7 +49,7 @@ const app = Vue.createApp(
 </div>
 ```
 
-### Typing
+### Typage
 
 ```ts
 interface Data {
@@ -64,7 +64,7 @@ export type CreateAppFunction<HostElement> = (
 
 ## h
 
-Renvoie un "nœud virtuel", généralement abrégé en **VNode**: un objet qui contient des informations décrivant à Vue quel type de nœud il doit afficher sur la page, y compris des descriptions de tous les nœuds enfants. Il est destiné aux [fonctions render](../guide/render-function.md) écrites manuellement:
+Renvoie un "nœud virtuel", généralement abrégé en **VNode**: un objet qui contient des informations décrivant à Vue quel type de nœud il doit afficher sur la page, y compris des descriptions de tous les nœuds enfants. Il est destiné à la [fonction render](../guide/render-function.md) écrites manuellement:
 
 ```js
 render() {
@@ -82,7 +82,7 @@ Accepte trois arguments: `type`, `props` et `children`
 
 - **Détails:**
 
-  Une balise HTML, un composant ou un composant asynchrone. L'utilisation de la fonction retournant null rendrait un commentaire. Cet argument est obligatoire
+  Une balise HTML, un composant ou un composant asynchrone. L'utilisation d'une fonction retournant null rendrait un commentaire. Cet argument est obligatoire
 
 #### props
 
@@ -90,7 +90,7 @@ Accepte trois arguments: `type`, `props` et `children`
 
 - **Details:**
 
-  Un objet correspondant aux props, attributs et événements que nous utiliserions dans un modèle. Optionnel
+  Un objet correspondant aux props, attributs et événements que nous utiliserions dans un template. Optionnel
 
 #### children
 
@@ -150,7 +150,7 @@ Crée un composant asynchrone qui sera chargé uniquement lorsque cela est néce
 
 ### Arguments
 
-Pour une utilisation basique, `defineAsyncComponent` peut accepter une "factory function" qui retourne une `Promise`. Le callback du `resolve` de la Promise doit être appelé lorsque vous avez récupéré la définition de votre composant sur le serveur. Vous pouvez également appeler `reject(raison)` pour indiquer que la chargement a échoué.
+Pour une utilisation basique, `defineAsyncComponent` peut accepter une "factory function" qui retourne une `Promise`. Le callback du `resolve` de la Promise doit être appelé lorsque vous avez récupéré la définition de votre composant sur le serveur. Vous pouvez également appeler `reject(raison)` pour indiquer que le chargement a échoué.
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -162,7 +162,7 @@ const AsyncComp = defineAsyncComponent(() =>
 app.component('async-component', AsyncComp)
 ```
 
-Lorsque vous utilisez [enregistrement local](../guide/component-registration.html#enregistrement-local), vous pouvez également fournir directement une fonction qui renvoie une `Promise`:
+Lorsque vous utilisez [l'enregistrement local](../guide/component-registration.html#enregistrement-local), vous pouvez également fournir directement une fonction qui renvoie une `Promise`:
 
 ```js
 import { createApp, defineAsyncComponent } from 'vue'
@@ -219,7 +219,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-**Voir aussi**: [Dynamic and Async components](../guide/component-dynamic-async.html)
+**Voir aussi**: [Composants dynamiques et asynchrones](../guide/component-dynamic-async.html)
 
 ## resolveComponent
 
@@ -284,7 +284,7 @@ Accepte un argument: `component`
 
 - **Détails:**
 
-  Pour plus de détails, reportez-vous à la documentation sur [Dynamic Components](../guide/component-dynamic-async.html).
+  Pour plus de détails, reportez-vous à la documentation sur [les Composants Dynamiques](../guide/component-dynamic-async.html).
 
 ## resolveDirective
 
@@ -355,7 +355,7 @@ Accepte deux arguments: `vnode` et `directives`.
 
 - **Type:** `Array`
 
-- **Details:**
+- **Détails:**
 
   Un tableau de directives.
 
@@ -449,4 +449,4 @@ const app = createApp({
 })
 ```
 
-**Voir aussi**: [`$nextTick` instance method](instance-methods.html#nexttick)
+**Voir aussi**: [Methode d'instance `$nextTick`](instance-methods.html#nexttick)

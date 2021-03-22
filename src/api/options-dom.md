@@ -63,4 +63,4 @@
     La fonction `render` a la priorité sur la fonction render compilée à partir de l'option `template` ou du template HTML dans le DOM de l'élément monté.
   :::
 
-- **Voir aussi:** [Render Functions](../guide/render-function.html)
+- **Voir aussi:** [Functions de rendu](../guide/render-function.html)

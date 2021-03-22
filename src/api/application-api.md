@@ -28,7 +28,7 @@ De plus, puisque la méthode `createApp` renvoie l'instance d'application elle-m
 
   Enregistrez ou récupérez un composant global. L'enregistrement définit également automatiquement le `nom` du composant avec le paramètre`name` donné.
 
-- **Example:**
+- **Exemple:**
 
 ```js
 import { createApp } from 'vue'
@@ -44,7 +44,7 @@ app.component('my-component', {
 const MyComponent = app.component('my-component')
 ```
 
-- **Voir aussi:** [Components](../guide/component-basics.html)
+- **Voir aussi:** [Composants](../guide/component-basics.html)
 
 ## config
 
@@ -61,7 +61,7 @@ const app = createApp({})
 app.config = {...}
 ```
 
-- **Voir aussi:** [Application Config](./application-config.html)
+- **Voir aussi:** [Config de l'Application](./application-config.html)
 
 ## directive
 
@@ -111,7 +111,7 @@ app.directive('my-directive', () => {
   // ceci sera appelé comme «mounted» et «updated»
 })
 
-// getter, retourne la définition de la directive si elle a donnée
+// getter, retourne la définition de la directive si elle a été donnée
 const myDirective = app.directive('my-directive')
 ```
 
@@ -162,7 +162,7 @@ Le nœud virtuel précédent, disponible uniquement dans les hooks `beforeUpdate
 En dehors de `el`, vous devez traiter ces arguments en lecture seule et ne jamais les modifier. Si vous avez besoin de partager des informations entre les hooks, il est recommandé de le faire via l'élément [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).
 :::
 
-- **Voir aussi:** [Custom Directives](../guide/custom-directive.html)
+- **Voir aussi:** [Directives personnalisées](../guide/custom-directive.html)
 
 ## mixin
 
@@ -178,7 +178,7 @@ En dehors de `el`, vous devez traiter ces arguments en lecture seule et ne jamai
 
   Appliquez un mixin dans tout le scope de l'application. Une fois enregistré, il peut être utilisé dans le tempate de n'importe quel composant de l'application. Cela peut être utilisé par les auteurs de plugins pour injecter un comportement personnalisé dans les composants. **Non recommandé dans le code de l'application**.
 
-- **Voir aussi:** [Global Mixin](../guide/mixins.html#mixin-global)
+- **Voir aussi:** [Mixin Global](../guide/mixins.html#mixin-global)
 
 ## mount
 
@@ -212,7 +212,7 @@ app.mount('#my-app')
 ```
 
 - **Voir aussi:**
-  - [Lifecycle Diagram](../guide/instance.html#diagramme-de-cycle-de-vie)
+  - [Diagramme de cycle de vie](../guide/instance.html#diagramme-de-cycle-de-vie)
 
 ## provide
 
@@ -231,7 +231,7 @@ app.mount('#my-app')
 
   Du point de vue `provide`/`inject`, l'application peut être considérée comme l'ancêtre au niveau de la racine, avec le composant racine comme seul enfant.
 
-  Cette methode ne doit pâs être confondue avec [provide component option](options-composition.html#provide-inject) ou [provide function](composition-api.html#provide-inject) dans le composition API. Bien que ceux-ci fassent également partie du même mécanisme `provide`/`inject`,  ils sont utilisés pour configurer les valeurs fournies par un composant plutôt que par une application.
+  Cette methode ne doit pâs être confondue avec [l'option provide du composant](options-composition.html#provide-inject) ou [la fonction provide](composition-api.html#provide-inject) dans le composition API. Bien que ceux-ci fassent également partie du même mécanisme `provide`/`inject`,  ils sont utilisés pour configurer les valeurs fournies par un composant plutôt que par une application.
 
   Fournir des valeurs via l'application est particulièrement utile lors de l'écriture de plugins, car les plugins ne seraient généralement pas en mesure de fournir des valeurs à l'aide de composants. C'est une alternative à l'utilisation de [globalProperties](application-config.html#globalproperties).
 

@@ -7,7 +7,7 @@ L'API de Vue.js contient les catégories suivantes:
 - [Global API](/api/global-api.html)
 - [Options API](/api/options-api.html)
 - [Propriétés d'Instance](/api/instance-properties.html)
-- [Methode d'Instance](/api/instance-methods.html)
+- [Methodes d'Instance](/api/instance-methods.html)
 - [Directives](/api/directives.html)
 - [Attributs Speciaux](/api/special-attributes.html)
 - [Composants Intégrés](/api/built-in-components.html)

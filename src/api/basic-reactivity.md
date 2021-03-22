@@ -1,6 +1,6 @@
 # Basic Reactivity APIs
 
-> Cette section utilise la syntaxe des [composant à fichier unique](../guide/single-file-component.html) pour les examples
+> Cette section utilise la syntaxe des [composant à fichier unique](../guide/single-file-component.html) pour les exemples
 
 ## `reactive`
 
@@ -10,9 +10,9 @@ Retourne une copie réactive de l'objet.
 const obj = reactive({ count: 0 })
 ```
 
-La conversion ractive est "profonde"—elle affecte toutes les propriétés imbriquées. Dans l'implémentation basée sur le [Proxy ES2015](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), le proxy renvoyé n'est **pas** égal à l'objet d'origine. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de s'appuyer sur l'objet original.
+La conversion réactive est "profonde", elle affecte toutes les propriétés imbriquées. Dans l'implémentation basée sur le [Proxy ES2015](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), le proxy renvoyé n'est **pas** égal à l'objet d'origine. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de s'appuyer sur l'objet original.
 
-**Typing:**
+**Typage:**
 
 ```ts
 function reactive<T extends object>(target: T): UnwrapNestedRefs<T>

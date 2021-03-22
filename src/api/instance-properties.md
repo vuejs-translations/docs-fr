@@ -117,8 +117,8 @@
 
 - **Voir aussi:**
   - [Composant `<slot>`](built-in-components.html#slot)
-  - [Content Distribution with Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
-  - [Render Functions - Slots](../guide/render-function.html#slots)
+  - [Distribution de Contenu avec des Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
+  - [Fonction render - Slots](../guide/render-function.html#slots)
 
 ## $refs
 
@@ -145,5 +145,5 @@ Un objet d'éléments du DOM et d'instances de composants, enregistré avec l'[a
 Contient des liaisons d'attributs et des événements du scope parent qui ne sont pas reconnus (et extraits) en tant que [props](./options-data.html#props) du composant ou un [custom events](./options-data.html#emits). Lorsqu'un composant n'a aucune props ou custom events déclarés, il contient essentiellement toute les liaisons du scope parent, et peut être transmis à un composant interne via `v-bind="$attrs"` - utile lors de la création de Composants d'ordre supérieur.
 
 - **Voir aussi:**
-  - [Non-Prop Attributes](../guide/component-attrs.html)
-  - [Options / Misc - inheritAttrs](./options-misc.html#inheritattrs)
+  - [Attributs Non-Prop](../guide/component-attrs.html)
+  - [Options / Divers - inheritAttrs](./options-misc.html#inheritattrs)

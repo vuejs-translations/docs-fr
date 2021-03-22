@@ -11,7 +11,7 @@ Une option de composant qui est exécutée **avant** que le composant ne soit cr
   - `{Data} props`
   - `{SetupContext} context`
 
-- **Typing**:
+- **Typage**:
 
 ```ts
 interface Data {
@@ -124,7 +124,7 @@ Le contexte de l'instance du composant est également défini lors de l'exécuti
 
 `provide` et `inject` active l'injection de dépendances. Les deux ne peuvent être appelés que pendant [`setup()`](#setup) avec une instance active courante.
 
-- **Typing**:
+- **Typage**:
 
 ```ts
 interface InjectionKey<T> extends Symbol {}

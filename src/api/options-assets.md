@@ -24,7 +24,7 @@
   })
   ```
 
-- **Voir aussi:** [Custom Directives](../guide/custom-directive.html)
+- **Voir aussi:** [Directives Personnalisées](../guide/custom-directive.html)
 
 ## components
 
@@ -48,4 +48,4 @@
   })
   ```
 
-- **Voir aussi:** [Components](../guide/component-basics.html)
+- **Voir aussi:** [Composants](../guide/component-basics.html)

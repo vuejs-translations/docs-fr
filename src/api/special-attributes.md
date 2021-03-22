@@ -50,7 +50,7 @@
 
   Une note importante sur le timing d'enregistrement des ref: parce que les refs eux-mêmes sont créés à la suite de la fonction de rendu, vous ne pouvez pas y accéder sur le rendu initial - ils n'existent pas encore! `$refs` est également non réactif, vous ne devez donc pas essayer de l'utiliser dans des modèles pour la liaison de données.
 
-- **Voir aussi:** [Child Component Refs](../guide/component-template-refs.html)
+- **Voir aussi:** [Refs des composants enfants](../guide/component-template-refs.html)
 
 ## is
 
@@ -66,5 +66,5 @@ Par exemple:
 ```
 
 - **Voir aussi:**
-  - [Dynamic Components](../guide/component-dynamic-async.html)
-  - [DOM Template Parsing Caveats](../guide/component-basics.html#mises-en-garde-concernant-le-parsing-des-templates-dom)
+  - [Composants Dynamiques](../guide/component-dynamic-async.html)
+  - [Mise en garde concernant le parsing des templates DOM](../guide/component-basics.html#mises-en-garde-concernant-le-parsing-des-templates-dom)

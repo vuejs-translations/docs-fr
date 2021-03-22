@@ -1,4 +1,4 @@
-# Misc
+# Divers
 
 ## name
 
@@ -63,4 +63,4 @@
   })
   ```
 
-- **Voir aussi:** [Disabling Attribute Inheritance](../guide/component-attrs.html#desactiver-l-heritage-d-attributs)
+- **Voir aussi:** [Desactiver l'héritage d'attributs](../guide/component-attrs.html#desactiver-l-heritage-d-attributs)

@@ -30,10 +30,10 @@ plusOne.value = 1
 console.log(count.value) // 0
 ```
 
-**Typing:**
+**Typage:**
 
 ```ts
-// lecture seulement (read-only)
+// lecture seulement (readonly)
 function computed<T>(getter: () => T): Readonly<Ref<Readonly<T>>>
 
 // accessible en écriture
@@ -56,7 +56,7 @@ setTimeout(() => {
 }, 100)
 ```
 
-**Typing:**
+**Typage:**
 
 ```ts
 function watchEffect(
@@ -82,7 +82,7 @@ type InvalidateCbRegistrator = (invalidate: () => void) => void
 type StopHandle = () => void
 ```
 
-**Voir aussi**: [`watchEffect` guide](../guide/reactivity-computed-watchers.html#watcheffect)
+**Voir aussi**: [le guide sur `watchEffect`](../guide/reactivity-computed-watchers.html#watcheffect)
 
 ## `watch`
 
@@ -167,4 +167,4 @@ interface WatchOptions extends WatchEffectOptions {
 }
 ```
 
-**Voir aussi**: [`watch` guide](../guide/reactivity-computed-watchers.html#watch)
+**Voir aussi**: [le guide sur `watch`](../guide/reactivity-computed-watchers.html#watch)

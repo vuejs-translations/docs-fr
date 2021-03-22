@@ -16,7 +16,7 @@
   <span>{{msg}}</span>
   ```
 
-- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#texte)
+- **Voir aussi:** [Syntaxe de Liaison de données - Interpolations](../guide/template-syntax.html#texte)
 
 ## v-html
 
@@ -38,7 +38,7 @@
   <div v-html="html"></div>
   ```
 
-- **Voir aussi:** [Data Binding Syntax - Interpolations](../guide/template-syntax.html#html-brut)
+- **Voir aussi:** [Syntaxe de Liaison de données - Interpolations](../guide/template-syntax.html#html-brut)
 
 ## v-show
 
@@ -50,7 +50,7 @@
 
   Cette directive déclenche des transitions lorsque sa condition change.
 
-- **Voir aussi:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
+- **Voir aussi:** [Rendu Conditionnel - v-show](../guide/conditional.html#v-show)
 
 ## v-if
 
@@ -64,7 +64,7 @@
 
   Lorsqu'ils sont utilisés ensemble, `v-if` a une priorité plus élevée que `v-for`. Nous ne recommandons pas d'utiliser ces deux directives ensemble sur un seul élément - voir le [list rendering guide](../guide/list.html#v-for-avec-v-if) pour plus de détails.
 
-- **Voir aussi:** [Conditional Rendering - v-if](../guide/conditional.html#v-if)
+- **Voir aussi:** [Rendu Conditionnel - v-if](../guide/conditional.html#v-if)
 
 ## v-else
 
@@ -85,7 +85,7 @@
   </div>
   ```
 
-- **Voir aussi:** [Conditional Rendering - v-else](../guide/conditional.html#v-else)
+- **Voir aussi:** [Rendu Conditionnel - v-else](../guide/conditional.html#v-else)
 
 ## v-else-if
 
@@ -112,7 +112,7 @@
   </div>
   ```
 
-- **Voir aussi:** [Conditional Rendering - v-else-if](../guide/conditional.html#v-else-if)
+- **Voir aussi:** [Rendu Conditionnel - v-else-if](../guide/conditional.html#v-else-if)
 
 ## v-for
 
@@ -149,7 +149,7 @@
   L'utilisation détaillée de `v-for` est expliquée dans la section du guide ci-dessous.
 
 - **Voir aussi:**
-  - [List Rendering](../guide/list.html)
+  - [Rendu de Liste](../guide/list.html)
 
 ## v-on
 
@@ -232,8 +232,8 @@
   ```
 
 - **Voir aussi:**
-  - [Event Handling](../guide/events.html)
-  - [Components - Custom Events](../guide/component-basics.html#ecoute-des-evenements-sur-les-composants-enfants)
+  - [Gestion des Événements](../guide/events.html)
+  - [Composants - Événements personnalisés](../guide/component-basics.html#ecoute-des-evenements-sur-les-composants-enfants)
 
 ## v-bind
 
@@ -306,8 +306,8 @@
   `.camel` n'est pas nécessaire si vous utilisez des templates strings ou compilez avec `vue-loader`/`vueify`.
 
 - **Voir aussi:**
-  - [Class and Style Bindings](../guide/class-and-style.html)
-  - [Components - Props](../guide/component-basics.html#transmission-de-donnees-aux-composants-enfants-avec-des-props)
+  - [Liaisons de Styles et de Classes](../guide/class-and-style.html)
+  - [Composants - Props](../guide/component-basics.html#transmission-de-donnees-aux-composants-enfants-avec-des-props)
 
 ## v-model
 
@@ -331,8 +331,8 @@
   Crée une liaison bidirectionnelle sur un élément d'entrée de formulaire ou un composant. Pour une utilisation détaillée et d'autres remarques, consultez la section Guide ci-dessous.
 
 - **Voir aussi:**
-  - [Form Input Bindings](../guide/forms.html)
-  - [Components - Form Input Components using Custom Events](../guide/component-custom-events.html#arguments-de-v-model)
+  - [Liaison des champs de formulaires](../guide/forms.html)
+  - [Composants - Composants de formulaire utilisant des événements personnalisés](../guide/component-custom-events.html#arguments-de-v-model)
 
 ## v-slot
 
@@ -345,7 +345,7 @@
 - **Limité à:**
 
   - `<template>`
-  - [compsants](../guide/component-slots.html#syntaxe-abregee-pour-les-slots-par-defaut-isoles) (pour un seul emplacement par défaut avec des props)
+  - [composants](../guide/component-slots.html#syntaxe-abregee-pour-les-slots-par-defaut-isoles) (pour un seul emplacement par défaut avec des props)
 
 - **Usage:**
 
@@ -387,7 +387,7 @@
   Pour plus de détails, voir les liens ci-dessous.
 
 - **Voir aussi:**
-  - [Components - Slots](../guide/component-slots.html)
+  - [Composants - Slots](../guide/component-slots.html)
 
 ## v-pre
 
@@ -452,7 +452,7 @@
   ```
 
 - **Voir aussi:**
-  - [Data Binding Syntax - interpolations](../guide/template-syntax.html#texte)
+  - [Syntaxe de liaison de données - interpolations](../guide/template-syntax.html#texte)
 
 ## v-is
 

@@ -18,7 +18,7 @@ console.log(count.value) // 1
 
 Si un objet est assigné comme une valeur ref, l'objet est rendu profondément réactif par la méthode [reactive](./basic-reactivity.html#reactive).
 
-**Typing:**
+**Typage:**
 
 ```ts
 interface Ref<T> {
@@ -213,7 +213,7 @@ foo.value = {}
 isReactive(foo.value) // false
 ```
 
-**Voir aussi**: [Creating Standalone Reactive Values as `refs`](../guide/reactivity-fundamentals.html#creation-de-valeurs-reactives-autonomes-en-tant-que-refs)
+**Voir aussi**: [Créer des valeurs reactives autonomes en tant que `refs`](../guide/reactivity-fundamentals.html#creation-de-valeurs-reactives-autonomes-en-tant-que-refs)
 
 ## `triggerRef`
 

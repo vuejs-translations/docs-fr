@@ -27,7 +27,7 @@
   <component :is="href ? 'a' : 'span'"></component>
   ```
 
-- **Voir aussi:** [Dynamic Components](../guide/component-dynamic-async.html)
+- **Voir aussi:** [Composants Dynamiques](../guide/component-dynamic-async.html)
 
 ## transition
 
@@ -100,7 +100,7 @@
   app.mount('#transition-demo')
   ```
 
-- **Voir aussi:** [Enter & Leave Transitions](/guide/transitions-enterleave.html#transition-d-elements-composants-uniques)
+- **Voir aussi:** [Entrées et Sorties des Transitions](/guide/transitions-enterleave.html#transition-d-elements-composants-uniques)
 
 ## transition-group
 
@@ -130,7 +130,7 @@
   </transition-group>
   ```
 
-- **Voir aussi:** [List Transitions](/guide/transitions-list.html)
+- **Voir aussi:** [Transitions de listes](/guide/transitions-list.html)
 
 ## keep-alive
 
@@ -207,7 +207,7 @@
   `<keep-alive>` ne fonctionne pas avec les composants fonctionnels car ils n'ont pas d'instances à mettre en cache.
   :::
 
-- **Voir aussi:** [Dynamic Components - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
+- **Voir aussi:** [Composants dynamiques - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
 
 ## slot
 
@@ -221,7 +221,7 @@
 
   Pour un usage plus détaillé, consultez la section du guide ci-dessous.
 
-- **Voir aussi:** [Content Distribution with Slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
+- **Voir aussi:** [Distribution de contenu avec des slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
 
 ## teleport
 
@@ -250,4 +250,4 @@
 
   Notez que cela déplacera les nœuds réelsdu DOM au lieu d'être détruits et recréés, et cela gardera également toutes les instances de composant actives. Tous les éléments HTML avec leur état (c'est-à-dire une vidéo en cours de lecture) conserveront leur état.
 
-- **Voir aussi:** [Teleport component](../guide/teleport.html#teleport)
+- **Voir aussi:** [Le composant teleport](../guide/teleport.html#teleport)

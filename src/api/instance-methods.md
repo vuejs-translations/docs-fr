@@ -191,7 +191,7 @@
   
   Pour plus d'informations sur `flush` voir [Effect Flush Timing](../guide/reactivity-computed-watchers.html#timing-des-effets).
 
-- **Voir aussi:** [Watchers](../guide/computed.html#observateurs)
+- **Voir aussi:** [les Observateurs](../guide/computed.html#observateurs)
 
 ## $emit
 
@@ -271,8 +271,8 @@
   ```
 
 - **Voir aussi:**
-  - [`emits` option](./options-data.html#emits)
-  - [Emitting a Value With an Event](../guide/component-basics.html#emission-d-une-valeur-avec-un-evenement)
+  - [option `emits`](./options-data.html#emits)
+  - [Emission d'une valeur avec un événement](../guide/component-basics.html#emission-d-une-valeur-avec-un-evenement)
 
 ## $forceUpdate
 
