@@ -1,6 +1,6 @@
 # v3.vuejs.org
 
-Ce site est construit avec [VuePress](https://vuepress.vuejs.org/). Le contenu du site est écrit au format Markdown situé dans `src`. Il s'agit de la version française (Non officiel) du site officiel de la documentation de Vue 3.
+Ce site est construit avec [VuePress](https://vuepress.vuejs.org/). Le contenu du site est écrit au format Markdown situé dans `src`. Il s'agit de la version française du site officiel de la documentation de Vue 3.
 
 ## Écriture
 
