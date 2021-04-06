@@ -10,7 +10,7 @@ Voir le [Guide de rédaction de Vue Docs](https://v3.vuejs.org/guide/writing-gui
 
 Vous pouvez voir la liste des fichiers déja traduits en français via [ce lien](https://github.com/demahom18/vue3-docs-fr-translation-advancement/blob/master/table.md).
 
-Vous pouvez aussi visualiser le site web déployé sur netlify via ce lien [vue3-fr.netlify.app](https://vue3-fr.netlify.app)
+Site web déployé: [vue3-fr.netlify.app](https://vue3-fr.netlify.app)
 
 ## Dévéloppement
 
