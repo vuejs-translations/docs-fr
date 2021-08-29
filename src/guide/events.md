@@ -203,8 +203,6 @@ Lors de l'écoute d'événements de clavier, nous devons souvent vérifier des t
 <input @keyup.enter="submit" />
 ```
 
-Vous pouvez utiliser directement tous les noms de touches valides exposés via [`KeyboardEvent.key`]
-
 Vous pouvez utiliser directement tous les noms de touches valides exposés via [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) comme modificateurs en les convertissant en kebab-case.
 
 ```html
