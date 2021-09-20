@@ -33,7 +33,7 @@ Vous pouvez parcourir l'API complète de l'_application API_ dans la [reference 
 
 ## Le Composant Racine
 
-Les options passées à `createApp` sont utilisées pour configurer le **composant racine**. Ce composant est utilisé comme point de départ pour effecteuer le rendu lorsque nous **montons** l'application.
+Les options passées à `createApp` sont utilisées pour configurer le **composant racine**. Ce composant est utilisé comme point de départ pour effectuer le rendu lorsque nous **montons** l'application.
 
 Une application doit être montée dans un élément du DOM. Par exemple, si nous voulons monter une application Vue dans `<div id="app"> </div>`, nous devons passer `#app`:
 
