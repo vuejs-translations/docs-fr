@@ -162,7 +162,7 @@ Par exemple:
     data() {
       return {
         question: '',
-        answer: 'Les questions contiennent généralement un point d'interrogation. ;-)'
+        answer: 'Les questions contiennent généralement un point d\'interrogation. ;-)'
       }
     },
     watch: {
