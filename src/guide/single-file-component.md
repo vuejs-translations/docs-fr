@@ -1,39 +1,39 @@
-# Single File Components
+## Composants d'un fichier unique
 
 ## Introduction
 
-In many Vue projects, global components will be defined using `app.component()`, followed by `app.mount('#app')` to target a container element in the body of every page.
+Dans de nombreux projets Vue, les composants globaux seront définis en utilisant `app.component()`, suivi de `app.mount('#app')` pour cibler un élément conteneur dans le corps de chaque page.
 
-This can work very well for small to medium-sized projects, where JavaScript is only used to enhance certain views. In more complex projects however, or when your frontend is entirely driven by JavaScript, these disadvantages become apparent:
+Cela peut fonctionner très bien pour des projets de petite ou moyenne envergure, où JavaScript n'est utilisé que pour améliorer certaines vues. Cependant, dans des projets plus complexes, ou lorsque votre frontend est entièrement piloté par JavaScript, ces inconvénients deviennent apparents :
 
-- **Global definitions** force unique names for every component
-- **String templates** lack syntax highlighting and require ugly slashes for multiline HTML
-- **No CSS support** means that while HTML and JavaScript are modularized into components, CSS is conspicuously left out
-- **No build step** restricts us to HTML and ES5 JavaScript, rather than preprocessors like Pug (formerly Jade) and Babel
+- **Les définitions globales** obligent à donner un nom unique à chaque composant.
+- **Les modèles de chaîne de caractères** manquent de coloration syntaxique et nécessitent d'affreuses barres obliques pour le HTML multiligne.
+- **Pas de support CSS** signifie que si HTML et JavaScript sont modularisés en composants, CSS est ostensiblement laissé de côté.
+- **Aucune étape de construction** nous limite au HTML et au JavaScript ES5, plutôt qu'à des préprocesseurs comme Pug (anciennement Jade) et Babel.
 
-All of these are solved by **single-file components** with a `.vue` extension, made possible with build tools such as Webpack or Browserify.
+Tous ces problèmes sont résolus par des **composants à fichier unique** avec une extension `.vue`, rendus possibles par des outils de construction tels que Webpack ou Browserify.
 
-Here's an example of a file we'll call `Hello.vue`:
+Voici un exemple de fichier que nous appellerons `Hello.vue` :
 
-<a href="https://codepen.io/team/Vue/pen/3de13b5cd0133df4ecf307b6cf2c5f94" target="_blank" rel="noopener noreferrer"><img src="/images/sfc.png" width="403" alt="Single-file component example (click for code as text)" style="display: block; margin: 15px auto; max-width: 100%"></a>
+<a href="https://codepen.io/team/Vue/pen/3de13b5cd0133df4ecf307b6cf2c5f94" target="_blank" rel="noopener noreferrer"><img src="/images/sfc.png" width="403" alt="Single-file component example (click for code as text)" style="display : block ; margin : 15px auto ; max-width : 100%"></a>
 
-Now we get:
+Nous obtenons maintenant :
 
-- [Complete syntax highlighting](https://github.com/vuejs/awesome-vue#source-code-editing)
-- [CommonJS modules](https://webpack.js.org/concepts/modules/#what-is-a-webpack-module)
-- [Component-scoped CSS](https://vue-loader.vuejs.org/en/features/scoped-css.html)
+- [Coloration syntaxique complète](https://github.com/vuejs/awesome-vue#source-code-editing)
+- [Modules CommonJS](https://webpack.js.org/concepts/modules/#what-is-a-webpack-module)
+- [CSS adapté aux composants](https://vue-loader.vuejs.org/en/features/scoped-css.html)
 
-As promised, we can also use preprocessors such as Pug, Babel (with ES2015 modules), and Stylus for cleaner and more feature-rich components.
+Comme promis, nous pouvons également utiliser des préprocesseurs tels que Pug, Babel (avec les modules ES2015) et Stylus pour obtenir des composants plus propres et plus riches en fonctionnalités.
 
-<a href="https://codesandbox.io/s/vue-single-file-component-with-pre-processors-mr3ik?file=/src/App.vue" target="_blank" rel="noopener noreferrer"><img src="/images/sfc-with-preprocessors.png" width="563" alt="Single-file component with pre-processors example (click for code as text)" style="display: block; margin: 15px auto; max-width: 100%"></a>
+<a href="https://codesandbox.io/s/vue-single-file-component-with-pre-processors-mr3ik?file=/src/App.vue" target="_blank" rel="noopener noreferrer"><img src="/images/sfc-with-preprocessors.png" width="563" alt="Single-file component with pre-processors example (click for code as text)" style="display : block ; margin : 15px auto ; max-width : 100%"></a>
 
-These specific languages are only examples. You could as easily use TypeScript, SCSS, PostCSS, or whatever other preprocessors that help you be productive. If using Webpack with `vue-loader`, it also has first-class support for CSS Modules.
+Ces langages spécifiques ne sont que des exemples. Vous pourriez tout aussi bien utiliser TypeScript, SCSS, PostCSS, ou tout autre préprocesseur qui vous aide à être productif. Si vous utilisez Webpack avec `vue-loader`, il a également un support de première classe pour les modules CSS.
 
-### What About Separation of Concerns?
+### Qu'en est-il de la séparation des préoccupations ?
 
-One important thing to note is that **separation of concerns is not equal to separation of file types.** In modern UI development, we have found that instead of dividing the codebase into three huge layers that interweave with one another, it makes much more sense to divide them into loosely-coupled components and compose them. Inside a component, its template, logic and styles are inherently coupled, and collocating them actually makes the component more cohesive and maintainable.
+Dans le développement d'interfaces utilisateur modernes, nous avons constaté qu'au lieu de diviser la base de code en trois énormes couches qui s'entrecroisent, il est beaucoup plus logique de les diviser en composants faiblement couplés et de les composer. À l'intérieur d'un composant, son modèle, sa logique et ses styles sont intrinsèquement couplés, et leur regroupement rend le composant plus cohérent et plus facile à maintenir.
 
-Even if you don't like the idea of Single-File Components, you can still leverage its hot-reloading and pre-compilation features by separating your JavaScript and CSS into separate files:
+Même si vous n'aimez pas l'idée des composants à fichier unique, vous pouvez toujours tirer parti de ses fonctions de chargement à chaud et de précompilation en séparant votre JavaScript et votre CSS dans des fichiers distincts :
 
 ```html
 <!-- my-component.vue -->
@@ -44,82 +44,82 @@ Even if you don't like the idea of Single-File Components, you can still leverag
 <style src="./my-component.css"></style>
 ```
 
-## Getting Started
+### Démarrage
 
-### Example Sandbox
+### Exemple Sandbox
 
-If you want to dive right in and start playing with single-file components, check out [this simple todo app](https://codesandbox.io/s/vue-todo-list-app-with-single-file-component-vzkl3?file=/src/App.vue) on CodeSandbox.
+Si vous souhaitez vous lancer dans l'aventure et commencer à jouer avec des composants à fichier unique, consultez [this simple todo app](https://codesandbox.io/s/vue-todo-list-app-with-single-file-component-vzkl3?file=/src/App.vue) sur CodeSandbox.
 
-### For Users New to Module Build Systems in JavaScript
+### Pour les utilisateurs novices en matière de systèmes de construction de modules en JavaScript
 
-With `.vue` components, we're entering the realm of advanced JavaScript applications. That means learning to use a few additional tools if you haven't already:
+Avec les composants `.vue`, nous entrons dans le domaine des applications JavaScript avancées. Cela signifie que vous devez apprendre à utiliser quelques outils supplémentaires si vous ne l'avez pas déjà fait :
 
-- **Node Package Manager (npm)**: Read the [Getting Started guide](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry) section about how to get packages from the registry.
+- **Node Package Manager (npm)** : Lisez la section [Guide de démarrage](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry) pour savoir comment obtenir des paquets à partir du registre.
 
-- **Modern JavaScript with ES2015/16**: Read through Babel's [Learn ES2015 guide](https://babeljs.io/docs/en/learn). You don't have to memorize every feature right now, but keep this page as a reference you can come back to.
+- **Modern JavaScript with ES2015/16** : Lisez le [Guide d'apprentissage ES2015](https://babeljs.io/docs/en/learn) de Babel. Vous n'avez pas besoin de mémoriser toutes les fonctionnalités pour le moment, mais gardez cette page comme référence à laquelle vous pourrez revenir.
 
-After you've taken a day to dive into these resources, we recommend checking out [Vue CLI](https://cli.vuejs.org/). Follow the instructions and you should have a Vue project with `.vue` components, ES2015, webpack and hot-reloading in no time!
+Après avoir pris une journée pour vous plonger dans ces ressources, nous vous recommandons de consulter [Vue CLI](https://cli.vuejs.org/). Suivez les instructions et vous devriez avoir un projet Vue avec des composants `.vue`, ES2015, webpack et hot-reloading en un rien de temps !
 
-### For Advanced Users
+### Pour les utilisateurs avancés
 
-The CLI takes care of most of the tooling configurations for you, but also allows fine-grained customization through its own [config options](https://cli.vuejs.org/config/).
+L'interface CLI prend en charge la plupart des configurations d'outils pour vous, mais permet également une personnalisation plus fine grâce à ses propres [options de configuration](https://cli.vuejs.org/config/).
 
-In case you prefer setting up your own build setup from scratch, you will need to manually configure webpack with [vue-loader](https://vue-loader.vuejs.org). To learn more about webpack itself, check out [their official docs](https://webpack.js.org/configuration/) and [webpack learning academy](https://webpack.academy/p/the-core-concepts).
+Si vous préférez mettre en place votre propre configuration de construction à partir de zéro, vous devrez configurer manuellement webpack avec [vue-loader](https://vue-loader.vuejs.org). Pour en savoir plus sur webpack, consultez [sa documentation officielle](https://webpack.js.org/configuration/) et [webpack learning academy](https://webpack.academy/p/the-core-concepts).
 
-### Building with rollup
+### Construction avec rollup
 
-Most of the time when developing a third-party library we want to build it in a way that allows the consumers of the library to [tree shake](https://webpack.js.org/guides/tree-shaking/) it. To enable tree-shaking we need to build `esm` modules. Since webpack and, in turn, vue-cli do not support building `esm` modules we need to rely on [rollup](https://rollupjs.org/).
+La plupart du temps, lorsque nous développons une bibliothèque tierce, nous voulons la construire de manière à ce que les utilisateurs de la bibliothèque puissent la [tree shake](https://webpack.js.org/guides/tree-shaking/). Pour permettre le tree-shaking, nous devons construire des modules `esm`. Comme webpack et, à son tour, vue-cli ne prennent pas en charge la construction de modules `esm`, nous devons compter sur [rollup](https://rollupjs.org/).
 
-#### Installing Rollup
+#### Installation de Rollup
 
-We will need to install Rollup and a few dependencies:
+Nous allons devoir installer Rollup et quelques dépendances :
 
 ```bash
 npm install --save-dev rollup @rollup/plugin-commonjs rollup-plugin-vue 
 ```
 
-These are the minimal amount of rollup plugins that we need to use to compile the code in an `esm` module. We may want to also add [rollup-plugin-babel](https://github.com/rollup/plugins/tree/master/packages/babel) to transpile their code and [node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve) if we use dependencies that we want to bundle with our library.
+Il s'agit de la quantité minimale de plugins rollup que nous devons utiliser pour compiler le code d'un module `esm`. Nous pouvons également ajouter [rollup-plugin-babel](https://github.com/rollup/plugins/tree/master/packages/babel) pour transpiler leur code et [node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve) si nous utilisons des dépendances que nous voulons regrouper avec notre bibliothèque.
 
-#### Configuring Rollup
+#### Configurer Rollup
 
-To configure our build with Rollup we will need to create a `rollup.config.js` file in the root of our project:
+Pour configurer notre build avec Rollup, nous devons créer un fichier `rollup.config.js` à la racine de notre projet :
 
 ```bash
 touch rollup.config.js
 ```
 
-Once the file is created we will need to open it with our editor of choice and add the following code.
+Une fois le fichier créé, nous devrons l'ouvrir avec l'éditeur de notre choix et ajouter le code suivant.
 
 ```javascript
-// import our third party plugins
+// import de nos plugins tiers
 import commonjs from 'rollup-plugin-commonjs'
 import VuePlugin from 'rollup-plugin-vue'
-import pkg from './package.json' // import our package.json file to re-use the naming
+import pkg from './package.json' // importer notre fichier package.json pour réutiliser le nommage
 
 export default {
-  // this is the file containing all our exported components/functions
+  // c'est le fichier contenant tous nos composants/fonctions exportés
   input: 'src/index.js',
-  // this is an array of outputed formats
+  // il s'agit d'un tableau de formats exportés
   output: [ 
     {
-      file: pkg.module, // the name of our esm library
-      format: 'esm', // the format of choice
-      sourcemap: true, // ask rollup to include sourcemaps
+      file : pkg.module, // le nom de notre bibliothèque esm
+      format : 'esm', // le format de votre choix
+      sourcemap : true, // demande au rollup d'inclure les sourcesmaps
     }
   ],
-  // this is an array of the plugins that we are including
+  // c'est un tableau des plugins que nous incluons.
   plugins: [
     commonjs(),
     VuePlugin()
   ],
-  // ask rollup to not bundle Vue in the library
+  // demander au rollup de ne pas regrouper Vue dans la bibliothèque
   external: ['vue']
 }
 ```
 
-#### Configuring package.json
+#### Configuration du fichier package.json
 
-To take advantage of our newly created `esm` module we need to add a few fields in our `package.json` file:
+Pour profiter de notre module `esm` nouvellement créé, nous devons ajouter quelques champs dans notre fichier `package.json` :
 
 ```json
  "scripts": {
@@ -133,15 +133,15 @@ To take advantage of our newly created `esm` module we need to add a few fields 
  ],
  ```
  
-Here we are specifying:
+Ici, nous spécifions
 
-- how to build our package
-- what files we want to bundle in our package
-- what file represents our `esm` module
+- comment construire notre paquet
+- quels fichiers nous voulons regrouper dans notre paquetage
+- Quel fichier représente notre module `esm` ?
 
-#### Bundling `umd` and `cjs` modules
+#### Regroupement des modules `umd` et `cjs`.
 
-To also build `umd` and `cjs` modules we can simply add a few lines of configuration to our `rollup.config.js` and `package.json`
+Pour construire également les modules `umd` et `cjs`, nous pouvons simplement ajouter quelques lignes de configuration à nos fichiers `rollup.config.js` et `package.json`.
 
 ##### rollup.config.js 
 ```javascript

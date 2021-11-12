@@ -1,22 +1,22 @@
 ---
-title: Data Option
+title: Option de données
 badges:
   - breaking
 ---
 
 # {{ $frontmatter.title }} <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Aperçu
 
-- **BREAKING**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
+- **BREAKING** : La déclaration de l'option du composant `data` n'accepte plus un simple `objet` JavaScript et attend une déclaration de `fonction`.
 
-- **BREAKING**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
+- **BREAKING** : lors de la fusion de plusieurs valeurs de retour `data` provenant de mixins ou extends, la fusion est maintenant peu profonde au lieu d'être profonde (seules les propriétés de niveau racine sont fusionnées).
 
 ## 2.x Syntax
 
-In 2.x, developers could define the `data` option with either an `object` or a `function`.
+En 2.x, les développeurs pouvaient définir l'option `data` avec un `objet` ou une `fonction`.
 
-For example:
+Par exemple :
 
 ```html
 <!-- Object Declaration -->
@@ -28,7 +28,7 @@ For example:
   })
 </script>
 
-<!-- Function Declaration -->
+<!-- Déclaration de fonction -->
 <script>
   const app = new Vue({
     data() {
@@ -40,13 +40,13 @@ For example:
 </script>
 ```
 
-Though this provided some convenience in terms of root instances having a shared state, this has led to confusion due to the fact that its only possible on the root instance.
+Bien que cela ait apporté une certaine commodité en termes d'instances racines ayant un état partagé, cela a conduit à une confusion due au fait que cela n'est possible que sur l'instance racine.
 
 ## 3.x Update
 
-In 3.x, the `data` option has been standardized to only accept a `function` that returns an `object`.
+En 3.x, l'option `data` a été standardisée pour n'accepter qu'une `fonction` qui retourne un `objet`.
 
-Using the example above, there would only be one possible implementation of the code:
+En utilisant l'exemple ci-dessus, il n'y aurait qu'une seule implémentation possible du code :
 
 ```html
 <script>
@@ -62,9 +62,9 @@ Using the example above, there would only be one possible implementation of the 
 </script>
 ```
 
-## Mixin Merge Behavior Change
+## Changement de comportement pour la fusion des mixins
 
-In addition, when `data()` from a component and its mixins or extends base are merged, the merge is now performed *shallowly*:
+De plus, lorsque `data()` d'un composant et de ses mixins ou extends base sont fusionnés, la fusion est maintenant effectuée *shallowly* :
 
 ```js
 const Mixin = {
@@ -90,7 +90,7 @@ const CompA = {
 }
 ```
 
-In Vue 2.x, the resulting `$data` is:
+Dans Vue 2.x, le résultat de `$data` est :
 
 ```json
 {
@@ -101,7 +101,7 @@ In Vue 2.x, the resulting `$data` is:
 }
 ```
 
-In 3.0, the result will be:
+En 3.0, le résultat sera :
 
 ```json
 {
@@ -111,11 +111,11 @@ In 3.0, the result will be:
 }
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-For users relying on the object declaration, we recommend:
+Pour les utilisateurs s'appuyant sur la déclaration d'objet, nous recommandons :
 
-- Extracting the shared data into an external object and using it as a property in `data`
-- Rewrite references to the shared data to point to a new shared object
+- D'extraire les données partagées dans un objet externe et de les utiliser comme propriété dans `data`.
+- Réécrire les références aux données partagées pour pointer vers un nouvel objet partagé.
 
-For users relying on the deep merge behavior from mixins, we recommend refactoring your code to avoid such reliance altogether, since deep merges from mixins are very implicit and can make the code logic more difficult to understand and debug.
+Pour les utilisateurs qui s'appuient sur le comportement de fusion profonde des mixins, nous recommandons de remanier votre code pour éviter complètement cette dépendance, car les fusions profondes des mixins sont très implicites et peuvent rendre la logique du code plus difficile à comprendre et à déboguer.

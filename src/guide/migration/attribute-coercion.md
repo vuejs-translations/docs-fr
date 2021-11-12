@@ -3,34 +3,34 @@ badges:
   - breaking
 ---
 
-# Attribute Coercion Behavior <MigrationBadges :badges="$frontmatter.badges" />
+# Comportement de coercition des attributs <MigrationBadges :badges="$frontmatter.badges" />
 
 ::: info Info
-This is a low-level internal API change and does not affect most developers.
+Il s'agit d'un changement d'API interne de bas niveau qui n'affecte pas la plupart des développeurs.
 :::
 
-## Overview
+## Aperçu
 
-Here is a high level summary of the changes:
+Voici un résumé de haut niveau des changements :
 
-- Drop the internal concept of enumerated attributes and treat those attributes the same as normal non-boolean attributes
-- **BREAKING**: No longer removes attribute if value is boolean `false`. Instead, it's set as attr="false" instead. To remove the attribute, use `null` or `undefined`.
+- Abandonner le concept interne d'attributs énumérés et traiter ces attributs de la même manière que les attributs non booléens normaux.
+- **BREAKING** : Ne supprime plus l'attribut si la valeur est booléenne `false`. A la place, il est défini comme attr="false". Pour supprimer l'attribut, utilisez `null` ou `undefined`.
 
-For more information, read on!
+Pour plus d'informations, lisez la suite !
 
 ## 2.x Syntax
 
-In 2.x, we had the following strategies for coercing `v-bind` values:
+En 2.x, nous avions les stratégies suivantes pour contraindre les valeurs `v-bind` :
 
-- For some attribute/element pairs, Vue is always using the corresponding IDL attribute (property): [like `value` of `<input>`, `<select>`, `<progress>`, etc](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L11-L18).
+- Pour certaines paires attribut/élément, Vue utilise toujours l'attribut IDL correspondant (propriété) : [comme `value` of `<input>`, `<select>`, `<progress>`, etc](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L11-L18).
 
-- For "[boolean attributes](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L33-L40)" and [xlinks](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L44-L46), Vue removes them if they are "falsy" ([`undefined`, `null` or `false`](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L52-L54)) and adds them otherwise (see [here](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L66-L77) and [here](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L81-L85)).
+- Pour "[attributs booléens](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L33-L40)" et [xlinks](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L44-L46), Vue les supprime s'ils sont "falsy". ([`undefined`, `null` or `false`](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L52-L54)) et les ajoute sinon (voir [ici])(https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L66-L77) et [ici](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L81-L85)).
 
-- For "[enumerated attributes](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L20)" (currently `contenteditable`, `draggable` and `spellcheck`), Vue tries to [coerce](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L24-L31) them to string (with special treatment for `contenteditable` for now, to fix [vuejs/vue#9397](https://github.com/vuejs/vue/issues/9397)).
+- Pour "[enumerated attributes](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L20)" (actuellement `contenteditable`, `draggable` et `spellcheck`), Vue essaie de [contraindre](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L24-L31) en chaîne (avec un traitement spécial pour `contenteditable` pour l'instant, afin de corriger [vuejs/vue#9397].(https://github.com/vuejs/vue/issues/9397)).
 
-- For other attributes, we remove "falsy" values (`undefined`, `null`, or `false`) and set other values as-is (see [here](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L92-L113)).
+- Pour les autres attributs, nous supprimons les valeurs "fausses" (`undefined`, `null`, ou `false`) et définissons les autres valeurs telles quelles (voir [ici]).(https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L92-L113)).
 
-The following table describes how Vue coerce "enumerated attributes" differently with normal non-boolean attributes:
+Le tableau suivant décrit comment Vue coerce les "attributs énumérés" différemment des attributs non booléens normaux :
 
 | Binding expression  | `foo` <sup>normal</sup> | `draggable` <sup>enumerated</sup> |
 | ------------------- | ----------------------- | --------------------------------- |
@@ -43,20 +43,20 @@ The following table describes how Vue coerce "enumerated attributes" differently
 | `attr="foo"`        | `foo="foo"`             | `draggable="true"`                |
 | `attr`              | `foo=""`                | `draggable="true"`                |
 
-We can see from the table above, current implementation coerces `true` to `'true'` but removes the attribute if it's `false`. This also led to inconsistency and required users to manually coerce boolean values to string in very common use cases like `aria-*` attributes like `aria-selected`, `aria-hidden`, etc.
+Nous pouvons voir dans le tableau ci-dessus que l'implémentation actuelle convertit `true` en `'true'` mais supprime l'attribut s'il est `false`. Cela entraîne également des incohérences et oblige les utilisateurs à convertir manuellement les valeurs booléennes en chaînes de caractères dans des cas d'utilisation très courants comme les attributs `aria-*` tels que `aria-selected`, `aria-hidden`, etc.
 
 ## 3.x Syntax
 
-We intend to drop this internal concept of "enumerated attributes" and treat them as normal non-boolean HTML attributes.
+Nous avons l'intention d'abandonner ce concept interne d'"attributs énumérés" et de les traiter comme des attributs HTML non booléens normaux.
 
-- This solves the inconsistency between normal non-boolean attributes and “enumerated attributes”
-- It also makes it possible to use values other than `'true'` and `'false'`, or even keywords yet to come, for attributes like `contenteditable`
+- Cela résout l'incohérence entre les attributs non booléens normaux et les "attributs énumérés".
+- Cela permet également d'utiliser des valeurs autres que ``true'`` et ``false'``, ou même des mots-clés à venir, pour des attributs comme ``contentable``.
 
-For non-boolean attributes, Vue will stop removing them if they are `false` and coerce them to `'false'` instead.
+Pour les attributs non booléens, Vue arrêtera de les supprimer s'ils sont `false` et les contraindra à `'false'` à la place.
 
-- This solves the inconsistency between `true` and `false` and makes outputting `aria-*` attributes easier
+- Cela résout l'incohérence entre `true` et `false` et facilite la sortie des attributs `aria-*`.
 
-The following table describes the new behavior:
+Le tableau suivant décrit le nouveau comportement :
 
 | Binding expression  | `foo` <sup>normal</sup>    | `draggable` <sup>enumerated</sup> |
 | ------------------- | -------------------------- | --------------------------------- |
@@ -69,15 +69,15 @@ The following table describes the new behavior:
 | `attr="foo"`        | `foo="foo"`                | `draggable="foo"` <sup>†</sup>    |
 | `attr`              | `foo=""`                   | `draggable=""` <sup>†</sup>       |
 
-<small>†: changed</small>
+<small>† : changé</small>
 
-Coercion for boolean attributes is left untouched.
+La coercition pour les attributs booléens n'a pas été modifiée.
 
-## Migration Strategy
+### Stratégie de migration
 
-### Enumerated attributes
+### Attributs énumérés
 
-The absence of an enumerated attribute and `attr="false"` may produce different IDL attribute values (which will reflect the actual state), described as follows:
+L'absence d'un attribut énuméré et `attr="false"` peut produire des valeurs d'attribut IDL différentes (qui reflèteront l'état réel), décrites comme suit :
 
 | Absent enumerated attr | IDL attr & value                     |
 | ---------------------- | ------------------------------------ |
@@ -85,15 +85,16 @@ The absence of an enumerated attribute and `attr="false"` may produce different 
 | `draggable`            | `draggable` &rarr; `false`           |
 | `spellcheck`           | `spellcheck` &rarr; `true`           |
 
-To keep the old behavior work, and as we will be coercing `false` to `'false'`, in 3.x Vue developers need to make `v-bind` expression resolve to `false` or `'false'` for `contenteditable` and `spellcheck`.
+Pour conserver l'ancien comportement, et comme nous allons contraindre `false` à `'false'`, les développeurs de Vue 3.x doivent faire en sorte que l'expression `v-bind` soit résolue par `false` ou `'false'` pour `contenteditable` et `spellcheck`.
 
-In 2.x, invalid values were coerced to `'true'` for enumerated attributes. This was usually unintended and unlikely to be relied upon on a large scale. In 3.x `true` or `'true'` should be explicitly specified.
+Dans la version 2.x, les valeurs non valides étaient converties en `'true'` pour les attributs énumérés. C'était généralement involontaire et il était peu probable que l'on s'en serve à grande échelle. En 3.x, `true` ou `'true'` doivent être explicitement spécifiés.
 
-### Coercing `false` to `'false'` instead of removing the attribute
+### Coercition `false` en `'false'` au lieu de supprimer l'attribut
 
-In 3.x, `null` or `undefined` should be used to explicitly remove an attribute.
+En 3.x, `null` ou `undefined` doivent être utilisés pour supprimer explicitement un attribut.
 
-### Comparison between 2.x & 3.x behavior
+
+### Comparaison entre les comportements 2.x et 3.x
 
 <table>
   <thead>

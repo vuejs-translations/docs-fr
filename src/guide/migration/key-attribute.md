@@ -5,22 +5,22 @@ badges:
 
 # `key` attribute <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-- **NEW:** `key`s are no longer necessary on `v-if`/`v-else`/`v-else-if` branches, since Vue now automatically generates unique `key`s.
-  - **BREAKING:** If you manually provide `key`s, then each branch must use a unique `key`. You can no longer intentionally use the same `key` to force branch reuse.
-- **BREAKING:** `<template v-for>` `key` should be placed on the `<template>` tag (rather than on its children).
+- **NEW : ** Les `clés` ne sont plus nécessaires sur les branches `v-if`/`v-else`/`v-else-if`, puisque Vue génère maintenant automatiquement des `clés` uniques.
+  - **BREAKING:** Si vous fournissez manuellement des `key`s, alors chaque branche doit utiliser une `key` unique. Vous ne pouvez plus utiliser intentionnellement la même `key` pour forcer la réutilisation des branches.
+- **BREAKING:** La `key` de `<template v-for>` doit être placée sur la balise `<template>` (plutôt que sur ses enfants).
 
-## Background
+## Contexte
 
-The `key` special attribute is used as a hint for Vue's virtual DOM algorithm to keep track of a node's identity. That way, Vue knows when it can reuse and patch existing nodes and when it needs to reorder or recreate them. For more information, see the following sections:
+L'attribut spécial `key` est utilisé comme une indication pour l'algorithme DOM virtuel de Vue pour garder une trace de l'identité d'un noeud. De cette façon, Vue sait quand il peut réutiliser et patcher les nœuds existants et quand il doit les réorganiser ou les recréer. Pour plus d'informations, consultez les sections suivantes :
 
-- [List Rendering: Maintaining State](/guide/list.html#maintien-de-l-etat)
-- [API Reference: `key` Special Attribute](/api/special-attributes.html#key)
+- [List Rendering : Maintaining State](/guide/list.html#maintien-de-l-etat)
+- [Référence API : Attribut spécial `key`](/api/special-attributes.html#key)
 
-## On conditional branches
+## Sur les branches conditionnelles
 
-In Vue 2.x, it was recommended to use `key`s on `v-if`/`v-else`/`v-else-if` branches.
+Dans Vue 2.x, il était recommandé d'utiliser les `key`s sur les branches `v-if`/`v-else`/`v-else-if`.
 
 ```html
 <!-- Vue 2.x -->
@@ -28,7 +28,7 @@ In Vue 2.x, it was recommended to use `key`s on `v-if`/`v-else`/`v-else-if` bran
 <div v-else key="no">No</div>
 ```
 
-The example above still works in Vue 3.x. However, we no longer recommend using the `key` attribute on `v-if`/`v-else`/`v-else-if` branches, since unique `key`s are now automatically generated on conditional branches if you don't provide them.
+L'exemple ci-dessus fonctionne toujours dans Vue 3.x. Cependant, nous ne recommandons plus l'utilisation de l'attribut `key` sur les branches `v-if`/`v-else`/`v-else-if`, puisque des `key` uniques sont maintenant générés automatiquement sur les branches conditionnelles si vous ne les fournissez pas.
 
 ```html
 <!-- Vue 3.x -->
@@ -36,25 +36,25 @@ The example above still works in Vue 3.x. However, we no longer recommend using 
 <div v-else>No</div>
 ```
 
-The breaking change is that if you manually provide `key`s, each branch must use a unique `key`. In most cases, you can remove these `key`s.
+Le changement de rupture est que si vous fournissez manuellement des `key`s, chaque branche doit utiliser une `key` unique. Dans la plupart des cas, vous pouvez supprimer ces `key`.
 
 ```html
 <!-- Vue 2.x -->
 <div v-if="condition" key="a">Yes</div>
 <div v-else key="a">No</div>
 
-<!-- Vue 3.x (recommended solution: remove keys) -->
+<!-- Vue 3.x (solution recommandée : supprimer les clés) -->
 <div v-if="condition">Yes</div>
 <div v-else>No</div>
 
-<!-- Vue 3.x (alternate solution: make sure the keys are always unique) -->
+<!-- Vue 3.x (solution alternative : s'assurer que les clés sont toujours uniques) -->
 <div v-if="condition" key="a">Yes</div>
 <div v-else key="b">No</div>
 ```
 
-## With `<template v-for>`
+## Avec la balise `<template v-for>`
 
-In Vue 2.x, a `<template>` tag could not have a `key`. Instead, you could place the `key`s on each of its children.
+Dans Vue 2.x, une balise `<template>` ne pouvait pas avoir de `key`. Au lieu de cela, vous pouviez placer les `key`s sur chacun de ses enfants.
 
 ```html
 <!-- Vue 2.x -->
@@ -64,7 +64,7 @@ In Vue 2.x, a `<template>` tag could not have a `key`. Instead, you could place 
 </template>
 ```
 
-In Vue 3.x, the `key` should be placed on the `<template>` tag instead.
+Dans Vue 3.x, la `key` doit être placée sur la balise `<template>` à la place.
 
 ```html
 <!-- Vue 3.x -->
@@ -74,7 +74,7 @@ In Vue 3.x, the `key` should be placed on the `<template>` tag instead.
 </template>
 ```
 
-Similarly, when using `<template v-for>` with a child that uses `v-if`, the `key` should be moved up to the `<template>` tag.
+De même, lorsque vous utilisez `<template v-for>` avec un enfant qui utilise `v-if`, la `key` doit être déplacée vers le haut de la balise `<template>`.
 
 ```html
 <!-- Vue 2.x -->

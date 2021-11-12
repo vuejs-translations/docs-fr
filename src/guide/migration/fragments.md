@@ -5,13 +5,13 @@ badges:
 
 # Fragments <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue
 
-In Vue 3, components now have official support for multi-root node components, i.e., fragments!
+Dans Vue 3, les composants ont maintenant un support officiel pour les composants de nœuds multi-roots, c'est-à-dire les fragments !
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In 2.x, multi-root components were not supported and would emit a warning when a user accidentally created one. As a result, many components are wrapped in a single `<div>` in order to fix this error.
+Dans la version 2.x, les composants à racines multiples n'étaient pas supportés et émettaient un avertissement lorsqu'un utilisateur en créait accidentellement un. Par conséquent, de nombreux composants sont enveloppés dans un seul `<div>` afin de corriger cette erreur.
 
 ```html
 <!-- Layout.vue -->
@@ -24,9 +24,9 @@ In 2.x, multi-root components were not supported and would emit a warning when a
 </template>
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In 3.x, components now can have multiple root nodes! However, this does require developers to explicitly define where attributes should be distributed.
+En 3.x, les composants peuvent désormais avoir plusieurs nœuds racines ! Cependant, cela oblige les développeurs à définir explicitement où les attributs doivent être distribués.
 
 ```html
 <!-- Layout.vue -->
@@ -37,4 +37,4 @@ In 3.x, components now can have multiple root nodes! However, this does require 
 </template>
 ```
 
-For more information on how attribute inheritance works, see [Non-Prop Attributes](/guide/component-attrs.html).
+Pour plus d'informations sur le fonctionnement de l'héritage des attributs, reportez-vous à la section [Non-Prop Attributes](/guide/component-attrs.html).

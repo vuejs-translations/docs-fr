@@ -6,13 +6,13 @@ badges:
 
 # {{ $frontmatter.title }} <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-`<transition-group>` no longer renders a root element by default, but can still create one with the `tag` prop.
+`<transition-group>` ne rend plus un élément racine par défaut, mais peut toujours en créer un avec la prop `tag`.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In Vue 2, `<transition-group>`, like other custom components, needed a root element, which by default was a `<span>` but was customizable via the `tag` prop.
+Dans Vue 2, `<transition-group>`, comme d'autres composants personnalisés, avait besoin d'un élément racine, qui était par défaut un `<span>` mais qui était personnalisable via la prop `tag`.
 
 ```html
 <transition-group tag="ul">
@@ -22,12 +22,12 @@ In Vue 2, `<transition-group>`, like other custom components, needed a root elem
 </transition-group>
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In Vue 3, we have [fragment support](/guide/migration/fragments.html), so components no longer _need_ a root node. Consequently, `<transition-group>` no longer renders one by default.
+Dans Vue 3, nous avons [support des fragments] (/guide/migration/fragments.html), donc les composants n'ont plus besoin d'un noeud racine. Par conséquent, `<transition-group>` n'en rend plus un par défaut.
 
-- If you already have the `tag` prop defined in your Vue 2 code, like in the example above, everything will work as before
-- If you didn't have one defined _and_ your styling or other behaviors relied on the presence of the `<span>` root element to work properly, simply add `tag="span"` to the `<transition-group>`:
+- Si vous avez déjà défini la prop `tag` dans votre code Vue 2, comme dans l'exemple ci-dessus, tout fonctionnera comme avant.
+- Si vous n'en aviez pas défini _et_ que votre style ou d'autres comportements dépendaient de la présence de l'élément racine `<span>` pour fonctionner correctement, ajoutez simplement `tag="span"` au `<transition-group>` :
 
 ```html
 <transition-group tag="span">
@@ -35,6 +35,6 @@ In Vue 3, we have [fragment support](/guide/migration/fragments.html), so compon
 </transition-group>
 ```
 
-## See also
+## Voir aussi
 
-- [Some transition classes got a rename](/guide/migration/transition.html)
+- [Certaines classes de transition ont été renommées](/guide/migration/transition.html)

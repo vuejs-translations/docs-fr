@@ -4,11 +4,11 @@ badges:
   - breaking
 ---
 
-# `$listeners` removed <MigrationBadges :badges="$frontmatter.badges" />
+# `$listeners` supprimé <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-The `$listeners` object has been removed in Vue 3. Event listeners are now part of `$attrs`:
+L'objet `$listeners` a été supprimé dans Vue 3. Les écouteurs d'événements font maintenant partie de `$attrs` :
 
 ```javascript
 {
@@ -17,10 +17,10 @@ The `$listeners` object has been removed in Vue 3. Event listeners are now part 
 }
 ```
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In Vue 2, you can access attributes passed to your components with `this.$attrs`, and event listeners with `this.$listeners`.
-In combination with `inheritAttrs: false`, they allow the developer to apply these attributes and listeners to some other element instead of the root element:
+Dans Vue 2, vous pouvez accéder aux attributs passés à vos composants avec `this.$attrs`, et aux écouteurs d'événements avec `this.$listeners`.
+En combinaison avec `inheritAttrs : false`, ils permettent au développeur d'appliquer ces attributs et listeners à un autre élément au lieu de l'élément racine :
 
 ```html
 <template>
@@ -35,9 +35,9 @@ In combination with `inheritAttrs: false`, they allow the developer to apply the
 </script>
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In Vue 3's virtual DOM, event listeners are now just attributes, prefixed with `on`, and as such are part of the `$attrs` object, so `$listeners` has been removed.
+Dans le DOM virtuel de Vue 3, les écouteurs d'événements sont maintenant juste des attributs, préfixés par `on`, et en tant que tels font partie de l'objet `$attrs`, donc `$listeners` a été supprimé.
 
 ```vue
 <template>
@@ -52,7 +52,7 @@ export default {
 </script>
 ```
 
-If this component received an `id` attribute and a `v-on:close` listener, the `$attrs` object will now look like this:
+Si ce composant a reçu un attribut `id` et un écouteur `v-on:close`, l'objet `$attrs` ressemblera maintenant à ceci :
 
 ```javascript
 {
@@ -61,14 +61,14 @@ If this component received an `id` attribute and a `v-on:close` listener, the `$
 }
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-Remove all usages of `$listeners`.
+Supprimez tous les usages de `$listeners`.
 
-## See also
+## Voir aussi
 
-- [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
-- [Migration guide - `$attrs`includes `class` & `style` ](./attrs-includes-class-style.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
-- [Migration guide - New Emits Option](./emits-option.md)
-- [Migration guide - `.native` modifier removed](./v-on-native-modifier-removed.md)
+- [RFC pertinent](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
+- [Guide de migration - `$attrs`includes `class` & `style` ](./attrs-includes-class-style.md)
+- [Guide de migration - Changements dans l'API des fonctions de rendu](./render-function-api.md)
+- [Guide de migration - Nouvelle option Emits](./emits-option.md)
+- [Guide de migration - Suppression du modificateur `.native`](./v-on-native-modifier-removed.md)

@@ -5,15 +5,15 @@ badges:
 
 # Custom Elements Interop <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-- **BREAKING:** Custom elements whitelisting is now performed during template compilation, and should be configured via compiler options instead of runtime config.
-- **BREAKING:** Special `is` prop usage is restricted to the reserved `<component>` tag only.
-- **NEW:** There is new `v-is` directive to support 2.x use cases where `is` was used on native elements to work around native HTML parsing restrictions.
+- **BREAKING:** La mise en liste blanche des éléments personnalisés est maintenant effectuée pendant la compilation du modèle, et doit être configurée via les options du compilateur au lieu de la configuration du runtime.
+- **BREAKING:** L'utilisation de la prop spéciale `is` est restreinte à la balise réservée `<component>` uniquement.
+- **NOUVEAU :** Il y a une nouvelle directive `v-is` pour supporter les cas d'utilisation de la 2.x où `is` était utilisé sur des éléments natifs pour contourner les restrictions d'analyse du HTML natif.
 
-## Autonomous Custom Elements
+## Éléments personnalisés autonomes
 
-If we want to add a custom element defined outside of Vue (e.g. using the Web Components API), we need to 'instruct' Vue to treat it as a custom element. Let's use the following template as an example.
+Si nous voulons ajouter un élément personnalisé défini en dehors de Vue (par exemple, en utilisant l'API des composants Web), nous devons "demander" à Vue de le traiter comme un élément personnalisé. Utilisons le modèle suivant à titre d'exemple.
 
 ```html
 <plastic-button></plastic-button>
@@ -21,20 +21,20 @@ If we want to add a custom element defined outside of Vue (e.g. using the Web Co
 
 ### 2.x Syntax
 
-In Vue 2.x, whitelisting tags as custom elements was done via `Vue.config.ignoredElements`:
+Dans Vue 2.x, la mise en liste blanche des balises en tant qu'éléments personnalisés se faisait via `Vue.config.ignoredElements` :
 
 ```js
-// This will make Vue ignore custom element defined outside of Vue
-// (e.g., using the Web Components APIs)
+// Ceci fera que Vue ignorera les éléments personnalisés définis en dehors de Vue
+// (par exemple, en utilisant les API de composants Web).
 
 Vue.config.ignoredElements = ['plastic-button']
 ```
 
-### 3.x Syntax
+### Syntaxe 3.x
 
-**In Vue 3.0, this check is performed during template compilation.** To instruct the compiler to treat `<plastic-button>` as a custom element:
+**Dans Vue 3.0, cette vérification est effectuée pendant la compilation du modèle.** Pour demander au compilateur de traiter `<plastic-button>` comme un élément personnalisé :
 
-- If using a build step: pass the `isCustomElement` option to the Vue template compiler. If using `vue-loader`, this should be passed via `vue-loader`'s `compilerOptions` option:
+- Si vous utilisez une étape de construction : passez l'option `isCustomElement` au compilateur de modèle Vue. Si vous utilisez `vue-loader`, ceci doit être passé via l'option `compilerOptions` de `vue-loader` :
 
   ```js
   // in webpack config
@@ -52,58 +52,58 @@ Vue.config.ignoredElements = ['plastic-button']
   ]
   ```
 
-- If using on-the-fly template compilation, pass it via `app.config.isCustomElement`:
+- Si vous utilisez la compilation de modèles à la volée, passez-le via `app.config.isCustomElement` :
 
   ```js
   const app = Vue.createApp({})
   app.config.isCustomElement = tag => tag === 'plastic-button'
   ```
 
-  It's important to note the runtime config only affects runtime template compilation - it won't affect pre-compiled templates.
+  Il est important de noter que la configuration d'exécution n'affecte que la compilation des modèles d'exécution - elle n'affecte pas les modèles précompilés.
 
-## Customized Built-in Elements
+## Éléments intégrés personnalisés
 
-The Custom Elements specification provides a way to use custom elements as [Customized Built-in Element](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) by adding the `is` attribute to a built-in element:
+La spécification Custom Elements permet d'utiliser des éléments personnalisés comme [Customized Built-in Element] (https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) en ajoutant l'attribut `is` à un élément intégré :
 
 ```html
 <button is="plastic-button">Click Me!</button>
 ```
 
-Vue's usage of the `is` special prop was simulating what the native attribute does before it was made universally available in browsers. However, in 2.x it was interpreted as rendering a Vue component with the name `plastic-button`. This blocks the native usage of Customized Built-in Element mentioned above.
+L'utilisation par Vue de l'accessoire spécial `is` simule ce que fait l'attribut natif avant qu'il ne soit universellement disponible dans les navigateurs. Cependant, dans la version 2.x, il a été interprété comme rendant un composant Vue avec le nom `plastic-button`. Cela bloque l'utilisation native de Customized Built-in Element mentionnée ci-dessus.
 
-In 3.0, we are limiting Vue's special treatment of the `is` prop to the `<component>` tag only.
+Dans la version 3.0, nous limitons le traitement spécial de Vue de la prop `is` à la seule balise `<component>`.
 
-- When used on the reserved `<component>` tag, it will behave exactly the same as in 2.x;
-- When used on normal components, it will behave like a normal prop:
+- Lorsqu'elle est utilisée sur la balise réservée `<component>`, elle se comportera exactement de la même manière qu'en 2.x ;
+- Lorsqu'il est utilisé sur des composants normaux, il se comportera comme un accessoire normal :
 
   ```html
   <foo is="bar" />
   ```
 
-  - 2.x behavior: renders the `bar` component.
-  - 3.x behavior: renders the `foo` component and passing the `is` prop.
+- Comportement 2.x : effectue le rendu du composant `bar`.
+- Comportement 3.x : Rend le composant `foo` et passe l'option `is`.
 
-- When used on plain elements, it will be passed to the `createElement` call as the `is` option, and also rendered as a native attribute. This supports the usage of customized built-in elements.
+- Lorsqu'il est utilisé sur des éléments simples, il sera passé à l'appel `createElement` comme l'option `is`, et également rendu comme un attribut natif. Cela permet l'utilisation d'éléments intégrés personnalisés.
 
   ```html
   <button is="plastic-button">Click Me!</button>
   ```
 
-  - 2.x behavior: renders the `plastic-button` component.
-  - 3.x behavior: renders a native button by calling
+- Comportement 2.x : Rend le composant `plastic-button`.
+- Comportement 3.x : Rend un bouton natif en appelant
 
     ```js
     document.createElement('button', { is: 'plastic-button' })
     ```
 
-## `v-is` for In-DOM Template Parsing Workarounds
+## `v-is` pour l'analyse des templates In-DOM Workarounds
 
-> Note: this section only affects cases where Vue templates are directly written in the page's HTML.
-> When using in-DOM templates, the template is subject to native HTML parsing rules. Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.
+> Remarque : cette section ne concerne que les cas où les modèles Vue sont directement écrits dans le code HTML de la page.
+> Lorsque vous utilisez des modèles in-DOM, le modèle est soumis aux règles d'analyse HTML natives. Certains éléments HTML, tels que `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions sur les éléments qui peuvent apparaître à l'intérieur, et certains éléments tels que `<li>`, `<tr>` et `<option>` ne peuvent apparaître qu'à l'intérieur de certains autres éléments.
 
-### 2.x Syntax
+### Syntaxe 2.x
 
-In Vue 2 we recommended working around with these restrictions by using the `is` prop on a native tag:
+Dans Vue 2, nous avons recommandé de contourner ces restrictions en utilisant la prop `is` sur une balise native :
 
 ```html
 <table>
@@ -111,9 +111,9 @@ In Vue 2 we recommended working around with these restrictions by using the `is`
 </table>
 ```
 
-### 3.x Syntax
+### Syntaxe 3.x
 
-With the behavior change of `is`, we introduce a new directive `v-is` for working around these cases:
+Avec le changement de comportement de `is`, nous introduisons une nouvelle directive `v-is` pour contourner ces cas :
 
 ```html
 <table>
@@ -122,10 +122,10 @@ With the behavior change of `is`, we introduce a new directive `v-is` for workin
 ```
 
 :::warning
-`v-is` functions like a dynamic 2.x `:is` binding - so to render a component by its registered name, its value should be a JavaScript string literal:
+`v-is` fonctionne comme une liaison `:is` dynamique 2.x - ainsi pour rendre un composant par son nom enregistré, sa valeur doit être une chaîne littérale JavaScript :
 
 ```html
-<!-- Incorrect, nothing will be rendered -->
+<!-- Incorrect, rien ne sera rendu -->
 <tr v-is="blog-post-row"></tr>
 
 <!-- Correct -->
@@ -134,8 +134,8 @@ With the behavior change of `is`, we introduce a new directive `v-is` for workin
 
 :::
 
-## Migration Strategy
+## Stratégie de migration
 
-- Replace `config.ignoredElements` with either `vue-loader`'s `compilerOptions` (with the build step) or `app.config.isCustomElement` (with on-the-fly template compilation)
+- Remplacer `config.ignoredElements` par soit `compilerOptions` de `vue-loader` (avec l'étape de construction) ou `app.config.isCustomElement` (avec la compilation des templates à la volée)
 
-- Change all non-`<component>` tags with `is` usage to `<component is="...">` (for SFC templates) or `v-is` (for in-DOM templates).
+- Changez toutes les balises non-`<component>` avec l'utilisation de `is` en `<component is="...">` (pour les modèles SFC) ou `v-is` (pour les modèles in-DOM).

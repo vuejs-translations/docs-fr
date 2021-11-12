@@ -1,12 +1,12 @@
 # Change Detection Caveats in Vue 2
 
-> This page applies only to Vue 2.x and below, and assumes you've already read the [Reactivity Section](reactivity.md). Please read that section first.
+> Cette page ne s'applique qu'à Vue 2.x et aux versions ultérieures, et suppose que vous avez déjà lu la [Section Reactivity](reactivity.md). Veuillez lire cette section en premier.
 
-Due to limitations in JavaScript, there are types of changes that Vue **cannot detect**. However, there are ways to circumvent them to preserve reactivity.
+En raison des limitations de JavaScript, il existe des types de modifications que Vue **ne peut pas détecter**. Cependant, il existe des moyens de les contourner pour préserver la réactivité.
 
-### For Objects
+#### Pour les objets
 
-Vue cannot detect property addition or deletion. Since Vue performs the getter/setter conversion process during instance initialization, a property must be present in the `data` object in order for Vue to convert it and make it reactive. For example:
+Vue ne peut pas détecter l'ajout ou la suppression de propriétés. Puisque Vue effectue le processus de conversion getter/setter pendant l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` pour que Vue la convertisse et la rende réactive. Par exemple :
 
 ```js
 var vm = new Vue({
@@ -14,39 +14,39 @@ var vm = new Vue({
     a: 1
   }
 })
-// `vm.a` is now reactive
+// `vm.a` est maintenant réactif
 
 vm.b = 2
-// `vm.b` is NOT reactive
+// `vm.b` n'est PAS réactif
 ```
 
-Vue does not allow dynamically adding new root-level reactive properties to an already created instance. However, it's possible to add reactive properties to a nested object using the `Vue.set(object, propertyName, value)` method:
+Vue ne permet pas d'ajouter dynamiquement de nouvelles propriétés réactives de niveau racine à une instance déjà créée. Cependant, il est possible d'ajouter des propriétés réactives à un objet imbriqué en utilisant la méthode `Vue.set(object, propertyName, value)` :
 
 ```js
 Vue.set(vm.someObject, 'b', 2)
 ```
 
-You can also use the `vm.$set` instance method, which is an alias to the global `Vue.set`:
+Vous pouvez également utiliser la méthode d'instance `vm.$set`, qui est un alias de la méthode globale `Vue.set` :
 
 ```js
 this.$set(this.someObject, 'b', 2)
 ```
 
-Sometimes you may want to assign a number of properties to an existing object, for example using `Object.assign()` or `_.extend()`. However, new properties added to the object will not trigger changes. In such cases, create a fresh object with properties from both the original object and the mixin object:
+Parfois, vous pouvez vouloir attribuer un certain nombre de propriétés à un objet existant, par exemple en utilisant `Object.assign()` ou `_.extend()`. Cependant, les nouvelles propriétés ajoutées à l'objet ne déclencheront pas de modifications. Dans ce cas, créez un nouvel objet avec les propriétés de l'objet original et de l'objet mixin :
 
 ```js
-// instead of `Object.assign(this.someObject, { a: 1, b: 2 })`
+// au lieu de `Object.assign(this.someObject, { a : 1, b : 2 })`.
 this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
 ```
 
-### For Arrays
+#### Pour les tableaux
 
-Vue cannot detect the following changes to an array:
+Vue ne peut pas détecter les changements suivants dans un tableau :
 
-1. When you directly set an item with the index, e.g. `vm.items[indexOfItem] = newValue`
-2. When you modify the length of the array, e.g. `vm.items.length = newLength`
+1. Lorsque vous définissez directement un élément avec l'index, par exemple `vm.items[indexOfItem] = newValue`.
+2. Lorsque vous modifiez la longueur du tableau, par exemple `vm.items.length = newLength`.
 
-For example:
+Par exemple :
 
 ```js
 var vm = new Vue({
@@ -54,11 +54,11 @@ var vm = new Vue({
     items: ['a', 'b', 'c']
   }
 })
-vm.items[1] = 'x' // is NOT reactive
-vm.items.length = 2 // is NOT reactive
+vm.items[1] = 'x' // n'est PAS réactif
+vm.items.length = 2 // n'est PAS réactif
 ```
 
-To overcome caveat 1, both of the following will accomplish the same as `vm.items[indexOfItem] = newValue`, but will also trigger state updates in the reactivity system:
+Pour surmonter l'obstacle 1, les deux actions suivantes accompliront la même chose que `vm.items[indexOfItem] = newValue`, mais déclencheront également des mises à jour d'état dans le système de réactivité :
 
 ```js
 // Vue.set
@@ -70,7 +70,7 @@ Vue.set(vm.items, indexOfItem, newValue)
 vm.items.splice(indexOfItem, 1, newValue)
 ```
 
-You can also use the [`vm.$set`](https://vuejs.org/v2/api/#vm-set) instance method, which is an alias for the global `Vue.set`:
+Vous pouvez également utiliser la méthode d'instance [`vm.$set`](https://vuejs.org/v2/api/#vm-set), qui est un alias de la méthode globale `Vue.set` :
 
 ```js
 vm.$set(vm.items, indexOfItem, newValue)
@@ -82,14 +82,14 @@ To deal with caveat 2, you can use `splice`:
 vm.items.splice(newLength)
 ```
 
-## Declaring Reactive Properties
+## Déclarer les propriétés réactives
 
-Since Vue doesn't allow dynamically adding root-level reactive properties, you have to initialize component instances by declaring all root-level reactive data properties upfront, even with an empty value:
+Puisque Vue ne permet pas d'ajouter dynamiquement des propriétés réactives de niveau racine, vous devez initialiser les instances de composants en déclarant toutes les propriétés de données réactives de niveau racine, même avec une valeur vide :
 
 ```js
 var vm = new Vue({
   data: {
-    // declare message with an empty value
+    // déclarer le message avec une valeur vide
     message: ''
   },
   template: '<div>{{ message }}</div>'
@@ -98,15 +98,15 @@ var vm = new Vue({
 vm.message = 'Hello!'
 ```
 
-If you don't declare `message` in the data option, Vue will warn you that the render function is trying to access a property that doesn't exist.
+Si vous ne déclarez pas `message` dans l'option de données, Vue vous avertira que la fonction de rendu tente d'accéder à une propriété qui n'existe pas.
 
-There are technical reasons behind this restriction - it eliminates a class of edge cases in the dependency tracking system, and also makes component instances play nicer with type checking systems. But there is also an important consideration in terms of code maintainability: the `data` object is like the schema for your component's state. Declaring all reactive properties upfront makes the component code easier to understand when revisited later or read by another developer.
+Il y a des raisons techniques derrière cette restriction - elle élimine une classe de cas limites dans le système de suivi des dépendances, et permet également aux instances de composants de mieux s'adapter aux systèmes de vérification de type. Mais il y a aussi une considération importante en termes de maintenabilité du code : l'objet `data` est comme le schéma de l'état de votre composant. Déclarer toutes les propriétés réactives en amont rend le code du composant plus facile à comprendre lorsqu'il est revu plus tard ou lu par un autre développeur.
 
-## Async Update Queue
+## Queue de mise à jour asynchrone
 
-In case you haven't noticed yet, Vue performs DOM updates **asynchronously**. Whenever a data change is observed, it will open a queue and buffer all the data changes that happen in the same event loop. If the same watcher is triggered multiple times, it will be pushed into the queue only once. This buffered de-duplication is important in avoiding unnecessary calculations and DOM manipulations. Then, in the next event loop "tick", Vue flushes the queue and performs the actual (already de-duped) work. Internally Vue tries native `Promise.then`, `MutationObserver`, and `setImmediate` for the asynchronous queuing and falls back to `setTimeout(fn, 0)`.
+Au cas où vous ne l'auriez pas encore remarqué, Vue effectue les mises à jour du DOM de manière **asynchrone**. Chaque fois qu'un changement de données est observé, il ouvrira une file d'attente et mettra en mémoire tampon tous les changements de données qui se produisent dans la même boucle d'événement. Si le même observateur est déclenché plusieurs fois, il ne sera poussé dans la file d'attente qu'une seule fois. Ce dédoublement en mémoire tampon est important pour éviter les calculs inutiles et les manipulations du DOM. Ensuite, au prochain "tick" de la boucle d'événement, Vue vide la file d'attente et effectue le travail réel (déjà dé-dupliqué). En interne, Vue essaie les natifs `Promise.then`, `MutationObserver`, et `setImmediate` pour la mise en file d'attente asynchrone et se rabat sur `setTimeout(fn, 0)`.
 
-For example, when you set `vm.someData = 'new value'`, the component will not re-render immediately. It will update in the next "tick", when the queue is flushed. Most of the time we don't need to care about this, but it can be tricky when you want to do something that depends on the post-update DOM state. Although Vue.js generally encourages developers to think in a "data-driven" fashion and avoid touching the DOM directly, sometimes it might be necessary to get your hands dirty. In order to wait until Vue.js has finished updating the DOM after a data change, you can use `Vue.nextTick(callback)` immediately after the data is changed. The callback will be called after the DOM has been updated. For example:
+Par exemple, lorsque vous définissez `vm.someData = 'nouvelle valeur'`, le composant ne sera pas rendu immédiatement. Il sera mis à jour au prochain "tick", lorsque la file d'attente sera vidée. La plupart du temps, nous n'avons pas besoin de nous en préoccuper, mais cela peut être délicat lorsque vous voulez faire quelque chose qui dépend de l'état du DOM après la mise à jour. Bien que Vue.js encourage généralement les développeurs à penser de manière "orientée données" et à éviter de toucher directement le DOM, il est parfois nécessaire de se salir les mains. Afin d'attendre que Vue.js ait fini de mettre à jour le DOM après un changement de données, vous pouvez utiliser `Vue.nextTick(callback)` immédiatement après la modification des données. Le callback sera appelé après que le DOM ait été mis à jour. Par exemple :
 
 ```html
 <div id="example">{{ message }}</div>
@@ -119,14 +119,14 @@ var vm = new Vue({
     message: '123'
   }
 })
-vm.message = 'new message' // change data
-vm.$el.textContent === 'new message' // false
+vm.message = 'new message' // modifier les données
+vm.$el.textContent === 'new message' // faux
 Vue.nextTick(function() {
-  vm.$el.textContent === 'new message' // true
+  vm.$el.textContent === 'new message' // vrai
 })
 ```
 
-There is also the `vm.$nextTick()` instance method, which is especially handy inside components, because it doesn't need global `Vue` and its callback's `this` context will be automatically bound to the current component instance:
+Il y a aussi la méthode d'instance `vm.$nextTick()`, qui est particulièrement pratique à l'intérieur des composants, car elle n'a pas besoin de `Vue` global et le contexte `this` de son callback sera automatiquement lié à l'instance courante du composant :
 
 ```js
 Vue.component('example', {
@@ -148,7 +148,7 @@ Vue.component('example', {
 })
 ```
 
-Since `$nextTick()` returns a promise, you can achieve the same as the above using the new [ES2017 async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) syntax:
+Puisque `$nextTick()` renvoie une promesse, vous pouvez réaliser la même chose que ci-dessus en utilisant la nouvelle syntaxe [ES2017 async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) :
 
 ```js
   methods: {

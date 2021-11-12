@@ -1,12 +1,12 @@
-# Routing
+## Routage
 
-## Official Router
+## Routeur officiel
 
-For most Single Page Applications, it's recommended to use the officially-supported [vue-router library](https://github.com/vuejs/vue-router). For more details, see vue-router's [documentation](https://next.router.vuejs.org/).
+Pour la plupart des applications à page unique, il est recommandé d'utiliser la [bibliothèque vue-router](https://github.com/vuejs/vue-router) officiellement supportée. Pour plus de détails, consultez la [documentation](https://next.router.vuejs.org/) de vue-router.
 
-## Simple Routing from Scratch
+## Routage simple à partir de zéro
 
-If you only need very simple routing and do not wish to involve a full-featured router library, you can do so by dynamically rendering a page-level component like this:
+Si vous n'avez besoin que d'un routage très simple et que vous ne souhaitez pas utiliser une bibliothèque de routeurs complète, vous pouvez le faire en rendant dynamiquement un composant de niveau page comme ceci :
 
 ```js
 const { createApp, h } = Vue
@@ -39,8 +39,8 @@ const SimpleRouter = {
 createApp(SimpleRouter).mount('#app')
 ```
 
-Combined with the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API), you can build a very basic but fully-functional client-side router. To see that in practice, check out [this example app](https://github.com/phanan/vue-3.0-simple-routing-example).
+Combiné à l'[API d'historique](https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API), vous pouvez construire un routeur côté client très basique mais entièrement fonctionnel. Pour voir cela en pratique, consultez [cette application d'exemple](https://github.com/phanan/vue-3.0-simple-routing-example).
 
-## Integrating 3rd-Party Routers
+## Intégration de routeurs tiers
 
-If there's a 3rd-party router you prefer to use, such as [Page.js](https://github.com/visionmedia/page.js) or [Director](https://github.com/flatiron/director), integration is [similarly straightforward](https://github.com/phanan/vue-3.0-simple-routing-example/compare/master...pagejs). Here's a [complete example](https://github.com/phanan/vue-3.0-simple-routing-example/tree/pagejs) using Page.js.
+Si vous préférez utiliser un routeur tiers, tel que [Page.js](https://github.com/visionmedia/page.js) ou [Director](https://github.com/flatiron/director), l'intégration est [tout aussi simple](https://github.com/phanan/vue-3.0-simple-routing-example/compare/master...pagejs). Voici un [exemple complet] (https://github.com/phanan/vue-3.0-simple-routing-example/tree/pagejs) utilisant Page.js.

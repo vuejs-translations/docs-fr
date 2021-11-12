@@ -2,9 +2,9 @@
 
 > [Vue CLI](https://cli.vuejs.org) provides built-in TypeScript tooling support.
 
-## Official Declaration in NPM Packages
+## Déclaration officielle dans les paquets NPM
 
-A static type system can help prevent many potential runtime errors as applications grow, which is why Vue 3 is written in TypeScript. This means you don't need any additional tooling to use TypeScript with Vue - it has first-class citizen support.
+Un système de types statiques peut aider à prévenir de nombreuses erreurs d'exécution potentielles au fur et à mesure que les applications se développent, c'est pourquoi Vue 3 est écrit en TypeScript. Cela signifie que vous n'avez pas besoin d'outils supplémentaires pour utiliser TypeScript avec Vue - il bénéficie d'un support citoyen de première classe.
 
 ## Recommended Configuration
 
@@ -22,13 +22,13 @@ A static type system can help prevent many potential runtime errors as applicati
 }
 ```
 
-Note that you have to include `strict: true` (or at least `noImplicitThis: true` which is a part of `strict` flag) to leverage type checking of `this` in component methods otherwise it is always treated as `any` type.
+Notez que vous devez inclure `strict : true` (ou au moins `noImplicitThis : true` qui est une partie du drapeau `strict`) pour tirer parti de la vérification du type de `this` dans les méthodes des composants, sinon il est toujours traité comme un type `any`.
 
-See [TypeScript compiler options docs](https://www.typescriptlang.org/docs/handbook/compiler-options.html) for more details.
+Voir [TypeScript compiler options docs](https://www.typescriptlang.org/docs/handbook/compiler-options.html) pour plus de détails.
 
-## Webpack Configuration
+## Configuration de Webpack
 
-If you are using a custom Webpack configuration `ts-loader` needs to be configured to parse `<script lang="ts">` blocks in `.vue` files:
+Si vous utilisez une configuration Webpack personnalisée, `ts-loader` doit être configuré pour analyser les blocs `<script lang="ts">` dans les fichiers `.vue` :
 
 ```js{10}
 // webpack.config.js
@@ -51,24 +51,24 @@ module.exports = {
       ...
 ```
 
-## Development Tooling
+## Outil de développement
 
-### Project Creation
+### Création de projets
 
-[Vue CLI](https://github.com/vuejs/vue-cli) can generate new projects that use TypeScript. To get started:
+[Vue CLI](https://github.com/vuejs/vue-cli) peut générer de nouveaux projets qui utilisent TypeScript. Pour commencer :
 
 ```bash
-# 1. Install Vue CLI, if it's not already installed
+# 1. Installez Vue CLI, s'il n'est pas déjà installé.
 npm install --global @vue/cli
 
-# 2. Create a new project, then choose the "Manually select features" option
+# 2. Créez un nouveau projet, puis choisissez l'option "Sélectionner manuellement les caractéristiques".
 vue create my-project-name
 
-# If you already have a Vue CLI project without TypeScript, please add a proper Vue CLI plugin:
+# Si vous avez déjà un projet Vue CLI sans TypeScript, veuillez ajouter un plugin Vue CLI approprié :
 vue add typescript
 ```
 
-Make sure that `script` part of the component has TypeScript set as a language:
+Assurez-vous que la partie `script` du composant a TypeScript comme langage :
 
 ```html
 <script lang="ts">
@@ -76,27 +76,27 @@ Make sure that `script` part of the component has TypeScript set as a language:
 </script>
 ```
 
-### Editor Support
+### Support de l'éditeur
 
-For developing Vue applications with TypeScript, we strongly recommend using [Visual Studio Code](https://code.visualstudio.com/), which provides great out-of-the-box support for TypeScript. If you are using [single-file components](./single-file-component.html) (SFCs), get the awesome [Vetur extension](https://github.com/vuejs/vetur), which provides TypeScript inference inside SFCs and many other great features.
+Pour le développement d'applications Vue avec TypeScript, nous vous recommandons vivement d'utiliser [Visual Studio Code](https://code.visualstudio.com/), qui offre une excellente prise en charge immédiate de TypeScript. Si vous utilisez des [single-file components](./single-file-component.html) (SFCs), procurez-vous l'impressionnante [extension Vetur](https://github.com/vuejs/vetur), qui fournit l'inférence TypeScript dans les SFCs et bien d'autres fonctionnalités.
 
-[WebStorm](https://www.jetbrains.com/webstorm/) also provides out-of-the-box support for both TypeScript and Vue.
+[WebStorm](https://www.jetbrains.com/webstorm/) fournit également un support prêt à l'emploi pour TypeScript et Vue.
 
-## Defining Vue components
+## Définir les composants Vue
 
-To let TypeScript properly infer types inside Vue component options, you need to define components with `defineComponent` global method:
+Pour permettre à TypeScript de déduire correctement les types dans les options des composants Vue, vous devez définir les composants avec la méthode globale `defineComponent` :
 
 ```ts
 import { defineComponent } from 'vue'
 
 const Component = defineComponent({
-  // type inference enabled
+  // inférence de type activée
 })
 ```
 
-## Using with Options API
+### Utilisation avec l'API Options
 
-TypeScript should be able to infer most of the types without defining types explicitly. For example, if you have a component with a number `count` property, you will have an error if you try to call a string-specific method on it:
+TypeScript devrait être capable de déduire la plupart des types sans avoir à les définir explicitement. Par exemple, si vous avez un composant avec une propriété numérique `count`, vous aurez une erreur si vous essayez d'appeler une méthode spécifique aux chaînes de caractères sur celui-ci :
 
 ```ts
 const Component = defineComponent({
@@ -106,12 +106,12 @@ const Component = defineComponent({
     }
   },
   mounted() {
-    const result = this.count.split('') // => Property 'split' does not exist on type 'number'
+    const result = this.count.split('') // => La propriété 'split' n'existe pas sur le type 'number'.
   }
 })
 ```
 
-If you have a complex type or interface, you can cast it using [type assertion](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions):
+Si vous disposez d'un type ou d'une interface complexe, vous pouvez le caster en utilisant [type assertion](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions) :
 
 ```ts
 interface Book {
@@ -133,9 +133,9 @@ const Component = defineComponent({
 })
 ```
 
-### Annotating Return Types
+### Annotation des types de retour
 
-Because of the circular nature of Vue’s declaration files, TypeScript may have difficulties inferring the types of computed. For this reason, you may need to annotate the return type of computed properties.
+En raison de la nature circulaire des fichiers de déclaration de Vue, TypeScript peut avoir des difficultés à déduire les types de propriétés calculées. Pour cette raison, vous pouvez avoir besoin d'annoter le type de retour des propriétés calculées.
 
 ```ts
 import { defineComponent } from 'vue'
@@ -147,12 +147,12 @@ const Component = defineComponent({
     }
   },
   computed: {
-    // needs an annotation
+    // a besoin d'une annotation
     greeting(): string {
       return this.message + '!'
     }
 
-    // in a computed with a setter, getter needs to be annotated
+    // dans un compute avec un setter, le getter doit être annoté
     greetingUppercased: {
       get(): string {
         return this.greeting.toUpperCase();
@@ -165,9 +165,9 @@ const Component = defineComponent({
 })
 ```
 
-### Annotating Props
+### Annoter les props
 
-Vue does a runtime validation on props with a `type` defined. To provide these types to TypeScript, we need to cast the constructor with `PropType`:
+Vue fait une validation à l'exécution sur les props avec un `type` défini. Pour fournir ces types à TypeScript, nous devons caster le constructeur avec `PropType` :
 
 ```ts
 import { defineComponent, PropType } from 'vue'
@@ -194,8 +194,7 @@ const Component = defineComponent({
 ```
 
 ::: warning
-Because of a [design limitation](https://github.com/microsoft/TypeScript/issues/38845) in TypeScript when it comes
-to type inference of function expressions, you have to be careful with `validators` and `default` values for objects and arrays:
+En raison d'une [limitation de conception] (https://github.com/microsoft/TypeScript/issues/38845) dans TypeScript lorsqu'il s'agit de l'inférence de type des expressions de fonction, vous devez faire attention aux valeurs `validators` et `default` pour les objets et les tableaux :
 :::
 
 ```ts
@@ -210,7 +209,7 @@ const Component = defineComponent({
   props: {
     bookA: {
       type: Object as PropType<Book>,
-      // Make sure to use arrow functions
+      // Assurez-vous d'utiliser les fonctions de flèche
       default: () => ({
         title: 'Arrow Function Expression'
       }),
@@ -218,7 +217,7 @@ const Component = defineComponent({
     },
     bookB: {
       type: Object as PropType<Book>,
-      // Or provide an explicit this parameter
+      // Ou fournir un paramètre this explicite
       default(this: void) {
         return {
           title: 'Function Expression'
@@ -232,33 +231,34 @@ const Component = defineComponent({
 })
 ```
 
-### Annotating emits
+### Annoter les émetteurs
 
-We can annotate a payload for the emitted event. Also, all non-declared emitted events will throw a type error when called:
+Nous pouvons annoter une charge utile pour l'événement émis. De plus, tous les événements émis non déclarés produiront une erreur de type lorsqu'ils seront appelés :
 
 ```ts
 const Component = defineComponent({
   emits: {
     addBook(payload: { bookName: string }) {
-      // perform runtime validation
+      // perform runtime validation      // effectuer la validation de l'exécution
+
       return payload.bookName.length > 0
     }
   },
   methods: {
     onSubmit() {
       this.$emit('addBook', {
-        bookName: 123 // Type error!
+        bookName: 123 // Erreur de type !
       })
 
-      this.$emit('non-declared-event') // Type error!
+      this.$emit('non-declared-event') // Erreur de type !
     }
   }
 })
 ```
 
-## Using with Composition API
+## Utilisation avec l'API de composition
 
-On `setup()` function, you don't need to pass a typing to `props` parameter as it will infer types from `props` component option.
+Dans la fonction `setup()`, vous n'avez pas besoin de passer un type au paramètre `props` car il déduira les types de l'option du composant `props`.
 
 ```ts
 import { defineComponent } from 'vue'
@@ -272,15 +272,15 @@ const Component = defineComponent({
   },
 
   setup(props) {
-    const result = props.message.split('') // correct, 'message' is typed as a string
-    const filtered = props.message.filter(p => p.value) // an error will be thrown: Property 'filter' does not exist on type 'string'
+    const result = props.message.split('') // correct, 'message' est tapé comme une chaîne de caractères.
+    const filtered = props.message.filter(p => p.value) // une erreur sera déclenchée : La propriété 'filter' n'existe pas sur le type 'string'.
   }
 })
 ```
 
-### Typing `refs`
+### Typage des `refs'.
 
-Refs infer the type from the initial value:
+Les références déduisent le type à partir de la valeur initiale :
 
 ```ts
 import { defineComponent, ref } from 'vue'
@@ -289,26 +289,26 @@ const Component = defineComponent({
   setup() {
     const year = ref(2020)
 
-    const result = year.value.split('') // => Property 'split' does not exist on type 'number'
+    const result = year.value.split('') // => La propriété 'split' n'existe pas sur le type 'number'.
   }
 })
 ```
 
-Sometimes we may need to specify complex types for a ref's inner value. We can do that by simply passing a generic argument when calling ref to override the default inference:
+Parfois, nous pouvons avoir besoin de spécifier des types complexes pour la valeur interne d'un ref. Pour ce faire, il suffit de passer un argument générique lors de l'appel de ref pour remplacer l'inférence par défaut :
 
 ```ts
-const year = ref<string | number>('2020') // year's type: Ref<string | number>
+const year = ref<string | number>('2020') // le type de l'année: Ref<string | number>
 
 year.value = 2020 // ok!
 ```
 
 ::: tip Note
-If the type of the generic is unknown, it's recommended to cast `ref` to `Ref<T>`.
+Si le type du générique est inconnu, il est recommandé de convertir `ref` en `Ref<T>`.
 :::
 
-### Typing `reactive`
+### Typing `reactive` (typage)
 
-When typing a `reactive` property, we can use interfaces:
+Lorsque l'on tape une propriété `reactive`, on peut utiliser des interfaces :
 
 ```ts
 import { defineComponent, reactive } from 'vue'
@@ -330,9 +330,9 @@ export default defineComponent({
 })
 ```
 
-### Typing `computed`
+### Typage de `computed`.
 
-Computed values will automatically infer the type from returned value
+Les valeurs calculées déduiront automatiquement le type de la valeur retournée.
 
 ```ts
 import { defineComponent, ref, computed } from 'vue'
@@ -342,10 +342,10 @@ export default defineComponent({
   setup() {
     let count = ref(0)
 
-    // read-only
+    // en lecture seule
     const doubleCount = computed(() => count.value * 2)
 
-    const result = doubleCount.value.split('') // => Property 'split' does not exist on type 'number'
+    const result = doubleCount.value.split('') // => La propriété 'split' n'existe pas sur le type 'number'.
   }
 })
 ```

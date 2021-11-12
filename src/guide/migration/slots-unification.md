@@ -3,22 +3,22 @@ badges:
   - breaking
 ---
 
-# Slots Unification <MigrationBadges :badges="$frontmatter.badges" />
+## Unification des slots <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-This change unifies normal and scoped slots in 3.x.
+Cette modification unifie les slots normaux et les slots scopés dans la version 3.x.
 
-Here is a quick summary of what has changed:
+Voici un résumé rapide de ce qui a changé :
 
-- `this.$slots` now exposes slots as functions
-- **BREAKING**: `this.$scopedSlots` is removed
+- `this.$slots` expose maintenant les slots comme des fonctions.
+- **BREAKING** : `this.$scopedSlots` est supprimé.
 
-For more information, read on!
+Pour plus d'informations, lisez la suite !
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-When using the render function, i.e., `h`, 2.x used to define the `slot` data property on the content nodes.
+Lors de l'utilisation de la fonction de rendu, c'est-à-dire `h`, 2.x avait l'habitude de définir la propriété de données `slot` sur les noeuds de contenu.
 
 ```js
 // 2.x Syntax
@@ -28,16 +28,16 @@ h(LayoutComponent, [
 ])
 ```
 
-In addition, when referencing scoped slots, they could be referenced using the following syntax:
+En outre, lorsque l'on fait référence à des créneaux scopés, on peut les référencer en utilisant la syntaxe suivante :
 
 ```js
 // 2.x Syntax
 this.$scopedSlots.header
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In 3.x, slots are defined as children of the current node as an object:
+En 3.x, les slots sont définis comme des enfants du noeud courant en tant qu'objet :
 
 ```js
 // 3.x Syntax
@@ -47,7 +47,7 @@ h(LayoutComponent, {}, {
 })
 ```
 
-And when you need to reference scoped slots programmatically, they are now unified into the `$slots` option.
+Et lorsque vous avez besoin de référencer les slots de manière programmatique, ils sont maintenant unifiés dans l'option `$slots`.
 
 ```js
 // 2.x Syntax
@@ -57,9 +57,9 @@ this.$scopedSlots.header
 this.$slots.header()
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-A majority of the change has already been shipped in 2.6. As a result, the migration can happen in one step:
+La majorité des changements ont déjà été livrés en 2.6. Par conséquent, la migration peut se faire en une seule étape :
 
-1. Replace all `this.$scopedSlots` occurrences with `this.$slots` in 3.x.
-2. Replace all occurrences of `this.$slots.mySlot` with `this.$slots.mySlot()`
+1. Remplacer toutes les occurrences de `this.$scopedSlots` par `this.$slots` en 3.x.
+2. Remplacez toutes les occurrences de `this.$slots.mySlot` par `this.$slots.mySlot()`.

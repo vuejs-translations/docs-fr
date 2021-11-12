@@ -1,13 +1,13 @@
 # Introduction
 
 ::: info
-New to Vue.js? Check out our [Essentials Guide](/guide/introduction.html) to get started.
+Vous ne connaissez pas Vue.js ? Consultez notre [Guide des fondamentaux] (/guide/introduction.html) pour commencer.
 :::
 
-This guide is primarily for users with prior Vue 2 experience who want to learn about the new features and changes in Vue 3. **This is not something you have to read from top to bottom before trying out Vue 3.** While it looks like a lot has changed, a lot of what you know and love about Vue is still the same; but we wanted to be as thorough as possible and provide detailed explanations and examples for every documented change.
+Ce guide s'adresse principalement aux utilisateurs ayant déjà une expérience de Vue 2 et qui souhaitent se familiariser avec les nouvelles fonctionnalités et les changements de Vue 3. **Il ne s'agit pas d'un document que vous devez lire de bout en bout avant d'essayer Vue 3.** Bien qu'il semble que beaucoup de choses aient changé, une grande partie de ce que vous connaissez et aimez de Vue est toujours la même ; mais nous avons voulu être aussi minutieux que possible et fournir des explications détaillées et des exemples pour chaque changement documenté.
 
-- [Quickstart](#quickstart)
-- [Notable New Features](#notable-new-features)
+- [Démarrage rapide](#quickstart)
+- [Nouvelles fonctionnalités notables](#notable-new-features)
 - [Breaking Changes](#breaking-changes)
 - [Supporting Libraries](#supporting-libraries)
 
@@ -16,14 +16,14 @@ This guide is primarily for users with prior Vue 2 experience who want to learn 
 <br>
 <iframe src="https://player.vimeo.com/video/440868720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-Start learning Vue 3 at [Vue Mastery](https://www.vuemastery.com/courses-path/vue3).
+Commencez à apprendre Vue 3 à [Vue Mastery] (https://www.vuemastery.com/courses-path/vue3).
 
-## Quickstart
+## Démarrage rapide
 
-- Via CDN: `<script src="https://unpkg.com/vue@next"></script>`
-- In-browser playground on [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
-- In-browser Sandbox on [CodeSandbox](https://v3.vue.new)
-- Scaffold via [Vite](https://github.com/vitejs/vite):
+- Via CDN : `<script src="https://unpkg.com/vue@next"></script>`
+- Terrain de jeu dans le navigateur sur [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
+- Sandbox dans le navigateur sur [CodeSandbox] (https://v3.vue.new)
+- Échafaudage via [Vite](https://github.com/vitejs/vite) :
 
   ```bash
   npm init vite-app hello-vue3 # OR yarn create vite-app hello-vue3
@@ -37,14 +37,14 @@ Start learning Vue 3 at [Vue Mastery](https://www.vuemastery.com/courses-path/vu
   # select vue 3 preset
   ```
 
-## Notable New Features
+## Nouvelles fonctionnalités notables
 
-Some of the new features to keep an eye on in Vue 3 include:
+Voici quelques-unes des nouvelles fonctionnalités à surveiller dans Vue 3 :
 
 - [Composition API](/guide/composition-api-introduction.html)
 - [Teleport](/guide/teleport.html)
 - [Fragments](/guide/migration/fragments.html)
-- [Emits Component Option](/guide/component-custom-events.html)
+- [Option d'émission de composants](/guide/component-custom-events.html)
 - [`createRenderer` API from `@vue/runtime-core`](https://github.com/vuejs/vue-next/tree/master/packages/runtime-core) to create custom renderers
 - [SFC Composition API Syntax Sugar (`<script setup>`)](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md) <Badge text="experimental" type="warning" />
 - [SFC State-driven CSS Variables (`<style vars>`)](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md) <Badge text="experimental" type="warning" />
@@ -53,77 +53,77 @@ Some of the new features to keep an eye on in Vue 3 include:
 ## Breaking Changes
 
 ::: info INFO
-We are still working on a dedicated Migration Build of Vue 3 with Vue 2 compatible behavior and runtime warnings of incompatible usage. If you are planning to migrate a non-trivial Vue 2 app, we strongly recommend waiting for the Migration Build for a smoother experience.
+Nous travaillons toujours sur une version de migration dédiée de Vue 3 avec un comportement compatible avec Vue 2 et des avertissements d'utilisation incompatible. Si vous envisagez de migrer une application Vue 2 non triviale, nous vous recommandons fortement d'attendre la Migration Build pour une expérience plus fluide.
 :::
 
-The following consists a list of breaking changes from 2.x:
+Ce qui suit consiste en une liste de changements de rupture par rapport à la version 2.x :
 
-### Global API
+### API globale
 
-- [Global Vue API is changed to use an application instance](/guide/migration/global-api.html)
-- [Global and internal APIs have been restructured to be tree-shakable](/guide/migration/global-api-treeshaking.html)
+- [L'API Vue globale a été modifiée pour utiliser une instance d'application](/guide/migration/global-api.html)
+- [Les API globales et internes ont été restructurées afin d'être modifiables par arborescence](/guide/migration/global-api-treeshaking.html)
 
-### Template Directives
+### Directives pour les templates
 
-- [`v-model` usage on components has been reworked, replacing `v-bind.sync`](/guide/migration/v-model.html)
-- [`key` usage on `<template v-for>` and non-`v-for` nodes has changed](/guide/migration/key-attribute.html)
-- [`v-if` and `v-for` precedence when used on the same element has changed](/guide/migration/v-if-v-for.html)
-- [`v-bind="object"` is now order-sensitive](/guide/migration/v-bind.html)
-- [`v-on:event.native` modifier has been removed](./v-on-native-modifier-removed.md)
-- [`ref` inside `v-for` no longer register an array of refs](/guide/migration/array-refs.html)
+- [L'utilisation de `v-model` sur les composants a été retravaillée, remplaçant `v-bind.sync`](/guide/migration/v-model.html)
+- [L'utilisation de `key` sur les noeuds `<template v-for>` et non-`v-for` a été modifiée](/guide/migration/key-attribute.html)
+- [La préséance de `v-if` et `v-for` lorsqu'ils sont utilisés sur le même élément a été modifiée](/guide/migration/v-if-v-for.html)
+- [`v-bind="object"` est maintenant sensible à l'ordre](/guide/migration/v-bind.html)
+- [Le modificateur `v-on:event.native` a été supprimé](./v-on-native-modifier-removed.md)
+- [`ref` dans `v-for` n'enregistre plus un tableau de refs](/guide/migration/array-refs.html)
 
-### Components
+### Les Composants
 
-- [Functional components can only be created using a plain function](/guide/migration/functional-components.html)
-- [`functional` attribute on single-file component (SFC) `<template>` and `functional` component option are deprecated](/guide/migration/functional-components.html)
-- [Async components now require `defineAsyncComponent` method to be created](/guide/migration/async-components.html)
-- [Component events should now be declared with the `emits` option](./emits-option.md)
+- [Les composants fonctionnels ne peuvent être créés qu'à l'aide d'une fonction simple](/guide/migration/functional-components.html)
+- [L'attribut `functional` du composant à fichier unique (SFC) `<template>` et l'option de composant `functional` sont obsolètes](/guide/migration/functional-components.html)
+- [Les composants asynchrones nécessitent désormais la méthode `defineAsyncComponent` pour être créés](/guide/migration/async-components.html)
+- [Les événements des composants doivent maintenant être déclarés avec l'option `emits`](./emits-option.md)
 
-### Render Function
+### Fonction de rendu
 
-- [Render function API changed](/guide/migration/render-function-api.html)
-- [`$scopedSlots` property is removed and all slots are exposed via `$slots` as functions](/guide/migration/slots-unification.html)
-- [`$listeners` has been removed / merged into `$attrs`](./listeners-removed)
-- [`$attrs` now includes `class` and `style` attributes](./attrs-includes-class-style.md)
+- [L'API de la fonction de rendu a été modifiée](/guide/migration/render-function-api.html)
+- [La propriété `$scopedSlots` est supprimée et tous les slots sont exposés via `$slots` en tant que fonctions](/guide/migration/slots-unification.html)
+- [`$listeners` a été supprimé / fusionné dans `$attrs`](./listeners-removed)
+- [`$attrs` inclut maintenant les attributs `class` et `style`](./attrs-includes-class-style.md)
 
-### Custom Elements
+### Éléments personnalisés
 
-- [Custom elements whitelisting is now performed during template compilation](/guide/migration/custom-elements-interop.html)
-- [Special `is` prop usage is restricted to the reserved `<component>` tag only](/guide/migration/custom-elements-interop.html#customized-built-in-elements)
+- [La mise en liste blanche des éléments personnalisés est maintenant effectuée pendant la compilation du modèle](/guide/migration/custom-elements-interop.html)
+- [L'utilisation de l'accessoire spécial `is` est limitée à la balise réservée `<component>`](/guide/migration/custom-elements-interop.html#customized-built-in-elements)
 
-### Other Minor Changes
+### Autres changements mineurs
 
-- The `destroyed` lifecycle option has been renamed to `unmounted`
-- The `beforeDestroy` lifecycle option has been renamed to `beforeUnmount`
-- [Props `default` factory function no longer has access to `this` context](/guide/migration/props-default-this.html)
-- [Custom directive API changed to align with component lifecycle](/guide/migration/custom-directives.html)
-- [The `data` option should always be declared as a function](/guide/migration/data-option.html)
-- [The `data` option from mixins is now merged shallowly](/guide/migration/data-option.html#mixin-merge-behavior-change)
-- [Attributes coercion strategy changed](/guide/migration/attribute-coercion.html)
-- [Some transition classes got a rename](/guide/migration/transition.html)
-- [`<TransitionGroup>` now renders no wrapper element by default](/guide/migration/transition-group.html)
-- [When watching an array, the callback will only trigger when the array is replaced. If you need to trigger on mutation, the `deep` option must be specified.](/guide/migration/watch.html)
-- `<template>` tags with no special directives (`v-if/else-if/else`, `v-for`, or `v-slot`) are now treated as plain elements and will result in a native `<template>` element instead of rendering its inner content.
-- In Vue 2.x, application root container's `outerHTML` is replaced with root component template (or eventually compiled to a template, if root component has no template/render option). Vue 3.x now uses application container's `innerHTML` instead - this means the container itself is no longer considered part of the template.
+- L'option de cycle de vie `destroyed` a été renommée en `unmounted`.
+- L'option de cycle de vie `beforeDestroy` a été renommée en `beforeUnmount`.
+- [La fonction de fabrique des props `default` n'a plus accès au contexte `this`](/guide/migration/props-default-this.html)
+- [L'API des directives personnalisées a été modifiée pour s'aligner sur le cycle de vie des composants](/guide/migration/custom-directives.html)
+- L'option `data` doit toujours être déclarée comme une fonction](/guide/migration/data-option.html)
+- [L'option `data` des mixins est maintenant fusionnée de manière superficielle](/guide/migration/data-option.html#mixin-merge-behavior-change)
+- [La stratégie de coercition des attributs a été modifiée](/guide/migration/attribute-coercion.html)
+- [Certaines classes de transition ont été renommées](/guide/migration/transition.html)
+- [`<TransitionGroup>` ne rend plus d'élément wrapper par défaut](/guide/migration/transition-group.html)
+- [Lorsque l'on surveille un tableau, la callback ne se déclenche que lorsque le tableau est remplacé. Si vous avez besoin de déclencher une mutation, l'option `deep` doit être spécifiée](/guide/migration/watch.html)
+- Les balises `<template>` sans directives spéciales (`v-if/else-if/else`, `v-for`, ou `v-slot`) sont maintenant traitées comme des éléments ordinaires et donneront lieu à un élément `<template>` natif au lieu de rendre son contenu interne.
+- Dans Vue 2.x, le `outerHTML` du conteneur racine de l'application est remplacé par le modèle du composant racine (ou éventuellement compilé en modèle, si le composant racine n'a pas d'option de modèle/rendu). Vue 3.x utilise maintenant le `innerHTML` du conteneur de l'application à la place - cela signifie que le conteneur lui-même n'est plus considéré comme faisant partie du modèle.
 
-### Removed APIs
+### APIs supprimées
 
-- [`keyCode` support as `v-on` modifiers](/guide/migration/keycode-modifiers.html)
-- [$on, $off and $once instance methods](/guide/migration/events-api.html)
-- [Filters](/guide/migration/filters.html)
-- [Inline templates attributes](/guide/migration/inline-template-attribute.html)
-- [`$children` instance property](/guide/migration/children.md)
-- `$destroy` instance method. Users should no longer manually manage the lifecycle of individual Vue components.
+- [Support du `keyCode` en tant que modificateurs `v-on`](/guide/migration/keycode-modifiers.html)
+- [Méthodes d'instance $on, $off et $once](/guide/migration/events-api.html)
+- [Filtres](/guide/migration/filtres.html)
+- [Attributs des modèles en ligne](/guide/migration/inline-template-attribute.html)
+- [Propriété d'instance `$children`](/guide/migration/children.md)
+- Méthode d'instance `$destroy`. Les utilisateurs ne doivent plus gérer manuellement le cycle de vie des composants Vue individuels.
 
-## Supporting Libraries
+## Bibliothèques supportées
 
-All of our official libraries and tools now support Vue 3, but most of them are still in beta status and distributed under the `next` dist tag on npm. **We are planning to stabilize and switch all projects to use the `latest` dist tag by end of 2020.**
+Toutes nos bibliothèques et tous nos outils officiels prennent désormais en charge Vue 3, mais la plupart d'entre eux sont encore en version bêta et distribués sous la balise `next` dist sur npm. **Nous prévoyons de stabiliser et de basculer tous les projets pour utiliser la balise dist `latest` d'ici la fin de 2020.
 
 ### Vue CLI
 
 <a href="https://www.npmjs.com/package/@vue/cli" target="_blank" noopener noreferrer><img src="https://img.shields.io/npm/v/@vue/cli"></a>
 
-As of v4.5.0, `vue-cli` now provides the built-in option to choose Vue 3 when creating a new project. You can upgrade `vue-cli` and run `vue create` to create a Vue 3 project today.
+Depuis la version 4.5.0, `vue-cli` fournit maintenant l'option intégrée de choisir Vue 3 lors de la création d'un nouveau projet. Vous pouvez mettre à jour `vue-cli` et exécuter `vue create` pour créer un projet Vue 3 dès aujourd'hui.
 
 - [Documentation](https://cli.vuejs.org/)
 - [GitHub](https://github.com/vuejs/vue-cli)
@@ -132,7 +132,7 @@ As of v4.5.0, `vue-cli` now provides the built-in option to choose Vue 3 when cr
 
 <a href="https://www.npmjs.com/package/vue-router/v/next" target="_blank" noopener noreferrer><img src="https://img.shields.io/npm/v/vue-router/next.svg"></a>
 
-Vue Router 4.0 provides Vue 3 support and has a number of breaking changes of its own. Check out its [migration guide](https://next.router.vuejs.org/guide/migration/) for full details.
+Vue Router 4.0 prend en charge Vue 3 et apporte un certain nombre de modifications importantes. Consultez son [guide de migration](https://next.router.vuejs.org/guide/migration/) pour plus de détails.
 
 - [Documentation](https://next.router.vuejs.org/)
 - [GitHub](https://github.com/vuejs/vue-router-next)
@@ -142,24 +142,24 @@ Vue Router 4.0 provides Vue 3 support and has a number of breaking changes of it
 
 <a href="https://www.npmjs.com/package/vuex/v/next" target="_blank" noopener noreferrer><img src="https://img.shields.io/npm/v/vuex/next.svg"></a>
 
-Vuex 4.0 provides Vue 3 support with largely the same API as 3.x. The only breaking change is [how the plugin is installed](https://next.vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#breaking-changes).
+Vuex 4.0 assure la prise en charge de Vue 3 avec une API largement identique à celle de la version 3.x. La seule modification importante concerne [l'installation du plugin](https://next.vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#breaking-changes).
 
 - [Documentation](https://next.vuex.vuejs.org/)
 - [GitHub](https://github.com/vuejs/vuex/tree/4.0)
 
-### Devtools Extension
+### Extension des Devtools
 
-We are working on a new version of the Devtools with a new UI and refactored internals to support multiple Vue versions. The new version is currently in beta and only supports Vue 3 (for now). Vuex and Router integration is also work in progress.
+Nous travaillons sur une nouvelle version des Devtools avec une nouvelle interface utilisateur et des composants internes remaniés pour supporter plusieurs versions de Vue. La nouvelle version est actuellement en bêta et ne supporte que Vue 3 (pour l'instant). L'intégration de Vuex et Router est également en cours.
 
-- For Chrome: [Install from Chrome web store](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en)
+- Pour Chrome : [Installer à partir du magasin Web de Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en)
 
-  - Note: the beta channel may conflict with the stable version of devtools so you may need to temporarily disable the stable version for the beta channel to work properly.
+  - Remarque : le canal bêta peut entrer en conflit avec la version stable de devtools. Vous devrez peut-être désactiver temporairement la version stable pour que le canal bêta fonctionne correctement.
 
-- For Firefox: [Download the signed extension](https://github.com/vuejs/vue-devtools/releases/tag/v6.0.0-beta.2) (`.xpi` file under Assets)
+- Pour Firefox : [Télécharger l'extension signée](https://github.com/vuejs/vue-devtools/releases/tag/v6.0.0-beta.2) (fichier `.xpi` sous Assets)
 
 ### IDE Support
 
-It is recommended to use [VSCode](https://code.visualstudio.com/) with our official extension [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), which provides comprehensive IDE support for Vue 3.
+Il est recommandé d'utiliser [VSCode](https://code.visualstudio.com/) avec notre extension officielle [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), qui fournit un support IDE complet pour Vue 3.
 
 ### Other Projects
 
@@ -198,5 +198,5 @@ It is recommended to use [VSCode](https://code.visualstudio.com/) with our offic
 [rpv-code]: https://github.com/vuejs/rollup-plugin-vue/tree/next
 
 ::: info
-For additional information on Vue 3 compatibility with libraries and plugins, be sure to check out [this issue in awesome-vue](https://github.com/vuejs/awesome-vue/issues/3544).
+Pour plus d'informations sur la compatibilité de Vue 3 avec les bibliothèques et les plugins, consultez [ce problème dans awesome-vue](https://github.com/vuejs/awesome-vue/issues/3544).
 :::
