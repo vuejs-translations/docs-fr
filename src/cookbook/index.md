@@ -37,7 +37,7 @@ Les recettes doivent généralement :
 
 Nous vous demandons de suivre le modèle ci-dessous. Nous comprenons toutefois qu'il est parfois nécessaire de s'en écarter pour des raisons de clarté ou de fluidité. Quoi qu'il en soit, toutes les recettes doivent, à un moment donné, discuter de la nuance du choix effectué à l'aide de ce modèle, de préférence sous la forme d'une section consacrée aux modèles alternatifs.
 
-#### Exemple de base <Badge text="required" type="error" />
+### Exemple de base <Badge text="required" type="error" />
 
 1.  Articulez le problème en une ou deux phrases.
 2.  Expliquez la solution la plus simple possible en une ou deux phrases.
@@ -66,7 +66,7 @@ Il est extrêmement utile d'écrire un peu sur ce modèle, où il pourrait s'app
 
 ### Quand éviter ce modèle <Badge text="optional" />
 
-Cette section n'est pas obligatoire, mais fortement recommandée. Cela n'aura pas de sens de l'écrire pour quelque chose de très simple comme basculer des classes en fonction du changement d'état, mais pour des patterns plus avancés comme les mixins, c'est vital. La réponse à la plupart des questions sur le développement est ["Cela dépend !"] (https://codepen.io/rachsmith/pen/YweZbG), cette section en tient compte. Ici, nous jetterons un regard honnête sur les cas où le pattern est utile et ceux où il doit être évité, ou encore ceux où quelque chose d'autre a plus de sens.
+Cette section n'est pas obligatoire, mais fortement recommandée. Cela n'aura pas de sens de l'écrire pour quelque chose de très simple comme basculer des classes en fonction du changement d'état, mais pour des patterns plus avancés comme les mixins, c'est vital. La réponse à la plupart des questions sur le développement est ["Cela dépend !"](https://codepen.io/rachsmith/pen/YweZbG), cette section en tient compte. Ici, nous jetterons un regard honnête sur les cas où le pattern est utile et ceux où il doit être évité, ou encore ceux où quelque chose d'autre a plus de sens.
 
 ### Alternative Patterns <Badge text="required with avoidance section" type="warning" />
 

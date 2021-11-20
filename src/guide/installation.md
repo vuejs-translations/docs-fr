@@ -4,7 +4,7 @@ Vue.js a été conçu pour être adopté de manière incrémentielle. Cela signi
 
 Il y a trois façons principales d'ajouter Vue.js à un projet :
 
-1. Importez-le en tant que [paquet CDN] (#cdn) sur la page.
+1. Importez-le en tant que [paquet CDN](#cdn) sur la page.
 2. L'installer en utilisant [npm](#npm)
 3. Utilisez la [CLI](#cli) officielle pour échafauder un projet, qui fournit des configurations de construction incluses dans les batteries pour un flux de travail frontal moderne (par exemple, hot-reload, lint-on-save, et bien plus encore).
 
@@ -47,7 +47,7 @@ $ npm install vue@next
 
 ## CLI
 
-Vue fournit une [CLI officielle] (https://github.com/vuejs/vue-cli) pour échafauder rapidement des applications monopages ambitieuses. Il fournit des configurations de construction incluses dans les batteries pour un flux de travail frontal moderne. Il ne faut que quelques minutes pour être opérationnel avec des constructions à chaud (hot-reload), en ligne (lint-on-save) et prêtes pour la production. Consultez [la documentation Vue CLI] (https://cli.vuejs.org) pour plus de détails.
+Vue fournit une [CLI officielle](https://github.com/vuejs/vue-cli) pour échafauder rapidement des applications monopages ambitieuses. Il fournit des configurations de construction incluses dans les batteries pour un flux de travail frontal moderne. Il ne faut que quelques minutes pour être opérationnel avec des constructions à chaud (hot-reload), en ligne (lint-on-save) et prêtes pour la production. Consultez [la documentation Vue CLI](https://cli.vuejs.org) pour plus de détails.
 
 ::: tip
 Le CLI suppose une connaissance préalable de Node.js et des outils de construction associés. Si vous ne connaissez pas Vue ou les outils de construction frontale, nous vous conseillons vivement de parcourir [le guide](./introduction.html) sans outils de construction avant d'utiliser le CLI.
@@ -93,7 +93,7 @@ $ yarn dev
 
 ## Explication des différentes constructions
 
-Dans le [répertoire `dist/` du paquet npm] (https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/), vous trouverez de nombreuses constructions différentes de Vue.js. Voici un aperçu du fichier `dist` à utiliser en fonction du cas d'utilisation.
+Dans le [répertoire `dist/` du paquet npm](https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/), vous trouverez de nombreuses constructions différentes de Vue.js. Voici un aperçu du fichier `dist` à utiliser en fonction du cas d'utilisation.
 
 ### Depuis un CDN ou sans Bundler
 

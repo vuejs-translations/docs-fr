@@ -11,7 +11,7 @@ L'initiative pour l'accessibilité du Web (WAI) du World Wide Web Consortium (W3
 
 ## Directives d'accessibilité au contenu Web (WCAG)
 
-[Les WCAG 2.1 (https://www.w3.org/TR/WCAG21/) s'appuient sur les WCAG 2.0 (https://www.w3.org/TR/WCAG20/) et permettent la mise en œuvre de nouvelles technologies en tenant compte des modifications apportées au Web. Le W3C encourage l'utilisation de la version la plus récente des WCAG lors de l'élaboration ou de la mise à jour des politiques d'accessibilité du Web.
+Les [WCAG 2.1](https://www.w3.org/TR/WCAG21/) s'appuient sur les [WCAG 2.0](https://www.w3.org/TR/WCAG20/) et permettent la mise en œuvre de nouvelles technologies en tenant compte des changements survenus sur le Web. Le W3C encourage l'utilisation de la version la plus récente des WCAG lors de l'élaboration ou de la mise à jour des politiques d'accessibilité du Web.
 
 ### WCAG 2.1 Four Main Guiding Principles (abrégé en POUR) :
 

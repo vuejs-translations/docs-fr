@@ -26,7 +26,7 @@ En 2.x, nous avions les stratégies suivantes pour contraindre les valeurs `v-bi
 
 - Pour "[attributs booléens](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L33-L40)" et [xlinks](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L44-L46), Vue les supprime s'ils sont "falsy". ([`undefined`, `null` or `false`](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L52-L54)) et les ajoute sinon (voir [ici])(https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L66-L77) et [ici](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L81-L85)).
 
-- Pour "[enumerated attributes](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L20)" (actuellement `contenteditable`, `draggable` et `spellcheck`), Vue essaie de [contraindre](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L24-L31) en chaîne (avec un traitement spécial pour `contenteditable` pour l'instant, afin de corriger [vuejs/vue#9397].(https://github.com/vuejs/vue/issues/9397)).
+- Pour "[enumerated attributes](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L20)" (actuellement `contenteditable`, `draggable` et `spellcheck`), Vue essaie de [contraindre](https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/util/attrs.js#L24-L31) en chaîne (avec un traitement spécial pour `contenteditable` pour l'instant, afin de corriger [vuejs/vue#9397](https://github.com/vuejs/vue/issues/9397)).
 
 - Pour les autres attributs, nous supprimons les valeurs "fausses" (`undefined`, `null`, ou `false`) et définissons les autres valeurs telles quelles (voir [ici]).(https://github.com/vuejs/vue/blob/bad3c326a3f8b8e0d3bcf07917dc0adf97c32351/src/platforms/web/runtime/modules/attrs.js#L92-L113)).
 
@@ -73,7 +73,7 @@ Le tableau suivant décrit le nouveau comportement :
 
 La coercition pour les attributs booléens n'a pas été modifiée.
 
-### Stratégie de migration
+## Stratégie de migration
 
 ### Attributs énumérés
 

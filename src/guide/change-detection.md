@@ -4,7 +4,7 @@
 
 En raison des limitations de JavaScript, il existe des types de modifications que Vue **ne peut pas détecter**. Cependant, il existe des moyens de les contourner pour préserver la réactivité.
 
-#### Pour les objets
+### Pour les objets
 
 Vue ne peut pas détecter l'ajout ou la suppression de propriétés. Puisque Vue effectue le processus de conversion getter/setter pendant l'initialisation de l'instance, une propriété doit être présente dans l'objet `data` pour que Vue la convertisse et la rende réactive. Par exemple :
 

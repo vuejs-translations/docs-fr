@@ -24,7 +24,7 @@ Dans Vue 2, `<transition-group>`, comme d'autres composants personnalisés, avai
 
 ## Syntaxe 3.x
 
-Dans Vue 3, nous avons [support des fragments] (/guide/migration/fragments.html), donc les composants n'ont plus besoin d'un noeud racine. Par conséquent, `<transition-group>` n'en rend plus un par défaut.
+Dans Vue 3, nous avons [support des fragments](/guide/migration/fragments.html), donc les composants n'ont plus besoin d'un noeud racine. Par conséquent, `<transition-group>` n'en rend plus un par défaut.
 
 - Si vous avez déjà défini la prop `tag` dans votre code Vue 2, comme dans l'exemple ci-dessus, tout fonctionnera comme avant.
 - Si vous n'en aviez pas défini _et_ que votre style ou d'autres comportements dépendaient de la présence de l'élément racine `<span>` pour fonctionner correctement, ajoutez simplement `tag="span"` au `<transition-group>` :

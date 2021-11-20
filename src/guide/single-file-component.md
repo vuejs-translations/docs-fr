@@ -44,7 +44,7 @@ Même si vous n'aimez pas l'idée des composants à fichier unique, vous pouvez 
 <style src="./my-component.css"></style>
 ```
 
-### Démarrage
+## Démarrage
 
 ### Exemple Sandbox
 

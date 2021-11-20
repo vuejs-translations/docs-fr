@@ -4,4 +4,4 @@ Les Partenaires Vue sont des boutiques premium qui fournissent des services de c
 
 ## Partenaires actifs
 
-<communauté-partenaires-index/>
+<community-partners-index/>

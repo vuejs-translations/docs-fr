@@ -23,7 +23,7 @@ Les étiquettes sont généralement placées en haut ou à gauche des champs du 
 
 <common-codepen-snippet title="Simple Form" slug="YzwpPYZ" :height="368" tab="js,result" :team="false" user="mlama007" name="Maria" theme="light" :preview="false" :editable="false" />
 
-Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaire et cela s'appliquera à toutes les entrées de votre formulaire. Vous pouvez également définir différentes [valeurs pour l'attribut autocomplete] (https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) pour chaque entrée.
+Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaire et cela s'appliquera à toutes les entrées de votre formulaire. Vous pouvez également définir différentes [valeurs pour l'attribut autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) pour chaque entrée.
 
 ### Étiquettes (label)
 
@@ -152,7 +152,7 @@ Il est préférable de fournir toutes les informations dont l'utilisateur a beso
 ### Instructions
 
 Lorsque vous ajoutez des instructions pour vos champs de saisie, veillez à les lier correctement à la saisie.
-Vous pouvez fournir des instructions supplémentaires et lier plusieurs identifiants à l'intérieur d'un [`aria-labelledby`] (https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute). Cela permet une conception plus souple.
+Vous pouvez fournir des instructions supplémentaires et lier plusieurs identifiants à l'intérieur d'un [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute). Cela permet une conception plus souple.
 
 ```html
 <fieldset>

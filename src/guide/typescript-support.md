@@ -194,7 +194,7 @@ const Component = defineComponent({
 ```
 
 ::: warning
-En raison d'une [limitation de conception] (https://github.com/microsoft/TypeScript/issues/38845) dans TypeScript lorsqu'il s'agit de l'inférence de type des expressions de fonction, vous devez faire attention aux valeurs `validators` et `default` pour les objets et les tableaux :
+En raison d'une [limitation de conception](https://github.com/microsoft/TypeScript/issues/38845) dans TypeScript lorsqu'il s'agit de l'inférence de type des expressions de fonction, vous devez faire attention aux valeurs `validators` et `default` pour les objets et les tableaux :
 :::
 
 ```ts

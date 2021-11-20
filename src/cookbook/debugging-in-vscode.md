@@ -92,7 +92,7 @@ npm run serve
 
 ### Vue Devtools
 
-Il existe d'autres méthodes de débogage, plus ou moins complexes. La plus populaire et la plus simple consiste à utiliser les excellents outils de développement Vue.js [pour Chrome] (https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) et [pour Firefox] (https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/). Parmi les avantages de l'utilisation des outils de développement, citons le fait qu'ils vous permettent de modifier en direct les propriétés des données et de voir les changements se refléter immédiatement. L'autre avantage majeur est la possibilité d'effectuer un débogage temporel pour Vuex.
+Il existe d'autres méthodes de débogage, plus ou moins complexes. La plus populaire et la plus simple consiste à utiliser les excellents outils de développement Vue.js [pour Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) et [pour Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/). Parmi les avantages de l'utilisation des outils de développement, citons le fait qu'ils vous permettent de modifier en direct les propriétés des données et de voir les changements se refléter immédiatement. L'autre avantage majeur est la possibilité d'effectuer un débogage temporel pour Vuex.
 
 ![Devtools Timetravel Debugger](/images/devtools-timetravel.gif)
 
@@ -100,7 +100,7 @@ Veuillez noter que si la page utilise une version de production/minifiée de Vue
 
 ### Déclaration simple du débogueur
 
-L'exemple ci-dessus présente un excellent flux de travail. Cependant, il existe une autre option qui consiste à utiliser la [déclaration du débogueur natif] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directement dans votre code. Si vous choisissez de travailler de cette manière, il est important de ne pas oublier de supprimer les instructions lorsque vous avez terminé.
+L'exemple ci-dessus présente un excellent flux de travail. Cependant, il existe une autre option qui consiste à utiliser la [déclaration du débogueur natif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directement dans votre code. Si vous choisissez de travailler de cette manière, il est important de ne pas oublier de supprimer les instructions lorsque vous avez terminé.
 
 ```vue
 <script>

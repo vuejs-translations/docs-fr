@@ -4,7 +4,7 @@ L'accessibilité du Web (également connue sous le nom d'a11y) désigne la prati
 
 Vous êtes prêt à commencer mais vous ne savez pas où aller ?
 
-Consultez le [Guide de planification et de gestion de l'accessibilité du Web](https://www.w3.org/WAI/planning-and-managing/) fourni par le [Consortium World Wide Web (W3C)] (https://www.w3.org/).
+Consultez le [Guide de planification et de gestion de l'accessibilité du Web](https://www.w3.org/WAI/planning-and-managing/) fourni par le [Consortium World Wide Web (W3C)](https://www.w3.org/).
 
 ## Sauter le lien
 
@@ -107,7 +107,7 @@ Les points de repère fournissent un accès programmatique aux sections d'une ap
 | section         | role="region"  | Le contenu qui est pertinent et vers lequel les utilisateurs voudront probablement naviguer. Un libellé doit être fourni pour cet élément                |
 
 :::tip Tip:
-Il est recommandé d'utiliser des éléments HTML repères avec des attributs de rôle repères redondants afin de maximiser la compatibilité avec les anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5] (https://caniuse.com/#feat=html5semantic).
+Il est recommandé d'utiliser des éléments HTML repères avec des attributs de rôle repères redondants afin de maximiser la compatibilité avec les anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5](https://caniuse.com/#feat=html5semantic).
 :::
 
 [En savoir plus sur les points de repère](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)

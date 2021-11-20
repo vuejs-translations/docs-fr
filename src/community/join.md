@@ -15,7 +15,7 @@ Notre [Code de conduite](/coc) est un guide destiné à faciliter notre enrichis
 - [Forum](https://forum.vuejs.org/) : Le meilleur endroit pour poser des questions et obtenir des réponses sur Vue et son écosystème.
 - [Chat](https://chat.vuejs.org/) : Un endroit où les développeurs de Vue peuvent se rencontrer et discuter en temps réel.
 - [Meetups](https://events.vuejs.org/meetups) : Vous voulez trouver des passionnés de Vue.js comme vous ? Vous souhaitez devenir un leader de la communauté ? Nous avons l'aide et le soutien dont vous avez besoin ici même !
-- [GitHub] (https://github.com/vuejs) : Si vous avez un bug à signaler ou une fonctionnalité à demander, c'est à cela que servent les problèmes GitHub. Les demandes d'extraction sont également les bienvenues !
+- [GitHub](https://github.com/vuejs) : Si vous avez un bug à signaler ou une fonctionnalité à demander, c'est à cela que servent les problèmes GitHub. Les demandes d'extraction sont également les bienvenues !
 
 ### Explorer l'écosystème
 
@@ -49,7 +49,7 @@ Vue s'est déjà répandu dans le monde entier, avec même l'équipe centrale da
 
 J'espère qu'en ce moment même, vous lisez cette phrase dans votre langue préférée. Si ce n'est pas le cas, voulez-vous nous aider à y parvenir ?
 
-Si c'est le cas, n'hésitez pas à forker le dépôt de [cette documentation] (https://github.com/vuejs/vuejs.org/) ou de toute autre documentation officiellement maintenue, puis commencez à traduire. Une fois que vous avez fait des progrès, ouvrez un problème ou une demande de transfert dans le dépôt principal et nous lancerons un appel à d'autres contributeurs pour vous aider.
+Si c'est le cas, n'hésitez pas à forker le dépôt de [cette documentation](https://github.com/vuejs/vuejs.org/) ou de toute autre documentation officiellement maintenue, puis commencez à traduire. Une fois que vous avez fait des progrès, ouvrez un problème ou une demande de transfert dans le dépôt principal et nous lancerons un appel à d'autres contributeurs pour vous aider.
 
 ### Devenez un leader de la communauté
 

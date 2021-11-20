@@ -1,7 +1,7 @@
 # Déploiement de la production
 
 ::: info
-La plupart des conseils ci-dessous sont activés par défaut si vous utilisez [Vue CLI] (https://cli.vuejs.org). Cette section n'est pertinente que si vous utilisez une configuration de construction personnalisée.
+La plupart des conseils ci-dessous sont activés par défaut si vous utilisez [Vue CLI](https://cli.vuejs.org). Cette section n'est pertinente que si vous utilisez une configuration de construction personnalisée.
 :::
 
 ## Activer le mode production

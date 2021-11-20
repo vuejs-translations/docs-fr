@@ -17,7 +17,7 @@ Voici un résumé rapide de ce qui a changé :
 
 Pour plus d'informations, lisez la suite !
 
-### Argument de la fonction de rendu
+## Argument de la fonction de rendu
 
 ### Syntaxe 2.x
 

@@ -8,4 +8,4 @@ Oui ! Nous sommes prêts pour la traduction !
 
 ### Comment puis-je m'impliquer dans les traductions ?
 
-La meilleure façon de commencer est de consulter [this pinned issue] (https://github.com/vuejs/docs-next/issues/478) qui contient des discussions actives sur les différentes initiatives de la communauté.
+La meilleure façon de commencer est de consulter [cette question épinglée](https://github.com/vuejs/docs-next/issues/478) qui contient des discussions actives sur les différentes initiatives de la communauté.

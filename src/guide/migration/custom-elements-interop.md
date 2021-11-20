@@ -63,7 +63,7 @@ Vue.config.ignoredElements = ['plastic-button']
 
 ## Éléments intégrés personnalisés
 
-La spécification Custom Elements permet d'utiliser des éléments personnalisés comme [Customized Built-in Element] (https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) en ajoutant l'attribut `is` à un élément intégré :
+La spécification Custom Elements permet d'utiliser des éléments personnalisés comme [Customized Built-in Element](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) en ajoutant l'attribut `is` à un élément intégré :
 
 ```html
 <button is="plastic-button">Click Me!</button>

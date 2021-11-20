@@ -110,7 +110,7 @@ Cela signifie essentiellement que le composant `Transition` n'est importé que l
 Avec l'arborescence globale, l'utilisateur ne "paie" que pour les fonctionnalités qu'il utilise réellement. Mieux encore, sachant que les fonctionnalités optionnelles n'augmenteront pas la taille du bundle pour les applications qui ne les utilisent pas, la taille du framework est devenue une préoccupation beaucoup moins importante pour les fonctionnalités de base supplémentaires à l'avenir, voire pas du tout.
 
 ::: warning Important
-Ce qui précède ne s'applique qu'aux [constructions des modules ES] (/guide/installation.html#explanation-of-different-builds) pour une utilisation avec des bundlers capables de secouer l'arbre - la construction UMD inclut toujours toutes les fonctionnalités et expose tout sur la variable globale Vue (et le compilateur produira une sortie appropriée pour utiliser les APIs de la variable globale au lieu de les importer).
+Ce qui précède ne s'applique qu'aux [constructions des modules ES](/guide/installation.html#explanation-of-different-builds) pour une utilisation avec des bundlers capables de secouer l'arbre - la construction UMD inclut toujours toutes les fonctionnalités et expose tout sur la variable globale Vue (et le compilateur produira une sortie appropriée pour utiliser les APIs de la variable globale au lieu de les importer).
 :::
 
 ## Utilisation dans les plugins

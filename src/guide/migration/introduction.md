@@ -1,7 +1,7 @@
 # Introduction
 
 ::: info
-Vous ne connaissez pas Vue.js ? Consultez notre [Guide des fondamentaux] (/guide/introduction.html) pour commencer.
+Vous ne connaissez pas Vue.js ? Consultez notre [Guide des fondamentaux](/guide/introduction.html) pour commencer.
 :::
 
 Ce guide s'adresse principalement aux utilisateurs ayant déjà une expérience de Vue 2 et qui souhaitent se familiariser avec les nouvelles fonctionnalités et les changements de Vue 3. **Il ne s'agit pas d'un document que vous devez lire de bout en bout avant d'essayer Vue 3.** Bien qu'il semble que beaucoup de choses aient changé, une grande partie de ce que vous connaissez et aimez de Vue est toujours la même ; mais nous avons voulu être aussi minutieux que possible et fournir des explications détaillées et des exemples pour chaque changement documenté.
@@ -16,13 +16,13 @@ Ce guide s'adresse principalement aux utilisateurs ayant déjà une expérience 
 <br>
 <iframe src="https://player.vimeo.com/video/440868720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-Commencez à apprendre Vue 3 à [Vue Mastery] (https://www.vuemastery.com/courses-path/vue3).
+Commencez à apprendre Vue 3 à [Vue Mastery](https://www.vuemastery.com/courses-path/vue3).
 
 ## Démarrage rapide
 
 - Via CDN : `<script src="https://unpkg.com/vue@next"></script>`
 - Terrain de jeu dans le navigateur sur [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
-- Sandbox dans le navigateur sur [CodeSandbox] (https://v3.vue.new)
+- Sandbox dans le navigateur sur [CodeSandbox](https://v3.vue.new)
 - Échafaudage via [Vite](https://github.com/vitejs/vite) :
 
   ```bash

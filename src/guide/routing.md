@@ -43,4 +43,4 @@ Combiné à l'[API d'historique](https://developer.mozilla.org/en-US/docs/Web/AP
 
 ## Intégration de routeurs tiers
 
-Si vous préférez utiliser un routeur tiers, tel que [Page.js](https://github.com/visionmedia/page.js) ou [Director](https://github.com/flatiron/director), l'intégration est [tout aussi simple](https://github.com/phanan/vue-3.0-simple-routing-example/compare/master...pagejs). Voici un [exemple complet] (https://github.com/phanan/vue-3.0-simple-routing-example/tree/pagejs) utilisant Page.js.
+Si vous préférez utiliser un routeur tiers, tel que [Page.js](https://github.com/visionmedia/page.js) ou [Director](https://github.com/flatiron/director), l'intégration est [tout aussi simple](https://github.com/phanan/vue-3.0-simple-routing-example/compare/master...pagejs). Voici un [exemple complet](https://github.com/phanan/vue-3.0-simple-routing-example/tree/pagejs) utilisant Page.js.
