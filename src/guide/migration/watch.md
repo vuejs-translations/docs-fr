@@ -1,18 +1,18 @@
 ---
-title: Watch on Arrays
+title: Surveillance des tableaux
 badges:
   - breaking
 ---
 
 # {{ $frontmatter.title }} <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-- **BREAKING**: When watching an array, the callback will only trigger when the array is replaced. If you need to trigger on mutation, the `deep` option must be specified.
+- **BREAKING** : Lorsque vous surveillez un tableau, le callback ne se déclenchera que lorsque le tableau est remplacé. Si vous avez besoin de déclencher sur une mutation, l'option `deep` doit être spécifiée.
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-When using [the `watch` option](/api/options-data.html#watch) to watch an array, the callback will only trigger when the array is replaced. In other words, the watch callback will no longer be triggered on array mutation. To trigger on mutation, the `deep` option must be specified.
+Lorsque vous utilisez [l'option `watch`](/api/options-data.html#watch) pour surveiller un tableau, le callback ne sera déclenché que lorsque le tableau sera remplacé. En d'autres termes, la callback de surveillance ne sera plus déclenchée lors de la mutation du tableau. Pour déclencher sur une mutation, l'option `deep` doit être spécifiée.
 
 ```js
 watch: {
@@ -25,6 +25,6 @@ watch: {
 }
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-If you rely on watching array mutations, add the `deep` property to ensure that your callback is triggered correctly.
+Si vous comptez sur la surveillance des mutations de tableaux, ajoutez la propriété `deep` pour vous assurer que votre callback est déclenché correctement.

@@ -1,14 +1,14 @@
-# Mobile
+## Mobile
 
 ## Introduction
 
-While Vue.js does not natively support mobile app development, there are a number of solutions for creating native iOS and Android apps with Vue.js.
+Bien que Vue.js ne prenne pas nativement en charge le développement d'applications mobiles, il existe un certain nombre de solutions pour créer des applications iOS et Android natives avec Vue.js.
 
-## Hybrid-App Development
+### Développement d'une application hybride
 
 ### Capacitor
 
-[Capacitor](https://capacitorjs.com/) is a project from the [Ionic Team](https://ionic.io/) that allows developers to build native iOS, Android, and PWA apps with a single codebase by providing an API that can be run across multiple platforms.
+[Capacitor](https://capacitorjs.com/) est un projet de l'[équipe Ionic](https://ionic.io/) qui permet aux développeurs de créer des applications natives iOS, Android et PWA avec une seule base de code en fournissant une API qui peut être exécutée sur plusieurs plateformes.
 
 **Resources**
 
@@ -16,7 +16,7 @@ While Vue.js does not natively support mobile app development, there are a numbe
 
 ### NativeScript
 
-[NativeScript](https://www.nativescript.org) powers cross-platform (truly native) mobile apps, using the web skills you already know. Combined they are a fantastic pair for developing immersive mobile experiences.
+[NativeScript](https://www.nativescript.org) permet de créer des applications mobiles multiplateformes (véritablement natives) en utilisant les compétences Web que vous connaissez déjà. Ensemble, ils forment un duo fantastique pour développer des expériences mobiles immersives.
 
 **Resources**
 

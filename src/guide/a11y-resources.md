@@ -4,12 +4,12 @@
 
 - [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 - [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
-- [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
+- [Applications Internet riches accessibles (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-## Assistive Technologies
+## Technologies d'assistance
 
-- Screen Readers
+- Lecteurs d'écran
   - [NVDA](https://www.nvaccess.org/download/)
   - [VoiceOver](https://www.apple.com/accessibility/mac/vision/)
   - [JAWS](https://www.freedomscientific.com/products/software/jaws/?utm_term=jaws%20screen%20reader&utm_source=adwords&utm_campaign=All+Products&utm_medium=ppc&hsa_tgt=kwd-394361346638&hsa_cam=200218713&hsa_ad=296201131673&hsa_kw=jaws%20screen%20reader&hsa_grp=52663682111&hsa_net=adwords&hsa_mt=e&hsa_src=g&hsa_acc=1684996396&hsa_ver=3&gclid=Cj0KCQjwnv71BRCOARIsAIkxW9HXKQ6kKNQD0q8a_1TXSJXnIuUyb65KJeTWmtS6BH96-5he9dsNq6oaAh6UEALw_wcB)
@@ -19,32 +19,32 @@
   - [ZoomText](https://www.zoomtext.com/)
   - [Magnifier](https://support.microsoft.com/en-us/help/11542/windows-use-magnifier-to-make-things-easier-to-see)
 
-## Testing
+## Test
 
-- Automated Tools
+- Outils automatisés
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
   - [WAVE](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
-- Color Tools
+- Outils de couleur
   - [WebAim Color Contrast](https://webaim.org/resources/contrastchecker/)
   - [WebAim Link Color Contrast](https://webaim.org/resources/linkcontrastchecker)
-- Other Helpful Tools
+- Autres outils utiles
   - [HeadingMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en…)
   - [Color Oracle](https://colororacle.org)
   - [Focus Indicator](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=en-US…)
   - [NerdeFocus](https://chrome.google.com/webstore/detail/nerdefocus/lpfiljldhgjecfepfljnbjnbjfhennpd?hl=en-US…)
 
-## Users
+## Utilisateurs
 
-The World Health Organization estimates that 15% of the world's population has some form of disability, 2-4% of them severely so. That is an estimated 1 billion people worldwide; making people with disabilities the largest minority group in the world.
+L'Organisation mondiale de la santé estime que 15 % de la population mondiale souffre d'une forme de handicap, dont 2 à 4 % d'un handicap grave. Cela représente environ un milliard de personnes dans le monde, ce qui fait des personnes handicapées le plus grand groupe minoritaire au monde.
 
-There are a huge range of disabilities, which can be divided roughly into four categories:
+Il existe un large éventail de handicaps, que l'on peut diviser en quatre catégories :
 
-- _[Visual](https://webaim.org/articles/visual/)_ - These users can benefit from the use of screen readers, screen magnification, controlling screen contrast, or braille display.
-- _[Auditory](https://webaim.org/articles/auditory/)_ - These users can benefit from captioning, transcripts or sign   language video.
-- _[Motor](https://webaim.org/articles/motor/)_ - These users can benefit from a range of [assistive technologies for motor impairments](https://webaim.org/articles/motor/assistive): voice recognition software, eye tracking, single-switch access, head wand, sip and puff switch, oversized trackball mouse, adaptive keyboard or other assistive technologies.
-- _[Cognitive](https://webaim.org/articles/cognitive/)_ - These users can benefit from supplemental media, structural organization of content, clear and simple writing.
+- _[Visuel](https://webaim.org/articles/visual/)_ - Ces utilisateurs peuvent bénéficier de l'utilisation de lecteurs d'écran, du grossissement de l'écran, du contrôle du contraste de l'écran ou de l'affichage en braille.
+- _[Auditif](https://webaim.org/articles/auditory/)_ - Ces utilisateurs peuvent bénéficier du sous-titrage, de transcriptions ou de vidéos en langue des signes.
+- [Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'une gamme de [technologies d'assistance pour les déficiences motrices](https://webaim.org/articles/motor/assistive) : logiciel de reconnaissance vocale, suivi oculaire, accès à un seul interrupteur, baguette de tête, interrupteur de sifflement et de souffle, souris à boule de commande surdimensionnée, clavier adapté ou autres technologies d'assistance.
+- _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de médias supplémentaires, d'une organisation structurelle du contenu, d'une écriture claire et simple.
 
-Check out the following links from WebAim to understand from users:
+Consultez les liens suivants de WebAim pour comprendre ce que disent les utilisateurs :
 
-- [Web Accessibility Perspectives: Explore the Impact and Benefits for Everyone](https://www.w3.org/WAI/perspective-videos/)
-- [Stories of Web Users](https://www.w3.org/WAI/people-use-web/user-stories/)
+- [Perspectives de l'accessibilité du Web : Explorer l'impact et les avantages pour tous](https://www.w3.org/WAI/perspective-videos/)
+- [Histoires d'utilisateurs du Web](https://www.w3.org/WAI/people-use-web/user-stories/)

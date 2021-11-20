@@ -1,44 +1,44 @@
 # Installation
 
-Vue.js is built by design to be incrementally adoptable. This means that it can be integrated into a project multiple ways depending on the requirements.
+Vue.js a été conçu pour être adopté de manière incrémentielle. Cela signifie qu'il peut être intégré à un projet de plusieurs façons, en fonction des besoins.
 
-There are three primary ways of adding Vue.js to a project:
+Il y a trois façons principales d'ajouter Vue.js à un projet :
 
-1. Import it as a [CDN package](#cdn) on the page
-2. Install it using [npm](#npm)
-3. Use the official [CLI](#cli) to scaffold a project, which provides batteries-included build setups for a modern frontend workflow (e.g., hot-reload, lint-on-save, and much more)
+1. Importez-le en tant que [paquet CDN](#cdn) sur la page.
+2. L'installer en utilisant [npm](#npm)
+3. Utilisez la [CLI](#cli) officielle pour échafauder un projet, qui fournit des configurations de construction incluses dans les batteries pour un flux de travail frontal moderne (par exemple, hot-reload, lint-on-save, et bien plus encore).
 
-## Release Notes
+## Notes de version
 
-Latest version: ![npm](https://img.shields.io/npm/v/vue/next.svg)
+Dernière version : ![npm](https://img.shields.io/npm/v/vue/next.svg)
 
-Detailed release notes for each version are available on [GitHub](https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md).
+Des notes de version détaillées pour chaque version sont disponibles sur [GitHub](https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md).
 
 ## Vue Devtools
 
-> Currently in Beta - Vuex and Router integration is still WIP
+> Actuellement en version bêta - l'intégration de Vuex et Router est toujours en cours.
 
-When using Vue, we recommend also installing the [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) in your browser, allowing you to inspect and debug your Vue applications in a more user-friendly interface.
+Lorsque vous utilisez Vue, nous vous recommandons d'installer également l'extension [Vue Devtools](https://github.com/vuejs/vue-devtools#vue-devtools) dans votre navigateur, ce qui vous permettra d'inspecter et de déboguer vos applications Vue dans une interface plus conviviale.
 
-[Get the Chrome Extension](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)
+[Télécharger l'extension Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)
 
-[Get the Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+[Obtenez l'extension Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
 
-[Get the standalone Electron app](https://github.com/vuejs/vue-devtools/blob/dev/packages/shell-electron/README.md)
+[Obtenir l'application autonome Electron](https://github.com/vuejs/vue-devtools/blob/dev/packages/shell-electron/README.md)
 
 ## CDN
 
-For prototyping or learning purposes, you can use the latest version with:
+Pour le prototypage ou l'apprentissage, vous pouvez utiliser la dernière version avec :
 
 ```html
 <script src="https://unpkg.com/vue@next"></script>
 ```
 
-For production, we recommend linking to a specific version number and build to avoid unexpected breakage from newer versions.
+Pour la production, nous recommandons d'établir un lien vers un numéro de version et une construction spécifiques afin d'éviter toute rupture inattendue avec les nouvelles versions.
 
 ## npm
 
-npm is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/). Vue also provides accompanying tools for authoring [Single File Components](../guide/single-file-component.html).
+npm est la méthode d'installation recommandée lors de la création d'applications à grande échelle avec Vue. Elle s'associe parfaitement à des regroupeurs de modules tels que [Webpack](https://webpack.js.org/) ou [Rollup](https://rollupjs.org/). Vue fournit également des outils d'accompagnement pour la création de [Single File Components](../guide/single-file-component.html).
 
 ```bash
 # latest stable
@@ -47,13 +47,13 @@ $ npm install vue@next
 
 ## CLI
 
-Vue provides an [official CLI](https://github.com/vuejs/vue-cli) for quickly scaffolding ambitious Single Page Applications. It provides batteries-included build setups for a modern frontend workflow. It takes only a few minutes to get up and running with hot-reload, lint-on-save, and production-ready builds. See [the Vue CLI docs](https://cli.vuejs.org) for more details.
+Vue fournit une [CLI officielle](https://github.com/vuejs/vue-cli) pour échafauder rapidement des applications monopages ambitieuses. Il fournit des configurations de construction incluses dans les batteries pour un flux de travail frontal moderne. Il ne faut que quelques minutes pour être opérationnel avec des constructions à chaud (hot-reload), en ligne (lint-on-save) et prêtes pour la production. Consultez [la documentation Vue CLI](https://cli.vuejs.org) pour plus de détails.
 
 ::: tip
-The CLI assumes prior knowledge of Node.js and the associated build tools. If you are new to Vue or front-end build tools, we strongly suggest going through [the guide](./introduction.html) without any build tools before using the CLI.
+Le CLI suppose une connaissance préalable de Node.js et des outils de construction associés. Si vous ne connaissez pas Vue ou les outils de construction frontale, nous vous conseillons vivement de parcourir [le guide](./introduction.html) sans outils de construction avant d'utiliser le CLI.
 :::
 
-For Vue 3, you should use Vue CLI v4.5 available on `npm` as `@vue/cli`. To upgrade, you need to reinstall the latest version of `@vue/cli` globally:
+Pour Vue 3, vous devez utiliser Vue CLI v4.5 disponible sur `npm` comme `@vue/cli`. Pour mettre à jour, vous devez réinstaller la dernière version de `@vue/cli` globalement :
 
 ```bash
 yarn global add @vue/cli
@@ -61,7 +61,7 @@ yarn global add @vue/cli
 npm install -g @vue/cli
 ```
 
-Then in the Vue projects, run
+Ensuite, dans les projets Vue, exécutez
 
 ```bash
 vue upgrade --next
@@ -69,11 +69,11 @@ vue upgrade --next
 
 ## Vite
 
-[Vite](https://github.com/vitejs/vite) is a web development build tool that allows for lightning fast serving of code due its native ES Module import approach.
+[Vite](https://github.com/vitejs/vite) est un outil de développement web qui permet de servir le code à la vitesse de l'éclair grâce à son approche native d'importation de modules ES.
 
-Vue projects can quickly be set up with Vite by running the following commands in your terminal.
+Les projets Vue peuvent être rapidement configurés avec Vite en exécutant les commandes suivantes dans votre terminal.
 
-With npm:
+Avec npm :
 
 ```bash
 $ npm init vite-app <project-name>
@@ -82,7 +82,7 @@ $ npm install
 $ npm run dev
 ```
 
-Or with Yarn:
+Ou avec Yarn:
 
 ```bash
 $ yarn create vite-app <project-name>
@@ -91,63 +91,63 @@ $ yarn
 $ yarn dev
 ```
 
-## Explanation of Different Builds
+## Explication des différentes constructions
 
-In the [`dist/` directory of the npm package](https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/) you will find many different builds of Vue.js. Here is an overview of which `dist` file should be used depending on the use-case.
+Dans le [répertoire `dist/` du paquet npm](https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/), vous trouverez de nombreuses constructions différentes de Vue.js. Voici un aperçu du fichier `dist` à utiliser en fonction du cas d'utilisation.
 
-### From CDN or without a Bundler
+### Depuis un CDN ou sans Bundler
 
-#### `vue(.runtime).global(.prod).js`:
+#### `vue(.runtime).global(.prod).js` :
 
-- For direct use via `<script src="...">` in the browser, exposes the Vue global.
-- In-browser template compilation:
-  - `vue.global.js` is the "full" build that includes both the compiler and the runtime so it supports compiling templates on the fly.
-  - `vue.runtime.global.js` contains only the runtime and requires templates to be pre-compiled during a build step.
-- Inlines all Vue core internal packages - i.e. it's a single file with no dependencies on other files. This means you must import everything from this file and this file only to ensure you are getting the same instance of code.
-- Contains hard-coded prod/dev branches, and the prod build is pre-minified. Use the `*.prod.js` files for production.
+- Pour une utilisation directe via `<script src="...">` dans le navigateur, expose le global Vue.
+- Compilation de modèles dans le navigateur :
+  - `vue.global.js` est le build "complet" qui inclut à la fois le compilateur et le runtime afin de supporter la compilation des templates à la volée.
+  - `vue.runtime.global.js` ne contient que le runtime et nécessite que les templates soient pré-compilés pendant une étape de construction.
+- Il contient tous les paquets internes du noyau de Vue - c'est-à-dire qu'il s'agit d'un fichier unique sans aucune dépendance avec d'autres fichiers. Cela signifie que vous devez importer tout à partir de ce fichier et de ce fichier seulement pour vous assurer que vous obtenez la même instance de code.
+- Contient des branches prod/dev codées en dur, et la version prod est pré-minifiée. Utilisez les fichiers `*.prod.js` pour la production.
 
 :::tip Note
-Global builds are not [UMD](https://github.com/umdjs/umd) builds. They are built as [IIFEs](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) and are only meant for direct use via `<script src="...">`.
+Les builds globaux ne sont pas des builds [UMD](https://github.com/umdjs/umd). Elles sont construites en tant que [IIFEs](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) et ne sont destinées qu'à une utilisation directe via `<script src="...">`.
 :::
 
-#### vue(.runtime).esm-browser(.prod).js:
+#### vue(.runtime).esm-browser(.prod).js :
 
-- For usage via native ES modules imports (in browser via `<script type="module">`.
-- Shares the same runtime compilation, dependency inlining and hard-coded prod/dev behavior with the global build.
+- Pour une utilisation via les importations de modules ES natifs (dans le navigateur via `<script type="module">`.
+- Partage la même compilation d'exécution, l'alignement des dépendances et le comportement prod/dev codé en dur avec la compilation globale.
 
-### With a Bundler
+### Avec un Bundler
 
 #### vue(.runtime).esm-bundler.js:
 
-- For use with bundlers like `webpack`, `rollup` and `parcel`.
-- Leaves prod/dev branches with `process.env.NODE_ENV guards` (must be replaced by bundler)
-- Does not ship minified builds (to be done together with the rest of the code after bundling)
-- Imports dependencies (e.g. `@vue/runtime-core`, `@vue/runtime-compiler`)
-  - Imported dependencies are also esm-bundler builds and will in turn import their dependencies (e.g. @vue/runtime-core imports @vue/reactivity)
-  - This means you **can** install/import these deps individually without ending up with different instances of these dependencies, but you must make sure they all resolve to the same version.
-- In-browser template compilation:
-  - `vue.runtime.esm-bundler.js` **(default)** is runtime only, and requires all templates to be pre-compiled. This is the default entry for bundlers (via module field in `package.json`) because when using a bundler templates are typically pre-compiled (e.g. in `*.vue` files).
-  - `vue.esm-bundler.js`: includes the runtime compiler. Use this if you are using a bundler but still want runtime template compilation (e.g. in-DOM templates or templates via inline JavaScript strings). You will need to configure your bundler to alias vue to this file.
+- A utiliser avec des bundlers comme `webpack`, `rollup` et `parcel`.
+- Laisse les branches prod/dev avec les gardes `process.env.NODE_ENV` (doit être remplacé par bundler)
+- N'expédie pas de builds minifiés (à faire avec le reste du code après le bundler)
+- Importe des dépendances (par exemple, `@vue/runtime-core`, `@vue/runtime-compiler`)
+  - Les dépendances importées sont également construites par esm-bundler et importeront à leur tour leurs dépendances (par exemple, @vue/runtime-core importe @vue/reactivity).
+  - Cela signifie que vous **pouvez** installer/importer ces dépendances individuellement sans vous retrouver avec différentes instances de ces dépendances, mais vous devez vous assurer qu'elles se résolvent toutes à la même version.
+- Compilation des modèles dans le navigateur :
+  - `vue.runtime.esm-bundler.js` **(default)** est uniquement exécutable, et nécessite que tous les templates soient précompilés. C'est l'entrée par défaut pour les bundlers (via le champ module dans `package.json`) car lors de l'utilisation d'un bundler, les templates sont généralement pré-compilés (par exemple dans les fichiers `*.vue`).
+  - `vue.esm-bundler.js` : inclut le compilateur d'exécution. Utilisez-le si vous utilisez un bundler mais que vous voulez quand même compiler les templates au moment de l'exécution (par exemple les templates in-DOM ou les templates via des chaînes JavaScript en ligne). Vous devrez configurer votre bundler pour aliaser vue à ce fichier.
 
-### For Server-Side Rendering
+### Pour le rendu côté serveur
 
 #### `vue.cjs(.prod).js`:
 
-- For use in Node.js server-side rendering via `require()`.
-- If you bundle your app with webpack with `target: 'node'` and properly externalize `vue`, this is the build that will be loaded.
-- The dev/prod files are pre-built, but the appropriate file is automatically required based on `process.env.NODE_ENV`.
+- Pour une utilisation dans le rendu côté serveur de Node.js via `require()`.
+- Si vous regroupez votre application avec webpack avec `target : 'node'` et externalisez correctement `vue`, c'est cette construction qui sera chargée.
+- Les fichiers dev/prod sont pré-construits, mais le fichier approprié est automatiquement requis en fonction de `process.env.NODE_ENV`.
 
 ## Runtime + Compiler vs. Runtime-only
 
-If you need to compile templates on the client (e.g. passing a string to the template option, or mounting to an element using its in-DOM HTML as the template), you will need the compiler and thus the full build:
+Si vous avez besoin de compiler des modèles sur le client (par exemple en passant une chaîne à l'option de modèle, ou en montant sur un élément en utilisant son HTML in-DOM comme modèle), vous aurez besoin du compilateur et donc du build complet :
 
 ```js
-// this requires the compiler
+// ceci nécessite le compilateur
 Vue.createApp({
   template: '<div>{{ hi }}</div>'
 })
 
-// this does not
+// ce n'est pas le cas
 Vue.createApp({
   render() {
     return Vue.h('div', {}, this.hi)
@@ -155,4 +155,4 @@ Vue.createApp({
 })
 ```
 
-When using `vue-loader`, templates inside `*.vue` files are pre-compiled into JavaScript at build time. You don’t really need the compiler in the final bundle, and can therefore use the runtime-only build.
+Lorsque vous utilisez `vue-loader`, les modèles contenus dans les fichiers `*.vue` sont précompilés en JavaScript au moment de la construction. Vous n'avez pas vraiment besoin du compilateur dans le bundle final, et pouvez donc utiliser la compilation à l'exécution seulement.

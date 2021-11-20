@@ -1,77 +1,77 @@
 # Introduction
 
-## The Cookbook vs the Guide
+## Le livre de cuisine vs le guide
 
-How is the cookbook different from the guide? Why is this necessary?
+En quoi le livre de recettes est-il différent du guide ? Pourquoi cela est-il nécessaire ?
 
-- **Greater Focus**: In the guide, we're essentially telling a story. Each section builds on and assumes knowledge from each previous section. In the cookbook, each recipe can and should stand on its own. This means recipes can focus on one specific aspect of Vue, rather than having to give a general overview.
+- **Plus grande attention** : Dans le guide, nous racontons essentiellement une histoire. Chaque section s'appuie sur les connaissances acquises dans les sections précédentes et les présume. Dans le livre de recettes, chaque recette peut et doit être autonome. Cela signifie que les recettes peuvent se concentrer sur un aspect spécifique de Vue, plutôt que de devoir donner un aperçu général.
 
-- **Greater Depth**: To avoid making the guide too long, we try to include only the simplest possible examples to help you understand each feature. Then we move on. In the cookbook, we can include more complex examples, combining features in interesting ways. Each recipe can also be as long and detailed as it needs to be, in order to fully explore its niche.
+- **Plus grande profondeur** : Pour éviter de rendre le guide trop long, nous essayons de n'inclure que les exemples les plus simples possibles pour vous aider à comprendre chaque fonctionnalité. Ensuite, nous passons à autre chose. Dans le livre de recettes, nous pouvons inclure des exemples plus complexes, combinant des fonctionnalités de manière intéressante. Chaque recette peut également être aussi longue et détaillée que nécessaire, afin d'explorer pleinement sa niche.
 
-- **Teaching JavaScript**: In the guide, we assume at least intermediate familiarity with ES5 JavaScript. For example, we won't explain how `Array.prototype.filter` works in a computed property that filters a list. In the cookbook however, essential JavaScript features (including ES6/2015+) can be explored and explained in the context of how they help us build better Vue applications.
+- **Teaching JavaScript** : Dans ce guide, nous supposons que vous avez au moins une connaissance intermédiaire du JavaScript ES5. Par exemple, nous n'expliquerons pas comment `Array.prototype.filter` fonctionne dans une propriété calculée qui filtre une liste. Dans le livre de cuisine, cependant, les fonctionnalités JavaScript essentielles (y compris ES6/2015+) peuvent être explorées et expliquées dans le contexte de la façon dont elles nous aident à construire de meilleures applications Vue.
 
-- **Exploring the Ecosystem**: For advanced features, we assume some ecosystem knowledge. For example, if you want to use single-file components in Webpack, we don't explain how to configure the non-Vue parts of the Webpack config. In the cookbook, we have the space to explore these ecosystem libraries in more depth - at least to the extent that is universally useful for Vue developers.
+- **Exploration de l'écosystème** : Pour les fonctionnalités avancées, nous supposons une certaine connaissance de l'écosystème. Par exemple, si vous souhaitez utiliser des composants à fichier unique dans Webpack, nous n'expliquons pas comment configurer les parties non Vue de la configuration de Webpack. Dans le livre de recettes, nous avons l'espace pour explorer ces bibliothèques de l'écosystème plus en profondeur - au moins dans la mesure où cela est universellement utile pour les développeurs Vue.
 
 ::: tip
-With all these differences, please note that the cookbook is still _not_ a step-by-step manual. For most of its content, you are expected to have a basic understanding of concepts like HTML, CSS, JavaScript, npm/yarn, etc.
+Malgré toutes ces différences, veuillez noter que le livre de recettes n'est toujours pas un manuel étape par étape. Pour la plupart de son contenu, vous êtes censé avoir une compréhension de base de concepts tels que HTML, CSS, JavaScript, npm/yarn, etc.
 :::
 
-## Cookbook Contributions
+### Contributions au livre de cuisine
 
-### What we're looking for
+### Ce que nous recherchons
 
-The Cookbook gives developers examples to work off of that both cover common or interesting use cases, and also progressively explain more complex detail. Our goal is to move beyond a simple introductory example, and demonstrate concepts that are more widely applicable, as well as some caveats to the approach.
+Le livre de recettes donne aux développeurs des exemples à partir desquels ils peuvent travailler, qui couvrent des cas d'utilisation courants ou intéressants, et qui expliquent progressivement des détails plus complexes. Notre objectif est d'aller au-delà d'un simple exemple d'introduction, et de démontrer des concepts qui sont plus largement applicables, ainsi que certaines mises en garde concernant l'approche.
 
-If you're interested in contributing, please initiate collaboration by filing an issue under the tag **cookbook idea** with your concept so that we can help guide you to a successful pull request. After your idea has been approved, please follow the template below as much as possible. Some sections are required, and some are optional. Following the numerical order is strongly suggested, but not required.
+Si vous souhaitez contribuer, veuillez initier une collaboration en déposant un problème sous l'étiquette **idée de livre de cuisine** avec votre concept afin que nous puissions vous guider vers une demande d'extraction réussie. Une fois que votre idée a été approuvée, veuillez suivre le modèle ci-dessous autant que possible. Certaines sections sont obligatoires, d'autres sont facultatives. Le respect de l'ordre numérique est fortement suggéré, mais pas obligatoire.
 
-Recipes should generally:
+Les recettes doivent généralement :
 
-- Solve a specific, common problem
-- Start with the simplest possible example
-- Introduce complexities one at a time
-- Link to other docs, rather than re-explaining concepts
-- Describe the problem, rather than assuming familiarity
-- Explain the process, rather than just the end result
-- Explain the pros and cons of your strategy, including when it is and isn't appropriate
-- Mention alternative solutions, if relevant, but leave in-depth explorations to a separate recipe
+- Résoudre un problème spécifique et courant
+- Commencer par l'exemple le plus simple possible
+- Introduire les complexités une par une
+- Etablir des liens vers d'autres documents, plutôt que de réexpliquer des concepts
+- Décrire le problème, plutôt que de supposer qu'il est connu.
+- Expliquez le processus, plutôt que le résultat final.
+- Expliquez les avantages et les inconvénients de votre stratégie, y compris quand elle est appropriée et quand elle ne l'est pas.
+- Mentionnez les solutions alternatives, le cas échéant, mais laissez les explorations approfondies à une recette séparée.
 
-We request that you follow the template below. We understand, however, that there are times when you may necessarily need to deviate for clarity or flow. Either way, all recipes should at some point discuss the nuance of the choice made using this pattern, preferably in the form of the alternative patterns section.
+Nous vous demandons de suivre le modèle ci-dessous. Nous comprenons toutefois qu'il est parfois nécessaire de s'en écarter pour des raisons de clarté ou de fluidité. Quoi qu'il en soit, toutes les recettes doivent, à un moment donné, discuter de la nuance du choix effectué à l'aide de ce modèle, de préférence sous la forme d'une section consacrée aux modèles alternatifs.
 
-### Base Example <Badge text="required" type="error" />
+### Exemple de base <Badge text="required" type="error" />
 
-1.  Articulate the problem in a sentence or two.
-2.  Explain the simplest possible solution in a sentence or two.
-3.  Show a small code sample.
-4.  Explain what this accomplishes in a sentence.
+1.  Articulez le problème en une ou deux phrases.
+2.  Expliquez la solution la plus simple possible en une ou deux phrases.
+3.  Montrez un petit échantillon de code.
+4.  Expliquez ce que cela accomplit en une phrase.
 
-### Details about the Value <Badge text="required" type="error" />
+### Détails sur la valeur <Badge text="required" type="error" />
 
-1.  Address common questions that one might have while looking at the example. (Blockquotes are great for this)
-2.  Show examples of common missteps and how they can be avoided.
-3.  Show very simple code samples of good and bad patterns.
-4.  Discuss why this may be a compelling pattern. Links for reference are not required but encouraged.
+1.  Répondez aux questions courantes que l'on peut se poser en regardant l'exemple. (Les guillemets sont parfaits pour cela)
+2.  Montrez des exemples de faux pas courants et comment les éviter.
+3.  Montrez des exemples de code très simples de bons et de mauvais modèles.
+4.  Discutez des raisons pour lesquelles ce modèle peut être convaincant. Les liens de référence ne sont pas obligatoires mais sont encouragés.
 
-### Real-World Example <Badge text="required" type="error" />
+### Exemple du monde réel <Badge text="required" type="error" />
 
-Demonstrate the code that would power a common or interesting use case, either by:
+Démontrez le code qui alimenterait un cas d'utilisation commun ou intéressant, soit en :
 
-1.  Walking through a few terse examples of setup, or
-2.  Embedding a codepen/jsfiddle example
+1.  Marchant à travers quelques exemples laconiques de configuration, ou.
+2.  Intégrant un exemple de codepen/jsfiddle.
 
-If you choose to do the latter, you should still talk through what it is and does.
+Si vous choisissez cette dernière option, vous devez quand même expliquer ce qu'il est et ce qu'il fait.
 
-### Additional Context <Badge text="optional" />
+### Contexte supplémentaire <Badge text="optional" />
 
-It's extremely helpful to write a bit about this pattern, where else it would apply, why it works well, and run through a bit of code as you do so or give people further reading materials here.
+Il est extrêmement utile d'écrire un peu sur ce modèle, où il pourrait s'appliquer, pourquoi il fonctionne bien, et d'exécuter un peu de code en le faisant ou de donner aux gens d'autres documents à lire ici.
 
-### When To Avoid This Pattern <Badge text="optional" />
+### Quand éviter ce modèle <Badge text="optional" />
 
-This section is not required, but heavily recommended. It won't make sense to write it for something very simple such as toggling classes based on state change, but for more advanced patterns like mixins it's vital. The answer to most questions about development is ["It depends!"](https://codepen.io/rachsmith/pen/YweZbG), this section embraces that. Here, we'll take an honest look at when the pattern is useful and when it should be avoided, or when something else makes more sense.
+Cette section n'est pas obligatoire, mais fortement recommandée. Cela n'aura pas de sens de l'écrire pour quelque chose de très simple comme basculer des classes en fonction du changement d'état, mais pour des patterns plus avancés comme les mixins, c'est vital. La réponse à la plupart des questions sur le développement est ["Cela dépend !"](https://codepen.io/rachsmith/pen/YweZbG), cette section en tient compte. Ici, nous jetterons un regard honnête sur les cas où le pattern est utile et ceux où il doit être évité, ou encore ceux où quelque chose d'autre a plus de sens.
 
 ### Alternative Patterns <Badge text="required with avoidance section" type="warning" />
 
-This section is required when you've provided the section above about avoidance. It's important to explore other methods so that people told that something is an antipattern in certain situations are not left wondering. In doing so, consider that the web is a big tent and that many people have different codebase structures and are solving different goals. Is the app large or small? Are they integrating Vue into an existing project, or are they building from scratch? Are their users only trying to achieve one goal or many? Is there a lot of asynchronous data? All of these concerns will impact alternative implementations. A good cookbook recipe gives developers this context.
+Cette section est requise lorsque vous avez fourni la section ci-dessus sur l'évitement. Il est important d'explorer d'autres méthodes afin que les personnes à qui l'on dit que quelque chose est un anti-modèle dans certaines situations ne se posent pas de questions. Ce faisant, tenez compte du fait que le Web est une grande tente et que de nombreuses personnes ont des structures de base de code différentes et poursuivent des objectifs différents. L'application est-elle petite ou grande ? Intègrent-ils Vue dans un projet existant ou construisent-ils à partir de zéro ? Les utilisateurs essaient-ils d'atteindre un seul objectif ou plusieurs ? Y a-t-il beaucoup de données asynchrones ? Toutes ces préoccupations auront un impact sur les implémentations alternatives. Une bonne recette de livre de cuisine donne aux développeurs ce contexte.
 
-## Thank you
+## Merci
 
-It takes time to contribute to documentation, and if you spend the time to submit a PR to this section of our docs, you do so with our gratitude.
+Il faut du temps pour contribuer à la documentation, et si vous prenez le temps de soumettre un PR à cette section de notre documentation, vous le faites avec notre gratitude.

@@ -1,23 +1,23 @@
 ---
-title: $attrs includes class & style
+title: $attrs inclut la classe et le style
 badges:
   - breaking
 ---
 
-# `$attrs` includes `class` & `style` <MigrationBadges :badges="$frontmatter.badges" />
+# `$attrs` inclut `class` & `style` <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Aperçu
 
-`$attrs` now contains _all_ attributes passed to a component, including `class` and `style`.
+`$attrs` contient maintenant _tous_ les attributs passés à un composant, y compris `class` et `style`.
 
-## 2.x Behavior
+## Comportement 2.x
 
-`class` and `style` attributes get some special handling in the Vue 2 virtual DOM implementation. For that reason, they are _not_ included in `$attrs`, while all other attributes are.
+Les attributs `class` et `style` bénéficient d'un traitement spécial dans l'implémentation du DOM virtuel de Vue 2. Pour cette raison, ils ne sont _pas_ inclus dans `$attrs`, alors que tous les autres attributs le sont.
 
-A side effect of this manifests when using `inheritAttrs: false`:
+Un effet secondaire de ceci se manifeste quand on utilise `inheritAttrs : `false` :
 
-- Attributes in `$attrs` are no longer automatically added to the root element, leaving it to the developer to decide where to add them.
-- But `class` and `style`, not being part of `$attrs`, will still be applied to the component's root element:
+- Les attributs de `$attrs` ne sont plus automatiquement ajoutés à l'élément racine, laissant au développeur le soin de décider où les ajouter.
+- Mais `class` et `style`, ne faisant pas partie de `$attrs`, seront toujours appliqués à l'élément racine du composant :
 
 ```vue
 <template>
@@ -32,13 +32,13 @@ export default {
 </script>
 ```
 
-when used like this:
+lorsqu'il est utilisé comme ceci :
 
 ```html
 <my-component id="my-id" class="my-class"></my-component>
 ```
 
-...will generate this HTML:
+...va générer ce HTML :
 
 ```html
 <label class="my-class">
@@ -46,9 +46,9 @@ when used like this:
 </label>
 ```
 
-## 3.x Behavior
+## Comportement 3.x
 
-`$attrs` contains _all_ attributes, which makes it easier to apply all of them to a different element. The example from above now generates the following HTML:
+`$attrs` contient _tous_ les attributs, ce qui facilite leur application à un élément différent. L'exemple ci-dessus génère maintenant le HTML suivant :
 
 ```html
 <label>
@@ -56,14 +56,14 @@ when used like this:
 </label>
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-In components that use `inheritAttrs: false`, make sure that styling still works as intended. If you previously relied on the special behavior of `class` and `style`, some visuals might be broken as these attributes might now be applied to another element.
+Dans les composants qui utilisent `inheritAttrs : false`, assurez-vous que le style fonctionne toujours comme prévu. Si vous vous reposiez auparavant sur le comportement spécial de `class` et `style`, certains visuels pourraient être cassés car ces attributs pourraient maintenant être appliqués à un autre élément.
 
-## See also
+## Voir aussi
 
-- [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
-- [Migration guide - `$listeners` removed](./listeners-removed.md)
-- [Migration guide - New Emits Option](./emits-option.md)
-- [Migration guide - `.native` modifier removed](./v-on-native-modifier-removed.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
+- [RFC pertinent](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
+- [Guide de migration - Suppression de `$listeners`](./listeners-removed.md)
+- [Guide de migration - Nouvelle option Emits](./emits-option.md)
+- [Guide de migration - Suppression du modificateur `.native`](./v-on-native-modifier-removed.md)
+- [Guide de migration - Changements dans l'API des fonctions de rendu](./render-function-api.md)

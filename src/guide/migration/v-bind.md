@@ -1,22 +1,22 @@
 ---
-title: v-bind Merge Behavior
+title: Comportement de fusion de v-bind
 badges:
   - breaking
 ---
 
 # {{ $frontmatter.title }} <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-- **BREAKING**: Order of bindings for v-bind will affect the rendering result.
+- **BREAKING** : L'ordre des liaisons pour v-bind affectera le résultat du rendu.
 
 ## Introduction
 
-When dynamically binding attributes on an element, a common scenario involves using both the `v-bind="object"` syntax as well as individual properties in the same element. However, this raises questions as far as the priority of merging.
+Lorsque l'on lie dynamiquement des attributs sur un élément, un scénario courant consiste à utiliser à la fois la syntaxe `v-bind="object"` et des propriétés individuelles dans le même élément. Cependant, cela soulève des questions quant à la priorité de la fusion.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In 2.x, if an element has both `v-bind="object"` and an identical individual property defined, the individual property would always overwrite bindings in the `object`. 
+En 2.x, si un élément avait à la fois `v-bind="object"` et une propriété individuelle identique définie, la propriété individuelle écrasait toujours les liaisons dans l'`object`. 
 
 ```html
 <!-- template -->
@@ -25,9 +25,9 @@ In 2.x, if an element has both `v-bind="object"` and an identical individual pro
 <div id="red"></div>
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In 3x, if an element has both `v-bind="object"` and an identical individual property defined, the order of how the bindings are declared determines how they are merged. In other words, rather than assuming developers want the individual property to always override what is defined in the `object`, developers now have more control over the desired merging behavior.
+Dans 3x, si un élément a à la fois `v-bind="object"` et une propriété individuelle identique définie, l'ordre dans lequel les liaisons sont déclarées détermine comment elles sont fusionnées. En d'autres termes, plutôt que de supposer que les développeurs veulent que la propriété individuelle prévale toujours sur ce qui est défini dans le `object`, les développeurs ont maintenant plus de contrôle sur le comportement de fusion souhaité.
 
 ```html
 <!-- template -->
@@ -41,6 +41,6 @@ In 3x, if an element has both `v-bind="object"` and an identical individual prop
 <div id="red"></div>
 ```
 
-## Migration Strategy
+## Stratégie de migration
 
-If you are relying on this override functionality for `v-bind`, we currently recommend ensuring that your `v-bind` attribute is defined before individual properties.
+Si vous comptez sur cette fonctionnalité de remplacement pour `v-bind`, nous vous recommandons actuellement de vous assurer que votre attribut `v-bind` est défini avant les propriétés individuelles.

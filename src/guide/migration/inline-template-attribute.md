@@ -3,15 +3,15 @@ badges:
   - breaking
 ---
 
-# Inline Template Attribute <MigrationBadges :badges="$frontmatter.badges" />
+# Attribut de modèle en ligne <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-Support for the [inline-template feature](https://vuejs.org/v2/guide/components-edge-cases.html#Inline-Templates) has been removed.
+La prise en charge de la fonctionnalité [inline-template](https://vuejs.org/v2/guide/components-edge-cases.html#Inline-Templates) a été supprimée.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In 2.x, Vue provided the `inline-template` attribute on child components to use its inner content as its template instead of treating it as distributed content.
+En 2.x, Vue fournissait l'attribut `inline-template` sur les composants enfants pour utiliser son contenu interne comme modèle au lieu de le traiter comme un contenu distribué.
 
 ```html
 <my-component inline-template>
@@ -22,17 +22,17 @@ In 2.x, Vue provided the `inline-template` attribute on child components to use 
 </my-component>
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-This feature will no longer be supported.
+Cette fonctionnalité ne sera plus supportée.
 
-## Migration Strategy
+## Stratégie de migration
 
-Most of the use cases for `inline-template` assumes a no-build-tool setup, where all templates are written directly inside the HTML page.
+La plupart des cas d'utilisation de `inline-template` suppose une configuration sans outil de construction, où tous les modèles sont écrits directement dans la page HTML.
 
-### Option #1: Use `<script>` tag
+### Option 1 : utiliser la balise `<script>`.
 
-The most straightforward workaround in such cases is using `<script>` with an alternative type:
+La solution la plus simple dans ce cas est d'utiliser la balise `<script>` avec un autre type :
 
 ```html
 <script type="text/html" id="my-comp-template">
@@ -40,7 +40,7 @@ The most straightforward workaround in such cases is using `<script>` with an al
 </script>
 ```
 
-And in the component, target the template using a selector:
+Et dans le composant, ciblez le modèle en utilisant un sélecteur :
 
 ```js
 const MyComp = {
@@ -49,11 +49,11 @@ const MyComp = {
 }
 ```
 
-This doesn't require any build setup, works in all browsers, is not subject to any in-DOM HTML parsing caveats (e.g. you can use camelCase prop names), and provides proper syntax highlighting in most IDEs. In traditional server-side frameworks, these templates can be split out into server template partials (included into the main HTML template) for better maintainability.
+Cela ne nécessite aucune configuration de construction, fonctionne dans tous les navigateurs, n'est pas soumis à des restrictions d'analyse HTML in-DOM (par exemple, vous pouvez utiliser des noms de prop en camelCase) et fournit une coloration syntaxique appropriée dans la plupart des IDE. Dans les frameworks traditionnels côté serveur, ces modèles peuvent être divisés en partiels de modèle de serveur (inclus dans le modèle HTML principal) pour une meilleure maintenabilité.
 
-### Option #2: Default Slot
+### Option 2 : Slot par défaut
 
-A component previously using `inline-template` can also be refactored using the default slot - which makes the data scoping more explicit while preserving the convenience of writing child content inline:
+Un composant qui utilisait précédemment `inline-template` peut également être remanié en utilisant le slot par défaut - ce qui rend le scoping des données plus explicite tout en préservant la commodité d'écrire le contenu enfant en ligne :
 
 ```html
 <!-- 2.x Syntax -->
@@ -61,18 +61,18 @@ A component previously using `inline-template` can also be refactored using the 
   {{ msg }} {{ childState }}
 </my-comp>
 
-<!-- Default Slot Version -->
+<!-- Version par défaut de la fente -->
 <my-comp v-slot="{ childState }">
   {{ parentMsg }} {{ childState }}
 </my-comp>
 ```
 
-The child, instead of providing no template, should now render the default slot\*:
+L'enfant, au lieu de ne fournir aucun modèle, devrait maintenant rendre le slot\* par défaut :
 
 ```html
 <!--
-  in child template, render default slot while passing
-  in necessary private state of child.
+  dans le modèle enfant, rendre le slot par défaut tout en passant
+  l'état privé nécessaire de l'enfant.
 -->
 <template>
   <slot :childState="childState" />

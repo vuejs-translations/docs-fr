@@ -1,32 +1,32 @@
-# Standards
+# Normes
 
-The World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) develops web accessibility standards for the different components:
+L'initiative pour l'accessibilité du Web (WAI) du World Wide Web Consortium (W3C) élabore des normes d'accessibilité du Web pour les différents composants :
 
 - [User Agent Accessibility Guidelines (UAAG)](https://www.w3.org/WAI/standards-guidelines/uaag/)
-  - web browsers and media players, including some aspects of assistive technologies
-- [Authoring Tool Accessibility Guidelines (ATAG)](https://www.w3.org/WAI/standards-guidelines/atag/)
-  - authoring tools
-- [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-  - web content - used by developers, authoring tools, and accessibility evaluation tools
+  - Navigateurs Web et lecteurs multimédias, y compris certains aspects des technologies d'assistance.
+- [Directives d'accessibilité aux outils de création (ATAG)](https://www.w3.org/WAI/standards-guidelines/atag/)
+  - outils de création
+- [Directives d'accessibilité au contenu Web (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  - contenu Web - utilisé par les développeurs, les outils de création et les outils d'évaluation de l'accessibilité.
 
-## Web Content Accessibility Guidelines (WCAG)
+## Directives d'accessibilité au contenu Web (WCAG)
 
-[WCAG 2.1](https://www.w3.org/TR/WCAG21/) extends on [WCAG 2.0](https://www.w3.org/TR/WCAG20/) and allows implementation of new technologies by addressing changes to the web. The W3C encourages use of the most current version of WCAG when developing or updating Web accessibility policies.
+Les [WCAG 2.1](https://www.w3.org/TR/WCAG21/) s'appuient sur les [WCAG 2.0](https://www.w3.org/TR/WCAG20/) et permettent la mise en œuvre de nouvelles technologies en tenant compte des changements survenus sur le Web. Le W3C encourage l'utilisation de la version la plus récente des WCAG lors de l'élaboration ou de la mise à jour des politiques d'accessibilité du Web.
 
-### WCAG 2.1 Four Main Guiding Principles (abbreviated as POUR):
+### WCAG 2.1 Four Main Guiding Principles (abrégé en POUR) :
 
-- [Perceivable](https://www.w3.org/TR/WCAG21/#perceivable)
-  - Users must be able to perceive the information being presented
-- [Operable](https://www.w3.org/TR/WCAG21/#operable)
-  - Interface forms, controls, and navigation are operable
-- [Understandable](https://www.w3.org/TR/WCAG21/#understandable)
-  - Information and the operation of user interface must be understandable to all users
-- [Robust](https://www.w3.org/TR/WCAG21/#robust)
-  - Users must be able to access the content as technologies advance
+- [Percevable](https://www.w3.org/TR/WCAG21/#perceivable)
+  - Les utilisateurs doivent être en mesure de percevoir l'information présentée.
+- [Opérable](https://www.w3.org/TR/WCAG21/#operable)
+  - Les formulaires, les contrôles et la navigation de l'interface sont exploitables.
+- [Compréhensible](https://www.w3.org/TR/WCAG21/#understandable)
+  - Les informations et le fonctionnement de l'interface utilisateur doivent être compréhensibles pour tous les utilisateurs.
+- [Robuste](https://www.w3.org/TR/WCAG21/#robust)
+  - Les utilisateurs doivent pouvoir accéder au contenu à mesure que les technologies progressent.
 
-### Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA)
+### Initiative pour l'accessibilité du Web - Applications Internet riches accessibles (WAI-ARIA)
 
-W3C's WAI-ARIA provides guidance on how to build dynamic content and advanced user interface controls.
+La norme WAI-ARIA du W3C fournit des conseils sur la manière de créer du contenu dynamique et des contrôles d'interface utilisateur avancés.
 
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
-- [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
+- [Pratiques de création WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)

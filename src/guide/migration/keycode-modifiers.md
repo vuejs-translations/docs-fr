@@ -3,18 +3,18 @@ badges:
   - breaking
 ---
 
-# KeyCode Modifiers <MigrationBadges :badges="$frontmatter.badges" />
+# Modificateurs de code clé <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Vue d'ensemble
 
-Here is a quick summary of what has changed:
+Voici un résumé rapide de ce qui a changé :
 
-- **BREAKING**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
-- **BREAKING**: `config.keyCodes` is no longer supported
+- **BREAKING** : L'utilisation de chiffres, c'est-à-dire de keyCodes, comme modificateurs `v-on` n'est plus supportée.
+- **BREAKING** : `config.keyCodes` n'est plus supporté.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In Vue 2, `keyCodes` were supported as a way to modify a `v-on` method.
+Dans Vue 2, les `keyCodes` étaient supportés comme moyen de modifier une méthode `v-on`.
 
 ```html
 <!-- keyCode version -->
@@ -24,7 +24,7 @@ In Vue 2, `keyCodes` were supported as a way to modify a `v-on` method.
 <input v-on:keyup.enter="submit" />
 ```
 
-In addition, you could define your own aliases via the global `config.keyCodes` option.
+En outre, vous pouvez définir vos propres alias via l'option globale `config.keyCodes`.
 
 ```js
 Vue.config.keyCodes = {
@@ -40,17 +40,17 @@ Vue.config.keyCodes = {
 <input v-on:keyup.f1="showHelpText" />
 ```
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-Since [`KeyboardEvent.keyCode` has been deprecated](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode), it no longer makes sense for Vue 3 to continue supporting this as well. As a result, it is now recommended to use the kebab-case name for any key you want to use as a modifier.
+Depuis que [`KeyboardEvent.keyCode` a été déprécié](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode), il n'est plus utile pour Vue 3 de continuer à le prendre en charge. Par conséquent, il est désormais recommandé d'utiliser le nom en casse kebab pour toute touche que vous souhaitez utiliser comme modificateur.
 
 ```html
 <!-- Vue 3 Key Modifier on v-on -->
 <input v-on:keyup.delete="confirmDelete" />
 ```
 
-As a result, this means that `config.keyCodes` is now also deprecated and will no longer be supported.
+En conséquence, cela signifie que `config.keyCodes` est maintenant aussi déprécié et ne sera plus supporté.
 
-## Migration Strategy
+## Stratégie de migration
 
-For those using `keyCode` in their codebase, we recommend converting them to their kebab-cased named equivalents.
+Pour ceux qui utilisent `keyCode` dans leur base de code, nous recommandons de les convertir en leurs équivalents nommés avec une casse kebab.

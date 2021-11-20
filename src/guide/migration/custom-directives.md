@@ -5,21 +5,21 @@ badges:
 
 # Custom Directives <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Aperçu
 
-The hook functions for directives have been renamed to better align with the component lifecycle.
+Les fonctions de hook pour les directives ont été renommées pour mieux s'aligner sur le cycle de vie des composants.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In Vue 2, custom directives were created by using the hooks listed below to target an element’s lifecycle, all of which are optional:
+Dans Vue 2, les directives personnalisées étaient créées en utilisant les hooks listés ci-dessous pour cibler le cycle de vie d'un élément, tous étant optionnels :
 
-- **bind** - Occurs once the directive is bound to the element. Occurs only once.
-- **inserted** - Occurs once the element is inserted into the parent DOM.
-- **update** - This hook is called when the element updates, but children haven't been updated yet.
-- **componentUpdated** - This hook is called once the component and the children have been updated.
-- **unbind** - This hook is called once the directive is removed. Also called only once.
+- **bind** - Se produit une fois que la directive est liée à l'élément. Ne se produit qu'une fois.
+- **inserted** - Se produit une fois que l'élément est inséré dans le DOM parent.
+- **update** - Ce hook est appelé lorsque l'élément est mis à jour, mais que les enfants n'ont pas encore été mis à jour.
+- **componentUpdated** - Ce crochet est appelé une fois que le composant et les enfants ont été mis à jour.
+- **unbind** - Ce hook est appelé une fois que la directive est retirée. Il n'est également appelé qu'une seule fois.
 
-Here’s an example of this:
+En voici un exemple :
 
 ```html
 <p v-highlight="'yellow'">Highlight this text bright yellow</p>
@@ -33,22 +33,22 @@ Vue.directive('highlight', {
 })
 ```
 
-Here, in the initial setup for this element, the directive binds a style by passing in a value, that can be updated to different values through the application.
+Ici, dans la configuration initiale de cet élément, la directive lie un style en passant une valeur, qui peut être mise à jour à différentes valeurs par l'application.
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In Vue 3, however, we’ve created a more cohesive API for custom directives. As you can see, they differ greatly from our component lifecycle methods even though we’re hooking into similar events. We’ve now unified them like so:
+Dans Vue 3, cependant, nous avons créé une API plus cohérente pour les directives personnalisées. Comme vous pouvez le constater, elles sont très différentes des méthodes de cycle de vie de nos composants, même si nous nous connectons à des événements similaires. Nous les avons maintenant unifiées comme suit :
 
-- **created** - new! This is called before the element's attributes or event listeners are applied.
+- **created** - nouveau ! Ceci est appelé avant que les attributs de l'élément ou les écouteurs d'événements soient appliqués.
 - bind → **beforeMount**
 - inserted → **mounted**
-- **beforeUpdate**: new! This is called before the element itself is updated, much like the component lifecycle hooks.
-- update → removed! There were too many similarities to updated, so this is redundant. Please use updated instead.
+- **beforeUpdate** : nouveau ! Ceci est appelé avant que l'élément lui-même soit mis à jour, un peu comme les crochets de cycle de vie des composants.
+- update → supprimé ! Il y avait trop de similitudes avec updated, donc c'est redondant. Veuillez utiliser updated à la place.
 - componentUpdated → **updated**
-- **beforeUnmount**: new! Similar to component lifecycle hooks, this will be called right before an element is unmounted.
+- **beforeUnmount** : nouveau ! Similaire aux crochets de cycle de vie des composants, ceci sera appelé juste avant qu'un élément soit démonté.
 - unbind -> **unmounted**
 
-The final API is as follows:
+L'API finale est la suivante :
 
 ```js
 const MyDirective = {
@@ -61,7 +61,7 @@ const MyDirective = {
 }
 ```
 
-The resulting API could be used like this, mirroring the example from earlier:
+L'API qui en résulte peut être utilisée comme suit, en reprenant l'exemple précédent :
 
 ```html
 <p v-highlight="'yellow'">Highlight this text bright yellow</p>
@@ -77,13 +77,13 @@ app.directive('highlight', {
 })
 ```
 
-Now that the custom directive lifecycle hooks mirror those of the components themselves, they become easier to reason about and remember!
+Maintenant que les crochets du cycle de vie des directives personnalisées reflètent ceux des composants eux-mêmes, il est plus facile de raisonner et de se souvenir d'eux !
 
-### Edge Case: Accessing the component instance
+### Cas limite : Accès à l'instance du composant
 
-It's generally recommended to keep directives independent of the component instance they are used in. Accessing the instance from within a custom directive is often a sign that the directive should rather be a component itself. However, there are situations where this actually makes sense.
+Il est généralement recommandé de garder les directives indépendantes de l'instance du composant dans lequel elles sont utilisées. L'accès à l'instance à partir d'une directive personnalisée est souvent un signe que la directive devrait plutôt être un composant lui-même. Cependant, il existe des situations où cela a du sens.
 
-In Vue 2, the component instance had to be accessed through the `vnode` argument:
+Dans Vue 2, l'instance du composant devait être accessible via l'argument `vnode` :
 
 ```javascript
 bind(el, binding, vnode) {
@@ -91,7 +91,7 @@ bind(el, binding, vnode) {
 }
 ```
 
-In Vue 3, the instance is now part of the `binding`:
+Dans Vue 3, l'instance fait maintenant partie du `binding` :
 
 ```javascript
 mounted(el, binding, vnode) {
@@ -100,5 +100,5 @@ mounted(el, binding, vnode) {
 ```
 
 :::warning
-With [fragments](/guide/migration/fragments.html#overview) support, components can potentially have more than one root node. When applied to a multi-root component, a directive will be ignored and a warning will be logged.
+Avec la prise en charge de [fragments](/guide/migration/fragments.html#overview), les composants peuvent potentiellement avoir plus d'un noeud racine. Lorsqu'elle est appliquée à un composant à racines multiples, une directive sera ignorée et un avertissement sera enregistré.
 :::

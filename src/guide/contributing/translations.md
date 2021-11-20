@@ -1,11 +1,11 @@
-# Translations
+# Traductions
 
-Vue has spread across the globe, with the core team being in at least half a dozen different timezones. [The forum](https://forum.vuejs.org/) includes 7 languages and counting and many of our docs have [actively-maintained translations](https://github.com/vuejs?utf8=%E2%9C%93&q=vuejs.org). We're very proud of Vue's international reach, but we can do even better.
+Vue s'est répandu dans le monde entier, l'équipe centrale se trouvant dans au moins une demi-douzaine de fuseaux horaires différents. [Le forum](https://forum.vuejs.org/) comprend 7 langues et un grand nombre de nos documents ont des [traductions activement maintenues](https://github.com/vuejs?utf8=%E2%9C%93&q=vuejs.org). Nous sommes très fiers de la portée internationale de Vue, mais nous pouvons faire encore mieux.
 
-## Can we start translating Vue 3 docs?
+## Pouvons-nous commencer à traduire la documentation de Vue 3 ?
 
-Yes! We are ready for translation!
+Oui ! Nous sommes prêts pour la traduction !
 
-## How can I get involved with translations?
+### Comment puis-je m'impliquer dans les traductions ?
 
-The best way to get started is to check out [this pinned issue](https://github.com/vuejs/docs-next/issues/478) that contains active discussions on the various initiatives happening in the community.
+La meilleure façon de commencer est de consulter [cette question épinglée](https://github.com/vuejs/docs-next/issues/478) qui contient des discussions actives sur les différentes initiatives de la communauté.

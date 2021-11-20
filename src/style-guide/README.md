@@ -1669,7 +1669,7 @@ app.component('TodoItem', {
 
 Gerer les differents états avec `this.$root` et/ou utiliser un bus d'événements global peut être pratique pour des cas très simples, mais ce n'est pas appropriée pour la plupart des applications.
 
-Vuex est l' [implémentation officielle des flux-like](/guide/state-management.html#official-flux-like-implementation) pour Vue, et offre non seulement un emplacement central pour gérer l'état, mais également des outils pour organiser, suivre et déboguer les changements d'état. Il s'intègre bien dans l'écosystème Vue (y compris le support complet de [Vue DevTools] (/ guide / installation.html # vue-devtools)).
+Vuex est l' [implémentation officielle des flux-like](/guide/state-management.html#official-flux-like-implementation) pour Vue, et offre non seulement un emplacement central pour gérer l'état, mais également des outils pour organiser, suivre et déboguer les changements d'état. Il s'intègre bien dans l'écosystème Vue (y compris le support complet de [Vue DevTools](/ guide / installation.html # vue-devtools)).
 
 <div class="style-example style-example-bad">
 <h4>Mauvais</h4>

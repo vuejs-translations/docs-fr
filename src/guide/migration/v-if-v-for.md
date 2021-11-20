@@ -1,34 +1,34 @@
 ---
-title: v-if vs. v-for Precedence
+title: Prédominance de v-if par rapport à v-for
 badges:
   - breaking
 ---
 
 # {{ $frontmatter.title }} <MigrationBadges :badges="$frontmatter.badges" />
 
-## Overview
+## Aperçu
 
-- **BREAKING**: If used on the same element, `v-if` will have higher precedence than `v-for`
+- **BREAKING** : Si elle est utilisée sur le même élément, `v-if` aura une plus grande priorité que `v-for`.
 
 ## Introduction
 
-Two of the most commonly used directives in Vue.js are `v-if` and `v-for`. So it's no surprise that there comes a time when developers want to use both together. While this is not a recommended practice, there may be times when this is necessary, so we wanted to provide guidance for how it works.
+Deux des directives les plus utilisées dans Vue.js sont `v-if` et `v-for`. Il n'est donc pas surprenant qu'il arrive un moment où les développeurs souhaitent utiliser les deux ensemble. Bien que ce ne soit pas une pratique recommandée, il peut y avoir des moments où cela est nécessaire, nous avons donc voulu fournir des conseils sur la façon dont cela fonctionne.
 
-## 2.x Syntax
+## Syntaxe 2.x
 
-In 2.x, when using `v-if` and `v-for` on the same element, `v-for` would take precedence.
+En 2.x, lorsque vous utilisiez `v-if` et `v-for` sur le même élément, `v-for` était prioritaire.
 
-## 3.x Syntax
+## Syntaxe 3.x
 
-In 3.x, `v-if` will always have the higher precedence than `v-for`.
+En 3.x, `v-if` aura toujours la priorité sur `v-for`.
 
-## Migration Strategy
+## Stratégie de migration
 
-It is recommended to avoid using both on the same element due to the syntax ambiguity.
+Il est recommandé d'éviter d'utiliser les deux sur le même élément en raison de l'ambiguïté de la syntaxe.
 
-Rather than managing this at the template level, one method for accomplishing this is to create a computed property that filters out a list for the visible elements.
+Plutôt que de gérer cela au niveau du modèle, une méthode pour y parvenir consiste à créer une propriété calculée qui filtre une liste pour les éléments visibles.
 
-## See also
+## Voir aussi
 
 - [List Rendering - Displaying Filtered/Sorted Results](/guide/list.html#affichage-des-resultats-filtres-tries)
-- [List Rendering - `v-for` with `v-if`](/guide/list.html#v-for-avec-v-if)
+- [Rendu de liste - `v-for` avec `v-if`](/guide/list.html#v-for-avec-v-if)
