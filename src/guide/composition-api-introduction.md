@@ -125,7 +125,7 @@ setup (props) {
 
   return {
     repositories,
-    getUserRepositories // les fonctions rétournées ont le comportement que methods
+    getUserRepositories // les fonctions rétournées ont le même comportement que methods
   }
 }
 ```
