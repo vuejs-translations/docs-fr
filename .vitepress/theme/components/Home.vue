@@ -6,17 +6,16 @@ import SponsorsGroup from './SponsorsGroup.vue';
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      Le Framework 
+      <br />JavaScript
+      <span class="accent">Évolutif</span>
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      Un framework pour construire des interface utilisateur qui se veut <br/><strong>accessible, performant et polyvalent</strong>.
     </p>
     <p class="actions">
       <a class="get-started" href="/guide/introduction.html">
-        Get Started
+        Commencer
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,13 +28,13 @@ import SponsorsGroup from './SponsorsGroup.vue';
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/guide/quick-start.html">L'installer</a>
     </p>
   </section>
 
   <!-- TODO make dynamic based on data -->
   <section id="special-sponsor">
-    <span>Special Sponsor</span>
+    <span>Sponsors spéciaux</span>
     <a href="#">
       <picture>
         <source type="image/avif" srcset="/images/sponsors/hbuilder.avif" />
@@ -47,37 +46,34 @@ import SponsorsGroup from './SponsorsGroup.vue';
         />
       </picture>
     </a>
-    <span>Advanced IDE for Vue</span>
+    <span>IDE avancé pour Vue</span>
   </section>
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>Accessible</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        Construit en s'appuyant sur les standard HTML, CSS et JavaScript en proposant une API and une documentation traduite.
       </p>
     </div>
     <div class="vt-box">
       <h2>Performant</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        Réactif avec un système de réactivité optimisé à la compilation sans devoir penser à soi-même.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>Polyvalent</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        Un écosystème riche et utilisable progressivement qui peut évoluer d'une simple librairie à un framework complet.
       </p>
     </div>
   </section>
 
   <section id="sponsors">
-    <h2>Platinum Sponsors</h2>
+    <h2>Sponsors Platinum</h2>
     <SponsorsGroup tier="platinum" placement="landing" />
-    <h2>Gold Sponsors</h2>
+    <h2>Sponsors Gold</h2>
     <SponsorsGroup tier="gold" placement="landing" />
   </section>
 
