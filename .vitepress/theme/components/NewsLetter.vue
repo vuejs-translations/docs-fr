@@ -22,7 +22,7 @@ import { VTLink } from '@vue/theme'
             id="member_email"
             name="member[email]"
             type="email"
-            placeholder="Email address"
+            placeholder="Adresse e-mail"
             required
           />
 
@@ -32,7 +32,7 @@ import { VTLink } from '@vue/theme'
               id="member_submit"
               name="member[subscribe]"
               type="submit"
-              value="SUBSCRIBE"
+              value="S'ABONNER"
             />
           </div>
         </form>
@@ -40,7 +40,6 @@ import { VTLink } from '@vue/theme'
 
       <p class="help">
         Vous pouvez lire les newsletters précédentes et écoutez nos podcasts sur
-        You can read the previous issues and listen to our podcast at
         <VTLink
           class="link"
           href="https://news.vuejs.org/"

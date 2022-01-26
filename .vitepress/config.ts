@@ -12,12 +12,12 @@ const nav = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Tutorial', link: '/tutorial/' },
-      { text: 'Examples', link: '/examples/' },
-      { text: 'Quick Start', link: '/guide/quick-start' },
-      { text: 'Style Guide', link: '/style-guide/' },
+      { text: 'Tutoriel', link: '/tutorial/' },
+      { text: 'Exemples', link: '/examples/' },
+      { text: 'Commencer', link: '/guide/quick-start' },
+      { text: 'Convention', link: '/style-guide/' },
       {
-        text: 'Migration from Vue 2',
+        text: 'Migration vers Vue 2',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -32,67 +32,67 @@ const nav = [
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Ecosystem',
+    text: 'Eco-système',
     activeMatch: `^/ecosystem/`,
     items: [
       {
-        text: 'Resources',
+        text: 'Ressources',
         items: [
-          { text: 'Partners', link: '/ecosystem/partners' },
-          { text: 'Themes', link: '/ecosystem/themes' },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
+          { text: 'Partenaires', link: '/ecosystem/partners' },
+          { text: 'Thèmes', link: '/ecosystem/themes' },
+          { text: 'Offres d\'emploi', link: 'https://vuejobs.com/?ref=vuejs' },
+          { text: 'Boutique t-shirt', link: 'https://vue.threadless.com/' }
         ]
       },
       {
-        text: 'Video Courses',
+        text: 'Cours au format vidéo',
         items: [
           {
-            text: 'Vue Mastery',
+            text: 'Vue Mastery (US)',
             link: 'https://www.vuemastery.com/courses/'
           },
           {
-            text: 'Vue School',
+            text: 'Vue School (EU)',
             link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
           }
         ]
       },
       {
-        text: 'Help',
+        text: 'Aide',
         items: [
           {
             text: 'Discord Chat',
             link: 'https://discord.com/invite/HBherRA'
           },
           { text: 'Forum', link: 'https://forum.vuejs.org/' },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+          { text: 'Communauté DEV', link: 'https://dev.to/t/vue' }
         ]
       },
       {
-        text: 'News',
+        text: 'Actualités',
         items: [
           { text: 'Blog', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
           { text: 'Newsletter', link: 'https://news.vuejs.org/' },
-          { text: 'Events', link: 'https://events.vuejs.org/' }
+          { text: 'Événements', link: 'https://events.vuejs.org/' }
         ]
       }
     ]
   },
   {
-    text: 'About',
+    text: 'À propos',
     activeMatch: `^/about/`,
     items: [
       { text: 'FAQ', link: '/about/faq' },
-      { text: 'Team', link: '/about/team' },
-      { text: 'Releases', link: '/about/releases' },
+      { text: 'L\'équipe', link: '/about/team' },
+      { text: 'Déploiements', link: '/about/releases' },
       {
         text: 'Community Guide',
         link: '/about/community-guide'
       },
-      { text: 'Code of Conduct', link: '/about/coc' },
+      { text: 'Code de Conduite', link: '/about/coc' },
       {
-        text: 'The Documentary',
+        text: 'Le documentaire',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
       }
     ]
