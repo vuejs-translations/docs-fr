@@ -1,6 +1,8 @@
-# vuejs.org
+# Next fr.vuejs.org (traduction française)
 
-This is the WIP branch of the brand new vuejs.org. **The content is under heavy updates and re-organization so please refrain from submitting PRs to this branch until we have removed this notice.**
+Ce projet est un fork de vuejs/docs dont le but est de centraliser sa traduction en français.
+
+Merci de vous référer à la partie <a href="#Contributing">Contributing</a> afin de nous prêter main forte en bonne et due forme
 
 ## Contributing
 
@@ -12,6 +14,21 @@ For local development, [pnpm](https://pnpm.io/) is preferred as package manager:
 pnpm i
 pnpm run dev
 ```
+
+### Share translations work
+
+We will work using issues to share translations work to all involved team member.
+It will have main issue for each part of Vue website.
+
+- Guide
+- Tutorials
+- Examples
+- Quick Start
+- Migration from V2
+- API
+- Eco system
+- About
+- Misc (translation page, ...)
 
 ## Working on the content
 
