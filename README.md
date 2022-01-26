@@ -15,7 +15,7 @@ pnpm i
 pnpm run dev
 ```
 
-### Extensions
+### VS Code extentions
 
 Use following VS Code extensions to avoid spell mistake:
 - streetsidesoftware.code-spell-checker
@@ -23,8 +23,8 @@ Use following VS Code extensions to avoid spell mistake:
 
 ### Share translations work
 
-We will work using issues to share translations work to all involved team member.
-It will have main issue for each part of Vue website.
+We will work using [issues](/issues) and [projects](/projects/1) to share translations work to all involved team member.
+It will have main topic for each part of Vue website.
 
 - Guide
 - Tutorials
