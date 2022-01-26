@@ -15,6 +15,12 @@ pnpm i
 pnpm run dev
 ```
 
+### Extensions
+
+Use following VS Code extensions to avoid spell mistake:
+- streetsidesoftware.code-spell-checker
+- streetsidesoftware.code-spell-checker-french
+
 ### Share translations work
 
 We will work using issues to share translations work to all involved team member.
