@@ -4,13 +4,13 @@ footer: false
 
 # Introduction
 
-:::info You are reading the documentation for Vue 3!
+:::info Vous êtes en train de lire la documentation de Vue 3
 
 - La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
 - Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
   :::
 
-## Vue : quésaco?
+## Qu'est-ce que Vue?
 
 Vue (à prononcer en anglais /vjuː/, comme **view**) est un framework JavaScript pour la création d'interface utilisateur. Il se repose sur les standards HTML, CSS and JavaScript, et propose une manière efficace de déclarer des composants pour construire des interfaces plus ou moins complexes.
 
@@ -48,21 +48,20 @@ const compteur = ref(0)
   </button>
 </div>
 
-Cet exemple illustre les deux fonctionnalités principales de Vue :
+Cet exemple illustre les deux principales fonctionnalités de Vue :
 
-- **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de templating qui permet de décrire de manière déclarative la sortie HTML basée sur un état JavaScript.
+- **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de type template qui permet de décrire de manière déclarative la structure HTML tout en étant basée sur un état JavaScript.
 
-- **Reactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM lors de changement effectif.
+- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM lors de changement.
 
-Il se peut que vous ayez des question - pas d'inquiétude. Nous allons couvrir tous les petits détails dans notre documentation. Pour l'instant, lisez soignement 
-You may already have questions - don't worry. We will cover every little detail in the rest of the documentation. Pour l'instant, veuillez lire attentivement afin que vous puissiez avoir une compréhension de haut niveau de ce que propose Vue. 
+Il se peut que vous ayez des questions - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension de haut niveau de ce que propose Vue.
 
 :::tip Pré-requis
-Le reste de la documentation suppose que vous soyez familié(e) avec l'HTML, CSS and JavaScript. Si vous faites vos premiers pas dans le développement front-end, il est préférable de ne pas vous dans l'usage dans framework - apprenez les basiques et revenez ici!
-Une expérience préalable avec d'autres framework peut aider, mais n'est pas obligatoire. 
+Le reste de la documentation suppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage dans framework - armez-vous des basiques et revenez.  
+Une expérience préalable avec d'autres framework peut aider, mais n'est pas obligatoire.
 :::
 
-## The Progressive Framework
+## Le Framework Evolutif
 
 Vue is a framework and ecosystem that covers most of the common features needed in frontend development. But the web is extremely diverse - the things we build on the web may vary drastically in form and scale. With that in mind, Vue is designed to be flexible and incrementally adoptable. Depending on your use case, Vue can be used in different ways:
 

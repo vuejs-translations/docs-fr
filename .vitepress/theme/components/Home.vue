@@ -53,19 +53,19 @@ import SponsorsGroup from './SponsorsGroup.vue';
     <div class="vt-box">
       <h2>Accessible</h2>
       <p>
-        Construit en s'appuyant sur les standard HTML, CSS et JavaScript en proposant une API and une documentation traduite.
+        S'appuie sur les standard HTML, CSS et JavaScript en proposant une API and une documentation traduite en plusieurs langues.
       </p>
     </div>
     <div class="vt-box">
       <h2>Performant</h2>
       <p>
-        Réactif avec un système de réactivité optimisé à la compilation sans devoir penser à soi-même.
+        Se repose sur un système de réactivité, optimisé à la compilation sans devoir y penser par soi-même.
       </p>
     </div>
     <div class="vt-box">
       <h2>Polyvalent</h2>
       <p>
-        Un écosystème riche et utilisable progressivement qui peut évoluer d'une simple librairie à un framework complet.
+        Un écosystème riche et utilisable progressivement qui peut évoluer selon les besoins, d'une simple librairie à un framework complet.
       </p>
     </div>
   </section>
