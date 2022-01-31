@@ -6,23 +6,22 @@ footer: false
 
 :::info You are reading the documentation for Vue 3!
 
-- Vue 2 documentation has been moved to [v2.vuejs.org](https://v2.vuejs.org/).
-- Upgrading from Vue 2? Check out the [Migration Guide](https://v3-migration.vuejs.org/).
+- La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
+- Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (US)](https://v3-migration.vuejs.org/).
   :::
 
-## What is Vue?
+## Vue : quésaco?
 
-Vue (pronounced /vjuː/, like **view**) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.
+Vue (à prononcer en anglais /vjuː/, comme **view**) est un framework JavaScript pour la création d'interface utilisateur. Il se repose sur les standards HTML, CSS and JavaScript, et propose une manière efficace de déclarer des composants pour construire des interfaces plus ou moins complexes.
 
-Here is a minimal example:
-
+Voici un exemple simple :
 ```js
 import { createApp } from 'vue'
 
 createApp({
   data() {
     return {
-      count: 0
+      compteur: 0
     }
   }
 }).mount('#app')
@@ -30,22 +29,22 @@ createApp({
 
 ```vue-html
 <div id="app">
-  <button @click="count++">
-    Count is: {{ count }}
+  <button @click="compteur++">
+    Le compteur est à {{ compteur }}
   </button>
 </div>
 ```
 
-**Result**
+**Résultat**
 
 <script setup>
 import { ref } from 'vue'
-const count = ref(0)
+const compteur = ref(0)
 </script>
 
 <div class="demo">
-  <button @click="count++">
-    Count is: {{ count }}
+  <button @click="compteur++">
+    Le compteur est à {{ compteur }}
   </button>
 </div>
 
