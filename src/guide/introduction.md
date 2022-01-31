@@ -7,7 +7,7 @@ footer: false
 :::info You are reading the documentation for Vue 3!
 
 - La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
-- Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (US)](https://v3-migration.vuejs.org/).
+- Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
   :::
 
 ## Vue : quésaco?
@@ -48,16 +48,18 @@ const compteur = ref(0)
   </button>
 </div>
 
-The above example demonstrates the two core features of Vue:
+Cet exemple illustre les deux fonctionnalités principales de Vue :
 
-- **Declarative Rendering**: Vue extends standard HTML with a template syntax that allows us to declaratively describe HTML output based on JavaScript state.
+- **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de templating qui permet de décrire de manière déclarative la sortie HTML basée sur un état JavaScript.
 
-- **Reactivity**: Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
+- **Reactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM lors de changement effectif.
 
-You may already have questions - don't worry. We will cover every little detail in the rest of the documentation. For now, please read along so you can have a high-level understanding of what Vue offers.
+Il se peut que vous ayez des question - pas d'inquiétude. Nous allons couvrir tous les petits détails dans notre documentation. Pour l'instant, lisez soignement 
+You may already have questions - don't worry. We will cover every little detail in the rest of the documentation. Pour l'instant, veuillez lire attentivement afin que vous puissiez avoir une compréhension de haut niveau de ce que propose Vue. 
 
-:::tip Prerequisites
-The rest of the documentation assumes basic familiarity with HTML, CSS and JavaScript. If you are totally new to front development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+:::tip Pré-requis
+Le reste de la documentation suppose que vous soyez familié(e) avec l'HTML, CSS and JavaScript. Si vous faites vos premiers pas dans le développement front-end, il est préférable de ne pas vous dans l'usage dans framework - apprenez les basiques et revenez ici!
+Une expérience préalable avec d'autres framework peut aider, mais n'est pas obligatoire. 
 :::
 
 ## The Progressive Framework
