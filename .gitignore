@@ -101,3 +101,7 @@ dist/
 # Temporary folders
 tmp/
 temp/
+
+### IDE ###
+# IntelliJ
+.idea

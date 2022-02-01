@@ -2,7 +2,7 @@
 
 ## Créer une Instance d'Application
 
-Chaque application Vue commence par créer ue nouvelle **instance d'application** avec la fonction `createApp` :
+Chaque application Vue commence par créer une nouvelle **instance d'application** avec la fonction `createApp` :
 
 ```js
 const app = Vue.createApp({
@@ -10,7 +10,7 @@ const app = Vue.createApp({
 })
 ```
 
-L'instance d'application est utilisée pour enregistrer des « globaux » qui peuvent ensuite être utilisés par les composants de cette application. Nous en discuterons en détail plus tard dans le guide, mais à titre d'exemple rapide:
+L'instance d'application est utilisée pour enregistrer des « globaux » qui peuvent ensuite être utilisés par les composants de cette application. Nous en discuterons en détail plus tard dans le guide, mais à titre d'exemple rapide :
 
 ```js
 const app = Vue.createApp({})
@@ -19,7 +19,7 @@ app.directive('focus', FocusDirective)
 app.use(LocalePlugin)
 ```
 
-La plupart des méthodes exposées par l'instance d'application retournent cette même instance, permettant donc le chaînage:
+La plupart des méthodes exposées par l'instance d'application retournent cette même instance, permettant donc le chaînage :
 
 ```js
 Vue.createApp({})
@@ -35,7 +35,7 @@ Vous pouvez parcourir l'API complète de l'_application API_ dans la [reference 
 
 Les options passées à `createApp` sont utilisées pour configurer le **composant racine**. Ce composant est utilisé comme point de départ pour effectuer le rendu lorsque nous **montons** l'application.
 
-Une application doit être montée dans un élément du DOM. Par exemple, si nous voulons monter une application Vue dans `<div id="app"> </div>`, nous devons passer `#app`:
+Une application doit être montée dans un élément du DOM. Par exemple, si nous voulons monter une application Vue dans `<div id="app"> </div>`, nous devons passer `#app` :
 
 ```js
 const RootComponent = {
@@ -49,7 +49,7 @@ Contrairement à la plupart des méthodes d'application, `mount` ne renvoie pas 
 
 Bien que n'étant pas strictement associé au [pattern MVVM](https://en.wikipedia.org/wiki/Model_View_ViewModel), la conception de Vue s'en est en partie inspirée. Par convention, nous utilisons souvent la variable `vm` (abréviation de ViewModel) pour faire référence à une instance de composant.
 
-Bien que tous les exemples de cette page ne nécessitent qu'un seul composant, la plupart des applications réelles sont organisées dans une arborescence de composants imbriqués et réutilisables. Par exemple, l'arborescence des composants d'une application Todo pourrait ressembler à ceci:
+Bien que tous les exemples de cette page ne nécessitent qu'un seul composant, la plupart des applications réelles sont organisées dans une arborescence de composants imbriqués et réutilisables. Par exemple, l'arborescence des composants d'une application Todo pourrait ressembler à ceci :
 
 ```
 Root Component
@@ -69,7 +69,7 @@ Nous parlerons plus en détail du [système de composants](component-basics.html
 
 ## Propriétés d'Instance de Composant
 
-Plus tôt dans le guide, nous avons rencontré les propriétés de `data`. Les propriétés définies dans `data` sont exposées via l'instance de composant:
+Plus tôt dans le guide, nous avons rencontré les propriétés de `data`. Les propriétés définies dans `data` sont exposées via l'instance de composant :
 
 ```js
 const app = Vue.createApp({
@@ -91,7 +91,7 @@ Vue expose également certaines propriétés intégrées via l'instance de compo
 
 Chaque instance de vue traverse une série d’étapes d’initialisation au moment de sa création - par exemple, elle doit mettre en place l’observation des données, compiler le template, monter l’instance sur le DOM et mettre à jour le DOM quand les données changent. En cours de route, elle va aussi invoquer des "ancres de cycle de vie" ou en anglais **lifecycle hooks**, donnant aux developpeurs la possibilité d'ajouter leur propre code à des étapes spécifiques.
 
-Par exemple  le hook [created](../api/options-lifecycle-hooks.html#created) peut être utilisé pour exécuter du code après la création d'une instance:
+Par exemple  le hook [created](../api/options-lifecycle-hooks.html#created) peut être utilisé pour exécuter du code après la création d'une instance :
 
 ```js
 Vue.createApp({
