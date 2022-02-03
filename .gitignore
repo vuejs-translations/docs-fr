@@ -102,6 +102,5 @@ dist/
 tmp/
 temp/
 
-### IDE ###
-# IntelliJ
+# IDE
 .idea
