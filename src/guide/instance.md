@@ -2,7 +2,7 @@
 
 ## Créer une Instance d'Application
 
-Chaque application Vue commence par créer ue nouvelle **instance d'application** avec la fonction `createApp` :
+Chaque application Vue commence par créer une nouvelle **instance d'application** avec la fonction `createApp`:
 
 ```js
 const app = Vue.createApp({
