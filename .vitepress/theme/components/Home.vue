@@ -35,7 +35,7 @@ import SponsorsGroup from './SponsorsGroup.vue';
   <!-- TODO make dynamic based on data -->
   <section id="special-sponsor">
     <span>Sponsors spéciaux</span>
-    <a href="#">
+    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=">
       <picture>
         <source type="image/avif" srcset="/images/sponsors/hbuilder.avif" />
         <img

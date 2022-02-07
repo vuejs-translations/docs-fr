@@ -48,11 +48,11 @@ const nav = [
         text: 'Cours au format vidéo',
         items: [
           {
-            text: 'Vue Mastery (US)',
+            text: 'Vue Mastery (EN)',
             link: 'https://www.vuemastery.com/courses/'
           },
           {
-            text: 'Vue School (EU)',
+            text: 'Vue School (EN)',
             link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
           }
         ]
@@ -534,9 +534,9 @@ export const sidebar = {
 export default defineConfigWithTheme<Config>({
   extends: baseConfig as () => UserConfig<Config>,
 
-  lang: 'en-US',
+  lang: 'fr-FR',
   title: 'Vue.js',
-  description: 'Vue.js - The Progressive JavaScript Framework',
+  description: 'Vue.js - Le Framework JavaScript Évolutif',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
@@ -594,8 +594,8 @@ export default defineConfigWithTheme<Config>({
     ],
 
     editLink: {
-      repo: 'vuejs/docs',
-      text: 'Edit this page on GitHub'
+      repo: 'vuejs/docs', // TODO: add a language flag to point to the FR repo?
+      text: 'Editer cette page sur GitHub'
     },
 
     footer: {
