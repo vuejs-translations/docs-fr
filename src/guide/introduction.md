@@ -52,9 +52,9 @@ Cet exemple illustre les deux principales fonctionnalités de Vue :
 
 - **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de type template qui permet de décrire de manière déclarative la structure HTML tout en étant basée sur un état JavaScript.
 
-- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacesment le DOM en cas de changement.
+- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM en cas de changement.
 
-Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension de haut niveau de ce que propose Vue.
+Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension large de ce que propose Vue.
 
 :::tip Pré-requis
 La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework - armez-vous des basiques et revenez ici.  
