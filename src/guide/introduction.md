@@ -21,7 +21,7 @@ import { createApp } from 'vue'
 createApp({
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   }
 }).mount('#app')
@@ -29,8 +29,8 @@ createApp({
 
 ```vue-html
 <div id="app">
-  <button @click="compteur++">
-    Le compteur est à {{ compteur }}
+  <button @click="count++">
+    count is {{ count }}
   </button>
 </div>
 ```
@@ -39,12 +39,12 @@ createApp({
 
 <script setup>
 import { ref } from 'vue'
-const compteur = ref(0)
+const count = ref(0)
 </script>
 
 <div class="demo">
-  <button @click="compteur++">
-    Le compteur est à {{ compteur }}
+  <button @click="count++">
+    count is {{ count }}
   </button>
 </div>
 
@@ -52,16 +52,16 @@ Cet exemple illustre les deux principales fonctionnalités de Vue :
 
 - **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de type template qui permet de décrire de manière déclarative la structure HTML tout en étant basée sur un état JavaScript.
 
-- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM lors de changement.
+- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacesment le DOM en cas de changement.
 
-Il se peut que vous ayez des questions - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension de haut niveau de ce que propose Vue.
+Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension de haut niveau de ce que propose Vue.
 
 :::tip Pré-requis
-Le reste de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework - armez-vous des basiques et revenez ici.  
+La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework - armez-vous des basiques et revenez ici.  
 Une expérience préalable avec d'autres framework peut aider, mais n'est pas obligatoire.
 :::
 
-## Le Framework Evolutif
+## Le Framework Évolutif
 
 Vue is a framework and ecosystem that covers most of the common features needed in frontend development. But the web is extremely diverse - the things we build on the web may vary drastically in form and scale. With that in mind, Vue is designed to be flexible and incrementally adoptable. Depending on your use case, Vue can be used in different ways:
 
