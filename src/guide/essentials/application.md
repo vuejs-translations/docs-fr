@@ -1,14 +1,14 @@
-# Creating a Vue Application
+# Création d'une Application Vue
 
-## The application instance
+## L'instance d'application
 
-Every Vue application starts by creating a new **application instance** with the [`createApp`](/api/application#createapp) function:
+Chaque application Vue commence par la création d'une nouvelle **instance d'application** avec la fonction [`createApp`](/api/application#createapp) :
 
 ```js
 import { createApp } from 'vue'
 
 const app = createApp({
-  /* root component options */
+  /* options composant racine */
 })
 ```
 
