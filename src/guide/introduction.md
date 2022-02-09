@@ -50,9 +50,9 @@ const count = ref(0)
 
 Cet exemple illustre les deux principales fonctionnalités de Vue :
 
-- **Rendu déclaratif**: Vue s'appuie sur le standard HTML avec une syntaxe de type template qui permet de décrire de manière déclarative la structure HTML tout en étant basée sur un état JavaScript.
+- **Rendu déclaratif** : Vue s'appuie sur le standard HTML avec une syntaxe de type template qui permet de décrire de manière déclarative la structure HTML tout en étant basée sur un état JavaScript.
 
-- **Réactivité**: Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM en cas de changement.
+- **Réactivité** : Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM en cas de changement.
 
 Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension large de ce que propose Vue.
 
