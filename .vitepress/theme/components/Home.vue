@@ -11,7 +11,7 @@ import SponsorsGroup from './SponsorsGroup.vue';
       <span class="accent">Évolutif</span>
     </h1>
     <p class="description">
-      Un framework pour construire des interfaces utilisateur pleinement <br/><strong>accessible, performant et polyvalent</strong>.
+      Un framework pour construire des interfaces utilisateur <br/><strong>accessible, performant et polyvalent</strong>.
     </p>
     <p class="actions">
       <a class="get-started" href="/guide/introduction.html">
