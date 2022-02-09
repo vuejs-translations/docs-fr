@@ -12,7 +12,7 @@ footer: false
 
 ## Qu'est-ce que Vue?
 
-Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScript pour la création d'interfaces utilisateur. Il se repose sur les standards HTML, CSS and JavaScript, et propose une manière efficace de déclarer des composants pour la construction d'interfaces utilisateur simples comme complexes.
+Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScript pour la création d'interfaces utilisateur. Il se repose sur les standards HTML, CSS et JavaScript, et propose une manière efficace de déclarer des composants pour la construction d'interfaces utilisateur simples comme complexes.
 
 Voici un exemple simple :
 ```js

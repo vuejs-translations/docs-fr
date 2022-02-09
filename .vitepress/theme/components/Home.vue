@@ -53,7 +53,7 @@ import SponsorsGroup from './SponsorsGroup.vue';
     <div class="vt-box">
       <h2>Accessible</h2>
       <p>
-        S'appuie sur les standard HTML, CSS et JavaScript en proposant une API and une documentation traduite en plusieurs langues.
+        S'appuie sur les standard HTML, CSS et JavaScript en proposant une API et une documentation traduite en plusieurs langues.
       </p>
     </div>
     <div class="vt-box">
