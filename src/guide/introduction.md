@@ -79,7 +79,7 @@ Si vous êtes un développeur expérimenté et que vous souhaitez savoir comment
 
 Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue sont partagées dans tous ces cas d'utilisation. Même si vous n'êtes qu'à vos débuts, les connaissances acquises en cours de route vous seront utiles pour atteindre des objectifs plus ambitieux à l'avenir. Si vous avez niveau expérimenté, vous pouvez choisir la manière optimale de tirer parti de Vue en fonction des problèmes que vous essayez de résoudre, tout en conservant la même productivité. C'est pourquoi nous appelons Vue "le framework évolutif" : c'est un framework qui peut grandir avec vous et s'adapter à vos besoins.
 
-## Composant à fichier unique (Single-File Components)
+## composant monofichiers (Single-File Components)
 
 Dans la plupart des projets Vue dotés d'outils de construction, nous créons des composants Vue en utilisant un format de fichier de type HTML appelé **Single-File Component** (également connu sous le nom de fichiers `*.vue`, abrégé en **SFC**). Un SFC Vue, comme son nom l'indique, encapsule la logique (JavaScript), le modèle (HTML) et les styles (CSS) du composant dans un seul fichier. Voici l'exemple précédent, écrit au format SFC :
 
@@ -199,7 +199,7 @@ Si Vue est nouveau pour vous, voici notre recommandation générale :
 
   - Optez pour l'API Options si vous n'utilisez pas d'outils de construction ou si vous prévoyez d'utiliser Vue principalement dans des scénarios peu complexes, par exemple par une amélioration progressive de votre projet.
 
-  - Choisissez l'API de Composition + les composants à fichier unique (SFC) si vous envisagez de créer des applications complètes avec Vue.
+  - Choisissez l'API de Composition + les composants monofichiers (SFC) si vous envisagez de créer des applications complètes avec Vue.
 
 Vous n'avez pas à vous engager dans un seul style pendant la phase d'apprentissage. Le reste de la documentation fournira des exemples de code dans les deux styles, le cas échéant, et vous pourrez passer de l'un à l'autre à tout moment à l'aide du bouton **Préférence d'API** en haut de la barre latérale gauche.
 

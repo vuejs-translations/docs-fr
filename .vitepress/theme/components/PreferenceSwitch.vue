@@ -101,7 +101,7 @@ function useToggleFn(
         <label class="no-sfc-label" @click="toggleSFC(false)">HTML</label>
         <VTSwitch
           class="sfc-switch"
-          aria-label="préférer le composant à fichier unique"
+          aria-label="préférer le composant monofichiers"
           :aria-checked="preferSFC"
           @click="toggleSFC()"
         />
