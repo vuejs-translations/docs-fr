@@ -28,7 +28,7 @@ import SponsorsGroup from './SponsorsGroup.vue';
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">L'installer</a>
+      <a class="setup" href="/guide/quick-start.html">Installation</a>
     </p>
   </section>
 
