@@ -57,7 +57,7 @@ Cet exemple illustre les deux principales fonctionnalités de Vue :
 Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension large de ce que propose Vue.
 
 :::tip Pré-requis
-La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework - armez-vous des basiques et revenez ici.  
+La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework : armez-vous des basiques et revenez ici.  
 Une expérience préalable avec d'autres frameworks peut aider, mais n'est pas obligatoire.
 :::
 
