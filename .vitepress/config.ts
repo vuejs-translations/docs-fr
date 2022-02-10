@@ -28,7 +28,7 @@ const nav = [
     link: '/api/'
   },
   {
-    text: 'Playground',
+    text: 'Laboratoire',
     link: 'https://sfc.vuejs.org'
   },
   {
