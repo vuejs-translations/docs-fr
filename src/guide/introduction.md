@@ -58,7 +58,7 @@ Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons co
 
 :::tip Pré-requis
 La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework - armez-vous des basiques et revenez ici.  
-Une expérience préalable avec d'autres framework peut aider, mais n'est pas obligatoire.
+Une expérience préalable avec d'autres frameworks peut aider, mais n'est pas obligatoire.
 :::
 
 ## Le Framework Évolutif
