@@ -36,6 +36,10 @@ It will have main topic for each part of Vue website.
 - About
 - Misc (translation page, ...)
 
+### Notice any todo you won't do directly
+
+When you notice content which need translation but is too heavy to be achieved, mark the link or the section by `TODO(fr)`.
+
 ## Working on the content
 
 - See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown.html) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue.html).
