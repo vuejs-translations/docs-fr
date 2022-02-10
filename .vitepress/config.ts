@@ -32,7 +32,7 @@ const nav = [
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Eco-système',
+    text: 'Écosystème',
     activeMatch: `^/ecosystem/`,
     items: [
       {
