@@ -37,9 +37,9 @@ Si les SFC nécessitent une étape de compilation, les avantages sont nombreux e
 - [TODO(fr)Collocation de responsabilités couplées](#qu-en-est-il-de-la-separation-des-responsabilites)
 - Templates précompilés
 - [TODO(fr)CSS à portée limitée au composant](/api/sfc-css-features)
-- [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
+- [TODO(fr)Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
 - Meilleures optimisations à la compilation grâce à l'analyse croisée du template et des scripts.
-- [Support IDE](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
+- [TODO(fr)Support IDE](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
 - Prise en charge immédiate du remplacement de modules à chaud (HMR).
 
 SFC est une caractéristique déterminante de Vue en tant que framework, et c'est l'approche recommandée pour utiliser Vue dans les scénarios suivants :
