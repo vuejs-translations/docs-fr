@@ -29,7 +29,7 @@ export default {
 
 Comme nous pouvons le voir, les SFC de Vue est une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [TODO(fr)Spécification de syntaxe SFC](/api/sfc-spec).
 
-## Pourquoi les SFC
+## Pourquoi les composants monofichier (SFC)
 
 Si les SFC nécessitent une étape de compilation, les avantages sont nombreux en contrepartie :
 
