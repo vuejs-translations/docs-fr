@@ -10,6 +10,8 @@ Les efforts de traduction sont gérés dans l'organisation GitHub [vuejs-transla
 
 - [Chinois simplifié](https://github.com/vuejs-translations/docs-zh-cn)
 - [Japonais](https://github.com/vuejs-translations/docs-ja)
+<!-- TODO(mg): change url with https://github.com/vuejs-translations/docs-fr -->
+- [Français](https://github.com/edimitchel/docs-fr)
 
 ## Commencer une nouvelle traduction
 
