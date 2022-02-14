@@ -1,8 +1,37 @@
-# Next fr.vuejs.org (traduction française)
+# Dépôt de contribution pour la traduction française de vuejs.org
 
-Ce projet est un fork de vuejs/docs dont le but est de centraliser sa traduction en français.
+Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
 
-Merci de vous référer à la partie <a href="#Contributing">Contributing</a> afin de nous prêter main forte en bonne et due forme
+Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
+
+## Directives de contribution
+### VS Code extensions
+
+Utilisez les extentions suivantes pour éviter les fautes orthographiques:
+- streetsidesoftware.code-spell-checker
+- streetsidesoftware.code-spell-checker-french
+
+### Share translations work
+
+Nous travaillons pour le moment avec les [issues](/issues) et le board [projects](/projects/1) pour partager le travail de traduction avec tous les membres impliqués.
+Des issues chapeau feront office de tracking pour chaque sous-partie de la documentation.
+
+- Guide
+- Tutoriels
+- Exemples
+- Démarrage rapide
+- Migration depuis V2
+- API
+- Écosystème
+- À propos
+- Autres (translation page, ...)
+
+### Notifiez tout sous-tâche de traduction que vous ne pouvez traiter de suite
+
+Quand vous identifiez un contenu pointé par un lien ou qui serait hors de votre champs d'action, notifier le en ajoutant `TODO(fr)` dans le label du lien ou la référence du contenu en question.
+
+_______________
+# vuejs.org
 
 ## Contributing
 
@@ -14,28 +43,6 @@ For local development, [pnpm](https://pnpm.io/) is preferred as package manager:
 pnpm i
 pnpm run dev
 ```
-
-### VS Code extentions
-
-Use following VS Code extensions to avoid spell mistake:
-- streetsidesoftware.code-spell-checker
-- streetsidesoftware.code-spell-checker-french
-
-### Share translations work
-
-We will work using [issues](/issues) and [projects](/projects/1) to share translations work to all involved team member.
-It will have main topic for each part of Vue website.
-
-- Guide
-- Tutorials
-- Examples
-- Quick Start
-- Migration from V2
-- API
-- Eco system
-- About
-- Misc (translation page, ...)
-
 ## Working on the content
 
 - See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown.html) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue.html).
