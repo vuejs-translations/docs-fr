@@ -8,7 +8,7 @@ En fonction de vos besoins et de vos préférences, vous pouvez utiliser Vue ave
 
 ## Avec des outils de compilation
 
-La compilation nous permet d'utiliser les [Composants à fichier unique](/guide/scaling-up/sfc) (SFC) de Vue. La configuration officielle de Vue est basée sur [Vite](https://vitejs.dev), un outil de compilation front-end moderne, léger et extrêmement rapide.
+La compilation nous permet d'utiliser les [Composants monofichiers](/guide/scaling-up/sfc) (SFC) de Vue. La configuration officielle de Vue est basée sur [Vite](https://vitejs.dev), un outil de compilation front-end moderne, léger et extrêmement rapide.
 
 ### En ligne
 
@@ -18,11 +18,11 @@ Vous pouvez essayer Vue avec les SFC en ligne sur [StackBlitz](https://vite.new/
 
 :::tip Pré-requis
 
-- Être familier avec l'invite de commande
+- Être familier avec l'invite de commandes
 - Avoir installé [Node.js](https://nodejs.org/)
   :::
 
-Pour créer un projet Vue avec toute la suite d'outils de compilation, exécutez la commande suivante dans votre invite de commande (sans le symbole `>`) :
+Pour créer un projet Vue avec toute la suite d'outils de compilation, exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
 
@@ -52,7 +52,7 @@ Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! V
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
 - Si vous avez choisi d'utiliser TypeScript, consultez le [TODO(fr)Guide d'utilisation de TypeScript](typescript/overview.html).
 
-Dès que votre code est satisfaisant pour la production, exécutez la commande suivante :
+Dès que vous êtes prêts à livrer votre application en production, exécutez la commande suivante :
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
@@ -83,7 +83,7 @@ Pour commencer à utiliser Vue sans compilation, il suffit de copier le code sui
 
 L'exemple ci-dessus utilise la version globale de Vue où toutes les API sont exposées sous la variable globale `Vue`.
 
-Bien que le build global fonctionne, nous utiliserons principalement la syntaxe [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. Afin d'utiliser Vue au lieu des modules ES natifs, utilisez plutôt le HTML suivant :
+Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. Afin d'utiliser Vue avec les modules ES natifs, utilisez plutôt le HTML suivant :
 
 ```html
 <script type="importmap">
@@ -119,20 +119,20 @@ L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez
 
 ### Servir via HTTP
 
-Au fur et à mesure que nous progressons dans le guide, nous devrons peut-être diviser notre code en plusieurs fichiers JavaScript distincts afin d'en faciliter la gestion. Par exemple :
+Au fur et à mesure que nous progressons dans le guide, il se peut que nous devions diviser notre code en plusieurs fichiers JavaScript distincts afin d'en faciliter la gestion. Par exemple :
 
 ```html
 <!-- index.html -->
 <script type="module">
   import { createApp } from 'vue'
-  import MonComponent from './mon-component.js'
+  import MonComposant from './mon-composant.js'
 
-  createApp(MonComponent).mount('#app')
+  createApp(MonComposant).mount('#app')
 </script>
 ```
 
 ```js
-// mon-component.js
+// mon-composant.js
 export default {
   data() {
     return { count: 0 }
@@ -152,14 +152,14 @@ Si vous avez sauté l'[Introduction](/guide/introduction), nous vous recommandon
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Essayer le tutoriel</p>
-    <p class="next-steps-caption">Si apprendre en faisant est dans vos habitudes d'apprentissage.</p>
+    <p class="next-steps-caption">Pour ceux qui préfèrent apprendre par la pratique.</p>
   </a>
   <a class="vt-box" href="/guide/quick-start.html">
     <p class="next-steps-link">Lire le guide</p>
-    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails..</p>
+    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails.</p>
   </a>
   <a class="vt-box" href="/examples/">
     <p class="next-steps-link">Découvrir les exemples</p>
-    <p class="next-steps-caption">Explorez les exemples de fonctionnalités de base et de cas d'usage courants..</p>
+    <p class="next-steps-caption">Explorez les exemples de fonctionnalités de base et de cas d'usage courants.</p>
   </a>
 </div>

@@ -12,7 +12,7 @@ footer: false
 
 ## Qu'est-ce que Vue?
 
-Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScript qui se repose sur les standards HTML, CSS et JavaScript. Il propose une manière efficace de déclarer des composants pour la construction d'interfaces utilisateur simples comme complexes.
+Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScript qui se repose sur les standards HTML, CSS et JavaScript. Il propose une manière efficace de déclarer des composants pour la construction d'interfaces utilisateur, qu'elles soient simples ou complexes.
 
 Voici un exemple simple :
 ```js
@@ -54,17 +54,15 @@ Cet exemple illustre les deux principales fonctionnalités de Vue :
 
 - **Réactivité** : Vue traque automatiquement tout changement d'état JavaScript et met à jour efficacement le DOM en cas de changement.
 
-Il se peut que des questions vous assaillent - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une compréhension large de ce que propose Vue.
+Il se peut que vous ayez déjà des questions - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une vision d'ensemble de ce que propose Vue.
 
 :::tip Pré-requis
-La suite de la documentation présuppose que vous soyez familier avec l'HTML, le CSS et le JavaScript. Si vous êtes à vos tous premiers pas dans le développement front-end, il est préférable de ne pas vous lancer tout de suite dans l'usage d'un framework :  
-**Apprenez et pratiquez les basiques du front-end, puis revenez ici.**  
-Une expérience préalable avec d'autres frameworks peut aider, mais n'est pas obligatoire.
+La suite de la documentation présuppose que vous soyez familier avec le HTML, le CSS et le JavaScript. Si vous débutez totalement dans le développement front-end, ce n'est peut-être pas la meilleure idée de vous lancer directement dans un framework pour vos premiers pas. Apprenez les bases puis revenez ! Une précédente expérience avec d'autres frameworks vous aidera, mais n'est pas strictement requise.
 :::
 
 ## Le Framework Évolutif
 
-Vue est un framework et un écosystème qui couvre la plupart des fonctionnalités courantes nécessaires au développement front-end. Par la diversité du web; les choses que nous y construisons peuvent varier radicalement. C'est pourquoi Vue a été conçu pour être flexible et adaptable de manière incrémentale. En fonction de votre besoin, Vue peut être utilisé de différentes manières :
+Vue est un framework et un écosystème qui couvre la plupart des fonctionnalités courantes nécessaires au développement front-end. Le Web est très diversifié; les choses que nous y construisons peuvent varier radicalement. C'est pourquoi Vue a été conçu pour être flexible et adoptable de manière incrémentale. En fonction de votre cas d'utilisation, Vue peut être utilisé de différentes manières :
 
 - Extension du HTML statique sans étape de construction
 - Intégration de composants web (custom element) sur n'importe quelle page
@@ -81,7 +79,7 @@ Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue 
 
 ## composant monofichiers (Single-File Components)
 
-Dans la plupart des projets Vue dotés d'outils de construction, nous créons des composants Vue en utilisant un format de fichier de type HTML appelé **Single-File Component** (également connu sous le nom de fichiers `*.vue`, abrégé en **SFC**). Un SFC Vue, comme son nom l'indique, encapsule la logique (JavaScript), le modèle (HTML) et les styles (CSS) du composant dans un seul fichier. Voici l'exemple précédent, écrit au format SFC :
+Dans la plupart des projets Vue dotés d'outils de construction, nous créons des composants Vue en utilisant un format de fichier semblable à HTML appelé **Composant monofichier**, ou **Single-File Component** en anglais (également connu sous le nom de fichiers `*.vue`, abrégé en **SFC**). Un SFC Vue, comme son nom l'indique, encapsule la logique (JavaScript), le modèle (HTML) et les styles (CSS) du composant dans un seul fichier. Voici l'exemple précédent, écrit au format SFC :
 
 ```vue
 <script>
@@ -105,7 +103,7 @@ button {
 </style>
 ```
 
-SFC est une fonctionnalité essentielle de Vue, et c'est la manière recommandée de créer des composants Vue **si** votre usage justifie une configuration avancée (usant d'outils de construction). Vous pouvez en savoir plus sur le [TODO(fr)comment et pourquoi du SFC](/guide/scaling-up/sfc) dans la section qui lui est consacrée - mais pour l'instant, sachez que Vue se chargera de la configuration des outils de construction pour vous.
+Les SFC sont une fonctionnalité essentielle de Vue, et c'est la manière recommandée de créer des composants Vue **si** votre usage justifie une configuration avancée (usant d'outils de construction). Vous pouvez en savoir plus sur le [TODO(fr)comment et pourquoi faire des SFC](/guide/scaling-up/sfc) dans la section qui lui est consacrée - mais pour l'instant, sachez que Vue se chargera de la configuration des outils de construction pour vous.
 
 ## Styles d'API
 
@@ -118,7 +116,7 @@ Avec l'API Options, nous définissons la logique d'un composant en utilisant un 
 ```vue
 <script>
 export default {
-  // Les propriétés retournées par data() deviennent des états réactifs.
+  // Les propriétés retournées par data() deviennent des états réactifs
   // et seront exposées sur `this`.
   data() {
     return {
@@ -152,7 +150,7 @@ export default {
 
 ### API de Composition
 
-Avec l'API de Composition, nous définissons la logique d'un composant à l'aide de fonctions API importées. Dans les SFC, l'API de Composition est généralement utilisée avec [`<script setup>`](/api/sfc-script-setup). L'attribut `setup` est une indication qui permet à Vue d'effectuer des transformations au moment de la compilation, ce qui nous permet d'utiliser l'API de Composition avec moins de texte passe-partout. Par exemple, les importations et les variables / fonctions de premier niveau déclarées dans `<script setup>` sont directement utilisables dans le modèle.
+Avec l'API de Composition, nous définissons la logique d'un composant à l'aide de fonctions API importées. Dans les SFC, l'API de Composition est généralement utilisée avec [`<script setup>`](/api/sfc-script-setup). L'attribut `setup` est une indication qui permet à Vue d'effectuer des transformations au moment de la compilation, ce qui nous permet d'utiliser l'API de Composition avec moins de code nécessaire aux déclarations. Par exemple, les importations et les variables / fonctions déclarées au niveau racine dans `<script setup>` sont directement utilisables dans le modèle.
 
 Voici le même composant, avec exactement le même modèle, mais en utilisant l'API de Composition et `<script setup>` à la place :
 
@@ -183,11 +181,11 @@ onMounted(() => {
 
 ### Laquelle choisir ?
 
-Tout d'abord, les deux styles d'API sont parfaitement capables de couvrir les cas d'utilisation courants. Il s'agit de différentes interfaces alimentées par le même système sous-jacent. En fait, l'API Options est mise en œuvre au-dessus de l'API de Composition ! Les concepts fondamentaux et les connaissances sur Vue sont partagés entre les deux styles.
+Tout d'abord, les deux styles d'API sont parfaitement capables de couvrir les cas d'utilisation courants. Il s'agit de différentes interfaces alimentées par le même système sous-jacent. En fait, l'API Options est implémentée par dessus l'API de Composition ! Les concepts fondamentaux et les connaissances sur Vue sont partagés entre les deux styles.
 
-L'API Options est centrée sur le concept d'une "instance de composant" (`this` comme dans l'exemple), qui s'aligne généralement mieux sur un modèle mental basé sur les classes pour les utilisateurs issus de la POO. Elle est également plus conviviale pour les débutants, car elle fait abstraction des détails de la réactivité et impose une organisation du code par le biais de groupes d'options.
+L'API Options est centrée sur le concept d'une "instance de composant" (`this` comme dans l'exemple), qui s'aligne généralement mieux sur un modèle mental basé sur les classes pour les utilisateurs issus de la POO. Elle est également plus adaptée aux débutants, car elle fait abstraction des détails de la réactivité et impose une organisation du code par le biais de groupes d'options.
 
-L'API de Composition est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle est plus libre et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
+L'API de Composition est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle offre une plus grande liberté d'écriture et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
 
 Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [TODO(fr)FAQ sur l'API de Composition](/guide/extras/composition-api-faq).
 
@@ -201,9 +199,9 @@ Si Vue est nouveau pour vous, voici notre recommandation générale :
 
   - Choisissez l'API de Composition + les composants monofichiers (SFC) si vous envisagez de créer des applications complètes avec Vue.
 
-Vous n'avez pas à vous engager dans un seul style pendant la phase d'apprentissage. Le reste de la documentation fournira des exemples de code dans les deux styles, le cas échéant, et vous pourrez passer de l'un à l'autre à tout moment à l'aide du bouton **Préférence d'API** en haut de la barre latérale gauche.
+Vous n'avez pas à vous engager dans un seul style pendant la phase d'apprentissage. Le reste de la documentation fournira des exemples de code dans les deux styles, et vous pourrez passer de l'un à l'autre à tout moment à l'aide du bouton **Préférence d'API** en haut de la barre latérale gauche.
 
-## Toujours des questions ?
+## Encore des questions ?
 
 Consultez notre [TODO(fr)FAQ](/about/faq).
 
@@ -214,14 +212,14 @@ Chaque développeur a un style d'apprentissage différent. N'hésitez pas à cho
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Essayer le tutoriel</p>
-    <p class="next-steps-caption">Si apprendre en faisant est dans vos habitudes d'apprentissage.</p>
+    <p class="next-steps-caption">Pour ceux qui préfèrent apprendre par la pratique.</p>
   </a>
   <a class="vt-box" href="/guide/quick-start.html">
     <p class="next-steps-link">Lire le guide</p>
-    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails..</p>
+    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails.</p>
   </a>
   <a class="vt-box" href="/examples/">
     <p class="next-steps-link">Découvrir les exemples</p>
-    <p class="next-steps-caption">Explorez les exemples de fonctionnalités de base et de cas d'usage courants..</p>
+    <p class="next-steps-caption">Explorez les exemples de fonctionnalités de base et de cas d'usage courants.</p>
   </a>
 </div>

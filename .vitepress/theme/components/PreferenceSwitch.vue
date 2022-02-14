@@ -91,7 +91,7 @@ function useToggleFn(
         >
         <a
           class="switch-link"
-          title="À propos des préférences d'API"
+          title="Concernant la préférence d'API"
           href="/guide/introduction.html#styles-d-api"
           @click="closeSideBar"
           >?</a
@@ -101,7 +101,7 @@ function useToggleFn(
         <label class="no-sfc-label" @click="toggleSFC(false)">HTML</label>
         <VTSwitch
           class="sfc-switch"
-          aria-label="préférer le composant monofichiers"
+          aria-label="préférer le composant monofichier"
           :aria-checked="preferSFC"
           @click="toggleSFC()"
         />
