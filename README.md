@@ -1,34 +1,34 @@
 # Dépôt de contribution pour la traduction française de vuejs.org
 
-Ce projet est un fork de vuejs/docs dont le but est de centraliser sa traduction en français.
+Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
 
-Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Contribution guidelines](#Contribution-guidelines) afin de nous prêter main forte en bonne et due forme
+Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
 
-## Contribution guidelines
+## Directives de contribution
 ### VS Code extensions
 
-Use following VS Code extensions to avoid spell mistake:
+Utilisez les extentions suivantes pour éviter les fautes orthographiques:
 - streetsidesoftware.code-spell-checker
 - streetsidesoftware.code-spell-checker-french
 
 ### Share translations work
 
-We will work using [issues](/issues) and [projects](/projects/1) to share translations work to all involved team member.
-It will have main topic for each part of Vue website.
+Nous travaillons pour le moment avec les [issues](/issues) et le board [projects](/projects/1) pour partager le travail de traduction avec tous les membres impliqués.
+Des issues chapeau feront office de tracking pour chaque sous-partie de la documentation.
 
 - Guide
-- Tutorials
-- Examples
-- Quick Start
-- Migration from V2
+- Tutoriels
+- Exemples
+- Démarrage rapide
+- Migration depuis V2
 - API
-- Eco system
-- About
-- Misc (translation page, ...)
+- Écosystème
+- À propos
+- Autres (translation page, ...)
 
-### Notice any todo you won't do directly
+### Notifiez tout sous-tâche de traduction que vous ne pouvez traiter de suite
 
-When you notice content which need translation but is too heavy to be achieved, mark the link or the section by `TODO(fr)`.
+Quand vous identifiez un contenu pointé par un lien ou qui serait hors de votre champs d'action, notifier le en ajoutant `TODO(fr)` dans le label du lien ou la référence du contenu en question.
 
 _______________
 # vuejs.org
