@@ -21,7 +21,7 @@ import { createApp } from 'vue'
 createApp({
   data() {
     return {
-      count: 0
+      compteur: 0
     }
   }
 }).mount('#app')
@@ -29,8 +29,8 @@ createApp({
 
 ```vue-html
 <div id="app">
-  <button @click="count++">
-    count is {{ count }}
+  <button @click="compteur++">
+    Le compteur est à {{ compteur }}
   </button>
 </div>
 ```
@@ -39,12 +39,12 @@ createApp({
 
 <script setup>
 import { ref } from 'vue'
-const count = ref(0)
+const compteur = ref(0)
 </script>
 
 <div class="demo">
-  <button @click="count++">
-    count is {{ count }}
+  <button @click="compteur++">
+    Le compteur est à {{ compteur }}
   </button>
 </div>
 
@@ -77,7 +77,7 @@ Si vous êtes un développeur expérimenté et que vous souhaitez savoir comment
 
 Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue sont partagées dans tous ces cas d'utilisation. Même si vous n'êtes qu'à vos débuts, les connaissances acquises en cours de route vous seront utiles pour atteindre des objectifs plus ambitieux à l'avenir. Si vous avez niveau expérimenté, vous pouvez choisir la manière optimale de tirer parti de Vue en fonction des problèmes que vous essayez de résoudre, tout en conservant la même productivité. C'est pourquoi nous appelons Vue "le framework évolutif" : c'est un framework qui peut grandir avec vous et s'adapter à vos besoins.
 
-## composant monofichiers (Single-File Components)
+## Composant monofichier (Single-File Components)
 
 Dans la plupart des projets Vue dotés d'outils de construction, nous créons des composants Vue en utilisant un format de fichier semblable à HTML appelé **Composant monofichier**, ou **Single-File Component** en anglais (également connu sous le nom de fichiers `*.vue`, abrégé en **SFC**). Un SFC Vue, comme son nom l'indique, encapsule la logique (JavaScript), le modèle (HTML) et les styles (CSS) du composant dans un seul fichier. Voici l'exemple précédent, écrit au format SFC :
 
@@ -86,14 +86,14 @@ Dans la plupart des projets Vue dotés d'outils de construction, nous créons de
 export default {
   data() {
     return {
-      count: 0
+      compteur: 0
     }
   }
 }
 </script>
 
 <template>
-  <button @click="count++">Count is: {{ count }}</button>
+  <button @click="compteur++">Le compteur est à {{ compteur }}</button>
 </template>
 
 <style scoped>
@@ -120,15 +120,15 @@ export default {
   // et seront exposées sur `this`.
   data() {
     return {
-      count: 0
+      compteur: 0
     }
   },
 
   // Les méthodes sont des fonctions qui modifient l'état et déclenchent des mises à jour.
   // Elles peuvent être liées en tant qu'écouteurs d'événements dans les modèles.
   methods: {
-    increment() {
-      this.count++
+    incrementer() {
+      this.compteur++
     }
   },
 
@@ -136,13 +136,13 @@ export default {
   // du cycle de vie d'un composant.
   // Cette fonction sera appelée lorsque le composant sera monté.
   mounted() {
-    console.log(`The initial count is ${this.count}.`)
+    console.log(`Le valeur initiale du compteur est ${this.compteur}.`)
   }
 }
 </script>
 
 <template>
-  <button @click="increment">count is: {{ count }}</button>
+  <button @click="incrementer">Le compteur est à {{ compteur }}</button>
 </template>
 ```
 
@@ -159,21 +159,21 @@ Voici le même composant, avec exactement le même modèle, mais en utilisant l'
 import { ref, onMounted } from 'vue'
 
 // reactive state
-const count = ref(0)
+const compteur = ref(0)
 
 // functions that mutate state and trigger updates
-function increment() {
-  count.value++
+function incrementer() {
+  compteur.value++
 }
 
 // lifecycle hooks
 onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
+  console.log(`Le valeur initiale du compteur est ${this.compteur}.`)
 })
 </script>
 
 <template>
-  <button @click="increment">Count is: {{ count }}</button>
+  <button @click="incrementer">Le compteur est à {{ compteur }}</button>
 </template>
 ```
 
