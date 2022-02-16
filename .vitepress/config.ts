@@ -106,11 +106,11 @@ const nav = [
 export const sidebar = {
   '/guide/': [
     {
-      text: 'Getting Started',
+      text: 'Commencer',
       items: [
         { text: 'Introduction', link: '/guide/introduction' },
         {
-          text: 'Quick Start',
+          text: 'Démarrage rapide',
           link: '/guide/quick-start'
         }
       ]
