@@ -1,329 +1,226 @@
+---
+footer: false
+---
+
 # Introduction
 
-::: tip NOTE
-Vous connaissez déjà Vue 2 et vous voulez simplement en savoir plus sur les nouveautés de Vue 3? Consulter le [Guide de Migration](/guide/migration/introduction.html)!
-:::
+:::info You are reading the documentation for Vue 3!
 
-## Vue.js, qu’est-ce que c’est ?
+- Vue 2 documentation has been moved to [v2.vuejs.org](https://v2.vuejs.org/).
+- Upgrading from Vue 2? Check out the [Migration Guide](https://v3-migration.vuejs.org/).
+  :::
 
-Vue (prononcé /vjuː/, comme le terme anglais **view**) est un **framework évolutif** pour construire des interfaces utilisateur. À la différence des autres frameworks monolithiques, Vue a été conçu et pensé pour pouvoir être adopté de manière incrémentale. Le cœur de la bibliothèque se concentre uniquement sur la partie vue, et il est vraiment simple de l’intégrer avec d’autres bibliothèques ou projets existants. D’un autre côté, Vue est tout à fait capable de faire tourner des applications web monopages quand il est couplé avec des [outils modernes](../guide/single-file-component.html) et des [bibliothèques complémentaires](https://github.com/vuejs/awesome-vue#components--libraries).
+## What is Vue?
 
-Si vous souhaitez en savoir plus à propos de Vue avant d’entrer dans le détail, nous <a id="modal-player" class="vuemastery-trigger"  href="#"> avons créé une vidéo</a> pour présenter ses principes fondamentaux avec un projet exemple.
+Vue (pronounced /vjuː/, like **view**) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.
 
-<VideoLesson href="https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3" title="Watch a free video course on Vue Mastery">Regardez une vidéo de cours gratuite sur Vue Mastery (EN)</VideoLesson>
-
-<common-vuemastery-video-modal/>
-
-## Pour commencer
-
-<p>
-  <ActionLink class="primary" url="installation.html">
-    Installation
-  </ActionLink>
-</p>
-
-::: tip
-Ce guide officiel présuppose que vous ayez un niveau intermédiaire de connaissance en HTML, CSS et JavaScript. Si vous êtes complètement nouveau dans le développement frontend, ce n’est peut-être pas la solution la plus judicieuse de vous lancer dans un framework pour vos premiers pas — Nous vous recommendons de compléter vos bases avant de revenir ! Bien qu’une première expérience avec d’autres frameworks puisse être utile, cela n’est pas obligatoire.
-:::
-
-La manière la plus simple d’essayer Vue.js est d’utiliser [l’exemple Hello World](https://codepen.io/team/Vue/pen/KKpRVpx). N'hésitez pas à l'ouvrir dans un autre onglet afin de suivre pendant que nous parcourons des exemples de base.
-
-La page [Installation](installation.md) fournit plus d'options d'installation de Vue. 
-Remarque: Nous **déconseillons** que les débutants commencent par `vue-cli`, surtout si vous n'êtes pas encore familiarisé avec les outils de construction basés sur Node.js.
-
-## Rendu Déclarative
-
-Au cœur de Vue.js se trouve un système qui nous permet de faire le rendu des données de manière déclarative dans le DOM en utilisant cette syntaxe de template:
-
-```html
-<div id="counter">
-  Compteur: {{ compteur }}
-</div>
-```
+Here is a minimal example:
 
 ```js
-const Compteur = {
+import { createApp } from 'vue'
+
+createApp({
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   }
-}
-
-Vue.createApp(Compteur).mount('#counter')
+}).mount('#app')
 ```
 
-Nous venons tout juste de créer notre première application Vue ! Ça ressemble à un simple rendu de template en chaine de caractères, mais sous le capot, Vue effectue un réel travail. Les données et le DOM sont maintenant couplés, et tout est à présent **réactif**. Comment le savons nous? Jetez un œil à l'exemple ci-dessous où la propriété `compteur` s'incrémente toutes les secondes et vous verrez comment le DOM change:
-
-```js{8-10}
-const CounterApp = {
-  data() {
-    return {
-      compteur: 0
-    }
-  },
-  mounted() {
-    setInterval(() => {
-      this.compteur++
-    }, 1000)
-  }
-}
-```
-
-<FirstExample />
-
-En plus de l'interpolation de texte, nous pouvons également lier des attributs d'élément comme ceci:
-
-```html
-<div id="bind-attribute">
-  <span v-bind:title="message">
-    Passez la souris sur moi pendant quelques secondes pour voir ma liaison dynamique
-    title!
-  </span>
-</div>
-```
-
-```js
-const AttributeBinding = {
-  data() {
-    return {
-      message: 'Vous avez chargez cette page le ' + new Date().toLocaleString()
-    }
-  }
-}
-
-Vue.createApp(AttributeBinding).mount('#bind-attribute')
-```
-
-<common-codepen-snippet title="Attribute dynamic binding" slug="KKpRVvJ" />
-
-Ici nous venons de rencontrer quelque chose de nouveau. L’attribut `v-bind` que vous voyez est appelé une **directive**. Les directives sont préfixées par `v-` pour indiquer qu'il s'agit d'attributs spéciaux fournis par Vue, et comme vous l'avez peut-être deviné, elles appliquent un comportement réactif spécial au DOM rendu. Ici, nous disons essentiellement "_maintenez l'attribut `title` de cet élément à jour avec la propriété `message` sur l'instance active actuelle._"
-
-## Gestion des Entrées Utilisateur
-
-Afin de permettre aux utilisateurs d’interagir avec votre application, nous pouvons utiliser la directive `v-on` pour attacher des écouteurs d’évènements qui invoquent des méthodes sur nos instances:
-
-```html
-<div id="event-handling">
-  <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Inverser le message</button>
-</div>
-```
-
-```js
-const EventHandling = {
-  data() {
-    return {
-      message: 'Hello Vue.js!'
-    }
-  },
-  methods: {
-    reverseMessage() {
-      this.message = this.message
-        .split('')
-        .reverse()
-        .join('')
-    }
-  }
-}
-
-Vue.createApp(EventHandling).mount('#event-handling')
-```
-
-<common-codepen-snippet title="Event handling" slug="dyoeGjW" />
-
-Notez que dans cette méthode, nous mettons à jour l'état de notre application sans toucher au DOM - toutes les manipulations du DOM sont gérées par Vue, et le code que vous écrivez est concentré sur la logique sous-jacente.
-
-Vue fournit également la directive `v-model` qui simplifie la liaison bidirectionnelle entre l'entrée de formulaire et l'état de l'application:
-
-```html
-<div id="two-way-binding">
-  <p>{{ message }}</p>
-  <input v-model="message" />
-</div>
-```
-
-```js
-const TwoWayBinding = {
-  data() {
-    return {
-      message: 'Hello Vue!'
-    }
-  }
-}
-
-Vue.createApp(TwoWayBinding).mount('#two-way-binding')
-```
-
-<common-codepen-snippet title="Two-way binding" slug="poJVgZm" />
-
-## Conditions et boucles
-
-Il est assez simple de permuter la présence d’un élément :
-
-```html
-<div id="conditional-rendering">
-  <span v-if="seen">Là vous me voyez</span>
-</div>
-```
-
-```js
-const ConditionalRendering = {
-  data() {
-    return {
-      seen: true
-    }
-  }
-}
-
-Vue.createApp(ConditionalRendering).mount('#conditional-rendering')
-```
-
-Cet exemple démontre que nous pouvons lier des données non seulement aux textes et attributs, mais également à la **structure** du DOM. Moreover,  De plus, Vue fournit un puissant système d’effets de transition qui peut automatiquement appliquer des [effets de transition](transitions-enterleave.md) quand des éléments sont insérés/mis-à-jour/enlevés par Vue.
-
-Vous pouvez changer  `seen` de `true` à `false` dans le sandbox ci-dessous pour vérifier l'effet:
-
-<common-codepen-snippet title="Conditional rendering" slug="oNXdbpB" tab="js,result" />
-
-Il existe de nombreuses autres directives, chacune avec sa propre fonctionnalité spéciale. Par exemple, la directive `v-for` peut être utilisée pour afficher une liste d'éléments en utilisant les données provenant d'un tableau:
-
-```html
-<div id="list-rendering">
-  <ol>
-    <li v-for="todo in todos" v-bind:key="todo.text">
-      {{ todo.text }}
-    </li>
-  </ol>
-</div>
-```
-
-```js
-const ListRendering = {
-  data() {
-    return {
-      todos: [
-        { text: 'Apprendre JavaScript' },
-        { text: 'Apprendre Vue' },
-        { text: 'Créer quelque chose de génial' }
-      ]
-    }
-  }
-}
-
-Vue.createApp(ListRendering).mount('#list-rendering')
-```
-
-<common-codepen-snippet title="List rendering" slug="mdJLVXq" />
-
-## Découpage en composants
-
-Le système de composant est un autre concept important de Vue, car c’est une abstraction qui nous permet de construire de grosses applications découpées en plus petits composants réutilisables et autonomes. Quand on y pense, presque tous les types d’interfaces applicatives peuvent être abstraits en un arbre de composants.
-
-![Component Tree](/images/components.png)
-
-Dans Vue, un composant est essentiellement une instance avec des options prédéfinies. L'enregistrement d'un composant dans Vue est simple: nous créons un objet component comme nous l'avons fait avec les objets `App` et nous le définissons dans l'option `components` du parent:
-
-```js
-// Créer une application Vue
-const app = Vue.createApp(...)
-
-// Définir un nouveau composant appelé todo-item
-app.component('todo-item', {
-  template: `<li>Ceci est un todo</li>`
-})
-
-// Monter l'application Vue
-app.mount(...)
-```
-
-Maintenant nous pouvons l’insérer dans le template d’un autre composant :
-
-```html
-<ol>
-  <!-- Crée une instance du composant todo-item -->
-  <todo-item></todo-item>
-</ol>
-```
-
-Mais cela rendrait le même texte pour chaque todo, ce qui n'est pas super intéressant. Nous devrions pouvoir transmettre les données de la portée parente aux composants enfants. Modifions la définition du composant pour lui faire accepter une [prop](component-basics.html#transmission-de-donnees-aux-composants-enfants-avec-des-props):
-
-```js
-app.component('todo-item', {
-  props: ['todo'],
-  template: `<li>{{ todo.text }}</li>`
-})
-```
-
-Maintenant nous pouvons passer la liste dans chaque composant répété en utilisant `v-bind` :
-
-```html
-<div id="todo-list-app">
-  <ol>
-    <!--
-      Maintenant nous fournissons à chaque todo-item l'objet todo qu'il représente
-      de manière à ce que son contenu puisse être dynamique. Nous avons également 
-      besoin de fournir à chaque composant une « clé », mais nous expliquerons cela plus tard.
-    -->
-    <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id"
-    ></todo-item>
-  </ol>
-</div>
-```
-
-```js
-const TodoList = {
-  data() {
-    return {
-      groceryList: [
-        { id: 0, text: 'Légumes' },
-        { id: 1, text: 'Fromage' },
-        { id: 2, text: 'Tout ce que les humains sont censés manger' }
-      ]
-    }
-  }
-}
-
-const app = Vue.createApp(TodoList)
-
-app.component('todo-item', {
-  props: ['todo'],
-  template: `<li>{{ todo.text }}</li>`
-})
-
-app.mount('#todo-list-app')
-```
-
-<common-codepen-snippet title="Intro-Components-1" slug="VwLxeEz" />
-
-Ceci n’est qu’un exemple grossier, nous avons réussi à séparer notre application en deux plus petites unités, et chaque enfant est raisonnablement bien découplé de son parent via l’utilisation des props. Nous pouvons maintenant améliorer notre `<todo-item>` avec un template et une logique plus complexes sans affecter l’application parente.
-
-Pour une grosse application, il est nécessaire de la diviser entièrement en composants afin de rendre le développement plus abordable. Nous parlerons des composants plus en détail [ plus tard dans le guide](component-basics.md), mais en attendant voici un exemple (imaginaire) de ce à quoi un template d’application pourrait ressembler avec des composants :
-
-```html
+```vue-html
 <div id="app">
-  <app-nav></app-nav>
-  <app-view>
-    <app-sidebar></app-sidebar>
-    <app-content></app-content>
-  </app-view>
+  <button @click="count++">
+    Count is: {{ count }}
+  </button>
 </div>
 ```
 
-### Parallèles avec les Custom Elements
+**Result**
 
-Vous avez peut-être remarqué que les composants Vue sont très similaires aux **Custom Elements**, qui sont une partie de la [spécification des Composants Web](https://www.w3.org/wiki/WebComponents/). C’est parce que la syntaxe de Vue est vaguement inspirée de cette spécification. Par exemple, les composants de Vue implémentent [l'API Slot](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) et l’attribut spécial `is`. Cependant, il y a quelques différences essentielles: 
+<script setup>
+import { ref } from 'vue'
+const count = ref(0)
+</script>
 
-1. La spécification des Composants Web est finalisée mais n’est pas implémentée nativement dans tous les navigateurs. Safari 10.1+, Chrome 54+ et Firefox 63+ supportent nativement les Web Components. En comparaison, les composants de Vue n’ont besoin d’aucun polyfill et fonctionnent de la même manière dans tous les navigateurs supportés (les versions compatibles IE11 et +). Quand cela est nécessaire, les composants de Vue peuvent également être implémentés à l’intérieur d’un élément personnalisé natif.
+<div class="demo">
+  <button @click="count++">
+    Count is: {{ count }}
+  </button>
+</div>
 
-[//]: # 'TODO: link to compatibility build'
+The above example demonstrates the two core features of Vue:
 
-2. Les composants Vue fournissent des fonctionnalités importantes qui ne sont pas disponibles dans les Custom Elements simples, notamment le flux de données inter-composants, la communication d'événements personnalisée et les intégrations d'outils de build.
+- **Declarative Rendering**: Vue extends standard HTML with a template syntax that allows us to declaratively describe HTML output based on JavaScript state.
 
-Bien que Vue n’utilise pas d’éléments personnalisés en interne, il a une [grande interopérabilité](https://custom-elements-everywhere.com/#vue) quand il est utilisé ou distribué en tant qu’élément personnalisé. Vue CLI supporte également la construction de composants Vue qui s’enregistrent eux-mêmes en tant que Custom Element natifs.
+- **Reactivity**: Vue automatically tracks JavaScript state changes and efficiently updates the DOM when changes happen.
 
-## Prêt pour la suite ?
+You may already have questions - don't worry. We will cover every little detail in the rest of the documentation. For now, please read along so you can have a high-level understanding of what Vue offers.
 
-Nous venons juste d’introduire brièvement les fonctionnalités les plus basiques du cœur de Vue.js. Le reste de ce guide va les traiter ainsi que d’autres fonctionnalités avancées plus en détail. Assurez-vous donc de le lire jusqu’au bout !
+:::tip Prerequisites
+The rest of the documentation assumes basic familiarity with HTML, CSS and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+:::
+
+## The Progressive Framework
+
+Vue is a framework and ecosystem that covers most of the common features needed in frontend development. But the web is extremely diverse - the things we build on the web may vary drastically in form and scale. With that in mind, Vue is designed to be flexible and incrementally adoptable. Depending on your use case, Vue can be used in different ways:
+
+- Enhancing static HTML without a build step
+- Embedding as Web Components on any page
+- Single-Page Application (SPA)
+- Fullstack / Server-Side-Rendering (SSR)
+- JAMStack / Static-Site-Generation (SSG)
+- Targeting desktop, mobile, WebGL or even the terminal
+
+If you find these concepts intimidating, don't worry! The tutorial and guide only require basic HTML and JavaScript knowledge, and you should be able to follow along without being an expert in any of these.
+
+If you are an experienced developer interested in how to best integrate Vue into your stack, or you are curious about what these terms mean, we discuss them in more details in [Ways of Using Vue](/guide/extras/ways-of-using-vue).
+
+Despite the flexibility, the core knowledge about how Vue works is shared across all these use cases. Even if you are just a beginner now, the knowledge gained along the way will stay useful as you grow to tackle more ambitious goals in the future. If you are a veteran, you can pick the optimal way to leverage Vue based on the problems you are trying to solve, while retaining the same productivity. This is why we call Vue "The Progressive Framework": it's a framework that can grow with you and adapt to your needs.
+
+## Single-File Components
+
+In most build-tool-enabled Vue projects, we author Vue components using an HTML-like file format called **Single-File Component** (also known as `*.vue` files, abbreviated as **SFC**). A Vue SFC, as the name suggests, encapsulates the component's logic (JavaScript), template (HTML), and styles (CSS) in a single file. Here's the previous example, written in SFC format:
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="count++">Count is: {{ count }}</button>
+</template>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+```
+
+SFC is a defining feature of Vue, and is the recommended way to author Vue components **if** your use case warrants a build setup. You can learn more about the [how and why of SFC](/guide/scaling-up/sfc) in its dedicated section - but for now, just know that Vue will handle all the build tools setup for you.
+
+## API Styles
+
+Vue components can be authored in two different API styles: **Options API** and **Composition API**.
+
+### Options API
+
+With Options API, we define a component's logic using an object of options such as `data`, `methods`, and `mounted`. Properties defined by options are exposed on `this` inside functions, which points to the component instance:
+
+```vue
+<script>
+export default {
+  // Properties returned from data() becomes reactive state
+  // and will be exposed on `this`.
+  data() {
+    return {
+      count: 0
+    }
+  },
+
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event listeners in templates.
+  methods: {
+    increment() {
+      this.count++
+    }
+  },
+
+  // Lifecycle hooks are called at different stages
+  // of a component's lifecycle.
+  // This function will be called when the component is mounted.
+  mounted() {
+    console.log(`The initial count is ${this.count}.`)
+  }
+}
+</script>
+
+<template>
+  <button @click="increment">count is: {{ count }}</button>
+</template>
+```
+
+[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPmNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==)
+
+### Composition API
+
+With Composition API, we define a component's logic using imported API functions. In SFCs, Composition API is typically used with [`<script setup>`](/api/sfc-script-setup). The `setup` attribute is a hint that makes Vue perform compile-time transforms that allow us to use Composition API with less boilerplate. For example, imports and top-level variables / functions declared in `<script setup>` are directly usable in the template.
+
+Here is the same component, with the exact same template, but using Composition API and `<script setup>` instead:
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+
+// reactive state
+const count = ref(0)
+
+// functions that mutate state and trigger updates
+function increment() {
+  count.value++
+}
+
+// lifecycle hooks
+onMounted(() => {
+  console.log(`The initial count is ${count.value}.`)
+})
+</script>
+
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
+</template>
+```
+
+[Try it in the Playground](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG4vLyByZWFjdGl2ZSBzdGF0ZVxuY29uc3QgY291bnQgPSByZWYoMClcblxuLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbmZ1bmN0aW9uIGluY3JlbWVudCgpIHtcbiAgY291bnQudmFsdWUrK1xufVxuXG4vLyBsaWZlY3ljbGUgaG9va3Ncbm9uTW91bnRlZCgoKSA9PiB7XG4gIGNvbnNvbGUubG9nKGBUaGUgaW5pdGlhbCBjb3VudCBpcyAke2NvdW50LnZhbHVlfS5gKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxidXR0b24gQGNsaWNrPVwiaW5jcmVtZW50XCI+Y291bnQgaXM6IHt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiJ9)
+
+### Which to Choose?
+
+First of all, both API styles are fully capable of covering common use cases. They are different interfaces powered by the exact same underlying system. In fact, the Options API is implemented on top of the Composition API! The fundamental concepts and knowledge about Vue are shared across the two styles.
+
+The Options API is centered around the concept of a "component instance" (`this` as seen in the example), which typically aligns better with a class-based mental model for users coming from OOP language backgrounds. It is also more beginner-friendly by abstracting away the reactivity details and enforcing code organization via option groups.
+
+The Composition API is centered around declaring reactive state variables directly in a function scope, and composing state from multiple functions together to handle complexity. It is more free-form, and requires understanding of how reactivity works in Vue to be used effectively. In return, its flexibility enables more powerful patterns for organizing and reusing logic.
+
+You can learn more about the comparison between the two styles and the potential benefits of Composition API in the [Composition API FAQ](/guide/extras/composition-api-faq).
+
+If you are new to Vue, here's our general recommendation:
+
+- For learning purposes, go with the style that looks easier to understand to you. Again, most of the core concepts are shared between the two styles. You can always pick up the other one at a later time.
+
+- For production use:
+
+  - Go with Options API if you are not using build tools, or plan to use Vue primarily in low-complexity scenarios, e.g. progressive enhancement.
+
+  - Go with Composition API + Single-File Components if you plan to build full applications with Vue.
+
+You don't have to commit to only one style during the learning phase. The rest of the documentation will provide code samples in both styles where applicable, and you can toggle between them at any time using the **API Preference switches** at the top of the left sidebar.
+
+## Still Got Questions?
+
+Check out our [FAQ](/about/faq).
+
+## Pick Your Learning Path
+
+Different developers have different learning styles. Feel free to pick a learning path that suits your preference - although we do recommend going over all content if possible!
+
+<div class="vt-box-container next-steps">
+  <a class="vt-box" href="/tutorial/">
+    <p class="next-steps-link">Try the Tutorial</p>
+    <p class="next-steps-caption">For those who prefer learning things hands-on.</p>
+  </a>
+  <a class="vt-box" href="/guide/quick-start.html">
+    <p class="next-steps-link">Read the Guide</p>
+    <p class="next-steps-caption">The guide walks you through every aspect of the framework in full details.</p>
+  </a>
+  <a class="vt-box" href="/examples/">
+    <p class="next-steps-link">Check out the Examples</p>
+    <p class="next-steps-caption">Explore examples of core features and common UI tasks.</p>
+  </a>
+</div>

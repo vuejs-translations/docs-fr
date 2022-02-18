@@ -1,253 +1,328 @@
-# Composants intégrés
+---
+pageClass: api
+---
 
-## component
+# Built-in Components
 
-- **Propriétés:**
+:::info Registration and Usage
+Built-in components can be used directly in templates without needing to be registered. They are also tree-shakeable: they are only included in the build when they are used.
 
-  - `is` - `string | Component`
+When using them in [render functions](/guide/extras/render-function.html), they need to be imported explicitly. For example:
 
-- **Usage:**
+```js
+import { h, Transition } from 'vue'
 
-  Un "meta composant" pour le rendu dynamique des composants. Le composant réel qui est rendu est déterminé par la propriété `is`. Une propriété `is` en tant que chaîne de caractère peut être soit un nom de balise HTML, soit un nom de composant.
+h(Transition, {
+  /* props */
+})
+```
 
-- **Exemple:**
+:::
 
-  ```html
-  <!-- un composant dynamique contrôlé par -->
-  <!-- la propriété `componentId` sur le vm -->
-  <component :is="componentId"></component>
+## `<Transition>`
 
-  <!-- peut également rendre un composant enregistré ou un composant passé comme propriété -->
-  <component :is="$options.components.child"></component>
+Provides animated transition effects to a **single** element or component.
 
-  <!-- peut référencer des composants par une chaîne de caractères -->
-  <component :is="condition ? 'FooComponent' : 'BarComponent'"></component>
+- **Props**
 
-  <!-- peut être utilisé pour rendre des éléments HTML natifs -->
-  <component :is="href ? 'a' : 'span'"></component>
+  ```ts
+  interface TransitionProps {
+    /**
+     * Used to automatically generate transition CSS class names.
+     * e.g. `name: fade'` will auto expand to `.fade-enter`,
+     * `.fade-enter-active`, etc.
+     */
+    name?: string
+    /**
+     * Whether to apply CSS transition classes.
+     * Default: true
+     */
+    css?: boolean
+    /**
+     * Specifies the type of transition events to wait for to
+     * determine transition end timing.
+     * Default behavior is auto detecting the type that has
+     * longer duration.
+     */
+    type?: 'transition' | 'animation'
+    /**
+     * Specifies explicit durations of the transition.
+     * Default behavior is wait for the first `transitionend`
+     * or `animationend` event on the root transition element.
+     */
+    duration?: number | { enter: number; leave: number }
+    /**
+     * Controls the timing sequence of leaving/entering transitions.
+     * Default behavior is simultaneous.
+     */
+    mode?: 'in-out' | 'out-in'
+    /**
+     * Whether to apply transition on initial render.
+     * Default: false
+     */
+    appear?: boolean
+
+    /**
+     * Props for customizing transition classes.
+     * Use kebab-case in templates, e.g. enter-from-class="xxx"
+     */
+    enterFromClass?: string
+    enterActiveClass?: string
+    enterToClass?: string
+    appearFromClass?: string
+    appearActiveClass?: string
+    appearToClass?: string
+    leaveFromClass?: string
+    leaveActiveClass?: string
+    leaveToClass?: string
+  }
   ```
 
-- **Voir aussi:** [Composants Dynamiques](../guide/component-dynamic-async.html)
+- **Events**
 
-## transition
+  - `@before-enter`
+  - `@before-leave`
+  - `@enter`
+  - `@leave`
+  - `@appear`
+  - `@after-enter`
+  - `@after-leave`
+  - `@after-appear`
+  - `@enter-cancelled`
+  - `@leave-cancelled` (`v-show` only)
+  - `@appear-cancelled`
 
-- **Propriétés:**
+- **Example**
 
-  - `name` - `string` Utilisé pour générer automatiquement les noms de classe CSS de transition. par exemple `name: 'fade'` va s'auto-étendre à `.fade-enter`, `.fade-enter-active`, etc.
-  - `appear` - `boolean`, S'il faut appliquer la transition au rendu initial. La valeur par défaut est `false`.
-  - `persisted` - `boolean`. Si true, indique qu'il s'agit d'une transition qui n'insère/ne supprime pas réellement l'élément, mais bascule le statut show/hidden à la place. Les hooks de transition sont injectés, mais seront ignorés par le moteur de rendu. Au lieu de cela, une directive personnalisée peut contrôler la transition en appelant les hooks injectés (par exemple `v-show`).
-  - `css` - `boolean`. S'il faut appliquer des classes de transition CSS. La valeur par défaut est `true`. Si défini sur `false`, ne déclenchera que les hooks JavaScript enregistrés via les événements du composant.
-  - `type` - `string`. Spécifie le type d'événements de transition à attendre pour déterminer le moment de la fin de la transition. Les valeurs disponibles sont `"transition"` et `"animation"`. Par défaut, il détectera automatiquement le type qui a une durée plus longue.
-  - `mode` - `string` Contrôle la séquence de synchronisation des transitions d'entrée/sortie. Les modes disponibles sont `"out-in"` et `"in-out"`; par défaut, simultané.
-  - `duration` - `number | { enter: number, leave: number }`. Spécifie la durée de la transition. Par défaut, Vue attend le premier événement `transitionend` ou` animationend` sur l'élément de transition racine.
-  - `enter-from-class` - `string`
-  - `leave-from-class` - `string`
-  - `appear-class` - `string`
-  - `enter-to-class` - `string`
-  - `leave-to-class` - `string`
-  - `appear-to-class` - `string`
-  - `enter-active-class` - `string`
-  - `leave-active-class` - `string`
-  - `appear-active-class` - `string`
+  Simple element:
 
-- **Événements:**
+  ```vue-html
+  <Transition>
+    <div v-if="ok">toggled content</div>
+  </Transition>
+  ```
 
-  - `before-enter`
-  - `before-leave`
-  - `enter`
-  - `leave`
-  - `appear`
-  - `after-enter`
-  - `after-leave`
-  - `after-appear`
-  - `enter-cancelled`
-  - `leave-cancelled` (`v-show` seulement)
-  - `appear-cancelled`
+  Dynamic component, with transition mode + animate on appear:
 
-- **Usage:**
-
-  `<transition>` sert d'effets de transition pour un élément/composnat **unique**.  Le `<transition>` applique uniquement le comportement de transition au contenu enveloppé à l'intérieur; il n'affiche pas un élément DOM supplémentaire, ni n'apparaît dans la hiérarchie des composants inspectés.
-  ```html
-  <!-- simple élément -->
-  <transition>
-    <div v-if="ok">Contenu basculé</div>
-  </transition>
-
-  <!-- composant dynamique -->
-  <transition name="fade" mode="out-in" appear>
+  ```vue-html
+  <Transition name="fade" mode="out-in" appear>
     <component :is="view"></component>
-  </transition>
-
-  <!-- hooking d'événement -->
-  <div id="transition-demo">
-    <transition @after-enter="transitionComplete">
-      <div v-show="ok">Contenu basculé</div>
-    </transition>
-  </div>
+  </Transition>
   ```
 
-  ```js
-  const app = Vue.createApp({
-    ...
-    methods: {
-      transitionComplete (el) {
-        // pour passé 'el' cet élément DOM comme argument, quelque chose...
-      }
-    }
-    ...
-  })
+  Listening to transition events:
 
-  app.mount('#transition-demo')
+  ```vue-html
+  <Transition @after-enter="onTransitionComplete">
+    <div v-show="ok">toggled content</div>
+  </Transition>
   ```
 
-- **Voir aussi:** [Entrées et Sorties des Transitions](/guide/transitions-enterleave.html#transition-d-elements-composants-uniques)
+- **See also:** [`<Transition>` Guide](/guide/built-ins/transition.html)
 
-## transition-group
+## `<TransitionGroup>`
 
-- **Propriétés:**
+Provides transition effects for **multiple** elements or components in a list.
 
-  - `tag` - `string`, s'il n'est pas défini, effectue le rendu sans élément racine.
-  - `move-class` - écrase la classe CSS appliquée pendant la transition en mouvement.
-  - expose les mêmes propriétés que `<transition>` sauf `mode`.
+- **Props**
 
-- **Événements:**
+  `<TransitionGroup>` accepts the same props as `<Transition>` except `mode`, plus two additional props:
 
-  - expose les mêmes événements que `<transition>`.
+  ```ts
+  interface TransitionGroupProps extends Omit<TransitionProps, 'mode'> {
+    /**
+     * If not defined, renders as a fragment.
+     */
+    tag?: string
+    /**
+     * For customizing the CSS class applied during move transitions.
+     * Use kebab-case in templates, e.g. move-class="xxx"
+     */
+    moveClass?: string
+  }
+  ```
 
-- **Usage:**
+- **Events**
 
-  `<transition-group>` fournit des effets de transition pour **plusieurs** éléments/composants. Par défaut, il ne rend pas un élément DOM wrapper, mais on peut en définir un via l'attribut `tag`.
+  `<TransitionGroup>` emits the same events as `<Transition>`.
 
-  Notez que chaque enfant d'un `<transition-group>` doit être [**à clé unique**](./special-attributes.html#key) pour que les animations fonctionnent correctement..
+- **Details**
 
-  `<transition-group>` prend en charge les transitions mouvantes via la propriété CSS transform. Quand la position d'un enfant à l'écran a changé après une mise à jour, une classe CSS mobile lui sera appliquée (auto-générée à partir de l'attribut `name` ou configurée avec l'attribut `move-class`). Si la propriété CSS `transform` est "transitionnable" lorsque la classe mobile est appliquée, l'élément sera animé en douceur vers sa destination en utilisant la [technique FLIP](https://aerotwist.com/blog/flip-your-animations/).
+  By default, `<TransitionGroup>` doesn't render a wrapper DOM element, but one can be defined via the `tag` prop.
 
-  ```html
-  <transition-group tag="ul" name="slide">
+  Note that every child in a `<transition-group>` must be [**uniquely keyed**](/guide/essentials/list.html#maintaining-state-with-key) for the animations to work properly.
+
+  `<TransitionGroup>` supports moving transitions via CSS transform. When a child's position on screen has changed after an update, it will get applied a moving CSS class (auto generated from the `name` attribute or configured with the `move-class` prop). If the CSS `transform` property is "transition-able" when the moving class is applied, the element will be smoothly animated to its destination using the [FLIP technique](https://aerotwist.com/blog/flip-your-animations/).
+
+- **Example**
+
+  ```vue-html
+  <TransitionGroup tag="ul" name="slide">
     <li v-for="item in items" :key="item.id">
       {{ item.text }}
     </li>
-  </transition-group>
+  </TransitionGroup>
   ```
 
-- **Voir aussi:** [Transitions de listes](/guide/transitions-list.html)
+- **See also:** [Guide - TransitionGroup](/guide/built-ins/transition-group.html)
 
-## keep-alive
+## `<KeepAlive>`
 
-- **Propriétés:**
+Caches dynamically toggled components wrapped inside.
 
-  - `include` - `string | RegExp | Array`. Seuls les composants avec des noms correspondants seront mis en cache.
-  - `exclude` - `string | RegExp | Array`. Tout composant avec un nom correspondant ne sera pas mis en cache.
-  - `max` - `number | string`. Le nombre maximal d'instances de composant à mettre en cache.
+- **Props**
 
-- **Usage:**
+  ```ts
+  interface KeepAliveProps {
+    /**
+     * If specified, only components with names matched by
+     * `include` will be cached.
+     */
+    include?: MatchPattern
+    /**
+     * Any component with a name matched by `exclude` will
+     * not be cached.
+     */
+    exclude?: MatchPattern
+    /**
+     * The maximum number of component instances to cache.
+     */
+    max?: number | string
+  }
 
-  Lorsqu'il est englobé autour d'un composant dynamique, `<keep-alive>` met en cache les instances de composant inactives sans les détruire. Semblable à `<transition>`, `<keep-alive>` est un composant abstrait: il ne rend pas un élément DOM lui-même et n'apparaît pas dans l'arborescence du composant parent.
+  type MatchPattern = string | RegExp | (string | RegExp)[]
+  ```
 
-  Lorsqu'un composant est basculé dans `<keep-alive>`, ses hooks de cycle de vie `activated` et `deactivated` seront invoqués en conséquence.
+- **Details**
 
-  Principalement utilisé pour préserver l'état du composant ou éviter de re-rendre.
+  When wrapped around a dynamic component, `<KeepAlive>` caches the inactive component instances without destroying them.
 
-  ```html
-  <!-- basique -->
-  <keep-alive>
+  There can only be one active component instance as the direct child of `<KeepAlive>` at any time.
+
+  When a component is toggled inside `<KeepAlive>`, its `activated` and `deactivated` lifecycle hooks will be invoked accordingly, providing an alternative to `mounted` and `unmounted`, which are not called. This applies to the direct child of `<KeepAlive>` as well as to all of its descendants.
+
+- **Example**
+
+  Basic usage:
+
+  ```vue-html
+  <KeepAlive>
     <component :is="view"></component>
-  </keep-alive>
+  </KeepAlive>
+  ```
 
-  <!-- plusieurs enfants conditionnels -->
-  <keep-alive>
+  When used with `v-if` / `v-else` branches, there must be only one component rendered at a time:
+
+  ```vue-html
+  <KeepAlive>
     <comp-a v-if="a > 1"></comp-a>
     <comp-b v-else></comp-b>
-  </keep-alive>
+  </KeepAlive>
+  ```
 
-  <!-- utiliser avec `<transition>` -->
-  <transition>
-    <keep-alive>
+  Used together with `<Transition>`:
+
+  ```vue-html
+  <Transition>
+    <KeepAlive>
       <component :is="view"></component>
-    </keep-alive>
-  </transition>
+    </KeepAlive>
+  </Transition>
   ```
 
-  Notez que `<keep-alive>` est conçu pour le cas où il a un composant enfant direct qui bascule (toggle). Cela ne fonctionne pas si vous avez `v-for` à l'intérieur. Quand il y a plusieurs enfants conditionnels, comme ci-dessus, `<keep-alive>` exige qu'un seul enfant soit rendu à la fois.
+  Using `include` / `exclude`:
 
-- **`include` et `exclude`**
-
-  Les propriétés `include` et `exclude` permettent aux composants d'être mis en cache conditionnellement. Les deux peuvent être une chaîne de caractères (string) délimitée par des virgules, une RegExp ou un tableau (Array):
-
-  ```html
-  <!-- string délimitée de virgule -->
-  <keep-alive include="a,b">
+  ```vue-html
+  <!-- comma-delimited string -->
+  <KeepAlive include="a,b">
     <component :is="view"></component>
-  </keep-alive>
+  </KeepAlive>
 
-  <!-- regex (utilisez `v-bind`) -->
-  <keep-alive :include="/a|b/">
+  <!-- regex (use `v-bind`) -->
+  <KeepAlive :include="/a|b/">
     <component :is="view"></component>
-  </keep-alive>
+  </KeepAlive>
 
-  <!-- Array (utilisez `v-bind`) -->
-  <keep-alive :include="['a', 'b']">
+  <!-- Array (use `v-bind`) -->
+  <keepalive :include="['a', 'b']">
     <component :is="view"></component>
-  </keep-alive>
+  </keepalive>
   ```
 
-  La correspondance est d'abord vérifiée sur l'option `name` du composant, puis sur son nom d'enregistrement local (la clé dans l'option `components` du parent) si l'option `name` n'est pas disponible. La correspondance des composants anonymes ne peut pas être vérifiée.
+  Usage with `max`:
 
-- **`max`**
-
-  Le nombre maximal d'instances de composant à mettre en cache. Une fois ce nombre atteint, l'instance de composant mis en cache qui a été le moins récemment accédée sera détruite avant de créer une nouvelle instance.
-
-  ```html
-  <keep-alive :max="10">
+  ```vue-html
+  <KeepAlive :max="10">
     <component :is="view"></component>
-  </keep-alive>
+  </KeepAlive>
   ```
 
-  ::: warning
-  `<keep-alive>` ne fonctionne pas avec les composants fonctionnels car ils n'ont pas d'instances à mettre en cache.
-  :::
+- **See also:** [Guide - KeepAlive](/guide/built-ins/keep-alive.html)
 
-- **Voir aussi:** [Composants dynamiques - keep-alive](../guide/component-dynamic-async.html#composants-dynamiques-avec-keep-alive)
+## `<Teleport>`
 
-## slot
+Renders its slot content to another part of the DOM.
 
-- **Propriétés:**
+- **Props**
 
-  - `name` - `string`, utilisé pour nommer la slot.
+  ```ts
+  interface TeleportProps {
+    /**
+     * Required. Specify target container.
+     * Can either be a selector or an actual element.
+     */
+    to: string | HTMLElement
+    /**
+     * When `true`, the content will remain in its original
+     * location instead of moved into the target container.
+     * Can be changed dynamically.
+     */
+    disabled?: boolean
+  }
+  ```
 
-- **Usage:**
+- **Example**
 
-  `<slot>` sert de point de distribution de contenu dans les templates de composants. `<slot>` lui-même sera remplacé.
+  Specifying target container:
 
-  Pour un usage plus détaillé, consultez la section du guide ci-dessous.
-
-- **Voir aussi:** [Distribution de contenu avec des slots](../guide/component-basics.html#distribution-de-contenu-avec-des-slots)
-
-## teleport
-
-- **Propriétés:**
-
-  - `to` - `string`. Propriété requise, doit être un sélecteur de requête valide ou un HTMLElement (s'il est utilisé dans un environnement de navigateur). Spécifie un élément cible où le contenu du `<teleport>` sera déplacé
-
-  ```html
-  <!-- ok -->
+  ```vue-html
   <teleport to="#some-id" />
   <teleport to=".some-class" />
   <teleport to="[data-teleport]" />
-
-  <!-- Erroné -->
-  <teleport to="h1" />
-  <teleport to="some-string" />
   ```
 
-  - `disabled` - `boolean`.Cette propriété optionnelle peut être utilisée pour désactiver la fonctionnalité de `<teleport>`, ce qui signifie que son contenu de slot ne sera pas déplacé et sera rendu à l'endroit où vous avez spécifié le `<teleport>` dans le composant parent englobant.
+  Conditionally disabling:
 
-  ```html
+  ```vue-html
   <teleport to="#popup" :disabled="displayVideoInline">
     <video src="./my-movie.mp4">
   </teleport>
   ```
 
-  Notez que cela déplacera les nœuds réelsdu DOM au lieu d'être détruits et recréés, et cela gardera également toutes les instances de composant actives. Tous les éléments HTML avec leur état (c'est-à-dire une vidéo en cours de lecture) conserveront leur état.
+- **See also:** [Guide - Teleport](/guide/built-ins/teleport.html)
 
-- **Voir aussi:** [Le composant teleport](../guide/teleport.html#teleport)
+## `<Suspense>` <sup class="vt-badge experimental" />
+
+Used for orchestrating nested async dependencies in a component tree.
+
+- **Props**
+
+  ```ts
+  interface SuspenseProps {
+    timeout?: string | number
+  }
+  ```
+
+- **Events**
+
+  - `@resolve`
+  - `@pending`
+  - `@fallback`
+
+- **Details**
+
+  `<Suspense>` accepts two slots: the `#default` slot and the `#fallback` slot. It will display the content of the fallback slot while rendering the default slot in memory.
+
+  If it encounters async dependencies ([Async Components](/guide/components/async.html) and components with [`async setup()`](/guide/built-ins/suspense.html#async-setup)) while rendering the default slot, it will wait until all of them are resolved before displaying the default slot.
+
+- **See also:** [Guide - Suspense](/guide/built-ins/suspense.html)

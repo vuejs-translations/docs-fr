@@ -1,66 +1,166 @@
-# Divers
+# Options: Misc
 
 ## name
 
-- **Type:** `string`
+Explicitly declare a display name for the component.
 
-- **Détails:**
+- **Type**
 
-  Autorise le composant à s’appeler de manière récursive dans son template. Notez que lorsqu'un composant est enregistré globalement avec `Vue.createApp({}).component({})`, l'ID global est automatiquement défini comme son nom.
-
-  Un autre avantage de spécifier une option `name` est le débogage. Les composants nommés génèrent des messages d'avertissement plus utiles. De plus, lors de l'inspection d'une application dans [vue-devtools](https://github.com/vuejs/vue-devtools),  les composants sans nom apparaîtront sous la forme  `<AnonymousComponent>`, ce qui n'est pas très informatif. En fournissant l'option `name`, vous obtiendrez une arborescence de composants beaucoup plus informative.
-
-## delimiters
-
-- **Type:** `Array<string>`
-
-- **Default:** `{{ "['\u007b\u007b', '\u007d\u007d']" }}` 
-
-- **Restrictions:** Cette option n'est disponible que dans le build complet, avec la compilation des templates dans le navigateur.
-
-- **Détails:**
-
-  Définit les délimiteurs utilisés pour l'interpolation de texte dans le modèle.
-
-  En règle générale, cela est utilisé pour éviter les conflits avec les frameworks côté serveur qui utilisent également la syntaxe moustache.
-
-- **Exemple:**
-
-  ```js
-  Vue.createApp({
-    // Délimiteurs modifiés en style de template string ES6
-    delimiters: ['${', '}']
-  })
+  ```ts
+  interface ComponentOptions {
+    name?: string
+  }
   ```
+
+- **Details**
+
+  The name of a component is used for the following:
+
+  - Recursive self-reference in the component's own template
+  - Display in Vue DevTools' component inspection tree
+  - Display in warning component traces
+
+  When you use Single-File Components, the component already infers its own name from the filename. For example, a file named `MyComponent.vue` will have the inferred display name "MyComponent".
+
+  Another case is that when a component is registered globally with [`app.component`](/api/application.html#app-component), the global ID is automatically set as its name.
+
+  The `name` option allows you to override the inferred name, or to explicitly provide a name when no name can be inferred (e.g. when not using build tools, or an inlined non-SFC component).
+
+  There is one case where `name` is explicitly necessary: when matching against cacheable components in [`<KeepAlive>`](/guide/built-ins/keep-alive.html) via its `include / exclude` props.
 
 ## inheritAttrs
 
-- **Type:** `boolean`
+- **Type**
 
-- **Default:** `true`
-
-- **Détails:**
-
-  Par défaut, les liaisons d'attributs dans le scope parent qui ne sont pas reconnues comme des props seront "échouées". Cela signifie que lorsque nous avons un composant racine unique, ces liaisons seront appliquées à l'élément racine du composant enfant en tant qu'attributs HTML normaux. Lors de la création d'un composant qui encapsule un élément cible ou un autre composant, cela peut ne pas toujours être le comportement souhaité. En définissant `inheritAttrs` sur `false`, ce comportement par défaut peut être désactivé. Les attributs sont disponibles via la propriété d'instance `$attrs` et peuvent être explicitement liés à un élément non racine en utilisant `v-bind`.
-
-- **Usage:**
-
-  ```js
-  app.component('base-input', {
-    inheritAttrs: false,
-    props: ['label', 'value'],
-    emits: ['input'],
-    template: `
-      <label>
-        {{ label }}
-        <input
-          v-bind="$attrs"
-          v-bind:value="value"
-          v-on:input="$emit('input', $event.target.value)"
-        >
-      </label>
-    `
-  })
+  ```ts
+  interface ComponentOptions {
+    inheritAttrs?: boolean // default: true
+  }
   ```
 
-- **Voir aussi:** [Desactiver l'héritage d'attributs](../guide/component-attrs.html#desactiver-l-heritage-d-attributs)
+- **Details**
+
+  By default, parent scope attribute bindings that are not recognized as props will "fallthrough". This means that when we have a single-root component, these bindings will be applied to the root element of the child component as normal HTML attributes. When authoring a component that wraps a target element or another component, this may not always be the desired behavior. By setting `inheritAttrs` to `false`, this default behavior can be disabled. The attributes are available via the `$attrs` instance property and can be explicitly bound to a non-root element using `v-bind`.
+
+- **Example**
+
+  <div class="options-api">
+
+  ```vue
+  <script>
+  export default {
+    inheritAttrs: false,
+    props: ['label', 'value'],
+    emits: ['input']
+  }
+  </script>
+
+  <template>
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      />
+    </label>
+  </template>
+  ```
+
+  </div>
+  <div class="composition-api">
+
+  When declaring this option in a component that uses `<script setup>`, a separate `<script>` block is necessary:
+
+  ```vue
+  <script>
+  export default {
+    inheritAttrs: false
+  }
+  </script>
+
+  <script setup>
+  defineProps(['label', 'value'])
+  defineEmits(['input'])
+  </script>
+
+  <template>
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      />
+    </label>
+  </template>
+  ```
+
+  </div>
+
+- **See also:** [Fallthrough Attributes](/guide/components/attrs.html)
+
+## components
+
+An object that registers components to be made available to the component instance.
+
+- **Type**
+
+  ```ts
+  interface ComponentOptions {
+    components?: { [key: string]: Component }
+  }
+  ```
+
+- **Example**
+
+  ```js
+  import Foo from './Foo.vue'
+  import Bar from './Bar.vue'
+
+  export default {
+    components: {
+      // shorthand
+      Foo,
+      // register under a different name
+      RenamedBar: Bar
+    }
+  }
+  ```
+
+- **See also:** [Component Registration](/guide/components/registration.html)
+
+## directives
+
+An object that registers directives to be made available to the component instance.
+
+- **Type**
+
+  ```ts
+  interface ComponentOptions {
+    directives?: { [key: string]: Directive }
+  }
+  ```
+
+- **Example**
+
+  ```js
+  export default {
+    directives: {
+      // enables v-focus in template
+      focus: {
+        mounted(el) {
+          el.focus()
+        }
+      }
+    }
+  }
+  ```
+
+  ```vue-html
+  <input v-focus>
+  ```
+
+  A hash of directives to be made available to the component instance.
+
+- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)

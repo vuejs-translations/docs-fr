@@ -1,122 +1,109 @@
-# Composition
+# Options: Composition
 
-## mixins
+## provide
 
-- **Type:** `Array<Object>`
+Provide values that can be injected by descendent components.
 
-- **Détails:**
+- **Type**
 
-  L'option `mixins` accepte un tableau d'objets mixin. Ces objets mixin peuvent contenir des options d'instance comme des objets d'instance normaux, et ils seront fusionnés avec les options éventuelles en utilisant la logique de fusion de certaines options. Par exemple, si votre mixin contient un hook `created` et que le composant lui-même en a également un, les deux fonctions seront appelées.
-
-  Les hooks de mixin sont appelés dans l'ordre dans lequel ils sont fournis, et appelés avant les hooks du composant.
-
-- **Exemple:**
-
-  ```js
-  const mixin = {
-    created: function() {
-      console.log(1)
-    }
-  }
-
-  Vue.createApp({
-    created() {
-      console.log(2)
-    },
-    mixins: [mixin]
-  })
-
-  // => 1
-  // => 2
-  ```
-
-- **Voir aussi:** [Mixins](../guide/mixins.html)
-
-## extends
-
-- **Type:** `Object | Function`
-
-- **Détails:**
-
-  Permet d'étendre de manière déclarative un autre composant (peut être un objet d'options simple ou un constructeur). Ceci est principalement destiné à faciliter l'extension entre les composants de fichier unique.
-
-  Il est similaire aux `mixins`.
-
-- **Exemple:**
-
-  ```js
-  const CompA = { ... }
-
-  // étend CompA sans avoir à appeler `Vue.extend` sur l'un ou l'autre
-  const CompB = {
-    extends: CompA,
-    ...
+  ```ts
+  interface ComponentOptions {
+    provide?: object | ((this: ComponentPublicInstance) => object)
   }
   ```
 
-## provide / inject
+- **Details:**
 
-- **Type:**
+  `provide` and [`inject`](#inject) are used together to allow an ancestor component to serve as a dependency injector for all its descendants, regardless of how deep the component hierarchy is, as long as they are in the same parent chain.
 
-  - **provide:** `Object | () => Object`
-  - **inject:** `Array<string> | { [key: string]: string | Symbol | Object }`
+  The `provide` option should be either an object or a function that returns an object. This object contains the properties that are available for injection into its descendants. You can use Symbols as keys in this object.
 
-- **Détails:**
+- **Example**
 
-  Cette paire d'options est utilisée ensemble pour permettre à un composant parent de servir d'injecteur de dépendances pour tous ses descendants, quelle que soit la profondeur de la hiérarchie des composants, tant qu'ils sont dans la même arborescence. Si vous êtes familier avec React, cela est très similaire à la fonctionnalité `context` de React.
-
-  L'option `inject` doit être soit:
-
-  - un tableau de chaînes de caractères ou
-  - un objet où les clés sont les noms de la liaison locale et la valeur est soit:
-    - la clé (string ou Symbol) pour rechercher dans les injections disponibles ou
-    - un objet où:
-      - la propriété `from` est la clé (string ou Symbol) à rechercher dans les injections disponibles et
-      - la propriété `default` est utilisée comme valeur de secours
-
-  > Note: les liaisons `provide` et `inject` ne sont PAS réactives. C'est intentionnel. Cependant, si vous transmettez un objet réactif, les propriétés de cet objet restent réactives.
-
-- **Exemple:**
-
-  ```js
-  // composant parent fournissant 'foo'
-  const Provider = {
-    provide: {
-      foo: 'bar'
-    }
-    // ...
-  }
-
-  // composant enfant injectant 'foo'
-  const Child = {
-    inject: ['foo'],
-    created() {
-      console.log(this.foo) // => "bar"
-    }
-    // ...
-  }
-  ```
-
-  Avec les Symbols ES2015, la fonction `provide` et l'objet `inject`:
+  Basic usage:
 
   ```js
   const s = Symbol()
 
-  const Provider = {
-    provide() {
-      return {
-        [s]: 'foo'
-      }
+  export default {
+    provide: {
+      foo: 'foo',
+      [s]: 'bar'
     }
-  }
-
-  const Child = {
-    inject: { s }
-    // ...
   }
   ```
 
-  En utilisant une valeur injectée comme valeur par défaut pour une prop:
+  Using a function to provide per-component state:
+
+  ```js
+  export default {
+    data() {
+      return {
+        msg: 'foo'
+      }
+    }
+    provide() {
+      return {
+        msg: this.msg
+      }
+    }
+  }
+  ```
+
+  Note in the above example, the provided `msg` will NOT be reactive. See [Working with Reactivity](/guide/components/provide-inject.html#working-with-reactivity) for more details.
+
+- **See also:** [Provide / Inject](/guide/components/provide-inject.html)
+
+## inject
+
+Declare properties to inject into the current component by locating them from ancestor providers.
+
+- **Type**
+
+  ```ts
+  interface ComponentOptions {
+    inject?: ArrayInjectOptions | ObjectInjectOptions
+  }
+
+  type ArrayInjectOptions = string[]
+
+  type ObjectInjectOptions = {
+    [key: string | symbol]:
+      | string
+      | symbol
+      | { from?: string | symbol; default?: any }
+  }
+  ```
+
+- **Details**
+
+  The `inject` option should be either:
+
+  - An array of strings, or
+  - An object where the keys are the local binding name and the value is either:
+    - The key (string or Symbol) to search for in available injections, or
+    - An object where:
+      - The `from` property is the key (string or Symbol) to search for in available injections, and
+      - The `default` property is used as fallback value. Similar to props default values, a factory function is needed for object types to avoid value sharing between multiple component instances.
+
+  An injected property will be `undefined` if neither a matching property nor a default value was provided.
+
+  Note that injected bindings are NOT reactive. This is intentional. However, if the injected value is a reactive object, properties on that object do remain reactive. See [Working with Reactivity](/guide/components/provide-inject.html#working-with-reactivity) for more details.
+
+- **Example**
+
+  Basic usage:
+
+  ```js
+  export default {
+    inject: ['foo'],
+    created() {
+      console.log(this.foo)
+    }
+  }
+  ```
+
+  Using an injected value as the default for a prop:
 
   ```js
   const Child = {
@@ -131,7 +118,7 @@
   }
   ```
 
-  En utilisant une valeur injectée comme entrée de données:
+  Using an injected value as data entry:
 
   ```js
   const Child = {
@@ -144,7 +131,7 @@
   }
   ```
 
-  Les injections peuvent être facultatives avec une valeur par défaut:
+  Injections can be optional with default value:
 
   ```js
   const Child = {
@@ -154,7 +141,7 @@
   }
   ```
 
-  S'il doit être injecté à partir d'une propriété avec un nom différent, utilisez `from` pour désigner la propriété source:
+  If it needs to be injected from a property with a different name, use `from` to denote the source property:
 
   ```js
   const Child = {
@@ -167,7 +154,7 @@
   }
   ```
 
-  Semblable aux valeurs par défaut de prop, vous devez utiliser une "factory function" pour les valeurs non primitives:
+  Similar to prop defaults, you need to use a factory function for non-primitive values:
 
   ```js
   const Child = {
@@ -180,141 +167,79 @@
   }
   ```
 
-- **Voir aussi:** [Provide / Inject](../guide/component-provide-inject.html)
+- **See also:** [Provide / Inject](/guide/components/provide-inject.html)
 
-## setup
+## mixins
 
-- **Type:** `Function`
+An array of option objects to be mixed into the current component.
 
-La fonction `setup` est une nouvelle option de composant. Elle sert de point d'entrée pour l'utilisation du Composition API à l'intérieur des composants.
+- **Type**
 
-- **Moment d'Invocation**
-
-  `setup` est appelée juste après la résolution initiale des props lors de la création d'une instance de composant. Au niveau du lifecycle, il est appelé avant le hook [beforeCreate](./options-lifecycle-hooks.html#beforecreate).
-  
-
-- **Usage avec les Templates**
-
-  Si `setup` retourne un objet, les propriétés de l'objet seront fusionnées avec le contexte de rendu du template du composant:
-
-  ```html
-  <template>
-    <div>{{ count }} {{ object.foo }}</div>
-  </template>
-
-  <script>
-    import { ref, reactive } from 'vue'
-
-    export default {
-      setup() {
-        const count = ref(0)
-        const object = reactive({ foo: 'bar' })
-
-        // exposer au template
-        return {
-          count,
-          object
-        }
-      }
-    }
-  </script>
-  ```
-
-  Notez que les [refs](refs-api.html#ref) renvoyés par `setup` sont automatiquement déballés lors de l'accès dans le template, donc il n'y a pas besoin de `.value` dans les templates.
-
-- **Usage avec les Fonctions de Rendu / JSX**
-
-  `setup` peut également renvoyer une fonction de rendu, qui peut directement utiliser l'état réactif déclaré dans la même scope:
-
-  ```js
-  import { h, ref, reactive } from 'vue'
-
-  export default {
-    setup() {
-      const count = ref(0)
-      const object = reactive({ foo: 'bar' })
-
-      return () => h('div', [count.value, object.foo])
-    }
+  ```ts
+  interface ComponentOptions {
+    mixins?: ComponentOptions[]
   }
   ```
 
-- **Arguments**
+- **Details:**
 
-  La fonction reçoit les props résolus comme premier argument:
+  The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options like normal instance objects, and they will be merged against the eventual options using the certain option merging logic. For example, if your mixin contains a `created` hook and the component itself also has one, both functions will be called.
+
+  Mixin hooks are called in the order they are provided, and called before the component's own hooks.
+
+  :::warning No Longer Recommended
+  In Vue 2, mixins were the primary mechanism for creating reusable chunks of component logic. While mixins continue to be supported in Vue 3, [Composition API](/guide/reusability/composables.html) is now the preferred approach for code reuse between components.
+  :::
+
+- **Example:**
 
   ```js
-  export default {
-    props: {
-      name: String
+  const mixin = {
+    created() {
+      console.log(1)
+    }
+  }
+
+  createApp({
+    created() {
+      console.log(2)
     },
-    setup(props) {
-      console.log(props.name)
-    }
+    mixins: [mixin]
+  })
+
+  // => 1
+  // => 2
+  ```
+
+## extends
+
+A "base class" component to extend from.
+
+- **Type:**
+
+  ```ts
+  interface ComponentOptions {
+    extends?: ComponentOptions
   }
   ```
 
-  Notez que cet objet `props` est réactif - c'est-à-dire qu'il est mis à jour lorsque de nouveaux props sont passés, et peut être observé et réagir en utilisant `watchEffect` ou `watch`:
+- **Details:**
+
+  Allows one component to extend another, inheriting its component options.
+
+  From an implementation perspective, `extends` is almost identical to `mixins`. The component specified by `extends` will be treated as though it were the first mixin.
+
+  However, `extends` and `mixins` express different intents. The `mixins` option is primarily used to compose chunks of functionality, whereas `extends` is primarily concerned with inheritance.
+
+  As with `mixins`, any options will be merged using the relevant merge strategy.
+
+- **Example:**
 
   ```js
-  export default {
-    props: {
-      name: String
-    },
-    setup(props) {
-      watchEffect(() => {
-        console.log(`name is: ` + props.name)
-      })
-    }
+  const CompA = { ... }
+
+  const CompB = {
+    extends: CompA,
+    ...
   }
   ```
-
-  Cependant, ne déstructurez PAS l'objet `props`, car il perdra sa réactivité:
-
-  ```js
-  export default {
-    props: {
-      name: String
-    },
-    setup({ name }) {
-      watchEffect(() => {
-        console.log(`name is: ` + name) // Ne sera pas réactif!
-      })
-    }
-  }
-  ```
-
-  L'objet `props` est immuable pour le code utilisateur pendant le développement (émettra un avertissement si le code utilisateur tente de le muter).
-
-  Le deuxième argument fournit un objet de contexte qui expose une liste sélective de propriétés précédemment exposées sur `this`:
-
-  ```js
-  const MyComponent = {
-    setup(props, context) {
-      context.attrs
-      context.slots
-      context.emit
-    }
-  }
-  ```
-
-  `attrs` et `slots` sont des proxys des valeurs correspondantes sur l'instance de composant interne. Cela garantit qu'ils exposent toujours les dernières valeurs même après les mises à jour afin que nous puissions les déstructurer sans nous soucier d'accéder à une référence périmée:
-
-  ```js
-  const MyComponent = {
-    setup(props, { attrs }) {
-      // une fonction qui pourrait être appelée ultérieurement
-      function onClick() {
-        console.log(attrs.foo) // garantie d'être la dernière référence
-      }
-    }
-  }
-  ```
-
-  Il y a un certain nombre de raisons pour placer `props` comme premier argument séparé au lieu de l'inclure dans le contexte:
-
-  - Il est beaucoup plus courant pour un composant d'utiliser des `props` que les autres propriétés, et très souvent un composant n'utilise que des `props`.
-
-  - Avoir `props` comme argument séparé facilite la saisie individuelle sans gâcher les types des autres propriétés présent dans le contexte. Il permet également de conserver une signature cohérente entre  `setup`, `render` et les composants fonctionnels simples avec le support de TSX.
-
-- **Voir aussi:** [Composition API](composition-api.html)
