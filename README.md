@@ -37,7 +37,7 @@ _______________
 
 Ce site est construit avec [VitePress](https://github.com/vuejs/vitepress) et dépend de [@vue/theme](https://github.com/vuejs/vue-theme). Le contenu du site est écrit au format Markdown situé dans `src`. Pour des modifications simples, vous pouvez modifier directement le fichier sur GitHub et générer une Pull Request.
 
-Pour le développement local, [pnpm](https://pnpm.io/) est préféré comme gestionnaire de packages :
+Pour le développement local, [pnpm](https://pnpm.io/) est préférable comme gestionnaire de packages :
 
 ```bash
 pnpm i
