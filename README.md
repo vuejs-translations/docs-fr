@@ -5,13 +5,16 @@ Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts p
 Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
 
 ## Directives de contribution
+
+Merci de prendre connaissance du [Guide d'écriture](https://github.com/edimitchel/docs-fr/blob/main/.github/contributing/writing-guide.md) pour bien appréhender la manière de formuler les phrases pour que la lecture soit la plus simple et la plus fluide.
+
 ### VS Code extensions
 
 Utilisez les extentions suivantes pour éviter les fautes orthographiques:
 - streetsidesoftware.code-spell-checker
 - streetsidesoftware.code-spell-checker-french
 
-### Share translations work
+### Partager le travail de traduction
 
 Nous travaillons pour le moment avec les [issues](/issues) et le board [projects](/projects/1) pour partager le travail de traduction avec tous les membres impliqués.
 Des issues chapeau feront office de tracking pour chaque sous-partie de la documentation.
