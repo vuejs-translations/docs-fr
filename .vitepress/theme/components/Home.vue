@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NewsLetter from './NewsLetter.vue'
 import SponsorsGroup from './SponsorsGroup.vue';
+import VueMasteryModal from './VueMasteryModal.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import SponsorsGroup from './SponsorsGroup.vue';
       Un framework <strong>accessible, performant et polyvalent</strong><br/> pour construire des interfaces utilisateur.
     </p>
     <p class="actions">
+      <vue-mastery-modal />
       <a class="get-started" href="/guide/introduction.html">
         Commencer
         <svg
@@ -127,9 +129,6 @@ html:not(.dark) .accent,
 }
 
 .actions .get-started {
-  font-weight: 600;
-  background-color: var(--vt-c-green);
-  color: #fff;
   margin-right: 18px;
 }
 
@@ -142,12 +141,7 @@ html:not(.dark) .accent,
   transition: transform 0.2s;
 }
 
-.dark .actions .get-started {
-  color: var(--vt-c-indigo);
-}
-
 .actions .get-started:hover {
-  background-color: var(--vt-c-green-dark);
   transition-duration: 0.2s;
 }
 
@@ -155,19 +149,18 @@ html:not(.dark) .accent,
   transform: translateX(2px);
 }
 
-.dark .actions .get-started:hover {
-  background-color: var(--vt-c-green-light);
-}
-
+.actions .get-started,
 .actions .setup {
   color: var(--vt-c-text-code);
 }
 
+.actions .get-started:hover,
 .actions .setup:hover {
   background-color: var(--vt-c-gray-light-4);
   transition-duration: 0.2s;
 }
 
+.dark .actions .get-started:hover,
 .dark .actions .setup:hover {
   background-color: var(--vt-c-gray-dark-3);
 }
@@ -271,6 +264,9 @@ html:not(.dark) .accent,
   }
   #highlights .vt-box {
     padding: 20px 36px;
+  }
+  .actions a {
+    margin: 0.5em 0;
   }
 }
 

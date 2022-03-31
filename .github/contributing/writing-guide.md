@@ -95,7 +95,7 @@ Il ne faut en aucun cas utiliser 2 alertes l'une à côté de l'autre, c'est sig
 
 ### Contribution
 
-Nous apprécions les petites PRs ciblées. Si vous souhaitez apporter une modification extrêmement importante, veuillez communiquer avec les membres de l'équipe avant une pull request. Voici un [texte qui détaille pourquoi c'est si critique](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/) pour que nous puissions bien travailler dans cette équipe . Veuillez comprendre que même si nous apprécions toujours les contributions, nous devons finalement donner la priorité à ce qui fonctionne le mieux pour le projet dans son ensemble.
+Nous apprécions les petites PRs ciblées. Si vous souhaitez apporter une modification extrêmement importante, veuillez communiquer avec les membres de l'équipe avant une pull request. Voici un [texte qui détaille pourquoi c'est si critique](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/) pour que nous puissions bien travailler dans cette équipe. Veuillez comprendre que même si nous apprécions toujours les contributions, nous devons finalement donner la priorité à ce qui fonctionne le mieux pour le projet dans son ensemble.
 
 ## Resources
 

@@ -48,7 +48,7 @@ SFC est une caractéristique déterminante de Vue en tant que framework, et c'es
 - Génération de sites statiques (SSG)
 - Tout front-end non trivial pour lequel une étape de construction peut être justifiée pour une meilleure expérience de développement (DX).
 
-Cela dit, nous sommes conscients qu'il y a des scénarios où les SFC peuvent sembler exagérés. C'est pourquoi Vue peut toujours être utilisé via JavaScript sans étape de construction. Si vous cherchez simplement à agrémenter un HTML largement statique avec des interactions légères, vous pouvez vous pencher sur [petite-vue](https://github.com/vuejs/petite-vue), un sous-ensemble de Vue de 5 kb optimisé pour l'amélioration progressive.
+Cela dit, nous sommes conscients qu'il y a des scénarios où les SFC peuvent sembler exagérés. C'est pourquoi Vue peut toujours être utilisé via du JavaScript sans étape de construction. Si vous cherchez simplement à agrémenter un HTML largement statique avec des interactions légères, vous pouvez vous pencher sur [petite-vue](https://github.com/vuejs/petite-vue), un sous-ensemble de Vue de 6 kb optimisé pour l'amélioration progressive.
 
 ## Comment ça marche
 
@@ -74,7 +74,7 @@ Dans les projets concrets, nous intégrons généralement le compilateur SFC à 
 
 Certains utilisateurs issus d'un milieu traditionnel de développement web peuvent craindre que les SFC ne mélangent différentes responsabilités au même endroit - ce que HTML/CSS/JS étaient censés séparer !
 
-Pour répondre à cette question, il est important que nous soyons d'accord sur le fait que **la séparation des responsabilités ne signifie pas séparation des types de fichiers.** Le but ultime des principes d'ingénierie est d'améliorer la maintenabilité des bases de code. La séparation des responsabilités, lorsqu'elle est appliquée de manière dogmatique comme la séparation des types de fichiers, ne nous aide pas à atteindre cet objectif dans le contexte d'applications front-end de plus en plus complexes.
+Pour répondre à cette question, il est important que nous soyons d'accord sur le fait que **la séparation des responsabilités ne signifie pas séparation des types de fichiers.** Le but ultime des principes d'ingénierie est d'améliorer la maintenabilité de la base de code. La séparation des responsabilités, lorsqu'elle est appliquée de manière dogmatique comme la séparation des types de fichiers, ne nous aide pas à atteindre cet objectif dans le contexte d'applications front-end qui deviennent de plus en plus complexes.
 
 Dans le développement d'interfaces utilisateur modernes, nous avons constaté qu'au lieu de diviser la base de code en trois énormes couches qui s'entrecroisent, il est beaucoup plus logique de les diviser en composants faiblement couplés et de les composer. À l'intérieur d'un composant, son template, sa logique et ses styles sont intrinsèquement couplés, et leur regroupement rend le composant plus cohérent et plus facile à maintenir.
 

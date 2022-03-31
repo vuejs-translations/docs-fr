@@ -10,6 +10,19 @@ footer: false
 - Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
   :::
 
+<style src="/@theme/styles/vue-mastery.css"></style>
+<div class="vue-mastery-link">
+  <a href="https://www.vuemastery.com/courses-path/beginner" target="_blank">
+    <div class="banner-wrapper">
+      <img class="banner" alt="Vue Mastery banner" width="96px" height="56px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vuemastery-graphical-link-96x56.png" />
+    </div>
+    <p class="description">Apprenez Vue avec des tutoriels vidéos sur <span>VueMastery.com</span></p>
+    <div class="logo-wrapper">
+        <img alt="Vue Mastery Logo" width="25px" src="https://storage.googleapis.com/vue-mastery.appspot.com/flamelink/media/vue-mastery-logo.png" />
+    </div>
+  </a>
+</div>
+
 ## Qu'est-ce que Vue?
 
 Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScript qui se repose sur les standards HTML, CSS et JavaScript. Il propose une manière efficace de déclarer des composants pour la construction d'interfaces utilisateur, qu'elles soient simples ou complexes.
@@ -146,7 +159,7 @@ export default {
 </template>
 ```
 
-[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPmNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==)
+[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gTGVzIHByb3ByacOpdMOpcyByZXRvdXJuw6llcyBwYXIgZGF0YSgpIGRldmllbm5lbnQgZGVzIMOpdGF0cyByw6lhY3RpZnNcbiAgLy8gZXQgc2Vyb250IGV4cG9zw6llcyBzdXIgYHRoaXNgLlxuICBkYXRhKCkge1xuICAgIHJldHVybiB7XG4gICAgICBjb21wdGV1cjogMFxuICAgIH1cbiAgfSxcblxuICAvLyBMZXMgbcOpdGhvZGVzIHNvbnQgZGVzIGZvbmN0aW9ucyBxdWkgbW9kaWZpZW50IGwnw6l0YXQgZXQgZMOpY2xlbmNoZW50IGRlcyBtaXNlcyDDoCBqb3VyLlxuICAvLyBFbGxlcyBwZXV2ZW50IMOqdHJlIGxpw6llcyBlbiB0YW50IHF1J8OpY291dGV1cnMgZCfDqXbDqW5lbWVudHMgZGFucyBsZXMgbW9kw6hsZXMuXG4gIG1ldGhvZHM6IHtcbiAgICBpbmNyZW1lbnRlcigpIHtcbiAgICAgIHRoaXMuY29tcHRldXIrK1xuICAgIH1cbiAgfSxcblxuICAvLyBMZXMgaG9va3MgZGUgY3ljbGUgZGUgdmllIHNvbnQgYXBwZWzDqXMgw6AgZGlmZsOpcmVudGVzIMOpdGFwZXNcbiAgLy8gZHUgY3ljbGUgZGUgdmllIGQndW4gY29tcG9zYW50LlxuICAvLyBDZXR0ZSBmb25jdGlvbiBzZXJhIGFwcGVsw6llIGxvcnNxdWUgbGUgY29tcG9zYW50IHNlcmEgbW9udMOpLlxuICBtb3VudGVkKCkge1xuICAgIGNvbnNvbGUubG9nKGBMZSB2YWxldXIgaW5pdGlhbGUgZHUgY29tcHRldXIgZXN0ICR7dGhpcy5jb21wdGV1cn0uYClcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJpbmNyZW1lbnRlclwiPkxlIGNvbXB0ZXVyIGVzdCDDoCB7eyBjb21wdGV1ciB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
 ### API de Composition
 
@@ -177,7 +190,7 @@ onMounted(() => {
 </template>
 ```
 
-[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG4vLyByZWFjdGl2ZSBzdGF0ZVxuY29uc3QgY291bnQgPSByZWYoMClcblxuLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbmZ1bmN0aW9uIGluY3JlbWVudCgpIHtcbiAgY291bnQudmFsdWUrK1xufVxuXG4vLyBsaWZlY3ljbGUgaG9va3Ncbm9uTW91bnRlZCgoKSA9PiB7XG4gIGNvbnNvbGUubG9nKGBUaGUgaW5pdGlhbCBjb3VudCBpcyAke2NvdW50LnZhbHVlfS5gKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxidXR0b24gQGNsaWNrPVwiaW5jcmVtZW50XCI+Y291bnQgaXM6IHt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiJ9)
+[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiXG48c2NyaXB0IHNldHVwPlxuaW1wb3J0IHsgcmVmLCBvbk1vdW50ZWQgfSBmcm9tICd2dWUnXG5cbi8vIHJlYWN0aXZlIHN0YXRlXG5jb25zdCBjb21wdGV1ciA9IHJlZigwKVxuXG4vLyBmdW5jdGlvbnMgdGhhdCBtdXRhdGUgc3RhdGUgYW5kIHRyaWdnZXIgdXBkYXRlc1xuZnVuY3Rpb24gaW5jcmVtZW50ZXIoKSB7XG4gIGNvbXB0ZXVyLnZhbHVlKytcbn1cblxuLy8gbGlmZWN5Y2xlIGhvb2tzXG5vbk1vdW50ZWQoKCkgPT4ge1xuICBjb25zb2xlLmxvZyhgTGUgdmFsZXVyIGluaXRpYWxlIGR1IGNvbXB0ZXVyIGVzdCAke3RoaXMuY29tcHRldXJ9LmApXG59KVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJpbmNyZW1lbnRlclwiPkxlIGNvbXB0ZXVyIGVzdCDDoCB7eyBjb21wdGV1ciB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
 ### Laquelle choisir ?
 
