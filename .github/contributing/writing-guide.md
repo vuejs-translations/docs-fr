@@ -1,109 +1,111 @@
-# Vue Docs Writing Guide
+# Guide d'écriture de la documentation de Vue
 
-Writing documentation is an exercise in empathy. We're not describing an objective reality - the source code already does that. Our job is to help shape the relationship between users and the Vue ecosystem. This ever-evolving guide provides some rules and recommendations on how to do that consistently within the Vue ecosystem.
+La Rédaction d'une documentation est un exercice d'empathie. Nous ne décrivons pas une réalité objective - le code source le fait déjà. Notre travail consiste à aider à façonner la relation entre les utilisateurs et l'écosystème de Vue. Ce guide en constante évolution fournit des règles et des recommandations sur la façon de le faire de manière cohérente au sein de l'écosystème de Vue.
 
-## Principles
+## Principes
 
-- **A feature doesn't exist until it's well documented.**
-- **Respect users' cognitive capacity (i.e. brain power).** When a user starts reading, they begin with a certain amount of limited brain power and when they run out, they stop learning.
-  - Cognitive capacity is **depleted faster** by complex sentences, having to learn more than one concept at a time, and abstract examples that don't directly relate to a user's work.
-  - Cognitive capacity is **depleted more slowly** when we help them feel consistently smart, powerful, and curious. Breaking things down into digestible pieces and minding the flow of the document can help keep them in this state.
-- **Always try to see from the user's perspective.** When we understand something thoroughly, it becomes obvious to us. This is called _the curse of knowledge_. In order to write good documentation, try to remember what you first needed to know when learning this concept. What jargon did you need to learn? What did you misunderstand? What took a long time to really grasp? Good documentation meets users where they are. It can be helpful to practice explaining the concept to people in person before.
-- **Describe the _problem_ first, then the solution.** Before showing how a feature works, it's important to explain why it exists. Otherwise, users won't have the context to know if this information is important to them (is it a problem they experience?) or what prior knowledge/experience to connect it to.
-- **While writing, don't be afraid to ask questions**, _especially_ if you're afraid they might be "dumb". Being vulnerable is hard, but it's the only way for us to more fully understand what we need to explain.
-- **Be involved in feature discussions.** The best APIs come from documentation-driven development, where we build features that are easy to explain, rather than trying to figure out how to explain them later. Asking questions (especially "dumb" questions) earlier often helps reveal confusions, inconsistencies, and problematic behavior before a breaking change would be required to fix them.
+- **Une fonctionnalité n'existe pas tant qu'elle n'est pas bien documentée.**
+- **Respecter la capacité cognitive des utilisateurs (c'est-à-dire la puissance cérébrale).** Lorsqu'un utilisateur commence à lire, il commence avec une certaine quantité de puissance cérébrale limitée et lorsqu'il s'épuise, il arrête d'apprendre.
+  - La capacité cognitive est **épuisée plus rapidement** par des phrases complexes, devant apprendre plus d'un concept à la fois et des exemples abstraits qui ne sont pas directement liés au travail d'un utilisateur.
+  - La capacité cognitive est **épuisée plus lentement** lorsque nous les aidons à se sentir constamment intelligents, puissants et curieux. Décomposer les choses en morceaux assimilables et faire attention au flux du document peut aider à les maintenir dans cet état.
+- **Toujours essayer de voir du point de vue de l'utilisateur.** Lorsque nous comprenons quelque chose à fond, cela devient évident pour nous. C'est ce qu'on appelle _la malédiction de la connaissance_. Afin de rédiger une bonne documentation, essayez de vous souvenir de ce que vous avez d'abord dû savoir lors de l'apprentissage de ce concept. Quel jargon avez-vous dû apprendre ? Qu'avez-vous mal compris ? Qu'est-ce qui a mis du temps à être vraiment saisi ? Une bonne documentation rencontre les utilisateurs là où ils se trouvent. Il peut être utile de s'entraîner à expliquer le concept aux gens en personne avant.
+- **Décrivez d'abord le _problème_, puis la solution.** Avant de montrer le fonctionnement d'une fonctionnalité, il est important d'expliquer pourquoi elle existe. Sinon, les utilisateurs n'auront pas le contexte pour savoir si ces informations sont importantes pour eux (est-ce un problème qu'ils rencontrent ?) ou à quelles connaissances/expériences antérieures les associer.
+- **Pendant que vous écrivez, n'ayez pas peur de poser des questions**, _surtout_ si vous craignez qu'elles ne soient "stupides". Être vulnérable est difficile, mais c'est la seule façon pour nous de mieux comprendre ce que nous devons expliquer.
+- **Participez aux discussions sur les fonctionnalités.** Les meilleures API proviennent du développement basé sur la documentation, où nous créons des fonctionnalités faciles à expliquer, plutôt que d'essayer de comprendre comment les expliquer plus tard. Poser des questions (en particulier des questions "stupides") plus tôt aide souvent à révéler les confusions, les incohérences et les comportements problématiques avant qu'un changement radical ne soit nécessaire pour les résoudre.
 
-## Organization
+## Organisation
 
-- **Installation/Integration**: Provide a thorough overview of how to integrate the software into as many different kinds of projects as necessary.
-- **Introduction/Getting Started**:
-  - Provide a less than 10 minute overview of the problems the project solves and why it exists.
-  - Provide a less than 30 minute overview of the problems the project solves and how, including when and why to use the project and some simple code examples. At the end, link to both to Installation page and the beginning of the Essentials Guide.
-- **Guide**: Make users feel smart, powerful, and curious, then maintain this state so that users maintain the motivation and cognitive capacity to keep learning more. Guide pages are meant to be read sequentially, so should generally be ordered from the highest to lowest power/effort ratio.
-  - **Essentials**: It should take no longer than 5 hours to read the Essentials, though shorter is better. Its goal is to provide the 20% of knowledge that will help users handle 80% of use cases. Essentials can link to more advanced guides and the API, though, in most cases, you should avoid such links. When they are provided, you need also provide a context so users are aware if they should follow this link on their first reading. Otherwise, many users end up exhausting their cognitive capacity link-hopping, trying to fully learn every aspect of a feature before moving on, and as a result, never finish that first read-through of the Essentials. Remember that a smooth read is more important than being thorough. We want to give people the information they need to avoid a frustrating experience, but they can always come back and read further, or Google a less common problem when they encounter it.
-  - **Advanced**: While the Essentials helps people handle ~80% of use cases, subsequent guides help get users to 95% of use cases, plus more detailed information on non-essential features (e.g. transitions, animations), more complex convenience features (e.g. mixins, custom directives), and dev experience improvements (e.g. JSX, plugins). The final 5% of use cases that are more niche, complex, and/or prone to abuse will be left to the cookbook and API reference, which can be linked to from these advanced guides.
-- **Reference/API**: Provide a complete list of features, including type information, descriptions of the problem each solves, examples of every combination of options, and links to guides, cookbook recipes, and other internal resources providing more detail. Unlike other pages, this one is not meant to be read top-to-bottom, so plenty of detail can be provided. These references must also be more easily skimmable than the guides, so the format should be closer to dictionary entries than the story-telling format of the guides.
+- **Installation/Intégration** : Fournissez un aperçu complet de la manière d'intégrer le logiciel dans autant de types de projets différents que nécessaire.
+- **Introduction/Mise en route** :
+  - Fournissez un aperçu en moins de 10 minutes des problèmes que le projet résout et pourquoi il existe.
+  - Fournissez un aperçu de moins de 30 minutes des problèmes que le projet résout et comment, y compris quand et pourquoi utiliser le projet et quelques exemples de code simples. À la fin, créez un lien vers la page d'installation et le début du guide Essentiels.
+- **Guide**: Faites en sorte que les utilisateurs se sentent intelligents, puissants et curieux, puis maintenez cet état afin qu'ils conservent la motivation et la capacité cognitive nécessaires pour continuer à apprendre davantage. Les pages du guide sont destinées à être lues dans l'ordre, elles doivent donc généralement être classées selon le rapport puissance/effort du plus élevé au plus faible.
+
+  - **Essentiels**: Cela ne devrait pas prendre plus de 5 heures pour lire les Essentiels, bien que plus court soit mieux. Son objectif est de fournir les 20% de connaissances qui aideront les utilisateurs à gérer 80% des cas d'utilisation. Les Essentiels peuvent être liés à des guides plus avancés et à l'API, bien que, dans la plupart des cas, vous devriez éviter de tels liens. Lorsqu'ils sont fournis, vous devez également fournir un contexte afin que les utilisateurs sachent s'ils doivent suivre ce lien lors de leur première lecture. Sinon, de nombreux utilisateurs finissent par épuiser leur capacité cognitive à sauter des liens, essayant d'apprendre pleinement tous les aspects d'une fonctionnalité avant de passer à autre chose et, par conséquent, ne terminent jamais cette première lecture des Essentials. N'oubliez pas qu'une lecture fluide est plus importante qu'une lecture approfondie. Nous voulons donner aux gens les informations dont ils ont besoin pour éviter une expérience frustrante, mais ils peuvent toujours revenir et lire plus encore, ou Googler un problème moins courant lorsqu'ils le rencontrent.
+  - **Avancé** : Alors que les Essentiels aide les utilisateurs à gérer environ 80% des cas d'utilisation, les guides suivants aident les utilisateurs à atteindre 95% des cas d'utilisation, ainsi que des informations plus détaillées sur les fonctionnalités non essentielles (par exemple, les transitions, les animations), des fonctionnalités commode plus complexe (par exemple mixins, directives personnalisées) et améliorations de l'expérience de développement (par exemple JSX, plugins). Les derniers 5 % des cas d'utilisation qui sont plus spécifiques, complexes et/ou sujets aux abus seront laissés au livre de recette  <!-- TODO:(fr) trouver une meilleure traduction pour cookbook -->  et à la référence de l'API, qui peuvent être liés à partir de ces guides avancés.
+- **Référence/API**: Fournissez une liste complète des fonctionnalités, y compris des informations sur le type, des descriptions du problème que chacune résout, des exemples de chaque combinaison d'options et des liens vers des guides, des livres de recettes <!-- TODO:(fr) trouver une meilleure traduction pour cookbook --> et d'autres ressources internes fournissant plus de détails. Contrairement à d'autres pages, celle-ci n'est pas destinée à être lue de haut en bas, de sorte que de nombreux détails peuvent être fournis. Ces références doivent également être plus facilement consultables que les guides, de sorte que le format doit être plus proche des entrées de dictionnaire que le format narratif des guides.
 - **Migrations**:
-  - **Versions**: When important changes are made, it's useful to include a full list of changes, including a detailed explanation of why the change was made and how to migrate their projects.
-  - **From other projects**: How does this software compare to similar software? This is important to help users understand what additional problems we might solve or create for them, and to what extent they can transfer knowledge they already have.
-- **Style Guide**: There are necessarily some key pieces in development that need a decision, but are not core to the API. The style guide provides educated, opinionated recommendations to help guide these decisions. They shouldn't be followed blindly, but can help teams save time by being aligned on smaller details.
-- **Cookbook**: Recipes in the cookbook are written with some assumption of familiarity with Vue and its ecosystem. Each is a highly structured document that walks through some common implementation details that a Vue dev might encounter.
+  - **Versions**: Lorsque des modifications importantes sont apportées, il est utile d'inclure une liste complète des modifications, y compris une explication détaillée de la raison pour laquelle la modification a été apportée et comment migrer leurs projets.
+  - **Provenant d'autres projets** : comment ce logiciel se compare-t-il à des logiciels similaires ? Ceci est important pour aider les utilisateurs à comprendre quels problèmes supplémentaires nous pourrions résoudre ou créer pour eux, et dans quelle mesure ils peuvent transférer les connaissances qu'ils possèdent déjà.
+- **Guide de style**: Il y a nécessairement des éléments clés en développement qui nécessitent une décision, mais qui ne sont pas au cœur de l'API. Le guide de style fournit des recommandations éclairées et avisées pour aider à guider ces décisions. Ils ne doivent pas être suivis aveuglément, mais peuvent aider les équipes à gagner du temps en s'alignant sur des détails plus petits.
+- **Cookbook**:<!-- TODO:(fr) trouver une meilleure traduction pour cookbook --> Les recettes du livre de cuisine sont écrites avec une certaine hypothèse de familiarité avec Vue et son écosystème. Chacun est un document hautement structuré qui passe en revue certains détails d'implémentation courants qu'un développeur Vue peut rencontrer.
 
-## Writing & Grammar
+## Écriture et Grammaire
 
 ### Style
 
-- **Headings should describe problems**, not solutions. For example, a less effective heading might be "Using props", because it describes a solution. A better heading might be "Passing Data to Child Components with Props", because it provides the context of the problem props solve. Users won't really start paying attention to the explanation of a feature until they have some idea of why/when they'd use it.
-- **When you assume knowledge, declare it** at the beginning and link to resources for less common knowledge that you're expecting.
-- **Introduce only one new concept at a time whenever possible** (including both text and code examples). Even if many people are able to understand when you introduce more than one, there are also many who will become lost - and even those who don't become lost will have depleted more of their cognitive capacity.
-- **Avoid special content blocks for tips and caveats when possible.** It's generally preferable to blend these more naturally into the main content, e.g. by building on examples to demonstrate an edge case.
-- **Don't include more than two interwoven tips and caveats per page.** If you find that more than two tips are needed in a page, consider adding a caveats section to address these issues. The guide is meant to be read straight through, and tips and caveats can be overwhelming or distracting to someone trying to understand the base concepts.
-- **Avoid appeals to authority** (e.g. "you should do X, because that's a best practice" or "X is best because it gives you full separation of concerns"). Instead, demonstrate with examples the specific human problems caused and/or solved by a pattern.
-- **When deciding what to teach first, think of what knowledge will provide the best power/effort ratio.** That means teaching whatever will help users solve the greatest pains or greatest number of problems, with the relatively least effort to learn. This helps learners feel smart, powerful, and curious, so their cognitive capacity will drain more slowly.
-- **Unless the context assumes a string template or build system, only write code that works in any environment by the software (e.g. Vue, Vuex, etc).**
-- **Show, don't tell.** For example, "To use Vue on a page, you can add this to your HTML" (then show the script tag), instead of "To use Vue on a page, you can add a script element with a src attribute, the value of which should be a link to Vue's compiled source".
-- **Almost always avoid humor (for English docs)**, especially sarcasm and pop culture references, as it doesn't translate well across cultures.
-- **Never assume a more advanced context than you have to.**
-- **In most cases, prefer links between sections of the docs over repeating the same content in multiple sections.** Some repetition in content is unavoidable and even essential for learning. However, too much repetition also makes the docs more difficult to maintain, because a change in the API will require changes in many places and it's easy to miss something. This is a difficult balance to strike.
-- **Specific is better than generic.** For example, a `<BlogPost>` component example is better than `<ComponentA>`.
-- **Relatable is better than obscure.** For example, a `<BlogPost>` component example is better than `<CurrencyExchangeSettings>`.
-- **Be emotionally relevant.** Explanations and examples that relate to something people have experience with and care about will always be more effective.
-- **Always prefer simpler, plainer language over complex or jargony language.** For example:
-  - "you can use Vue with a script element" instead of "in order to initiate the usage of Vue, one possible option is to actually inject it via a script HTML element"
-  - "function that returns a function" instead of "higher order function"
-- **Avoid language that invalidate struggle**, such as "easy", "just", "obviously", etc. For reference, see [Words To Avoid in Educational Writing](https://css-tricks.com/words-avoid-educational-writing/).
+- **Les titres doivent décrire des problèmes**, pas des solutions. Par exemple, un titre moins efficace pourrait être "Utilisation des props", car il décrit une solution. Un meilleur titre pourrait être "Transmission de données aux composants enfants avec des props", car il fournit le contexte du problème que les props résolvent. Les utilisateurs ne commenceront pas vraiment à prêter attention à l'explication d'une fonctionnalité tant qu'ils n'auront pas une idée de pourquoi/quand ils l'utiliseront.
+- **Lorsque vous assumez des connaissances, déclarez-les** au début et créez un lien vers des ressources pour des connaissances moins courantes que vous attendez.
+- **Présentez un seul nouveau concept à la fois dans la mesure du possible** (y compris des exemples de texte et de code). Même si beaucoup de gens sont capables de comprendre quand vous en introduisez plus d'un, il y en a aussi beaucoup qui se perdront - et même ceux qui ne se perdront pas auront épuisé davantage leur capacité cognitive.
+- **Dans la mesure du possible, évitez les blocs de contenu spéciaux pour les conseils et les mises en garde.** Il est généralement préférable de les intégrer plus naturellement au contenu principal, par ex. en s'appuyant sur des exemples pour démontrer un cas limite.
+- **N'incluez pas plus de deux conseils et mises en garde entremêlés par page.** Si vous trouvez que plus de deux conseils sont nécessaires dans une page, envisagez d'ajouter une section de mises en garde pour résoudre ces problèmes. Le guide est destiné à être lu d'un bout à l'autre, et les conseils et mises en garde peuvent être accablants ou distrayants pour quelqu'un qui essaie de comprendre les concepts de base.
+- **Évitez les appels à l'autorité** (par exemple, « vous devriez faire X, car c'est une bonne pratique » ou « X est préférable, car cela vous permet de séparer complètement vos préoccupations »). Au lieu de cela, démontrez avec des exemples les problèmes humains spécifiques causés et/ou résolus par un pattern.
+- **Lorsque vous décidez quoi enseigner en premier, pensez aux connaissances qui fourniront le meilleur ratio puissance/effort.** Cela signifie enseigner tout ce qui aidera les utilisateurs à résoudre les plus grands maux ou le plus grand nombre de problèmes, avec le moins d'effort d'apprentissage. Cela aide les apprenants à se sentir intelligents, puissants et curieux, de sorte que leur capacité cognitive s'épuise plus lentement.
+- **À moins que le contexte suppose un string template ou un système de build, n'écrivez que du code qui fonctionne dans n'importe quel environnement par le logiciel (par exemple, Vue, Vuex, etc.).**
+ **Unless the context assumes a string template or build system, only write code that works in any environment by the software (e.g. Vue, Vuex, etc).**
+- **Montrez, ne dites pas.** Par exemple, "Pour utiliser Vue sur une page, vous pouvez l'ajouter à votre code HTML" (puis afficher la balise de script), au lieu de "Pour utiliser Vue sur une page, vous pouvez ajouter un élément script avec un attribut src, la valeur dont devrait être un lien vers la source compilée de Vue".
+- **Évitez presque toujours l'humour (pour les documentations en anglais <!--TODO: (fr) Faut-il traduire anglais pas français ici?-->)**, en particulier les références au sarcasme et à la culture pop, car cela ne se traduit pas bien d'une culture à l'autre.
+- **Ne présumez jamais d'un contexte plus avancé que nécessaire.**
+- **Dans la plupart des cas, préférez les liens entre les sections des documents plutôt que de répéter le même contenu dans plusieurs sections.** Certaines répétitions dans le contenu sont inévitables et même essentielles pour l'apprentissage. Cependant, trop de répétitions rend également les documents plus difficiles à maintenir, car un changement dans l'API nécessitera des changements à de nombreux endroits et il est facile de manquer quelque chose. C'est un équilibre difficile à trouver.
+- **Spécifique vaut mieux que générique.** Par exemple, un exemple de composant `<BlogPost>` est mieux que `<ComposantA>`.
+- **Reliable vaut mieux qu'obscure.** Par exemple, un composant `<BlogPost>` est mieux que `<CurrencyExchangeSettings>`.
+- **Soyez émotionnellement pertinent.** Les explications et les exemples qui se rapportent à quelque chose que les gens ont vécu et dont ils se soucient seront toujours plus efficaces.
+- **Préférez toujours un langage plus simple et plus clair au langage complexe ou au jargon.** Par exemple :
+  - "vous pouvez utiliser Vue avec un élément script" au lieu de "afin d'initier l'utilisation de Vue, une option possible est de l'injecter via un élément HTML script"
+  - "fonction qui renvoie une fonction" au lieu de "fonction d'ordre supérieur"
+- **Évitez les termes qui invalident la difficulté**, tels que "facile", "juste", "évidemment", etc. Pour référence, voir [Mots à Éviter dans la Rédaction Pédagogique](https://css-tricks.com/words-avoid-educational-writing/).
 
-### Grammar
+### Grammaire
 
-- **Avoid abbreviations** in writing and code examples (e.g. `attribute` is better than `attr`, `message` is better than `msg`), unless you are specifically referencing an abbreviation in an API (e.g. `$attrs`). Abbreviation symbols included on standard keyboards (e.g. `@`, `#`, `&`) are OK.
-- **When referencing a directly following example, use a colon (`:`) to end a sentence**, rather than a period (`.`).
-- **Use the Oxford comma** (e.g. "a, b, and c" instead of "a, b and c"). ![Why the Oxford comma is important](./oxford-comma.jpg)
-  - Source: [The Serial (Oxford) Comma: When and Why To Use It](https://www.inkonhand.com/2015/10/the-serial-oxford-comma-when-and-why-to-use-it/)
-- **When referencing the name of a project, use the name that project refers to itself as.** For example, "webpack" and "npm" should both use lowercase as that's how their documentation refers to them.
-- **Use Title Case for headings** - at least for now, since it's what we use through the rest of the docs. There's research suggesting that sentence case (only first word of the heading starts with a capital) is actually superior for legibility and also reduces the cognitive overhead for documentation writers, since they don't have to try to remember whether to capitalize words like "and", "with", and "about".
-- **Don't use emojis (except in discussions).** Emojis are cute and friendly, but they can be a distraction in documentation and some emoji even convey different meanings in different cultures.
+- **Évitez les abréviations** dans le texte et les exemples de code (par ex. `attribute` est mieux que `attr`, `message` est mieux que `msg`), sauf si vous faites spécifiquement référence à une abréviation dans une API (par exemple, `$attrs`). Les symboles d'abréviation inclus sur les claviers standard (par exemple `@`, `#`, `&`) sont OK.
+- **Lorsque vous faites référence à un exemple qui suit directement, utilisez deux-points (`:`) pour terminer une phrase**, plutôt qu'un point (`.`).
+- **Utilisez la virgule Oxford** (par exemple, "a, b, et c" au lieu de "a, b et c"). ![Pourquoi la virgule d'Oxford est importante](./oxford-comma.jpg) <!--TODO: à valider cette règle en français-->
+  - Source: [La virgule sérielle (Oxford) : quand et pourquoi l'utiliser](https://www.inkonhand.com/2015/10/the-serial-oxford-comma-when-and-why-to-use-it/)
+- **Lorsque vous faites référence au nom d'un projet, utilisez le nom auquel le projet se réfère lui-même.** Par exemple, "webpack" et "npm" doivent tous deux utiliser des minuscules car c'est ainsi que leur documentation se réfère à eux.
+- **Utilisez la casse du titre pour les titres** - du moins pour le moment, puisque c'est ce que nous utilisons dans le reste de la documentation. Des recherches suggèrent que la casse des phrases (seul le premier mot du titre commence par une majuscule) est en fait meilleure pour la lisibilité et réduit également la surcharge cognitive pour les rédacteurs de documentation, car ils n'ont pas à essayer de se rappeler s'il faut mettre en majuscule des mots comme "et ", "avec" et "à-propos".
+- **N'utilisez pas d'émojis (sauf dans les discussions).** Les émojis sont mignons et amicaux, mais ils peuvent être une distraction dans la documentation et certains émojis véhiculent même des significations différentes selon les cultures.
 
-## Iteration & Communication
+## Itération & Communication
 
-- **Excellence comes from iteration.** First drafts are always bad, but writing them is a vital part of the process. It's extremely difficult to avoid the slow progression of Bad -> OK -> Good -> Great -> Inspiring -> Transcendent.
-- **Only wait until something is "Good" before publishing.** The community will help you push it further down the chain.
-- **Try not to get defensive when receiving feedback.** Our writing can be very personal to us, but if we get upset with the people who help us make it better, they will either stop giving feedback or start limiting the kind of feedback they give.
-- **Proof-read your own work before showing it to others.** If you show someone work with a lot of spelling/grammar mistakes, you'll get feedback about spelling grammar/mistakes instead of more valuable notes about whether the writing is achieving your goals.
-- **When you ask people for feedback, tell reviewers what:**
-  - **you're trying to do**
-  - **your fears are**
-  - **balances you're trying to strike**
-- **When someone reports a problem, there is almost always a problem**, even if the solution they proposed isn't quite right. Keep asking follow-up questions to learn more.
-- People need to feel safe asking questions when contributing/reviewing content. Here's how you can do that:
-  - **Thank people for their contributions/reviews, even if you're feeling grumpy.** For example:
-    - "Great question!"
-    - "Thanks for taking the time to explain. 🙂"
-    - "This is actually intentional, but thanks for taking the time to contribute. 😊"
-  - **Listen to what people are saying and mirror if you're not sure you're understanding correctly.** This can help validate people's feelings and experiences, while also understanding if _you're_ understanding _them_ correctly.
-  - **Use a lot of positive and empathetic emojis.** It's always better to seem a little strange than mean or impatient.
-  - **Kindly communicate rules/boundaries.** If someone behaves in a way that's abusive/inappropriate, respond only with kindness and maturity, but also make it clear that this behavior is not acceptable and what will happen (according to the code of conduct) if they continue behaving poorly.
+- **L'excellence vient de l'itération.** Les premiers brouillons sont toujours mauvais, mais leur rédaction est une partie essentielle du processus. Il est extrêmement difficile d'éviter la lente progression de Mauvais -> OK -> Bon -> Très Bon -> Inspirant -> Transcendant.
+- **Attendez seulement que quelque chose soit "Bon" avant de le publier.** La communauté vous aidera à le pousser plus loin dans la chaîne.
+- **Essayez de ne pas être sur la défensive lorsque vous recevez des commentaires.** Notre écriture peut être très personnelle pour nous, mais si nous nous fâchons contre les personnes qui nous aident à l'améliorer, elles cesseront de donner des commentaires ou commenceront à limiter le type de commentaires qu'ils donnent.
+- **Relisez votre propre travail avant de le montrer à d'autres.** Si vous montrez à quelqu'un un travail avec beaucoup de fautes d'orthographe/de grammaire, vous obtiendrez des commentaires sur la grammaire/les fautes d'orthographe au lieu de notes plus utiles pour savoir si l'écriture a atteint vos objectifs.
+- **Lorsque vous demandez aux utilisateurs de donner leur avis, dites-leur ce que :**
+  - **vous essayez de faire**
+  - **vos peurs sont**
+  - **les équilibres que vous essayez d'atteindre**
+- **Quand quelqu'un signale un problème, il y a presque toujours un problème**, même si la solution proposée n'est pas tout à fait la bonne. Continuez à poser des questions de suivi pour en savoir plus.
+- Les gens doivent se sentir en sécurité en posant des questions lorsqu'ils contribuent/révisent du contenu. Voici comment procéder :
+  - **Remerciez les gens pour leurs contributions/avis, même si vous vous sentez grincheux.** Par exemple :
+    - "Grande question !"
+    - "Merci d'avoir pris le temps de m'expliquer. 🙂"
+    - "C'est en fait intentionnel, mais merci d'avoir pris le temps de contribuer. 😊"
+  - **Écoutez ce que les gens disent et réfléchissez si vous n'êtes pas sûr de bien comprendre.** Cela peut aider à valider les sentiments et les expériences des gens, tout en permettant de comprendre si _vous_ les _comprenez_ correctement.
+  - **Utilisez beaucoup d'emojis positifs et empathiques.** Il vaut toujours mieux paraître un peu étrange que méchant ou impatient.
+  - **Communiquez gentiment les règles/limites.** Si quelqu'un se comporte d'une manière abusive/inappropriée, répondez uniquement avec gentillesse et maturité, mais précisez également que ce comportement n'est pas acceptable et ce qui se passera (selon le code de conduite) s'ils continuent à se comporter mal.
 
-### Tips, Callouts, Alerts, and Line Highlights
+### Conseils, Légendes, Alertes et Mises en Surbrillance des lignes
 
-We have some dedicated styles to denote something that's worth highlighting in a particular way. These are captured [on this page](https://v3.vuejs.org/guide/doc-style-guide.html#alerts). **They are to be used sparingly.**
+Nous avons des styles dédiés pour désigner quelque chose qui mérite d'être souligné d'une manière particulière. Celles-ci sont enregistrées [sur cette page](https://v3.vuejs.org/guide/doc-style-guide.html#alerts). **Ils sont à utiliser avec parcimonie.**
 
-There is a certain temptation to abuse these styles, as one can simply add a change inside a callout. However, this breaks up the flow of reading for the user, and thus, should only be used in special circumstances. Wherever possible, we should attempt to create a narrative and flow within the page to respect the readers cognitive load.
+Il y a une certaine tentation d'abuser de ces styles, car on peut simplement ajouter un changement à l'intérieur d'une légende. Cependant, cela interrompt le flux de lecture pour l'utilisateur et ne doit donc être utilisé que dans des circonstances particulières. Dans la mesure du possible, nous devrions essayer de créer un récit et un flux dans la page pour respecter la charge cognitive des lecteurs.
 
-Under no circumstances should 2 alerts be used next to one another, it's a sign that we're not able to explain context well enough.
+Il ne faut en aucun cas utiliser 2 alertes l'une à côté de l'autre, c'est signe qu'on n'est pas capable d'expliquer assez bien le contexte.
 
-### Contributing
+### Contribution
 
-We appreciate small, focused PRs. If you'd like to make an extremely large change, please communicate with team members prior to a pull request. Here's a [writeup that details why this is so critical](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/) for us to work well on this team. Please understand that though we always appreciate contributions, ultimately we have to prioritize what works best for the project as a whole.
+Nous apprécions les petites PRs ciblées. Si vous souhaitez apporter une modification extrêmement importante, veuillez communiquer avec les membres de l'équipe avant une pull request. Voici un [texte qui détaille pourquoi c'est si critique](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/) pour que nous puissions bien travailler dans cette équipe. Veuillez comprendre que même si nous apprécions toujours les contributions, nous devons finalement donner la priorité à ce qui fonctionne le mieux pour le projet dans son ensemble.
 
 ## Resources
 
-### Software
+### Logiciel
 
-- [Grammarly](https://www.grammarly.com/): Desktop app and browser extension for checking spelling and grammar (though grammar checking doesn't catch everything and occasionally shows a false positive).
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker): An extension for VS Code to help you check spelling within markdown and code examples.
+- [Grammarly](https://www.grammarly.com/) : App de bureau et extension de navigateur pour vérifier l'orthographe et la grammaire (bien que la vérification de la grammaire ne détecte pas tout et montre parfois un faux positif).
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) : Une extension pour VS Code pour vous aider à vérifier l'orthographe dans les markdown et les exemples de code.
 
-### Books
+### Livres
 
-- [On Writing Well](https://www.amazon.com/Writing-Well-30th-Anniversary-Nonfiction-ebook/dp/B0090RVGW0) (see [popular quotes](https://www.goodreads.com/work/quotes/1139032-on-writing-well-the-classic-guide-to-writing-nonfiction))
-- [Bird by Bird](https://www.amazon.com/Bird-Some-Instructions-Writing-Life/dp/0385480016) (see [popular quotes](https://www.goodreads.com/work/quotes/841198-bird-by-bird-some-instructions-on-writing-and-life))
+- [On Writing Well](https://www.amazon.com/Writing-Well-30th-Anniversary-Nonfiction-ebook/dp/B0090RVGW0) (voir [popular quotes](https://www.goodreads.com/work/quotes/1139032-on-writing-well-the-classic-guide-to-writing-nonfiction))
+- [Bird by Bird](https://www.amazon.com/Bird-Some-Instructions-Writing-Life/dp/0385480016) (voir [popular quotes](https://www.goodreads.com/work/quotes/841198-bird-by-bird-some-instructions-on-writing-and-life))
 - [Cognitive Load Theory](https://www.amazon.com/Cognitive-Explorations-Instructional-Performance-Technologies/dp/144198125X/)

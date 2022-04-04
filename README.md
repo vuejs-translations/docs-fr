@@ -5,6 +5,9 @@ Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts p
 Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
 
 ## Directives de contribution
+
+Merci de prendre connaissance du [Guide d'écriture](https://github.com/edimitchel/docs-fr/blob/main/.github/contributing/writing-guide.md) pour bien appréhender la manière de formuler les phrases pour que la lecture soit la plus simple et la plus fluide.
+
 ### VS Code extensions
 
 Utilisez les extensions suivantes pour éviter les fautes orthographiques:

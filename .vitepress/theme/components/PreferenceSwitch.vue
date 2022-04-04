@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VTSwitch, VTIconChevronDown } from '@vue/theme'
 import { useRoute } from 'vitepress'
-import { ref, computed, inject, Ref } from 'vue'
+import { inject, Ref } from 'vue'
 import {
   preferCompositionKey,
   preferComposition,
@@ -10,17 +10,15 @@ import {
 } from './preferences'
 
 const route = useRoute()
-const show = computed(() =>
+const show = $computed(() =>
   /^\/(guide|tutorial|examples)\//.test(route.path)
 )
-const showSFC = computed(() => !/^\/guide/.test(route.path))
-const isOpen = ref(
-  typeof localStorage !== 'undefined' &&
-    !localStorage.getItem(preferCompositionKey)
-)
+const showSFC = $computed(() => !/^\/guide/.test(route.path))
+
+let isOpen = $ref(true)
 
 const toggleOpen = () => {
-  isOpen.value = !isOpen.value
+  isOpen = !isOpen
 }
 
 const removeOutline = (e: Event) => {
@@ -70,7 +68,7 @@ function useToggleFn(
       @mousedown="removeOutline"
       @blur="restoreOutline"
     >
-      <span>API Preference</span>
+      <span>Préférence d'API</span>
       <VTIconChevronDown class="vt-link-icon" :class="{ open: isOpen }" />
     </button>
     <div id="preference-switches" :hidden="!isOpen" :aria-hidden="!isOpen">
@@ -80,7 +78,7 @@ function useToggleFn(
         >
         <VTSwitch
           class="api-switch"
-          aria-label="prefer composition api"
+          aria-label="préférer l'api de composition"
           :aria-checked="preferComposition"
           @click="toggleCompositionAPI()"
         />
@@ -91,8 +89,8 @@ function useToggleFn(
         >
         <a
           class="switch-link"
-          title="About API preference"
-          href="/guide/introduction.html#api-styles"
+          title="Concernant la préférence d'API"
+          href="/guide/introduction.html#styles-d-api"
           @click="closeSideBar"
           >?</a
         >
@@ -101,14 +99,14 @@ function useToggleFn(
         <label class="no-sfc-label" @click="toggleSFC(false)">HTML</label>
         <VTSwitch
           class="sfc-switch"
-          aria-label="prefer single file component"
+          aria-label="préférer le composant monofichier"
           :aria-checked="preferSFC"
           @click="toggleSFC()"
         />
         <label class="sfc-label" @click="toggleSFC(true)">SFC</label>
         <a
           class="switch-link"
-          title="About SFC"
+          title="À propos du SFC"
           href="/guide/scaling-up/sfc.html"
           @click="closeSideBar"
           >?</a

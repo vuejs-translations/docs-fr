@@ -1,10 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import { defineConfigWithTheme } from 'vitepress'
+import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
-import type { Config } from '@vue/theme'
-import { UserConfig } from 'vitepress'
 
 const nav = [
   {
@@ -32,7 +31,7 @@ const nav = [
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Eco-système',
+    text: 'Écosystème',
     activeMatch: `^/ecosystem/`,
     items: [
       {
@@ -106,11 +105,11 @@ const nav = [
 export const sidebar = {
   '/guide/': [
     {
-      text: 'Getting Started',
+      text: 'Commencer',
       items: [
         { text: 'Introduction', link: '/guide/introduction' },
         {
-          text: 'Quick Start',
+          text: 'Démarrage rapide',
           link: '/guide/quick-start'
         }
       ]
@@ -214,7 +213,7 @@ export const sidebar = {
     {
       text: 'Scaling Up',
       items: [
-        { text: 'Single-File Components', link: '/guide/scaling-up/sfc' },
+        { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
         { text: 'Tooling', link: '/guide/scaling-up/tooling' },
         { text: 'Routing', link: '/guide/scaling-up/routing' },
         {
@@ -531,8 +530,8 @@ export const sidebar = {
   ]
 }
 
-export default defineConfigWithTheme<Config>({
-  extends: baseConfig as () => UserConfig<Config>,
+export default defineConfigWithTheme<ThemeConfig>({
+  extends: baseConfig,
 
   lang: 'fr-FR',
   title: 'Vue.js',
@@ -571,6 +570,7 @@ export default defineConfigWithTheme<Config>({
       {
         src: 'https://cdn.usefathom.com/script.js',
         'data-site': 'XNOLWPLB',
+        'data-spa': 'auto',
         defer: ''
       }
     ]
