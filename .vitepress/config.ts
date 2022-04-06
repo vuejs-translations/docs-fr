@@ -14,9 +14,9 @@ const nav = [
       { text: 'Tutoriel', link: '/tutorial/' },
       { text: 'Exemples', link: '/examples/' },
       { text: 'Commencer', link: '/guide/quick-start' },
-      { text: 'Convention', link: '/style-guide/' },
+      { text: 'Conventions', link: '/style-guide/' },
       {
-        text: 'Migration vers Vue 2',
+        text: 'Migration depuis Vue 2',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -39,7 +39,7 @@ const nav = [
         items: [
           { text: 'Partenaires', link: '/ecosystem/partners' },
           { text: 'Thèmes', link: '/ecosystem/themes' },
-          { text: 'Offres d\'emploi', link: 'https://vuejobs.com/?ref=vuejs' },
+          { text: 'Offres d’emploi', link: 'https://vuejobs.com/?ref=vuejs' },
           { text: 'Boutique t-shirt', link: 'https://vue.threadless.com/' }
         ]
       },
@@ -83,7 +83,7 @@ const nav = [
     activeMatch: `^/about/`,
     items: [
       { text: 'FAQ', link: '/about/faq' },
-      { text: 'L\'équipe', link: '/about/team' },
+      { text: 'L’équipe', link: '/about/team' },
       { text: 'Déploiements', link: '/about/releases' },
       {
         text: 'Community Guide',
@@ -603,7 +603,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     editLink: {
       repo: 'vuejs/docs', // TODO: add a language flag to point to the FR repo?
-      text: 'Editer cette page sur GitHub'
+      text: 'Éditer cette page sur GitHub'
     },
 
     footer: {
