@@ -7,7 +7,7 @@ import VueMasteryModal from './VueMasteryModal.vue';
 <template>
   <section id="hero">
     <h1 class="tagline">
-      Le Framework 
+      Le Framework
       <br />JavaScript
       <span class="accent">Évolutif</span>
     </h1>
@@ -55,7 +55,7 @@ import VueMasteryModal from './VueMasteryModal.vue';
     <div class="vt-box">
       <h2>Accessible</h2>
       <p>
-        S'appuie sur les standards HTML, CSS et JavaScript en proposant une API et une documentation traduite en plusieurs langues.
+        S’appuie sur les standards HTML, CSS et JavaScript en proposant une API et une documentation traduite en plusieurs langues.
       </p>
     </div>
     <div class="vt-box">
@@ -67,7 +67,7 @@ import VueMasteryModal from './VueMasteryModal.vue';
     <div class="vt-box">
       <h2>Polyvalent</h2>
       <p>
-        Un écosystème riche et utilisable progressivement qui peut évoluer selon les besoins, d'une simple librairie à un framework complet.
+        Un écosystème riche et utilisable progressivement qui peut évoluer selon les besoins, d’une simple librairie à un framework complet.
       </p>
     </div>
   </section>
