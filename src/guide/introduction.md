@@ -7,7 +7,7 @@ footer: false
 :::info Vous êtes en train de lire la documentation de Vue 3
 
 - La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
-- Vous souhaitez migrer vers Vue 2? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
+- Vous souhaitez migrer depuis Vue 2 ? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
   :::
 
 <style src="/@theme/styles/vue-mastery.css"></style>
