@@ -32,7 +32,7 @@ import { VTLink } from '@vue/theme'
               id="member_submit"
               name="member[subscribe]"
               type="submit"
-              value="S'ABONNER"
+              value="S’ABONNER"
             />
           </div>
         </form>

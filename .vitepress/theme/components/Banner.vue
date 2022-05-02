@@ -20,7 +20,7 @@ function dismiss() {
 
 <template>
   <div class="banner" v-if="open">
-    Vue 3 est maintenant la version par défaut!
+    Vue 3 est maintenant la version par défaut !
     <a
       href="https://blog.vuejs.org/posts/vue-3-as-the-new-default.html"
       target="_blank"
