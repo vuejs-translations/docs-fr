@@ -46,6 +46,10 @@ Pour le développement local, [pnpm](https://pnpm.io/) est préférable comme ge
 pnpm i
 pnpm run dev
 ```
+
+This project requires Node.js to be `v14.0.0` or higher, because we use new JavaScript features in our code, such as optional chaining.
+
+
 ## Travail sur le contenu
 
 - Voir la documentation de VitePress sur les [extensions Markdown](https://vitepress.vuejs.org/guide/markdown.html) prises en charge et la possibilité d'[utiliser la syntaxe Vue dans Markdown](https://vitepress.vuejs.org/guide/using-vue.html).

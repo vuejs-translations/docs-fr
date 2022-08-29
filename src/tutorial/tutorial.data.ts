@@ -8,10 +8,10 @@ export declare const data: Record<string, ExampleData>
 export default {
   watch: './src/**',
   async load() {
-    const md = createMarkdownRenderer(process.cwd(), {
+    const md = await createMarkdownRenderer(process.cwd(), {
       // @ts-ignore
       highlight: await createHighlighter()
-    })
+    }, '/')
     const files = readExamples(path.resolve(__dirname, './src'))
     for (const step in files) {
       const stepFiles = files[step]

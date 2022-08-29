@@ -19,7 +19,7 @@ Vous pouvez essayer Vue avec les SFC en ligne sur [StackBlitz](https://vite.new/
 :::tip Pré-requis
 
 - Être familier avec l'invite de commandes
-- Avoir installé [Node.js](https://nodejs.org/)
+- Avoir installé [Node.js](https://nodejs.org/) version 15.0 ou plus
   :::
 
 Pour créer un projet Vue avec toute la suite d'outils de compilation, exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
@@ -36,7 +36,7 @@ Cette commande installera et exécutera [create-vue](https://github.com/vuejs/cr
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Vitest for Unit testing? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Cypress for both Unit and End-to-End testing? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
 <span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add ESLint for code quality? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
-<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Prettier for code formating? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
+<span style="color:var(--vt-c-green);">✔</span> <span style="color:#A6ACCD;">Add Prettier for code formatting? <span style="color:#888;">… <span style="color:#89DDFF;text-decoration:underline">No</span> / Yes</span></span>
 <span></span>
 <span style="color:#A6ACCD;">Scaffolding project in ./<span style="color:#89DDFF;">&lt;</span><span style="color:#888;">your-project-name</span><span style="color:#89DDFF;">&gt;</span>...</span>
 <span style="color:#A6ACCD;">Done.</span></code></pre></div>
@@ -48,9 +48,9 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 <span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
 <span class="line"></span></code></pre></div>
 
-Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Voici quelques conseils supplémentaires :
+Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction.html#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction.html#options-api). Voici quelques conseils supplémentaires :
 
-- L'IDE recommandé est [Visual Studio Code] (https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). [WebStorm](https://www.jetbrains.com/webstorm/) est également une bonne solution.
+- L'IDE recommandé est [Visual Studio Code] (https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar).  [Si vous utilisez d'autres éditeurs, lisez la [TODO(fr)section support IDE](/guide/scaling-up/tooling.html#ide-support).
 - Le [TODO(fr)Guide des outillages](/guide/scaling-up/tooling.html) fournit plus de détails sur l'outillage, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
 - Si vous avez choisi d'utiliser TypeScript, consultez le [TODO(fr)Guide d'utilisation de TypeScript](typescript/overview.html).
@@ -74,7 +74,9 @@ Pour commencer à utiliser Vue sans compilation, il suffit de copier le code sui
 <div id="app">{{ message }}</div>
 
 <script>
-  Vue.createApp({
+  const { createApp } = Vue
+
+  createApp({
     data() {
       return {
         message: 'Salut Vue!'
@@ -84,7 +86,11 @@ Pour commencer à utiliser Vue sans compilation, il suffit de copier le code sui
 </script>
 ```
 
-L'exemple ci-dessus utilise la version globale de Vue où toutes les API sont exposées sous la variable globale `Vue`.
+L'exemple ci-dessus utilise la version globale de Vue où toutes les API sont exposées sous la variable globale `Vue`. Par exemple, pour utiliser l'API `ref`, vous pouvez faire:
+
+```js
+const { createApp, ref } = Vue
+```
 
 Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. Afin d'utiliser Vue avec les modules ES natifs, utilisez plutôt le HTML suivant :
 
@@ -112,11 +118,19 @@ Bien que le build global fonctionne, nous utiliserons principalement la syntaxe 
 </script>
 ```
 
-Remarquez que l'on peut importer directement `'vue'` dans notre code - ceci est rendu possible par le bloc `<script type="importmap">`, qui tire parti d'une fonctionnalité native du navigateur appelée [Import Maps](https://caniuse.com/import-maps). Pour le moment, les Import Maps ne sont disponibles que dans les navigateurs basés sur Chromium, nous vous recommandons donc d'utiliser Chrome ou Edge pendant le processus d'apprentissage. Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vous pouvez ajouter le support (polyfill) avec [es-module-shims](https://github.com/guybedford/es-module-shims).
+Remarquez que l'on peut importer directement `'vue'` dans notre code - ceci est rendu possible par le bloc `<script type="importmap">`, qui tire parti d'une fonctionnalité native du navigateur appelée [Import Maps](https://caniuse.com/import-maps).
 
 Vous pouvez ajouter des entrées pour d'autres dépendances à l'Import Map, assurez-vous simplement qu'elles pointent vers la version des modules ES de la bibliothèque que vous avez l'intention d'utiliser.
 
-:::tip À éviter en production
+:::tip Support navigateur du Import Maps
+Pour le moment, les Import Maps ne sont disponibles que dans les navigateurs basés sur Chromium, nous vous recommandons donc d'utiliser Chrome ou Edge pendant le processus d'apprentissage. 
+
+Si vous utilisez Firefox, le support n'est proposé qu'à partir de la version 102+ et nécessite d'être activé via la config `dom.importMaps.enabled` dans `about:config`.
+
+Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vous pouvez ajouter le support (polyfill) avec [es-module-shims](https://github.com/guybedford/es-module-shims).
+:::
+
+:::warning À éviter en production
 L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [TODO(fr)Guide de déploiement en production](/guide/best-practices/production-deployment.html#without-build-tools).
 :::
 
@@ -153,13 +167,13 @@ Vous avez peut-être remarqué que le template du composant importé est soulign
 Si vous avez sauté l'[Introduction](/guide/introduction), nous vous recommandons vivement de la lire avant de passer au reste de la documentation.
 
 <div class="vt-box-container next-steps">
+  <a class="vt-box" href="/guide/essentials/application.html">
+    <p class="next-steps-link">Lire le guide</p>
+    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails.</p>
+  </a>
   <a class="vt-box" href="/tutorial/">
     <p class="next-steps-link">Essayer le tutoriel</p>
     <p class="next-steps-caption">Pour ceux qui préfèrent apprendre par la pratique.</p>
-  </a>
-  <a class="vt-box" href="/guide/quick-start.html">
-    <p class="next-steps-link">Lire le guide</p>
-    <p class="next-steps-caption">Le guide vous amènera à travers tous les aspects du framework, dans tous ses détails.</p>
   </a>
   <a class="vt-box" href="/examples/">
     <p class="next-steps-link">Découvrir les exemples</p>

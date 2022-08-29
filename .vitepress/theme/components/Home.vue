@@ -40,9 +40,8 @@ onMounted(async () => {
     </p>
   </section>
 
-  <!-- TODO make dynamic based on data -->
   <section id="special-sponsor">
-    <span>Sponsors spéciaux</span>
+    <span>Special Sponsor</span>
     <template v-if="data && data.special">
       <template v-for="{ url, img, name, description } of data.special">
         <a :href="url" target="_blank" rel="sponsored noopener">
@@ -183,13 +182,14 @@ html:not(.dark) .accent,
   font-weight: 500;
   font-size: 13px;
   vertical-align: middle;
-  margin: 0 24px;
+  margin-right: 24px;
 }
 
 #special-sponsor img {
   display: inline-block;
   vertical-align: middle;
   height: 36px;
+  margin-right: 24px;
 }
 
 .dark #special-sponsor img {
@@ -260,6 +260,9 @@ html:not(.dark) .accent,
   .description {
     font-size: 16px;
     margin: 18px 0 30px;
+  }
+  #special-sponsor span {
+    margin: 0;
   }
   #special-sponsor img {
     display: block;

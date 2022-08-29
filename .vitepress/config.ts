@@ -15,7 +15,11 @@ const nav = [
       { text: 'Tutoriel', link: '/tutorial/' },
       { text: 'Exemples', link: '/examples/' },
       { text: 'Commencer', link: '/guide/quick-start' },
-      { text: 'Conventions', link: '/style-guide/' },
+      // { text: 'Conventions', link: '/style-guide/' },
+      {
+        text: 'Vue 2 Docs',
+        link: 'https://v2.vuejs.org'
+      },
       {
         text: 'Migration depuis Vue 2',
         link: 'https://v3-migration.vuejs.org/'
@@ -45,6 +49,14 @@ const nav = [
         ]
       },
       {
+        text: 'Libraries Officielles',
+        items: [
+          { text: 'Vue Router', link: 'https://router.vuejs.org/' },
+          { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
+          { text: 'Guide des outils', link: '/guide/scaling-up/tooling.html' }
+        ]
+      },
+      {
         text: 'Cours au format vidéo',
         items: [
           {
@@ -64,8 +76,11 @@ const nav = [
             text: 'Discord Chat',
             link: 'https://discord.com/invite/HBherRA'
           },
-          { text: 'Forum', link: 'https://forum.vuejs.org/' },
-          { text: 'Communauté DEV', link: 'https://dev.to/t/vue' }
+          {
+            text: 'Discussions GitHub',
+            link: 'https://github.com/vuejs/core/discussions'
+          },
+          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
         ]
       },
       {
@@ -100,6 +115,11 @@ const nav = [
   {
     text: 'Sponsor',
     link: '/sponsor/'
+  },
+  {
+    text: 'Partners',
+    link: '/partners/',
+    activeMatch: `^/partners/`
   }
 ]
 
@@ -383,7 +403,7 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Single File Component',
+      text: 'Composant monofichiers',
       items: [
         { text: 'Syntax Specification', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
@@ -542,7 +562,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   scrollOffset: 'header',
 
   head: [
-    ['meta', { name: 'theme-color', content: "#3c8772" }],
+    ['meta', { name: 'theme-color', content: '#3c8772' }],
     ['meta', { name: 'twitter:site', content: '@vuejs' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     [

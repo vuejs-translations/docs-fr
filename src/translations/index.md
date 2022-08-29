@@ -4,14 +4,21 @@ aside: false
 
 # Traductions <sup class="vt-badge wip" />
 
-La documentation de Vue a récemment beneficié d'une révision majeure, il n'y a donc pas encore de traductions finalisées dans d'autres langues.
+## Languages
+
+- [✅ English](https://vuejs.org/)
+- [✅ 简体中文](https://cn.vuejs.org/)
+
+## Translations
+
+The Vue documentation has recently undergone a major revision, so there are no completed translations in other languages yet.
 
 Les efforts de traduction sont gérés dans l'organisation GitHub [vuejs-translations](https://github.com/vuejs-translations/). Les traductions suivantes sont actuellement en cours. Si vous souhaitez contribuer, vous pouvez ouvrir une `issue` GitHub pour exprimer votre intérêt.
 
-- [Chinois simplifié](https://github.com/vuejs-translations/docs-zh-cn)
-- [Japonais](https://github.com/vuejs-translations/docs-ja)
+- [🚧 Chinois simplifié](https://github.com/vuejs-translations/docs-zh-cn)
+- [🚧 Japonais](https://github.com/vuejs-translations/docs-ja)
 <!-- TODO(mg): change url with https://github.com/vuejs-translations/docs-fr -->
-- [Français](https://github.com/edimitchel/docs-fr)
+- [🚧 Français](https://github.com/edimitchel/docs-fr)
 
 ## Commencer une nouvelle traduction
 

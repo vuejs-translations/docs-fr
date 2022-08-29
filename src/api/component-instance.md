@@ -55,7 +55,7 @@ The root DOM node that the component instance is managing.
   - For components with multiple root nodes, `$el` will be the placeholder DOM node that Vue uses to keep track of the component's position in the DOM (a text node, or a comment node in SSR hydration mode).
 
   :::tip
-  For consistency, its is recommended to use [template refs](/guide/essentials/template-refs.html) for direct access to elements instead of relying on `$el`.
+  For consistency, it is recommended to use [template refs](/guide/essentials/template-refs.html) for direct access to elements instead of relying on `$el`.
   :::
 
 ## $options
@@ -170,7 +170,7 @@ An object that contains the component's fallthrough attributes.
 
 - **Details**
 
-  [Fallthrough Attributes](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or a emitted event by the child.
+  [Fallthrough Attributes](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
 
   By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc.html#inheritattrs) option.
 
@@ -321,6 +321,6 @@ Instance-bound version of the global [`nextTick()`](./general.html#nexttick).
 
 - **Details**
 
-  The only different from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
+  The only difference from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
 
 - **See also:** [`nextTick()`](./general.html#nexttick)

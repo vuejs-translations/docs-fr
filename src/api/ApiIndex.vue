@@ -31,7 +31,9 @@ const filtered = computed(() => {
             return item
           }
           // filter headers
-          const matchedHeaders = item.headers.filter(matches)
+          const matchedHeaders = item.headers.filter(
+            ({ text, anchor }) => matches(text) || matches(anchor)
+          )
           return matchedHeaders.length
             ? { text: item.text, link: item.link, headers: matchedHeaders }
             : null
@@ -92,8 +94,8 @@ function slugify(text: string): string {
         >
           <h3>{{ item.text }}</h3>
           <ul>
-            <li v-for="h of item.headers" :key="h">
-              <a :href="item.link + '.html#' + slugify(h)">{{ h }}</a>
+            <li v-for="h of item.headers" :key="h.anchor">
+              <a :href="item.link + '.html#' + slugify(h.anchor)">{{ h.anchor }}</a>
             </li>
           </ul>
         </div>
@@ -169,6 +171,7 @@ h3 {
 
 .api-group {
   break-inside: avoid;
+  overflow: auto;
   margin-bottom: 20px;
   background-color: var(--vt-c-bg-soft);
   border-radius: 8px;

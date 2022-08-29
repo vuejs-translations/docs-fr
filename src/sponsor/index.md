@@ -6,7 +6,7 @@ sponsors: false
 ---
 
 <script setup>
-import SponsorsGroup from '/@theme/components/SponsorsGroup.vue'
+import SponsorsGroup from '@theme/components/SponsorsGroup.vue'
 </script>
 
 # Devenez un sponsor de Vue.js
