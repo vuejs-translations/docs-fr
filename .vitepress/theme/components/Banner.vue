@@ -38,7 +38,8 @@ function dismiss() {
 
 <style>
 html:not(.banner-dismissed) {
-  --vt-banner-height: 60px;
+  /* --vt-banner-height: 60px; */
+  --vt-banner-height: 0px;
 }
 </style>
 
