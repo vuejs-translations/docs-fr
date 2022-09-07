@@ -4,7 +4,7 @@ footer: false
 
 # Démarrage rapide
 
-En fonction de vos besoins et de vos préférences, vous pouvez utiliser Vue avec ou sans étape de compilation.
+En fonction de vos besoins et de vos préférences, vous pouvez utiliser Vue avec ou sans outils de compilation.
 
 ## Avec des outils de compilation
 
