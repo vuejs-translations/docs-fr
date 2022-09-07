@@ -57,7 +57,7 @@ Le contenu du composant racine de l'application sera rendu à l'intérieur de l'
 
 La méthode `.mount()` doit toujours être appelée après les différentes configurations (de l'application et des ressources). Notez également que sa valeur de retour, contrairement aux méthodes d'enregistrement des ressources, est l'instance du composant racine au lieu de l'instance de l'application.
 
-### Template de composant racine dans le DOM
+### Template de composant racine depuis le DOM
 
 Lorsque vous utilisez Vue sans outils de construction, nous pouvons écrire le modèle de notre composant racine directement dans l'élément de montage :
 
