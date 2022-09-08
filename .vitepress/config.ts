@@ -136,10 +136,10 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Essentials',
+      text: 'Les essentiels',
       items: [
         {
-          text: 'Creating an Application',
+          text: 'Créer une application',
           link: '/guide/essentials/application'
         },
         {
