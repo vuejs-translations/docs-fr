@@ -41,28 +41,27 @@ Le contenu de `span` sera remplacé par la valeur de la propriété `htmlBrut`, 
 L'affichage dynamique de code HTML arbitraire sur votre site Web peut être très dangereux, car il peut facilement entraîner des [TODO(fr)vulnérabilités XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). N'utilisez `v-html` que sur le contenu de confiance et **jamais** sur le contenu fourni par l'utilisateur.
 :::
 
-## Attribute Bindings
+## Liaisons d'attributs
 
-Mustaches cannot be used inside HTML attributes. Instead, use a [`v-bind` directive](/api/built-in-directives.html#v-bind):
-
-```vue-html
-<div v-bind:id="dynamicId"></div>
-```
-
-The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
-
-### Shorthand
-
-Because `v-bind` is so commonly used, it has a dedicated shorthand syntax:
+Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [TODO(fr)`v-bind`](/api/built-in-directives.html#v-bind) :
 
 ```vue-html
-<div :id="dynamicId"></div>
+<div v-bind:id="idDynamique"></div>
 ```
 
-Attributes that start with `:` may look a bit different from normal HTML, but it is in fact a valid character for attribute names and all Vue-supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is optional, but you will likely appreciate it when you learn more about its usage later.
+La directive `v-bind` demande à Vue de garder l'attribut `id` de l'élément synchronisé avec la propriété `idDynamique` du composant. Si la valeur liée est `null` ou `undefined`, alors l'attribut sera supprimé de l'élément rendu.
 
-> For the rest of the guide, we will be using the shorthand syntax in code examples, as that's the most common usage for Vue developers.
+### Raccourci
 
+Parce que `v-bind` est si couramment utilisé, il a une syntaxe raccourcie :
+
+```vue-html
+<div :id="idDynamique"></div>
+```
+
+Les attributs commençant par `:` peuvent sembler un peu différents du HTML normal, mais il s'agit en fait d'un caractère valide pour les noms d'attributs et tous les navigateurs pris en charge par Vue peuvent l'analyser correctement. De plus, ils n'apparaissent pas dans le rendu final. La syntaxe abrégée est facultative, mais vous l'apprécierez probablement lorsque vous en apprendrez plus sur son utilisation plus tard.
+
+> Pour le reste du guide, nous utiliserons la syntaxe abrégée dans les exemples de code, car c'est l'utilisation la plus courante pour les développeurs Vue.
 ### Boolean Attributes
 
 [Boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) are attributes that can indicate true / false values by its presence on an element. For example, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) is one of the most commonly used boolean attributes.
