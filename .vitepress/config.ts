@@ -159,7 +159,7 @@ export const sidebar = {
           link: '/guide/essentials/class-and-style'
         },
         {
-          text: 'Conditional Rendering',
+          text: 'Rendu conditionnel',
           link: '/guide/essentials/conditional'
         },
         { text: 'List Rendering', link: '/guide/essentials/list' },

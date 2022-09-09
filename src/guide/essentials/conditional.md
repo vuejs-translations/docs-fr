@@ -15,7 +15,7 @@ const awesome = ref(true)
 
 ## `v-if`
 
-La directive `v-if` est utilisée pour restituer conditionnellement un bloc. Le bloc ne sera rendu que si l'expression de la directive renvoie une valeur véridique.
+La directive `v-if` est utilisée pour restituer conditionnellement un bloc. Le bloc ne sera rendu que si l'expression de la directive retourne une valeur évaluée à vrai.
 
 ```vue-html
 <h1 v-if="awesome">Vue est magnifique!</h1>
@@ -23,7 +23,7 @@ La directive `v-if` est utilisée pour restituer conditionnellement un bloc. Le 
 
 ## `v-else`
 
-Vous pouvez utiliser la directive `v-else` pour indiquer un "bloc else" pour `v-if`:
+Vous pouvez utiliser la directive `v-else` pour indiquer un bloc "sinon" lié à un `v-if`:
 
 ```vue-html
 <button @click="awesome = !awesome">Basculer</button>
@@ -49,11 +49,11 @@ Vous pouvez utiliser la directive `v-else` pour indiquer un "bloc else" pour `v-
 
 </div>
 
-Un élément `v-else` doit immédiatement suivre un élément `v-if` ou un élément `v-else-if` - sinon il ne sera pas reconnu.
+Un élément `v-else` doit immédiatement suivre un élément `v-if` ou un élément `v-else-if` sinon il ne sera pas reconnu.
 
 ## `v-else-if`
 
-Le `v-else-if`, comme son nom l'indique, sert de bloc" else if "pour `v-if`. Il peut également être enchaîné plusieurs fois:
+Le `v-else-if`, comme son nom l'indique, sert de bloc "else if" lié à un `v-if`. Il peut également être enchaîné plusieurs fois:
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -70,11 +70,11 @@ Le `v-else-if`, comme son nom l'indique, sert de bloc" else if "pour `v-if`. Il 
 </div>
 ```
 
-Similaire à `v-else`, un élément `v-else-if` doit immédiatement suivre un élément `v-if` ou `v-else-if`.
+Similaire à `v-else`, un bloc `v-else-if` doit immédiatement suivre un bloc `v-if` ou `v-else-if`.
 
 ## `v-if` on `<template>`
 
-Puisque `v-if` s'agit d'une directive, elle doit être attachée à un seul élément. Mais que se passe-t-il si nous voulons basculer plus d'un élément ? Dans ce cas, nous pouvons utiliser `v-if` sur un élément du `<template>`, qui sert de d'emballage invisible. Le résultat du rendu final n'inclura pas l'élément `<template>`.
+Puisque `v-if` est une directive, elle doit être attachée à un seul élément. Mais que se passe-t-il si nous voulons basculer plus d'un élément ? Dans ce cas, nous pouvons utiliser `v-if` sur un élément du `<template>`, qui sert de conteneur invisible. Le résultat du rendu final n'inclura pas l'élément `<template>`.
 
 ```vue-html
 <template v-if="ok">
@@ -111,7 +111,7 @@ De manière générale, `v-if` a des coûts de basculement plus élevés tandis 
 ## `v-if` avec `v-for`
 
 ::: warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [guide de style](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [TODO(fr)guide de style](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
-Lorsque `v-if` et `v-for` sont tous les deux utilisés sur le même élément, `v-if` sera évalué en premier. Voir le [guide de rendu de liste](list#v-for-with-v-if) pour plus de détails.
+Lorsque `v-if` et `v-for` sont tous les deux utilisés sur le même élément, `v-if` sera évalué en premier. Voir le [TODO(fr)guide de rendu de liste](list#v-for-with-v-if) pour plus de détails.
