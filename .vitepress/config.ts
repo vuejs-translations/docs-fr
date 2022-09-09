@@ -143,7 +143,7 @@ export const sidebar = {
           link: '/guide/essentials/application'
         },
         {
-          text: 'Template Syntax',
+          text: 'Syntaxe de template',
           link: '/guide/essentials/template-syntax'
         },
         {
