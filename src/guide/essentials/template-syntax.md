@@ -62,27 +62,27 @@ Parce que `v-bind` est si couramment utilisé, il a une syntaxe raccourcie :
 Les attributs commençant par `:` peuvent sembler un peu différents du HTML normal, mais il s'agit en fait d'un caractère valide pour les noms d'attributs et tous les navigateurs pris en charge par Vue peuvent l'analyser correctement. De plus, ils n'apparaissent pas dans le rendu final. La syntaxe abrégée est facultative, mais vous l'apprécierez probablement lorsque vous en apprendrez plus sur son utilisation plus tard.
 
 > Pour le reste du guide, nous utiliserons la syntaxe abrégée dans les exemples de code, car c'est l'utilisation la plus courante pour les développeurs Vue.
-### Boolean Attributes
+### Attributs booleans
 
-[Boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) are attributes that can indicate true / false values by its presence on an element. For example, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) is one of the most commonly used boolean attributes.
+[Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par sa présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
 
-`v-bind` works a bit differently in this case:
+`v-bind` fonctionne un peu différemment dans ce cas :
 
 ```vue-html
-<button :disabled="isButtonDisabled">Button</button>
+<button :disabled="boutonDésactivé">Bouton</button>
 ```
 
-The `disabled` attribute will be included if `isButtonDisabled` has a [truthy value](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). It will also be included if the value is an empty string, maintaining consistency with `<button disabled="">`. For other [falsy values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) the attribute will be omitted.
+L'attribut `disabled` sera inclus si `boutonDésactivé` a une [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). Il sera également inclus si la valeur est une chaîne vide, en maintenant la cohérence avec `<button disabled="">`. Pour les [valeurs évaluées à faux](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), l'attribut sera omis.
 
-### Dynamically Binding Multiple Attributes
+### Liaison dynamique de plusieurs attributs
 
-If you have a JavaScript object representing multiple attributes that looks like this:
+Si vous avez un objet JavaScript représentant plusieurs attributs qui ressemble à ceci :
 
 <div class="composition-api">
 
 ```js
-const objectOfAttrs = {
-  id: 'container',
+const objetDAttributs = {
+  id: 'conteneur',
   class: 'wrapper'
 }
 ```
@@ -93,8 +93,8 @@ const objectOfAttrs = {
 ```js
 data() {
   return {
-    objectOfAttrs: {
-      id: 'container',
+    objetDAttributs: {
+      id: 'conteneur',
       class: 'wrapper'
     }
   }
@@ -103,66 +103,66 @@ data() {
 
 </div>
 
-You can bind them to a single element by using `v-bind` without an argument:
+Vous pouvez les lier à un seul élément en utilisant `v-bind` sans argument :
 
 ```vue-html
-<div v-bind="objectOfAttrs"></div>
+<div v-bind="objetDAttributs"></div>
 ```
 
-## Using JavaScript Expressions
+## Utilisation d'expressions JavaScript
 
-So far we've only been binding to simple property keys in our templates. But Vue actually supports the full power of JavaScript expressions inside all data bindings:
+Jusqu'à présent, nous n'avons lié que des clés de propriété simples dans nos modèles. Mais Vue prend en charge toute la puissance des expressions JavaScript dans toutes les liaisons de données :
 
 ```vue-html
-{{ number + 1 }}
+{{ nombre + 1 }}
 
-{{ ok ? 'YES' : 'NO' }}
+{{ ok ? 'OUI' : 'NON' }}
 
 {{ message.split('').reverse().join('') }}
 
-<div :id="`list-${id}`"></div>
+<div :id="`liste-${id}`"></div>
 ```
 
-These expressions will be evaluated as JavaScript in the data scope of the current component instance.
+Ces expressions seront évaluées comme du JavaScript dans la portée des données de l'instance de composant actuelle.
 
-In Vue templates, JavaScript expressions can be used in the following positions:
+Dans les templates Vue, les expressions JavaScript peuvent être utilisées dans les positions suivantes :
 
-- Inside text interpolations (mustaches)
-- In the attribute value of any Vue directives (special attributes that start with `v-`)
+- Interpolations de texte à l'intérieur (moustaches)
+- Dans la valeur d'attribut de toutes les directives Vue (attributs spéciaux qui commencent par `v-`)
 
-### Expressions Only
+### Expressions uniquement
 
-Each binding can only contain **one single expression**. An expression is a piece of code that can evaluate to a value. A simple check is whether it can be used after `return`.
+Chaque liaison ne peut contenir qu'**une seule expression**. Une expression est un morceau de code qui peut donner une valeur. Une simple vérification est de savoir s'il peut être utilisé après un `return`.
 
-Therefore, the following will **NOT** work:
+Par conséquent, ce qui suit ne fonctionnera **PAS** :
 
 ```vue-html
-<!-- this is a statement, not an expression: -->
+<!-- ceci est une déclaration, pas une expression : -->
 {{ var a = 1 }}
 
-<!-- flow control won't work either, use ternary expressions -->
+<!-- le contrôle de flux ne fonctionnera pas non plus, utiliser des expressions ternaires -->
 {{ if (ok) { return message } }}
 ```
 
-### Calling Functions
+### Appel de fonctions
 
-It is possible to call a component-exposed method inside a binding expression:
+Il est possible d'appeler une méthode exposée au composant dans une expression de liaison :
 
 ```vue-html
-<span :title="toTitleDate(date)">
-  {{ formatDate(date) }}
+<span :title="convertirEnTitre(date)">
+  {{ formatterDate(date) }}
 </span>
 ```
 
 :::tip
-Functions called inside binding expressions will be called every time the component updates, so they should **not** have any side effects, such as changing data or triggering asynchronous operations.
+Les fonctions appelées à l'intérieur des expressions de liaison seront appelées à chaque mise à jour du composant, elles ne doivent donc **pas**avoir d'effets de bord, tels que la modification de données ou le déclenchement d'opérations asynchrones.
 :::
 
-### Restricted Globals Access
+### Accès global restreint
 
-Template expressions are sandboxed and only have access to a [restricted list of globals](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). The list exposes commonly used built-in globals such as `Math` and `Date`.
+Les expressions de template sont en bac à sable et n'ont accès qu'à une [TODO(fr)liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
 
-Globals not explicitly included in the list, for example user-attached properties on `window`, will not be accessible in template expressions. You can, however, explicitly define additional globals for all Vue expressions by adding them to [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [TODO(fr)`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
 ## Directives
 
