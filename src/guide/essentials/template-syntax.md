@@ -64,7 +64,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 > Pour le reste du guide, nous utiliserons la syntaxe abrégée dans les exemples de code, car c'est l'utilisation la plus courante pour les développeurs Vue.
 ### Attributs booleans
 
-[Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par sa présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
+[Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par sa présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
 
 `v-bind` fonctionne un peu différemment dans ce cas :
 
@@ -72,7 +72,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 <button :disabled="boutonDésactivé">Bouton</button>
 ```
 
-L'attribut `disabled` sera inclus si `boutonDésactivé` a une [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). Il sera également inclus si la valeur est une chaîne vide, en maintenant la cohérence avec `<button disabled="">`. Pour les [valeurs évaluées à faux](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), l'attribut sera omis.
+L'attribut `disabled` sera inclus si `boutonDésactivé` a une [valeur évaluée à vrai](https://developer.mozilla.org/fr/docs/Glossary/Truthy). Il sera également inclus si la valeur est une chaîne vide, en maintenant la cohérence avec `<button disabled="">`. Pour les [valeurs évaluées à faux](https://developer.mozilla.org/fr/docs/Glossary/Falsy), l'attribut sera omis.
 
 ### Liaison dynamique de plusieurs attributs
 
@@ -127,12 +127,12 @@ Ces expressions seront évaluées comme du JavaScript dans la portée des donné
 
 Dans les templates Vue, les expressions JavaScript peuvent être utilisées dans les positions suivantes :
 
-- Interpolations de texte à l'intérieur (moustaches)
+- Dans une Interpolation de texte (moustaches)
 - Dans la valeur d'attribut de toutes les directives Vue (attributs spéciaux qui commencent par `v-`)
 
 ### Expressions uniquement
 
-Chaque liaison ne peut contenir qu'**une seule expression**. Une expression est un morceau de code qui peut donner une valeur. Une simple vérification est de savoir s'il peut être utilisé après un `return`.
+Chaque liaison ne peut contenir qu'**une seule expression**. Une expression est un morceau de code qui peut donner une valeur. Une simple vérification est de savoir si elle peut être utilisée après un `return`.
 
 Par conséquent, ce qui suit ne fonctionnera **PAS** :
 
