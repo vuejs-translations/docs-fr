@@ -4,39 +4,37 @@ import TestingApiSwitcher from './TestingApiSwitcher.vue'
 
 # Testing
 
-## Why Test?
+## Pourquoi tester?
 
-Automated tests help you and your team build complex Vue applications quickly and confidently by preventing regressions and encouraging you to break apart your application into testable functions, modules, classes, and components. As with any application, your new Vue app can break in many ways, and it's important that you can catch these issues and fix them before releasing.
+Les tests automatisés vous aident ainsi que votre équipe à construire des applications Vue complexes rapidement et avec confiance en prévenant les régressions et en vous encourageant à décomposer votre application en fonctions, modules, classes et composants testables. Comme toute autre application, votre nouvelle application Vue peut dysfonctionner de différentes manières, et il est important que vous puissiez détecter ces problèmes avant de livrer.
 
-In this guide, we'll cover basic terminology and provide our recommendations on which tools to choose for your Vue 3 application.
+Une section dédiée à Vue couvre les composables. Voir [Tester les Composables](#testing-composables) ci-dessous pour plus de détails.
 
-There is one Vue-specific section covering composables. See [Testing Composables](#testing-composables) below for more details.
+## Quand tester
 
-## When to Test
+Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que vous le pouvez. Plus vous attendrez avant d'ajouter des tests à votre application, plus votre application aura des dépendances, et il sera plus difficile de commencer.
 
-Start testing early! We recommend you begin writing tests as soon as you can. The longer you wait to add tests to your application, the more dependencies your application will have, and the harder it will be to start.
+## Types de tests
 
-## Testing Types
+Quand vous concevez la stratégie de test de votre application Vue, vous devriez {LEVERAGE} les types de tests suivants :
 
-When designing your Vue application's testing strategy, you should leverage the following testing types:
+- **Unitaire**: Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
+- **Composant**: Vérifie que votre composant est monté, est RENDER, CAN BE INTERACTED et se comporte tel qu'attendu. Ces tests importent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
+- **Bout-en-bout**: Vérifie des fonctionalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
-- **Unit**: Checks that inputs to a given function, class, or composable are producing the expected output or side effects.
-- **Component**: Checks that your component mounts, renders, can be interacted with, and behaves as expected. These tests import more code than unit tests, are more complex, and require more time to execute.
-- **End-to-end**: Checks features that span multiple pages and make real network requests against your production-built Vue application. These tests often involve standing up a database or other backend.
+Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera contre des problèmes différents.
 
-Each testing type plays a role in your application's testing strategy and each will protect you against different types of issues.
+## Aperçu
 
-## Overview
+Nous allons brièvement discuter ce que chacun de ces tests sont, comment ils peuvent être implémentés pour des applications Vue, et donner quelques recommendations générales.
 
-We will briefly discuss what each of these are, how they can be implemented for Vue applications, and provide some general recommendations.
+## Tester Unitairement
 
-## Unit Testing
+Les tests unitaires sont écrits pour vérifier que des petites unités de code isolées fonctionnent comme prévu. Un test unitaire couvre généralement une seule fonction, classe, composable ou module. Les tests unitaires se concentrent sur l'exactitude logique et ne concernent qu'une petite partie des fonctionnalités globals de l'application. Ils peuvent simuler de grandes parties de de l'environnement de votre application (par exemple, l'état initial, les classes complexes, les modules tierce partie et les requêtes réseau).
 
-Unit tests are written to verify that small, isolated units of code are working as expected. A unit test usually covers a single function, class, composable, or module. Unit tests focus on logical correctness and only concern themselves with a small portion of the application's overall functionality. They may mock large parts of your application's environment (e.g. initial state, complex classes, 3rd party modules, and network requests).
+En général, les tests unitaires vont détecter des problèmes concernant la logique métier d'une fonction et son exactitude logique.
 
-In general, unit tests will catch issues with a function's business logic and logical correctness.
-
-Take for example this `increment` function:
+Prenons par exemple cette fonction `increment`:
 
 ```js
 // helpers.js
@@ -48,9 +46,9 @@ export function increment (current, max = 10) {
 }
 ```
 
-Because it's very self-contained, it'll be easy to invoke the increment function and assert that it returns what it's supposed to, so we'll write a Unit Test.
+Comme cette fonction est très autonome, il sera facile de l'appeler et de vérifier qu'elle retourne ce qu'elle est supposée faire, nous allons donc écrire un test unitaire.
 
-If any of these assertions fail, it's clear that the issue is contained within the `increment` function.
+Si l'une de ces assertions échoue, il est clair que le problème est contenu dans la fonction `increment`.
 
 ```js{4-16}
 // helpers.spec.js
@@ -71,16 +69,19 @@ describe('increment', () => {
 })
 ```
 
-As mentioned previously, unit testing is typically applied to self-contained business logic, components, classes, modules, or functions that do not involve UI rendering, network requests, or other environmental concerns.
+Comme mentionné précédemment, les tests unitaires sont généralement appliqués sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
 
-These are typically plain JavaScript / TypeScript modules unrelated to Vue. In general, writing unit tests for business logic in Vue applications does not differ significantly from applications using other frameworks.
+Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
-There are two instances where you DO unit test Vue-specific features:
+
+Il existe deux cas où vous testez unitairement des fonctionalités spécifiques à Vue:
 
 1. Composables
-2. Components
+2. Composants
 
 ### Composables
+
+
 
 One category of functions specific to Vue applications are [Composables](/guide/reusability/composables.html), which may require special handling during tests.
 See [Testing Composables](#testing-composables) below for more details.
