@@ -2,26 +2,21 @@
 aside: false
 ---
 
-# Traductions <sup class="vt-badge wip" />
+# Translations
 
-## Languages
+## Available Languages
 
-- [✅ English](https://vuejs.org/)
-- [✅ 简体中文](https://cn.vuejs.org/)
+- [English](https://vuejs.org/) [[source](https://github.com/vuejs/docs)]
+- [简体中文 / Simplified Chinese](https://cn.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-zh-cn)]
+- [日本語 / Japanese](https://ja.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ja)]
 
-## Translations
+## Work in Progress Languages
 
-The Vue documentation has recently undergone a major revision, so there are no completed translations in other languages yet.
-
-Les efforts de traduction sont gérés dans l'organisation GitHub [vuejs-translations](https://github.com/vuejs-translations/). Les traductions suivantes sont actuellement en cours. Si vous souhaitez contribuer, vous pouvez ouvrir une `issue` GitHub pour exprimer votre intérêt.
-
-- [🚧 Chinois simplifié](https://github.com/vuejs-translations/docs-zh-cn)
-- [🚧 Japonais](https://github.com/vuejs-translations/docs-ja)
-<!-- TODO(mg): change url with https://github.com/vuejs-translations/docs-fr -->
-- [🚧 Français](https://github.com/edimitchel/docs-fr)
+- [Українська / Ukrainian](https://ua.vuejs.org) [[source](https://github.com/vuejs-translations/docs-ua)]
+- [Français](https://github.com/edimitchel/docs-fr)
 
 ## Commencer une nouvelle traduction
 
-Nous espérons établir un workflow standard pour les traductions communautaires afin de pouvoir coordonner plus facilement les efforts de la communauté. Veuillez garder un œil sur le [dépôt des directives de traduction](https://github.com/vuejs-translations/guidelines/blob/main/README.md) pour les mises à jour.
+La documentation de Vue a récemment subi une révision majeure, ainsi les traductions dans d'autres langues sont toujours manquantes ou en cours de développement.
 
-En attendant, si vous souhaitez commencer la traduction d'une nouvelle langue, veuillez ouvrir un fil de discussion dans les [Discussions](https://github.com/vuejs-translations/guidelines/discussions) (et vérifiez s'il y en a déjà un créé pour votre langue). Cela peut vous aider à trouver d'autres collaborateurs et à éviter de dupliquer les efforts.
+Nous saluons les efforts de la communauté pour fournir plus de traductions. Les efforts de traduction sont gérés dans l'organisation GitHub [vuejs-translations](https://github.com/vuejs-translations/). Si vous souhaitez contribuer, veuillez consulter les [Directives de traduction](https://github.com/vuejs-translations/guidelines/blob/main/README.md) pour commencer.
