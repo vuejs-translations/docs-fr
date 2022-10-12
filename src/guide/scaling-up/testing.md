@@ -226,7 +226,7 @@ Nous vous recommandons d'utiliser `@testing-library/vue` pour tester les composa
 
 ### Autres options {#other-options-1}
 
-- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (bout-en-bout) supportant le test de composants Vue. ([Projet d'exmmple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
+- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-End) supportant le test de composants Vue. ([Projet d'exmmple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
 
 ## E2E Testing {#e2e-testing}
 
@@ -280,13 +280,13 @@ When end-to-end (E2E) tests are run in continuous integration / deployment pipel
 
 ### Adding Vitest to a Project
 
-In a Vite-based Vue project, run:
+Dans un projet Vue basé sur Vite, lancez :
 
 ```sh
 > npm install -D vitest happy-dom @testing-library/vue
 ```
 
-Next, update the Vite configuration to add the `test` option block:
+Ensuite, modifiez la configuration Vite pour ajouter le bloc d'option `test`:
 
 ```js{6-12}
 // vite.config.js
@@ -305,7 +305,7 @@ export default defineConfig({
 ```
 
 :::tip
-If you are using TypeScript, add `vitest/globals` to the `types` field in your `tsconfig.json`.
+Si vous utilisez Typescript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
 
 ```json
 // tsconfig.json
@@ -318,7 +318,7 @@ If you are using TypeScript, add `vitest/globals` to the `types` field in your `
 ```
 :::
 
-Then create a file ending in `*.test.js` in your project. You can place all test files in a test directory in project root, or in test directories next to your source files. Vitest will automatically search for them using the naming convention.
+Créez ensuite un fichier se terminant par `*.test.js` dans votre projet. Vous pouvez placer tous les fichiers de test dans un répertoire de test à la racine du projet ou dans des répertoires de test à côté de vos fichiers sources. Vitest les recherchera automatiquement à l'aide de la convention de nommage.
 
 ```js
 // MyComponent.test.js
@@ -337,7 +337,7 @@ test('it should work', () => {
 })
 ```
 
-Finally, update `package.json` to add the test script and run it:
+Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le :
 
 ```json{4}
 {
