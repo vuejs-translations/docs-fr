@@ -21,10 +21,10 @@ Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que 
 Quand vous concevez la stratégie de test de votre application Vue, vous devriez mettre en place les types de tests suivants :
 
 - **Unitaire**: Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
-- **Composant**: Vérifie le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
-- **Bout-en-bout (End-to-End)**: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
+- **Composant**: Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
+- **End-to-End**: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
-Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera contre des problèmes différents.
+Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
 
 ## Aperçu {#overview}
 
@@ -71,7 +71,7 @@ describe('increment', () => {
 })
 ```
 
-Comme mentionné précédemment, les tests unitaires sont généralement appliqués sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
+Comme mentionné précédemment, les tests unitaires sont généralement exercés sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
 
 Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
@@ -84,7 +84,7 @@ Il existe deux cas où vous testez unitairement des fonctionalités spécifiques
 ### Composables {#composables}
 
 [Les composables](/guide/reusability/composables.html) sont une catégorie de fonctions spécifiques aux applications Vue qui peut nécessiter un traitement spécial pendant les tests.
-Voir la section [Tester les composables](#testing-composables) ci-dessouspour plus de détails.
+Voir la section [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
 ### Tester unitairement des composants {#unit-testing-components}
 
@@ -102,7 +102,7 @@ Un composant peut être testé de deux façons:
 
 - [Vitest](https://vitest.dev/)
 
-  Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire qui peut tirer parti de la même configuration et transformer le pipeline directement à partir de Vite. [Vitest] (https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultra-rapide.
+  Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire pour tirer parti de la même configuration et pipeline de transformation directement à partir de Vite. [Vitest] (https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultra-rapide.
 
 ### Autres options {#other-options}
 
@@ -114,7 +114,7 @@ Un composant peut être testé de deux façons:
 
 Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications. 
 
-Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slot qu'il fournit, aux styles, aux classes, aux crochets de cycle de vie de votre composant, etc.
+Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'il fournit, aux styles, aux classes, aux crochets de cycle de vie de votre composant, etc.
 
 Les tests de composant ne doivent pas simuler des composants enfants, mais plutôt tester les interactions entre votre composant et ses enfants en interagissant avec les composants comme le ferait un utilisateur. Par exemple, un test de composant doit cliquer sur un élément comme le ferait un utilisateur au lieu d'interagir programmatiquement avec le composant. 
 
@@ -202,7 +202,7 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
   Le travail ultime du composant est un rendu DOM en sortie correct, de sorte que les tests axés sur la sortie DOM fournissent le même niveau d'assurance d'exactitude (sinon plus) tout en étant plus robustes et résilients au changement. 
 
-  Ne vous fiez pas exclusivement aux tests snapshots. L'affirmation de chaînes HTML ne décrit pas l'exactitude. Rédigez des tests avec intentionnalité. 
+  Ne vous fiez pas exclusivement aux tests snapshots. Vérifier des chaînes HTML ne décrit pas l'exactitude. Rédigez des tests avec intention. 
 
   Si une méthode doit être testée de manière approfondie, envisagez de l'extraire dans une fonction utilitaire autonome et d'écrire un test unitaire dédié à celle-ci. S'il ne peut pas être extrait proprement, il peut être testé dans le cadre d'un test de composant, d'intégration ou bout-en-bout qui le couvre.
 
