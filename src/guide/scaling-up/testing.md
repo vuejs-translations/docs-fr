@@ -22,7 +22,7 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 
 - **Unitaire**: Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
 - **Composant**: Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
-- **End-to-End**: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
+- **End-to-end**: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
 Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
 
@@ -226,59 +226,59 @@ Nous vous recommandons d'utiliser `@testing-library/vue` pour tester les composa
 
 ### Autres options {#other-options-1}
 
-- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-End) supportant le test de composants Vue. ([Projet d'exmmple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
+- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-end) supportant le test de composants Vue. ([Projet d'exmmple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
 
-## E2E Testing {#e2e-testing}
+## Tests E2E {#e2e-testing}
 
-While unit tests provide developers with some degree of confidence, unit and component tests are limited in their abilities to provide holistic coverage of an application when deployed to production. As a result, end-to-end (E2E) tests provide coverage on what is arguably the most important aspect of an application: what happens when users actually use your applications.
+Alors que les tests unitaires offrent aux développeurs un certain degré de confiance, les tests unitaires et les tests de composants sont limités dans leur capacité à fournir une couverture holistique d'une application lorsqu'ils sont déployés en production. En conséquence, les tests End-to-end (E2E) fournissent une couverture sur ce qui est sans doute l'aspect le plus important d'une application: ce qui se passe lorsque les utilisateurs utilisent réellement vos applications.
 
-End-to-end tests focus on multi-page application behavior that makes network requests against your production-built Vue application. They often involve standing up a database or other backend and may even be run against a live staging environment.
+Les tests End-to-end se concentrent sur le comportement des applications multipages qui effectuent des requêtes réseau par rapport à votre application Vue de production. Ils impliquent souvent la mise en place d'une base de données ou d'un autre backend et peuvent même être exécutés dans un environnement de staging déployé.
 
-End-to-end tests will often catch issues with your router, state management library, top-level components (e.g. an App or Layout), public assets, or any request handling. As stated above, they catch critical issues that may be impossible to catch with unit tests or component tests.
+Les tests End-to-end détectent souvent des problèmes avec votre routeur, votre bibliothèque de gestion d'état, vos composants de niveau supérieur (par exemple, une application ou une mise en page), vos ressources publiques ou toute autre gestion de requêtes. Comme indiqué ci-dessus, ils détectent des problèmes critiques qui peuvent être impossibles à détecter avec des tests unitaires ou des tests de composants.
 
-End-to-end tests do not import any of your Vue application's code, but instead rely completely on testing your application by navigating through entire pages in a real browser.
+Les tests End-to-end n'importent pas le code de votre application Vue, mais reposent entièrement sur le test de votre application en naviguant dans des pages entières dans un navigateur réel.
 
-End-to-end tests validate many of the layers in your application. They can either target your locally built application, or even a live Staging environment. Testing against your Staging environment not only includes your frontend code and static server, but all associated backend services and infrastructure.
+Les tests End-to-end valident de nombreuses couches de votre application. Ils peuvent soit cibler votre application localement, soit même un environnement de staging déployé. Les tests exercés sur votre environnement de staging incluent non seulement votre code frontend et votre serveur statique, mais également tous les services et infrastructures backend associés.
 
 > The more your tests resemble the way your software is used, the more confidence they can give you. - [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106) - Author of the Testing Library
 
-By testing how user actions impact your application, E2E tests are often the key to higher confidence in whether an application is functioning properly or not.
+En testant l'impact des actions des utilisateurs sur votre application, les tests E2E sont souvent la clé d'une plus grande confiance dans le bon fonctionnement ou non d'une application.
 
-### Choosing an E2E Testing Solution
+### Choisir une solution de test E2E {#choosing-an-e2e-testing-solution}
 
-While end-to-end (E2E) testing on the web has gained a negative reputation for unreliable (flaky) tests and slowing down development processes, modern E2E tools have made strides forward to create more reliable, interactive, and useful tests. When choosing an E2E testing framework, the following sections provide some guidance on things to keep in mind when choosing a testing framework for your application.
+Alors que les tests End-to-end (E2E) sur le Web ont acquis une réputation négative pour les tests peu fiables ("flaky") et le ralentissement des processus de développement, les outils E2E modernes ont fait des progrès pour créer des tests plus fiables, interactifs et utiles. Lorsque vous choisissez une infrastructure de test E2E, les sections suivantes fournissent des conseils sur les éléments à garder à l'esprit lors du choix d'une infrastructure de test pour votre application.
 
-#### Cross-browser testing
+#### Tester avec plusieurs navigateurs {#cross-browser-testing}
 
-One of the primary benefits that end-to-end (E2E) testing is known for is its ability to test your application across multiple browsers. While it may seem desirable to have 100% cross-browser coverage, it is important to note that cross browser testing has diminishing returns on a team's resources due the additional time and machine power required to run them consistently. As a result, it is important to be mindful of this trade-off when choosing the amount of cross-browser testing your application needs.
+L'un des principaux avantages pour lesquels les tests End-to-end (E2E) sont connus est sa capacité à tester votre application sur plusieurs navigateurs. Bien qu'il puisse sembler souhaitable d'avoir une couverture inter-navigateurs à 100%, il est important de noter que les tests inter-navigateurs ont des rendements décroissants sur les ressources d'une équipe en raison du temps supplémentaire et de la puissance de la machine nécessaire pour les exécuter de manière cohérente. Par conséquent, il est important d'être conscient de ce compromis lorsque vous choisissez la quantité de tests inter-navigateurs dont votre application a besoin.
 
-#### Faster feedback loops
+#### Des boucles de feedback plus rapides {#faster-feedback-loops}
 
-One of the primary problems with end-to-end (E2E) tests and development is that running the entire suite takes a long time. Typically, this is only done in continuous integration and deployment (CI/CD) pipelines. Modern E2E testing frameworks have helped to solve this by adding features like parallelization, which allows for CI/CD pipelines to often run magnitudes faster than before. In addition, when developing locally, the ability to selectively run a single test for the page you are working on while also providing hot reloading of tests can help to boost a developer's workflow and productivity.
+L'un des principaux problèmes liés aux tests et au développement End-to-end (E2E) est que l'exécution de l'ensemble de la suite prend beaucoup de temps. En règle générale, cela n'est fait que dans les pipelines d'intégration et de déploiement continus (CI/CD). Les frameworks de test E2E modernes ont aidé à résoudre ce problème en ajoutant des fonctionnalités telles que la parallélisation, ce qui permet aux pipelines CI / CD d'exécuter souvent des magnitudes plus rapidement qu'auparavant. En outre, lors du développement local, la possibilité d'exécuter de manière sélective un seul test pour la page sur laquelle vous travaillez tout en fournissant un rechargement à chaud des tests peut aider à améliorer le flux de travail et la productivité d'un développeur.
 
-#### First-class debugging experience
+#### First-class debugging experience {#first-class-debuggin-experience}
 
-While developers have traditionally relied on scanning logs in a terminal window to help determine what went wrong in a test, modern end-to-end (E2E) test frameworks allow developers to leverage tools that they are already familiar with, e.g. browser developer tools.
+Alors que les développeurs s'appuyaient traditionnellement sur l'analyse des logs dans une fenêtre de terminal pour aider à déterminer ce qui n'allait pas dans un test, les frameworks de test modernes End-to-end (E2E) permettent aux développeurs de tirer parti d'outils qu'ils connaissent déjà, par exemple les outils de développement de navigateur.
 
-#### Visibility in headless mode
+#### Visibilité en mode headless {#visibility-in-headless-mode}
 
-When end-to-end (E2E) tests are run in continuous integration / deployment pipelines, they are often run in headless browsers (i.e., no visible browser is opened for the user to watch). A critical feature of modern E2E testing frameworks is the ability to see snapshots and/or videos of the application during testing, providing some insight into why errors are happening. Historically, it was tedious to maintain these integrations.
+Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration / déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
 
-### Recommendation
+### Recommandation {#recommentation-2}
 
 - [Cypress](https://www.cypress.io/)
 
-  Overall, we believe Cypress provides the most complete E2E solution with features like an informative graphical interface, excellent debuggability, built-in assertions and stubs, flake-resistance, parallelization, and snapshots. As mentioned above, it also provides support for [Component Testing](https://docs.cypress.io/guides/component-testing/introduction). However, it only supports Chromium-based browsers and Firefox.
+  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance aux flocons, une parallélisation et des instantanés. Comme mentionné ci-dessus, il fournit également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
 
-### Other Options
+### Autres options {#other-options-2}
 
-- [Playwright](https://playwright.dev/) is also a great E2E testing solution with a wider range of browser support (mainly WebKit). See [Why Playwright](https://playwright.dev/docs/why-playwright) for more details.
+- [Playwright](https://playwright.dev/) est également une excellente solution de test E2E avec une gamme plus large de support de navigateur (principalement WebKit). Voir [Pourquoi dramaturge](https://playwright.dev/docs/why-dramaturge) pour plus de détails. 
 
-- [Nightwatch v2](https://v2.nightwatchjs.org/) is an E2E testing solution based on [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). This gives it the widest browser support range.
+- [Nightwatch v2](https://v2.nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui donne la plus large gamme de support de navigateur.
 
-## Recipes
+## Recipes {#recipes}
 
-### Adding Vitest to a Project
+### Ajouter Vitest a un projet {#adding-vitest-to-a-project}
 
 Dans un projet Vue basé sur Vite, lancez :
 
