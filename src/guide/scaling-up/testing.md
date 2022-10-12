@@ -8,6 +8,8 @@ import TestingApiSwitcher from './TestingApiSwitcher.vue'
 
 Les tests automatisés vous aident ainsi que votre équipe à construire des applications Vue complexes rapidement et avec confiance en prévenant les régressions et en vous encourageant à décomposer votre application en fonctions, modules, classes et composants testables. Comme toute autre application, votre nouvelle application Vue peut dysfonctionner de différentes manières, et il est important que vous puissiez détecter ces problèmes avant de livrer.
 
+Dans ce guide, nous allons couvrir la terminologie basique et donner des recommandations d'outils à choisir pour votre application Vue 3.
+
 Une section dédiée à Vue couvre les composables. Voir [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
 ## Quand tester {#when-to-test}
