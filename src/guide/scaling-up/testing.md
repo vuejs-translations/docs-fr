@@ -20,9 +20,9 @@ Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que 
 
 Quand vous concevez la stratégie de test de votre application Vue, vous devriez mettre en place les types de tests suivants :
 
-- **Unitaire**: Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
-- **Composant**: Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
-- **End-to-end**: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
+- **Unitaire **: Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
+- **Composant **: Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
+- **End-to-end **: Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
 Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
 
@@ -76,7 +76,7 @@ Comme mentionné précédemment, les tests unitaires sont généralement exercé
 Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
 
-Il existe deux cas où vous testez unitairement des fonctionalités spécifiques à Vue:
+Il existe deux cas où vous testez unitairement des fonctionnalités spécifiques à Vue :
 
 1. Composables
 2. Composants
@@ -88,13 +88,13 @@ Voir la section [Tester les composables](#testing-composables) ci-dessous pour p
 
 ### Tester unitairement des composants {#unit-testing-components}
 
-Un composant peut être testé de deux façons:
+Un composant peut être testé de deux façons :
 
 1. Boîte blanche: Test unitaire
 
    Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils They are focused on **isolating** the component under test. These tests will usually involve mocking some, if not all of your component's children, as well as setting up plugin state and dependencies (e.g. Vuex).
 
-2. Boîte noire: Test de composant
+2. Boîte noire : Test de composant
 
    Les tests "Boîte noire" n'ont pas "conscience" des détails d'implémentation d'un composant. Ces tests simulent le moins possible afin de tester l'intégration de vos composants et le système entier. Ils font généralement le rendu HTML de l'ensemble des sous-composants et sont considérés plus comme un "test d'intégration". Voir les [recommendations de test de composant](#component-testing) ci-dessous.
 
@@ -102,13 +102,13 @@ Un composant peut être testé de deux façons:
 
 - [Vitest](https://vitest.dev/)
 
-  Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire pour tirer parti de la même configuration et pipeline de transformation directement à partir de Vite. [Vitest] (https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultra-rapide.
+  Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire pour tirer parti de la même configuration et pipeline de transformation directement à partir de Vite. [Vitest] (https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultrarapide.
 
 ### Autres options {#other-options}
 
 - [Peeky](https://peeky.dev/) est un autre runner de test unitaire rapide avec une intégration Vite de première classe. Il est également créé par un membre de l'équipe principale de Vue et offre une interface de test basée sur une interface graphique.
 
-- [Jest](https://jestjs.io/) est un framework de test unitaire populaire, et qui peut fonctionner avec Vite via le paquet [vite-jest](https://github.com/sodatea/vite-jest). Cependant, nous ne recommandons Jest que si vous disposez d'une suite de tests Jest existante qui doit être migrée vers un projet basé sur Vite, car Vitest offre une intégration plus transparente et de meilleures performances.
+- [Jest](https://jestjs.io/) est un framework de test unitaire populaire, et qui peut fonctionner avec Vite via le paquet [`vite-jest`](https://github.com/sodatea/vite-jest). Cependant, nous ne recommandons Jest que si vous disposez d'une suite de tests Jest existante qui doit être migrée vers un projet basé sur Vite, car Vitest offre une intégration plus transparente et de meilleures performances.
 
 ## Test de composant {#component-testing}
 
@@ -122,8 +122,8 @@ Les tests de composant doivent se concentrer sur les interfaces publiques du com
 
 **FAITES**
 
-- Pour la logique **visuelle** : verifiez que le rendu en sortie est correct en fonction des props et des slots saisis.
-- Pour la logique **comportementale** : verifiez que les mises à jour de rendu ou les événements émis en réponse aux événements d'entrée de l'utilisateur sont corrects. 
+- Pour la logique **visuelle** : vérifiez que le rendu en sortie est correct en fonction des props et des slots saisis.
+- Pour la logique **comportementale** : vérifiez que les mises à jour de rendu ou les événements émis en réponse aux événements d'entrée de l'utilisateur sont corrects. 
 
   Dans l'exemple ci-dessous, nous démontrons un composant Stepper qui a un élément DOM intitulé "increment" et sur lequel vous pouvez cliquer. Nous passons une prop appelée `max` qui empêche le Stepper d'être incrémenté au-delà de `2`, donc si nous cliquons sur le bouton 3 fois, l'interface utilisateur devrait toujours dire `2`.
 
@@ -226,11 +226,11 @@ Nous vous recommandons d'utiliser `@testing-library/vue` pour tester les composa
 
 ### Autres options {#other-options-1}
 
-- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-end) supportant le test de composants Vue. ([Projet d'exmmple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
+- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-end) supportant le test de composants Vue. ([Projet d'exemple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
 
 ## Tests E2E {#e2e-testing}
 
-Alors que les tests unitaires offrent aux développeurs un certain degré de confiance, les tests unitaires et les tests de composants sont limités dans leur capacité à fournir une couverture holistique d'une application lorsqu'ils sont déployés en production. En conséquence, les tests End-to-end (E2E) fournissent une couverture sur ce qui est sans doute l'aspect le plus important d'une application: ce qui se passe lorsque les utilisateurs utilisent réellement vos applications.
+Alors que les tests unitaires offrent aux développeurs un certain degré de confiance, les tests unitaires et les tests de composants sont limités dans leur capacité à fournir une couverture holistique d'une application lorsqu'ils sont déployés en production. En conséquence, les tests End-to-end (E2E) offrent une couverture sur ce qui est sans doute l'aspect le plus important d'une application : ce qui se passe lorsque les utilisateurs utilisent réellement vos applications.
 
 Les tests End-to-end se concentrent sur le comportement des applications multipages qui effectuent des requêtes réseau par rapport à votre application Vue de production. Ils impliquent souvent la mise en place d'une base de données ou d'un autre backend et peuvent même être exécutés dans un environnement de staging déployé.
 
@@ -256,7 +256,7 @@ L'un des principaux avantages pour lesquels les tests End-to-end (E2E) sont conn
 
 L'un des principaux problèmes liés aux tests et au développement End-to-end (E2E) est que l'exécution de l'ensemble de la suite prend beaucoup de temps. En règle générale, cela n'est fait que dans les pipelines d'intégration et de déploiement continus (CI/CD). Les frameworks de test E2E modernes ont aidé à résoudre ce problème en ajoutant des fonctionnalités telles que la parallélisation, ce qui permet aux pipelines CI / CD d'exécuter souvent des magnitudes plus rapidement qu'auparavant. En outre, lors du développement local, la possibilité d'exécuter de manière sélective un seul test pour la page sur laquelle vous travaillez tout en fournissant un rechargement à chaud des tests peut aider à améliorer le flux de travail et la productivité d'un développeur.
 
-#### First-class debugging experience {#first-class-debuggin-experience}
+#### First-class debugging experience {#first-class-debugging-experience}
 
 Alors que les développeurs s'appuyaient traditionnellement sur l'analyse des logs dans une fenêtre de terminal pour aider à déterminer ce qui n'allait pas dans un test, les frameworks de test modernes End-to-end (E2E) permettent aux développeurs de tirer parti d'outils qu'ils connaissent déjà, par exemple les outils de développement de navigateur.
 
@@ -268,7 +268,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [Cypress](https://www.cypress.io/)
 
-  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance aux flocons, une parallélisation et des instantanés. Comme mentionné ci-dessus, il fournit également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
+  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance aux flocons, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
 
 ### Autres options {#other-options-2}
 
@@ -356,12 +356,12 @@ Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le
 
 > Cette section suppose que vous avez lu la section [Composables](/guide/reusability/composables.html).
 
-Lorsqu'il est question de tester des composables, nous pouvons diviser en deux catégories: les composables qui ne dépendent pas d'une instance de composant hôte et ceux qui en dépendent.
+Lorsqu'il est question de tester des composables, nous pouvons diviser en deux catégories : les composables qui ne dépendent pas d'une instance de composant hôte et ceux qui en dépendent.
 
 - Lifecycle hooks
 - Provide / Inject
 
-Si un composable utilise uniquement les APIs de réactité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne:
+Si un composable utilise uniquement les APIs de réactivité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne :
 
 ```js
 // counter.js
@@ -391,7 +391,7 @@ test('useCounter', () => {
 })
 ```
 
-Un composable qui s'appuie sur des hooks de cycle de vie ou Provide / Inject doit être contenu dans un composant enveloppe pour être testé. Nous pouvons créer une fonction utilitaire comme ci-dessous:
+Un composable qui s'appuie sur des hooks de cycle de vie ou Provide / Inject doit être contenu dans un composant enveloppe pour être testé. Nous pouvons créer une fonction utilitaire comme ci-dessous :
 
 ```js
 // test-utils.js
