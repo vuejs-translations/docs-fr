@@ -266,4 +266,4 @@ Vous verrez d'autres exemples de modificateurs plus tard, [TODO(fr)pour `v-on`](
 Et enfin, voici la syntaxe complète de la directive visualisée :
 ![graphique de syntaxe de directive](./images/directive.png)
 
-<!-- https://www.figma.com/file/BGWUknIrtY9HOmbmad0vFr/Directive -->
+<!-- https://www.figma.com/file/lxB7KSd8uTdSMIWS70c4L2/Directive -->
