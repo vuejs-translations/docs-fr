@@ -92,7 +92,7 @@ Un composant peut être testé de deux façons :
 
 1. Boîte blanche: Test unitaire
 
-   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils They are focused on **isolating** the component under test. These tests will usually involve mocking some, if not all of your component's children, as well as setting up plugin state and dependencies (e.g. Vuex).
+   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils They are focused on **isolating** the component under test. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia). 
 
 2. Boîte noire : Test de composant
 
