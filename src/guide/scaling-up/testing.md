@@ -268,7 +268,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [Cypress](https://www.cypress.io/)
 
-  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance aux flocons, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
+  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance à la "flakiness" des tests, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
 
 ### Autres options {#other-options-2}
 
