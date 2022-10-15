@@ -114,7 +114,7 @@ Un composant peut être testé de deux façons :
 
 Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications. 
 
-Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'il fournit, aux styles, aux classes, aux crochets de cycle de vie de votre composant, etc.
+Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'il fournit, aux styles, aux classes, aux hooks de cycle de vie de votre composant, etc.
 
 Les tests de composant ne doivent pas simuler des composants enfants, mais plutôt tester les interactions entre votre composant et ses enfants en interagissant avec les composants comme le ferait un utilisateur. Par exemple, un test de composant doit cliquer sur un élément comme le ferait un utilisateur au lieu d'interagir programmatiquement avec le composant. 
 
