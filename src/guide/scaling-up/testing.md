@@ -106,7 +106,7 @@ Un composant peut être testé de deux façons :
 
 ### Autres options {#other-options}
 
-- [Peeky](https://peeky.dev/) est un autre runner de test unitaire rapide avec une intégration Vite de première classe. Il est également créé par un membre de l'équipe principale de Vue et offre une interface de test basée sur une interface graphique.
+- [Peeky](https://peeky.dev/) est un autre runner de test unitaire rapide avec une intégration native de Vite. Il est également créé par un membre de l'équipe principale de Vue et offre une interface de test basée sur une interface graphique.
 
 - [Jest](https://jestjs.io/) est un framework de test unitaire populaire, et qui peut fonctionner avec Vite via le paquet [`vite-jest`](https://github.com/sodatea/vite-jest). Cependant, nous ne recommandons Jest que si vous disposez d'une suite de tests Jest existante qui doit être migrée vers un projet basé sur Vite, car Vitest offre une intégration plus transparente et de meilleures performances.
 
