@@ -358,6 +358,8 @@ Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le
 
 Lorsqu'il est question de tester des composables, nous pouvons diviser en deux catégories : les composables qui ne dépendent pas d'une instance de composant hôte et ceux qui en dépendent.
 
+Un composable dépend d'une instance de composant hôte quand il utilise une des APIs suivantes :
+
 - Lifecycle hooks
 - Provide / Inject
 
