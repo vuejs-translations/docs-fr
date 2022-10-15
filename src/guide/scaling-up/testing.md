@@ -295,10 +295,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // ...
   test: {
-    // enable jest-like global test APIs
+    // active les APIs compatibles avec jest globalement
     globals: true,
-    // simulate DOM with happy-dom
-    // (requires installing happy-dom as a peer dependency)
+    // simule le DOM avec happy-dom
+    // (requiert l'installation de happy-dom en dépendance additionnelle)
     environment: 'happy-dom'
   }
 })
