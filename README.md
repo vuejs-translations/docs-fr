@@ -2,7 +2,9 @@
 
 Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
 
-Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
+Merci de vous référer à la partie [Contributing](#contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme.
+
+Il est important également de prendre connaissances des [bonnes pratiques pour la traduction de la documentation](https://github.com/vuejs-translations/guidelines).
 
 ## Directives de contribution
 
@@ -11,6 +13,7 @@ Merci de prendre connaissance du [Guide d'écriture](https://github.com/edimitch
 ### VS Code extensions
 
 Utilisez les extensions suivantes pour éviter les fautes orthographiques:
+
 - streetsidesoftware.code-spell-checker
 - streetsidesoftware.code-spell-checker-french
 
@@ -33,7 +36,8 @@ Des issues chapeau feront office de tracking pour chaque sous-partie de la docum
 
 Quand vous identifiez un contenu pointé par un lien ou qui serait hors de votre champs d'action, notifier le en ajoutant `TODO(fr)` dans le label du lien ou la référence du contenu en question.
 
-_______________
+---
+
 # vuejs.org
 
 ## Contribution
@@ -49,12 +53,12 @@ pnpm run dev
 
 This project requires Node.js to be `v14.0.0` or higher, because we use new JavaScript features in our code, such as optional chaining.
 
-
 ## Travail sur le contenu
 
 - Voir la documentation de VitePress sur les [extensions Markdown](https://vitepress.vuejs.org/guide/markdown.html) prises en charge et la possibilité d'[utiliser la syntaxe Vue dans Markdown](https://vitepress.vuejs.org/guide/using-vue.html).
 
 - Consultez le [Guide d'Écriture](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) pour nos règles et recommandations sur la rédaction et la maintenance du contenu de la documentation.
+
 ## Travail sur le le thème
 
 Si des modifications doivent être apportées au thème, consultez les [instructions pour développer le thème parallèlement à la documentation](https://github.com/vuejs/vue-theme#developing-with-real-content).
