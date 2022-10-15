@@ -5,6 +5,7 @@ import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 import { jobsPlugin } from './jobsMdPlugin'
+import { i18nConfig } from '@vue/theme/src/vitepress/config'
 
 const nav = [
   {
@@ -44,7 +45,10 @@ const nav = [
         items: [
           { text: 'Partenaires', link: '/ecosystem/partners' },
           { text: 'Thèmes', link: '/ecosystem/themes' },
-          { text: 'Offres d’emploi', link: 'https://vuejobs.com/?ref=vuejs' },
+          {
+            text: 'Offres d’emploi',
+            link: 'https://vuejobs.com/?ref=vuejs'
+          },
           { text: 'Boutique t-shirt', link: 'https://vue.threadless.com/' }
         ]
       },
@@ -53,7 +57,10 @@ const nav = [
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
-          { text: 'Guide des outils', link: '/guide/scaling-up/tooling.html' }
+          {
+            text: 'Guide des outils',
+            link: '/guide/scaling-up/tooling.html'
+          }
         ]
       },
       {
@@ -551,6 +558,41 @@ export const sidebar = {
   ]
 }
 
+const i18n: i18nConfig = {
+  search: 'Recherche',
+  menu: 'Menu',
+  toc: 'Sur cette page',
+  returnToTop: 'Retour en haut',
+  appearance: 'Apparence',
+  previous: 'Précédent',
+  next: 'Suivant',
+  pageNotFound: 'Page non trouvée',
+  deadLink: {
+    before: 'Vous avez trouvé un lien mort: ',
+    after: ''
+  },
+  deadLinkReport: {
+    before: 'Merci de ',
+    link: 'nous le faire savoir',
+    after: ' pour nous permettre de le résoudre.'
+  },
+  footerLicense: {
+    before: '',
+    after: ''
+  },
+
+  // aria labels
+  // typo issue https://github.com/vuejs/theme/issues/75
+  ariaAnnouner: {
+    before: '',
+    after: 'a chargé'
+  },
+  ariaDarkMode: 'Mode foncé',
+  ariaSkipToContent: 'Passer le contenu',
+  ariaMainNav: '',
+  ariaMobileNav: '',
+  ariaSidebarNav: ''
+}
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -601,6 +643,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     nav,
     sidebar,
+    i18n,
 
     algolia: {
       indexName: 'vuejs',
