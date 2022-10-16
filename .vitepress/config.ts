@@ -5,7 +5,6 @@ import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 import { jobsPlugin } from './jobsMdPlugin'
-import { i18nConfig } from '@vue/theme/src/vitepress/config'
 
 const nav = [
   {
@@ -558,7 +557,7 @@ export const sidebar = {
   ]
 }
 
-const i18n: i18nConfig = {
+const i18n: ThemeConfig['i18n'] = {
   search: 'Recherche',
   menu: 'Menu',
   toc: 'Sur cette page',
@@ -588,11 +587,12 @@ const i18n: i18nConfig = {
     after: 'a chargé'
   },
   ariaDarkMode: 'Mode foncé',
-  ariaSkipToContent: 'Passer le contenu',
-  ariaMainNav: '',
-  ariaMobileNav: '',
-  ariaSidebarNav: ''
+  ariaSkipToContent: 'Passer au contenu',
+  ariaMainNav: 'Navigation principale',
+  ariaMobileNav: 'Navigation pour mobile',
+  ariaSidebarNav: 'Navigation de barre latérale'
 }
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
