@@ -27,19 +27,19 @@ export default {
 </style>
 ```
 
-Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [TODO(fr)Spécification de syntaxe SFC](/api/sfc-spec).
+Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [Spécification de syntaxe SFC](/api/sfc-spec).
 
 ## Pourquoi les composants monofichiers (SFC)
 
 Si les SFC nécessitent une étape de compilation, les avantages sont nombreux en contrepartie :
 
 - Créer des composants modulaires en utilisant une syntaxe HTML, CSS et JavaScript familière.
-- [TODO(fr)Collocation de responsabilités couplées](#qu-en-est-il-de-la-separation-des-responsabilites)
+- [Collocation de responsabilités couplées](#qu-en-est-il-de-la-separation-des-responsabilites)
 - Templates précompilés sans coût de compilation au runtime
-- [TODO(fr)CSS à portée limitée au composant](/api/sfc-css-features)
-- [TODO(fr)Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
+- [CSS à portée limitée au composant](/api/sfc-css-features)
+- [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
 - Meilleures optimisations à la compilation grâce à l'analyse croisée du template et des scripts.
-- [TODO(fr)Support IDE](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
+- [Support IDE](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
 - Prise en charge nativement du remplacement de modules à chaud (HMR).
 
 SFC est une caractéristique déterminante de Vue en tant que framework, et c'est l'approche recommandée pour utiliser Vue dans les scénarios suivants :
@@ -68,7 +68,7 @@ Les balises `<style>` à l'intérieur des SFC sont généralement injectées com
 
 Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [Playground SFC de Vue](https://sfc.vuejs.org/).
 
-Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [TODO(fr)Outillages pour SFC](/guide/scaling-up/tooling).
+Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outillages pour SFC](/guide/scaling-up/tooling).
 
 ## Qu'en est-il de la séparation des responsabilités ?
 
@@ -79,5 +79,5 @@ Pour répondre à cette question, il est important d'être d'accord sur le fait 
 Dans le développement d'interfaces utilisateur modernes, nous avons constaté qu'au lieu de diviser la base de code en trois énormes couches qui s'entrecroisent, il est beaucoup plus logique de les diviser en composants faiblement couplés et de les composer. À l'intérieur d'un composant, son template, sa logique et ses styles sont intrinsèquement couplés, et leur regroupement rend le composant plus cohérent et plus facile à maintenir.
 
 :::info Remarque
-Même si vous n'aimez pas l'idée des composants monofichiers, vous pouvez toujours tirer parti des fonctions de rechargement à chaud (HMR) et de précompilation en séparant votre JavaScript et votre CSS dans des fichiers distincts à l'aide de [TODO(fr)Imports Src](/api/sfc-spec.html#src-imports).
+Même si vous n'aimez pas l'idée des composants monofichiers, vous pouvez toujours tirer parti des fonctions de rechargement à chaud (HMR) et de précompilation en séparant votre JavaScript et votre CSS dans des fichiers distincts à l'aide de [Imports Src](/api/sfc-spec.html#src-imports).
 :::

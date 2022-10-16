@@ -32,10 +32,6 @@ Des issues chapeau feront office de tracking pour chaque sous-partie de la docum
 - À propos
 - Autres (translation page, ...)
 
-### Notifiez toute sous-tâche de traduction que vous ne pouvez traiter de suite
-
-Quand vous identifiez un contenu pointé par un lien ou qui serait hors de votre champs d'action, notifier le en ajoutant `TODO(fr)` dans le label du lien ou la référence du contenu en question.
-
 ---
 
 # vuejs.org
