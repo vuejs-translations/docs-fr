@@ -586,11 +586,11 @@ const i18n: ThemeConfig['i18n'] = {
     before: '',
     after: 'a chargé'
   },
-  ariaDarkMode: 'Mode foncé',
+  ariaDarkMode: 'Mode sombre',
   ariaSkipToContent: 'Passer au contenu',
   ariaMainNav: 'Navigation principale',
-  ariaMobileNav: 'Navigation pour mobile',
-  ariaSidebarNav: 'Navigation de barre latérale'
+  ariaMobileNav: 'Navigation mobile',
+  ariaSidebarNav: 'Barre de navigation latérale'
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
