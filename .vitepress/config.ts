@@ -205,7 +205,7 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Reusability',
+      text: 'Réutilisabilité',
       items: [
         {
           text: 'Composables',
