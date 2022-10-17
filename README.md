@@ -1,3 +1,5 @@
+[![](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://stackblitz.com/~/github.com/edimitchel/docs-fr)
+
 # Dépôt de contribution pour la traduction française de vuejs.org
 
 Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
