@@ -6,20 +6,20 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-This section assumes basic knowledge of Composition API. If you have been learning Vue with Options API only, you can set the API Preference to Composition API (using the toggle at the top of the left sidebar) and re-read the [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) and [Lifecycle Hooks](/guide/essentials/lifecycle.html) chapters.
+Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) et [Lifecycle Hooks](/guide/essentials/lifecycle.html).
 :::
 
-## What is a "Composable"?
+## Qu'est-ce qu'un "Composable"? {#what-is-a-composable}
 
-In the context of Vue applications, a "composable" is a function that leverages Vue's Composition API to encapsulate and reuse **stateful logic**.
+Dans le contexte des applications Vue, un "composable" est une fonction qui exploite la Composition API de Vue pour encapsuler et réutiliser une **logique avec état**.
 
-When building frontend applications, we often need to reuse logic for common tasks. For example, we may need to format dates in many places, so we extract a reusable function for that. This formatter function encapsulates **stateless logic**: it takes some input and immediately returns expected output. There are many libraries out there for reusing stateless logic - for example [lodash](https://lodash.com/) and [date-fns](https://date-fns.org/), which you may have heard of.
+Lors de la création d'applications frontend, nous devons souvent réutiliser la logique pour les tâches courantes. Par exemple, nous pouvons avoir besoin de formater des dates à de nombreux endroits, on extrait une fonction réutilisable pour cela. Cette fonction de formatage encapsule la **logique sans état** : elle prend des arguments et renvoie immédiatement la sortie attendue. Il existe de nombreuses bibliothèques pour réutiliser la logique sans état, par exemple [lodash](https://lodash.com/) et [date-fns](https://date-fns.org/), dont vous avez peut-être déjà entendu parler.
 
-By contrast, stateful logic involves managing state that changes over time. A simple example would be tracking the current position of the mouse on a page. In real world scenarios, it could also be more complex logic such as touch gestures or connection status to a database.
+En revanche, la logique avec état implique la gestion d'un état qui change au fil du temps. Un exemple simple serait de suivre la position actuelle de la souris sur une page. Dans des scénarios réels, il peut également s'agir d'une logique plus complexe, telle que des gestes tactiles ou l'état de la connexion à une base de données.
 
-## Mouse Tracker Example
+## Exemple de suivi de la souris {#mouse-tracker-example}
 
-If we were to implement the mouse tracking functionality using the Composition API directly inside a component, it would look like this:
+Si nous devions implémenter la fonctionnalité de suivi de la souris à l'aide de la Composition API directement dans un composant, cela ressemblerait à ceci :
 
 ```vue
 <script setup>
@@ -37,38 +37,38 @@ onMounted(() => window.addEventListener('mousemove', update))
 onUnmounted(() => window.removeEventListener('mousemove', update))
 </script>
 
-<template>Mouse position is at: {{ x }}, {{ y }}</template>
+<template>La position de la souris est à : {{ x }}, {{ y }}</template>
 ```
 
-But what if we want to reuse the same logic in multiple components? We can extract the logic into an external file, as a composable function:
+Mais que se passe-t-il si nous voulons réutiliser la même logique dans plusieurs composants ? Nous pouvons extraire la logique dans un fichier externe, en tant que fonction composable :
 
 ```js
 // mouse.js
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// by convention, composable function names start with "use"
+// par convention, les noms de fonctions composables commencent par "use"
 export function useMouse() {
-  // state encapsulated and managed by the composable
+  // état encapsulé et géré par le composable
   const x = ref(0)
   const y = ref(0)
 
-  // a composable can update its managed state over time.
+  // un composable peut mettre à jour son état géré au fil du temps.
   function update(event) {
     x.value = event.pageX
     y.value = event.pageY
   }
 
-  // a composable can also hook into its owner component's
-  // lifecycle to setup and teardown side effects.
+  // un composable peut également s'accrocher au cycle de vie de son composant
+  // propriétaire pour configurer et démonter les effets secondaires.
   onMounted(() => window.addEventListener('mousemove', update))
   onUnmounted(() => window.removeEventListener('mousemove', update))
 
-  // expose managed state as return value
+  // expose l'état géré comme valeur de retour
   return { x, y }
 }
 ```
 
-And this is how it can be used in components:
+Et voici comment il peut être utilisé dans les composants :
 
 ```vue
 <script setup>
@@ -77,34 +77,34 @@ import { useMouse } from './mouse.js'
 const { x, y } = useMouse()
 </script>
 
-<template>Mouse position is at: {{ x }}, {{ y }}</template>
+<template>La position de la souris est à : {{ x }}, {{ y }}</template>
 ```
 
 <div class="demo">
-  Mouse position is at: {{ x }}, {{ y }}
+  La position de la souris est à : {{ x }}, {{ y }}
 </div>
 
-[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHVzZU1vdXNlIH0gZnJvbSAnLi9tb3VzZS5qcydcblxuY29uc3QgeyB4LCB5IH0gPSB1c2VNb3VzZSgpXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICBNb3VzZSBwb3NpdGlvbiBpcyBhdDoge3sgeCB9fSwge3sgeSB9fVxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwibW91c2UuanMiOiJpbXBvcnQgeyByZWYsIG9uTW91bnRlZCwgb25Vbm1vdW50ZWQgfSBmcm9tICd2dWUnXG5cbmV4cG9ydCBmdW5jdGlvbiB1c2VNb3VzZSgpIHtcbiAgY29uc3QgeCA9IHJlZigwKVxuICBjb25zdCB5ID0gcmVmKDApXG5cbiAgZnVuY3Rpb24gdXBkYXRlKGV2ZW50KSB7XG4gICAgeC52YWx1ZSA9IGV2ZW50LnBhZ2VYXG4gICAgeS52YWx1ZSA9IGV2ZW50LnBhZ2VZXG4gIH1cblxuICBvbk1vdW50ZWQoKCkgPT4gd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ21vdXNlbW92ZScsIHVwZGF0ZSkpXG4gIG9uVW5tb3VudGVkKCgpID0+IHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCdtb3VzZW1vdmUnLCB1cGRhdGUpKVxuXG4gIHJldHVybiB7IHgsIHkgfVxufSJ9)
+[Essayer en ligne](https://sfc.vuejs.org/#eNqNks9uwjAMxl/F6oUilXRnBEg77MaOkzapl44aVkSdyEkLCPVd9i57sdktFPZH0y5t7Di/+POXU3TvnGlqjKbRzK+4dAE8htotMiorZznACWqPj1Y+0MKabQUjk1Yam60fZZTRypLXukMCR6mZDwficUaztMcKUIKAldvlASUCWObgrC9DaQkKhF0O3tZcekDBfbzDFE4ChbZNdCHoVnEDIkqivsVJlTvpxZKIOCk4O2/4LBKGZjQnKjXOorcQnJ+mqV+vVPrWG8ubVFaGawplhQZ9NXllu/fIAs6i5IaRSrJBnjBSgYz8F/Nb6Q+uYkVUK1IuExUNw+AZ1wlYkllSwEKXTyR1GgxeyGWdCXjoDq1rWnUDvXrQT6A36SDuCDW+E2cuueNNTrNXhCtkzjE2SOFMATiYJt/VKGe6vHH5Bp/7reMvWy9nifoblMTS1HwB+5IKuzd5UTxo/bL0AQk5HnWzqGyDo+TcxLjr90b/VwR31f+iKIflhTMNL1YNaD8Be2IObA==)
 
-As we can see, the core logic remains identical - all we had to do was move it into an external function and return the state that should be exposed. Just like inside a component, you can use the full range of [Composition API functions](/api/#composition-api) in composables. The same `useMouse()` functionality can now be used in any component.
+Comme nous pouvons le voir, la logique de base reste identique, tout ce que nous avions à faire était de la déplacer dans une fonction externe et de renvoyer l'état qui devrait être exposé. Tout comme à l'intérieur d'un composant, vous pouvez utiliser la gamme complète des [Fonctions de la Composition API](/api/#composition-api) dans les composables. La même fonctionnalité `useMouse()` peut désormais être utilisée dans n'importe quel composant.
 
-The cooler part about composables though, is that you can also nest them: one composable function can call one or more other composable functions. This enables us to compose complex logic using small, isolated units, similar to how we compose an entire application using components. In fact, this is why we decided to call the collection of APIs that make this pattern possible Composition API.
+La partie la plus cool des composables est que vous pouvez également les imbriquer : une fonction composable peut appeler une ou plusieurs autres fonctions composables. Cela nous permet de composer une logique complexe à l'aide de petites unités isolées, de la même manière que nous composons une application entière à l'aide de composants. En fait, c'est pourquoi nous avons décidé d'appeler la collection d'API qui rendent ce modèle possible **Composition API**.
 
-For example, we can extract the logic of adding and removing a DOM event listener into its own composable:
+Par exemple, nous pouvons extraire la logique d'ajout et de suppression d'un écouteur d'événement DOM dans son propre composable :
 
 ```js
 // event.js
 import { onMounted, onUnmounted } from 'vue'
 
 export function useEventListener(target, event, callback) {
-  // if you want, you can also make this
-  // support selector strings as target
+  // si vous voulez, vous pouvez aussi faire ça
+  // écoute d'un événement sur target
   onMounted(() => target.addEventListener(event, callback))
   onUnmounted(() => target.removeEventListener(event, callback))
 }
 ```
 
-And now our `useMouse()` composable can be simplified to:
+Et maintenant, notre composable `useMouse()` peut être simplifié en :
 
 ```js{3,9-12}
 // mouse.js
@@ -125,12 +125,12 @@ export function useMouse() {
 ```
 
 :::tip
-Each component instance calling `useMouse()` will create its own copies of `x` and `y` state so they won't interfere with one another. If you want to manage shared state between components, read the [State Management](/guide/scaling-up/state-management.html) chapter.
+Chaque instance de composant appelant `useMouse()` créera ses propres copies de l'état `x` et `y` afin qu'elles n'interfèrent pas l'une avec l'autre. Si vous souhaitez gérer l'état partagé entre les composants, lisez le chapitre [Gestion de l'état](/guide/scaling-up/state-management.html).
 :::
 
-## Async State Example
+## Example d'état asynchrone {#async-state-example}
 
-The `useMouse()` composable doesn't take any arguments, so let's take a look at another example that makes use of one. When doing async data fetching, we often need to handle different states: loading, success, and error:
+Le composable `useMouse()` ne prend aucun argument, alors regardons un autre exemple qui en utilise un. Lors de la récupération de données asynchrone, nous devons souvent gérer différents états : chargement, succès et erreur :
 
 ```vue
 <script setup>
@@ -146,16 +146,15 @@ fetch('...')
 </script>
 
 <template>
-  <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
+  <div v-if="error">Oups! Une erreur est survenue : {{ error.message }}</div>
   <div v-else-if="data">
-    Data loaded:
+    Données chargées :
     <pre>{{ data }}</pre>
   </div>
-  <div v-else>Loading...</div>
+  <div v-else>Chargement...</div>
 </template>
 ```
-
-It would be tedious to have to repeat this pattern in every component that needs to fetch data. Let's extract it into a composable:
+Il serait fastidieux de devoir répéter ce modèle dans chaque composant qui doit récupérer des données. Extrayons-le dans un composable :
 
 ```js
 // fetch.js
@@ -174,7 +173,7 @@ export function useFetch(url) {
 }
 ```
 
-Now in our component we can just do:
+Maintenant, dans notre composant, nous pouvons simplement faire :
 
 ```vue
 <script setup>
@@ -184,7 +183,7 @@ const { data, error } = useFetch('...')
 </script>
 ```
 
-`useFetch()` takes a static URL string as input - so it performs the fetch only once and is then done. What if we want it to re-fetch whenever the URL changes? We can achieve that by also accepting refs as an argument:
+`useFetch()` prend une chaîne d'URL statique en entrée, il n'effectue donc la récupération qu'une seule fois. Que se passe-t-il si nous voulons qu'il récupère chaque fois que l'URL change ? Nous pouvons y parvenir en acceptant également une `ref` comme argument :
 
 ```js
 // fetch.js
@@ -195,10 +194,10 @@ export function useFetch(url) {
   const error = ref(null)
 
   function doFetch() {
-    // reset state before fetching..
+    // réinitialiser l'état avant de récupérer..
     data.value = null
     error.value = null
-    // unref() unwraps potential refs
+    // unref() déballe les refs potentielles
     fetch(unref(url))
       .then((res) => res.json())
       .then((json) => (data.value = json))
@@ -206,11 +205,11 @@ export function useFetch(url) {
   }
 
   if (isRef(url)) {
-    // setup reactive re-fetch if input URL is a ref
+    // configure la récupération réactive si l'URL d'entrée est une ref
     watchEffect(doFetch)
   } else {
-    // otherwise, just fetch once
-    // and avoid the overhead of a watcher
+    // sinon, récupérer qu'une seule fois
+    // et éviter la surcharge d'un observateur
     doFetch()
   }
 
@@ -218,13 +217,13 @@ export function useFetch(url) {
 }
 ```
 
-This version of `useFetch()` now accepts both static URL strings and refs of URL strings. When it detects that the URL is a dynamic ref using [`isRef()`](/api/reactivity-utilities.html#isref), it sets up a reactive effect using [`watchEffect()`](/api/reactivity-core.html#watcheffect). The effect will run immediately and will also track the URL ref as a dependency. Whenever the URL ref changes, the data will be reset and fetched again.
+Cette version de `useFetch()` accepte désormais à la fois les chaînes d'URL statiques et les références de chaînes d'URL. Lorsqu'il détecte que l'URL est une référence dynamique à l'aide de [`isRef()`](/api/reactivity-utilities.html#isref), il configure un effet réactif à l'aide de [`watchEffect()`](/api/reactivity-core.html#watcheffect). L'effet s'exécutera immédiatement et suivra également la référence d'URL en tant que dépendance. Chaque fois que la référence d'URL change, les données sont réinitialisées et récupérées à nouveau.
 
-Here's [the updated version of `useFetch()`](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgY29tcHV0ZWQgfSBmcm9tICd2dWUnXG5pbXBvcnQgeyB1c2VGZXRjaCB9IGZyb20gJy4vdXNlRmV0Y2guanMnXG5cbmNvbnN0IGJhc2VVcmwgPSAnaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3RvZG9zLydcbmNvbnN0IGlkID0gcmVmKCcxJylcbmNvbnN0IHVybCA9IGNvbXB1dGVkKCgpID0+IGJhc2VVcmwgKyBpZC52YWx1ZSlcblxuY29uc3QgeyBkYXRhLCBlcnJvciwgcmV0cnkgfSA9IHVzZUZldGNoKHVybClcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIExvYWQgcG9zdCBpZDpcbiAgPGJ1dHRvbiB2LWZvcj1cImkgaW4gNVwiIEBjbGljaz1cImlkID0gaVwiPnt7IGkgfX08L2J1dHRvbj5cblxuXHQ8ZGl2IHYtaWY9XCJlcnJvclwiPlxuICAgIDxwPk9vcHMhIEVycm9yIGVuY291bnRlcmVkOiB7eyBlcnJvci5tZXNzYWdlIH19PC9wPlxuICAgIDxidXR0b24gQGNsaWNrPVwicmV0cnlcIj5SZXRyeTwvYnV0dG9uPlxuICA8L2Rpdj5cbiAgPGRpdiB2LWVsc2UtaWY9XCJkYXRhXCI+RGF0YSBsb2FkZWQ6IDxwcmU+e3sgZGF0YSB9fTwvcHJlPjwvZGl2PlxuICA8ZGl2IHYtZWxzZT5Mb2FkaW5nLi4uPC9kaXY+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJ1c2VGZXRjaC5qcyI6ImltcG9ydCB7IHJlZiwgaXNSZWYsIHVucmVmLCB3YXRjaEVmZmVjdCB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZUZldGNoKHVybCkge1xuICBjb25zdCBkYXRhID0gcmVmKG51bGwpXG4gIGNvbnN0IGVycm9yID0gcmVmKG51bGwpXG5cbiAgYXN5bmMgZnVuY3Rpb24gZG9GZXRjaCgpIHtcbiAgICAvLyByZXNldCBzdGF0ZSBiZWZvcmUgZmV0Y2hpbmcuLlxuICAgIGRhdGEudmFsdWUgPSBudWxsXG4gICAgZXJyb3IudmFsdWUgPSBudWxsXG4gICAgXG4gICAgLy8gcmVzb2x2ZSB0aGUgdXJsIHZhbHVlIHN5bmNocm9ub3VzbHkgc28gaXQncyB0cmFja2VkIGFzIGFcbiAgICAvLyBkZXBlbmRlbmN5IGJ5IHdhdGNoRWZmZWN0KClcbiAgICBjb25zdCB1cmxWYWx1ZSA9IHVucmVmKHVybClcbiAgICBcbiAgICB0cnkge1xuICAgICAgLy8gYXJ0aWZpY2lhbCBkZWxheSAvIHJhbmRvbSBlcnJvclxuICBcdCAgYXdhaXQgdGltZW91dCgpXG4gIFx0ICAvLyB1bnJlZigpIHdpbGwgcmV0dXJuIHRoZSByZWYgdmFsdWUgaWYgaXQncyBhIHJlZlxuXHQgICAgLy8gb3RoZXJ3aXNlIHRoZSB2YWx1ZSB3aWxsIGJlIHJldHVybmVkIGFzLWlzXG4gICAgXHRjb25zdCByZXMgPSBhd2FpdCBmZXRjaCh1cmxWYWx1ZSlcblx0ICAgIGRhdGEudmFsdWUgPSBhd2FpdCByZXMuanNvbigpXG4gICAgfSBjYXRjaCAoZSkge1xuICAgICAgZXJyb3IudmFsdWUgPSBlXG4gICAgfVxuICB9XG5cbiAgaWYgKGlzUmVmKHVybCkpIHtcbiAgICAvLyBzZXR1cCByZWFjdGl2ZSByZS1mZXRjaCBpZiBpbnB1dCBVUkwgaXMgYSByZWZcbiAgICB3YXRjaEVmZmVjdChkb0ZldGNoKVxuICB9IGVsc2Uge1xuICAgIC8vIG90aGVyd2lzZSwganVzdCBmZXRjaCBvbmNlXG4gICAgZG9GZXRjaCgpXG4gIH1cblxuICByZXR1cm4geyBkYXRhLCBlcnJvciwgcmV0cnk6IGRvRmV0Y2ggfVxufVxuXG4vLyBhcnRpZmljaWFsIGRlbGF5XG5mdW5jdGlvbiB0aW1lb3V0KCkge1xuICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4ge1xuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgaWYgKE1hdGgucmFuZG9tKCkgPiAwLjMpIHtcbiAgICAgICAgcmVzb2x2ZSgpXG4gICAgICB9IGVsc2Uge1xuICAgICAgICByZWplY3QobmV3IEVycm9yKCdSYW5kb20gRXJyb3InKSlcbiAgICAgIH1cbiAgICB9LCAzMDApXG4gIH0pXG59In0=), with an artificial delay and randomized error for demo purposes.
+Voici [la version mise à jour de `useFetch()`](https://sfc.vuejs.org/#eNp1Vc1u4zYQfpWpLlZQR9pi0YvhGC3a7WmLFkHTky6MRMVMJVLlj9LA8PvUfQ2/WL8hJUfJZi+SSM588803M9Qh+3EYijHIbJNtXW3V4MlJH4ZdpVU/GOvpQFa2a6pNPwQvGzpSa01PKzitFkbByV+kr/eX86Kct4pHB8tK10Y7T/fCyTvb0Q2t9t4PblOWj87ooRO13Juukbbwz4OqTSMLBC29aYwrAZDcVQNPMMpX362u5s0Q8WaKeX5FN7tLoG/hU4yiCxL2s8eBGuHFmqS1xq4B6O0zqN9c8siBCfttmVSBHlh42YOnl1gRfTaiocFEThve2N4H742m8bo19qbKFClN31cZ/VB3qv6Ld5i8qrLd4UCKjsdtmVwieuW3jRrhrVqYRmKwZGBAD7vfwuC+oTstmbMMliQiu2BHqYOkDQEy+hS9dE48yAjPdYz+E7ULk5gw4G/PJzZ/lnbBBfYlqKSvxEl2TiZirBscfzZasy/Ve2Ef4tcGNK3k3Ngmxcf6XazdT+wme6l9URSzyba8KJyts9Rb170Y0EFGo0UPjAIZ44GrMmSd8qsytCOvq2xuKtfW3NiPrjD2ocRXYYP2qpeFdP31vTVPDq32CJT1AqPE5ijttZUanShRga9jvjH9Apdhj5U+IpXFKCCN15Ol3C2/go6rJwGzT20ra/9m1Cot/4l+bdC1V6jmq15NUqTujvqnMdGh4z6eT2KLvD7iQ+Gedf0C3JiEO4ESlSXZ80lp5ZXoFBKkbnU+eeFJjEIjoOTzOgznEytRJC+mkSYPETla2k5t+uX+MpQzoUEMHmxg90Kr879WEtPcW4MhGAxGAI/RKEvn/zwfBjUqvgV6eYEKMG3Op4FrpGu4CbuUOI/SzOIg2p8Tq1iN6Q544caXxKRIRAdyJxQJ61WraiU7KufpFN35JDzIRS6Vh8ZPQnniDjRhCszbkSQHu6IR5DCYyEyzwgIbHWNBASxgQ06RW0kdZx+p8aUxUXFKo3AvPqgRu0QwTCd52XWS/g6r+Ib/lJdPqVvM781EsZ17KorBHRKDvKpmsoRXHM1ZxiPVrC3l8tI5b8s9lQZzER/8Ui3lcQii3sueA7dWPQTUlvOfG0zEHsVSoFtH1F2hU+5uP1MDaTz2Y36x9NAsgS1rPnV35Hwkvo0WIaOO+CG8dDOLxlhOBijXGuWm7p6HZJEKBIfe7/5dNrNDvBPY/L0GqvRlCC+dkthN0Fo+0e+4FTCEeQ79TTdKjvCIzOJvb0oFf/E/JoD0O7zUg+X+Vfh9YYVuTI/THX0oPi4qxsEi8FzXtzolEw6ZM59PnGa+uo14abW6enGdKr6mjx8+JLHwPGbH/wFWsuhk), avec un délai artificiel et une erreur aléatoire à des fins de démonstration.
 
-## Conventions and Best Practices
+## Conventions et bonnes pratiques {#conventions-and-best-practices}
 
-### Naming
+### Nommage {#naming}
 
 It is a convention to name composable functions with camelCase names that start with "use".
 
