@@ -97,8 +97,8 @@ Par exemple, nous pouvons extraire la logique d'ajout et de suppression d'un éc
 import { onMounted, onUnmounted } from 'vue'
 
 export function useEventListener(target, event, callback) {
-  // si vous voulez, vous pouvez aussi faire ça
-  // écoute d'un événement sur target
+  // au lieu d'utiliser target, vous pouvez aussi
+  // utiliser un sélecteur CSS pour trouver l'élément cible
   onMounted(() => target.addEventListener(event, callback))
   onUnmounted(() => target.removeEventListener(event, callback))
 }
