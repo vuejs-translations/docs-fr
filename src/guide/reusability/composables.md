@@ -13,9 +13,9 @@ Cette section suppose une connaissance de base de la Composition API. Si vous av
 
 Dans le contexte des applications Vue, un "composable" est une fonction qui exploite la Composition API de Vue pour encapsuler et réutiliser une **logique avec état**.
 
-Lors de la création d'applications frontend, nous devons souvent réutiliser la logique pour les tâches courantes. Par exemple, nous pouvons avoir besoin de formater des dates à de nombreux endroits, on extrait une fonction réutilisable pour cela. Cette fonction de formatage encapsule la **logique sans état** : elle prend des arguments et renvoie immédiatement la sortie attendue. Il existe de nombreuses bibliothèques pour réutiliser la logique sans état, par exemple [lodash](https://lodash.com/) et [date-fns](https://date-fns.org/), dont vous avez peut-être déjà entendu parler.
+Lors de la création d'applications frontend, nous devons souvent réutiliser de la logique pour les tâches courantes. Par exemple, nous pouvons avoir besoin de formater des dates à de nombreux endroits, on extrait une fonction réutilisable pour cela. Cette fonction de formatage encapsule la **logique sans état** : elle prend des arguments et renvoie immédiatement la sortie attendue. Il existe de nombreuses bibliothèques pour réutiliser la logique sans état, par exemple [lodash](https://lodash.com/) et [date-fns](https://date-fns.org/), dont vous avez peut-être déjà entendu parler.
 
-En revanche, la logique avec état implique la gestion d'un état qui change au fil du temps. Un exemple simple serait de suivre la position actuelle de la souris sur une page. Dans des scénarios réels, il peut également s'agir d'une logique plus complexe, telle que des gestes tactiles ou l'état de la connexion à une base de données.
+En revanche, la logique avec état implique la gestion d'un état qui change au fil du temps. Un exemple simple serait de suivre la position actuelle de la souris sur une page. Dans des scénarios réels, il peut également s'agir d'une logique plus complexe, telle que des interactions tactiles ou l'état de la connexion à une base de données.
 
 ## Exemple de suivi de la souris {#mouse-tracker-example}
 
@@ -88,7 +88,7 @@ const { x, y } = useMouse()
 
 Comme nous pouvons le voir, la logique de base reste identique, tout ce que nous avions à faire était de la déplacer dans une fonction externe et de renvoyer l'état qui devrait être exposé. Tout comme à l'intérieur d'un composant, vous pouvez utiliser la gamme complète des [Fonctions de la Composition API](/api/#composition-api) dans les composables. La même fonctionnalité `useMouse()` peut désormais être utilisée dans n'importe quel composant.
 
-La partie la plus cool des composables est que vous pouvez également les imbriquer : une fonction composable peut appeler une ou plusieurs autres fonctions composables. Cela nous permet de composer une logique complexe à l'aide de petites unités isolées, de la même manière que nous composons une application entière à l'aide de composants. En fait, c'est pourquoi nous avons décidé d'appeler la collection d'API qui rendent ce modèle possible **Composition API**.
+La partie intéressante des composables est que vous pouvez également les imbriquer : une fonction composable peut appeler une ou plusieurs autres fonctions composables. Cela nous permet de composer une logique complexe à l'aide de petites unités isolées, de la même manière que nous composons une application entière à l'aide de composants. En fait, c'est pourquoi nous avons décidé d'appeler la collection d'API rendant ce modèle possible **Composition API**.
 
 Par exemple, nous pouvons extraire la logique d'ajout et de suppression d'un écouteur d'événement DOM dans son propre composable :
 
@@ -208,7 +208,7 @@ export function useFetch(url) {
     // configure la récupération réactive si l'URL d'entrée est une ref
     watchEffect(doFetch)
   } else {
-    // sinon, récupérer qu'une seule fois
+    // sinon, ne récupérer qu'une seule fois
     // et éviter la surcharge d'un observateur
     doFetch()
   }
@@ -235,8 +235,8 @@ Un composable peut accepter des arguments ref même s'il ne s'appuie pas sur eux
 import { unref } from 'vue'
 
 function useFeature(maybeRef) {
-  // si MaybeRef est bien une ref, .value sera retournée
-  // sinon, MaybeRef est renvoyé tel quel
+  // si maybeRef est bien une ref, .value sera retournée
+  // sinon, maybeRef est renvoyé tel quel
   const value = unref(maybeRef)
 }
 ```
@@ -254,7 +254,7 @@ const { x, y } = useMouse()
 
 Retourner un objet réactif à partir d'un composable fera perdre à ses membres la connexion de réactivité de l'état à l'intérieur du composable, tandis que les références conserveront cette connexion.
 
-Si vous préférez utiliser l'état renvoyé par les composables en tant que propriétés d'objet, vous pouvez envelopper l'objet renvoyé avec `reactive()` afin que les références soient déroulées. Par exemple :
+Si vous préférez utiliser l'état renvoyé par les composables en tant que propriétés d'objet, vous pouvez envelopper l'objet renvoyé avec `reactive()` afin que les références soient développées. Par exemple :
 
 ```js
 const mouse = reactive(useMouse())
@@ -276,7 +276,7 @@ C'est OK d'effectuer des effets de bord (par exemple, ajouter des écouteurs d'�
 
 ### Restriction d'usage {#usage-restrictions}
 
-Les composables ne peuvent être appelés que de manière **synchrone** dans `<script setup>` ou le hook `setup()`. Dans certains cas, vous pouvez également les appeler dans des hooks de cycle de vie comme `onMounted()`.
+Les composables ne peuvent être appelés que de manière **synchrone** dans `<script setup>` ou dans le hook `setup()`. Dans certains cas, vous pouvez également les appeler dans des hooks de cycle de vie comme `onMounted()`.
 
 Ce sont les contextes dans lesquels Vue est capable de déterminer l'instance de composant active actuelle. L'accès à une instance de composant actif est nécessaire pour que :
 
@@ -285,12 +285,12 @@ Ce sont les contextes dans lesquels Vue est capable de déterminer l'instance de
 2. Les propriétés calculées et les observateurs peuvent y être liés, afin qu'ils puissent être supprimés lorsque l'instance est démontée pour éviter les fuites de mémoire.
 
 :::tip
-`<script setup>` est le seul endroit où vous pouvez appeler des composables **après** en utilisant `await`. Le compilateur restaure automatiquement le contexte d'instance actif pour vous après l'opération asynchrone.
+`<script setup>` est le seul endroit où vous pouvez appeler des composables **après** avoir utilisé `await`. Le compilateur restaure automatiquement le contexte d'instance actif pour vous après l'opération asynchrone.
 :::
 
 ## Extraction des composables pour l'organisation de son code {#extracting-composables-for-code-organization}
 
-Les composables peuvent être extraits non seulement pour être réutilisés, mais aussi pour l'organisation du code. Au fur et à mesure que la complexité de vos composants augmente, vous pouvez vous retrouver avec des composants trop volumineux pour naviguer et raisonner. La Composition API vous offre toute la flexibilité nécessaire pour organiser votre code de composant en fonctions plus petites en selon leurs responsabilités logiques :
+Les composables peuvent être extraits non seulement pour être réutilisés, mais aussi au bénéfice de l'organisation du code. Au fur et à mesure que la complexité de vos composants augmente, vous pouvez vous retrouver avec des composants trop volumineux pour naviguer et raisonner. La Composition API vous offre toute la flexibilité nécessaire pour organiser votre code de composant en fonctions plus petites selon leurs responsabilités logiques :
 
 ```vue
 <script setup>
@@ -306,7 +306,7 @@ const { qux } = useFeatureC(baz)
 
 Dans une certaine mesure, vous pouvez considérer ces composables extraits comme des services à portée de composant qui peuvent communiquer entre eux.
 
-## Utilisation de composables dans la Options API {#using-composables-in-options-api}
+## Utilisation de composables dans l'Options API {#using-composables-in-options-api}
 
 Si vous utilisez l'Options API, les éléments composables doivent être appelés dans `setup()`, et les liaisons renvoyées doivent être renvoyées par `setup()` afin qu'elles soient exposées à `this` et au template :
 
@@ -352,7 +352,7 @@ La recommandation est d'employer les composables pour centraliser une logique pu
 
 ### vs. les hooks de React {#vs-react-hooks}
 
-Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks de React personnalisés. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est approndi plus en détail dans la [FAQ de la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
+Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ de la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
 
 ## Lecture complémentaire {#further-reading}
 
