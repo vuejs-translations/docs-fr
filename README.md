@@ -21,18 +21,15 @@ Utilisez les extensions suivantes pour éviter les fautes orthographiques:
 
 ### Partager le travail de traduction
 
-Nous travaillons pour le moment avec les [issues](/issues) et le board [projects](/projects/1) pour partager le travail de traduction avec tous les membres impliqués.
-Des issues chapeau feront office de tracking pour chaque sous-partie de la documentation.
+Tout le travail de traduction est guidé par l'issue [Suivi de la traduction #125](https://github.com/edimitchel/docs-fr/issues/125) qui liste toutes les pages à traduire avec leur statut (avec une issue rattachée et son état).
+Une issue rattachée en état ouvert sans assignation peut être considérée comme ouverte à la contribution et pris en charge par quiconque: assignez-la vous ou laissez un commentaire.  
+Toutefois, une issue ouverte est peut-être en cours de traduction si une PR y est rattachée. Profitez-en pour y passez faire une relecture. 
 
-- Guide
-- Tutoriels
-- Exemples
-- Démarrage rapide
-- Migration depuis V2
-- API
-- Écosystème
-- À propos
-- Autres (translation page, ...)
+Si une page n'a aucune issue rattachée, vous pouvez la créer depuis la liste (seulement pour les contributeurs).
+
+![créer une issue depuis une check-box](.github/contributing/create-your-issue-work.png)
+
+*Si vous n'êtes pas contributeur, vous pouvez créer une issue et mentionner un contributeur pour mettre à jour le suivi.*
 
 ---
 
