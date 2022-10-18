@@ -28,6 +28,9 @@ Toutefois, une issue ouverte est peut-être en cours de traduction si une PR y e
 Si une page n'a aucune issue rattachée, vous pouvez la créer depuis la liste (seulement pour les contributeurs).
 
 ![créer une issue depuis une check-box](.github/contributing/create-your-issue-work.png)
+> Au survol sur la ligne, cliquez sur le rond.
+
+Renseignez les informations supplémentaires si nécessaire.
 
 *Si vous n'êtes pas contributeur, vous pouvez créer une issue et mentionner un contributeur pour mettre à jour le suivi.*
 
