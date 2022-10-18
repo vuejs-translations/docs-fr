@@ -2,7 +2,7 @@ name: ryu-cho
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 8 * * *'
 
 jobs:
   ryu-cho:
@@ -18,6 +18,6 @@ jobs:
           upstream-repo-branch: main
           head-repo: https://github.com/vuejs/docs
           head-repo-branch: main
-          track-from: cebc370aa2e89b602f549ac9a18efc3fc8508ced
+          track-from: 72b203380bda37f83cbcf31805f969d67b7b0214
           #path-starts-with: docs/
           workflow-name: ryu-cho

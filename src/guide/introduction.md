@@ -87,7 +87,7 @@ Vue est un framework et un écosystème qui couvre la plupart des fonctionnalit�
 
 Si vous trouvez ces concepts intimidants, ne vous inquiétez pas ! Le tutoriel et le guide ne requièrent que des connaissances de base en HTML et en JavaScript, et vous devriez pouvoir les suivre sans être un expert dans l'un de ces domaines.
 
-Si vous êtes un développeur expérimenté et que vous souhaitez savoir comment intégrer au mieux Vue dans vos outils, ou si vous êtes curieux de savoir ce que ces termes signifient, nous en parlons plus en détail dans [TODO(fr)Les manières d'utiliser Vue](/guide/extras/ways-of-using-vue).
+Si vous êtes un développeur expérimenté et que vous souhaitez savoir comment intégrer au mieux Vue dans vos outils, ou si vous êtes curieux de savoir ce que ces termes signifient, nous en parlons plus en détail dans [Les manières d'utiliser Vue](/guide/extras/ways-of-using-vue).
 
 Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue sont partagées dans tous ces cas d'utilisation. Même si vous n'êtes qu'à vos débuts, les connaissances acquises en cours de route vous seront utiles pour atteindre des objectifs plus ambitieux à l'avenir. Si vous avez niveau expérimenté, vous pouvez choisir la manière optimale de tirer parti de Vue en fonction des problèmes que vous essayez de résoudre, tout en conservant la même productivité. C'est pourquoi nous appelons Vue "le framework évolutif" : c'est un framework qui peut grandir avec vous et s'adapter à vos besoins.
 
@@ -117,7 +117,7 @@ button {
 </style>
 ```
 
-Les SFC sont une fonctionnalité essentielle de Vue, et c'est la manière recommandée de créer des composants Vue **si** votre usage justifie une configuration avancée (usant d'outils de construction). Vous pouvez en savoir plus sur le [TODO(fr)comment et pourquoi faire des SFC](/guide/scaling-up/sfc) dans la section qui lui est consacrée - mais pour l'instant, sachez que Vue se chargera de la configuration des outils de construction pour vous.
+Les SFC sont une fonctionnalité essentielle de Vue, et c'est la manière recommandée de créer des composants Vue **si** votre usage justifie une configuration avancée (usant d'outils de construction). Vous pouvez en savoir plus sur le [comment et pourquoi faire des SFC](/guide/scaling-up/sfc) dans la section qui lui est consacrée - mais pour l'instant, sachez que Vue se chargera de la configuration des outils de construction pour vous.
 
 ## Styles d'API
 
@@ -201,7 +201,7 @@ L'API Options est centrée sur le concept d'une "instance de composant" (`this` 
 
 L'API de Composition est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle offre une plus grande liberté d'écriture et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
 
-Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [TODO(fr)FAQ sur l'API de Composition](/guide/extras/composition-api-faq).
+Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [FAQ sur l'API de Composition](/guide/extras/composition-api-faq).
 
 Si Vue est nouveau pour vous, voici notre recommandation générale :
 
@@ -217,7 +217,7 @@ Vous n'avez pas à vous engager dans un seul style pendant la phase d'apprentiss
 
 ## Encore des questions ?
 
-Consultez notre [TODO(fr)FAQ](/about/faq).
+Consultez notre [FAQ](/about/faq).
 
 ## Choisissez votre parcours d'apprentissage
 
