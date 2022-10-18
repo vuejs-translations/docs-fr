@@ -12,12 +12,13 @@ Il est important également de prendre connaissances des [bonnes pratiques pour 
 
 Merci de prendre connaissance du [Guide d'écriture](https://github.com/edimitchel/docs-fr/blob/main/.github/contributing/writing-guide.md) pour bien appréhender la manière de formuler les phrases pour que la lecture soit la plus simple et la plus fluide.
 
-### VS Code extensions
+### Glossaire
 
-Utilisez les extensions suivantes pour éviter les fautes orthographiques:
+L'usage d'un glossaire est nécessaire pour homogénéiser les traductions.
+Les mots techniques ne doivent pas être traduits.  
+Consulter [le glossaire](https://github.com/edimitchel/docs-fr/wiki/Glossaire) en cas de doute.
 
-- streetsidesoftware.code-spell-checker
-- streetsidesoftware.code-spell-checker-french
+Si un mot vous embête, [créer une discussion Terminologie](https://github.com/edimitchel/docs-fr/discussions/categories/terminologie) pour prendre une décision en commun accord.
 
 ### Partager le travail de traduction
 
@@ -33,6 +34,13 @@ Si une page n'a aucune issue rattachée, vous pouvez la créer depuis la liste (
 Renseignez les informations supplémentaires si nécessaire.
 
 *Si vous n'êtes pas contributeur, vous pouvez créer une issue et mentionner un contributeur pour mettre à jour le suivi.*
+
+### VS Code extensions
+
+Utilisez les extensions suivantes pour éviter les fautes orthographiques:
+
+- streetsidesoftware.code-spell-checker
+- streetsidesoftware.code-spell-checker-french
 
 ---
 
