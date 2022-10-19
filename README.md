@@ -1,39 +1,49 @@
+[![](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://stackblitz.com/~/github.com/edimitchel/docs-fr)
+
 # Dépôt de contribution pour la traduction française de vuejs.org
 
 Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
 
-Merci de vous référer à la partie [Contributing](#Contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme
+Merci de vous référer à la partie [Contributing](#contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme.
+
+Il est important également de prendre connaissances des [bonnes pratiques pour la traduction de la documentation](https://github.com/vuejs-translations/guidelines).
 
 ## Directives de contribution
 
 Merci de prendre connaissance du [Guide d'écriture](https://github.com/edimitchel/docs-fr/blob/main/.github/contributing/writing-guide.md) pour bien appréhender la manière de formuler les phrases pour que la lecture soit la plus simple et la plus fluide.
 
-### VS Code extensions
+### Glossaire
 
-Utilisez les extensions suivantes pour éviter les fautes orthographiques:
-- streetsidesoftware.code-spell-checker
-- streetsidesoftware.code-spell-checker-french
+L'usage d'un glossaire est nécessaire pour homogénéiser les traductions.
+Les mots techniques ne doivent pas être traduits.  
+Consulter [le glossaire](https://github.com/edimitchel/docs-fr/wiki/Glossaire) en cas de doute.
+
+Si un mot vous embête, [créer une discussion Terminologie](https://github.com/edimitchel/docs-fr/discussions/categories/terminologie) pour prendre une décision en commun accord.
 
 ### Partager le travail de traduction
 
-Nous travaillons pour le moment avec les [issues](/issues) et le board [projects](/projects/1) pour partager le travail de traduction avec tous les membres impliqués.
-Des issues chapeau feront office de tracking pour chaque sous-partie de la documentation.
+Tout le travail de traduction est guidé par l'issue [Suivi de la traduction #125](https://github.com/edimitchel/docs-fr/issues/125) qui liste toutes les pages à traduire avec leur statut (avec une issue rattachée et son état).
+Une issue rattachée en état ouvert sans assignation peut être considérée comme ouverte à la contribution et pris en charge par quiconque: assignez-la vous ou laissez un commentaire.  
+Toutefois, une issue ouverte est peut-être en cours de traduction si une PR y est rattachée. Profitez-en pour y passez faire une relecture. 
 
-- Guide
-- Tutoriels
-- Exemples
-- Démarrage rapide
-- Migration depuis V2
-- API
-- Écosystème
-- À propos
-- Autres (translation page, ...)
+Si une page n'a aucune issue rattachée, vous pouvez la créer depuis la liste (seulement pour les contributeurs).
 
-### Notifiez toute sous-tâche de traduction que vous ne pouvez traiter de suite
+![créer une issue depuis une check-box](.github/contributing/create-your-issue-work.png)
+> Au survol sur la ligne, cliquez sur le rond.
 
-Quand vous identifiez un contenu pointé par un lien ou qui serait hors de votre champs d'action, notifier le en ajoutant `TODO(fr)` dans le label du lien ou la référence du contenu en question.
+Renseignez les informations supplémentaires si nécessaire.
 
-_______________
+*Si vous n'êtes pas contributeur, vous pouvez créer une issue et mentionner un contributeur pour mettre à jour le suivi.*
+
+### VS Code extensions
+
+Utilisez les extensions suivantes pour éviter les fautes orthographiques:
+
+- streetsidesoftware.code-spell-checker
+- streetsidesoftware.code-spell-checker-french
+
+---
+
 # vuejs.org
 
 ## Contribution
@@ -49,12 +59,12 @@ pnpm run dev
 
 This project requires Node.js to be `v14.0.0` or higher, because we use new JavaScript features in our code, such as optional chaining.
 
-
 ## Travail sur le contenu
 
 - Voir la documentation de VitePress sur les [extensions Markdown](https://vitepress.vuejs.org/guide/markdown.html) prises en charge et la possibilité d'[utiliser la syntaxe Vue dans Markdown](https://vitepress.vuejs.org/guide/using-vue.html).
 
 - Consultez le [Guide d'Écriture](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) pour nos règles et recommandations sur la rédaction et la maintenance du contenu de la documentation.
+
 ## Travail sur le le thème
 
 Si des modifications doivent être apportées au thème, consultez les [instructions pour développer le thème parallèlement à la documentation](https://github.com/vuejs/vue-theme#developing-with-real-content).
