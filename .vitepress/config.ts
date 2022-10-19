@@ -44,7 +44,10 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Partenaires', link: '/ecosystem/partners' },
           { text: 'Thèmes', link: '/ecosystem/themes' },
-          { text: 'Offres d’emploi', link: 'https://vuejobs.com/?ref=vuejs' },
+          {
+            text: 'Offres d’emploi',
+            link: 'https://vuejobs.com/?ref=vuejs'
+          },
           { text: 'Boutique t-shirt', link: 'https://vue.threadless.com/' }
         ]
       },
@@ -53,7 +56,10 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
-          { text: 'Guide des outils', link: '/guide/scaling-up/tooling.html' }
+          {
+            text: 'Guide des outils',
+            link: '/guide/scaling-up/tooling.html'
+          }
         ]
       },
       {
@@ -551,9 +557,41 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ]
 }
 
-// Placeholder of the i18n config for @vuejs-translations.
-// const i18n: ThemeConfig['i18n'] = {
-// }
+const i18n: ThemeConfig['i18n'] = {
+  search: 'Recherche',
+  menu: 'Menu',
+  toc: 'Sur cette page',
+  returnToTop: 'Retour en haut',
+  appearance: 'Apparence',
+  previous: 'Précédent',
+  next: 'Suivant',
+  pageNotFound: 'Page non trouvée',
+  deadLink: {
+    before: 'Vous avez trouvé un lien mort: ',
+    after: ''
+  },
+  deadLinkReport: {
+    before: 'Merci de ',
+    link: 'nous le faire savoir',
+    after: ' pour nous permettre de le résoudre.'
+  },
+  footerLicense: {
+    before: '',
+    after: ''
+  },
+
+  // aria labels
+  // typo issue https://github.com/vuejs/theme/issues/75
+  ariaAnnouner: {
+    before: '',
+    after: 'a chargé'
+  },
+  ariaDarkMode: 'Mode sombre',
+  ariaSkipToContent: 'Passer au contenu',
+  ariaMainNav: 'Navigation principale',
+  ariaMobileNav: 'Navigation mobile',
+  ariaSidebarNav: 'Barre de navigation latérale'
+}
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -605,8 +643,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     nav,
     sidebar,
-    // Placeholder of the i18n config for @vuejs-translations.
-    // i18n,
+    i18n,
 
     algolia: {
       indexName: 'vuejs',
