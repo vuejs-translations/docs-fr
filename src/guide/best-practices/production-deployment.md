@@ -6,7 +6,7 @@ Durant le développement, Vue fournit un certain nombre de fonctionnalités pour
 
 - Avertissement pour les erreurs et les pièges
 - Validation des props et des événements
-- Hooks de débogage de la réactivité de l'application 
+- Aide au débogage du système de réactivité
 - Intégration des Devtools
 
 Cependant, ces fonctionnalités deviennent inutiles en production. Certains warnings peuvent également entraîner une petite baisse de performances générales. Lors du déploiement en production, nous devrions supprimer toutes les branches de code de développement inutilisées pour profiter d'une charge moins élevée et de meilleures performances.
