@@ -252,7 +252,7 @@ export const sidebar = {
       text: 'Best Practices',
       items: [
         {
-          text: 'Production Deployment',
+          text: 'Déploiement de Production',
           link: '/guide/best-practices/production-deployment'
         },
         {
