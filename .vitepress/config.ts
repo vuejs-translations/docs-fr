@@ -249,10 +249,10 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Best Practices',
+      text: 'Bonnes Pratiques',
       items: [
         {
-          text: 'Déploiement de Production',
+          text: 'Déploiement en production',
           link: '/guide/best-practices/production-deployment'
         },
         {
