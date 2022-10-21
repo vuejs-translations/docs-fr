@@ -154,6 +154,7 @@ fetch('...')
   <div v-else>Chargement...</div>
 </template>
 ```
+
 Il serait fastidieux de devoir répéter ce modèle dans chaque composant qui doit récupérer des données. Extrayons-le dans un composable :
 
 ```js
