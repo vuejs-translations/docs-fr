@@ -255,10 +255,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Best Practices',
+      text: 'Bonnes Pratiques',
       items: [
         {
-          text: 'Production Deployment',
+          text: 'Déploiement en production',
           link: '/guide/best-practices/production-deployment'
         },
         {
