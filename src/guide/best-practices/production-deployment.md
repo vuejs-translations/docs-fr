@@ -1,4 +1,4 @@
-# Déploiement de production {#production-deployment}
+# Déploiement de Production {#production-deployment}
 
 ## Développement vs. Production {#development-vs-production}
 
