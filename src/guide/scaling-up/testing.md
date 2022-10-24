@@ -92,7 +92,7 @@ Un composant peut être testé de deux façons :
 
 1. Boîte blanche: Test unitaire
 
-   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils se concentrent sur l'isolation du composant testé. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia). 
+   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils se concentrent sur l'**isolation** du composant testé. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia). 
 
 2. Boîte noire : Test de composant
 
