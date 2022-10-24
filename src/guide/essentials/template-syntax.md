@@ -173,14 +173,14 @@ Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propos
 Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives.html#v-if) comme exemple :
 
 ```vue-html
-<p v-if="vu">Maintenant, il est vu</p>
+<p v-if="vu">Maintenant, tu me vois</p>
 ```
 
 Ici, la directive `v-if` va supprimer/insérer l'élément `<p>` selon la valeur booléenne de l'expression `vu`.
 
 ### Arguments {#arguments}
 
-Certaines directives peut prendre un "argument", distingé par un double-point après le nom de la directive. Par exemple, la directive `v-bind` est utilisé pour mettre à jour par réaction un attribute HTML :
+Certaines directives peuvent prendre un "argument", distingué par un double-point après le nom de la directive. Par exemple, la directive `v-bind` est utilisé pour mettre à jour par réaction un attribute HTML :
 
 ```vue-html
 <a v-bind:href="url"> ... </a>
@@ -243,7 +243,7 @@ Les expressions d'argument dynamique ont quelques contraintes syntaxique à caus
 <a :['foo' + bar]="value"> ... </a>
 ```
 
-Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [TODO(fr)propriété calculée](./computed.html), que nous aborderons sous peu.
+Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [propriété calculée](./computed.html), que nous aborderons sous peu.
 
 Lorsque vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devez également éviter de nommer les clés avec des caractères majuscules, car les navigateurs contraindront les noms d'attributs en minuscules :
 
