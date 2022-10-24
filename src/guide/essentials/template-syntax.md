@@ -176,7 +176,6 @@ Les valeurs attendues dans les directives sont une seule expression JavaScript (
 <p v-if="vu">Maintenant, il est vu</p>
 ```
 
-Here, the `v-if` directive would remove / insert the `<p>` element based on the truthiness of the value of the expression `seen`.
 Ici, la directive `v-if` va supprimer/insérer l'élément `<p>` selon la valeur booléenne de l'expression `vu`.
 
 ### Arguments {#arguments}
