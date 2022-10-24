@@ -6,7 +6,7 @@ footer: false
 
 En fonction de vos besoins et de vos préférences, vous pouvez utiliser Vue avec ou sans outils de compilation.
 
-## Avec des outils de compilation
+## Avec des outils de build
 
 La compilation nous permet d'utiliser les [Composants monofichiers](/guide/scaling-up/sfc) (SFC) de Vue. La configuration officielle de Vue est basée sur [Vite](https://vitejs.dev), un outil de compilation front-end moderne, léger et extrêmement rapide.
 
@@ -64,7 +64,7 @@ Cela créera une version de votre application prête pour la production dans le 
 
 [Etapes suivantes >](#etapes-suivantes)
 
-## Sans outils de compilation
+## Sans outils de build
 
 Pour commencer à utiliser Vue sans compilation, il suffit de copier le code suivant dans un fichier HTML et de l'ouvrir dans votre navigateur :
 
