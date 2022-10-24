@@ -52,8 +52,11 @@ Commencez à traduire votre fichier pour pouvoir effectuer au moins un premier c
 
 5. **Créer une pull request**
 
-Faites une pull request (depuis votre branche de fork `{your-username}/docs-fr:{branch}` si vous n'êtes pas contributeur) vers  la  branche principale du dépôt.  
-Si la tâche est trop longue, pensez à utiliser le statut draft pour signer de l'aspect _Work in Progress_.
+Créer une pull request (depuis votre branche de fork `{your-username}/docs-fr:{branch}` si vous n'êtes pas contributeur) en complétant la description pré-remplie vers la  branche principale du dépôt.  
+Si votre tâche est longue, vous pouvez utiliser le statut _draft_ pour signaler de l'aspect _Work in Progress_ de votre PR.
+
+> **Note**
+> La PR peut être considérée comme prête lorsque toutes les coches seront cochées
 
 6. **Réclamer des reviews**
 
