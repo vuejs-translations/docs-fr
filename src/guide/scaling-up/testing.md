@@ -75,7 +75,6 @@ Comme mentionné précédemment, les tests unitaires sont généralement exercé
 
 Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
-
 Il existe deux cas où vous testez unitairement des fonctionnalités spécifiques à Vue :
 
 1. Composables
