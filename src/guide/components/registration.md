@@ -2,7 +2,7 @@
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Free Vue.js Component Registration Lesson"/>
 
-> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-le d'abord si vous débutez avec les composants.
+> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 Un composant Vue doit être "enregistré" afin que Vue sache où localiser son implémentation lorsqu'il est rencontré dans un template. Il existe deux façons d'enregistrer des composants : globale et locale.
 
