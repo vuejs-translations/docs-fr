@@ -114,7 +114,6 @@ Les données fournies au niveau de l'application sont disponibles pour tous les 
 <div class="composition-api">
 
 Pour injecter des données fournies par un composant parent, utilisez la fonction [`inject()`](/api/composition-api-dependency-injection.html#inject) :
-To inject data provided by an ancestor component, use the [`inject()`](/api/composition-api-dependency-injection.html#inject) function:
 
 ```vue
 <script setup>
