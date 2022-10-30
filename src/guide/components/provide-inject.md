@@ -2,7 +2,7 @@
 
 > Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
-## Passage de prop en profondeur {#prop-drilling}
+## Passage de props en profondeur (Prop Drilling) {#prop-drilling}
 
 Habituellement, lorsque nous devons transmettre des données du parent à un composant enfant, nous utilisons des [props](/guide/components/props). Cependant, imaginez le cas où nous avons un arbre de composants important, et qu'un composant profondément imbriqué aurait besoin d'acceder à des informations d'un de ses composants parents. Avec seulement des props, nous devrions passer la même prop sur toute la chaîne composants parents :
 
