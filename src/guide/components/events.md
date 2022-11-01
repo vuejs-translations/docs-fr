@@ -1,14 +1,14 @@
-# Component Events
+# Événements liés aux composants {#component-events}
 
-> This page assumes you've already read the [Components Basics](/guide/essentials/component-basics). Read that first if you are new to components.
+> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/defining-custom-events-emits" title="Free Vue.js Lesson on Defining Custom Events"/>
 </div>
 
-## Emitting and Listening to Events
+## Émettre et écouter des événements {#emitting-and-listening-to-events}
 
-A component can emit custom events directly in template expressions (e.g. in a `v-on` handler) using the built-in `$emit` method:
+Un composant peut émettre des événements personnalisés directement à partir du template (par exemple, dans un gestionnaire d'évènement`v-on`) à l'aide de la méthode native `$emit` :
 
 ```vue-html
 <!-- MyComponent -->
@@ -17,7 +17,7 @@ A component can emit custom events directly in template expressions (e.g. in a `
 
 <div class="options-api">
 
-The `$emit()` method is also available on the component instance as `this.$emit()`:
+La méthode `$emit()` est également disponible sur l'instance du composant avec `this.$emit()` :
 
 ```js
 export default {
@@ -31,27 +31,27 @@ export default {
 
 </div>
 
-The parent can then listen to it using `v-on`:
+Le composant parent peut alors l'écouter en utilisant `v-on` :
 
 ```vue-html
 <MyComponent @some-event="callback" />
 ```
 
-The `.once` modifier is also supported on component event listeners:
+Le modificateur `.once` est également pris en charge sur les écouteurs d'événements de composants :
 
 ```vue-html
 <MyComponent @some-event.once="callback" />
 ```
 
-Like components and props, event names provide an automatic case transformation. Notice we emitted a camelCase event, but can listen for it using a kebab-cased listener in the parent. As with [props casing](/guide/components/props.html#prop-name-casing), we recommend using kebab-cased event listeners in templates.
+Comme les composants et les props, les noms d'événements fournissent une transformation de casse automatique. Notez que nous avons émis un événement `camelCase`, mais que nous pouvons l'écouter à l'aide d'un écouteur `kebab-case` dans le parent. Comme pour la [casse des props](/guide/components/props.html#prop-name-casing), nous vous recommandons d'utiliser des noms d'écouteurs d'événement au format `kebab-case` dans les templates.
 
 :::tip
-Unlike native DOM events, component emitted events do **not** bubble. You can only listen to the events emitted by a direct child component. If there is a need to communicate between sibling or deeply nested components, use an external event bus or a [global state management solution](/guide/scaling-up/state-management.html).
+Contrairement aux événements DOM natifs, les événements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les événements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'événements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management.html).
 :::
 
-## Event Arguments
+## Arguments d'événement  {#event-arguments}
 
-It's sometimes useful to emit a specific value with an event. For example, we may want the `<BlogPost>` component to be in charge of how much to enlarge the text by. In those cases, we can pass extra arguments to `$emit` to provide this value:
+Il est parfois utile d'émettre une valeur spécifique avec un événement. Par exemple, nous pouvons vouloir que le composant `<BlogPost>` soit en charge de combien agrandir le texte. Dans ces cas, nous pouvons passer des arguments supplémentaires à `$emit` pour fournir cette valeur :
 
 ```vue-html
 <button @click="$emit('increaseBy', 1)">
@@ -59,19 +59,19 @@ It's sometimes useful to emit a specific value with an event. For example, we ma
 </button>
 ```
 
-Then, when we listen to the event in the parent, we can use an inline arrow function as the listener, which allows us to access the event argument:
+Ensuite, lorsque nous écoutons l'événement dans le composant parent, nous pouvons utiliser une fonction flèchée comme écouteur, ce qui nous permet d'accéder à l'argument de l'événement :
 
 ```vue-html
 <MyButton @increase-by="(n) => count += n" />
 ```
 
-Or, if the event handler is a method:
+Ou, si le gestionnaire d'événements est une méthode :
 
 ```vue-html
 <MyButton @increase-by="increaseCount" />
 ```
 
-Then the value will be passed as the first parameter of that method:
+Ensuite, la valeur sera transmise comme premier paramètre de cette méthode :
 
 <div class="options-api">
 
@@ -95,12 +95,12 @@ function increaseCount(n) {
 </div>
 
 :::tip
-All extra arguments passed to `$emit()` after the event name will be forwarded to the listener. For example, with `$emit('foo', 1, 2, 3)` the listener function will receive three arguments.
+Tous les arguments supplémentaires passés à `$emit()` après le nom de l'événement seront transmis à l'écouteur. Par exemple, avec `$emit('foo', 1, 2, 3)` la fonction d'écoute recevra trois arguments.
 :::
 
-## Declaring Emitted Events
+## Déclaration des événements émis {#declaring-emitted-events}
 
-Emitted events can be explicitly declared on the component via the <span class="composition-api">[`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits) macro</span><span class="options-api">[`emits`](/api/options-state.html#emits) option</span>:
+Les événements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span> :
 
 <div class="composition-api">
 
@@ -110,7 +110,7 @@ defineEmits(['inFocus', 'submit'])
 </script>
 ```
 
-The `$emit` method that we used in the `<template>` isn't accessible within the `<script setup>` section of a component, but `defineEmits()` returns an equivalent function that we can use instead:
+La méthode `$emit` que nous avons utilisée dans le `<template>` n'est pas accessible dans la section `<script setup>` d'un composant, mais `defineEmits()` renvoie une fonction équivalente que nous pouvons utiliser à la place :
 
 ```vue
 <script setup>
@@ -122,9 +122,9 @@ function buttonClick() {
 </script>
 ```
 
-The `defineEmits()` macro **cannot** be used inside a function, it must be placed directly within `<script setup>`, as in the example above.
+La macro `defineEmits()` **ne peut pas** être utilisée dans une fonction, elle doit être placée directement dans `<script setup>`, comme dans l'exemple ci-dessus.
 
-If you're using an explicit `setup` function instead of `<script setup>`, events should be declared using the [`emits`](/api/options-state.html#emits) option, and the `emit` function is exposed on the `setup()` context:
+Si vous utilisez une fonction `setup` explicite au lieu de `<script setup>`, les événements doivent être déclarés à l'aide de l'option [`emits`](/api/options-state.html#emits), et la fonction `emit` est exposée dans le contexte de `setup()` :
 
 ```js
 export default {
@@ -135,7 +135,7 @@ export default {
 }
 ```
 
-As with other properties of the `setup()` context, `emit` can safely be destructured:
+Comme pour les autres propriétés du contexte de `setup()`, `emit` peut être déstructurée en toute sécurité :
 
 ```js
 export default {
@@ -157,7 +157,7 @@ export default {
 
 </div>
 
-The `emits` option also supports an object syntax, which allows us to perform runtime validation of the payload of the emitted events:
+L'option `emits` prend également en charge une syntaxe avec objet, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
 
 <div class="composition-api">
 
@@ -165,14 +165,14 @@ The `emits` option also supports an object syntax, which allows us to perform ru
 <script setup>
 const emit = defineEmits({
   submit(payload) {
-    // return `true` or `false` to indicate
-    // validation pass / fail
+    // renvoie `true` ou `false` pour indiquer
+    // que la validation a réussi/échoué
   }
 })
 </script>
 ```
 
-If you are using TypeScript with `<script setup>`, it's also possible to declare emitted events using pure type annotations:
+Si vous utilisez TypeScript avec `<script setup>`, il est également possible de déclarer des événements émis à l'aide d'annotations de type :
 
 ```vue
 <script setup lang="ts">
@@ -183,7 +183,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-More details: [Typing Component Emits](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Plus de détails : [Typer les données émises par les composants](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -192,38 +192,38 @@ More details: [Typing Component Emits](/guide/typescript/composition-api.html#ty
 export default {
   emits: {
     submit(payload) {
-      // return `true` or `false` to indicate
-      // validation pass / fail
+      // renvoie `true` ou `false` pour indiquer
+      // que la validation a réussi/échoué
     }
   }
 }
 ```
 
-See also: [Typing Component Emits](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir également : [Typer les données émises par les composants](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 
-Although optional, it is recommended to define all emitted events in order to better document how a component should work. It also allows Vue to exclude known listeners from [fallthrough attributes](/guide/components/attrs.html#v-on-listener-inheritance), avoiding edge cases caused by DOM events manually dispatched by 3rd party code.
+Bien que facultatif, il est recommandé de définir tous les événements émis afin de mieux documenter le fonctionnement d'un composant. Cela permet également à Vue d'exclure les écouteurs connus des [attributs implicitement déclarés (fallthrough attributes)](/guide/components/attrs.html#v-on-listener-inheritance), évitant ainsi les problèmes liés aux cas à la marge causés par des événements DOM envoyés manuellement par du code tiers.
 
 :::tip
-If a native event (e.g., `click`) is defined in the `emits` option, the listener will now only listen to component-emitted `click` events and no longer respond to native `click` events.
+Si un événement natif (par exemple, `click`) est défini dans l'option `emits`, l'écouteur n'écoutera alors que les événements `click` émis par le composant et ne réagira plus aux événements `click` natifs.
 :::
 
-## Events Validation
+## Validation des événements {#events-validation}
 
-Similar to prop type validation, an emitted event can be validated if it is defined with the object syntax instead of the array syntax.
+Semblable à la validation de type de prop, un événement émis peut être validé s'il est défini avec la syntaxe utilisant un objet au lieu de la syntaxe utilisant un tableau.
 
-To add validation, the event is assigned a function that receives the arguments passed to the <span class="options-api">`this.$emit`</span><span class="composition-api">`emit`</span> call and returns a boolean to indicate whether the event is valid or not.
+Pour ajouter une validation, l'événement se voit attribuer une fonction qui reçoit les arguments passés à l'appel de <span class="options-api">`this.$emit`</span><span class="composition-api">`emit`</span> et renvoie un booléen pour indiquer si l'événement est valide ou non.
 
 <div class="composition-api">
 
 ```vue
 <script setup>
 const emit = defineEmits({
-  // No validation
+  // Pas de validation
   click: null,
 
-  // Validate submit event
+  // Validation de l'évènement soumis
   submit: ({ email, password }) => {
     if (email && password) {
       return true
@@ -246,10 +246,10 @@ function submitForm(email, password) {
 ```js
 export default {
   emits: {
-    // No validation
+    // Pas de validation
     click: null,
 
-    // Validate submit event
+    // Validation de l'évènement soumis
     submit: ({ email, password }) => {
       if (email && password) {
         return true
@@ -269,7 +269,7 @@ export default {
 
 </div>
 
-## Usage with `v-model`
+## Utilisation avec `v-model` {#usage-with-v-model}
 
 Custom events can also be used to create custom inputs that work with `v-model`. Let's revisit how `v-model` is used on a native element:
 
