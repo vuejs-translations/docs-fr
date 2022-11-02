@@ -5,5 +5,5 @@ Actions à vérifier <!-- supprimer ceux qui ne s'appliquent pas -->
   <!-- Simple recherche du nom du fichier que vous êtes entrain de traduire et vérifier que les titres soient cohérents -->
 - [ ] Mettre à jour le lien du menu 
   <!-- À effectuer sur .vitepress/config.ts -->
-- [ ] Lier la PR à une issue
+- [ ] Lier la PR à une issue  
       Closes # <!-- << Inserer l'id de l'issue -->
