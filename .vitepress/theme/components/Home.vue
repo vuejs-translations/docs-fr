@@ -13,18 +13,17 @@ onMounted(async () => {
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      Le Framework
+      <br />JavaScript
+      <span class="accent">Évolutif</span>
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      Un framework <strong>accessible, performant et polyvalent</strong><br/> pour construire des interfaces utilisateur.
     </p>
     <p class="actions">
       <vue-mastery-modal />
       <a class="get-started" href="/guide/introduction.html">
-        Get Started
+        Commencer
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +36,7 @@ onMounted(async () => {
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/guide/quick-start.html">Installation</a>
     </p>
   </section>
 
@@ -59,32 +58,29 @@ onMounted(async () => {
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>Accessible</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        S’appuie sur les standards HTML, CSS et JavaScript en proposant une API et une documentation traduite en plusieurs langues.
       </p>
     </div>
     <div class="vt-box">
       <h2>Performant</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        Se repose sur un système de réactivité, optimisé à la compilation sans devoir y penser par soi-même.
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>Polyvalent</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        Un écosystème riche et utilisable progressivement qui peut évoluer selon les besoins, d’une simple librairie à un framework complet.
       </p>
     </div>
   </section>
 
   <section id="sponsors">
-    <h2>Platinum Sponsors</h2>
+    <h2>Sponsors Platinum</h2>
     <SponsorsGroup tier="platinum" placement="landing" />
-    <h2>Gold Sponsors</h2>
+    <h2>Sponsors Gold</h2>
     <SponsorsGroup tier="gold" placement="landing" />
   </section>
 

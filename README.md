@@ -1,10 +1,26 @@
+[![](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://stackblitz.com/~/github.com/vuejs-translations/docs-fr)
+
+# Dépôt de contribution pour la traduction française de vuejs.org
+
+Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
+
+Merci de vous référer à la partie [Contributing](#contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme.
+
+Il est important également de prendre connaissances des [bonnes pratiques pour la traduction de la documentation](https://github.com/vuejs-translations/guidelines).
+
+## Contribuer à la traduction française
+
+Rendez vous sur le document **[CONTRIBUTING.md](CONTRIBUTING.md)** pour en savoir plus.
+
+---
+
 # vuejs.org
 
-## Contributing
+## Contribution
 
-This site is built with [VitePress](https://github.com/vuejs/vitepress) and depends on [@vue/theme](https://github.com/vuejs/vue-theme). Site content is written in Markdown format located in `src`. For simple edits, you can directly edit the file on GitHub and generate a Pull Request.
+Ce site est construit avec [VitePress](https://github.com/vuejs/vitepress) et dépend de [@vue/theme](https://github.com/vuejs/vue-theme). Le contenu du site est écrit au format Markdown situé dans `src`. Pour des modifications simples, vous pouvez modifier directement le fichier sur GitHub et générer une Pull Request.
 
-For local development, [pnpm](https://pnpm.io/) is preferred as package manager:
+Pour le développement local, [pnpm](https://pnpm.io/) est préférable comme gestionnaire de packages :
 
 ```bash
 pnpm i
@@ -13,13 +29,12 @@ pnpm run dev
 
 This project requires Node.js to be `v14.0.0` or higher, because we use new JavaScript features in our code, such as optional chaining.
 
+## Travail sur le contenu
 
-## Working on the content
+- Voir la documentation de VitePress sur les [extensions Markdown](https://vitepress.vuejs.org/guide/markdown.html) prises en charge et la possibilité d'[utiliser la syntaxe Vue dans Markdown](https://vitepress.vuejs.org/guide/using-vue.html).
 
-- See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown.html) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue.html).
+- Consultez le [Guide d'Écriture](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) pour nos règles et recommandations sur la rédaction et la maintenance du contenu de la documentation.
 
-- See the [Writing Guide](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) for our rules and recommendations on writing and maintaining documentation content.
+## Travail sur le le thème
 
-## Working on the theme
-
-If changes need to made for the theme, check out the [instructions for developing the theme alongside the docs](https://github.com/vuejs/vue-theme#developing-with-real-content).
+Si des modifications doivent être apportées au thème, consultez les [instructions pour développer le thème parallèlement à la documentation](https://github.com/vuejs/vue-theme#developing-with-real-content).

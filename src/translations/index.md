@@ -13,9 +13,10 @@ aside: false
 ## Work in Progress Languages
 
 - [Українська / Ukrainian](https://ua.vuejs.org) [[source](https://github.com/vuejs-translations/docs-ua)]
+- [Français](https://github.com/edimitchel/docs-fr)
 
-## Starting a new Translation
+## Commencer une nouvelle traduction
 
-The Vue documentation has recently undergone a major revision, so translations in other languages are still missing or work-in-progress.
+La documentation de Vue a récemment subi une révision majeure, ainsi les traductions dans d'autres langues sont toujours manquantes ou en cours de développement.
 
-We welcome community efforts to provide more translations. Translation efforts are managed in the [vuejs-translations](https://github.com/vuejs-translations/) GitHub organization. If you are interested in contributing, please check out the [Translation Guidelines](https://github.com/vuejs-translations/guidelines/blob/main/README.md) to get started.
+Nous saluons les efforts de la communauté pour fournir plus de traductions. Les efforts de traduction sont gérés dans l'organisation GitHub [vuejs-translations](https://github.com/vuejs-translations/). Si vous souhaitez contribuer, veuillez consulter les [Directives de traduction](https://github.com/vuejs-translations/guidelines/blob/main/README.md) pour commencer.

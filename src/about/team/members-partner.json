@@ -9,8 +9,8 @@
         "url": "https://github.com/vuejs/events"
       }
     ],
-    "location": "Raleigh, NC, USA",
-    "languages": ["English", "Spanish"],
+    "location": "Raleigh, Caroline du Nord, États-Unis",
+    "languages": ["Anglais", "Espagnol"],
     "socials": {
       "github": "mlama007",
       "twitter": "MariaLamardo"
@@ -49,15 +49,15 @@
         "url": "https://us.vuejs.org/"
       }
     ],
-    "location": "Atlanta, GA, USA",
-    "languages": ["English"],
+    "location": "Atlanta, Géorgie, États-Unis",
+    "languages": ["Anglais"],
     "socials": {
       "twitter": "prpatel"
     }
   },
   {
     "name": "Vincent Mayers",
-    "avatarPic": "https://pbs.twimg.com/profile_images/916531463905992706/MNvTkO5K_400x400.jpg",
+    "avatarPic": "https://pbs.twimg.com/profile_images/1496266398544416770/v8bptT5P_400x400.jpg",
     "title": "Organizer",
     "company": "VueConf US",
     "projects": [
@@ -66,8 +66,8 @@
         "url": "https://us.vuejs.org/"
       }
     ],
-    "location": "Atlanta, GA, USA",
-    "languages": ["English"],
+    "location": "Atlanta, Géorgie, États-Unis",
+    "languages": ["Anglais"],
     "socials": {
       "twitter": "vincentmayers"
     }
@@ -83,8 +83,8 @@
         "url": "https://vuejs.amsterdam"
       }
     ],
-    "location": "Amsterdam, Netherlands",
-    "languages": ["Dutch", "English", "German"],
+    "location": "Amsterdam, Pays-Bas",
+    "languages": ["Néerlandais", "Anglais", "Allemand"],
     "socials": {
       "twitter": "lukevscostas",
       "linkedin": "luke-kenneth-thomas-578b3916a"
@@ -101,8 +101,8 @@
         "url": "https://vuejs.amsterdam"
       }
     ],
-    "location": "Amsterdam, Netherlands",
-    "languages": ["Dutch", "English", "German"],
+    "location": "Amsterdam, Pays-Bas",
+    "languages": ["Néerlandais", "Anglais", "Allemand"],
     "socials": {
       "twitter": "josgerards88",
       "linkedin": "josgerards"
@@ -122,8 +122,8 @@
         "url": "https://nativescript-vue.org/"
       }
     ],
-    "location": "Boston, MA, USA",
-    "languages": ["English", "French"],
+    "location": "Boston, Massachusetts, États-Unis",
+    "languages": ["Anglais", "Français"],
     "socials": {
       "github": "jlooper",
       "twitter": "jenlooper"
@@ -147,8 +147,8 @@
         "url": "https://github.com/alexjoverm/vue-testing-series"
       }
     ],
-    "location": "Alicante, Spain",
-    "languages": ["Spanish", "English"],
+    "location": "Alicante, Espagne",
+    "languages": ["Espagnol", "Anglais"],
     "website": {
       "label": "alexjover.com",
       "url": "https://alexjover.com"
@@ -164,7 +164,7 @@
     "company": "NuxtJS",
     "companyLink": "https://nuxtjs.org",
     "location": "Bordeaux, France",
-    "languages": ["French", "English"],
+    "languages": ["Français", "Anglais"],
     "projects": [
       {
         "label": "nuxt/*",
@@ -190,7 +190,7 @@
     "company": "NuxtJS",
     "companyLink": "https://nuxtjs.org",
     "location": "Bordeaux, France",
-    "languages": ["French", "English"],
+    "languages": ["Français", "Anglais"],
     "projects": [
       {
         "label": "nuxt/*",
@@ -213,8 +213,8 @@
   {
     "name": "Khary Sharpe",
     "title": "Viral Newscaster",
-    "location": "Kingston, Jamaica",
-    "languages": ["English"],
+    "location": "Kingston, Jamaïque",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "VueJsNews",
@@ -235,8 +235,8 @@
     "title": "Technical Advisor",
     "company": "Fandogh (AUT University)",
     "companyLink": "https://fandogh.org",
-    "location": "Tehran, Iran",
-    "languages": ["Persian", "English"],
+    "location": "Téhéran, Iran",
+    "languages": ["Persan", "Anglais"],
     "projects": [
       {
         "label": "nuxt/*",
@@ -259,8 +259,8 @@
   {
     "name": "Xin Du",
     "title": "Nuxpert",
-    "location": "Dublin, Ireland",
-    "languages": ["Chinese", "English"],
+    "location": "Dublin, Irlande",
+    "languages": ["Chinois", "Anglais"],
     "projects": [
       {
         "label": "nuxt/*",
@@ -281,8 +281,8 @@
     "title": "Interface Elementologist",
     "company": "ele.me",
     "companyLink": "https://www.ele.me",
-    "location": "Shanghai, China",
-    "languages": ["Chinese", "English"],
+    "location": "Shangai, Chine",
+    "languages": ["Chinois", "Anglais"],
     "projects": [
       {
         "label": "elemefe/element",
@@ -305,11 +305,7 @@
     "projects": [
       {
         "label": "vuejs-fr/*",
-        "url": "https://vuejs-fr"
-      },
-      {
-        "label": "vuejs-fr/*",
-        "url": "https://Haeresis/node-atlas-hello-vue"
+        "url": "https://github.com/vuejs-fr"
       },
       {
         "label": "https://node-atlas.js.org/",
@@ -317,21 +313,21 @@
       }
     ],
     "location": "Annecy, France",
-    "languages": ["French", "English"],
+    "languages": ["Français", "Chinois"],
     "website": {
       "label": "blog.lesieur.name/",
       "url": "https://blog.lesieur.name/"
     },
     "socials": {
-      "github": "Haeresis",
-      "twitter": "ZetesEthique"
+      "github": "MachinisteWeb",
+      "twitter": "SkeptRaiser"
     }
   },
   {
     "name": "ChangJoo Park",
     "title": "Vuenthusiastic Korean Community Organizer",
-    "location": "Seoul, South Korea",
-    "languages": ["Korean", "English"],
+    "location": "Séoul, Corée du Sud",
+    "languages": ["Coréen", "Anglais"],
     "projects": [
       {
         "label": "vuejs-kr/kr.vuejs.org",
@@ -375,8 +371,8 @@
     "title": "Deep Space Quasar Creator",
     "company": "Quasar Framework",
     "companyLink": "https://quasar.dev/",
-    "location": "Bucharest, Romania",
-    "languages": ["Romanian", "English"],
+    "location": "Bucharest, Roumanie",
+    "languages": ["Roumain", "Anglais"],
     "projects": [
       {
         "label": "quasarframework/quasar",
@@ -404,7 +400,7 @@
       }
     ],
     "location": "Toronto, Canada",
-    "languages": ["English"],
+    "languages": ["Anglais"],
     "socials": {
       "github": "JillzTom",
       "twitter": "jilsonthomas"
@@ -420,8 +416,8 @@
         "url": "https://vuejobs.com"
       }
     ],
-    "location": "Alicante, Spain",
-    "languages": ["Spanish", "English"],
+    "location": "Alicante, Espagne",
+    "languages": ["Espagnol", "Anglais"],
     "socials": {
       "github": "IsraelOrtuno",
       "twitter": "IsraelOrtuno"
@@ -432,8 +428,8 @@
     "title": "CEO",
     "company": "Vuetify LLC",
     "companyLink": "https://vuetifyjs.com",
-    "location": "Fort Worth, TX, USA",
-    "languages": ["English"],
+    "location": "Fort Worth, Texas, États-Unis",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "vuetifyjs/vuetify",
@@ -450,8 +446,8 @@
     "title": "Full Stack Web Developer",
     "company": "Self Employed",
     "companyLink": "http://gbezyuk.ru",
-    "location": "Moscow, Russia",
-    "languages": ["Russian", "German", "English"],
+    "location": "Moscou, Russie",
+    "languages": ["Russe", "Allemand", "Anglais"],
     "projects": [
       {
         "label": "translation-gang/ru.vuejs.org",
@@ -465,8 +461,8 @@
   {
     "name": "Alexander Sokolov",
     "title": "Russian Translation Sharp Eye",
-    "location": "Krasnodar, Russia",
-    "languages": ["Russian", "English"],
+    "location": "Krasnodar, Russie",
+    "languages": ["Russe", "Anglais"],
     "projects": [
       {
         "label": "translation-gang/ru.vuejs.org",
@@ -480,8 +476,8 @@
     "title": "Author",
     "company": "Vue.js Developers",
     "companyLink": "https://vuejsdevelopers.com/",
-    "location": "Sydney, Australia",
-    "languages": ["English"],
+    "location": "Sydney, Australie",
+    "languages": ["Anglais"],
     "website": {
       "label": "vuejsdevelopers.com",
       "url": "https://vuejsdevelopers.com"
@@ -491,7 +487,7 @@
   {
     "name": "EGOIST",
     "title": "Build Tool Simplificator",
-    "location": "Chengdu, China",
+    "location": "Chengdu, Chine",
     "projects": [
       {
         "label": "poi",
@@ -506,14 +502,14 @@
         "url": "https://github.com/egoist/vue-play"
       }
     ],
-    "languages": ["Chinese", "English"],
+    "languages": ["Chinois", "Anglais"],
     "socials": { "github": "egoist", "twitter": "_egoistlily" }
   },
   {
     "name": "Alex Kyriakidis",
     "title": "Consultant / Author",
-    "location": "Thessaloniki, Greece",
-    "languages": ["el", "English"],
+    "location": "Thessalonique, Grèce",
+    "languages": ["Grec", "Anglais"],
     "socials": { "github": "hootlex", "twitter": "hootlex" },
     "projects": [
       {
@@ -543,8 +539,8 @@
     "title": "Educator & Consultant",
     "company": "Vue School",
     "companyLink": "https://vueschool.io/",
-    "location": "Oslo, Norway",
-    "languages": ["English"],
+    "location": "Oslo, Norvège",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "vueschool.io",
@@ -562,8 +558,8 @@
     "title": "The Server Server",
     "company": "Michigan State University",
     "companyLink": "https://msu.edu/",
-    "location": "East Lansing, MI, USA",
-    "languages": ["English"],
+    "location": "East Lansing, Michigan, États-Unis",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "vuejs/*",
@@ -581,8 +577,8 @@
     "title": "Software Engineer",
     "company": "Attest",
     "companyLink": "https://www.askattest.com/",
-    "location": "London, UK",
-    "languages": ["English"],
+    "location": "Londres, Royaume-Uni",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "vuejs.london",
@@ -596,8 +592,8 @@
     "title": "Co-founder of Vue Storefront",
     "company": "Divante",
     "companyLink": "https://divante.co/",
-    "location": "Wrocław, Poland",
-    "languages": ["Polish", "English"],
+    "location": "Wrocław, Pologne",
+    "languages": ["Polonais", "Anglais"],
     "projects": [
       {
         "label": "DivanteLtd/vue-storefront",
@@ -615,8 +611,8 @@
     "title": "Vue Instructor",
     "company": "Vue Mastery",
     "companyLink": "https://www.vuemastery.com/",
-    "location": "Orlando, FL, USA",
-    "languages": ["English"],
+    "location": "Orlando, Floride, États-Unis",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "www.vuemastery.com",
@@ -634,8 +630,8 @@
     "title": "Vue Instructor",
     "company": "Vue Mastery",
     "companyLink": "https://www.vuemastery.com/",
-    "location": "Orlando, FL, USA",
-    "languages": ["English"],
+    "location": "Orlando, Floride, États-Unis",
+    "languages": ["Anglais"],
     "projects": [
       {
         "label": "www.vuemastery.com",

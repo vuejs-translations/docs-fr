@@ -12,16 +12,16 @@ const nav: ThemeConfig['nav'] = [
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
     items: [
       { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Tutorial', link: '/tutorial/' },
-      { text: 'Examples', link: '/examples/' },
-      { text: 'Quick Start', link: '/guide/quick-start' },
-      // { text: 'Style Guide', link: '/style-guide/' },
+      { text: 'Tutoriel', link: '/tutorial/' },
+      { text: 'Exemples', link: '/examples/' },
+      { text: 'Commencer', link: '/guide/quick-start' },
+      // { text: 'Conventions', link: '/style-guide/' },
       {
         text: 'Vue 2 Docs',
         link: 'https://v2.vuejs.org'
       },
       {
-        text: 'Migration from Vue 2',
+        text: 'Migration depuis Vue 2',
         link: 'https://v3-migration.vuejs.org/'
       }
     ]
@@ -36,78 +36,84 @@ const nav: ThemeConfig['nav'] = [
     link: 'https://sfc.vuejs.org'
   },
   {
-    text: 'Ecosystem',
+    text: 'Écosystème',
     activeMatch: `^/ecosystem/`,
     items: [
       {
-        text: 'Resources',
+        text: 'Ressources',
         items: [
-          { text: 'Partners', link: '/partners/' },
-          { text: 'Themes', link: '/ecosystem/themes' },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
+          { text: 'Partenaires', link: '/ecosystem/partners' },
+          { text: 'Thèmes', link: '/ecosystem/themes' },
+          {
+            text: 'Offres d’emploi',
+            link: 'https://vuejobs.com/?ref=vuejs'
+          },
+          { text: 'Boutique t-shirt', link: 'https://vue.threadless.com/' }
         ]
       },
       {
-        text: 'Official Libraries',
+        text: 'Libraries Officielles',
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
-          { text: 'Tooling Guide', link: '/guide/scaling-up/tooling.html' }
+          {
+            text: 'Guide des outils',
+            link: '/guide/scaling-up/tooling.html'
+          }
         ]
       },
       {
-        text: 'Video Courses',
+        text: 'Cours au format vidéo',
         items: [
           {
-            text: 'Vue Mastery',
+            text: 'Vue Mastery (EN)',
             link: 'https://www.vuemastery.com/courses/'
           },
           {
-            text: 'Vue School',
+            text: 'Vue School (EN)',
             link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
           }
         ]
       },
       {
-        text: 'Help',
+        text: 'Aide',
         items: [
           {
             text: 'Discord Chat',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
-            text: 'GitHub Discussions',
+            text: 'Discussions GitHub',
             link: 'https://github.com/vuejs/core/discussions'
           },
           { text: 'DEV Community', link: 'https://dev.to/t/vue' }
         ]
       },
       {
-        text: 'News',
+        text: 'Actualités',
         items: [
           { text: 'Blog', link: 'https://blog.vuejs.org/' },
           { text: 'Twitter', link: 'https://twitter.com/vuejs' },
           { text: 'Newsletter', link: 'https://news.vuejs.org/' },
-          { text: 'Events', link: 'https://events.vuejs.org/' }
+          { text: 'Événements', link: 'https://events.vuejs.org/' }
         ]
       }
     ]
   },
   {
-    text: 'About',
+    text: 'À propos',
     activeMatch: `^/about/`,
     items: [
       { text: 'FAQ', link: '/about/faq' },
-      { text: 'Team', link: '/about/team' },
-      { text: 'Releases', link: '/about/releases' },
+      { text: 'L’équipe', link: '/about/team' },
+      { text: 'Déploiements', link: '/about/releases' },
       {
         text: 'Community Guide',
         link: '/about/community-guide'
       },
-      { text: 'Code of Conduct', link: '/about/coc' },
+      { text: 'Code de Conduite', link: '/about/coc' },
       {
-        text: 'The Documentary',
+        text: 'Le documentaire',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
       }
     ]
@@ -126,24 +132,24 @@ const nav: ThemeConfig['nav'] = [
 export const sidebar: ThemeConfig['sidebar'] = {
   '/guide/': [
     {
-      text: 'Getting Started',
+      text: 'Commencer',
       items: [
         { text: 'Introduction', link: '/guide/introduction' },
         {
-          text: 'Quick Start',
+          text: 'Démarrage rapide',
           link: '/guide/quick-start'
         }
       ]
     },
     {
-      text: 'Essentials',
+      text: 'Les essentiels',
       items: [
         {
-          text: 'Creating an Application',
+          text: 'Créer une application',
           link: '/guide/essentials/application'
         },
         {
-          text: 'Template Syntax',
+          text: 'Syntaxe de template',
           link: '/guide/essentials/template-syntax'
         },
         {
@@ -159,7 +165,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/class-and-style'
         },
         {
-          text: 'Conditional Rendering',
+          text: 'Rendu conditionnel',
           link: '/guide/essentials/conditional'
         },
         { text: 'List Rendering', link: '/guide/essentials/list' },
@@ -205,7 +211,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Reusability',
+      text: 'Réutilisabilité',
       items: [
         {
           text: 'Composables',
@@ -234,7 +240,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Scaling Up',
       items: [
-        { text: 'Single-File Components', link: '/guide/scaling-up/sfc' },
+        { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
         { text: 'Tooling', link: '/guide/scaling-up/tooling' },
         { text: 'Routing', link: '/guide/scaling-up/routing' },
         {
@@ -249,10 +255,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Best Practices',
+      text: 'Bonnes Pratiques',
       items: [
         {
-          text: 'Production Deployment',
+          text: 'Déploiement en production',
           link: '/guide/best-practices/production-deployment'
         },
         {
@@ -403,7 +409,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Single-File Component',
+      text: 'Composant monofichiers',
       items: [
         { text: 'Syntax Specification', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
@@ -551,16 +557,48 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ]
 }
 
-// Placeholder of the i18n config for @vuejs-translations.
-// const i18n: ThemeConfig['i18n'] = {
-// }
+const i18n: ThemeConfig['i18n'] = {
+  search: 'Recherche',
+  menu: 'Menu',
+  toc: 'Sur cette page',
+  returnToTop: 'Retour en haut',
+  appearance: 'Apparence',
+  previous: 'Précédent',
+  next: 'Suivant',
+  pageNotFound: 'Page non trouvée',
+  deadLink: {
+    before: 'Vous avez trouvé un lien mort: ',
+    after: ''
+  },
+  deadLinkReport: {
+    before: 'Merci de ',
+    link: 'nous le faire savoir',
+    after: ' pour nous permettre de le résoudre.'
+  },
+  footerLicense: {
+    before: '',
+    after: ''
+  },
+
+  // aria labels
+  // typo issue https://github.com/vuejs/theme/issues/75
+  ariaAnnouner: {
+    before: '',
+    after: 'a chargé'
+  },
+  ariaDarkMode: 'Mode sombre',
+  ariaSkipToContent: 'Passer au contenu',
+  ariaMainNav: 'Navigation principale',
+  ariaMobileNav: 'Navigation mobile',
+  ariaSidebarNav: 'Barre de navigation latérale'
+}
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
-  lang: 'en-US',
+  lang: 'fr-FR',
   title: 'Vue.js',
-  description: 'Vue.js - The Progressive JavaScript Framework',
+  description: 'Vue.js - Le Framework JavaScript Évolutif',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
@@ -605,8 +643,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     nav,
     sidebar,
-    // Placeholder of the i18n config for @vuejs-translations.
-    // i18n,
+    i18n,
 
     algolia: {
       indexName: 'vuejs',
@@ -630,8 +667,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'vuejs/docs',
-      text: 'Edit this page on GitHub'
+      repo: 'vuejs-translations/docs-fr', // TODO: add a language flag to point to the FR repo?
+      text: 'Éditer cette page sur GitHub'
     },
 
     footer: {

@@ -26,8 +26,8 @@
         "url": "https://github.com/sdras/ecommerce-netlify"
       }
     ],
-    "location": "Denver, CO, USA",
-    "languages": ["English"],
+    "location": "Denver, Colorado, États-Unis",
+    "languages": ["Anglais"],
     "website": {
       "label": "sarah.dev",
       "url": "https://sarah.dev/"
@@ -41,8 +41,8 @@
   {
     "name": "Chris Fritz",
     "title": "Educator & Consultant",
-    "location": "Durham, NC, USA",
-    "languages": ["English", "German"],
+    "location": "Durham, Caroline du Nord, États-Unis",
+    "languages": ["Anglais", "Allemand"],
     "socials": {
       "github": "chrisvfritz",
       "twitter": "chrisvfritz"
@@ -52,8 +52,8 @@
   {
     "name": "Blake Newman",
     "title": "Performance Specializer & Code Deleter",
-    "location": "London, UK",
-    "languages": ["English"],
+    "location": "Londres, Royaume-Uni",
+    "languages": ["Anglais"],
     "socials": {
       "github": "blake-newman",
       "twitter": "blakenewman"
@@ -70,8 +70,8 @@
         "url": "https://github.com/vuejs/vue"
       }
     ],
-    "location": "Beijing, China",
-    "languages": ["Chinese"],
+    "location": "Pékin, Chine",
+    "languages": ["Chinois"],
     "socials": {
       "github": "kingwl"
     }
@@ -87,8 +87,8 @@
         "url": "https://github.com/vuejs/vue-router"
       }
     ],
-    "location": "Hangzhou, China",
-    "languages": ["Chinese", "English"],
+    "location": "Hangzhou, Chine",
+    "languages": ["Chinois", "Anglais"],
     "socials": {
       "github": "fnlctrl"
     }
@@ -98,8 +98,8 @@
     "title": "Details Deity & Bug Surgeon",
     "company": "zbj.com",
     "companyLink": "http://www.zbj.com/",
-    "location": "Chongqing, China",
-    "languages": ["Chinese", "English"],
+    "location": "Chongqing, Chine",
+    "languages": ["Chinois", "Anglais"],
     "socials": {
       "github": "defcc"
     }
@@ -109,8 +109,8 @@
     "title": "Issue Annihilator",
     "company": "zbj.com",
     "companyLink": "http://www.zbj.com/",
-    "location": "Chongqing, China",
-    "languages": ["Chinese", "English"],
+    "location": "Chongqing, Chine",
+    "languages": ["Chinois", "Anglais"],
     "socials": {
       "github": "gebilaoxiong"
     }
@@ -120,8 +120,8 @@
     "title": "Software Engineer",
     "company": "Neolant",
     "companyLink": "http://neolant.ru/",
-    "location": "Dubna, Russia",
-    "languages": ["Russian", "English"],
+    "location": "Doubna, Russie",
+    "languages": ["Russe", "Anglais"],
     "socials": {
       "github": "simplesmiler",
       "twitter": "simplesmiler"
@@ -140,8 +140,8 @@
         "url": "https://github.com/avoriaz"
       }
     ],
-    "location": "London, UK",
-    "languages": ["English"],
+    "location": "Londres, Royaume-Uni",
+    "languages": ["Anglais"],
     "socials": {
       "github": "eddyerburgh",
       "twitter": "EddYerburgh"
@@ -160,8 +160,8 @@
         "url": "https://github.com/vuejs/vetur"
       }
     ],
-    "location": "Shanghai, China",
-    "languages": ["Chinese", "English", "Japanese"],
+    "location": "Shangai, Chine",
+    "languages": ["Chinois", "Anglais", "Japonais"],
     "socials": {
       "github": "octref",
       "twitter": "octref"
@@ -178,8 +178,8 @@
         "url": "https://www.github.com/vuejs/vuepress"
       }
     ],
-    "location": "Hangzhou, China",
-    "languages": ["Chinese", "English"],
+    "location": "Hangzhou, Chine",
+    "languages": ["Chinois", "Anglais"],
     "socials": { "github": "ulivz", "twitter": "_ulivz" }
   },
   {
@@ -201,8 +201,8 @@
         "url": "https://github.com/ktsn/vue-designer"
       }
     ],
-    "location": "Singapore",
-    "languages": ["Japanese", "English"],
+    "location": "Singapour",
+    "languages": ["Japonais", "Anglais"],
     "socials": {
       "github": "ktsn",
       "twitter": "ktsn"
@@ -213,8 +213,8 @@
     "title": "Senior Frontend Developer / Team Leader",
     "company": "Netguru",
     "companyLink": "https://netguru.co/",
-    "location": "Poznań, Poland",
-    "languages": ["Polish", "English"],
+    "location": "Poznań, Pologne",
+    "languages": ["Polonais", "Anglais"],
     "projects": [
       {
         "label": "eslint-plugin-vue",
