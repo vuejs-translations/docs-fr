@@ -194,7 +194,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: 'Événements liés aux composants', link: '/guide/components/events' },
         {
           text: 'Fallthrough Attributes',
           link: '/guide/components/attrs'
