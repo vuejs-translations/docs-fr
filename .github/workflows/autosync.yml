@@ -14,7 +14,7 @@ jobs:
           github_token: ${{ secrets.RYU_CHO_ACCESS_TOKEN }}
           upstream_repository: vuejs/docs
           upstream_branch: main
-          target_repository: edimitchel/docs-fr
+          target_repository: vuejs-translations/docs-fr
           target_branch: upstream
           force: false
           tags: false
