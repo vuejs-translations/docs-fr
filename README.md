@@ -1,4 +1,4 @@
-[![](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://stackblitz.com/~/github.com/edimitchel/docs-fr)
+[![](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://stackblitz.com/~/github.com/vuejs-translations/docs-fr)
 
 # Dépôt de contribution pour la traduction française de vuejs.org
 

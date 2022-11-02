@@ -667,7 +667,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'vuejs/docs', // TODO: add a language flag to point to the FR repo?
+      repo: 'vuejs-translations/docs-fr', // TODO: add a language flag to point to the FR repo?
       text: 'Éditer cette page sur GitHub'
     },
 

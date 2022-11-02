@@ -1,9 +1,9 @@
 Actions à vérifier <!-- supprimer ceux qui ne s'appliquent pas -->
 
-- [ ] Ancres anglaises ajoutées à chaque titre traduits
-- [ ] Nom de la page mise en cohérence avec les ancres qui pointe sur la page traduite 
+- [ ] Ajouter ancres anglaises à chaque titre traduits <!-- Tant que https://github.com/vuejs/docs/issues/1998 n'est pas clos -->
+- [ ] Mettre en cohérence toute référence à la page traduite qui serait présente sur d'autres page 
   <!-- Simple recherche du nom du fichier que vous êtes entrain de traduire et vérifier que les titres soient cohérents -->
-- [ ] Lien de menu mis à jour
+- [ ] Mettre à jour le lien du menu 
   <!-- À effectuer sur .vitepress/config.ts -->
-- [ ] PR liée à une issue
-      Closes #
+- [ ] Lier la PR à une issue  
+      Closes # <!-- << Inserer l'id de l'issue -->
