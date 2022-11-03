@@ -150,7 +150,7 @@ Pour injecter des données fournies par un composant parent, utilisez l'option [
 export default {
   inject: ['message'],
   created() {
-    console.log(this.message) // injected value
+    console.log(this.message) // valeur injectée
   }
 }
 ```
