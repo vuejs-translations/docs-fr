@@ -239,7 +239,7 @@ export default {
 
 <div class="composition-api">
 
-Lors de l'utilisation de valeurs de réactives avec provide / inject, **il est recommandé de conserver toutes les mutations des l'état réactif à l'intérieur du _fournisseur_ dans la mesure du possible**. Cela garantit que l'état fourni et ses éventuelles mutations sont colocalisés dans le même composant, ce qui facilite sa maintenabilité à l'avenir.
+Lors de l'utilisation de valeurs de réactives avec provide / inject, **il est recommandé de conserver toutes les mutations d'un état réactif à l'intérieur du _fournisseur_ dans la mesure du possible**. Cela garantit que l'état fourni et ses éventuelles mutations sont localisés dans le même composant, ce qui facilite sa maintenabilité à l'avenir.
 
 Il peut arriver que nous ayons besoin de mettre à jour les données depuis un composant réalisant l'injection. Dans de tels cas, nous vous recommandons de fournir une fonction responsable de la mutation de l'état :
 
