@@ -49,7 +49,7 @@ Comme les composants et les props, les noms d'événements fournissent une trans
 Contrairement aux événements DOM natifs, les événements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les événements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'événements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management.html).
 :::
 
-## Arguments d'événement  {#event-arguments}
+## Arguments d'événement {#event-arguments}
 
 Il est parfois utile d'émettre une valeur spécifique avec un événement. Par exemple, nous pouvons vouloir que le composant `<BlogPost>` soit en charge de combien agrandir le texte. Dans ces cas, nous pouvons passer des arguments supplémentaires à `$emit` pour fournir cette valeur :
 
