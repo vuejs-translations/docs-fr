@@ -175,7 +175,7 @@ export default {
 
 Si la syntaxe utilisée avec `inject` est sous la forme d'un tableau, les propriétés injectées sont exposées sur l'instance de composant à l'aide de la même clé. Dans l'exemple ci-dessus, la propriété a été fournie sous la clé `"message"` et injectée en tant que `this.message`. La clé locale est la même que la clé d'injection.
 
-Si nous voulons injecter la propriété en utilisant une clé locale différente, nous devons utiliser la syntaxe utilisant un objet avec l'option `inject` :
+Si nous voulons injecter la propriété en utilisant une clé locale différente, nous devrions utiliser la syntaxe sous la forme d'un objet avec l'option `inject` :
 
 ```js
 export default {
