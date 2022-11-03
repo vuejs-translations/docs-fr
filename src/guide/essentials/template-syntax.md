@@ -217,7 +217,7 @@ comme expliqué dans les sections "Contraintes de valeur des arguments dynamique
 <a :[attributeName]="url"> ... </a>
 ```
 
-Ici `attributeName` sera dynamiquement évalué comme une expression JavaScript, et sa valeur évaluée sera utilisé comme valeur finale pour l'argument. Par exemple, si l'instance du composant a une propriété, `attributeName`, et que sa valeur est `"href"`, alors la liaison sera équivalent à `v-bind:href`.
+Ici `attributeName` sera dynamiquement évalué comme une expression JavaScript, et sa valeur évaluée sera utilisée comme valeur finale pour l'argument. Par exemple, si l'instance du composant a une propriété, `attributeName`, et que sa valeur est `"href"`, alors la liaison sera équivalent à `v-bind:href`.
 
 De manière similaire, vous pouvez utilise des arguments dynamiques pour lier un gestionnaire à un nom d'événement dynamique :
 
