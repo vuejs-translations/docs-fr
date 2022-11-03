@@ -4,7 +4,7 @@
 
 ## Passage de props en profondeur (Prop Drilling) {#prop-drilling}
 
-Habituellement, lorsque nous devons transmettre des données du parent à un composant enfant, nous utilisons des [props](/guide/components/props). Cependant, imaginez le cas où nous avons un arbre de composants important, et qu'un composant profondément imbriqué aurait besoin d'acceder à des informations d'un de ses composants parents. Avec seulement des props, nous devrions passer la même prop sur toute la chaîne composants parents :
+Habituellement, lorsque nous devons transmettre des données du parent à un composant enfant, nous utilisons des [props](/guide/components/props). Cependant, imaginez le cas où nous avons un arbre de composants important, et qu'un composant profondément imbriqué aurait besoin d'accéder à des informations d'un de ses composants parents. Avec seulement des props, nous devrions passer la même prop sur toute la chaîne composants parents :
 
 ![prop drilling diagram](./images/prop-drilling.png)
 
