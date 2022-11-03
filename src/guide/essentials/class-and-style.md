@@ -1,8 +1,8 @@
-# Class and Style Bindings
+# Liaison de classes et de styles
 
-A common need for data binding is manipulating an element's class list and inline styles. Since `class` and `style` are both attributes, we can use `v-bind` to assign them a string value dynamically, much like with other attributes. However, trying to generate those values using string concatenation can be annoying and error-prone. For this reason, Vue provides special enhancements when `v-bind` is used with `class` and `style`. In addition to strings, the expressions can also evaluate to objects or arrays.
+Un besoin courant de liaison de données consiste à manipuler la liste des classes et les styles CSS inline d'un élément. Puisque `class` et `style` sont tous les deux des attributs, nous pouvons utiliser `v-bind` pour leur attribuer dynamiquement une valeur de chaîne, un peu comme avec les autres attributs. Cependant, essayer de générer ces valeurs à l'aide de la concaténation de chaînes peut être ennuyeux et sujet aux erreurs. Pour cette raison, Vue fournit des améliorations spéciales lorsque `v-bind` est utilisé avec `class` et `style`. En plus des chaînes, les expressions peuvent également évaluer des objets ou des tableaux.
 
-## Binding HTML Classes
+## Liaison des classes HTML
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/dynamic-css-classes-with-vue-3" title="Free Vue.js Dynamic CSS Classes Lesson"/>
@@ -12,17 +12,17 @@ A common need for data binding is manipulating an element's class list and inlin
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-dynamic-css-classes-with-vue" title="Free Vue.js Dynamic CSS Classes Lesson"/>
 </div>
 
-### Binding to Objects
+### Syntaxe object
 
-We can pass an object to `:class` (short for `v-bind:class`) to dynamically toggle classes:
+Nous pouvons passer un objet à `:class` (abréviation de `v-bind:class`) pour basculer dynamiquement entre les classes :
 
 ```vue-html
 <div :class="{ active: isActive }"></div>
 ```
 
-The above syntax means the presence of the `active` class will be determined by the [truthiness](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) of the data property `isActive`.
+La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la propriété de données "isActive".
 
-You can have multiple classes toggled by having more fields in the object. In addition, the `:class` directive can also co-exist with the plain `class` attribute. So given the following state:
+Vous pouvez basculer plusieurs classes en ayant plus de champs dans l'objet. De plus, la directive `:class` peut également coexister avec l'attribut simple `class`. Admettons la chose :
 
 <div class="composition-api">
 
@@ -46,7 +46,7 @@ data() {
 
 </div>
 
-And the following template:
+Et avec le template suivant :
 
 ```vue-html
 <div
@@ -55,15 +55,15 @@ And the following template:
 ></div>
 ```
 
-It will render:
+Cela sera rendu :
 
 ```vue-html
 <div class="static active"></div>
 ```
 
-When `isActive` or `hasError` changes, the class list will be updated accordingly. For example, if `hasError` becomes `true`, the class list will become `"static active text-danger"`.
+Lorsque `isActive` ou `hasError` change, la liste des classes sera mise à jour en conséquence. Par exemple, si `hasError` devient `true`, la liste des classes deviendra `"static active text-danger"`.
 
-The bound object doesn't have to be inline:
+L'objet lié n'a pas besoin d'être décrit dans le template :
 
 <div class="composition-api">
 
@@ -95,7 +95,7 @@ data() {
 <div :class="classObject"></div>
 ```
 
-This will render the same result. We can also bind to a [computed property](./computed) that returns an object. This is a common and powerful pattern:
+Cela rendra le même résultat. Nous pouvons également lier à une [propriété calculée](./computed) qui renvoie un objet. Il s'agit d'un modèle commun et puissant :
 
 <div class="composition-api">
 
@@ -136,9 +136,9 @@ computed: {
 <div :class="classObject"></div>
 ```
 
-### Binding to Arrays
+### Syntaxe tableau
 
-We can bind `:class` to an array to apply a list of classes:
+Nous pouvons lier `:class` à un tableau pour appliquer une liste de classes :
 
 <div class="composition-api">
 
@@ -166,84 +166,84 @@ data() {
 <div :class="[activeClass, errorClass]"></div>
 ```
 
-Which will render:
+Ceci sera rendu :
 
 ```vue-html
 <div class="active text-danger"></div>
 ```
 
-If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:
+Si vous souhaitez également basculer une classe dans la liste de manière conditionnelle, vous pouvez le faire avec une expression ternaire :
 
 ```vue-html
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
 ```
 
-This will always apply `errorClass`, but `activeClass` will only be applied when `isActive` is truthy.
+Cela appliquera toujours `errorClass`, mais `activeClass` ne sera appliqué que lorsque `isActive` est vrai.
 
-However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the object syntax inside array syntax:
+Cependant, cela peut être un peu verbeux si vous avez plusieurs classes conditionnelles. C'est pourquoi il est également possible d'utiliser la syntaxe objet à l'intérieur de la syntaxe tableau :
 
 ```vue-html
 <div :class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### With Components
+### Avec les composants
 
-> This section assumes knowledge of [Components](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> Cette section suppose une connaissance des [Composants](/guide/essentials/component-basics). N'hésitez pas à sauter cette partie et à revenir plus tard.
 
-When you use the `class` attribute on a component with a single root element, those classes will be added to the component's root element, and merged with any existing class already on it.
+Lorsque vous utilisez l'attribut `class` sur un composant avec un seul élément racine, ces classes seront ajoutées à l'élément racine du composant et fusionnées avec toute classe existante déjà présente.
 
-For example, if we have a component named `MyComponent` with the following template:
+Par exemple, si nous avons un composant nommé "MyComponent" avec le template suivant :
 
 ```vue-html
-<!-- child component template -->
+<!-- template du composant enfant -->
 <p class="foo bar">Hi!</p>
 ```
 
-Then add some classes when using it:
+Ajoutez ensuite quelques classes lors de son utilisation :
 
 ```vue-html
-<!-- when using the component -->
+<!-- usage du composant -->
 <MyComponent class="baz boo" />
 ```
 
-The rendered HTML will be:
+Le HTML rendu sera :
 
 ```vue-html
 <p class="foo bar baz boo">Hi</p>
 ```
 
-The same is true for class bindings:
+Il en va de même pour les liaisons de classe :
 
 ```vue-html
 <MyComponent :class="{ active: isActive }" />
 ```
 
-When `isActive` is truthy, the rendered HTML will be:
+Lorsque `isActive` est vrai, le rendu HTML sera :
 
 ```vue-html
-<p class="foo bar active">Hi</p>
+<p class="foo bar active">Hello</p>
 ```
 
-If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the `$attrs` component property:
+Si votre composant a plusieurs éléments racine, vous devrez définir quel élément recevra cette classe. Vous pouvez le faire en utilisant la propriété de composant `$attrs` :
 
 ```vue-html
-<!-- MyComponent template using $attrs -->
+<!-- Template de MyComponent utilisant $attrs -->
 <p :class="$attrs.class">Hi!</p>
-<span>This is a child component</span>
+<span>Ceci est un composant enfant</span>
 ```
 
 ```vue-html
 <MyComponent class="baz" />
 ```
 
-Will render:
+Sera rendu :
 
 ```html
 <p class="baz">Hi!</p>
-<span>This is a child component</span>
+<span>Ceci est un composant enfant</span>
 ```
 
-You can learn more about component attribute inheritance in [Fallthrough Attributes](/guide/components/attrs.html) section.
+Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Fallthrough Attributes](/guide/components/attrs.html).
 
 ## Binding Inline Styles
 

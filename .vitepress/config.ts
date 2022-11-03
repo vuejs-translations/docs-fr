@@ -161,7 +161,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/computed'
         },
         {
-          text: 'Class and Style Bindings',
+          text: 'Liaison de classes et de styles',
           link: '/guide/essentials/class-and-style'
         },
         {
