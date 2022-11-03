@@ -319,7 +319,7 @@ L'utilisation ci-dessus nécessite de définir `app.config.unwrapInjectedRef = t
 
 </div>
 
-## Travailler avec les Symbols en tant que clés {#working-with-symbol-keys}
+## Injection avec des Symbols en tant que clés {#working-with-symbol-keys}
 
 Jusqu'à présent, nous avons utilisé des clés d'injection qui étaient des chaînes de caractères dans les exemples. Si vous travaillez dans une application de taille importante avec de nombreux fournisseurs de dépendances, ou si vous créez des composants qui seront utilisés par d'autres développeurs, il est préférable d'utiliser des clés d'injection utilisant les Symbols pour éviter les collisions potentielles.
 
