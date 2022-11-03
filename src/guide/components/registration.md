@@ -134,7 +134,7 @@ Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) l
 
 1. Les noms en casse Pascal sont des identifiants JavaScript valides. Cela facilite l'import et l'enregistrement des composants en JavaScript. Il aide également les IDE avec l'auto-complétion.
 
-2. `<PascalCase />` rend plus évident qu'il s'agit d'un composant Vue au lieu d'un élément HTML natif dans les templates. Il différencie également les composants Vue des custom elements (web component natif).
+2. `<PascalCase />` rend plus évident qu'il s'agit d'un composant Vue au lieu d'un élément HTML natif dans les templates. Il différencie également les composants Vue des custom elements (web components).
 
 Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caratères. Cependant, comme indiqué dans [les mises en garde concernant le parsage de template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), les balises au format casse Pascal ne sont pas utilisables dans les templates DOM.
 
