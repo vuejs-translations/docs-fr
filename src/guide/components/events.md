@@ -51,7 +51,7 @@ Contrairement aux évènements DOM natifs, les évènements émis par les compos
 
 ## Arguments d'évènement {#event-arguments}
 
-Il est parfois utile d'émettre une valeur spécifique avec un évènement. Par exemple, nous pouvons vouloir que le composant `<BlogPost>` soit en charge de combien agrandir le texte. Dans ces cas, nous pouvons passer des arguments supplémentaires à `$emit` pour fournir cette valeur :
+Il est parfois utile d'émettre une valeur spécifique avec un évènement. Par exemple, nous pouvons vouloir que le composant `<BlogPost>` soit en charge d'agrandir plus ou moins le texte. Dans ces cas, nous pouvons passer des arguments supplémentaires à `$emit` pour fournir cette valeur :
 
 ```vue-html
 <button @click="$emit('increaseBy', 1)">
@@ -211,7 +211,7 @@ Si un évènement natif (par exemple, `click`) est défini dans l'option `emits`
 
 ## Validation des évènements {#events-validation}
 
-Semblable à la validation de type de prop, un évènement émis peut être validé s'il est défini avec la syntaxe utilisant un objet au lieu de la syntaxe utilisant un tableau.
+Semblable à la validation de type de prop, un évènement émis peut être validé s'il est défini avec la syntaxe utilisant un objet au lieu d'un tableau.
 
 Pour ajouter une validation, l'évènement se voit attribuer une fonction qui reçoit les arguments passés à l'appel de <span class="options-api">`this.$emit`</span><span class="composition-api">`emit`</span> et renvoie un booléen pour indiquer si l'évènement est valide ou non.
 
@@ -471,7 +471,7 @@ export default {
 
 ### Liaisons multiple avec `v-model` {#multiple-v-model-bindings}
 
-En tirant parti de la possibilité de cibler un prop et un évènement particuliers, comme nous l'avons appris précédemment avec [`v-model` arguments](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
+En tirant parti de la possibilité de cibler un prop et un évènement particuliers, comme nous l'avons appris précédemment avec [les arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
 
 Chaque v-model se synchronisera avec une prop différente, sans avoir besoin d'options supplémentaires dans le composant :
 
