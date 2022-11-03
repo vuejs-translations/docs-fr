@@ -95,7 +95,7 @@ Cependant, notez que cela **ne rend pas** l'injection réactive. Nous discuteron
 
 </div>
 
-## App-level Provide {#app-level-provide}
+## Provide au niveau de l'application {#app-level-provide}
 
 En plus de fournir des données dans un composant, nous pouvons également fournir des données au niveau de l'application :
 
