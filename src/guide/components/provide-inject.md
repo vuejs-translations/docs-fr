@@ -71,7 +71,7 @@ export default {
 }
 ```
 
-Pour chaque propriété de l'objet `provide`, la clé est utilisée par les composants enfants pour localiser la valeur correcte à injecter, tandis que la valeur est ce qui finit par être injecté.
+Pour chaque propriété de l'objet `provide`, la clé est utilisée par les composants enfants pour localiser la valeur correcte à injecter, tandis que la valeur est celle qui finit par être injectée.
 
 Si nous devons fournir un état par instance, par exemple des données déclarées via `data()`, alors `provide` doit utiliser une valeur de type fonction :
 
