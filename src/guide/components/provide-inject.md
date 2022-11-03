@@ -338,7 +338,7 @@ import { provide } from 'vue'
 import { myInjectionKey } from './keys.js'
 
 provide(myInjectionKey, {
-  /* data to provide */
+  /* données à fournir */
 })
 ```
 
