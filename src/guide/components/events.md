@@ -8,7 +8,7 @@
 
 ## Émettre et écouter des évènements {#emitting-and-listening-to-events}
 
-Un composant peut émettre des évènements personnalisés directement à partir du template (par exemple, dans un gestionnaire d'évènement`v-on`) à l'aide de la méthode native `$emit` :
+Un composant peut émettre des évènements personnalisés directement à partir du template (par exemple, dans un gestionnaire d'évènement `v-on`) à l'aide de la méthode native `$emit` :
 
 ```vue-html
 <!-- MyComponent -->
