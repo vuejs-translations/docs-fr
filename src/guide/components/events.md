@@ -1,4 +1,4 @@
-# Événements liés aux composants {#component-events}
+# Gestion des évènements {#component-events}
 
 > Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
