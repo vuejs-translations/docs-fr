@@ -10,7 +10,7 @@ Habituellement, lorsque nous devons transmettre des données du parent à un com
 
 <!-- https://www.figma.com/file/yNDTtReM2xVgjcGVRzChss/prop-drilling -->
 
-Notez que bien que le composant `<Footer>` n'utilise pas du tout de ces props, il doit malgré tout les déclarer et les transmettre uniquement afin que `<DeepChild>` puisse y accéder. S'il y a une chaîne de composants parents plus longue, encore plus de composants seront affectés par le problème. C'est ce qu'on appelle le "props drilling" et ce n'est certainement pas amusant à gérer.
+Notez que bien que le composant `<Footer>` n'utilise pas du tout ces props, il doit malgré tout les déclarer et les transmettre uniquement afin que `<DeepChild>` puisse y accéder. S'il y a une chaîne de composants parents plus longue, encore plus de composants seront affectés par le problème. C'est ce qu'on appelle le "props drilling" et ce n'est certainement pas amusant à gérer.
 
 Nous pouvons résoudre le "props drilling" avec `provide` and `inject`. Un composant parent peut servir de **fournisseur de dépendances** pour tous ses descendants. Tout composant enfant de l'arborescence, quelle que soit sa profondeur, peut **injecter** des dépendances fournies par des composants présent dans sa chaîne de composants parents.
 
