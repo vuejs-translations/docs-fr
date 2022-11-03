@@ -44,7 +44,7 @@ export default {
 }
 ```
 
-La fonction `provide()` accepte deux arguments. Le premier argument est appelé la **clé d'injection**, qui peut être une chaîne de caractères ou un `Symbol`. La clé d'injection est utilisée par les composants descendants pour rechercher la valeur souhaitée à injecter. Un seul composant peut appeler `provide()` plusieurs fois avec différentes clés d'injection pour fournir différentes valeurs.
+La fonction `provide()` accepte deux arguments. Le premier argument est appelé la **clé d'injection**, qui peut être une chaîne de caractères ou un `Symbol`. La clé d'injection est utilisée par les composants descendants pour rechercher la valeur souhaitée à injecter. Un composant peut appeler `provide()` plusieurs fois avec différentes clés d'injection pour fournir différentes valeurs.
 
 Le deuxième argument est la valeur fournie. La valeur peut être de n'importe quel type, y compris un état réactif tel que des refs :
 
