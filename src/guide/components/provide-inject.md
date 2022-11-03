@@ -235,7 +235,7 @@ export default {
 
 </div>
 
-## Travailler avec réactivité {#working-with-reactivity}
+## Injections réactives {#working-with-reactivity}
 
 <div class="composition-api">
 
