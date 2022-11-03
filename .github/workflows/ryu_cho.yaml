@@ -3,6 +3,7 @@ name: ryu-cho
 on:
   schedule:
     - cron: '0 8 * * *'
+  workflow_dispatch: # on button click
 
 jobs:
   ryu-cho:
@@ -14,7 +15,7 @@ jobs:
           access-token: ${{ secrets.RYU_CHO_ACCESS_TOKEN }}
           username: ${{ secrets.RYU_CHO_USER_NAME }}
           email: ${{ secrets.RYU_CHO_USER_EMAIL }}
-          upstream-repo: https://github.com/edimitchel/docs-fr.git
+          upstream-repo: https://github.com/vuejs-translations/docs-fr.git
           upstream-repo-branch: main
           head-repo: https://github.com/vuejs/docs
           head-repo-branch: main

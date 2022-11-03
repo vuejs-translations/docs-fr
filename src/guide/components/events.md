@@ -23,7 +23,7 @@ La méthode `$emit()` est également disponible sur l'instance du composant avec
 export default {
   methods: {
     submit() {
-      this.$emit('submit')
+      this.$emit('someEvent')
     }
   }
 }
