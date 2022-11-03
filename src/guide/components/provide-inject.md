@@ -55,7 +55,7 @@ const count = ref(0)
 provide('key', count)
 ```
 
-La fourniture de valeurs réactives permet aux composants descendants utilisant la valeur fournie d'établir une connexion réactive au composant fournisseur.
+Fournir des valeurs réactives permet aux composants descendants qui les utilisent d'établir une connexion réactive au composant fournisseur.
 
 </div>
 
