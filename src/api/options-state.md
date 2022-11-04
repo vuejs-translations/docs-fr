@@ -393,7 +393,7 @@ Declare the custom events emitted by the component.
 
   The validation function will receive the additional arguments passed to the component's `$emit` call. For example, if `this.$emit('foo', 1)` is called, the corresponding validator for `foo` will receive the argument `1`. The validator function should return a boolean to indicate whether the event arguments are valid.
 
-  Note that the `emits` option affects which event listeners are considered component event listeners, rather than native DOM event listeners. The listeners for declared events will be removed from the component's `$attrs` object, so they will not be passed through to the component's root element. See [Fallthrough Attributes](/guide/components/attrs.html) for more details.
+  Note that the `emits` option affects which event listeners are considered component event listeners, rather than native DOM event listeners. The listeners for declared events will be removed from the component's `$attrs` object, so they will not be passed through to the component's root element. See [Attributs implicitement déclarés](/guide/components/attrs.html) for more details.
 
 - **Example**
 
@@ -429,7 +429,7 @@ Declare the custom events emitted by the component.
   }
   ```
 
-* **See also:** [Fallthrough Attributes](/guide/components/attrs.html)
+* **See also:** [Attributs implicitement déclarés](/guide/components/attrs.html)
 
 ## expose
 
