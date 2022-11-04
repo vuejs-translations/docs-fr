@@ -196,7 +196,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Props', link: '/guide/components/props' },
         { text: 'Events', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
         },
         { text: 'Slots', link: '/guide/components/slots' },
