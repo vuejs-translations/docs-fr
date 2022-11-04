@@ -2,117 +2,117 @@
 outline: deep
 ---
 
-# Fallthrough Attributes
+# Attributs implicitement déclarés (Fallthrough Attributes) {#fallthrough-attributes}
 
-> This page assumes you've already read the [Components Basics](/guide/essentials/component-basics). Read that first if you are new to components.
+> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
-## Attribute Inheritance
+## Héritage d'attribut {#attribute-inheritance}
 
-A "fallthrough attribute" is an attribute or `v-on` event listener that is passed to a component, but is not explicitly declared in the receiving component's [props](./props) or [emits](./events.html#declaring-emitted-events). Common examples of this include `class`, `style`, and `id` attributes.
+Un "fallthrough attribute" est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events.html#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
 
-When a component renders a single root element, fallthrough attributes will be automatically added to the root element's attributes. For example, given a `<MyButton>` component with the following template:
+Lorsqu'un composant affiche un seul élément racine, les attributs implicitement déclarés sont automatiquement ajoutés aux attributs de l'élément racine. Par exemple, le composant `<MyButton>` avec le template suivant :
 
 ```vue-html
-<!-- template of <MyButton> -->
+<!-- template de <MyButton> -->
 <button>click me</button>
 ```
 
-And a parent using this component with:
+Et un parent utilisant ce composant avec :
 
 ```vue-html
 <MyButton class="large" />
 ```
 
-The final rendered DOM would be:
+Le DOM rendu final serait :
 
 ```html
 <button class="large">click me</button>
 ```
 
-Here, `<MyButton>` did not declare `class` as an accepted prop. Therefore, `class` is treated as a fallthrough attribute and automatically added to `<MyButton>`'s root element.
+Ici, `<MyButton>` n'a pas déclaré `class` comme une prop acceptée. Par conséquent, `class` est traitée comme un attribut implicitement déclaré et automatiquement ajoutée à l'élément racine de `<MyButton>`.
 
-### `class` and `style` Merging
+### Fusion de `class` and `style` {#class-and-style-merging}
 
-If the child component's root element already has existing `class` or `style` attributes, it will be merged with the `class` and `style` values that are inherited from the parent. Suppose we change the template of `<MyButton>` in the previous example to:
+Si l'élément racine du composant enfant a déjà des attributs `class` ou `style` existants, il sera fusionné avec les valeurs `class` et `style` héritées du parent. Supposons que nous modifions le template de `<MyButton>` dans l'exemple précédent en :
 
 ```vue-html
-<!-- template of <MyButton> -->
+<!-- template de <MyButton> -->
 <button class="btn">click me</button>
 ```
 
-Then the final rendered DOM would now become:
+Ainsi, le DOM final rendu deviendrait :
 
 ```html
 <button class="btn large">click me</button>
 ```
 
-### `v-on` Listener Inheritance
+### Héritage de l'écouteur "v-on" {#v-on-listener-inheritance}
 
-The same rule applies to `v-on` event listeners:
+La même règle s'applique aux écouteurs d'événements `v-on` :
 
 ```vue-html
 <MyButton @click="onClick" />
 ```
 
-The `click` listener will be added to the root element of `<MyButton>`, i.e. the native `<button>` element. When the native `<button>` is clicked, it will trigger the `onClick` method of the parent component. If the native `<button>` already has a `click` listener bound with `v-on`, then both listeners will trigger.
+L'écouteur de `click` sera ajouté à l'élément racine de `<MyButton>`, c'est-à-dire l'élément natif `<button>`. Lorsque le `<button>` natif est cliqué, il déclenchera la méthode `onClick` du composant parent. Si le `<button>` natif a déjà un écouteur de `click` lié à `v-on`, alors les deux écouteurs se déclencheront.
 
-### Nested Component Inheritance
+### Héritage des composants imbriqués {#nested-component-inheritance}
 
-If a component renders another component as its root node, for example, we refactored `<MyButton>` to render a `<BaseButton>` as its root:
+Si un composant rend un autre composant comme son nœud racine, par exemple, nous avons refactorisé `<MyButton>` pour rendre un `<BaseButton>` comme sa racine :
 
 ```vue-html
-<!-- template of <MyButton/> that simply renders another component -->
+<!-- template de <MyButton/> qui affiche uniquement un autre composant -->
 <BaseButton />
 ```
 
-Then the fallthrough attributes received by `<MyButton>` will be automatically forwarded to `<BaseButton>`.
+Alors, les attributs implicitement déclarés reçus par `<MyButton>` seront automatiquement transmis à `<BaseButton>`.
 
-Note that:
+Notez que :
 
-1. Forwarded attributes do not include any attributes that are declared as props, or `v-on` listeners of declared events by `<MyButton>` - in other words, the declared props and listeners have been "consumed" by `<MyButton>`.
+1. Les attributs transférés n'incluent aucun attribut déclaré en tant que props, ou écouteurs `v-on` d'événements déclarés par `<MyButton>` - en d'autres termes, les props et écouteurs déclarés ont été "consommés" par `<MyButton>`.
 
-2. Forwarded attributes may be accepted as props by `<BaseButton>`, if declared by it.
+2. Les attributs transférés peuvent être acceptés comme props par `<BaseButton>`, s'ils sont déclarés par celui-ci.
 
-## Disabling Attribute Inheritance
+## Désactivation de l'héritage d'attribut {#disabling-attribute-inheritance}
 
-If you do **not** want a component to automatically inherit attributes, you can set `inheritAttrs: false` in the component's options.
+Si vous **ne souhaitez pas** qu'un composant hérite automatiquement des attributs, vous pouvez définir `inheritAttrs: false` dans les options du composant.
 
 <div class="composition-api">
 
-If using `<script setup>`, you will need to declare this option using a separate, normal `<script>` block:
+Si vous utilisez `<script setup>`, vous devrez déclarer cette option en utilisant un bloc `<script>` normal séparé :
 
 ```vue
 <script>
-// use normal <script> to declare options
+// utiliser le <script> normal pour déclarer les options
 export default {
   inheritAttrs: false
 }
 </script>
 
 <script setup>
-// ...setup logic
+// ...mise en place de la logique
 </script>
 ```
 
 </div>
 
-The common scenario for disabling attribute inheritance is when attributes need to be applied to other elements besides the root node. By setting the `inheritAttrs` option to `false`, you can take full control over where the fallthrough attributes should be applied.
+Le scénario courant de désactivation de l'héritage d'attribut est lorsque les attributs doivent être appliqués à des éléments autres que le nœud racine. En définissant l'option `inheritAttrs` sur `false`, vous pouvez prendre le contrôle total sur l'endroit où les attributs fallthrough doivent être appliqués.
 
-These fallthrough attributes can be accessed directly in template expressions as `$attrs`:
+Ces attributs sont accessibles directement dans les expressions de template en tant que `$attrs` :
 
 ```vue-html
 <span>Fallthrough attributes: {{ $attrs }}</span>
 ```
 
-The `$attrs` object includes all attributes that are not declared by the component's `props` or `emits` options (e.g., `class`, `style`, `v-on` listeners, etc.).
+L'objet `$attrs` inclut tous les attributs qui ne sont pas déclarés par les `props` du composant ou options `emits` (par exemple, `class`, `style`, les écouteurs `v-on`, etc.).
 
-Some notes:
+Quelques notes :
 
-- Unlike props, fallthrough attributes preserve their original casing in JavaScript, so an attribute like `foo-bar` needs to be accessed as `$attrs['foo-bar']`.
+- Contrairement aux props, les attributs implicitement déclarés conservent leur casse d'origine en JavaScript, donc un attribut comme `foo-bar` doit être accédé en tant que `$attrs['foo-bar']`.
 
-- A `v-on` event listener like `@click` will be exposed on the object as a function under `$attrs.onClick`.
+- Un écouteur d'événement `v-on` comme `@click` sera exposé sur l'objet en tant que fonction sous `$attrs.onClick`.
 
-Using our `<MyButton>` component example from the [previous section](#attribute-inheritance) - sometimes we may need to wrap the actual `<button>` element with an extra `<div>` for styling purposes:
+En utilisant notre composant exemple `<MyButton>` de la [section précédente](#attribute-inheritance) - nous pouvons parfois avoir besoin d'envelopper l'élément `<button>` réel avec un `<div>` supplémentaire à des fins de style :
 
 ```vue-html
 <div class="btn-wrapper">
@@ -120,7 +120,7 @@ Using our `<MyButton>` component example from the [previous section](#attribute-
 </div>
 ```
 
-We want all fallthrough attributes like `class` and `v-on` listeners to be applied to the inner `<button>`, not the outer `<div>`. We can achieve this with `inheritAttrs: false` and `v-bind="$attrs"`:
+Nous voulons que tous les attributs implicitement déclarés tels que `class` et les écouteurs `v-on` soient appliqués au `<button>` sous-jacent, et non au `<div>`. Nous pouvons y parvenir avec `inheritAttrs: false` et `v-bind="$attrs"`:
 
 ```vue-html{2}
 <div class="btn-wrapper">
@@ -128,17 +128,17 @@ We want all fallthrough attributes like `class` and `v-on` listeners to be appli
 </div>
 ```
 
-Remember that [`v-bind` without an argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) binds all the properties of an object as attributes of the target element.
+Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
 
-## Attribute Inheritance on Multiple Root Nodes
+## Héritage d'attributs sur plusieurs nœuds racine {#attribute-inheritance-on-multiple-root-nodes}
 
-Unlike components with a single root node, components with multiple root nodes do not have an automatic attribute fallthrough behavior. If `$attrs` are not bound explicitly, a runtime warning will be issued.
+Contrairement aux composants avec un seul nœud racine, les composants avec plusieurs nœuds racine n'ont pas de comportement automatique concenant les attributs impliciitement déclarés. Si `$attrs` n'est pas lié explicitement, un avertissement lors de l'exécution sera émis.
 
 ```vue-html
 <CustomLayout id="custom-layout" @click="changeValue" />
 ```
 
-If `<CustomLayout>` has the following multi-root template, there will be a warning because Vue cannot be sure where to apply the fallthrough attributes:
+Si `<CustomLayout>` a le template multi-racine suivant, il y aura un avertissement car Vue ne sait pas où appliquer les attributs implicitement déclarés :
 
 ```vue-html
 <header>...</header>
@@ -146,7 +146,7 @@ If `<CustomLayout>` has the following multi-root template, there will be a warni
 <footer>...</footer>
 ```
 
-The warning will be suppressed if `$attrs` is explicitly bound:
+L'avertissement sera supprimé si `$attrs` est explicitement lié :
 
 ```vue-html{2}
 <header>...</header>
@@ -154,11 +154,11 @@ The warning will be suppressed if `$attrs` is explicitly bound:
 <footer>...</footer>
 ```
 
-## Accessing Fallthrough Attributes in JavaScript
+## Accéder aux attributs implicitement déclarés en JavaScript {#accessing-fallthrough-attributes-in-javascript}
 
 <div class="composition-api">
 
-If needed, you can access a component's fallthrough attributes in `<script setup>` using the `useAttrs()` API:
+Si nécessaire, vous pouvez accéder aux attributs implicitement déclarés d'un composant dans `<script setup>` à l'aide de l'API `useAttrs()` :
 
 ```vue
 <script setup>
@@ -168,24 +168,24 @@ const attrs = useAttrs()
 </script>
 ```
 
-If not using `<script setup>`, `attrs` will be exposed as a property of the `setup()` context:
+Si vous n'utilisez pas `<script setup>`, `attrs` sera exposé en tant que propriété du contexte de `setup()` :
 
 ```js
 export default {
   setup(props, ctx) {
-    // fallthrough attributes are exposed as ctx.attrs
+    // les attributs implicitement déclarés sont exposés en tant que ctx.attrs
     console.log(ctx.attrs)
   }
 }
 ```
 
-Note that although the `attrs` object here always reflects the latest fallthrough attributes, it isn't reactive (for performance reasons). You cannot use watchers to observe its changes. If you need reactivity, use a prop. Alternatively, you can use `onUpdated()` to perform side effects with the latest `attrs` on each update.
+Notez que bien que l'objet `attrs` reflète toujours les derniers attributs implicitement déclarés, il n'est pas réactif (pour des raisons de performances). Vous ne pouvez pas utiliser d'observateurs pour observer ses changements. Si vous avez besoin de réactivité, utilisez une prop. De manière alternative, vous pouvez utiliser `onUpdated()` pour effectuer des tâches avec les derniers `attrs` à chaque mise à jour.
 
 </div>
 
 <div class="options-api">
 
-If needed, you can access a component's fallthrough attributes via the `$attrs` instance property:
+Si nécessaire, vous pouvez accéder aux attributs implicitement déclarés d'un composant via la propriété d'instance `$attrs` :
 
 ```js
 export default {
