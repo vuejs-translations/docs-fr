@@ -243,7 +243,7 @@ Will render:
 <span>This is a child component</span>
 ```
 
-You can learn more about component attribute inheritance in [Fallthrough Attributes](/guide/components/attrs.html) section.
+You can learn more about component attribute inheritance in [Attributs implicitement déclarés](/guide/components/attrs.html) section.
 
 ## Binding Inline Styles
 
