@@ -187,7 +187,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Composants en détails',
       items: [
         {
           text: 'Registration',
