@@ -77,7 +77,7 @@ function loadLazy() {
 }
 ```
 
-Lazy loading is best used on features that are not immediately needed after initial page load. In Vue applications, this can be used in combination with Vue's [Async Component](/guide/components/async.html) feature to create split chunks for component trees:
+Lazy loading is best used on features that are not immediately needed after initial page load. In Vue applications, this can be used in combination with Vue's [Composants asynchrones](/guide/components/async.html) feature to create split chunks for component trees:
 
 ```js
 import { defineAsyncComponent } from 'vue'
