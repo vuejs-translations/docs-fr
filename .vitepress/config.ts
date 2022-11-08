@@ -194,7 +194,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: 'Gestion des évènements', link: '/guide/components/events' },
         {
           text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
@@ -205,7 +205,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/provide-inject'
         },
         {
-          text: 'Async Components',
+          text: 'Composants asynchrones',
           link: '/guide/components/async'
         }
       ]

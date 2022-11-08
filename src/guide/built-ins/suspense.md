@@ -32,7 +32,7 @@ There are two types of async dependencies that `<Suspense>` can wait on:
 
 1. Components with an async `setup()` hook. This includes components using `<script setup>` with top-level `await` expressions.
 
-2. [Async Components](/guide/components/async.html).
+2. [Composants asynchrones](/guide/components/async.html).
 
 ### `async setup()`
 

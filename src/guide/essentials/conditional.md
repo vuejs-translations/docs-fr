@@ -98,7 +98,7 @@ La différence est qu'un élément avec `v-show` sera toujours rendu et restera 
 
 `v-show` ne prend pas en charge l'élément `<template>`, et ne fonctionne pas avec `v-else`.
 
-## `v-if` vs `v-show`
+## `v-if` vs. `v-show`
 
 `v-if` est un rendu conditionnel "réel" car il garantit que les écouteurs d'événements et les composants enfants à l'intérieur du bloc conditionnel sont correctement détruits et recréés lors des basculements.
 

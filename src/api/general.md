@@ -165,7 +165,7 @@ Define an async component which is lazy loaded only when it is rendered. The arg
   }
   ```
 
-- **See also:** [Guide - Async Components](/guide/components/async.html)
+- **See also:** [Guide - Composants asynchrones](/guide/components/async.html)
 
 ## defineCustomElement()
 
