@@ -128,8 +128,7 @@ Maintenant, lorsque nous utilisons `<SubmitButton>` dans un composant parent, en
 <SubmitButton />
 ```
 
-Cela rendra le contenu par défaut, "Soumettre":
-This will render the fallback content, "Submit":
+Cela rendra le contenu par défaut, "Submit":
 
 ```html
 <button type="submit">Submit</button>
