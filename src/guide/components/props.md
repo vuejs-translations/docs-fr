@@ -1,18 +1,18 @@
-# Props
+# Props {#props}
 
-> This page assumes you've already read the [Components Basics](/guide/essentials/component-basics). Read that first if you are new to components.
+> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/vue-3-reusable-components-with-props" title="Free Vue.js Props Lesson"/>
 </div>
 
-## Props Declaration
+## Déclaration de props {#props-declaration}
 
-Vue components require explicit props declaration so that Vue knows what external props passed to the component should be treated as fallthrough attributes (which will be discussed in [its dedicated section](/guide/components/attrs)).
+Les composants Vue nécessitent une déclaration explicite des props afin que Vue sache quels props externes passés au composant doivent être traités comme des attributs implicitement déclarés (qui seront discutés dans [sa section dédiée](/guide/components/attrs)).
 
 <div class="composition-api">
 
-In SFCs using `<script setup>`, props can be declared using the `defineProps()` macro:
+Dans les SFC utilisant `<script setup>`, les props peuvent être déclarés à l'aide de la macro `defineProps()` :
 
 ```vue
 <script setup>
@@ -22,31 +22,31 @@ console.log(props.foo)
 </script>
 ```
 
-In non-`<script setup>` components, props are declared using the [`props`](/api/options-state.html#props) option:
+Dans les composants autres que `<script setup>`, les props sont déclarés à l'aide de l'option [`props`](/api/options-state.html#props) :
 
 ```js
 export default {
   props: ['foo'],
   setup(props) {
-    // setup() receives props as the first argument.
+    // setup() reçoit des props comme premier argument.
     console.log(props.foo)
   }
 }
 ```
 
-Notice the argument passed to `defineProps()` is the same as the value provided to the `props` options: the same props options API is shared between the two declaration styles.
+Notez que l'argument passé à `defineProps()` est le même que la valeur fournie à l'option `props` : la même API de déclaration de props est partagée entre les deux styles de déclaration.
 
 </div>
 
 <div class="options-api">
 
-Props are declared using the [`props`](/api/options-state.html#props) option:
+Les props sont déclarés à l'aide de l'option [`props`](/api/options-state.html#props) :
 
 ```js
 export default {
   props: ['foo'],
   created() {
-    // props are exposed on `this`
+    // les props sont exposés sur `this`
     console.log(this.foo)
   }
 }
@@ -54,7 +54,7 @@ export default {
 
 </div>
 
-In addition to declaring props using an array of strings, we can also use the object syntax:
+En plus de déclarer des props à l'aide d'un tableau de chaînes de caractères, nous pouvons également utiliser la syntaxe utilisant un objet :
 
 <div class="options-api">
 
@@ -71,7 +71,7 @@ export default {
 <div class="composition-api">
 
 ```js
-// in <script setup>
+// dans <script setup>
 defineProps({
   title: String,
   likes: Number
@@ -79,7 +79,7 @@ defineProps({
 ```
 
 ```js
-// in non-<script setup>
+// dans un fichier autre que <script setup>
 export default {
   props: {
     title: String,
@@ -90,19 +90,19 @@ export default {
 
 </div>
 
-For each property in the object declaration syntax, the key is the name of the prop, while the value should be the constructor function of the expected type.
+Pour chaque propriété dans l'objet servant de déclaration, la clé est le nom du prop, tandis que la valeur doit être la fonction constructeur du type attendu.
 
-This not only documents your component, but will also warn other developers using your component in the browser console if they pass the wrong type. We will discuss more details about [prop validation](#prop-validation) further down this page.
+Cela documente non seulement votre composant, mais avertira également, dans la console du navigateur, les autres développeurs utilisant votre composant s'ils transmettent le mauvais type. Nous discuterons plus en détail de la [validation de prop](#prop-validation) plus loin sur cette page.
 
 <div class="options-api">
 
-See also: [Typing Component Props](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi: [Typage de props de composant](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
 <div class="composition-api">
 
-If you are using TypeScript with `<script setup>`, it's also possible to declare props using pure type annotations:
+Si vous utilisez TypeScript avec `<script setup>`, il est également possible de déclarer des props en utilisant uniquement des annotations de type :
 
 ```vue
 <script setup lang="ts">
@@ -113,15 +113,15 @@ defineProps<{
 </script>
 ```
 
-More details: [Typing Component Props](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Plus de détails: [Typage de props de composant](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
-## Prop Passing Details
+## Détails sur le passage de props {#prop-passing-details}
 
-### Prop Name Casing
+### Casse du nom de prop {#prop-name-casing}
 
-We declare long prop names using camelCase because this avoids having to use quotes when using them as property keys, and allows us to reference them directly in template expressions because they are valid JavaScript identifiers:
+Nous déclarons les noms de props en utilisant le camelCase car cela évite d'avoir à utiliser des guillemets lors de leur utilisation comme clés de propriété, et nous permet de les référencer directement dans les expressions de template car ce sont des identifiants JavaScript valides :
 
 <div class="composition-api">
 
@@ -148,77 +148,77 @@ export default {
 <span>{{ greetingMessage }}</span>
 ```
 
-Technically, you can also use camelCase when passing props to a child component (except in [DOM templates](/guide/essentials/component-basics.html#dom-template-parsing-caveats)). However, the convention is using kebab-case in all cases to align with HTML attributes:
+Techniquement, vous pouvez également utiliser le camelCase lors de la transmission de props à un composant enfant (sauf dans les [templates DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)). Cependant, la convention utilise le kebab-case dans tous les cas pour s'aligner sur les attributs HTML :
 
 ```vue-html
 <MyComponent greeting-message="hello" />
 ```
 
-We use [PascalCase for component tags](/guide/components/registration.html#component-name-casing) when possible because it improves template readability by differentiating Vue components from native elements. However, there isn't as much practical benefit in using camelCase when passing props, so we choose to follow each language's conventions.
+Nous utilisons le [PascalCase pour les balises de composant](/guide/components/registration.html#component-name-casing) lorsque cela est possible, car il améliore la lisibilité du template en différenciant les composants Vue des éléments natifs. Cependant, il n'y a pas autant d'avantages pratiques à utiliser le camelCase lors du passage de props, nous avons donc choisi de suivre les conventions de chaque langage.
 
-### Static vs. Dynamic Props
+### Props statiques vs. dynamiques {#static-vs-dynamic-props}
 
-So far, you've seen props passed as static values, like in:
+Jusqu'à présent, vous avez vu des props passés en tant que valeurs statiques, comme dans :
 
 ```vue-html
 <BlogPost title="My journey with Vue" />
 ```
 
-You've also seen props assigned dynamically with `v-bind` or its `:` shortcut, such as in:
+Vous avez également vu des props assignés dynamiquement avec `v-bind` ou son raccourci `:`, comme dans :
 
 ```vue-html
-<!-- Dynamically assign the value of a variable -->
+<!-- Attribuer dynamiquement la valeur d'une variable -->
 <BlogPost :title="post.title" />
 
-<!-- Dynamically assign the value of a complex expression -->
+<!-- Attribuer dynamiquement la valeur d'une expression complexe -->
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
 
-### Passing Different Value Types
+### Passage de différents types de valeur {#passing-different-value-types}
 
-In the two examples above, we happen to pass string values, but _any_ type of value can be passed to a prop.
+Dans les deux exemples ci-dessus, nous passons des chaînes de caractères, mais _n'importe quel_ type de valeur peut être passé à un prop.
 
-#### Number
+#### Nombre {#number}
 
 ```vue-html
-<!-- Even though `42` is static, we need v-bind to tell Vue that -->
-<!-- this is a JavaScript expression rather than a string.       -->
+<!-- Même si `42` est statique, nous avons besoin de v-bind pour indiquer à Vue qu'il -->
+<!-- s'agit d'une expression JavaScript plutôt que d'une chaîne de caractères.        -->
 <BlogPost :likes="42" />
 
-<!-- Dynamically assign to the value of a variable. -->
+<!-- Attribuer dynamiquement la valeur d'une variable. -->
 <BlogPost :likes="post.likes" />
 ```
 
-#### Boolean
+#### Booléen {#boolean}
 
 ```vue-html
-<!-- Including the prop with no value will imply `true`. -->
+<!-- Inclure la prop sans valeur impliquera `true`. -->
 <BlogPost is-published />
 
-<!-- Even though `false` is static, we need v-bind to tell Vue that -->
-<!-- this is a JavaScript expression rather than a string.          -->
+<!-- Même si `false` est statique, nous avons besoin de v-bind pour indiquer à Vue qu'il -->
+<!-- s'agit d'une expression JavaScript plutôt que d'une chaîne de caractères.           -->
 <BlogPost :is-published="false" />
 
-<!-- Dynamically assign to the value of a variable. -->
+<!-- Attribuer dynamiquement la valeur d'une variable. -->
 <BlogPost :is-published="post.isPublished" />
 ```
 
-#### Array
+#### Tableau {#array}
 
 ```vue-html
-<!-- Even though the array is static, we need v-bind to tell Vue that -->
-<!-- this is a JavaScript expression rather than a string.            -->
+<!-- Même si le tableau est statique, nous avons besoin de v-bind pour indiquer à Vue qu'il -->
+<!-- s'agit d'une expression JavaScript plutôt que d'une chaîne de caractères.              -->
 <BlogPost :comment-ids="[234, 266, 273]" />
 
-<!-- Dynamically assign to the value of a variable. -->
+<!-- Attribuer dynamiquement la valeur d'une variable. -->
 <BlogPost :comment-ids="post.commentIds" />
 ```
 
-#### Object
+#### Objet {object}
 
 ```vue-html
-<!-- Even though the object is static, we need v-bind to tell Vue that -->
-<!-- this is a JavaScript expression rather than a string.             -->
+<!-- Même si l'objet est statique, nous avons besoin de v-bind pour indiquer à Vue qu'il -->
+<!-- s'agit d'une expression JavaScript plutôt que d'une chaîne de caractères.           -->
 <BlogPost
   :author="{
     name: 'Veronica',
@@ -226,13 +226,13 @@ In the two examples above, we happen to pass string values, but _any_ type of va
   }"
  />
 
-<!-- Dynamically assign to the value of a variable. -->
+<!-- Attribuer dynamiquement la valeur d'une variable. -->
 <BlogPost :author="post.author" />
 ```
 
-### Binding Multiple Properties Using an Object
+### Liaison de plusieurs propriétés à l'aide d'un objet {#binding-multiple-properties-using-an-object}
 
-If you want to pass all the properties of an object as props, you can use [`v-bind` without an argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) (`v-bind` instead of `:prop-name`). For example, given a `post` object:
+Si vous souhaitez transmettre toutes les propriétés d'un objet en tant que props, vous pouvez utiliser [`v-bind` sans argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) (`v-bind` au lieu de `:prop-name`). Par exemple, étant donné un objet `post` :
 
 <div class="options-api">
 
@@ -261,30 +261,30 @@ const post = {
 
 </div>
 
-The following template:
+Le template suivant :
 
 ```vue-html
 <BlogPost v-bind="post" />
 ```
 
-Will be equivalent to:
+Sera équivalent à :
 
 ```vue-html
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-## One-Way Data Flow
+## Flux de données à sens unique {#one-way-data-flow}
 
-All props form a **one-way-down binding** between the child property and the parent one: when the parent property updates, it will flow down to the child, but not the other way around. This prevents child components from accidentally mutating the parent's state, which can make your app's data flow harder to understand.
+Tous les props forment une **liaison unidirectionnelle** entre la propriété enfant et la propriété parent : lorsque la propriété parent est mise à jour, elle descendra vers l'enfant, mais pas l'inverse. Cela empêche les composants enfants de muter accidentellement l'état du parent, ce qui peut rendre le flux de données de votre application plus difficile à comprendre.
 
-In addition, every time the parent component is updated, all props in the child component will be refreshed with the latest value. This means you should **not** attempt to mutate a prop inside a child component. If you do, Vue will warn you in the console:
+De plus, chaque fois que le composant parent est mis à jour, tous les props du composant enfant seront actualisés avec la dernière valeur. Cela signifie que vous **ne devez pas** tenter de muter une prop à l'intérieur d'un composant enfant. Si vous le faites, Vue vous avertira dans la console :
 
 <div class="composition-api">
 
 ```js
 const props = defineProps(['foo'])
 
-// ❌ warning, props are readonly!
+// ❌ avertissement, les props sont en lecture seule !
 props.foo = 'bar'
 ```
 
@@ -295,7 +295,7 @@ props.foo = 'bar'
 export default {
   props: ['foo'],
   created() {
-    // ❌ warning, props are readonly!
+    // ❌ avertissement, les props sont en lecture seule !
     this.foo = 'bar'
   }
 }
@@ -303,17 +303,17 @@ export default {
 
 </div>
 
-There are usually two cases where it's tempting to mutate a prop:
+Il y a généralement deux cas où il est tentant de muter une prop :
 
-1. **The prop is used to pass in an initial value; the child component wants to use it as a local data property afterwards.** In this case, it's best to define a local data property that uses the prop as its initial value:
+1. **Le prop est utilisé pour passer une valeur initiale; le composant enfant veut ensuite l'utiliser comme propriété de données locale.** Dans ce cas, il est préférable de définir une propriété de données locale qui utilise la prop comme valeur initiale :
 
    <div class="composition-api">
 
    ```js
    const props = defineProps(['initialCounter'])
 
-   // counter only uses props.initialCounter as the initial value;
-   // it is disconnected from future prop updates.
+   // counter utilise uniquement props.initialCounter comme valeur initiale ;
+   // il est déconnecté des futures mises à jour de props.
    const counter = ref(props.initialCounter)
    ```
 
@@ -325,8 +325,8 @@ There are usually two cases where it's tempting to mutate a prop:
      props: ['initialCounter'],
      data() {
        return {
-         // counter only uses this.initialCounter as the initial value;
-         // it is disconnected from future prop updates.
+         // counter utilise uniquement this.initialCounter comme valeur initiale ;
+         // il est déconnecté des futures mises à jour de props.
          counter: this.initialCounter
        }
      }
@@ -335,14 +335,14 @@ There are usually two cases where it's tempting to mutate a prop:
 
    </div>
 
-2. **The prop is passed in as a raw value that needs to be transformed.** In this case, it's best to define a computed property using the prop's value:
+2. **La prop est transmise en tant que valeur brute qui doit être transformée.** Dans ce cas, il est préférable de définir une propriété calculée à l'aide de la valeur de la prop :
 
    <div class="composition-api">
 
    ```js
    const props = defineProps(['size'])
 
-   // computed property that auto-updates when the prop changes
+   // propriété calculée qui se met à jour automatiquement lorsque la prop change
    const normalizedSize = computed(() => props.size.trim().toLowerCase())
    ```
 
@@ -353,7 +353,7 @@ There are usually two cases where it's tempting to mutate a prop:
    export default {
      props: ['size'],
      computed: {
-       // computed property that auto-updates when the prop changes
+       // propriété calculée qui se met à jour automatiquement lorsque la prop change
        normalizedSize() {
          return this.size.trim().toLowerCase()
        }
@@ -363,58 +363,58 @@ There are usually two cases where it's tempting to mutate a prop:
 
    </div>
 
-### Mutating Object / Array Props
+### Mutation de props de type objets et tableau {#mutating-object-array-props}
 
-When objects and arrays are passed as props, while the child component cannot mutate the prop binding, it **will** be able to mutate the object or array's nested properties. This is because in JavaScript objects and arrays are passed by reference, and it is unreasonably expensive for Vue to prevent such mutations.
+Lorsque des objets et des tableaux sont passés en tant que props, bien que le composant enfant ne puisse pas muter la liaison de la prop, il **pourra** muter les propriétés imbriquées de l'objet ou du tableau. En effet, en JavaScript, les objets et les tableaux sont passés par référence, et il est déraisonnablement coûteux pour Vue d'empêcher de telles mutations.
 
-The main drawback of such mutations is that it allows the child component to affect parent state in a way that isn't obvious to the parent component, potentially making it more difficult to reason about the data flow in the future. As a best practice, you should avoid such mutations unless the parent and child are tightly coupled by design. In most cases, the child should [emit an event](/guide/components/events.html) to let the parent perform the mutation.
+Le principal inconvénient de ces mutations est qu'elles permettent au composant enfant de modifier l'état parent d'une manière qui n'est pas évidente vis-à-vis du composant parent, ce qui rend potentiellement plus difficile la compréhension du flux de données et sa maintenabilité dans le futur. En tant que bonne pratique, vous devez éviter de telles mutations à moins que le parent et l'enfant ne soient étroitement couplés par conception. Dans la plupart des cas, l'enfant doit [émettre un événement](/guide/components/events.html) pour laisser le parent effectuer la mutation.
 
-## Prop Validation
+## Validation de prop {#prop-validation}
 
-Components can specify requirements for their props, such as the types you've already seen. If a requirement is not met, Vue will warn you in the browser's JavaScript console. This is especially useful when developing a component that is intended to be used by others.
+Les composants peuvent spécifier des exigences pour leurs props, tels que la déclaration des types que vous avez déjà vus. Si une exigence n'est pas remplie, Vue vous avertira dans la console JavaScript du navigateur. Ceci est particulièrement utile lors du développement d'un composant destiné à être utilisé par d'autres.
 
-To specify prop validations, you can provide an object with validation requirements to the <span class="composition-api">`defineProps()` macro</span><span class="options-api">`props` option</span>, instead of an array of strings. For example:
+Pour spécifier les validations de props, vous pouvez fournir un objet avec des exigences de validation à <span class="composition-api">la macro `defineProps()`</span><span class="options-api">l'option `props`</span>, au lieu d'un tableau de chaînes de caractères. Par exemple:
 
 <div class="composition-api">
 
 ```js
 defineProps({
-  // Basic type check
-  //  (`null` and `undefined` values will allow any type)
+  // Contrôle de type de base
+  //  (les valeurs`null` et `undefined` values autoriseront tous les types)
   propA: Number,
-  // Multiple possible types
+  // Plusieurs types possibles
   propB: [String, Number],
-  // Required string
+  // Chaîne de caractères requise
   propC: {
     type: String,
     required: true
   },
-  // Number with a default value
+  // Nombre avec une valeur par défaut
   propD: {
     type: Number,
     default: 100
   },
-  // Object with a default value
+  // Objet avec une valeur par défaut
   propE: {
     type: Object,
-    // Object or array defaults must be returned from
-    // a factory function. The function receives the raw
-    // props received by the component as the argument.
+    // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
+    // d'une fonction de fabrique. La fonction reçoit les props bruts
+    // reçus par le composant en tant qu'argument.
     default(rawProps) {
       return { message: 'hello' }
     }
   },
-  // Custom validator function
+  // Fonction de validation personnalisée
   propF: {
     validator(value) {
-      // The value must match one of these strings
+      // La valeur doit correspondre à l'une de ces chaînes de caractères
       return ['success', 'warning', 'danger'].includes(value)
     }
   },
-  // Function with a default value
+  // Fonction avec une valeur par défaut
   propG: {
     type: Function,
-    // Unlike object or array default, this is not a factory function - this is a function to serve as a default value
+    // Contrairement aux valeur par défaut d'un objet ou d'un tableau , il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
     default() {
       return 'Default function'
     }
@@ -423,7 +423,7 @@ defineProps({
 ```
 
 :::tip
-Code inside the `defineProps()` argument **cannot access other variables declared in `<script setup>`**, because the entire expression is moved to an outer function scope when compiled.
+Le code à l'intérieur de l'argument `defineProps()` **ne peut pas accéder aux autres variables déclarées dans `<script setup>`**, car l'expression entière est déplacée vers une portée de fonction externe lors de la compilation.
 :::
 
 </div>
@@ -432,42 +432,42 @@ Code inside the `defineProps()` argument **cannot access other variables declare
 ```js
 export default {
   props: {
-    // Basic type check
-    //  (`null` and `undefined` values will allow any type)
+    // Contrôle de type de base
+    //  (les valeurs`null` et `undefined` values autoriseront tous les types)
     propA: Number,
-    // Multiple possible types
+    // Plusieurs types possibles
     propB: [String, Number],
-    // Required string
+    // Chaîne de caractères requise
     propC: {
       type: String,
       required: true
     },
-    // Number with a default value
+    // Nombre avec une valeur par défaut
     propD: {
       type: Number,
       default: 100
     },
-    // Object with a default value
+    // Objet avec une valeur par défaut
     propE: {
       type: Object,
-      // Object or array defaults must be returned from
-      // a factory function. The function receives the raw
-      // props received by the component as the argument.
+      // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
+      // d'une fonction de fabrique. La fonction reçoit les props bruts
+      // reçus par le composant en tant qu'argument.
       default(rawProps) {
         return { message: 'hello' }
       }
     },
-    // Custom validator function
+    // Fonction de validation personnalisée
     propF: {
       validator(value) {
         // The value must match one of these strings
         return ['success', 'warning', 'danger'].includes(value)
       }
     },
-    // Function with a default value
+    // Fonction avec une valeur par défaut
     propG: {
       type: Function,
-      // Unlike object or array default, this is not a factory function - this is a function to serve as a default value
+      // Contrairement aux valeur par défaut d'un objet ou d'un tableau , il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
       default() {
         return 'Default function'
       }
@@ -478,34 +478,34 @@ export default {
 
 </div>
 
-Additional details:
+Détails supplémentaires :
 
-- All props are optional by default, unless `required: true` is specified.
+- Toutes les props sont facultatives par défaut, sauf si `required: true` est spécifié.
 
-- An absent optional prop other than `Boolean` will have `undefined` value.
+- Une prop facultative absente autre que `Boolean` aura la valeur `undefined`.
 
-- The `Boolean` absent props will be cast to `false`. You can change this by setting a `default` for it — i.e.: `default: undefined` to behave as a non-Boolean prop.
+- Les props `Boolean` absentes seront converties en `false`. Vous pouvez changer cela en définissant une valeur par défaut - c'est-à-dire: `default: undefined` pour se comporter comme une prop non booléen.
 
-- If a `default` value is specified, it will be used if the resolved prop value is `undefined` - this includes both when the prop is absent, or an explicit `undefined` value is passed.
+- Si une valeur `default` est spécifiée, elle sera utilisée si la valeur prop résolue est `undefined` - cela inclut à la fois lorsque la prop est absente ou lorsqu'une valeur `undefined` explicite est passée.
 
-When prop validation fails, Vue will produce a console warning (if using the development build).
+Lorsque la validation de prop échoue, Vue produira un avertissement dans la console (si vous utilisez la version de développement).
 
 <div class="composition-api">
 
-If using [Type-based props declarations](/api/sfc-script-setup.html#typescript-only-features) <sup class="vt-badge ts" />, Vue will try its best to compile the type annotations into equivalent runtime prop declarations. For example, `defineProps<{ msg: string }>` will be compiled into `{ msg: { type: String, required: true }}`.
+Si vous utilisez des [déclarations de props basées sur les types](/api/sfc-script-setup.html#typescript-only-features) <sup class="vt-badge ts" />, Vue fera de son mieux pour compiler les annotations de type dans des déclarations de props équivalentes lors de l'exécution. Par exemple, `defineProps<{ msg: string }>` sera compilé dans `{ msg: { type: String, required: true }}`.
 
 </div>
 <div class="options-api">
 
 ::: tip Note
-Note that props are validated **before** a component instance is created, so instance properties (e.g. `data`, `computed`, etc.) will not be available inside `default` or `validator` functions.
+Notez que les props sont validés **avant** qu'une instance de composant soit créée, de sorte que les propriétés d'instance (par exemple, `data`, `computed`, etc.) ne seront pas disponibles dans les fonctions `default` ou `validator`.
 :::
 
 </div>
 
-### Runtime Type Checks
+### Vérifications de type à l'exécution {#runtime-type-checks}
 
-The `type` can be one of the following native constructors:
+Le `type` peut être l'un des constructeurs natifs suivants :
 
 - `String`
 - `Number`
@@ -516,7 +516,7 @@ The `type` can be one of the following native constructors:
 - `Function`
 - `Symbol`
 
-In addition, `type` can also be a custom class or constructor function and the assertion will be made with an `instanceof` check. For example, given the following class:
+De plus, `type` peut également être une classe personnalisée ou une fonction constructeur et l'assertion sera faite avec une vérification `instanceof`. Par exemple, étant donné la classe suivante :
 
 ```js
 class Person {
@@ -527,7 +527,7 @@ class Person {
 }
 ```
 
-You could use it as a prop's type:
+Vous pouvez l'utiliser comme type de prop :
 
 <div class="composition-api">
 
@@ -550,11 +550,11 @@ export default {
 
 </div>
 
-Vue will use `instanceof Person` to validate whether the value of the `author` prop is indeed an instance of the `Person` class.
+Vue utilisera `instanceof Person` pour valider si la valeur de la prop `author` est bien une instance de la classe `Person`.
 
-## Boolean Casting
+## Conversion en booléen {#boolean-casting}
 
-Props with `Boolean` type has special casting rules to mimic the behavior of native boolean attributes. Given a `<MyComponent>` with the following declaration:
+Les props avec le type `Boolean` ont des règles de conversion spéciales pour imiter le comportement des attributs booléens natifs. Étant donné un composant `<MyComponent>` avec la déclaration suivante :
 
 <div class="composition-api">
 
@@ -577,17 +577,17 @@ export default {
 
 </div>
 
-The component can be used like this:
+Le composant peut être utilisé comme ceci :
 
 ```vue-html
-<!-- equivalent of passing :disabled="true" -->
+<!-- équivalent à passer :disabled="true" -->
 <MyComponent disabled />
 
-<!-- equivalent of passing :disabled="false" -->
+<!-- équivalent à passer :disabled="false" -->
 <MyComponent />
 ```
 
-When a prop is declared to allow multiple types, e.g.
+Lorsqu'une prop est déclarée pour autoriser plusieurs types, par ex.
 
 <div class="composition-api">
 
@@ -610,4 +610,4 @@ export default {
 
 </div>
 
-The casting rules for `Boolean` will apply regardless of type appearance order.
+Les règles de conversion pour `Boolean` s'appliqueront quel que soit l'ordre d'apparition des types.
