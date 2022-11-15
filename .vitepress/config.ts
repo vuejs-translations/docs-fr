@@ -190,7 +190,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Components In-Depth',
       items: [
         {
-          text: 'Registration',
+          text: 'Enregistrement',
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
