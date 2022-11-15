@@ -8,7 +8,7 @@ outline: deep
 
 ## Héritage d'attribut {#attribute-inheritance}
 
-Un "fallthrough attribute" est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events.html#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
+Un attribut implicitement déclaré (ou "fallthrough attribute") est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events.html#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
 
 Lorsqu'un composant affiche un seul élément racine, les attributs implicitement déclarés sont automatiquement ajoutés aux attributs de l'élément racine. Par exemple, le composant `<MyButton>` avec le template suivant :
 
