@@ -85,7 +85,7 @@ Le contenu du slot ne se limite pas à du texte. Il peut s'agir de n'importe que
 
 En utilisant des slots, notre `<FancyButton>` est plus flexible et réutilisable. Nous pouvons maintenant l'utiliser à différents endroits avec un contenu différent, mais tous avec le même style appliqué.
 
-Le mécanisme de slot des composants Vue est inspiré de l'[élément natif Web Component `<slot>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), mais avec des fonctionnalités supplémentaires que nous verrons plus tard.
+Le mécanisme de slot des composants Vue est inspiré de l'[élément natif Web Component `<slot>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/slot), mais avec des fonctionnalités supplémentaires que nous verrons plus tard.
 
 ## Portée du rendu {#render-scope}
 
