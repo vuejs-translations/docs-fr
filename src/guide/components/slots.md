@@ -89,7 +89,7 @@ Le mécanisme de slot des composants Vue est inspiré de l'[élément natif Web 
 
 ## Portée du rendu {#render-scope}
 
-Le contenu du slot a accès à la portée des données du composant parent, car il est défini dans le parent. Par exemple:
+Le contenu du slot a accès à la portée des données du composant parent, car il est défini dans le parent. Par exemple :
 
 ```vue-html
 <span>{{ message }}</span>
