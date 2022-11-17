@@ -24,7 +24,7 @@ Le template de `<FancyButton>` ressemble à ceci :
 </button>
 ```
 
-L'élément `<slot>` est un **slot outlet** qui indique où le **contenu du slot** fourni par le parent doit être affiché.
+L'élément `<slot>` est un **emplacement du slot** qui indique où le **contenu du slot** fourni par le parent doit être affiché.
 
 ![slot diagram](./images/slots.png)
 
