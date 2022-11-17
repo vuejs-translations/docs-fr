@@ -286,7 +286,7 @@ BaseLayout({
   footer: `...`
 })
 
-// <BaseLayout> les affiche à différents endroits
+// <BaseLayout> les affiche à différents emplacements
 function BaseLayout(slots) {
   return `<div class="container">
       <header>${slots.header}</header>
