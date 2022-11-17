@@ -20,7 +20,7 @@ Le template de `<FancyButton>` ressemble à ceci :
 
 ```vue-html{2}
 <button class="fancy-btn">
-  <slot></slot> <!-- slot outlet -->
+  <slot></slot> <!-- emplacement du slot -->
 </button>
 ```
 
