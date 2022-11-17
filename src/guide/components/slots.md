@@ -159,7 +159,7 @@ Alors, le contenu fourni sera affiché à la place :
 
 ## Slots nommés {#named-slots}
 
-Il y a des moments où il est utile d'avoir plusieurs "slot outlets" dans un seul composant. Par exemple, dans un composant `<BaseLayout>` avec le template suivant :
+Il y a des moments où il est utile d'avoir plusieurs emplacements de slot dans un seul composant. Par exemple, dans un composant `<BaseLayout>` avec le template suivant :
 
 ```vue-html
 <div class="container">
