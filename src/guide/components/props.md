@@ -96,7 +96,7 @@ Cela documente non seulement votre composant, mais avertira également, dans la 
 
 <div class="options-api">
 
-Voir aussi: [Typage de props de composant](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi : [Typage de props de composant](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 </div>
 
