@@ -1,4 +1,4 @@
-# Gestion des évènements {#component-events}
+# Gestion des évènements {#component-events} {#component-events}
 
 > Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
@@ -6,7 +6,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/defining-custom-events-emits" title="Free Vue.js Lesson on Defining Custom Events (EN)"/>
 </div>
 
-## Émettre et écouter des évènements {#emitting-and-listening-to-events}
+## Émettre et écouter des évènements {#emitting-and-listening-to-events} {#emitting-and-listening-to-events}
 
 Un composant peut émettre des évènements personnalisés directement à partir du template (par exemple, dans un gestionnaire d'évènement `v-on`) à l'aide de la méthode native `$emit` :
 
@@ -49,7 +49,7 @@ Comme les composants et les props, les noms d'évènements fournissent une trans
 Contrairement aux évènements DOM natifs, les évènements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les évènements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'évènements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management.html).
 :::
 
-## Arguments d'évènement {#event-arguments}
+## Arguments d'évènement {#event-arguments} {#event-arguments}
 
 Il est parfois utile d'émettre une valeur spécifique avec un évènement. Par exemple, nous pouvons vouloir que le composant `<BlogPost>` soit en charge d'agrandir plus ou moins le texte. Dans ces cas, nous pouvons passer des arguments supplémentaires à `$emit` pour fournir cette valeur :
 
@@ -98,7 +98,7 @@ function increaseCount(n) {
 Tous les arguments supplémentaires passés à `$emit()` après le nom de l'évènement seront transmis à l'écouteur. Par exemple, avec `$emit('foo', 1, 2, 3)` la fonction d'écoute recevra trois arguments.
 :::
 
-## Déclaration des évènements émis {#declaring-emitted-events}
+## Déclaration des évènements émis {#declaring-emitted-events} {#declaring-emitted-events}
 
 Les évènements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span> :
 
@@ -209,7 +209,7 @@ Bien que facultatif, il est recommandé de définir tous les évènements émis 
 Si un évènement natif (par exemple, `click`) est défini dans l'option `emits`, l'écouteur n'écoutera alors que les évènements `click` émis par le composant et ne réagira plus aux évènements `click` natifs.
 :::
 
-## Validation des évènements {#events-validation}
+## Validation des évènements {#events-validation} {#events-validation}
 
 Semblable à la validation de type de prop, un évènement émis peut être validé s'il est défini avec la syntaxe utilisant un objet au lieu d'un tableau.
 
@@ -269,7 +269,7 @@ export default {
 
 </div>
 
-## Utilisation avec `v-model` {#usage-with-v-model}
+## Utilisation avec `v-model` {#usage-with-v-model} {#usage-with-v-model}
 
 Les évènements personnalisés peuvent également être utilisés pour créer des inputs personnalisées qui fonctionnent avec `v-model`. Revoyons comment `v-model` est utilisé sur un élément natif :
 
@@ -414,7 +414,7 @@ const value = computed({
 
 </div>
 
-### Les arguments de `v-model`  {#v-model-arguments}
+### Les arguments de `v-model`  {#v-model-arguments} {#v-model-arguments}
 
 Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
 
@@ -469,7 +469,7 @@ export default {
 
 </div>
 
-### Liaisons multiple avec `v-model` {#multiple-v-model-bindings}
+### Liaisons multiple avec `v-model` {#multiple-v-model-bindings} {#multiple-v-model-bindings}
 
 En tirant parti de la possibilité de cibler un prop et un évènement particuliers, comme nous l'avons appris précédemment avec [les arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
 
@@ -542,7 +542,7 @@ export default {
 
 </div>
 
-### Gestion des modificateurs de `v-model` {#handling-v-model-modifiers}
+### Gestion des modificateurs de `v-model` {#handling-v-model-modifiers} {#handling-v-model-modifiers}
 
 Lorsque nous avons appris les liaisons d'entrée de formulaire, nous avons vu que `v-model` avait des [modificateurs natifs](/guide/essentials/forms.html#modifiers) - `.trim`, `.number` et `.lazy`. Dans certains cas, vous pouvez également souhaiter que le `v-model` de votre composant d'entrée personnalisé prenne en charge les modificateurs personnalisés.
 

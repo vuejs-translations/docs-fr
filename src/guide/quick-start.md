@@ -2,19 +2,21 @@
 footer: false
 ---
 
-# Démarrage rapide
+# Démarrage rapide {#quick-start}
 
-En fonction de vos besoins et de vos préférences, vous pouvez utiliser Vue avec ou sans outils de compilation.
+## En ligne {#try-vue-online}
+
+- Pour vous familiariser rapidement avec Vue, vous pouvez l'essayer directement dans notre [Playground](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==).
+
+- Si vous préférez une configuration HTML simple sans outil de build, vous pouvez utiliser [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) comme point de départ.
+
+- Si vous êtes déjà familiarisé avec Node.js et le concept des outils de construction, vous pouvez également essayer une configuration de build complète directement dans votre navigateur sur [StackBlitz](https://vite.new/vue).
 
 ## Avec des outils de build
 
 La compilation nous permet d'utiliser les [Composants monofichiers](/guide/scaling-up/sfc) (SFC) de Vue. La configuration officielle de Vue est basée sur [Vite](https://vitejs.dev), un outil de compilation front-end moderne, léger et extrêmement rapide.
 
-### En ligne
-
-Vous pouvez essayer Vue avec les SFC en ligne sur [StackBlitz](https://vite.new/vue). StackBlitz exécute la configuration de compilation basée sur Vite directement dans le navigateur, elle est donc presque identique à la configuration locale mais ne nécessite pas d'installation sur votre machine.
-
-### En local
+### En local {#creating-a-vue-application}
 
 :::tip Pré-requis
 
@@ -22,7 +24,9 @@ Vous pouvez essayer Vue avec les SFC en ligne sur [StackBlitz](https://vite.new/
 - Avoir installé [Node.js](https://nodejs.org/) version 15.0 ou plus
   :::
 
-Pour créer un projet Vue avec toute la suite d'outils de compilation, exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
+Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue.html#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
+
+Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée, ensuite exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
 
@@ -53,7 +57,7 @@ Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! N
 - L'IDE recommandé est [Visual Studio Code] (https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). [Si vous utilisez d'autres éditeurs, lisez la [section support IDE](/guide/scaling-up/tooling.html#ide-support).
 - Le [Guide des outillages](/guide/scaling-up/tooling.html) fournit plus de détails sur l'outillage, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
-- Si vous avez choisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
+- Si vous avez chooisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
 
 Dès que vous êtes prêts à livrer votre application en production, exécutez la commande suivante :
 
@@ -64,12 +68,24 @@ Cela créera une version de votre application prête pour la production dans le 
 
 [Etapes suivantes >](#etapes-suivantes)
 
-## Sans outils de build
+## Sans outils de build {#using-vue-from-cdn}
 
 Pour commencer à utiliser Vue sans compilation, il suffit de copier le code suivant dans un fichier HTML et de l'ouvrir dans votre navigateur :
 
 ```html
-<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+```
+
+Here we are using [unpkg](https://unpkg.com/), but you can also use any CDN that serves npm packages, for example [jsdelivr](https://www.jsdelivr.com/package/npm/vue) or [cdnjs](https://cdnjs.com/libraries/vue). Of course, you can also download this file and serve it yourself.
+
+When using Vue from a CDN, there is no "build step" involved. This makes the setup a lot simpler, and is suitable for enhancing static HTML or integrating with a backend framework. However, you won't be able to use the Single-File Component (SFC) syntax.
+
+### Using the Global Build {#using-the-global-build}
+
+The above link is loading the *global build* of Vue, where all top-level APIs are exposed as properties on the global `Vue` object. Here is a full example using the global build:
+
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">{{ message }}</div>
 
@@ -86,7 +102,35 @@ Pour commencer à utiliser Vue sans compilation, il suffit de copier le code sui
 </script>
 ```
 
-L'exemple ci-dessus utilise la version globale de Vue où toutes les API sont exposées sous la variable globale `Vue`. Par exemple, pour utiliser l'API `ref`, vous pouvez faire:
+[JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
+
+### Using the ES Module Build {#using-the-es-module-build}
+
+Throughout the rest of the documentation, we will be primarily using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax. Most modern browsers now support ES modules natively, so we can use Vue from a CDN via native ES modules like this:
+
+```html{3,4}
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+Notice that we are using `<script type="module">`, and the imported CDN URL is pointing to the **ES modules build** of Vue instead.
+
+[JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
+
+### Activer l'Import maps {#enabling-import-maps}
+
+Dans l'exemple ci-dessus, nous importons depuis l'URL CDN complète, mais dans le reste de la documentation, vous verrez un code comme celui-ci :
 
 ```js
 const { createApp, ref } = Vue
@@ -134,7 +178,7 @@ Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vo
 L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment.html#without-build-tools).
 :::
 
-### Servir via HTTP
+### Servir via HTTP {#splitting-up-the-modules}
 
 Au fur et à mesure que nous progressons dans le guide, il se peut que nous devions diviser notre code en plusieurs fichiers JavaScript distincts afin d'en faciliter la gestion. Par exemple :
 
@@ -160,11 +204,18 @@ export default {
 
 Pour que cela fonctionne, vous devez servir votre HTML via le protocole `http://` au lieu du protocole `file://`. Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez `npx serve` depuis la ligne de commande dans le même répertoire que votre fichier HTML. Vous pouvez également utiliser n'importe quel autre serveur HTTP qui peut servir des fichiers statiques avec les types MIME corrects.
 
+Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez "npx serve" à partir de la ligne de commande dans le même répertoire où se trouve votre fichier HTML. Vous pouvez également utiliser tout autre serveur HTTP pouvant servir des fichiers statiques avec les types MIME corrects.
+
 Vous avez peut-être remarqué que le template du composant importé est souligné comme une chaîne JavaScript. Si vous utilisez VSCode, vous pouvez installer l'extension [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) et préfixer les chaînes avec un commentaire `/*html*/` pour obtenir la coloration syntaxique.
 
-## Étapes suivantes
 
-Si vous avez sauté l'[Introduction](/guide/introduction), nous vous recommandons vivement de la lire avant de passer au reste de la documentation.
+### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
+
+De nombreux exemples pour l'API de composition utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup.html).
+
+## Étapes suivantes {#next-steps}
+
+If you skipped the [Introduction](/guide/introduction), we strongly recommend reading it before moving on to the rest of the documentation.
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/guide/essentials/application.html">

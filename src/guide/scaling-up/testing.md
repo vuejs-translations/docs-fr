@@ -2,9 +2,9 @@
 import TestingApiSwitcher from './TestingApiSwitcher.vue'
 </script>
 
-# Tester {#testing}
+# Testing
 
-## Pourquoi tester? {#why-test}
+## Why Test?
 
 Les tests automatisés vous aident ainsi que votre équipe à construire des applications Vue complexes rapidement et avec confiance en prévenant les régressions et en vous encourageant à décomposer votre application en fonctions, modules, classes et composants testables. Comme toute autre application, votre nouvelle application Vue peut dysfonctionner de différentes manières, et il est important que vous puissiez détecter ces problèmes avant de livrer.
 
@@ -12,11 +12,11 @@ Dans ce guide, nous allons couvrir la terminologie basique et donner des recomma
 
 Une section dédiée à Vue couvre les composables. Voir [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
-## Quand tester {#when-to-test}
+## When to Test
 
 Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que vous le pouvez. Plus vous attendrez avant d'ajouter des tests à votre application, plus votre application aura des dépendances, et il sera plus difficile de commencer.
 
-## Types de tests {#testing-types}
+## Testing Types
 
 Quand vous concevez la stratégie de test de votre application Vue, vous devriez mettre en place les types de tests suivants :
 
@@ -26,11 +26,11 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 
 Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
 
-## Aperçu {#overview}
+## Overview
 
 Nous allons brièvement discuter ce que chacun de ces tests sont, comment ils peuvent être implémentés pour des applications Vue et donner quelques recommendations générales.
 
-## Tester Unitairement {#unit-testing}
+## Unit Testing
 
 Les tests unitaires sont écrits pour vérifier que des petites unités de code isolées fonctionnent comme prévu. Un test unitaire couvre généralement une seule fonction, classe, composable ou module. Les tests unitaires se concentrent sur l'exactitude logique et ne concernent qu'une petite partie des fonctionnalités globales de l'application. Ils peuvent simuler de grandes parties de l'environnement de votre application (par exemple, l'état initial, les classes complexes, les modules tierce partie et les requêtes réseau).
 
@@ -80,12 +80,12 @@ Il existe deux cas où vous testez unitairement des fonctionnalités spécifique
 1. Composables
 2. Composants
 
-### Composables {#composables}
+### Composables
 
 [Les composables](/guide/reusability/composables.html) sont une catégorie de fonctions spécifiques aux applications Vue qui peut nécessiter un traitement spécial pendant les tests.
 Voir la section [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
-### Tester unitairement des composants {#unit-testing-components}
+### Unit Testing Components
 
 Un composant peut être testé de deux façons :
 
@@ -97,19 +97,19 @@ Un composant peut être testé de deux façons :
 
    Les tests "Boîte noire" n'ont pas "conscience" des détails d'implémentation d'un composant. Ces tests simulent le moins possible afin de tester l'intégration de vos composants et le système entier. Ils font généralement le rendu HTML de l'ensemble des sous-composants et sont considérés plus comme un "test d'intégration". Voir les [recommendations de test de composant](#component-testing) ci-dessous.
 
-### Recommandation {#recommendation-1}
+### Recommendation
 
 - [Vitest](https://vitest.dev/)
 
   Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire pour tirer parti de la même configuration et pipeline de transformation directement à partir de Vite. [Vitest](https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultrarapide.
 
-### Autres options {#other-options}
+### Other Options
 
 - [Peeky](https://peeky.dev/) est un autre runner de test unitaire rapide avec une intégration native de Vite. Il est également créé par un membre de l'équipe principale de Vue et offre une interface de test basée sur une interface graphique.
 
 - [Jest](https://jestjs.io/) est un framework de test unitaire populaire, et qui peut fonctionner avec Vite via le paquet [`vite-jest`](https://github.com/sodatea/vite-jest). Cependant, nous ne recommandons Jest que si vous disposez d'une suite de tests Jest existante qui doit être migrée vers un projet basé sur Vite, car Vitest offre une intégration plus transparente et de meilleures performances.
 
-## Test de composant {#component-testing}
+## Component Testing
 
 Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications. 
 
@@ -205,7 +205,7 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
   Si une méthode doit être testée de manière approfondie, envisagez de l'extraire dans une fonction utilitaire autonome et d'écrire un test unitaire dédié à celle-ci. S'il ne peut pas être extrait proprement, il peut être testé dans le cadre d'un test de composant, d'intégration ou bout-en-bout qui le couvre.
 
-### Recommendation {#recommandation}
+### Recommendation
 
 - [Vitest](https://vitest.dev/) pour les composants ou composables qui ont un rendu headless (ex. la fonction [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) dans VueUse). Les composants et le DOM peuvent être testés à l'aide de [`@testing-library/vue`](https://testing-library.com/docs/vue-testing-library/intro).
 
@@ -213,7 +213,7 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
 Les principales différences entre Vitest et les runners basés sur un navigateur sont la rapidité et le contexte d'exécution. En bref, les runners basés sur un navigateur, comme Cypress, peuvent détecter des problèmes que les runners basés sur node, comme Vitest, ne peuvent pas détecter (par exemple, les problèmes de style, les événements DOM natifs réels, les cookies, le local storage et les défaillances réseau), mais les runners basés sur un navigateur sont *plusieurs ordres de grandeur plus lents que Vitest* parce qu'ils ouvrent un navigateur, compilent vos feuilles de style, etc. Cypress est un runner basé sur un navigateur qui prend en charge les tests de composants. Veuillez lire [la page de comparaison de Vitest](https://vitest.dev/guide/comparisons.html#cypress) pour obtenir les dernières informations comparant Vitest et Cypress.
 
-### Bibliothèques de montage {#mounting-libraries}
+### Mounting Libraries
 
 Le test de composant implique souvent le montage du composant testé isolément, le déclenchement d'événements d'entrée utilisateur simulés et la vérification du rendu DOM en sortie. Il existe des bibliothèques d'utilitaires dédiées qui simplifient ces tâches.
 
@@ -223,11 +223,11 @@ Le test de composant implique souvent le montage du composant testé isolément,
 
 Nous vous recommandons d'utiliser `@testing-library/vue` pour tester les composants dans les applications, car son objectif correspond mieux aux priorités de test des applications. Utilisez `@vue/test-utils` uniquement si vous créez des composants avancés qui nécessitent de tester détails internes spécifiques à Vue.
 
-### Autres options {#other-options-1}
+### Other Options
 
 - [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-end) supportant le test de composants Vue. ([Projet d'exemple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
 
-## Tests E2E {#e2e-testing}
+## E2E Testing
 
 Alors que les tests unitaires offrent aux développeurs un certain degré de confiance, les tests unitaires et les tests de composants sont limités dans leur capacité à fournir une couverture holistique d'une application lorsqu'ils sont déployés en production. En conséquence, les tests End-to-end (E2E) offrent une couverture sur ce qui est sans doute l'aspect le plus important d'une application : ce qui se passe lorsque les utilisateurs utilisent réellement vos applications.
 
@@ -243,41 +243,41 @@ Les tests End-to-end valident de nombreuses couches de votre application. Ils pe
 
 En testant l'impact des actions des utilisateurs sur votre application, les tests E2E sont souvent la clé d'une plus grande confiance dans le bon fonctionnement ou non d'une application.
 
-### Choisir une solution de test E2E {#choosing-an-e2e-testing-solution}
+### Choosing an E2E Testing Solution
 
 Alors que les tests End-to-end (E2E) sur le Web ont acquis une réputation négative pour les tests peu fiables ("flaky") et le ralentissement des processus de développement, les outils E2E modernes ont fait des progrès pour créer des tests plus fiables, interactifs et utiles. Lorsque vous choisissez une infrastructure de test E2E, les sections suivantes fournissent des conseils sur les éléments à garder à l'esprit lors du choix d'une infrastructure de test pour votre application.
 
-#### Tester avec plusieurs navigateurs {#cross-browser-testing}
+#### Cross-browser testing
 
 L'un des principaux avantages pour lesquels les tests End-to-end (E2E) sont connus est sa capacité à tester votre application sur plusieurs navigateurs. Bien qu'il puisse sembler souhaitable d'avoir une couverture inter-navigateurs à 100%, il est important de noter que les tests inter-navigateurs ont des rendements décroissants sur les ressources d'une équipe en raison du temps supplémentaire et de la puissance de la machine nécessaire pour les exécuter de manière cohérente. Par conséquent, il est important d'être conscient de ce compromis lorsque vous choisissez la quantité de tests inter-navigateurs dont votre application a besoin.
 
-#### Des boucles de feedback plus rapides {#faster-feedback-loops}
+#### Faster feedback loops
 
 L'un des principaux problèmes liés aux tests et au développement End-to-end (E2E) est que l'exécution de l'ensemble de la suite prend beaucoup de temps. En règle générale, cela n'est fait que dans les pipelines d'intégration et de déploiement continus (CI/CD). Les frameworks de test E2E modernes ont aidé à résoudre ce problème en ajoutant des fonctionnalités telles que la parallélisation, ce qui permet aux pipelines CI / CD d'exécuter souvent des magnitudes plus rapidement qu'auparavant. En outre, lors du développement local, la possibilité d'exécuter de manière sélective un seul test pour la page sur laquelle vous travaillez tout en fournissant un rechargement à chaud des tests peut aider à améliorer le flux de travail et la productivité d'un développeur.
 
-#### First-class debugging experience {#first-class-debugging-experience}
+#### First-class debugging experience
 
 Alors que les développeurs s'appuyaient traditionnellement sur l'analyse des logs dans une fenêtre de terminal pour aider à déterminer ce qui n'allait pas dans un test, les frameworks de test modernes End-to-end (E2E) permettent aux développeurs de tirer parti d'outils qu'ils connaissent déjà, par exemple les outils de développement de navigateur.
 
-#### Visibilité en mode headless {#visibility-in-headless-mode}
+#### Visibility in headless mode
 
 Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration / déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
 
-### Recommandation {#recommentation-2}
+### Recommendation
 
 - [Cypress](https://www.cypress.io/)
 
   Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance à la "flakiness" des tests, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants] (https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
 
-### Autres options {#other-options-2}
+### Other Options
 
 - [Playwright](https://playwright.dev/) est également une excellente solution de test E2E avec une gamme plus large de support de navigateur (principalement WebKit). Voir [Pourquoi dramaturge](https://playwright.dev/docs/why-dramaturge) pour plus de détails. 
 
 - [Nightwatch v2](https://v2.nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui donne la plus large gamme de support de navigateur.
 
-## Recipes {#recipes}
+## Recipes
 
-### Ajouter Vitest a un projet {#adding-vitest-to-a-project}
+### Adding Vitest to a Project
 
 Dans un projet Vue basé sur Vite, lancez :
 
@@ -351,7 +351,7 @@ Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le
 > npm test
 ```
 
-### Tester les Composables {#testing-composables}
+### Testing Composables
 
 > Cette section suppose que vous avez lu la section [Composables](/guide/reusability/composables.html).
 

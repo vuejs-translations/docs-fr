@@ -1,6 +1,6 @@
-# Déploiement en production {#production-deployment}
+# Déploiement en production {#production-deployment} {#production-deployment}
 
-## Développement vs. Production {#development-vs-production}
+## Développement vs. Production {#development-vs-production} {#development-vs-production}
 
 Durant le développement, Vue fournit un certain nombre de fonctionnalités pour améliorer l'expérience de développement :
 
@@ -11,7 +11,7 @@ Durant le développement, Vue fournit un certain nombre de fonctionnalités pour
 
 Cependant, ces fonctionnalités deviennent inutiles en production. Certains warnings peuvent également entraîner une petite baisse de performances générales. Lors du déploiement en production, nous devrions supprimer toutes les branches de code de développement inutilisées pour profiter d'une charge moins élevée et de meilleures performances.
 
-## Sans les outils de build {#without-build-tools}
+## Sans les outils de build {#without-build-tools} {#without-build-tools}
 
 Si vous utilisez Vue sans outil de build, en le chargeant à partir d'un CDN ou d'un script local, assurez-vous d'utiliser le build de production (fichiers `dist` d'extension `.prod.js`) en déployant en production. Les builds de production sont pré-minifiés et toutes les branches de développement y sont supprimées.
 
@@ -20,7 +20,7 @@ Si vous utilisez Vue sans outil de build, en le chargeant à partir d'un CDN ou 
 
 Consultez le [guide des fichiers dist](https://github.com/vuejs/core/tree/main/packages/vue#which-dist-file-to-use) pour plus de précisions.
 
-## Avec les outils de build {#with-build-tools}
+## Avec les outils de build {#with-build-tools} {#with-build-tools}
 
 Les projets crées par `create-vue` (basé sur Vite) ou Vue CLI (basé sur webpack) sont préconfigurés pour les builds de production.
 
@@ -36,7 +36,7 @@ Références supplémentaires :
 - [Guide déploiement Vite](https://vitejs.dev/guide/static-deploy.html)
 - [Guide de déploiement Vue CLI](https://cli.vuejs.org/guide/deployment.html)
 
-## Suivi des erreurs d'exécution {#tracking-runtime-errors}
+## Suivi des erreurs d'exécution {#tracking-runtime-errors} {#tracking-runtime-errors}
 
 Le [gestionnaire d'erreur au niveau applicatif](/api/application.html#app-config-errorhandler) peut être utilisé pour signaler les erreurs aux services tiers de suivi :
 
