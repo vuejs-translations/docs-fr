@@ -484,7 +484,7 @@ Détails supplémentaires :
 
 - Une prop facultative absente autre que `Boolean` aura la valeur `undefined`.
 
-- Les props `Boolean` absentes seront converties en `false`. Vous pouvez changer cela en définissant une valeur par défaut - c'est-à-dire: `default: undefined` pour se comporter comme une prop non booléen.
+- Les props `Boolean` absentes seront converties en `false`. Vous pouvez changer cela en définissant une valeur par défaut, c'est-à-dire: `default: undefined` pour se comporter comme une prop non booléen.
 
 - Si une valeur `default` est spécifiée, elle sera utilisée si la valeur prop résolue est `undefined` - cela inclut à la fois lorsque la prop est absente ou lorsqu'une valeur `undefined` explicite est passée.
 
