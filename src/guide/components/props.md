@@ -467,7 +467,7 @@ export default {
     // Fonction avec une valeur par défaut
     propG: {
       type: Function,
-      // Contrairement aux valeur par défaut d'un objet ou d'un tableau , il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
+      // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
       default() {
         return 'Default function'
       }
