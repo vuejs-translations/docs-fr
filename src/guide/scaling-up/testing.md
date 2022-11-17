@@ -2,9 +2,9 @@
 import TestingApiSwitcher from './TestingApiSwitcher.vue'
 </script>
 
-# Testing
+# Tester {#testing}
 
-## Why Test?
+## Pourquoi tester? {#why-test}
 
 Les tests automatisés vous aident ainsi que votre équipe à construire des applications Vue complexes rapidement et avec confiance en prévenant les régressions et en vous encourageant à décomposer votre application en fonctions, modules, classes et composants testables. Comme toute autre application, votre nouvelle application Vue peut dysfonctionner de différentes manières, et il est important que vous puissiez détecter ces problèmes avant de livrer.
 
@@ -12,7 +12,7 @@ Dans ce guide, nous allons couvrir la terminologie basique et donner des recomma
 
 Une section dédiée à Vue couvre les composables. Voir [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
-## When to Test
+## Quand tester {#when-to-test}
 
 Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que vous le pouvez. Plus vous attendrez avant d'ajouter des tests à votre application, plus votre application aura des dépendances, et il sera plus difficile de commencer.
 
@@ -26,11 +26,11 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 
 Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
 
-## Overview
+## Aperçu {#overview}
 
 Nous allons brièvement discuter ce que chacun de ces tests sont, comment ils peuvent être implémentés pour des applications Vue et donner quelques recommendations générales.
 
-## Unit Testing
+## Tester Unitairement {#unit-testing}
 
 Les tests unitaires sont écrits pour vérifier que des petites unités de code isolées fonctionnent comme prévu. Un test unitaire couvre généralement une seule fonction, classe, composable ou module. Les tests unitaires se concentrent sur l'exactitude logique et ne concernent qu'une petite partie des fonctionnalités globales de l'application. Ils peuvent simuler de grandes parties de l'environnement de votre application (par exemple, l'état initial, les classes complexes, les modules tierce partie et les requêtes réseau).
 
@@ -80,7 +80,7 @@ Il existe deux cas où vous testez unitairement des fonctionnalités spécifique
 1. Composables
 2. Composants
 
-### Composables
+### Composables {#composables}
 
 [Les composables](/guide/reusability/composables.html) sont une catégorie de fonctions spécifiques aux applications Vue qui peut nécessiter un traitement spécial pendant les tests.
 Voir la section [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
@@ -97,19 +97,19 @@ Un composant peut être testé de deux façons :
 
    Les tests "Boîte noire" n'ont pas "conscience" des détails d'implémentation d'un composant. Ces tests simulent le moins possible afin de tester l'intégration de vos composants et le système entier. Ils font généralement le rendu HTML de l'ensemble des sous-composants et sont considérés plus comme un "test d'intégration". Voir les [recommendations de test de composant](#component-testing) ci-dessous.
 
-### Recommendation
+### Recommandation {#recommendation-1}
 
 - [Vitest](https://vitest.dev/)
 
   Étant donné que la configuration officielle créée par `create-vue` est basée sur [Vite](https://vitejs.dev/), nous vous recommandons d'utiliser un framework de test unitaire pour tirer parti de la même configuration et pipeline de transformation directement à partir de Vite. [Vitest](https://vitest.dev/) est un framework de test unitaire conçu spécifiquement à cet effet, créé et maintenu par les membres de l'équipe Vue / Vite. Il s'intègre aux projets basés sur Vite avec un minimum d'effort et est ultrarapide.
 
-### Other Options
+### Autres options {#other-options}
 
 - [Peeky](https://peeky.dev/) est un autre runner de test unitaire rapide avec une intégration native de Vite. Il est également créé par un membre de l'équipe principale de Vue et offre une interface de test basée sur une interface graphique.
 
 - [Jest](https://jestjs.io/) est un framework de test unitaire populaire, et qui peut fonctionner avec Vite via le paquet [`vite-jest`](https://github.com/sodatea/vite-jest). Cependant, nous ne recommandons Jest que si vous disposez d'une suite de tests Jest existante qui doit être migrée vers un projet basé sur Vite, car Vitest offre une intégration plus transparente et de meilleures performances.
 
-## Component Testing
+## Test de composant {#component-testing}
 
 Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications. 
 
