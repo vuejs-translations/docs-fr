@@ -319,7 +319,7 @@ Notez que l'expression est soumise aux [contraintes de syntaxe](/guide/essential
 
 Comme indiqué dans [Portée du rendu](#render-scope), le contenu du slot n'a pas accès à l'état dans le composant enfant.
 
-Cependant, il existe des cas où il peut être utile que le contenu d'un slot puisse utiliser des données provenant à la fois de la portée parent et de la portée enfant. Pour y parvenir, nous avons besoin d'un moyen pour l'enfant de transmettre des données à un slot pour son affichage.
+Cependant, il existe des cas où il peut être utile que le contenu d'un slot puisse utiliser des données provenant à la fois de la portée du parent et de la portée de l'enfant. Pour y parvenir, nous avons besoin d'un moyen pour l'enfant de transmettre des données à un slot pour son affichage.
 
 En fait, nous pouvons faire exactement cela - nous pouvons transmettre des attributs à un emplacement de slot comme on transmettrait des props à un composant :
 
