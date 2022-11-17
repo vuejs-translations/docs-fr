@@ -193,7 +193,7 @@ Dans ces cas, l'élément `<slot>` a un attribut spécial, `name`, qui peut êtr
 
 Une balise `<slot>` sans attribut `name` porte implicitement le nom "default".
 
-Dans un composant parent utilisant `<BaseLayout>`, nous avons besoin d'un moyen de transmettre plusieurs fragments de contenu de slot, chacun ciblant un "slot outlet" différent. C'est là qu'interviennent les **slots nommés**.
+Dans un composant parent utilisant `<BaseLayout>`, nous avons besoin d'un moyen de transmettre plusieurs fragments de contenu de slot, chacun ciblant un emplacement de slot différent. C'est là qu'interviennent les **slots nommés**.
 
 Pour passer un slot nommé, nous devons utiliser un élément `<template>` avec la directive `v-slot`, puis passer le nom du slot comme argument à `v-slot` :
 
