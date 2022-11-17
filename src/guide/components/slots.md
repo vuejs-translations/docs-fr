@@ -4,7 +4,7 @@
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-component-slots" title="Free Vue.js Slots Lesson"/>
 
-## Contenu de Slot Content and Outlet
+## Les contenus de slot {#slot-content-and-outlet}
 
 Nous avons appris que les composants peuvent accepter des props, qui peuvent être des valeurs JavaScript de n'importe quel type. Mais qu'en est-il du contenu du template ? Dans certains cas, nous pouvons vouloir transmettre un fragment de template à un composant enfant et laisser le composant enfant afficher le fragment dans son propre template.
 
