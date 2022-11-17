@@ -98,7 +98,7 @@ Le contenu du slot a accès à la portée des données du composant parent, car 
 
 Ici, les deux interpolations <span v-pre>`{{ message }}`</span> rendront le même contenu.
 
-Le contenu du slot **n'a pas** accès aux données du composant enfant. Les expressions dans les templates Vue ne peuvent accéder qu'à la portée de déclaration dans laquelle elles sont définies, conformément à la portée lexicale de JavaScript. Autrement dit:
+Le contenu du slot **n'a pas** accès aux données du composant enfant. Les expressions dans les templates Vue ne peuvent accéder qu'à la portée de déclaration dans laquelle elles sont définies, conformément à la portée lexicale de JavaScript. Autrement dit :
 
 > Les expressions présentes dans template parent n'ont accès qu'à la portée parent ; les expressions dans le template enfant n'ont accès qu'à la portée composant enfant.
 
