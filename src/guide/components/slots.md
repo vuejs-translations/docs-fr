@@ -28,7 +28,7 @@ L'élément `<slot>` est un **emplacement du slot** qui indique où le **contenu
 
 ![slot diagram](./images/slots.png)
 
-<!-- https://www.figma.com/file/LjKTYVL97Ck6TEmBbstavX/slot -->
+<!-- https://www.figma.com/file/uXgOHSQYUcc1elWGPTskfs/slot -->
 
 Et le DOM rendu final :
 
