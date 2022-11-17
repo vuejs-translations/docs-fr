@@ -75,7 +75,7 @@ Pour commencer à utiliser Vue sans compilation, il suffit de copier le code sui
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 ```
-
+// FIXME: TO translate
 Here we are using [unpkg](https://unpkg.com/), but you can also use any CDN that serves npm packages, for example [jsdelivr](https://www.jsdelivr.com/package/npm/vue) or [cdnjs](https://cdnjs.com/libraries/vue). Of course, you can also download this file and serve it yourself.
 
 When using Vue from a CDN, there is no "build step" involved. This makes the setup a lot simpler, and is suitable for enhancing static HTML or integrating with a backend framework. However, you won't be able to use the Single-File Component (SFC) syntax.
