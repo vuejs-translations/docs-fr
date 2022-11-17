@@ -373,7 +373,7 @@ Le principal inconvénient de ces mutations est qu'elles permettent au composant
 
 Les composants peuvent spécifier des exigences pour leurs props, tels que la déclaration des types que vous avez déjà vus. Si une exigence n'est pas remplie, Vue vous avertira dans la console JavaScript du navigateur. Ceci est particulièrement utile lors du développement d'un composant destiné à être utilisé par d'autres.
 
-Pour spécifier les validations de props, vous pouvez fournir un objet avec des exigences de validation à <span class="composition-api">la macro `defineProps()`</span><span class="options-api">l'option `props`</span>, au lieu d'un tableau de chaînes de caractères. Par exemple:
+Pour spécifier les validations de props, vous pouvez fournir un objet avec des exigences de validation à <span class="composition-api">la macro `defineProps()`</span><span class="options-api">l'option `props`</span>, au lieu d'un tableau de chaînes de caractères. Par exemple :
 
 <div class="composition-api">
 
