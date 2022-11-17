@@ -363,7 +363,7 @@ Il y a généralement deux cas où il est tentant de muter une prop :
 
    </div>
 
-### Mutation de props de type objets et tableau {#mutating-object-array-props}
+### Mutation de props de type objet et tableau {#mutating-object-array-props}
 
 Lorsque des objets et des tableaux sont passés en tant que props, bien que le composant enfant ne puisse pas muter la liaison de la prop, il **pourra** muter les propriétés imbriquées de l'objet ou du tableau. En effet, en JavaScript, les objets et les tableaux sont passés par référence, et il est déraisonnablement coûteux pour Vue d'empêcher de telles mutations.
 
