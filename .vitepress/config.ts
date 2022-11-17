@@ -187,7 +187,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Composants en détails',
       items: [
         {
           text: 'Enregistrement',
@@ -196,7 +196,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Props', link: '/guide/components/props' },
         { text: 'Gestion des évènements', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
         },
         { text: 'Slots', link: '/guide/components/slots' },

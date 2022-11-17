@@ -210,7 +210,7 @@ app.directive('demo', (el, binding) => {
 
 ## Usage on Components
 
-When used on components, custom directives will always apply to a component's root node, similar to [Fallthrough Attributes](/guide/components/attrs.html).
+When used on components, custom directives will always apply to a component's root node, similar to [Attributs implicitement déclarés](/guide/components/attrs.html).
 
 ```vue-html
 <MyComponent v-demo="test" />
