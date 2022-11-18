@@ -2,7 +2,7 @@
 
 Vue utilise une syntaxe de template basée sur HTML pour permettre de lier de manière déclarative le DOM rendu aux données de l'instance du composant sous-jacent. Tous les templates Vue sont du HTML syntaxiquement valide qui peut être analysé par des navigateurs et des analyseurs HTML conformes aux spécifications.
 
-Under the hood, Vue compiles the templates into highly-optimized JavaScript code. Combined with the reactivity system, Vue is able to intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.
+Sous le capot, Vue compile les templates en code JavaScript hautement optimisé. Combiné avec le système de réactivité, Vue est capable de déterminer intelligemment le nombre minimal de composants à restituer et d'appliquer la quantité minimale de manipulations DOM lorsque l'état de l'application change.
 
 Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [TODO(fr)écrire directement des fonctions de rendu](/guide/extras/render-function.html) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'ils ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
 
@@ -64,7 +64,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 > Pour le reste du guide, nous utiliserons la syntaxe abrégée dans les exemples de code, car c'est l'utilisation la plus courante pour les développeurs Vue.
 
-### Boolean Attributes
+### Attributs booleans {#boolean-attributes}
 
 [Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par sa présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
 
@@ -76,7 +76,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 L'attribut `disabled` sera inclus si `boutonDésactivé` a une [valeur évaluée à vrai](https://developer.mozilla.org/fr/docs/Glossary/Truthy). Il sera également inclus si la valeur est une chaîne vide, en maintenant la cohérence avec `<button disabled="">`. Pour les [valeurs évaluées à faux](https://developer.mozilla.org/fr/docs/Glossary/Falsy), l'attribut sera omis.
 
-### Dynamically Binding Multiple Attributes
+### Liaison dynamique de plusieurs attributs {#dynamically-binding-multiple-attributes}
 
 Si vous avez un objet JavaScript représentant plusieurs attributs qui ressemble à ceci :
 
@@ -111,7 +111,7 @@ Vous pouvez les lier à un seul élément en utilisant `v-bind` sans argument :
 <div v-bind="objectOfAttrs"></div>
 ```
 
-## Using JavaScript Expressions
+## Utilisation d'expressions JavaScript {#using-javascript-expressions}
 
 Jusqu'à présent, nous n'avons lié que des clés de propriété simples dans nos modèles. Mais Vue prend en charge toute la puissance des expressions JavaScript dans toutes les liaisons de données :
 
@@ -132,9 +132,9 @@ Dans les templates Vue, les expressions JavaScript peuvent être utilisées dans
 - Dans une Interpolation de texte (moustaches)
 - Dans la valeur d'attribut de toutes les directives Vue (attributs spéciaux qui commencent par `v-`)
 
-### Expressions Only
+### Expressions uniquement {#expressions-only}
 
-Each binding can only contain **one single expression**. An expression is a piece of code that can evaluate to a value. A simple check is whether it can be used after `return`.
+Chaque liaison ne peut contenir qu'**une seule expression**. Une expression est un morceau de code qui peut donner une valeur. Une simple vérification est de savoir si elle peut être utilisée après un `return`.
 
 Par conséquent, ce qui suit ne fonctionnera **PAS** :
 
@@ -146,7 +146,7 @@ Par conséquent, ce qui suit ne fonctionnera **PAS** :
 {{ if (ok) { return message } }}
 ```
 
-### Calling Functions
+### Appel de fonctions {#calling-functions}
 
 Il est possible d'appeler une méthode exposée au composant dans une expression de liaison :
 
@@ -160,13 +160,13 @@ Il est possible d'appeler une méthode exposée au composant dans une expression
 Les fonctions appelées à l'intérieur des expressions de liaison seront appelées à chaque mise à jour du composant, elles ne doivent donc **pas** avoir d'effets de bord, tels que la modification de données ou le déclenchement d'opérations asynchrones.
 :::
 
-### Restricted Globals Access
+### Accès global restreint {#restricted-globals-access}
 
 Les expressions de template sont en bac à sable et n'ont accès qu'à une [TODO(fr)liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
 
 Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [TODO(fr)`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
-## Directives
+## Directives {#directives}
 
 Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives clé-en-main](/api/built-in-directives.html), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
 
@@ -178,7 +178,7 @@ Les valeurs attendues dans les directives sont une seule expression JavaScript (
 
 Ici, la directive `v-if` va supprimer/insérer l'élément `<p>` selon la valeur booléenne de l'expression `vu`.
 
-### Arguments
+### Arguments {#arguments}
 
 Certaines directives peuvent prendre un "argument", distingué par un double-point après le nom de la directive. Par exemple, la directive `v-bind` est utilisé pour mettre à jour par réaction un attribute HTML :
 
@@ -189,7 +189,7 @@ Certaines directives peuvent prendre un "argument", distingué par un double-poi
 <a :href="url"> ... </a>
 ```
 
-Here `href` is the argument, which tells the `v-bind` directive to bind the element's `href` attribute to the value of the expression `url`. In the shorthand, everything before the argument (i.e. `v-bind:`) is condensed into a single character, `:`.
+Ici `href` est l'argument, qui sugère à la directive `v-bind` de lier l'attribut `href` de l'élément à l'expression `url`. Par un raccourci, tout ce qui se trouve avant l'argument (pour `v-bind:`) est condensé au simple caractère `:`.
 
 Autre exemple avec la directive `v-on`, qui écoute les événements du DOM :
 
@@ -200,9 +200,9 @@ Autre exemple avec la directive `v-on`, qui écoute les événements du DOM :
 <a @click="doSomething"> ... </a>
 ```
 
-Here the argument is the event name to listen to: `click`. `v-on` has a corresponding shorthand, namely the `@` character. We will talk about event handling in more detail too.
+Ici l'argument est le nom de l'événement à écouter: `click`. `v-on` a un raccourci dédié, le caractère `@`. Nous en parlerons également en détail sur la gestion de événements.
 
-### Dynamic Arguments
+### Arguments dynamiques {#dynamic-arguments}
 
 Il est également possible d'utiliser une expression JavaScript dans l'argument d'une directive en l'entourant de crochets :
 
@@ -217,7 +217,7 @@ comme expliqué dans les sections "Contraintes de valeur des arguments dynamique
 <a :[attributeName]="url"> ... </a>
 ```
 
-Here `attributeName` will be dynamically evaluated as a JavaScript expression, and its evaluated value will be used as the final value for the argument. For example, if your component instance has a data property, `attributeName`, whose value is `"href"`, then this binding will be equivalent to `v-bind:href`.
+Ici `attributeName` sera dynamiquement évalué comme une expression JavaScript, et sa valeur évaluée sera utilisée comme valeur finale pour l'argument. Par exemple, si l'instance du composant a une propriété, `attributeName`, et que sa valeur est `"href"`, alors la liaison sera équivalent à `v-bind:href`.
 
 De manière similaire, vous pouvez utilise des arguments dynamiques pour lier un gestionnaire à un nom d'événement dynamique :
 
@@ -230,11 +230,11 @@ De manière similaire, vous pouvez utilise des arguments dynamiques pour lier un
 
 Dans cet exemple, quand la valeur de `eventName` est `"focus"`, `v-on:[eventName]` sera équivalent à `v-on:focus`.
 
-#### Dynamic Argument Value Constraints
+#### Contraintes de valeur des arguments dynamiques {#dynamic-argument-value-constraints}
 
 Les arguments dynamiques sont prévus pour être évalués en une chaîne de caractères, avec `null` pour exception. La valeur spéciale `null` peut être utilisée pour supprimer explicitement la liaison. Toute autre valeur non-chaînée déclenchera un warning.
 
-#### Dynamic Argument Syntax Constraints
+#### Contraintes de syntaxe des arguments dynamiques {#dynamic-argument-syntax-constraints}
 
 Les expressions d'argument dynamique ont quelques contraintes syntaxique à cause de certains caractères, comme les espaces et les guillemets, qui sont invalides pour des noms d'attributs HTML:
 
@@ -253,7 +253,7 @@ Lorsque vous utilisez des templates dans le DOM (templates directement écrits d
 
 Ci-dessus sera converti en `:[someattr]` dans les templates dans le DOM. Si votre composant a une propriété `someAttr` au lieu de `someattr`, votre code ne fonctionnera pas. Les modèles à l'intérieur des composants à fichier unique ne sont **pas** soumis à cette contrainte.
 
-### Modifiers
+### Modificateurs {#modifiers}
 
 Les modificateurs sont des suffixes spéciaux désignés par un point, qui indiquent qu'une directive doit être liée d'une manière spéciale. Par exemple, le modificateur `.prevent` indique à la directive `v-on` d'appeler `event.preventDefault()` sur l'événement déclenché :
 
