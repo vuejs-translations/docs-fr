@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# Attributs implicitement déclarés (Fallthrough Attributes) {#fallthrough-attributes} {#fallthrough-attributes}
+# Attributs implicitement déclarés (Fallthrough Attributes) {#fallthrough-attributes}
 
 > Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
-## Héritage d'attribut {#attribute-inheritance} {#attribute-inheritance}
+## Héritage d'attribut {#attribute-inheritance}
 
 Un attribut implicitement déclaré (ou "fallthrough attribute") est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events.html#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
 
@@ -31,7 +31,7 @@ Le DOM rendu final serait :
 
 Ici, `<MyButton>` n'a pas déclaré `class` comme une prop acceptée. Par conséquent, `class` est traitée comme un attribut implicitement déclaré et automatiquement ajoutée à l'élément racine de `<MyButton>`.
 
-### Fusion de `class` and `style` {#class-and-style-merging} {#class-and-style-merging}
+### Fusion de `class` and `style` {#class-and-style-merging}
 
 Si l'élément racine du composant enfant a déjà des attributs `class` ou `style` existants, il sera fusionné avec les valeurs `class` et `style` héritées du parent. Supposons que nous modifions le template de `<MyButton>` dans l'exemple précédent en :
 
@@ -46,7 +46,7 @@ Ainsi, le DOM final rendu deviendrait :
 <button class="btn large">click me</button>
 ```
 
-### Héritage de l'écouteur "v-on" {#v-on-listener-inheritance} {#v-on-listener-inheritance}
+### Héritage de l'écouteur "v-on" {#v-on-listener-inheritance}
 
 La même règle s'applique aux écouteurs d'événements `v-on` :
 
@@ -56,7 +56,7 @@ La même règle s'applique aux écouteurs d'événements `v-on` :
 
 L'écouteur de `click` sera ajouté à l'élément racine de `<MyButton>`, c'est-à-dire l'élément natif `<button>`. Lorsque le `<button>` natif est cliqué, il déclenchera la méthode `onClick` du composant parent. Si le `<button>` natif a déjà un écouteur de `click` lié à `v-on`, alors les deux écouteurs se déclencheront.
 
-### Héritage des composants imbriqués {#nested-component-inheritance} {#nested-component-inheritance}
+### Héritage des composants imbriqués {#nested-component-inheritance}
 
 Si un composant rend un autre composant comme son nœud racine, par exemple, nous avons refactorisé `<MyButton>` pour rendre un `<BaseButton>` comme sa racine :
 
@@ -73,7 +73,7 @@ Notez que :
 
 2. Les attributs transférés peuvent être acceptés comme props par `<BaseButton>`, s'ils sont déclarés par celui-ci.
 
-## Désactivation de l'héritage d'attribut {#disabling-attribute-inheritance} {#disabling-attribute-inheritance}
+## Désactivation de l'héritage d'attribut {#disabling-attribute-inheritance}
 
 Si vous **ne souhaitez pas** qu'un composant hérite automatiquement des attributs, vous pouvez définir `inheritAttrs: false` dans les options du composant.
 
@@ -130,7 +130,7 @@ Nous voulons que tous les attributs implicitement déclarés tels que `class` et
 
 Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
 
-## Héritage d'attributs sur plusieurs nœuds racine {#attribute-inheritance-on-multiple-root-nodes} {#attribute-inheritance-on-multiple-root-nodes}
+## Héritage d'attributs sur plusieurs nœuds racine {#attribute-inheritance-on-multiple-root-nodes}
 
 Contrairement aux composants avec un seul nœud racine, les composants avec plusieurs nœuds racine n'ont pas de comportement automatique concenant les attributs impliciitement déclarés. Si `$attrs` n'est pas lié explicitement, un avertissement lors de l'exécution sera émis.
 
@@ -154,7 +154,7 @@ L'avertissement sera supprimé si `$attrs` est explicitement lié :
 <footer>...</footer>
 ```
 
-## Accéder aux attributs implicitement déclarés en JavaScript {#accessing-fallthrough-attributes-in-javascript} {#accessing-fallthrough-attributes-in-javascript}
+## Accéder aux attributs implicitement déclarés en JavaScript {#accessing-fallthrough-attributes-in-javascript}
 
 <div class="composition-api">
 

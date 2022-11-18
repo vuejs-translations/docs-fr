@@ -1,4 +1,4 @@
-# Enregistrement des composants {#component-registration} {#component-registration}
+# Enregistrement des composants {#component-registration}
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Free Vue.js Component Registration Lesson"/>
 
@@ -6,7 +6,7 @@
 
 Un composant Vue doit être "enregistré" afin que Vue sache où localiser son implémentation lorsqu'il est rencontré dans un template. Il existe deux façons d'enregistrer des composants : globale et locale.
 
-## Enregistrement global {#global-registration} {#global-registration}
+## Enregistrement global {#global-registration}
 
 Nous pouvons rendre les composants disponibles globalement dans l'[application Vue](/guide/essentials/application.html) actuelle en utilisant la méthode `app.component()` :
 
@@ -53,7 +53,7 @@ Les composants enregistrés globalement peuvent être utilisés dans le template
 
 Cela s'applique même à tous les sous-composants, ce qui signifie que ces trois composants seront également disponibles _dans chacun d'eux_.
 
-## Enregistrement local {#local-registration} {#local-registration}
+## Enregistrement local {#local-registration}
 
 Bien que pratique, l'enregistrement global présente quelques inconvénients :
 
@@ -128,7 +128,7 @@ export default {
 
 Notez que **les composants enregistrés localement _ne_ sont _pas_ également disponibles dans les composants descendants**. Dans ce cas, `ComponentA` ne sera disponible que dans le composant actuel, et non pas dans tous autres de ses composants enfants ou descendants.
 
-## Casse des noms des composants {#component-name-casing} {#component-name-casing}
+## Casse des noms des composants {#component-name-casing}
 
 Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) lors de l'enregistrement des composants. Ceci est dû au fait:
 

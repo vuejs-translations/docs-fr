@@ -1,6 +1,6 @@
-# Composants asynchrones {#async-components} {#async-components}
+# Composants asynchrones {#async-components}
 
-## Utilisation de base {#basic-usage} {#basic-usage}
+## Utilisation de base {#basic-usage}
 
 Dans des applications de taille importante, il est parfois judicieux de diviser l'application en plus petits morceaux et ne charger un composant depuis le serveur que lorsque cela est nécessaire. Pour rendre cela possible, Vue a une fonction [`defineAsyncComponent`](/api/general.html#defineasynccomponent) :
 
@@ -82,7 +82,7 @@ const AdminPage = defineAsyncComponent(() =>
 
 </div>
 
-## Etats de chargement et d'erreur {#loading-and-error-states} {#loading-and-error-states}
+## Etats de chargement et d'erreur {#loading-and-error-states}
 
 Les opérations asynchrones impliquent inévitablement des états de chargement et d'erreur - `defineAsyncComponent()` prend en charge la gestion de ces états via des options avancées :
 
@@ -108,6 +108,6 @@ Si un composant de chargement est fourni, il sera affiché en premier lors du ch
 
 Si un composant d'erreur est fourni, il sera affiché lorsque la promesse renvoyée par la fonction de chargement est rejetée. Vous pouvez également spécifier un délai d'expiration pour afficher le composant d'erreur lorsque la demande prend trop de temps.
 
-## Utilisation avec Suspense {#using-with-suspense} {#using-with-suspense}
+## Utilisation avec Suspense {#using-with-suspense}
 
 Les composants asynchrones peuvent être utilisés avec le composant fourni `<Suspense>`. L'interaction entre `<Suspense>` et les composants asynchrones est documentée dans le [chapitre dédié à `<Suspense>`](/guide/built-ins/suspense.html).
