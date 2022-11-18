@@ -2,7 +2,7 @@
 pageClass: api
 ---
 
-# Built-in Components
+# Built-in Components {#built-in-components}
 
 :::info Registration and Usage
 Built-in components can be used directly in templates without needing to be registered. They are also tree-shakeable: they are only included in the build when they are used.
@@ -19,7 +19,7 @@ h(Transition, {
 
 :::
 
-## `<Transition>`
+## `<Transition>` {#transition}
 
 Provides animated transition effects to a **single** element or component.
 
@@ -120,7 +120,7 @@ Provides animated transition effects to a **single** element or component.
 
 - **See also:** [`<Transition>` Guide](/guide/built-ins/transition.html)
 
-## `<TransitionGroup>`
+## `<TransitionGroup>` {#transitiongroup}
 
 Provides transition effects for **multiple** elements or components in a list.
 
@@ -166,7 +166,7 @@ Provides transition effects for **multiple** elements or components in a list.
 
 - **See also:** [Guide - TransitionGroup](/guide/built-ins/transition-group.html)
 
-## `<KeepAlive>`
+## `<KeepAlive>` {#keepalive}
 
 Caches dynamically toggled components wrapped inside.
 
@@ -259,7 +259,7 @@ Caches dynamically toggled components wrapped inside.
 
 - **See also:** [Guide - KeepAlive](/guide/built-ins/keep-alive.html)
 
-## `<Teleport>`
+## `<Teleport>` {#teleport}
 
 Renders its slot content to another part of the DOM.
 
@@ -301,7 +301,7 @@ Renders its slot content to another part of the DOM.
 
 - **See also:** [Guide - Teleport](/guide/built-ins/teleport.html)
 
-## `<Suspense>` <sup class="vt-badge experimental" />
+## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
 Used for orchestrating nested async dependencies in a component tree.
 
@@ -323,6 +323,6 @@ Used for orchestrating nested async dependencies in a component tree.
 
   `<Suspense>` accepts two slots: the `#default` slot and the `#fallback` slot. It will display the content of the fallback slot while rendering the default slot in memory.
 
-  If it encounters async dependencies ([Async Components](/guide/components/async.html) and components with [`async setup()`](/guide/built-ins/suspense.html#async-setup)) while rendering the default slot, it will wait until all of them are resolved before displaying the default slot.
+  If it encounters async dependencies ([Composants asynchrones](/guide/components/async.html) and components with [`async setup()`](/guide/built-ins/suspense.html#async-setup)) while rendering the default slot, it will wait until all of them are resolved before displaying the default slot.
 
 - **See also:** [Guide - Suspense](/guide/built-ins/suspense.html)

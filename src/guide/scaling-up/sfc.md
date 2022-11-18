@@ -1,6 +1,6 @@
-# Composants monofichiers
+# Composants monofichiers {#single-file-components}
 
-## Introduction
+## Introduction {#introduction}
 
 Les composants monofichiers (aussi appelés Single-File Components, abrégés en **SFC** avec une extension `.vue`) est un format de fichier spécial qui permet de regrouper la structure HTML, la logique JavaScript **et** le style CSS d'un composant Vue dans un seul fichier. Voici un exemple d'un SFC :
 
@@ -29,7 +29,7 @@ export default {
 
 Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [Spécification de syntaxe SFC](/api/sfc-spec).
 
-## Pourquoi les composants monofichiers (SFC)
+## Pourquoi les composants monofichiers (SFC) {#why-sfc}
 
 Si les SFC nécessitent une étape de compilation, les avantages sont nombreux en contrepartie :
 
@@ -50,7 +50,7 @@ SFC est une caractéristique déterminante de Vue en tant que framework, et c'es
 
 Cela dit, nous sommes conscients qu'il y a des scénarios où les SFC peuvent sembler exagérés. C'est pourquoi Vue peut toujours être utilisé via du JavaScript sans industrialisation. Si vous cherchez simplement à agrémenter un HTML largement statique avec des interactions légères, vous pouvez vous pencher sur [petite-vue](https://github.com/vuejs/petite-vue), un sous-ensemble de Vue de 6 kb optimisé pour l'amélioration progressive.
 
-## Comment ça marche
+## Comment ça marche {#how-it-works}
 
 Vue SFC est un format de fichier spécifique au framework et doit être précompilé par [@vue/compiler-sfc](https://github.com/vuejs/core/tree/main/packages/compiler-sfc) en JavaScript et CSS standard. Un SFC compilé est un module JavaScript (ES) standard, ce qui signifie qu'avec une configuration de compilation appropriée, vous pouvez importer un SFC comme un module :
 
@@ -70,7 +70,7 @@ Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [P
 
 Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outillages pour SFC](/guide/scaling-up/tooling).
 
-## Qu'en est-il de la séparation des responsabilités ?
+## Qu'en est-il de la séparation des responsabilités ? {#what-about-separation-of-concerns}
 
 Certains utilisateurs issus d'un milieu traditionnel de développement web peuvent craindre que les SFC ne mélangent différentes responsabilités au même endroit - ce que HTML/CSS/JS étaient censés séparer !
 
