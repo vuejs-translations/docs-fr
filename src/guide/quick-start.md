@@ -12,11 +12,7 @@ footer: false
 
 - Si vous êtes déjà familiarisé avec Node.js et le concept des outils de construction, vous pouvez également essayer une configuration de build complète directement dans votre navigateur sur [StackBlitz](https://vite.new/vue).
 
-## Avec des outils de build
-
-La compilation nous permet d'utiliser les [Composants monofichiers](/guide/scaling-up/sfc) (SFC) de Vue. La configuration officielle de Vue est basée sur [Vite](https://vitejs.dev), un outil de compilation front-end moderne, léger et extrêmement rapide.
-
-### En local {#creating-a-vue-application}
+## Créer une application Vue {#creating-a-vue-application}
 
 :::tip Pré-requis
 
@@ -68,21 +64,21 @@ Cela créera une version de votre application prête pour la production dans le 
 
 [Etapes suivantes >](#etapes-suivantes)
 
-## Sans outils de build {#using-vue-from-cdn}
+## Utiliser Vue depuis un CDN {#using-vue-from-cdn}
 
-Pour commencer à utiliser Vue sans compilation, il suffit de copier le code suivant dans un fichier HTML et de l'ouvrir dans votre navigateur :
+Vous pouvez utiliser Vue directement depuis un CDN via une balise script : 
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 ```
-// FIXME: TO translate
-Here we are using [unpkg](https://unpkg.com/), but you can also use any CDN that serves npm packages, for example [jsdelivr](https://www.jsdelivr.com/package/npm/vue) or [cdnjs](https://cdnjs.com/libraries/vue). Of course, you can also download this file and serve it yourself.
 
-When using Vue from a CDN, there is no "build step" involved. This makes the setup a lot simpler, and is suitable for enhancing static HTML or integrating with a backend framework. However, you won't be able to use the Single-File Component (SFC) syntax.
+Ici nous utilisons [unpkg](https://unpkg.com/), mais vous pouvez utiliser tout autre CDN qui sert des paquets NPM, par exemple [jsdelivr](https://www.jsdelivr.com/package/npm/vue) ou [cdnjs](https://cdnjs.com/libraries/vue). Bien évidement, vous pouvez également télécharger le fichier pour le servir par vous-même.
 
-### Using the Global Build {#using-the-global-build}
+Lorsque Vue est utilisé depuis un CDN, aucun outil de build n'est nécessaire. Cela permet d'avoir une configuration plus simple, et plus adapté pour enrichir du HTML statique ou d'intégrer un framework backend. Par contre, vous n'aurez pas la possibilité de bénéficier de la syntaxe des components monofichiers (SFC).
 
-The above link is loading the *global build* of Vue, where all top-level APIs are exposed as properties on the global `Vue` object. Here is a full example using the global build:
+### Utiliser le build global {#using-the-global-build}
+
+Le lien au-dessus charge le *build global* de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'object global `Vue`. Ci-dessous, un exemple utilisant le build global :
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -95,7 +91,7 @@ The above link is loading the *global build* of Vue, where all top-level APIs ar
   createApp({
     data() {
       return {
-        message: 'Salut Vue!'
+        message: 'Hello Vue!'
       }
     }
   }).mount('#app')
@@ -104,9 +100,9 @@ The above link is loading the *global build* of Vue, where all top-level APIs ar
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
 
-### Using the ES Module Build {#using-the-es-module-build}
+### Utiliser le buiES Module Build {#using-the-es-module-build}
 
-Throughout the rest of the documentation, we will be primarily using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax. Most modern browsers now support ES modules natively, so we can use Vue from a CDN via native ES modules like this:
+Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. La plupart des navigateurs supportant désormais les modules ES nativement, nous pouvons utiliser Vue depuis un CDN via les modules ES natifs :
 
 ```html{3,4}
 <div id="app">{{ message }}</div>
@@ -124,7 +120,7 @@ Throughout the rest of the documentation, we will be primarily using [ES modules
 </script>
 ```
 
-Notice that we are using `<script type="module">`, and the imported CDN URL is pointing to the **ES modules build** of Vue instead.
+Notez que nous utilisant `<script type="module">`, et que l'url CRN importée pointe vers le **build des modules ES** de Vue.
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
 
@@ -136,7 +132,7 @@ Dans l'exemple ci-dessus, nous importons depuis l'URL CDN complète, mais dans l
 const { createApp, ref } = Vue
 ```
 
-Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. Afin d'utiliser Vue avec les modules ES natifs, utilisez plutôt le HTML suivant :
+Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Import Maps](https://caniuse.com/import-maps) :
 
 ```html
 <script type="importmap">
@@ -155,14 +151,14 @@ Bien que le build global fonctionne, nous utiliserons principalement la syntaxe 
   createApp({
     data() {
       return {
-        message: 'Salut Vue!'
+        message: 'Hello Vue!'
       }
     }
   }).mount('#app')
 </script>
 ```
 
-Remarquez que l'on peut importer directement `'vue'` dans notre code - ceci est rendu possible par le bloc `<script type="importmap">`, qui tire parti d'une fonctionnalité native du navigateur appelée [Import Maps](https://caniuse.com/import-maps).
+[JSFiddle demo](https://jsfiddle.net/yyx990803/2ke1ab0z/)
 
 Vous pouvez ajouter des entrées pour d'autres dépendances à l'Import Map, assurez-vous simplement qu'elles pointent vers la version des modules ES de la bibliothèque que vous avez l'intention d'utiliser.
 
@@ -178,7 +174,7 @@ Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vo
 L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment.html#without-build-tools).
 :::
 
-### Servir via HTTP {#splitting-up-the-modules}
+### Séparation des modules {#splitting-up-the-modules}
 
 Au fur et à mesure que nous progressons dans le guide, il se peut que nous devions diviser notre code en plusieurs fichiers JavaScript distincts afin d'en faciliter la gestion. Par exemple :
 
@@ -186,14 +182,14 @@ Au fur et à mesure que nous progressons dans le guide, il se peut que nous devi
 <!-- index.html -->
 <script type="module">
   import { createApp } from 'vue'
-  import MonComposant from './mon-composant.js'
+  import MyComposant from './my-composant.js'
 
-  createApp(MonComposant).mount('#app')
+  createApp(MyComposant).mount('#app')
 </script>
 ```
 
 ```js
-// mon-composant.js
+// my-composant.js
 export default {
   data() {
     return { count: 0 }
@@ -202,12 +198,11 @@ export default {
 }
 ```
 
-Pour que cela fonctionne, vous devez servir votre HTML via le protocole `http://` au lieu du protocole `file://`. Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez `npx serve` depuis la ligne de commande dans le même répertoire que votre fichier HTML. Vous pouvez également utiliser n'importe quel autre serveur HTTP qui peut servir des fichiers statiques avec les types MIME corrects.
+Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevés parce que les modules ES ne peuvent fonctionner via le protocol `file://`. Pour pouvoir fonctionner, vous devez servir votre `index.html` sur le protocole `http://`, avec un serveur HTTP local.
 
-Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez "npx serve" à partir de la ligne de commande dans le même répertoire où se trouve votre fichier HTML. Vous pouvez également utiliser tout autre serveur HTTP pouvant servir des fichiers statiques avec les types MIME corrects.
+Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez `npx serve` depuis la ligne de commande dans le même répertoire que votre fichier HTML. Vous pouvez également utiliser n'importe quel autre serveur HTTP qui peut servir des fichiers statiques avec les types MIME corrects.
 
 Vous avez peut-être remarqué que le template du composant importé est souligné comme une chaîne JavaScript. Si vous utilisez VSCode, vous pouvez installer l'extension [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) et préfixer les chaînes avec un commentaire `/*html*/` pour obtenir la coloration syntaxique.
-
 
 ### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
 
@@ -215,7 +210,7 @@ De nombreux exemples pour l'API de composition utiliseront la syntaxe `<script s
 
 ## Étapes suivantes {#next-steps}
 
-If you skipped the [Introduction](/guide/introduction), we strongly recommend reading it before moving on to the rest of the documentation.
+Si vous avez raté l'[Introduction](/guide/introduction), nous vous recommandons fortement d'en prendre connaissance avant de continuer sur la documentation.
 
 <div class="vt-box-container next-steps">
   <a class="vt-box" href="/guide/essentials/application.html">
