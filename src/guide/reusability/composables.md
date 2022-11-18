@@ -1,4 +1,4 @@
-# Composables {#composables}
+# Composables
 
 <script setup>
 import { useMouse } from './mouse'
@@ -9,7 +9,7 @@ const { x, y } = useMouse()
 Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) et [Lifecycle Hooks](/guide/essentials/lifecycle.html).
 :::
 
-## What is a "Composable"?
+## Qu'est-ce qu'un "Composable"? {#what-is-a-composable}
 
 Dans le contexte des applications Vue, un "composable" est une fonction qui exploite la Composition API de Vue pour encapsuler et réutiliser une **logique avec état**.
 
@@ -17,7 +17,7 @@ Lors de la création d'applications frontend, nous devons souvent réutiliser de
 
 En revanche, la logique avec état implique la gestion d'un état qui change au fil du temps. Un exemple simple serait de suivre la position actuelle de la souris sur une page. Dans des scénarios réels, il peut également s'agir d'une logique plus complexe, telle que des interactions tactiles ou l'état de la connexion à une base de données.
 
-## Mouse Tracker Example
+## Exemple de suivi de la souris {#mouse-tracker-example}
 
 Si nous devions implémenter la fonctionnalité de suivi de la souris à l'aide de la Composition API directement dans un composant, cela ressemblerait à ceci :
 
@@ -128,7 +128,7 @@ export function useMouse() {
 Chaque instance de composant appelant `useMouse()` créera ses propres copies de l'état `x` et `y` afin qu'elles n'interfèrent pas l'une avec l'autre. Si vous souhaitez gérer l'état partagé entre les composants, lisez le chapitre [Gestion d'état](/guide/scaling-up/state-management.html).
 :::
 
-## Async State Example
+## Example d'état asynchrone {#async-state-example}
 
 Le composable `useMouse()` ne prend aucun argument, alors regardons un autre exemple qui en utilise un. Lors de la récupération de données asynchrone, nous devons souvent gérer différents états : chargement, succès et erreur :
 
@@ -222,13 +222,13 @@ Cette version de `useFetch()` accepte désormais à la fois les chaînes d'URL s
 
 Voici [la version mise à jour de `useFetch()`](https://sfc.vuejs.org/#eNp1Vc1u4zYQfpWpLlZQR9pi0YvhGC3a7WmLFkHTky6MRMVMJVLlj9LA8PvUfQ2/WL8hJUfJZi+SSM588803M9Qh+3EYijHIbJNtXW3V4MlJH4ZdpVU/GOvpQFa2a6pNPwQvGzpSa01PKzitFkbByV+kr/eX86Kct4pHB8tK10Y7T/fCyTvb0Q2t9t4PblOWj87ooRO13Juukbbwz4OqTSMLBC29aYwrAZDcVQNPMMpX362u5s0Q8WaKeX5FN7tLoG/hU4yiCxL2s8eBGuHFmqS1xq4B6O0zqN9c8siBCfttmVSBHlh42YOnl1gRfTaiocFEThve2N4H742m8bo19qbKFClN31cZ/VB3qv6Ld5i8qrLd4UCKjsdtmVwieuW3jRrhrVqYRmKwZGBAD7vfwuC+oTstmbMMliQiu2BHqYOkDQEy+hS9dE48yAjPdYz+E7ULk5gw4G/PJzZ/lnbBBfYlqKSvxEl2TiZirBscfzZasy/Ve2Ef4tcGNK3k3Ngmxcf6XazdT+wme6l9URSzyba8KJyts9Rb170Y0EFGo0UPjAIZ44GrMmSd8qsytCOvq2xuKtfW3NiPrjD2ocRXYYP2qpeFdP31vTVPDq32CJT1AqPE5ijttZUanShRga9jvjH9Apdhj5U+IpXFKCCN15Ol3C2/go6rJwGzT20ra/9m1Cot/4l+bdC1V6jmq15NUqTujvqnMdGh4z6eT2KLvD7iQ+Gedf0C3JiEO4ESlSXZ80lp5ZXoFBKkbnU+eeFJjEIjoOTzOgznEytRJC+mkSYPETla2k5t+uX+MpQzoUEMHmxg90Kr879WEtPcW4MhGAxGAI/RKEvn/zwfBjUqvgV6eYEKMG3Op4FrpGu4CbuUOI/SzOIg2p8Tq1iN6Q544caXxKRIRAdyJxQJ61WraiU7KufpFN35JDzIRS6Vh8ZPQnniDjRhCszbkSQHu6IR5DCYyEyzwgIbHWNBASxgQ06RW0kdZx+p8aUxUXFKo3AvPqgRu0QwTCd52XWS/g6r+Ib/lJdPqVvM781EsZ17KorBHRKDvKpmsoRXHM1ZxiPVrC3l8tI5b8s9lQZzER/8Ui3lcQii3sueA7dWPQTUlvOfG0zEHsVSoFtH1F2hU+5uP1MDaTz2Y36x9NAsgS1rPnV35Hwkvo0WIaOO+CG8dDOLxlhOBijXGuWm7p6HZJEKBIfe7/5dNrNDvBPY/L0GqvRlCC+dkthN0Fo+0e+4FTCEeQ79TTdKjvCIzOJvb0oFf/E/JoD0O7zUg+X+Vfh9YYVuTI/THX0oPi4qxsEi8FzXtzolEw6ZM59PnGa+uo14abW6enGdKr6mjx8+JLHwPGbH/wFWsuhk), avec un délai artificiel et une erreur aléatoire à des fins de démonstration.
 
-## Conventions and Best Practices
+## Conventions et bonnes pratiques {#conventions-and-best-practices}
 
-### Naming
+### Nommage {#naming}
 
 C'est une convention de nommer les fonctions composables avec des noms camelCase qui commencent par "use".
 
-### Input Arguments
+### Arguments d'entrée {#input-arguments}
 
 Un composable peut accepter des arguments ref même s'il ne s'appuie pas sur eux pour la réactivité. Si vous écrivez un composable qui peut être utilisé par d'autres développeurs, c'est une bonne idée de gérer le cas où les arguments d'entrée sont des refs au lieu de valeurs brutes. La fonction utilitaire [`unref()`](/api/reactivity-utilities.html#unref) sera utile à cette fin :
 
@@ -244,7 +244,7 @@ function useFeature(maybeRef) {
 
 Si votre composable crée des effets réactifs lorsque l'entrée est une référence, assurez-vous soit de surveiller explicitement la référence avec `watch()`, ou d'appeler `unref()` à l'intérieur d'un `watchEffect()` afin qu'il soit correctement suivi.
 
-### Return Values
+### Valeurs de retour {#return-values}
 
 Vous avez probablement remarqué que nous utilisons exclusivement `ref()` au lieu de `reactive()` dans les composables. La convention recommandée est que les composables renvoient toujours un objet simple et non réactif contenant plusieurs références. Cela lui permet d'être déstructuré en composants tout en gardant de la réactivité :
 
@@ -267,7 +267,7 @@ console.log(mouse.x)
 Position de la souris est à : {{ mouse.x }}, {{ mouse.y }}
 ```
 
-### Side Effects
+### Effets de bord {#side-effects}
 
 C'est OK d'effectuer des effets de bord (par exemple, ajouter des écouteurs d'événements DOM ou récupérer des données) dans les composables, mais faites attention aux règles suivantes :
 
@@ -275,7 +275,7 @@ C'est OK d'effectuer des effets de bord (par exemple, ajouter des écouteurs d'�
 
 - N'oubliez pas de nettoyer les effets de bord dans `onUnmount()`. Par exemple, si un composable configure un écouteur d'événement DOM, il doit supprimer cet écouteur dans `onUnmount()` comme nous l'avons vu dans l'exemple `useMouse()`. Ça peut être une bonne idée d'utiliser un composable qui le fait automatiquement pour vous, comme l'exemple `useEventListener()`.
 
-### Usage Restrictions
+### Restriction d'usage {#usage-restrictions}
 
 Les composables ne peuvent être appelés que de manière **synchrone** dans `<script setup>` ou dans le hook `setup()`. Dans certains cas, vous pouvez également les appeler dans des hooks de cycle de vie comme `onMounted()`.
 
@@ -289,7 +289,7 @@ Ce sont les contextes dans lesquels Vue est capable de déterminer l'instance de
 `<script setup>` est le seul endroit où vous pouvez appeler des composables **après** avoir utilisé `await`. Le compilateur restaure automatiquement le contexte d'instance actif pour vous après l'opération asynchrone.
 :::
 
-## Extracting Composables for Code Organization
+## Extraction des composables pour l'organisation de son code {#extracting-composables-for-code-organization}
 
 Les composables peuvent être extraits non seulement pour être réutilisés, mais aussi au bénéfice de l'organisation du code. Au fur et à mesure que la complexité de vos composants augmente, vous pouvez vous retrouver avec des composants trop volumineux pour naviguer et raisonner. La Composition API vous offre toute la flexibilité nécessaire pour organiser votre code de composant en fonctions plus petites selon leurs responsabilités logiques :
 
@@ -307,7 +307,7 @@ const { qux } = useFeatureC(baz)
 
 Dans une certaine mesure, vous pouvez considérer ces composables extraits comme des services à portée de composant qui peuvent communiquer entre eux.
 
-## Using Composables in Options API
+## Utilisation de composables dans l'Options API {#using-composables-in-options-api}
 
 Si vous utilisez l'Options API, les éléments composables doivent être appelés dans `setup()`, et les liaisons renvoyées doivent être renvoyées par `setup()` afin qu'elles soient exposées à `this` et au template :
 
@@ -329,9 +329,9 @@ export default {
 }
 ```
 
-## Comparisons with Other Techniques
+## Comparaisons avec d'autres techniques {#Comparisons with Other Techniques}
 
-### vs. Mixins
+### vs. les mixins {#vs-mixins}
 
 Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/options-composition.html#mixins), qui permet d'extraire la logique des composants dans des unités réutilisables. Les mixins présentent trois principaux inconvénients :
 
@@ -343,7 +343,7 @@ Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/opti
 
 Pour les raisons ci-dessus, nous ne recommandons plus d'utiliser des mixins dans Vue 3. La fonctionnalité est conservée uniquement pour des raisons de migration et de familiarité.
 
-### vs. Renderless Components
+### vs. Composants Renderless {#vs-renderless-components}
 
 Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant Renderless](/guide/components/slots.html#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants renderless.
 
@@ -351,11 +351,11 @@ Le principal avantage des composables par rapport aux composants renderless est 
 
 La recommandation est d'employer les composables pour centraliser une logique pure, et d'utiliser des composants pour une réutilisation de logique **et** de disposition visuelle.
 
-### vs. React Hooks
+### vs. les hooks de React {#vs-react-hooks}
 
 Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ de la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
 
-## Further Reading
+## Lecture complémentaire {#further-reading}
 
 - [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
 - [Gestion d'état](/guide/scaling-up/state-management.html) : pour les patterns de gestion d'état partagés par plusieurs composants.
