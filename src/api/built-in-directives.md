@@ -338,7 +338,7 @@ Dynamically bind one or more attributes, or a component prop to an expression.
 
 - **See also:**
   - [Class and Style Bindings](/guide/essentials/class-and-style.html)
-  - [Components - Prop Passing Details](/guide/components/props.html#prop-passing-details)
+  - [Composant - Détails sur le passage de props](/guide/components/props.html#prop-passing-details)
 
 ## v-model {#v-model}
 
