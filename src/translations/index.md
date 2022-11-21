@@ -2,20 +2,20 @@
 aside: false
 ---
 
-# Translations
+# Traductions {#translations}
 
-## Available Languages
+## Langues disponibles {#available-languages}
 
 - [English](https://vuejs.org/) [[source](https://github.com/vuejs/docs)]
 - [简体中文 / Simplified Chinese](https://cn.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-zh-cn)]
 - [日本語 / Japanese](https://ja.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ja)]
 
-## Work in Progress Languages
+## Langues en cours de traduction {#work-in-progress-languages}
 
 - [Українська / Ukrainian](https://ua.vuejs.org) [[source](https://github.com/vuejs-translations/docs-ua)]
-- [Français](https://github.com/edimitchel/docs-fr)
+- [Français](https://vuejs-docs-fr.netlify.app/) [[source](https://github.com/vuejs-translations/docs-fr)]
 
-## Commencer une nouvelle traduction
+## Commencer une nouvelle traduction {#starting-a-new-translation}
 
 La documentation de Vue a récemment subi une révision majeure, ainsi les traductions dans d'autres langues sont toujours manquantes ou en cours de développement.
 
