@@ -170,13 +170,13 @@ An object that contains the component's fallthrough attributes.
 
 - **Details**
 
-  [Fallthrough Attributes](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
+  [Attributs implicitement déclarés](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
 
   By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc.html#inheritattrs) option.
 
 - **See also:**
 
-  - [Fallthrough Attributes](/guide/components/attrs.html)
+  - [Attributs implicitement déclarés](/guide/components/attrs.html)
 
 ## $watch()
 
@@ -288,7 +288,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
 
 - **See also:**
 
-  - [Component - Events](/guide/components/events.html)
+  - [Composant - Gestion des évènements](/guide/components/events.html)
   - [`emits` option](./options-state.html#emits)
 
 ## $forceUpdate()

@@ -243,7 +243,7 @@ Sera rendu :
 <span>Ceci est un composant enfant</span>
 ```
 
-Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Fallthrough Attributes](/guide/components/attrs.html).
+Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Attributs implicitement déclarés](/guide/components/attrs.html).
 
 ## Binding Inline Styles
 

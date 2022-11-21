@@ -104,7 +104,7 @@ Controls whether the default component attribute fallthrough behavior should be 
 
   </div>
 
-- **See also:** [Fallthrough Attributes](/guide/components/attrs.html)
+- **See also:** [Attributs implicitement déclarés](/guide/components/attrs.html)
 
 ## components
 

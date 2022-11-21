@@ -187,16 +187,16 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Composants en détails',
       items: [
         {
-          text: 'Registration',
+          text: 'Enregistrement',
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: 'Gestion des évènements', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
         },
         { text: 'Slots', link: '/guide/components/slots' },
@@ -205,7 +205,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/provide-inject'
         },
         {
-          text: 'Async Components',
+          text: 'Composants asynchrones',
           link: '/guide/components/async'
         }
       ]
