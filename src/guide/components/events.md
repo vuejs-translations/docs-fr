@@ -414,7 +414,7 @@ const value = computed({
 
 </div>
 
-### Les arguments de `v-model`  {#v-model-arguments}
+### Les arguments de `v-model` {#v-model-arguments}
 
 Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
 

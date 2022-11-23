@@ -221,7 +221,7 @@ export default {
       // setter
       set(newValue) {
         // Note: we are using destructuring assignment syntax here.
-        [this.firstName, this.lastName] = newValue.split(' ')
+        ;[this.firstName, this.lastName] = newValue.split(' ')
       }
     }
   }
@@ -249,7 +249,7 @@ const fullName = computed({
   // setter
   set(newValue) {
     // Note: we are using destructuring assignment syntax here.
-    [firstName.value, lastName.value] = newValue.split(' ')
+    ;[firstName.value, lastName.value] = newValue.split(' ')
   }
 })
 </script>
