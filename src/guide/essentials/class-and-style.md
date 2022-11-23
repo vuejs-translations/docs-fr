@@ -1,6 +1,6 @@
 # Liaison de classes et de styles {#class-and-style-bindings}
 
-Un besoin courant de liaison de données consiste à manipuler la liste des classes et les styles CSS inline d'un élément. Puisque `class` et `style` sont tous les deux des attributs, nous pouvons utiliser `v-bind` pour leur attribuer dynamiquement une valeur de chaîne, un peu comme avec les autres attributs. Cependant, essayer de générer ces valeurs à l'aide de la concaténation de chaînes peut être ennuyeux et sujet aux erreurs. Pour cette raison, Vue fournit des améliorations spéciales lorsque `v-bind` est utilisé avec `class` et `style`. En plus des chaînes, les expressions peuvent également évaluer des objets ou des tableaux.
+La liaison de données consiste à manipuler la liste des classes et les styles CSS inline d'un élément. Puisque `class` et `style` sont tous les deux des attributs, nous pouvons utiliser `v-bind` pour leur attribuer dynamiquement une valeur de chaîne, un peu comme avec les autres attributs. Cependant, essayer de générer ces valeurs à l'aide de la concaténation de chaînes peut être ennuyeux et sujet aux erreurs. Pour cette raison, Vue fournit des améliorations spéciales lorsque `v-bind` est utilisé avec `class` et `style`. En plus des chaînes, les expressions peuvent également évaluer des objets ou des tableaux.
 
 ## Liaison des classes HTML {#binding-html-classes}
 
@@ -12,7 +12,7 @@ Un besoin courant de liaison de données consiste à manipuler la liste des clas
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-dynamic-css-classes-with-vue" title="Free Vue.js Dynamic CSS Classes Lesson"/>
 </div>
 
-### Syntaxe object {#binding-to-objects}
+### Liaison par objet {#binding-to-objects-1}
 
 Nous pouvons passer un objet à `:class` (abréviation de `v-bind:class`) pour basculer dynamiquement entre les classes :
 
@@ -20,9 +20,9 @@ Nous pouvons passer un objet à `:class` (abréviation de `v-bind:class`) pour b
 <div :class="{ active: isActive }"></div>
 ```
 
-La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la propriété de données "isActive".
+La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la donnée "isActive".
 
-Vous pouvez basculer plusieurs classes en ayant plus de champs dans l'objet. De plus, la directive `:class` peut également coexister avec l'attribut simple `class`. Admettons la chose :
+Vous pouvez basculer plusieurs classes en ayant plus de clés dans l'objet. De plus, la directive `:class` peut également coexister avec l'attribut simple `class`. Admettons la chose suivante :
 
 <div class="composition-api">
 
@@ -136,7 +136,7 @@ computed: {
 <div :class="classObject"></div>
 ```
 
-### Syntaxe tableau {#binding-to-arrays}
+### Liaison par tableau {#binding-to-arrays-1}
 
 Nous pouvons lier `:class` à un tableau pour appliquer une liste de classes :
 
@@ -188,7 +188,7 @@ Cependant, cela peut être un peu verbeux si vous avez plusieurs classes conditi
 
 ### Avec les composants {#with-components}
 
-> Cette section suppose une connaissance des [Composants](/guide/essentials/component-basics). N'hésitez pas à sauter cette partie et à revenir plus tard.
+> Cette section suppose une connaissance des [Composants](/guide/essentials/component-basics). N'hésitez pas à sauter cette partie et à y revenir plus tard.
 
 Lorsque vous utilisez l'attribut `class` sur un composant avec un seul élément racine, ces classes seront ajoutées à l'élément racine du composant et fusionnées avec toute classe existante déjà présente.
 
@@ -245,11 +245,11 @@ Sera rendu :
 
 Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Attributs implicitement déclarés](/guide/components/attrs.html).
 
-## Binding Inline Styles {#binding-inline-styles}
+## Liaison des styles inline {#binding-inline-styles}
 
-### Binding to Objects
+### Liaison par objet {#binding-to-objects-2}
 
-`:style` supports binding to JavaScript object values - it corresponds to an [HTML element's `style` property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style):
+`:style` supporte les liaisons avec des objets Javascript - ça correspond à la [propriété `style` des éléments HTML](https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/style):
 
 <div class="composition-api">
 
@@ -277,13 +277,13 @@ data() {
 <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
 ```
 
-Although camelCase keys are recommended, `:style` also supports kebab-cased CSS property keys (corresponds to how they are used in actual CSS) - for example:
+Bien que les clés camelCase soient recommandées, `:style` prend également en charge les clés de propriété CSS en casse kebab (correspond à la façon dont elles sont utilisées dans le CSS réel), par exemple :
 
 ```vue-html
 <div :style="{ 'font-size': fontSize + 'px' }"></div>
 ```
 
-It is often a good idea to bind to a style object directly so that the template is cleaner:
+C'est souvent une bonne idée de lier directement un objet de style pour que le template soit plus propre :
 
 <div class="composition-api">
 
@@ -315,26 +315,26 @@ data() {
 <div :style="styleObject"></div>
 ```
 
-Again, object style binding is often used in conjunction with computed properties that return objects.
+À nouveau, la liaison par objet est souvent utilisée conjointement avec des propriétés calculées qui renvoient des objets.
 
-### Binding to Arrays
+### Liaison par tableau {binding-to-arrays-2}
 
-We can bind `:style` to an array of multiple style objects. These objects will be merged and applied to the same element:
+Nous pouvons lier `:style` à un tableau de plusieurs objets de style. Ces objets seront fusionnés et appliqués au même élément :
 
 ```vue-html
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefixing {#auto-prefixing}
+### Préfixe automatique {#auto-prefixing}
 
-When you use a CSS property that requires a [vendor prefix](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `:style`, Vue will automatically add the appropriate prefix. Vue does this by checking at runtime to see which style properties are supported in the current browser. If the browser doesn't support a particular property then various prefixed variants will be tested to try to find one that is supported.
+Lorsque vous utilisez une propriété CSS qui nécessite un [préfixe vendeur](https://developer.mozilla.org/fr/docs/Glossary/Vendor_Prefix) dans `:style`, Vue ajoutera automatiquement le préfixe approprié. Vue le fait en vérifiant lors de l'exécution pour voir quelles propriétés de style sont prises en charge dans le navigateur actuel. Si le navigateur ne prend pas en charge une propriété particulière, différentes variantes préfixées seront testées pour essayer d'en trouver une qui soit prise en charge.
 
-### Multiple Values {#multiple-values}
+### Valeurs multiples {#multiple-values}
 
-You can provide an array of multiple (prefixed) values to a style property, for example:
+Vous pouvez fournir un tableau de plusieurs valeurs (préfixées) à une propriété de style, par exemple :
 
 ```vue-html
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-This will only render the last value in the array which the browser supports. In this example, it will render `display: flex` for browsers that support the unprefixed version of flexbox.
+Cela ne rendra que la dernière valeur du tableau pris en charge par le navigateur. Dans cet exemple, il affichera `display: flex` pour les navigateurs prenant en charge la version sans préfixe de flexbox.
