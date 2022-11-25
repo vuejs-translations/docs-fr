@@ -327,7 +327,7 @@ Nous pouvons lier `:style` à un tableau de plusieurs objets de style. Ces objet
 
 ### Préfixe automatique {#auto-prefixing}
 
-Lorsque vous utilisez une propriété CSS qui nécessite un [préfixe vendeur](https://developer.mozilla.org/fr/docs/Glossary/Vendor_Prefix) dans `:style`, Vue ajoutera automatiquement le préfixe approprié. Vue le fait en vérifiant lors de l'exécution pour voir quelles propriétés de style sont prises en charge dans le navigateur actuel. Si le navigateur ne prend pas en charge une propriété particulière, différentes variantes préfixées seront testées pour essayer d'en trouver une qui soit prise en charge.
+Lorsque vous utilisez une propriété CSS qui nécessite un [préfixe vendeur](https://developer.mozilla.org/fr/docs/Glossary/Vendor_Prefix) dans `:style`, Vue ajoutera automatiquement le préfixe approprié. Vue le fait en vérifiant lors de l'exécution quelles propriétés de style sont prises en charge dans le navigateur actuel. Si le navigateur ne prend pas en charge une propriété particulière, différentes variantes préfixées seront testées pour essayer d'en trouver une qui soit prise en charge.
 
 ### Valeurs multiples {#multiple-values}
 
