@@ -6,7 +6,7 @@ Le but de ce tutoriel est de vous montrer ce qu'est l'expérience de travailler 
 
 ## Pré-requis {#prerequisites}
 
-Ce tutoriel suppose une connaissance de base du HTML, CSS et JavaScript. Si vous êtes totalement novice en développement front-end, il serait peut-être judicieux de ne pas se lancer tout de suite dans l'utilisation d'un framework pour commence - apprenez les bases puis revenez ! Une expérience préalable avec d'autres frameworks est utile, mais non obligatoire.
+Ce tutoriel suppose une connaissance de base du HTML, CSS et JavaScript. Si vous êtes totalement novice en développement front-end, il serait peut-être judicieux de ne pas se lancer tout de suite dans l'utilisation d'un framework pour commencer - apprenez les bases puis revenez ! Une expérience préalable avec d'autres frameworks est utile, mais non obligatoire.
 
 ## Comment fonctionne ce tutoriel {#how-to-use-this-tutorial}
 
