@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# Reactivity Fundamentals
+# Reactivity Fundamentals {#reactivity-fundamentals}
 
 :::tip API Preference
 This page and many other chapters later in the guide contain different content for Options API and Composition API. Your current preference is <span class="options-api">Options API</span><span class="composition-api">Composition API</span>. You can toggle between the API styles using the "API Preference" switches at the top of the left sidebar.
 :::
 
-## Declaring Reactive State
+## Declaring Reactive State {#declaring-reactive-state}
 
 <div class="options-api">
 
@@ -41,7 +41,7 @@ It is possible to add a new property directly to `this` without including it in 
 
 Vue uses a `$` prefix when exposing its own built-in APIs via the component instance. It also reserves the prefix `_` for internal properties. You should avoid using names for top-level `data` properties that start with either of these characters.
 
-### Reactive Proxy vs. Original \*
+### Reactive Proxy vs. Original \* {#reactive-proxy-vs-original}
 
 In Vue 3, data is made reactive by leveraging [JavaScript Proxies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Users coming from Vue 2 should be aware of the following edge case:
 
@@ -101,7 +101,7 @@ export default {
 <div>{{ state.count }}</div>
 ```
 
-Similarly, we can declare functions that mutate reactive state in the same scope, and expose it as a method alongside the state:
+Similarly, we can declare functions that mutate reactive state in the same scope and expose it as a method alongside the state:
 
 ```js{7-9,14}
 import { reactive } from 'vue'
@@ -131,7 +131,7 @@ Exposed methods are typically used as event listeners:
 </button>
 ```
 
-### `<script setup>` \*\*
+### `<script setup>` \*\* {#script-setup}
 
 Manually exposing state and methods via `setup()` can be verbose. Luckily, it is only necessary when not using a build step. When using Single-File Components (SFCs), we can greatly simplify the usage with `<script setup>`:
 
@@ -163,7 +163,7 @@ Top-level imports and variables declared in `<script setup>` are automatically u
 
 <div class="options-api">
 
-## Declaring Methods \*
+## Declaring Methods \* {#declaring-methods}
 
 <VueSchoolLink href="https://vueschool.io/lessons/methods-in-vue-3" title="Free Vue.js Methods Lesson"/>
 
@@ -212,9 +212,9 @@ In the example above, the method `increment` will be called when the `<button>` 
 
 </div>
 
-### DOM Update Timing
+### DOM Update Timing {#dom-update-timing}
 
-When you mutate reactive state, the DOM is updated automatically. However, it should be noted that the DOM updates are not applied synchronously. Instead, Vue buffers them until the "next tick" in the update cycle to ensure that each component needs to update only once no matter how many state changes you have made.
+When you mutate reactive state, the DOM is updated automatically. However, it should be noted that the DOM updates are not applied synchronously. Instead, Vue buffers them until the "next tick" in the update cycle to ensure that each component updates only once no matter how many state changes you have made.
 
 To wait for the DOM update to complete after a state change, you can use the [nextTick()](/api/general.html#nexttick) global API:
 
@@ -251,7 +251,7 @@ export default {
 
 </div>
 
-### Deep Reactivity
+### Deep Reactivity {#deep-reactivity}
 
 In Vue, state is deeply reactive by default. This means you can expect changes to be detected even when you mutate nested objects or arrays:
 
@@ -298,11 +298,11 @@ function mutateDeeply() {
 
 </div>
 
-It is also possible to explicitly create [shallow reactive objects](/api/reactivity-advanced.html#shallowreactive) where the reactivity is only tracked at the root-level, however they are typically only needed in advanced use cases.
+It is also possible to explicitly create [shallow reactive objects](/api/reactivity-advanced.html#shallowreactive) where the reactivity is only tracked at the root-level, but these are typically only needed in advanced use cases.
 
 <div class="composition-api">
 
-### Reactive Proxy vs. Original \*\*
+### Reactive Proxy vs. Original \*\* {#reactive-proxy-vs-original-1}
 
 It is important to note that the returned value from `reactive()` is a [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) of the original object, which is not equal to the original object:
 
@@ -337,7 +337,7 @@ proxy.nested = raw
 console.log(proxy.nested === raw) // false
 ```
 
-### Limitations of `reactive()` \*\*
+### Limitations of `reactive()` \*\* {#limitations-of-reactive}
 
 The `reactive()` API has two limitations:
 
@@ -373,7 +373,7 @@ The `reactive()` API has two limitations:
    callSomeFunction(state.count)
    ```
 
-## Reactive Variables with `ref()` \*\*
+## Reactive Variables with `ref()` \*\* {#reactive-variables-with-ref}
 
 To address the limitations of `reactive()`, Vue also provides a [`ref()`](/api/reactivity-core.html#ref) function which allows us to create reactive **"refs"** that can hold any value type:
 
@@ -427,7 +427,7 @@ const { foo, bar } = obj
 
 In other words, `ref()` allows us to create a "reference" to any value and pass it around without losing reactivity. This capability is quite important as it is frequently used when extracting logic into [Composable Functions](/guide/reusability/composables.html).
 
-### Ref Unwrapping in Templates \*\*
+### Ref Unwrapping in Templates \*\* {#ref-unwrapping-in-templates}
 
 When refs are accessed as top-level properties in the template, they are automatically "unwrapped" so there is no need to use `.value`. Here's the previous counter example, using `ref()` instead:
 
@@ -451,9 +451,9 @@ function increment() {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgY291bnQgPSByZWYoMClcblxuZnVuY3Rpb24gaW5jcmVtZW50KCkge1xuICBjb3VudC52YWx1ZSsrXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPnt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
-Note the unwrapping only applies if the ref is a top-level property on the template render context. As an example, `foo` is a top-level property, but `object.foo` is not.
+Note that the unwrapping only applies if the ref is a top-level property on the template render context. As an example, `foo` is a top-level property, but `object.foo` is not.
 
-So given the following object:
+So, given the following object:
 
 ```js
 const object = { foo: ref(1) }
@@ -485,7 +485,7 @@ One thing to note is that a ref will also be unwrapped if it is the final evalua
 
 This is just a convenience feature of text interpolation and is equivalent to <code v-pre>{{ object.foo.value }}</code>.
 
-### Ref Unwrapping in Reactive Objects \*\*
+### Ref Unwrapping in Reactive Objects \*\* {#ref-unwrapping-in-reactive-objects}
 
 When a `ref` is accessed or mutated as a property of a reactive object, it is also automatically unwrapped so it behaves like a normal property:
 
@@ -514,7 +514,7 @@ console.log(count.value) // 1
 
 Ref unwrapping only happens when nested inside a deep reactive object. It does not apply when it is accessed as a property of a [shallow reactive object](/api/reactivity-advanced.html#shallowreactive).
 
-#### Ref Unwrapping in Arrays and Collections
+### Ref Unwrapping in Arrays and Collections {#ref-unwrapping-in-arrays-and-collections}
 
 Unlike reactive objects, there is no unwrapping performed when the ref is accessed as an element of a reactive array or a native collection type like `Map`:
 
@@ -532,7 +532,7 @@ console.log(map.get('count').value)
 
 <div class="options-api">
 
-### Stateful Methods \*
+### Stateful Methods \* {#stateful-methods}
 
 In some cases, we may need to dynamically create a method function, for example creating a debounced event handler:
 
@@ -576,7 +576,7 @@ export default {
 
 <div class="composition-api">
 
-## Reactivity Transform <sup class="vt-badge experimental" /> \*\*
+## Reactivity Transform <sup class="vt-badge experimental" /> \*\* {#reactivity-transform}
 
 Having to use `.value` with refs is a drawback imposed by the language constraints of JavaScript. However, with compile-time transforms we can improve the ergonomics by automatically appending `.value` in appropriate locations. Vue provides a compile-time transform that allows us to write the earlier "counter" example like this:
 

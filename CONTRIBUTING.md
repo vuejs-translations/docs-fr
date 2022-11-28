@@ -12,7 +12,7 @@ Si un mot vous embête (car trop ambigü), [créez une discussion Terminologie](
 
 ### Partager le travail de traduction
 
-Tout le travail de traduction est guidé par l'issue [Suivi de la traduction #125](https://github.com/edimitchel/docs-fr/issues/125) qui liste toutes les pages à traduire avec leur statut (avec une issue rattachée et son état).
+Tout le travail de traduction est guidé par l'issue [Suivi de la traduction #125](https://github.com/vuejs-translations/docs-fr/issues/125) qui liste toutes les pages à traduire avec leur statut (avec une issue rattachée et son état).
 Une issue rattachée en état ouvert sans assignation peut être considérée comme ouverte à la contribution et pris en charge par quiconque: assignez-la vous ou laissez un commentaire.  
 Toutefois, une issue ouverte est peut-être en cours de traduction si une PR y est rattachée. Profitez-en pour y passez faire une relecture. 
 

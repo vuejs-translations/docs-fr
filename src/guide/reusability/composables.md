@@ -1,4 +1,4 @@
-# Composables
+# Composables {#composables}
 
 <script setup>
 import { useMouse } from './mouse'
@@ -146,7 +146,9 @@ fetch('...')
 </script>
 
 <template>
-  <div v-if="error">Oups! Une erreur est survenue : {{ error.message }}</div>
+  <div v-if="error">
+    Oups! Une erreur est survenue : {{ error.message }}
+  </div>
   <div v-else-if="data">
     Données chargées :
     <pre>{{ data }}</pre>

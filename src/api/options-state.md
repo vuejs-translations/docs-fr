@@ -1,6 +1,6 @@
-# Options: State
+# Options: State {#options-state}
 
-## data
+## data {#data}
 
 A function that returns the initial reactive state for the component instance.
 
@@ -47,7 +47,7 @@ A function that returns the initial reactive state for the component instance.
 
 - **See also:** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
-## props
+## props {#props}
 
 Declare the props of a component.
 
@@ -85,9 +85,9 @@ Declare the props of a component.
 
   With object-based syntax, each prop can further define the following options:
 
-  - **`type`**: Can be one of the following native constructors: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, any custom constructor function or an array of those. In development mode, Vue will check if a prop's value matches the declared type, and will throw a warning if it doesn't. See [Prop Validation](/guide/components/props.html#prop-validation) for more details.
+  - **`type`**: Can be one of the following native constructors: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, any custom constructor function or an array of those. In development mode, Vue will check if a prop's value matches the declared type, and will throw a warning if it doesn't. Voir la [validation de prop](/guide/components/props.html#prop-validation) pour plus de détails.
 
-    Also note that a prop with `Boolean` type affects its value casting behavior in both development and production. See [Boolean Casting](/guide/components/props.html#boolean-casting) for more details.
+    Also note that a prop with `Boolean` type affects its value casting behavior in both development and production. Voir la [conversion en booléen](/guide/components/props.html#boolean-casting) pour plus de détails.
 
   - **`default`**: Specifies a default value for the prop when it is not passed by the parent or has `undefined` value. Object or array defaults must be returned using a factory function. The factory function also receives the raw props object as the argument.
 
@@ -127,7 +127,7 @@ Declare the props of a component.
 
 - **See also:** [Props](/guide/components/props.html)
 
-## computed
+## computed {#computed}
 
 Declare computed properties to be exposed on the component instance.
 
@@ -207,7 +207,7 @@ Declare computed properties to be exposed on the component instance.
 
 - **See also:** [Computed Properties](/guide/essentials/computed.html)
 
-## methods
+## methods {#methods}
 
 Declare methods to be mixed into the component instance.
 
@@ -248,7 +248,7 @@ Declare methods to be mixed into the component instance.
 
 - **See also:** [Event Handling](/guide/essentials/event-handling.html)
 
-## watch
+## watch {#watch}
 
 Declare watch callbacks to be invoked on data change.
 
@@ -366,7 +366,7 @@ Declare watch callbacks to be invoked on data change.
 
 - **See also:** [Watchers](/guide/essentials/watchers.html)
 
-## emits
+## emits {#emits}
 
 Declare the custom events emitted by the component.
 
@@ -393,7 +393,7 @@ Declare the custom events emitted by the component.
 
   The validation function will receive the additional arguments passed to the component's `$emit` call. For example, if `this.$emit('foo', 1)` is called, the corresponding validator for `foo` will receive the argument `1`. The validator function should return a boolean to indicate whether the event arguments are valid.
 
-  Note that the `emits` option affects which event listeners are considered component event listeners, rather than native DOM event listeners. The listeners for declared events will be removed from the component's `$attrs` object, so they will not be passed through to the component's root element. See [Fallthrough Attributes](/guide/components/attrs.html) for more details.
+  Note that the `emits` option affects which event listeners are considered component event listeners, rather than native DOM event listeners. The listeners for declared events will be removed from the component's `$attrs` object, so they will not be passed through to the component's root element. See [Attributs implicitement déclarés](/guide/components/attrs.html) for more details.
 
 - **Example**
 
@@ -429,9 +429,9 @@ Declare the custom events emitted by the component.
   }
   ```
 
-* **See also:** [Fallthrough Attributes](/guide/components/attrs.html)
+* **See also:** [Attributs implicitement déclarés](/guide/components/attrs.html)
 
-## expose
+## expose {#expose}
 
 Declare exposed public properties when the component instance is accessed by a parent via template refs.
 

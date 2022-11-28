@@ -1,6 +1,6 @@
-# Créer une application Vue
+# Créer une application Vue {#creating-a-vue-application}
 
-## L'instance de l'application
+## L'instance de l'application {#the-application-instance}
 
 Chaque application Vue commence par créer une nouvelle **instance d'application** avec la fonction [`createApp`](/api/application#createapp) :
 
@@ -12,7 +12,7 @@ const app = createApp({
 })
 ```
 
-## Le composant racine
+## Le composant racine {#the-root-component}
 
 L'objet que nous passons dans `createApp` est en fait un composant. Chaque application nécessite un "composant racine" qui peut contenir d'autres composants en tant qu'enfants.
 
@@ -41,7 +41,7 @@ App (root component)
 
 Nous discuterons de la façon de définir et de composer plusieurs composants ensemble dans les sections ultérieures du guide. Avant cela, nous allons nous concentrer sur ce qui se passe à l'intérieur d'un seul composant.
 
-## Montage de l'application
+## Montage de l'application {#mounting-the-app}
 
 Une instance d'application n'affichera rien tant que sa méthode `.mount()` ne sera pas appelée. Il attend un argument "container", qui peut être soit un élément DOM réel, soit une chaîne de sélection :
 
@@ -57,7 +57,7 @@ Le contenu du composant racine de l'application sera rendu à l'intérieur de l'
 
 La méthode `.mount()` doit toujours être appelée après les différentes configurations (de l'application et des ressources). Notez également que sa valeur de retour, contrairement aux méthodes d'enregistrement des ressources, est l'instance du composant racine au lieu de l'instance de l'application.
 
-### Template de composant racine depuis le DOM
+### Template de composant racine depuis le DOM {#in-dom-root-component-template}
 
 Lorsque vous utilisez Vue sans outils de construction, nous pouvons écrire le modèle de notre composant racine directement dans l'élément de montage :
 
@@ -83,7 +83,7 @@ app.mount('#app')
 
 Vue utilisera automatiquement le contenu HTML du conteneur comme modèle si le composant racine n'a pas déjà une option `template`.
 
-## Configuration d'application
+## Configuration d'application {#app-configurations}
 
 L'instance d'application expose un objet `.config` qui nous permet de configurer quelques options au niveau de l'application, par exemple en définissant un gestionnaire d'erreurs au niveau de l'application qui capture les erreurs de tous les composants descendants :
 
@@ -103,7 +103,7 @@ Cela rend `TodoDeleteButton` disponible pour une utilisation n'importe où dans 
 
 Assurez-vous d'appliquer toutes les configurations d'application avant de monter l'application !
 
-## Instances multiples d'une application
+## Instances multiples d'une application {#multiple-application-instances}
 
 Rien ne vous limite à n'avoir qu'une seule instance d'application sur la même page. L'API `createApp` permet à plusieurs applications Vue de coexister sur la même page, chacune avec sa propre portée pour la configuration et les ressources globales :
 

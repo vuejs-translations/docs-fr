@@ -187,16 +187,16 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Components In-Depth',
+      text: 'Composants en détails',
       items: [
         {
-          text: 'Registration',
+          text: 'Enregistrement',
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
-        { text: 'Events', link: '/guide/components/events' },
+        { text: 'Gestion des évènements', link: '/guide/components/events' },
         {
-          text: 'Fallthrough Attributes',
+          text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
         },
         { text: 'Slots', link: '/guide/components/slots' },
@@ -205,7 +205,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/provide-inject'
         },
         {
-          text: 'Async Components',
+          text: 'Composants asynchrones',
           link: '/guide/components/async'
         }
       ]
@@ -645,6 +645,24 @@ export default defineConfigWithTheme<ThemeConfig>({
     sidebar,
     i18n,
 
+    localeLinks: [
+      {
+        link: 'https://cn.vuejs.org',
+        text: '简体中文',
+        repo: 'https://github.com/vuejs-translations/docs-zh-cn'
+      },
+      {
+        link: 'https://ja.vuejs.org',
+        text: '日本語',
+        repo: 'https://github.com/vuejs-translations/docs-ja'
+      },
+      {
+        link: '/translations/',
+        text: 'Help Us Translate!',
+        isTranslationsDesc: true
+      }
+    ],
+
     algolia: {
       indexName: 'vuejs',
       appId: 'ML0LEBN7FQ',
@@ -660,14 +678,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'languages', link: '/translations/' },
       { icon: 'github', link: 'https://github.com/vuejs/' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },
       { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
     ],
 
     editLink: {
-      repo: 'vuejs/docs', // TODO: add a language flag to point to the FR repo?
+      repo: 'vuejs-translations/docs-fr', // TODO: add a language flag to point to the FR repo?
       text: 'Éditer cette page sur GitHub'
     },
 
