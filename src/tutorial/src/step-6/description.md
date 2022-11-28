@@ -1,20 +1,20 @@
-# Conditional Rendering
+# Rendu conditionnel {#conditional-rendering}
 
-We can use the `v-if` directive to conditionally render an element:
-
-```vue-html
-<h1 v-if="awesome">Vue is awesome!</h1>
-```
-
-This `<h1>` will be rendered only if the value of `awesome` is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy). If `awesome` changes to a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value, it will be removed from the DOM.
-
-We can also use `v-else` and `v-else-if` to denote other branches of the condition:
+Nous pouvons utiliser la directive `v-if` pour rendre un élément de manière conditionnelle :
 
 ```vue-html
-<h1 v-if="awesome">Vue is awesome!</h1>
-<h1 v-else>Oh no 😢</h1>
+<h1 v-if="awesome">Vue est génial!</h1>
 ```
 
-Currently, the demo is showing both `<h1>`s at the same time, and the button does nothing. Try to add `v-if` and `v-else` directives to them, and implement the `toggle()` method so that we can use the button to toggle between them.
+Ce `<h1>` sera render uniquement si la valeur de `awesome` est [truthy](https://developer.mozilla.org/fr/docs/Glossary/Truthy). Si `awesome` prend une valeur [falsy](https://developer.mozilla.org/fr/docs/Glossary/Falsy), il sera supprimé du DOM.
 
-More details on `v-if`: <a target="_blank" href="/guide/essentials/conditional.html">Guide - Conditional Rendering</a>
+On peut aussi utiliser `v-else` et `v-else-if` pour désigner les autres branches de la condition :
+
+```vue-html
+<h1 v-if="awesome">Vue est génial!</h1>
+<h1 v-else>Oh non 😢</h1>
+```
+
+Actuellement, la démo affiche les deux `<h1>`s en même temps, et le bouton ne fait rien. Essayez d'y ajouter des directives `v-if` et `v-else`, et implémentez la méthode `toggle()` pour que nous puissions utiliser le bouton pour basculer entre les deux.
+
+Davantage de détails sur le `v-if`: <a target="_blank" href="/guide/essentials/conditional.html">Guide - Rendu Conditionnel</a>

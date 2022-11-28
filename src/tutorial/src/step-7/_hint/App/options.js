@@ -1,4 +1,4 @@
-// give each todo a unique id
+// donne à chaque todo un id unique
 let id = 0
 
 export default {
@@ -6,9 +6,9 @@ export default {
     return {
       newTodo: '',
       todos: [
-        { id: id++, text: 'Learn HTML' },
-        { id: id++, text: 'Learn JavaScript' },
-        { id: id++, text: 'Learn Vue' }
+        { id: id++, text: 'Apprendre le HTML' },
+        { id: id++, text: 'Apprendre le JavaScript' },
+        { id: id++, text: 'Apprendre Vue' }
       ]
     }
   },

@@ -1,6 +1,6 @@
-# Form Bindings
+# Liaisons sur les champs de formulaire {#form-binding}
 
-Using `v-bind` and `v-on` together, we can create two-way bindings on form input elements:
+En utilisant `v-bind` et `v-on` ensemble, nous pouvons créer des liaisons bidirectionnelles sur les éléments de saisie du formulaire :
 
 ```vue-html
 <input :value="text" @input="onInput">
@@ -11,8 +11,8 @@ Using `v-bind` and `v-on` together, we can create two-way bindings on form input
 ```js
 methods: {
   onInput(e) {
-    // a v-on handler receives the native DOM event
-    // as the argument.
+    // une directive v-on recoit un évènement natif du DOM
+    // comme argument.
     this.text = e.target.value
   }
 }
@@ -24,24 +24,24 @@ methods: {
 
 ```js
 function onInput(e) {
-  // a v-on handler receives the native DOM event
-  // as the argument.
+  // une directive v-on recoit un évènement natif du DOM
+  // comme argument.
   text.value = e.target.value
 }
 ```
 
 </div>
 
-Try typing in the input box - you should see the text in `<p>` updating as you type.
+Essayez de taper dans le champ de saisie - vous devriez voir le texte dans `<p>` se mettre à jour au fur et à mesure que vous tapez.
 
-To simplify two-way bindings, Vue provides a directive, `v-model`, which is essentially a syntax sugar for the above:
+Pour simplifier une communiation bidirectionnelle, Vue fournit une directive, `v-model`, qui est essentiellement du sucre syntaxique pour ce qui suit précède:
 
 ```vue-html
 <input v-model="text">
 ```
 
-`v-model` automatically syncs the `<input>`'s value with the bound state, so we no longer need to use an event handler for that.
+`v-model` synchronise automatiquement la valeur de l'`<input>` avec le state lié, donc nous n'avons plus besoin d'utiliser un gestionnaire d'événements pour cela.
 
-`v-model` works not only on text inputs, but also other input types such as checkboxes, radio buttons, and select dropdowns. We cover more details in <a target="_blank" href="/guide/essentials/forms.html">Guide - Form Bindings</a>.
+`v-model` ne fonctionne pas seulement sur les inputs de type texte, mais aussi les autres types d'input tels que les boîtes à cocher, les boutons radio et les listes d'options. Les détails sur abordés dans <a target="_blank" href="/guide/essentials/forms.html">Guide - Liaison des formulaires</a>.
 
-Now, try to refactor the code to use `v-model` instead.
+Maintenant, essayez de refactoriser le code pour utiliser `v-model` à la place.
