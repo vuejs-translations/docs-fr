@@ -1,4 +1,4 @@
-# Liaisons sur les champs de formulaire {#form-binding}
+# Liaisons sur les champs de formulaire {#form-bindings}
 
 En utilisant `v-bind` et `v-on` ensemble, nous pouvons créer des liaisons bidirectionnelles sur les éléments de saisie du formulaire :
 

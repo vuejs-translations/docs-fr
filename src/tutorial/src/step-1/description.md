@@ -19,7 +19,7 @@ Si vous êtes un développeur expérimenté venant de Vue 2 ou d'autres framewor
 
 - Vue offre deux styles différents d'API: Options API et Composition API. Ce tutoriel est fait de sorte à fonctioner avec les deux variantes - vous pouvez chosir votre style préferé en utilisant le switch **Préférence d'API** situé en haut de page. <a target="_blank" href="/guide/introduction.html#api-styles">En savoir plus sur les styles d'API</a>.
 
-- Vous pouvez également passer du mode SFC au mode HTML. Le premier affichera des exemples de code dans le format <a target="_blank" href="/guide/introduction.html#single-file-components">monofichier (SFC)</a>, qui est celui utilisé par la plupart des dévelopeurs quand il s'agit de Vue avec une phase de build.
+- Vous pouvez également passer du mode SFC au mode HTML. Le premier affichera des exemples de code dans le format <a target="_blank" href="/guide/introduction.html#single-file-components">monofichier (SFC)</a>, qui est celui utilisé par la plupart des dévelopeurs quand il s'agit de Vue avec des outils de build.
 
 </details>
 

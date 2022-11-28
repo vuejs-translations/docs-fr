@@ -106,6 +106,7 @@ A l'intérieur de la fonction, nous pouvons mettre à jour le state du composant
 
 </div>
 
+Les gestionnaires d'événements peuvent également utiliser des expressions inline, et peuvent simplifier des tâches courantes avec des modifiers. Davantage de détails dans <a target="_blank" href="/guide/essentials/event-handling.html">Guide - Gestion des évènements</a>.
 
 Les gestionaires d'évènements peuvent aussi utiliser des expressions inline, et peuvent simplifier des tâches simples grâce aux modifiers. Ceux-ci sont expliqués en détail dans <a target="_blank" href="/guide/essentials/event-handling.html">Guide - Gestion des évènements</a>.
 

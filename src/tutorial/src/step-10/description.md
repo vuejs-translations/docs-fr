@@ -10,12 +10,12 @@ import { ref, watch } from 'vue'
 const count = ref(0)
 
 watch(count, (newCount) => {
-  // oui, console.log est un effet de bord
+  // oui, console.log() est un effet de bord
   console.log(`new count is: ${newCount}`)
 })
 ```
 
-`watch()` peut directement observer une ref, et le callback sera appelé dès que la valeur de `count` change. `watch()` peut aussi observer d'autres type de sources de données - davantage de détails sont disponibles dans <a target="_blank" href="/guide/essentials/watchers.html">Guide - Observateurs</a>.
+`watch()` peut directement observer une ref, et le callback sera appelé dès que la valeur de `count` change. `watch()` peut aussi observer d'autres types de sources de données - davantage de détails sont disponibles dans <a target="_blank" href="/guide/essentials/watchers.html">Guide - Observateurs</a>.
 
 </div>
 <div class="options-api">

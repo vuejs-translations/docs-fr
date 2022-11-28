@@ -47,7 +47,7 @@ createApp({
 </div>
 <div class="composition-api">
 
-Voici de <a target="_blank" href="/guide/essentials/computed.html">`computed()`</a>. Nous pouvons créer une réf calculée qui calcule sa `.value` en fonction d'autres sources de données réactives :
+Voici <a target="_blank" href="/guide/essentials/computed.html">`computed()`</a>. Nous pouvons créer une réf calculée qui calcule sa `.value` en fonction d'autres sources de données réactives :
 
 <div class="sfc">
 
