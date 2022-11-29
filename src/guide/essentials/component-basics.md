@@ -1,16 +1,16 @@
-# Components Basics {#components-basics}
+# Principes fondamentaux des composants {#components-basics}
 
-Components allow us to split the UI into independent and reusable pieces, and think about each piece in isolation. It's common for an app to be organized into a tree of nested components:
+Les composants nous permettent de fractionner l'UI en morceaux indépendants et réutilisables, sur lesquels nous pouvons réfléchir de manière isolée. Il est courant pour une application d'être organisée en un arbre de composants imbriqués.
 
 ![Component Tree](./images/components.png)
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-This is very similar to how we nest native HTML elements, but Vue implements its own component model that allow us to encapsulate custom content and logic in each component. Vue also plays nicely with native Web Components. If you are curious about the relationship between Vue Components and native Web Components, [read more here](/guide/extras/web-components.html).
+Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les composants Web natifs. Pour en savoir plus sur la relation entre les composants Vue et les composants Web natifs, [lisez ceci](/guide/extras/web-components.html).
 
-## Defining a Component {#defining-a-component}
+## Définir un composant {#defining-a-component}
 
-When using a build step, we typically define each Vue component in a dedicated file using the `.vue` extension - known as a [Single-File Component](/guide/scaling-up/sfc.html) (SFC for short):
+Lorsqu'on utilise une étape de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelée [Single-File Component](/guide/scaling-up/sfc.html) (abrégé SFC):
 
 <div class="options-api">
 
@@ -47,7 +47,7 @@ const count = ref(0)
 
 </div>
 
-When not using a build step, a Vue component can be defined as a plain JavaScript object containing Vue-specific options:
+Sans étape de build, un composant Vue peut être défini comme un simple object JavaScript contenant des options spécifiques à Vue:
 
 <div class="options-api">
 
@@ -80,23 +80,23 @@ export default {
     <button @click="count++">
       You clicked me {{ count }} times.
     </button>`
-  // or `template: '#my-template-element'`
+  // ou `template: '#my-template-element'`
 }
 ```
 
 </div>
 
-The template is inlined as a JavaScript string here, which Vue will compile on the fly. You can also use an ID selector pointing to an element (usually native `<template>` elements) - Vue will use its content as the template source.
+Le template est écrit inline, en tant que chaîne de caractère que Vue va compiler à la volée. Vous pouvez aussi utiliser un sélecteur d'ID pointant sur un élément (généralement des éléments natifs `<template>`) - Vue utilisera son contenu comme la source du template.
 
-The example above defines a single component and exports it as the default export of a `.js` file, but you can use named exports to export multiple components from the same file.
+L'exemple ci-dessus définit un composant et l'exporte comme export par défaut d'un fichier `.js`, mais vous pouvez utiliser les exports nommés pour exporter plusieurs composants à partir d'un même fichier.
 
-## Using a Component {#using-a-component}
+## Utiliser un composant {#using-a-component}
 
 :::tip
-We will be using SFC syntax for the rest of this guide - the concepts around components are the same regardless of whether you are using a build step or not. The [Examples](/examples/) section shows component usage in both scenarios.
+Nous allons utiliser la syntaxe SFC dans le reste de ce guide - les concepts des composants sont les mêmes que vous utilisiez une étape de build ou non. La section [Exemples](/examples/) illustre l'utilisation des composants dans les deux scénarios.
 :::
 
-To use a child component, we need to import it in the parent component. Assuming we placed our counter component inside a file called `ButtonCounter.vue`, the component will be exposed as the file's default export:
+Afin d'utiliser un composant enfant, nous devons l'importer dans le composant parent. En supposant que nous ayons placé notre composant compteur dans un fichier nommé `ButtonCounter.vue`, le composant apparaîtra comme l'export par défaut du fichier:
 
 <div class="options-api">
 
@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-To expose the imported component to our template, we need to [register](/guide/components/registration.html) it with the `components` option. The component will then be available as a tag using the key it is registered under.
+Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration.html) via l'option `components`. Le composant sera alors utilisable grâce à un tag portant la clé utilisée lors de l'enregistrement.
 
 </div>
 
@@ -134,13 +134,13 @@ import ButtonCounter from './ButtonCounter.vue'
 </template>
 ```
 
-With `<script setup>`, imported components are automatically made available to the template.
+Avec `<script setup>`, les composants importés sont directement rendus accessibles au template.
 
 </div>
 
-It's also possible to globally register a component, making it available to all components in a given app without having to import it. The pros and cons of global vs. local registration is discussed in the dedicated [Component Registration](/guide/components/registration.html) section.
+Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une app sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration.html) dédiée.
 
-Components can be reused as many times as you want:
+Vous pouvez réutiliser les composants autant de fois que vous voulez:
 
 ```vue-html
 <h1>Here are many child components!</h1>
@@ -160,20 +160,20 @@ Components can be reused as many times as you want:
 
 </div>
 
-Notice that when clicking on the buttons, each one maintains its own, separate `count`. That's because each time you use a component, a new **instance** of it is created.
+Notez que lorsque vous cliquez sur les boutons, chacun d'entre eux maintient son propre `count` individuel. Cela s'explique par le fait que chaque fois que vous utilisez un composant, une nouvelle **instance** de ce dernier est créée.
 
-In SFCs, it's recommended to use `PascalCase` tag names for child components to differentiate from native HTML elements. Although native HTML tag names are case-insensitive, Vue SFC is a compiled format so we are able to use case-sensitive tag names in it. We are also able to use `/>` to close a tag.
+Dans les SFC, il est recommandé d'utiliser des noms de tag en casse Pascal (`PascalCase`) pour les composants enfants afin de les différencier des éléments HTML natifs. Bien que les noms des tags HTML natifs soient insensibles à la casse, les SFC de Vue sont un format compilé, donc nous pouvons y utiliser des noms de tag sensibles à la casse. Nous pouvons également utiliser `/>` pour fermer un tag.
 
-If you are authoring your templates directly in a DOM (e.g. as the content of a native `<template>` element), the template will be subject to the browser's native HTML parsing behavior. In such cases, you will need to use `kebab-case` and explicit closing tags for components:
+Si vous éditez vos templates directement dans un DOM (par exemple comme le contenu d'un élément natif `<template>`), le template sera soumis au parsing HTML par défaut du navigateur. Dans ces cas de figure, vous aurez besoin d'utiliser la casse kebab (`kebab-case`) et de fermer explicitement les tags pour vos composants:
 
 ```vue-html
-<!-- if this template is written in the DOM -->
+<!-- Si le template est écrit dans le DOM -->
 <button-counter></button-counter>
 <button-counter></button-counter>
 <button-counter></button-counter>
 ```
 
-See [DOM template parsing caveats](#dom-template-parsing-caveats) for more details.
+Voir [DOM template parsing caveats](#dom-template-parsing-caveats) pour plus de détails.
 
 ## Passing Props {#passing-props}
 
