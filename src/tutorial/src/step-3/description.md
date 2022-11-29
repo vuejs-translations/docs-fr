@@ -12,10 +12,8 @@ La partie après les deux points (`:id`) est "argument" de la directive. Ici, l'
 
 Parce que `v-bind` est utilisé si fréquemment, il a une syntaxe abrégée dédiée :
 
-
 ```vue-html
 <div :id="dynamicId"></div>
 ```
-
 
 Maintenant, essayez d'ajouter une liaison dynamique `class` au `<h1>`, en utilisant la propriété `titleClass` <span class="options-api">data</span><span class="composition-api">ref</span> comme valeur. S'il est lié correctement, le texte devrait devenir rouge.

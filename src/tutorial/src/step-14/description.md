@@ -23,7 +23,6 @@ En plus de transmettre des données via les props, le composant parent peut éga
 
 Dans le composant enfant, il peut render le contenu du slot du parent en utilisant l'élément `<slot>` comme sortie :
 
-
 <div class="sfc">
 
 ```vue-html

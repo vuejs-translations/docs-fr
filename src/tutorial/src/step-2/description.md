@@ -6,7 +6,6 @@ Ce que vous voyez dans l'éditeur est un composant Vue monofichier (SFC). Un SFC
 
 </div>
 
-
 La caractéristique principale de Vue est le **rendu déclaratif** : à l'aide d'une syntaxe de modèle qui étend le HTML, nous pouvons décrire comment le HTML devrait ressembler en fonction de l'état du JavaScript. Lorsque l'état change, le HTML est automatiquement mis à jour.
 
 <div class="composition-api">
