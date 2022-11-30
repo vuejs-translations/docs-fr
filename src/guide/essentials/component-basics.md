@@ -10,7 +10,7 @@ Cette approche est très similaire à celle d'imbriquer des éléments HTML nati
 
 ## Définir un composant {#defining-a-component}
 
-Lorsqu'on utilise une étape de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelée [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais,abrégé SFC):
+Lorsqu'on utilise une étape de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais,abrégé SFC):
 
 <div class="options-api">
 
