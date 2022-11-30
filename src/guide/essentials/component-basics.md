@@ -47,7 +47,7 @@ const count = ref(0)
 
 </div>
 
-Sans étape de build, un composant Vue peut être défini comme un simple object JavaScript contenant des options spécifiques à Vue:
+Sans étape de build, un composant Vue peut être défini comme un simple objet JavaScript contenant des options spécifiques à Vue:
 
 <div class="options-api">
 
