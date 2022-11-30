@@ -175,11 +175,11 @@ Si vous éditez vos templates directement dans un DOM (par exemple comme le cont
 
 Voir [DOM template parsing caveats](#dom-template-parsing-caveats) pour plus de détails.
 
-## Passing Props {#passing-props}
+## Passer des props {#passing-props}
 
-If we are building a blog, we will likely need a component representing a blog post. We want all the blog posts to share the same visual layout, but with different content. Such a component won't be useful unless you can pass data to it, such as the title and content of the specific post we want to display. That's where props come in.
+Si nous concevons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
 
-Props are custom attributes you can register on a component. To pass a title to our blog post component, we must declare it in the list of props this component accepts, using the <span class="options-api">[`props`](/api/options-state.html#props) option</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-defineemits) macro</span>:
+Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state.html#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span>:
 
 <div class="options-api">
 
@@ -196,7 +196,7 @@ export default {
 </template>
 ```
 
-When a value is passed to a prop attribute, it becomes a property on that component instance. The value of that property is accessible within the template and on the component's `this` context, just like any other component property.
+Lorsqu'une valeur est passée à un attribut prop, il devient une propriété de l'instance du composant. La valeur de cette propriété est accessible à l'intérieur du template et dans le contexte `this` du composant, tout comme n'importe quelle autre de ses propriétés.
 
 </div>
 <div class="composition-api">
@@ -212,16 +212,16 @@ defineProps(['title'])
 </template>
 ```
 
-`defineProps` is a compile-time macro that is only available inside `<script setup>` and does not need to be explicitly imported. Declared props are automatically exposed to the template. `defineProps` also returns an object that contains all the props passed to the component, so that we can access them in JavaScript if needed:
+`defineProps` est une macro de compilation qui est seulement accessible à l'intérieur de `<script setup>` et ne nécessite pas d'être explicitement importée. Les props déclarées sont automatiquement exposées au template. `defineProps` retourne également un objet contenant toutes les propriétés passées au composant, de manière à ce que l'on puisse y accéder en JavaScript si nécessaire:
 
 ```js
 const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-See also: [Typing Component Props](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi: [Typing Component Props](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
 
-If you are not using `<script setup>`, props should be declared using the `props` option, and the props object will be passed to `setup()` as the first argument:
+Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passée à `setup()` en premier argument:
 
 ```js
 export default {
@@ -234,9 +234,9 @@ export default {
 
 </div>
 
-A component can have as many props as you like and, by default, any value can be passed to any prop.
+Un composant peut avoir autant de props que vous voulez, et, par défaut, n'importe quelle valeur peut être passée à une prop.
 
-Once a prop is registered, you can pass data to it as a custom attribute, like this:
+Une fois qu'une prop est enregistrée, vous pouvez lui passer des données via un attribut personnalisé, de cette manière:
 
 ```vue-html
 <BlogPost title="My journey with Vue" />
@@ -244,7 +244,7 @@ Once a prop is registered, you can pass data to it as a custom attribute, like t
 <BlogPost title="Why Vue is so fun" />
 ```
 
-In a typical app, however, you'll likely have an array of posts in your parent component:
+Toutefois, dans une application classique, vous auriez sûrement un tableau d'article dans votre composant parent:
 
 <div class="options-api">
 
@@ -276,7 +276,7 @@ const posts = ref([
 
 </div>
 
-Then want to render a component for each one, using `v-for`:
+Puis vous voudriez rendre un composant pour chacun d'entre eux, grâce à `v-for`:
 
 ```vue-html
 <BlogPost
@@ -297,15 +297,15 @@ Then want to render a component for each one, using `v-for`:
 
 </div>
 
-Notice how `v-bind` is used to pass dynamic prop values. This is especially useful when you don't know the exact content you're going to render ahead of time.
+Remarquez comment `v-bind` est utilisé pour passer des valeurs de props dynamiques. Cela est particulièrement utile lorsque vous ne connaissez pas le contenu exact que vous allez rendre au fur et à mesure du temps.
 
-That's all you need to know about props for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Props](/guide/components/props.html).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props.html).
 
-## Listening to Events {#listening-to-events}
+## Écouter des événements {#listening-to-events}
 
-As we develop our `<BlogPost>` component, some features may require communicating back up to the parent. For example, we may decide to include an accessibility feature to enlarge the text of blog posts, while leaving the rest of the page at its default size.
+Au fur et à mesure que nous développons notre composant `<BlogPost>`, certaines fonctionnalités peuvent nécessiter de communiquer avec le parent. Par exemple, on peut décider d'inclure une fonctionnalité d'accessibilité permettant d'agrandir le texte des articles du blog, tout en laissant la taille par défaut sur le reste de la page.
 
-In the parent, we can support this feature by adding a `postFontSize` <span class="options-api">data property</span><span class="composition-api">ref</span>:
+Dans le parent, nous pouvons développer cette fonctionnalité en ajoutant une <span class="options-api">propriété de données</span><span class="composition-api">ref</span> `postFontSize`:
 
 <div class="options-api">
 
@@ -333,7 +333,7 @@ const postFontSize = ref(1)
 
 </div>
 
-Which can be used in the template to control the font size of all blog posts:
+Qui pourra être utilisée dans le template afin de contrôler la taille de police de tous les articles du blog:
 
 ```vue-html{1,7}
 <div :style="{ fontSize: postFontSize + 'em' }">
@@ -345,7 +345,7 @@ Which can be used in the template to control the font size of all blog posts:
 </div>
 ```
 
-Now let's add a button to the `<BlogPost>` component's template:
+Maintenant ajoutons un bouton dans le template du composant `<BlogPost>`:
 
 ```vue{5}
 <!-- BlogPost.vue, omitting <script> -->
@@ -357,7 +357,7 @@ Now let's add a button to the `<BlogPost>` component's template:
 </template>
 ```
 
-The button doesn't do anything yet - we want clicking the button to communicate to the parent that it should enlarge the text of all posts. To solve this problem, components provide a custom events system. The parent can choose to listen to any event on the child component instance with `v-on` or `@`, just as we would with a native DOM event:
+Pour le moment le bouton ne fait rien - nous voulons que le clique communique au parent qu'il doit agrandir le texte de tous les articles. Pour résoudre ce problème, les composants fournissent un système personnalisé d'événements. Le parent peut choisir d'écouter n'importe quel événement de l'instance du composant enfant grâce à `v-on` ou `@`, comme nous le ferions avec un événement natif du DOM:
 
 ```vue-html{3}
 <BlogPost
@@ -366,10 +366,10 @@ The button doesn't do anything yet - we want clicking the button to communicate 
  />
 ```
 
-Then the child component can emit an event on itself by calling the built-in [**`$emit`** method](/api/component-instance.html#emit), passing the name of the event:
+Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance.html#emit), et en lui passant le nom de l'événement:
 
 ```vue{5}
-<!-- BlogPost.vue, omitting <script> -->
+<!-- BlogPost.vue, en omettant <script> -->
 <template>
   <div class="blog-post">
     <h4>{{ title }}</h4>
@@ -378,7 +378,7 @@ Then the child component can emit an event on itself by calling the built-in [**
 </template>
 ```
 
-Thanks to the `@enlarge-text="postFontSize += 0.1"` listener, the parent will receive the event and update the value of `postFontSize`.
+Grâce à l'écouteur `@enlarge-text="postFontSize += 0.1"`, le parent va recevoir l'événement et mettre à jour la valeur de `postFontSize`.
 
 <div class="options-api">
 
@@ -391,7 +391,7 @@ Thanks to the `@enlarge-text="postFontSize += 0.1"` listener, the parent will re
 
 </div>
 
-We can optionally declare emitted events using the <span class="options-api">[`emits`](/api/options-state.html#emits) option</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-defineemits) macro</span>:
+Nous pouvons, de manière facultative, déclarer les événements émis en utilisant <span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span>:
 
 <div class="options-api">
 
@@ -418,11 +418,11 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-This documents all the events that a component emits and optionally [validates them](/guide/components/events.html#events-validation). It also allows Vue to avoid implicitly applying them as native listeners to the child component's root element.
+Cela documente tous les événements qu'un composant émet et peut éventuellement les [valider](/guide/components/events.html#events-validation). Cela permet également à Vue d'éviter de les appliquer implicitement en tant qu'écouteurs natifs à l'élément racine du composant enfant.
 
 <div class="composition-api">
 
-Similar to `defineProps`, `defineEmits` is only usable in `<script setup>` and doesn't need to be imported. It returns an `emit` function that is equivalent to the `$emit` method. It can be used to emit events in the `<script setup>` section of a component, where `$emit` isn't directly accessible:
+Comme c'est le cas pour `defineProps`, `defineEmits` n'est utilisable que dans `<script setup>` et ne nécessite pas d'être importé. Une fonction `emit` est retournée, similaire à la méthode `$emit`. Cela peut être utilisé pour émettre des événements dans la section `<script setup>` d'un composant, où `$emit` n'est pas directement accessible:
 
 ```vue
 <script setup>
@@ -432,9 +432,9 @@ emit('enlarge-text')
 </script>
 ```
 
-See also: [Typing Component Emits](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir aussi: [Typing Component Emits](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
-If you are not using `<script setup>`, you can declare emitted events using the `emits` option. You can access the `emit` function as a property of the setup context (passed to `setup()` as the second argument):
+Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument):
 
 ```js
 export default {
@@ -495,7 +495,7 @@ As you'll see above, we use the `<slot>` as a placeholder where we want the cont
 
 </div>
 
-That's all you need to know about slots for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Slots](/guide/components/slots).
+C'est tout ce dont vous avez besoin concernant les slots pour le moment, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
 
 ## Dynamic Components {#dynamic-components}
 
