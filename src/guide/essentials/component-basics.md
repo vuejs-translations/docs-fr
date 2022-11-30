@@ -497,9 +497,9 @@ As you'll see above, we use the `<slot>` as a placeholder where we want the cont
 
 C'est tout ce dont vous avez besoin concernant les slots pour le moment, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
 
-## Dynamic Components {#dynamic-components}
+## Composants dynamiques {#dynamic-components}
 
-Sometimes, it's useful to dynamically switch between components, like in a tabbed interface:
+Parfois, il peut être utile d'alterner dynamiquement entre des composants, comme dans une interface avec des onglets:
 
 <div class="options-api">
 
@@ -512,12 +512,12 @@ Sometimes, it's useful to dynamically switch between components, like in a tabbe
 
 </div>
 
-The above is made possible by Vue's `<component>` element with the special `is` attribute:
+Cela est rendu possible par l'élément `<component>` de Vue avec l'attribut spécial `is`:
 
 <div class="options-api">
 
 ```vue-html
-<!-- Component changes when currentTab changes -->
+<!-- Le composant change lorsque currentTab change -->
 <component :is="currentTab"></component>
 ```
 
@@ -525,20 +525,20 @@ The above is made possible by Vue's `<component>` element with the special `is` 
 <div class="composition-api">
 
 ```vue-html
-<!-- Component changes when currentTab changes -->
+<!-- Le composant change lorsque currentTab change -->
 <component :is="tabs[currentTab]"></component>
 ```
 
 </div>
 
-In the example above, the value passed to `:is` can contain either:
+Dans l'exemple ci-dessus, la valeur passée à `:is` peut contenir au choix:
 
-- the name string of a registered component, OR
-- the actual imported component object
+- une chaîne de caractères représentant le nom d'un composant enregistré, OU
+- le véritable objet composant importé
 
-You can also use the `is` attribute to create regular HTML elements.
+Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML classiques.
 
-When switching between multiple components with `<component :is="...">`, a component will be unmounted when it is switched away from. We can force the inactive components to stay "alive" with the built-in [`<KeepAlive>` component](/guide/built-ins/keep-alive.html).
+Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, le composant 'partant' sera démonté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
 
 ## DOM Template Parsing Caveats {#dom-template-parsing-caveats}
 
