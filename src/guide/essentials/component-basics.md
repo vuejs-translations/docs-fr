@@ -540,24 +540,24 @@ Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML 
 
 Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, le composant 'partant' sera démonté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
 
-## DOM Template Parsing Caveats {#dom-template-parsing-caveats}
+## Mise en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
 
-If you are writing your Vue templates directly in the DOM, Vue will have to retrieve the template string from the DOM. This leads to some caveats due to browsers' native HTML parsing behavior.
+Si vous écrivez vos templates Vue directement dans le DOM, Vue va devoir extraire du DOM la chaîne de caractère représentant le template. Cela entraîne quelques avertissements à cause du comportement d'analyse du HTML natif des navigateurs.
 
 :::tip
-It should be noted that the limitations discussed below only apply if you are writing your templates directly in the DOM. They do NOT apply if you are using string templates from the following sources:
+Il est important de rappeler que les limitations que nous venons d'aborder ne s'appliquent que lorsque vous écrivez vos templates directement dans le DOM. Elles ne s'appliquent PAS si vous utilisez des templates en chaîne de caractères à partir des sources suivantes:
 
-- Single-File Components
-- Inlined template strings (e.g. `template: '...'`)
+- Composants Monofichiers
+- Chaînes de caractères représentant le template écrites en ligne (par exemple `template: '...'`)
 - `<script type="text/x-template">`
   :::
 
-### Case Insensitivity {#case-insensitivity}
+### Insensibilité de la casse {#case-insensitivity}
 
-HTML tags and attribute names are case-insensitive, so browsers will interpret any uppercase characters as lowercase. That means when you’re using in-DOM templates, PascalCase component names and camelCased prop names or `v-on` event names all need to use their kebab-cased (hyphen-delimited) equivalents:
+Les tags HTML et les noms des attributs sont insensibles à la casse, donc les navigateurs interpréteront une lettre majuscule comme une lettre minuscule. Cela signifie que lorsque vous utilisez des templates dans le DOM, les noms des composants en casse Pascal et les noms des propriétés en casse Camel ou encore les noms des événements `v-on` doivent tous utiliser leurs équivalent en casse Kebab (séparation par un trait d'union):
 
 ```js
-// camelCase in JavaScript
+// casse Camel en JavaScript
 const BlogPost = {
   props: ['postTitle'],
   emits: ['updatePost'],
@@ -568,46 +568,46 @@ const BlogPost = {
 ```
 
 ```vue-html
-<!-- kebab-case in HTML -->
+<!-- casse Camel en HTML -->
 <blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
 ```
 
-### Self Closing Tags {#self-closing-tags}
+### Tags auto-fermants {#self-closing-tags}
 
-We have been using self-closing tags for components in previous code samples:
+Nous avons utilisé des tags auto-fermants pour les composants dans les exemples de code précédents:
 
 ```vue-html
 <MyComponent />
 ```
 
-This is because Vue's template parser respects `/>` as an indication to end any tag, regardless of its type.
+Ceci s'explique par le fait que l'outil d'analyse d'un template Vue respecte `/>` comme une indication de fin de tag, peu importe son type.
 
-In DOM templates, however, we must always include explicit closing tags:
+Dans les templates du DOM, cependant, nous devons toujours inclure des fermetures de tags explicites:
 
 ```vue-html
 <my-component></my-component>
 ```
 
-This is because the HTML spec only allows [a few specific elements](https://html.spec.whatwg.org/multipage/syntax.html#void-elements) to omit closing tags, the most common being `<input>` and `<img>`. For all other elements, if you omit the closing tag, the native HTML parser will think you never terminated the opening tag. For example, the following snippet:
+Cela est dû aux spécifications du HTML qui n'autorisent que [quelques éléments spécifiques](https://html.spec.whatwg.org/multipage/syntax.html#void-elements) à omettre la fermeture des tags, les plus communs étant `<input>` et `<img>`. Pour tous les autres éléments, si vous omettez de fermer les tags, l'outil d'analyse du HTML natif pensera que vous n'avez jamais terminé leur ouverture. Par exemple, le bout de code suivant:
 
 ```vue-html
-<my-component /> <!-- we intend to close the tag here... -->
+<my-component /> <!-- nous voulons fermer le tag ici... -->
 <span>hello</span>
 ```
 
-will be parsed as:
+Sera analysé comme:
 
 ```vue-html
 <my-component>
   <span>hello</span>
-</my-component> <!-- but the browser will close it here. -->
+</my-component> <!-- mais le navigateur le fermera ici -->
 ```
 
-### Element Placement Restrictions {#element-placement-restrictions}
+### Restrictions pour le placement des éléments {#element-placement-restrictions}
 
-Some HTML elements, such as `<ul>`, `<ol>`, `<table>` and `<select>` have restrictions on what elements can appear inside them, and some elements such as `<li>`, `<tr>`, and `<option>` can only appear inside certain other elements.
+Certains éléments HTML, comme `<ul>`, `<ol>`, `<table>` et `<select>` ont des restrictions concernant quels éléments ils peuvent contenir, et certains éléments comme `<li>`, `<tr>`, et `<option>` ne peuvent apparaître qu'à l'intérieur de certains éléments.
 
-This will lead to issues when using components with elements that have such restrictions. For example:
+Cela va entraîner des problèmes lorsque nous allons utiliser des composants avec des éléments qui ont ce genre de restrictions. Par exemple:
 
 ```vue-html
 <table>
@@ -615,7 +615,7 @@ This will lead to issues when using components with elements that have such rest
 </table>
 ```
 
-The custom component `<blog-post-row>` will be hoisted out as invalid content, causing errors in the eventual rendered output. We can use the special [`is` attribute](/api/built-in-special-attributes.html#is) as a workaround:
+Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide, ce qui peut causer des erreurs dans le résultat rendu final. Nous pouvons utiliser [l'attribut spécial `is`](/api/built-in-special-attributes.html#is) comme solution:
 
 ```vue-html
 <table>
@@ -624,9 +624,9 @@ The custom component `<blog-post-row>` will be hoisted out as invalid content, c
 ```
 
 :::tip
-When used on native HTML elements, the value of `is` must be prefixed with `vue:` in order to be interpreted as a Vue component. This is required to avoid confusion with native [customized built-in elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example).
+Lorsqu'il est utilisé sur des éléments HTML natifs, la valeur de `is` doit être préfixée de `vue:` afin d'être interprétée comme un composant Vue. Cela est nécessaire afin d'éviter les confusions avec les [éléments personnalisés intégrés](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example).
 :::
 
-That's all you need to know about DOM template parsing caveats for now - and actually, the end of Vue's _Essentials_. Congratulations! There's still more to learn, but first, we recommend taking a break to play with Vue yourself - build something fun, or check out some of the [Examples](/examples/) if you haven't already.
+C'est tout ce que vous avez besoin de savoir à propos des mises en garde concernant l'analyse du template DOM pour le moment - et d'ailleurs, la fin des _Essentiels_ de Vue. Congratulations! Il y a encore à apprendre, mais d'abord, nous vous recommandons de prendre une pause afin d'expérimenter Vue par vous-même - construisez quelque chose d'amusant, ou découvrez certains des [Exemples](/examples/) si ça n'est pas déjà fait.
 
-Once you feel comfortable with the knowledge you've just digested, move on with the guide to learn more about components in depth.
+Dès que vous vous sentez à l'aide avec le savoir que vous venez de digérer, avancez dans le guide pour découvrir les composants en profondeur.
