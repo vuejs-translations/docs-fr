@@ -88,7 +88,7 @@ export default {
 
 Le template est écrit inline, en tant que chaîne de caractère que Vue va compiler à la volée. Vous pouvez aussi utiliser un sélecteur d'ID pointant sur un élément (généralement des éléments natifs `<template>`) - Vue utilisera son contenu comme la source du template.
 
-L'exemple ci-dessus définit un composant et l'exporte comme export par défaut d'un fichier `.js`, mais vous pouvez utiliser les exports nommés pour exporter plusieurs composants à partir d'un même fichier.
+L'exemple ci-dessus définit un composant et l'exporte comme l'export par défaut d'un fichier `.js`, mais vous pouvez utiliser les exports nommés pour exporter plusieurs composants à partir d'un même fichier.
 
 ## Utiliser un composant {#using-a-component}
 
@@ -545,7 +545,7 @@ Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, le co
 Si vous écrivez vos templates Vue directement dans le DOM, Vue va devoir extraire du DOM la chaîne de caractère représentant le template. Cela entraîne quelques avertissements à cause du comportement d'analyse du HTML natif des navigateurs.
 
 :::tip
-Il est important de rappeler que les limitations que nous venons d'aborder ne s'appliquent que lorsque vous écrivez vos templates directement dans le DOM. Elles ne s'appliquent PAS si vous utilisez des templates en chaîne de caractères à partir des sources suivantes :
+Il est important de rappeler que les limitations que nous allons aborder ne s'appliquent que lorsque vous écrivez vos templates directement dans le DOM. Elles ne s'appliquent PAS si vous utilisez des templates en chaîne de caractères à partir des sources suivantes :
 
 - Composants Monofichiers
 - Chaînes de caractères représentant le template écrites en ligne (par exemple `template: '...'`)
