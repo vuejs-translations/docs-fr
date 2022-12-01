@@ -138,7 +138,7 @@ Avec `<script setup>`, les composants importés sont directement rendus accessib
 
 </div>
 
-Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une app sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration.html) dédiée.
+Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une application sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration.html) dédiée.
 
 Vous pouvez réutiliser les composants autant de fois que vous voulez :
 
