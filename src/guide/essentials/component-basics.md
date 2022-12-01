@@ -173,7 +173,7 @@ Si vous éditez vos templates directement dans un DOM (par exemple comme le cont
 <button-counter></button-counter>
 ```
 
-Voir [DOM template parsing caveats](#dom-template-parsing-caveats) pour plus de détails.
+Voir les [mises en garde concernant l'analyse du template DOM](#dom-template-parsing-caveats) pour plus de détails.
 
 ## Passer des props {#passing-props}
 
@@ -540,7 +540,7 @@ Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML 
 
 Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, le composant 'partant' sera démonté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
 
-## Mise en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
+## Mises en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
 
 Si vous écrivez vos templates Vue directement dans le DOM, Vue va devoir extraire du DOM la chaîne de caractère représentant le template. Cela entraîne quelques avertissements à cause du comportement d'analyse du HTML natif des navigateurs.
 
