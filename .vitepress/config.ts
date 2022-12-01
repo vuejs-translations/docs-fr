@@ -181,7 +181,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Watchers', link: '/guide/essentials/watchers' },
         { text: 'Template Refs', link: '/guide/essentials/template-refs' },
         {
-          text: 'Components Basics',
+          text: 'Principes fondamentaux des Composants',
           link: '/guide/essentials/component-basics'
         }
       ]
