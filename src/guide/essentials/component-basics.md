@@ -177,7 +177,7 @@ Voir les [mises en garde concernant l'analyse du template DOM](#dom-template-par
 
 ## Passer des props {#passing-props}
 
-Si nous concevons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
+Si nous construisons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
 
 Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state.html#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span> :
 
