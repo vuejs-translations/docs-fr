@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration.html) via l'option `components`. Le composant sera alors utilisable grâce à un tag portant la clé utilisée lors de l'enregistrement.
+Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration.html) via l'option `components`. Le composant sera alors utilisable grâce à une balise portant la clé utilisée lors de l'enregistrement.
 
 </div>
 
@@ -162,9 +162,9 @@ Vous pouvez réutiliser les composants autant de fois que vous voulez :
 
 Notez que lorsque vous cliquez sur les boutons, chacun d'entre eux maintient son propre `count` individuel. Cela s'explique par le fait que chaque fois que vous utilisez un composant, une nouvelle **instance** de ce dernier est créée.
 
-Dans les SFC, il est recommandé d'utiliser des noms de tag en casse Pascal (`PascalCase`) pour les composants enfants afin de les différencier des éléments HTML natifs. Bien que les noms des tags HTML natifs soient insensibles à la casse, les SFC de Vue sont un format compilé, donc nous pouvons y utiliser des noms de tag sensibles à la casse. Nous pouvons également utiliser `/>` pour fermer un tag.
+Dans les SFC, il est recommandé d'utiliser des noms de balise en casse Pascal (`PascalCase`) pour les composants enfants afin de les différencier des éléments HTML natifs. Bien que les noms des balises HTML natifs soient insensibles à la casse, les SFC de Vue sont un format compilé, donc nous pouvons y utiliser des noms de balise sensibles à la casse. Nous pouvons également utiliser `/>` pour fermer une balise.
 
-Si vous éditez vos templates directement dans un DOM (par exemple comme le contenu d'un élément natif `<template>`), le template sera soumis au parsing HTML par défaut du navigateur. Dans ces cas de figure, vous aurez besoin d'utiliser la casse kebab (`kebab-case`) et de fermer explicitement les tags pour vos composants :
+Si vous éditez vos templates directement dans un DOM (par exemple comme le contenu d'un élément natif `<template>`), le template sera soumis au parsing HTML par défaut du navigateur. Dans ces cas de figure, vous aurez besoin d'utiliser la casse kebab (`kebab-case`) et de fermer explicitement les balises pour vos composants :
 
 ```vue-html
 <!-- Si le template est écrit dans le DOM -->
@@ -554,7 +554,7 @@ Il est important de rappeler que les limitations que nous venons d'aborder ne s'
 
 ### Insensibilité de la casse {#case-insensitivity}
 
-Les tags HTML et les noms des attributs sont insensibles à la casse, donc les navigateurs interpréteront une lettre majuscule comme une lettre minuscule. Cela signifie que lorsque vous utilisez des templates dans le DOM, les noms des composants en casse Pascal et les noms des propriétés en casse Camel ou encore les noms des événements `v-on` doivent tous utiliser leurs équivalent en casse Kebab (séparation par un trait d'union) :
+Les balises HTML et les noms des attributs sont insensibles à la casse, donc les navigateurs interpréteront une lettre majuscule comme une lettre minuscule. Cela signifie que lorsque vous utilisez des templates dans le DOM, les noms des composants en casse Pascal et les noms des propriétés en casse Camel ou encore les noms des événements `v-on` doivent tous utiliser leurs équivalent en casse Kebab (séparation par un trait d'union) :
 
 ```js
 // casse Camel en JavaScript
@@ -572,26 +572,26 @@ const BlogPost = {
 <blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
 ```
 
-### Tags auto-fermants {#self-closing-tags}
+### Balises auto-fermantes {#self-closing-tags}
 
-Nous avons utilisé des tags auto-fermants pour les composants dans les exemples de code précédents :
+Nous avons utilisé des balises auto-fermantes pour les composants dans les exemples de code précédents :
 
 ```vue-html
 <MyComponent />
 ```
 
-Ceci s'explique par le fait que l'outil d'analyse d'un template Vue respecte `/>` comme une indication de fin de tag, peu importe son type.
+Ceci s'explique par le fait que l'outil d'analyse d'un template Vue respecte `/>` comme une indication de fin de balise, peu importe son type.
 
-Dans les templates du DOM, cependant, nous devons toujours inclure des fermetures de tags explicites :
+Dans les templates du DOM, cependant, nous devons toujours inclure des fermetures de balise explicites :
 
 ```vue-html
 <my-component></my-component>
 ```
 
-Cela est dû aux spécifications du HTML qui n'autorisent que [quelques éléments spécifiques](https://html.spec.whatwg.org/multipage/syntax.html#void-elements) à omettre la fermeture des tags, les plus communs étant `<input>` et `<img>`. Pour tous les autres éléments, si vous omettez de fermer les tags, l'outil d'analyse du HTML natif pensera que vous n'avez jamais terminé leur ouverture. Par exemple, le bout de code suivant :
+Cela est dû aux spécifications du HTML qui n'autorisent que [quelques éléments spécifiques](https://html.spec.whatwg.org/multipage/syntax.html#void-elements) à omettre la fermeture des balises, les plus communs étant `<input>` et `<img>`. Pour tous les autres éléments, si vous omettez de fermer les balises, l'outil d'analyse du HTML natif pensera que vous n'avez jamais terminé leur ouverture. Par exemple, le bout de code suivant :
 
 ```vue-html
-<my-component /> <!-- nous voulons fermer le tag ici... -->
+<my-component /> <!-- nous voulons fermer la balise ici... -->
 <span>hello</span>
 ```
 
