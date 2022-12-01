@@ -281,7 +281,7 @@ The `key` binding expects primitive values - i.e. strings and numbers. Do not us
 
 ## `v-for` with a Component {#v-for-with-a-component}
 
-> This section assumes knowledge of [Components](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> This section assumes knowledge of [Composants](/guide/essentials/component-basics). Feel free to skip it and come back later.
 
 You can directly use `v-for` on a component, like any normal element (don't forget to provide a `key`):
 

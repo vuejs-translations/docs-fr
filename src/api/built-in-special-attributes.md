@@ -84,7 +84,7 @@ Denotes a [template ref](/guide/essentials/template-refs.html).
 
 ## is {#is}
 
-Used for binding [dynamic components](/guide/essentials/component-basics.html#dynamic-components).
+Used for binding [composants dynamiques](/guide/essentials/component-basics.html#dynamic-components).
 
 - **Expects:** `string | Component`
 
@@ -92,7 +92,7 @@ Used for binding [dynamic components](/guide/essentials/component-basics.html#dy
 
   When the `is` attribute is used on a native HTML element, it will be interpreted as a [Customized built-in element](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), which is a native web platform feature.
 
-  There is, however, a use case where you may need Vue to replace a native element with a Vue component, as explained in [DOM Template Parsing Caveats](/guide/essentials/component-basics.html#dom-template-parsing-caveats). You can prefix the value of the `is` attribute with `vue:` so that Vue will render the element as a Vue component instead:
+  There is, however, a use case where you may need Vue to replace a native element with a Vue component, as explained in [Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats). You can prefix the value of the `is` attribute with `vue:` so that Vue will render the element as a Vue component instead:
 
   ```vue-html
   <table>
@@ -103,4 +103,4 @@ Used for binding [dynamic components](/guide/essentials/component-basics.html#dy
 - **See also:**
 
   - [Built-in Special Element - `<component>`](/api/built-in-special-elements.html#component)
-  - [Dynamic Components](/guide/essentials/component-basics.html#dynamic-components)
+  - [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
