@@ -10,7 +10,7 @@ Cette approche est très similaire à celle d'imbriquer des éléments HTML nati
 
 ## Définir un composant {#defining-a-component}
 
-Lorsqu'on utilise une étape de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais,abrégé SFC) :
+Lorsqu'on utilise des outils de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais,abrégé SFC) :
 
 <div class="options-api">
 
@@ -47,7 +47,7 @@ const count = ref(0)
 
 </div>
 
-Sans étape de build, un composant Vue peut être défini comme un simple objet JavaScript contenant des options spécifiques à Vue :
+Sans outils de build, un composant Vue peut être défini comme un simple objet JavaScript contenant des options spécifiques à Vue :
 
 <div class="options-api">
 
@@ -93,7 +93,7 @@ L'exemple ci-dessus définit un composant et l'exporte comme export par défaut 
 ## Utiliser un composant {#using-a-component}
 
 :::tip
-Nous allons utiliser la syntaxe SFC dans le reste de ce guide - les concepts des composants sont les mêmes que vous utilisiez une étape de build ou non. La section [Exemples](/examples/) illustre l'utilisation des composants dans les deux scénarios.
+Nous allons utiliser la syntaxe SFC dans le reste de ce guide - les concepts des composants sont les mêmes que vous utilisiez des outils de build ou non. La section [Exemples](/examples/) illustre l'utilisation des composants dans les deux scénarios.
 :::
 
 Afin d'utiliser un composant enfant, nous devons l'importer dans le composant parent. En supposant que nous ayons placé notre composant compteur dans un fichier nommé `ButtonCounter.vue`, le composant apparaîtra comme l'export par défaut du fichier :
