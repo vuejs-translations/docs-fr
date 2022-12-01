@@ -86,7 +86,7 @@ export default {
 
 </div>
 
-Le template est écrit inline, en tant que chaîne de caractère que Vue va compiler à la volée. Vous pouvez aussi utiliser un sélecteur d'ID pointant sur un élément (généralement des éléments natifs `<template>`) - Vue utilisera son contenu comme la source du template.
+Le template est écrit telle une chaîne de caractère JavaScript que Vue va compiler à la volée. Vous pouvez aussi utiliser un sélecteur d'ID pointant sur un élément (généralement des éléments natifs `<template>`) - Vue utilisera son contenu comme la source du template.
 
 L'exemple ci-dessus définit un composant et l'exporte comme l'export par défaut d'un fichier `.js`, mais vous pouvez utiliser les exports nommés pour exporter plusieurs composants à partir d'un même fichier.
 
