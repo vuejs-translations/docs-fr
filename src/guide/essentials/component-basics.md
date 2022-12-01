@@ -449,9 +449,9 @@ export default {
 
 That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Custom Events](/guide/components/events).
 
-## Content Distribution with Slots {#content-distribution-with-slots}
+## Distribution de contenu avec les slots {#content-distribution-with-slots}
 
-Just like with HTML elements, it's often useful to be able to pass content to a component, like this:
+Comme pour les éléments HTML, il est souvent utile de pouvoir passer du contenu à un composant, de cette manière:
 
 ```vue-html
 <AlertBox>
@@ -459,13 +459,13 @@ Just like with HTML elements, it's often useful to be able to pass content to a 
 </AlertBox>
 ```
 
-Which might render something like:
+Ce qui devrait rendre :
 
 :::danger This is an Error for Demo Purposes
 Something bad happened.
 :::
 
-This can be achieved using Vue's custom `<slot>` element:
+Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>`:
 
 ```vue{4}
 <template>
@@ -482,7 +482,7 @@ This can be achieved using Vue's custom `<slot>` element:
 </style>
 ```
 
-As you'll see above, we use the `<slot>` as a placeholder where we want the content to go – and that's it. We're done!
+Comme vous le verrez, nous utilisons `<slot>` comme un espace réservé où nous voulons que le contenu aille – et c'est tout. Nous avons terminé!
 
 <div class="options-api">
 
