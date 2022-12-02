@@ -434,7 +434,7 @@ emit('enlarge-text')
 
 Voir aussi : [Typing Component Emits](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
-Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument) :
+Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits`. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument) :
 
 ```js
 export default {
