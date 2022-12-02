@@ -234,7 +234,7 @@ export default {
 
 </div>
 
-Un composant peut avoir autant de props que vous voulez, et, par défaut, n'importe quelle valeur peut être passée à une prop.
+Un composant peut avoir autant de props que vous voulez, et par défaut, n'importe quelle valeur peut être passée à une prop.
 
 Une fois qu'une prop est enregistrée, vous pouvez lui passer des données via un attribut personnalisé, de cette manière :
 
