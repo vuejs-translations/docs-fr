@@ -54,7 +54,7 @@ Et que nous voulons afficher des messages différents selon que `author` contien
 <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
 ```
 
-A ce stade, le template devient un peu chargé. Nous devons bien l'examiner avant de réaliser qu'il effectue une opération dépendant de `author.books`. Plus important encore, nous ne voulons sûrement pas nous répéter si nous avons besoin de cette opération dans le template plus d'une fois.
+A ce stade, le template devient un peu chargé. Nous devons bien l'examiner avant de réaliser qu'il effectue une opération dépendante de `author.books`. Plus important encore, nous ne voulons sûrement pas nous répéter si nous avons besoin de cette opération dans le template plus d'une fois.
 
 C'est pourquoi pour des logiques complexes incluant des données réactives, il est recommandé d'utiliser une **propriété calculée**. Voici le même exemple, refactorisé :
 
@@ -95,7 +95,7 @@ Ici nous avons déclaré une propriété calculée `publishedBooksMessage`.
 
 Essayez de changer la valeur du tableau `books` dans l'application `data` et vous remarquerez comment `publishedBooksMessage` change en conséquence.
 
-Vous pouvez lier des données à des propriétés calculées dans les templates comme pour une propriété normale. Vue sait que `this.publishedBooksMessage` dépend de `this.author.books`, donc il va mettre à jour les liaisons dépendant de `this.publishedBooksMessage` lorsque `this.author.books` change.
+Vous pouvez lier des données à des propriétés calculées dans les templates comme pour une propriété normale. Vue sait que `this.publishedBooksMessage` dépend de `this.author.books`, donc il va mettre à jour les liaisons dépendantes de `this.publishedBooksMessage` lorsque `this.author.books` change.
 
 Voir aussi : [Typing Computed Properties](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
 
@@ -132,15 +132,15 @@ const publishedBooksMessage = computed(() => {
 
 Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La fonction `computed()` prend une fonction accesseur en argument, et la valeur retournée est une **ref calculée**. De la même manière que pour les refs classiques, vous pouvez accéder au résultat calculé grâce à `publishedBooksMessage.value`. Les refs calculées sont automatiquement désenveloppées dans les templates de manière à ce que vous puissiez y faire référence sans `.value` dans les expressions au sein du template.
 
-Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendant de `publishedBooksMessage` lorsque `author.books` change.
+Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendantes de `publishedBooksMessage` lorsque `author.books` change.
 
 Voir aussi : [Typing Computed](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
 </div>
 
-## Computed Caching vs.. Methods {#computed-caching-vs-methods}
+## Mise en cache des propriétés calculées vs.. Méthodes{#computed-caching-vs-methods}
 
-You may have noticed we can achieve the same result by invoking a method in the expression:
+Vous avez peut-être remarqué que nous pouvons obtenir le même résultat en invoquant une méthode dans l'expression :
 
 ```vue-html
 <p>{{ calculateBooksMessage() }}</p>
@@ -149,7 +149,7 @@ You may have noticed we can achieve the same result by invoking a method in the 
 <div class="options-api">
 
 ```js
-// in component
+// dans le composant
 methods: {
   calculateBooksMessage() {
     return this.author.books.length > 0 ? 'Yes' : 'No'
@@ -162,7 +162,7 @@ methods: {
 <div class="composition-api">
 
 ```js
-// in component
+// dans le composant
 function calculateBooksMessage() {
   return author.books.length > 0 ? 'Yes' : 'No'
 }
@@ -170,9 +170,9 @@ function calculateBooksMessage() {
 
 </div>
 
-Instead of a computed property, we can define the same function as a method. For the end result, the two approaches are indeed exactly the same. However, the difference is that **computed properties are cached based on their reactive dependencies.** A computed property will only re-evaluate when some of its reactive dependencies have changed. This means as long as `author.books` has not changed, multiple access to `publishedBooksMessage` will immediately return the previously computed result without having to run the getter function again.
+À la place d'une propriété calculée, nous pouvons définir la même fonction comme une méthode. Les deux approches mènent au même résultat final. Cependant, la différence est que **les propriétés calculées sont mises en cache en fonction de leurs dépendances réactives.** Une propriété calculée ne sera réévaluée que lorsque l'une de ses dépendances réactives aura changé. Cela signifie que tant que `author.books` n'a pas changé, les accès multiples à `publishedBooksMessage` vont immédiatement retourner le résultat calculé précédent sans avoir à réexécuter la fonction accesseur.
 
-This also means the following computed property will never update, because `Date.now()` is not a reactive dependency:
+Cela signifie également que la propriété calculée suivante ne sera jamais mise à jour, car `Date.now()` n'est pas une dépendance réactive :
 
 <div class="options-api">
 
@@ -194,9 +194,9 @@ const now = computed(() => Date.now())
 
 </div>
 
-In comparison, a method invocation will **always** run the function whenever a re-render happens.
+En comparaison, l'invocation d'une méthode va **toujours** exécuter la fonction, à chaque nouveau rendu.
 
-Why do we need caching? Imagine we have an expensive computed property `list`, which requires looping through a huge array and doing a lot of computations. Then we may have other computed properties that in turn depend on `list`. Without caching, we would be executing `list`’s getter many more times than necessary! In cases where you do not want caching, use a method call instead.
+Pourquoi avons nous besoin de la mise en cache ? Imaginons que nous ayons une propriété calculée conséquente `list`, qui nécessite de boucler à travers un important tableau et de réaliser de nombreuses opérations. Nous pourrions également avoir d'autres propriétés calculées dépendantes à leur tour de `list`. Sans mise en cache, nous exécuterions les accesseurs de `list` bien plus de fois que nécessaire ! Dans les cas où vous ne voulez pas de mise en cache, vous pouvez utiliser l'appel à une méthode.
 
 ## Writable Computed {#writable-computed}
 
