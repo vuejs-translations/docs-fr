@@ -538,7 +538,7 @@ Dans l'exemple ci-dessus, la valeur passée à `:is` peut contenir au choix :
 
 Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML classiques.
 
-Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, le composant 'partant' sera démonté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
+Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul celui sélectionné par `:is` reste monté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
 
 ## Mises en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
 
