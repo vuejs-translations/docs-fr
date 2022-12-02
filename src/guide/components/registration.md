@@ -2,7 +2,7 @@
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-global-vs-local-vue-components" title="Free Vue.js Component Registration Lesson"/>
 
-> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
+> Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 Un composant Vue doit être "enregistré" afin que Vue sache où localiser son implémentation lorsqu'il est rencontré dans un template. Il existe deux façons d'enregistrer des composants : globale et locale.
 
@@ -136,6 +136,6 @@ Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) l
 
 2. `<PascalCase />` rend plus évident qu'il s'agit d'un composant Vue au lieu d'un élément HTML natif dans les templates. Il différencie également les composants Vue des custom elements (web components).
 
-Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caratères. Cependant, comme indiqué dans [les mises en garde concernant l'interprétation du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), les balises déclarées en casse Pascal ne sont pas utilisables dans les templates DOM.
+Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caratères. Cependant, comme indiqué dans [les mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), les balises déclarées en casse Pascal ne sont pas utilisables dans les templates DOM.
 
 Heureusement, Vue prend en charge la résolution des balises au format kebab-case en leur équivalent composants enregistrés à la condition qu'ils utilisent la casse Pascal. Cela signifie qu'un composant enregistré en tant que `MyComponent` peut être référencé dans le template via à la fois `<MyComponent>` et `<my-component>`. Cela nous permet d'utiliser le même code d'enregistrement de composant JavaScript quelle que soit la source du template.

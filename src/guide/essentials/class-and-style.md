@@ -188,7 +188,7 @@ However, this can be a bit verbose if you have multiple conditional classes. Tha
 
 ### With Components {#with-components}
 
-> This section assumes knowledge of [Components](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> This section assumes knowledge of [Composants](/guide/essentials/component-basics). Feel free to skip it and come back later.
 
 When you use the `class` attribute on a component with a single root element, those classes will be added to the component's root element, and merged with any existing class already on it.
 

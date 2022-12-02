@@ -108,7 +108,7 @@ A "meta component" for rendering dynamic components or elements.
 
   In practice, this edge case isn't common as native form fields are typically wrapped in components in real applications. If you do need to use a native element directly then you can split the `v-model` into an attribute and event manually.
 
-- **See also:** [Dynamic Components](/guide/essentials/component-basics.html#dynamic-components)
+- **See also:** [Composants Dynamiques](/guide/essentials/component-basics.html#dynamic-components)
 
 ## `<slot>` {#slot}
 

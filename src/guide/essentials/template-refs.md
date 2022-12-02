@@ -167,7 +167,7 @@ Note we are using a dynamic `:ref` binding so we can pass it a function instead 
 
 ## Ref on Component {#ref-on-component}
 
-> This section assumes knowledge of [Components](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> This section assumes knowledge of [Composants](/guide/essentials/component-basics). Feel free to skip it and come back later.
 
 `ref` can also be used on a child component. In this case the reference will be that of a component instance:
 

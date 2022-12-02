@@ -543,7 +543,7 @@ Here's the previous demo with `mode="out-in"`:
 
 ## Transition Between Components {#transition-between-components}
 
-`<Transition>` can also be used around [dynamic components](/guide/essentials/component-basics.html#dynamic-components):
+`<Transition>` can also be used around [composants dynamiques](/guide/essentials/component-basics.html#dynamic-components):
 
 ```vue-html
 <Transition name="fade" mode="out-in">
