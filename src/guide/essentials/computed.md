@@ -198,9 +198,9 @@ En comparaison, l'invocation d'une méthode va **toujours** exécuter la fonctio
 
 Pourquoi avons nous besoin de la mise en cache ? Imaginons que nous ayons une propriété calculée conséquente `list`, qui nécessite de boucler à travers un important tableau et de réaliser de nombreuses opérations. Nous pourrions également avoir d'autres propriétés calculées dépendantes à leur tour de `list`. Sans mise en cache, nous exécuterions les accesseurs de `list` bien plus de fois que nécessaire ! Dans les cas où vous ne voulez pas de mise en cache, vous pouvez utiliser l'appel à une méthode.
 
-## Writable Computed {#writable-computed}
+## Propriétés calculées modifiables {#writable-computed}
 
-Computed properties are by default getter-only. If you attempt to assign a new value to a computed property, you will receive a runtime warning. In the rare cases where you need a "writable" computed property, you can create one by providing both a getter and a setter:
+Par défaut, les propriétés calculées ne sont soumises qu'aux accesseurs. Si vous essayez d'assigner une nouvelle valeur à une propriété calculée, vous aurez un avertissement au moment de l'exécution. Dans les rares cas où vous avez besoin d'une propriété calculée "modifiable", vous pouvez en créer une en lui fournissant à la fois un accesseur et un mutateur :
 
 <div class="options-api">
 
@@ -214,13 +214,13 @@ export default {
   },
   computed: {
     fullName: {
-      // getter
+      // accesseur
       get() {
         return this.firstName + ' ' + this.lastName
       },
-      // setter
+      // mutateur
       set(newValue) {
-        // Note: we are using destructuring assignment syntax here.
+        // Note : nous utilisons ici la syntaxe d'assignation par déstructuration
         ;[this.firstName, this.lastName] = newValue.split(' ')
       }
     }
@@ -228,7 +228,7 @@ export default {
 }
 ```
 
-Now when you run `this.fullName = 'John Doe'`, the setter will be invoked and `this.firstName` and `this.lastName` will be updated accordingly.
+Désormais lorsque vous allez exécuter `this.fullName = 'John Doe'`, le mutateur sera invoqué et `this.firstName` et `this.lastName` seront mis à jour en conséquence.
 
 </div>
 
@@ -242,29 +242,29 @@ const firstName = ref('John')
 const lastName = ref('Doe')
 
 const fullName = computed({
-  // getter
+  // accesseur
   get() {
     return firstName.value + ' ' + lastName.value
   },
-  // setter
+  // mutateur
   set(newValue) {
-    // Note: we are using destructuring assignment syntax here.
+    // Note : nous utilisons ici la syntaxe d'assignation par déstructuration
     ;[firstName.value, lastName.value] = newValue.split(' ')
   }
 })
 </script>
 ```
 
-Now when you run `fullName.value = 'John Doe'`, the setter will be invoked and `firstName` and `lastName` will be updated accordingly.
+Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutateur sera invoqué et `firstName` et `lastName` seront mis à jour en conséquence.
 
 </div>
 
-## Best Practices {#best-practices}
+## Bonnes Pratiques {#best-practices}
 
-### Getters should be side-effect free {#getters-should-be-side-effect-free}
+### Les accesseurs ne doivent pas entraîner d'effets secondaires {#getters-should-be-side-effect-free}
 
-It is important to remember that computed getter functions should only perform pure computation and be free of side effects. For example, **don't make async requests or mutate the DOM inside a computed getter!** Think of a computed property as declaratively describing how to derive a value based on other values - its only responsibility should be computing and returning that value. Later in the guide we will discuss how we can perform side effects in reaction to state changes with [watchers](./watchers).
+Il est important de se rappeler que les fonctions accesseurs des propriétés calculées doivent seulement réaliser des opérations pures et ne pas entraîner d'effets secondaires. Par exemple, **ne faites pas de requêtes asynchrones ou ne mutez pas le DOM à l'intérieur d'un accesseur calculé !** Pensez à une propriété calculée comme une description déclarative de la manière d'obtenir une valeur selon d'autres valeurs - sa seule responsabilité devrait être de calculer et de retourner cette valeur. Plus loin dans le guide nous traiterons de la manière d'effectuer des effets secondaires en réaction à des changements de l'état avec les [observateurs](./watchers).
 
-### Avoid mutating computed value {#avoid-mutating-computed-value}
+### Évitez de modifier les valeurs calculées {#avoid-mutating-computed-value}
 
-The returned value from a computed property is derived state. Think of it as a temporary snapshot - every time the source state changes, a new snapshot is created. It does not make sense to mutate a snapshot, so a computed return value should be treated as read-only and never be mutated - instead, update the source state it depends on to trigger new computations.
+La valeur retournée par une propriété calculée est un état dérivé. Pensez-y comme un snapshot temporaire - chaque fois que l'état de base change, un nouveau snapshot est créé. Il n'est pas logique de modifier un snapshot, donc une valeur calculée retournée ne devrait être traitée qu'en lecture seule et ne pas être modifiée - à la place, modifiez l'état de base dont elle dépend afin d'engendrer de nouveaux calculs.
