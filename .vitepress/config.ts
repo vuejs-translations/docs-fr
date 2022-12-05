@@ -123,7 +123,7 @@ const nav: ThemeConfig['nav'] = [
     link: '/sponsor/'
   },
   {
-    text: 'Partners',
+    text: 'Partenaires',
     link: '/partners/',
     activeMatch: `^/partners/`
   }
@@ -582,7 +582,7 @@ const i18n: ThemeConfig['i18n'] = {
 
   // aria labels
   // typo issue https://github.com/vuejs/theme/issues/75
-  ariaAnnouner: {
+  ariaAnnouncer: {
     before: '',
     after: 'a chargé'
   },
@@ -658,7 +658,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
       {
         link: '/translations/',
-        text: 'Help Us Translate!',
+        text: 'Aidez-nous à traduire !',
         isTranslationsDesc: true
       }
     ],
@@ -684,7 +684,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'vuejs-translations/docs-fr', // TODO: add a language flag to point to the FR repo?
+      repo: 'vuejs-translations/docs-fr',
       text: 'Éditer cette page sur GitHub'
     },
 
