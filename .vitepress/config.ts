@@ -157,7 +157,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/reactivity-fundamentals'
         },
         {
-          text: 'Computed Properties',
+          text: 'Propriétés calculées',
           link: '/guide/essentials/computed'
         },
         {
