@@ -8,9 +8,9 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-computed-properties-in-vue-with-the-composition-api" title="Free Vue.js Computed Properties Lesson"/>
 </div>
 
-## Exemple Basique {#basic-example}
+## Exemple basique {#basic-example}
 
-Les expressions dans le template sont pratiques, mais elles sont destinées à des opérations simples. Placer trop de logique dans vos templates peut les encombrer et les rendre difficiles à maintenir. Par exemple, si nous avons un objet avec un tableau imbriqué :
+Les expressions dans le template sont pratiques, mais elles sont destinées à des opérations simples. Mettre trop de logique dans vos templates peut les encombrer et les rendre difficiles à maintenir. Par exemple, si nous avons un objet avec un tableau imbriqué :
 
 <div class="options-api">
 
@@ -130,7 +130,7 @@ const publishedBooksMessage = computed(() => {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlYWN0aXZlLCBjb21wdXRlZCB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgYXV0aG9yID0gcmVhY3RpdmUoe1xuICBuYW1lOiAnSm9obiBEb2UnLFxuICBib29rczogW1xuICAgICdWdWUgMiAtIEFkdmFuY2VkIEd1aWRlJyxcbiAgICAnVnVlIDMgLSBCYXNpYyBHdWlkZScsXG4gICAgJ1Z1ZSA0IC0gVGhlIE15c3RlcnknXG4gIF1cbn0pXG5cbi8vIGEgY29tcHV0ZWQgcmVmXG5jb25zdCBwdWJsaXNoZWRCb29rc01lc3NhZ2UgPSBjb21wdXRlZCgoKSA9PiB7XG4gIHJldHVybiBhdXRob3IuYm9va3MubGVuZ3RoID4gMCA/ICdZZXMnIDogJ05vJ1xufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxwPkhhcyBwdWJsaXNoZWQgYm9va3M6PC9wPlxuICA8c3Bhbj57eyBwdWJsaXNoZWRCb29rc01lc3NhZ2UgfX08L3NwYW4+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
-Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La fonction `computed()` prend une fonction accesseur en argument, et la valeur retournée est une **ref calculée**. De la même manière que pour les refs classiques, vous pouvez accéder au résultat calculé grâce à `publishedBooksMessage.value`. Les refs calculées sont automatiquement désenveloppées dans les templates de manière à ce que vous puissiez y faire référence sans `.value` dans les expressions au sein du template.
+Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La fonction `computed()` prend une fonction accesseur en argument, et la valeur retournée est une **ref calculée**. De la même manière que pour les refs classiques, vous pouvez accéder au résultat calculé grâce à `publishedBooksMessage.value`. Les refs calculées sont automatiquement déballées dans les templates de manière à ce que vous puissiez y faire référence sans `.value` dans les expressions au sein du template.
 
 Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendantes de `publishedBooksMessage` lorsque `author.books` change.
 
@@ -138,7 +138,7 @@ Voir aussi : [Typing Computed](/guide/typescript/composition-api.html#typing-com
 
 </div>
 
-## Mise en cache des propriétés calculées vs.. Méthodes{#computed-caching-vs-methods}
+## Propriétés calculées mises en cache vs.. les méthodes {#computed-caching-vs-methods}
 
 Vous avez peut-être remarqué que nous pouvons obtenir le même résultat en invoquant une méthode dans l'expression :
 
@@ -263,7 +263,7 @@ Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutate
 
 ### Les accesseurs ne doivent pas entraîner d'effets secondaires {#getters-should-be-side-effect-free}
 
-Il est important de se rappeler que les fonctions accesseurs des propriétés calculées doivent seulement réaliser des opérations pures et ne pas entraîner d'effets secondaires. Par exemple, **ne faites pas de requêtes asynchrones ou ne mutez pas le DOM à l'intérieur d'un accesseur calculé !** Pensez à une propriété calculée comme une description déclarative de la manière d'obtenir une valeur selon d'autres valeurs - sa seule responsabilité devrait être de calculer et de retourner cette valeur. Plus loin dans le guide nous traiterons de la manière d'effectuer des effets secondaires en réaction à des changements de l'état avec les [observateurs](./watchers).
+Il est important de se rappeler que les fonctions accesseurs de propriétés calculées doivent seulement réaliser des opérations pures et ne pas entraîner d'effets secondaires. Par exemple, **ne faites pas de requêtes asynchrones ou ne mutez pas le DOM à l'intérieur d'un accesseur calculé !** Pensez à une propriété calculée comme une description déclarative de la manière d'obtenir une valeur selon d'autres valeurs - sa seule responsabilité devrait être de calculer et de retourner cette valeur. Plus loin dans le guide nous traiterons de la manière d'effectuer des effets secondaires en réaction à des changements de l'état avec les [observateurs](./watchers).
 
 ### Évitez de modifier les valeurs calculées {#avoid-mutating-computed-value}
 
