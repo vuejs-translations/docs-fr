@@ -66,7 +66,7 @@ Cela créera une version de votre application prête pour la production dans le 
 
 ## Utiliser Vue depuis un CDN {#using-vue-from-cdn}
 
-Vous pouvez utiliser Vue directement depuis un CDN via une balise script : 
+Vous pouvez utiliser Vue directement depuis un CDN via une balise script :
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -78,7 +78,7 @@ Lorsque Vue est utilisé depuis un CDN, aucun outil de build n'est nécessaire. 
 
 ### Utiliser le build global {#using-the-global-build}
 
-Le lien au-dessus charge le *build global* de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'object global `Vue`. Ci-dessous, un exemple utilisant le build global :
+Le lien au-dessus charge le _build global_ de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'object global `Vue`. Ci-dessous, un exemple utilisant le build global :
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

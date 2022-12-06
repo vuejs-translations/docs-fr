@@ -123,7 +123,7 @@ const nav: ThemeConfig['nav'] = [
     link: '/sponsor/'
   },
   {
-    text: 'Partners',
+    text: 'Partenaires',
     link: '/partners/',
     activeMatch: `^/partners/`
   }
@@ -157,7 +157,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/reactivity-fundamentals'
         },
         {
-          text: 'Computed Properties',
+          text: 'Propriétés calculées',
           link: '/guide/essentials/computed'
         },
         {
@@ -181,7 +181,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Watchers', link: '/guide/essentials/watchers' },
         { text: 'Template Refs', link: '/guide/essentials/template-refs' },
         {
-          text: 'Components Basics',
+          text: 'Principes fondamentaux des Composants',
           link: '/guide/essentials/component-basics'
         }
       ]
@@ -582,7 +582,7 @@ const i18n: ThemeConfig['i18n'] = {
 
   // aria labels
   // typo issue https://github.com/vuejs/theme/issues/75
-  ariaAnnouner: {
+  ariaAnnouncer: {
     before: '',
     after: 'a chargé'
   },
@@ -645,6 +645,24 @@ export default defineConfigWithTheme<ThemeConfig>({
     sidebar,
     i18n,
 
+    localeLinks: [
+      {
+        link: 'https://cn.vuejs.org',
+        text: '简体中文',
+        repo: 'https://github.com/vuejs-translations/docs-zh-cn'
+      },
+      {
+        link: 'https://ja.vuejs.org',
+        text: '日本語',
+        repo: 'https://github.com/vuejs-translations/docs-ja'
+      },
+      {
+        link: '/translations/',
+        text: 'Aidez-nous à traduire !',
+        isTranslationsDesc: true
+      }
+    ],
+
     algolia: {
       indexName: 'vuejs',
       appId: 'ML0LEBN7FQ',
@@ -660,14 +678,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
 
     socialLinks: [
-      { icon: 'languages', link: '/translations/' },
       { icon: 'github', link: 'https://github.com/vuejs/' },
       { icon: 'twitter', link: 'https://twitter.com/vuejs' },
       { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
     ],
 
     editLink: {
-      repo: 'vuejs-translations/docs-fr', // TODO: add a language flag to point to the FR repo?
+      repo: 'vuejs-translations/docs-fr',
       text: 'Éditer cette page sur GitHub'
     },
 
