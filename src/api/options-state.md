@@ -205,7 +205,7 @@ Declare computed properties to be exposed on the component instance.
   }
   ```
 
-- **See also:** [Propriétés Calculées](/guide/essentials/computed.html)
+- **See also:** [Propriétés calculées](/guide/essentials/computed.html)
 
 ## methods {#methods}
 
