@@ -4,7 +4,7 @@ outline: deep
 
 # Attributs implicitement déclarés (Fallthrough Attributes) {#fallthrough-attributes}
 
-> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
+> Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 ## Héritage d'attribut {#attribute-inheritance}
 

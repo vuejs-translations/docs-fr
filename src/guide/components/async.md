@@ -33,9 +33,10 @@ L'`AsyncComp` résultant est un composant wrapper qui n'appelle la fonction de c
 Comme pour les composants normaux, les composants asynchrones peuvent être [enregistrés globalement](/guide/components/registration.html#global-registration) à l'aide de `app.component()` :
 
 ```js
-app.component('MyComponent', defineAsyncComponent(() =>
-  import('./components/MyComponent.vue')
-))
+app.component(
+  'MyComponent',
+  defineAsyncComponent(() => import('./components/MyComponent.vue'))
+)
 ```
 
 <div class="options-api">

@@ -40,7 +40,7 @@ Prenons par exemple cette fonction `increment`:
 
 ```js
 // helpers.js
-export function increment (current, max = 10) {
+export function increment(current, max = 10) {
   if (current < max) {
     return current + 1
   }
@@ -91,7 +91,7 @@ Un composant peut être testé de deux façons :
 
 1. Boîte blanche: Test unitaire
 
-   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils se concentrent sur l'**isolation** du composant testé. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia). 
+   Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils se concentrent sur l'**isolation** du composant testé. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia).
 
 2. Boîte noire : Test de composant
 
@@ -111,18 +111,18 @@ Un composant peut être testé de deux façons :
 
 ## Test de composant {#component-testing}
 
-Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications. 
+Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications.
 
 Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'il fournit, aux styles, aux classes, aux hooks de cycle de vie de votre composant, etc.
 
-Les tests de composant ne doivent pas simuler des composants enfants, mais plutôt tester les interactions entre votre composant et ses enfants en interagissant avec les composants comme le ferait un utilisateur. Par exemple, un test de composant doit cliquer sur un élément comme le ferait un utilisateur au lieu d'interagir programmatiquement avec le composant. 
+Les tests de composant ne doivent pas simuler des composants enfants, mais plutôt tester les interactions entre votre composant et ses enfants en interagissant avec les composants comme le ferait un utilisateur. Par exemple, un test de composant doit cliquer sur un élément comme le ferait un utilisateur au lieu d'interagir programmatiquement avec le composant.
 
 Les tests de composant doivent se concentrer sur les interfaces publiques du composant plutôt que sur les détails internes d'implémentation. Pour la plupart des composants, l'interface publique est limitée aux événements émis, aux props et aux slots. Lors du test, n'oubliez pas de **tester ce que fait un composant, pas comment il le fait**.
 
 **FAITES**
 
 - Pour la logique **visuelle** : vérifiez que le rendu en sortie est correct en fonction des props et des slots saisis.
-- Pour la logique **comportementale** : vérifiez que les mises à jour de rendu ou les événements émis en réponse aux événements d'entrée de l'utilisateur sont corrects. 
+- Pour la logique **comportementale** : vérifiez que les mises à jour de rendu ou les événements émis en réponse aux événements d'entrée de l'utilisateur sont corrects.
 
   Dans l'exemple ci-dessous, nous démontrons un composant Stepper qui a un élément DOM intitulé "increment" et sur lequel vous pouvez cliquer. Nous passons une prop appelée `max` qui empêche le Stepper d'être incrémenté au-delà de `2`, donc si nous cliquons sur le bouton 3 fois, l'interface utilisateur devrait toujours dire `2`.
 
@@ -186,9 +186,13 @@ mount(Stepper, {
   }
 })
 
-cy.get(valueSelector).should('be.visible').and('contain.text', '0')
-  .get(buttonSelector).click()
-  .get(valueSelector).should('contain.text', '1')
+cy.get(valueSelector)
+  .should('be.visible')
+  .and('contain.text', '0')
+  .get(buttonSelector)
+  .click()
+  .get(valueSelector)
+  .should('contain.text', '1')
 ```
 
 </div>
@@ -197,11 +201,11 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
 - **NE FAITES PAS**
 
-  Ne vérifiez pas l'état privé d'une instance de composant et ne testez pas les méthodes privées d'un composant. Tester les détails de l'implémentation rend les tests fragiles, car ils sont plus susceptibles de se rompre et nécessitent des mises à jour lorsque l'implémentation change. 
+  Ne vérifiez pas l'état privé d'une instance de composant et ne testez pas les méthodes privées d'un composant. Tester les détails de l'implémentation rend les tests fragiles, car ils sont plus susceptibles de se rompre et nécessitent des mises à jour lorsque l'implémentation change.
 
-  Le travail ultime du composant est un rendu DOM en sortie correct, de sorte que les tests axés sur la sortie DOM fournissent le même niveau d'assurance d'exactitude (sinon plus) tout en étant plus robustes et résilients au changement. 
+  Le travail ultime du composant est un rendu DOM en sortie correct, de sorte que les tests axés sur la sortie DOM fournissent le même niveau d'assurance d'exactitude (sinon plus) tout en étant plus robustes et résilients au changement.
 
-  Ne vous fiez pas exclusivement aux tests snapshots. Vérifier des chaînes HTML ne décrit pas l'exactitude. Rédigez des tests avec intention. 
+  Ne vous fiez pas exclusivement aux tests snapshots. Vérifier des chaînes HTML ne décrit pas l'exactitude. Rédigez des tests avec intention.
 
   Si une méthode doit être testée de manière approfondie, envisagez de l'extraire dans une fonction utilitaire autonome et d'écrire un test unitaire dédié à celle-ci. S'il ne peut pas être extrait proprement, il peut être testé dans le cadre d'un test de composant, d'intégration ou bout-en-bout qui le couvre.
 
@@ -211,7 +215,7 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
 - [Les tests de composants Cypress](https://on.cypress.io/component) pour les composants dont le comportement attendu dépend du rendu correct des styles ou du déclenchement d'événements DOM natifs. Peut être utilisé avec Testing Library via [`@testing-library/cypress`](https://testing-library.com/docs/cypress-testing-library/intro).
 
-Les principales différences entre Vitest et les runners basés sur un navigateur sont la rapidité et le contexte d'exécution. En bref, les runners basés sur un navigateur, comme Cypress, peuvent détecter des problèmes que les runners basés sur node, comme Vitest, ne peuvent pas détecter (par exemple, les problèmes de style, les événements DOM natifs réels, les cookies, le local storage et les défaillances réseau), mais les runners basés sur un navigateur sont *plusieurs ordres de grandeur plus lents que Vitest* parce qu'ils ouvrent un navigateur, compilent vos feuilles de style, etc. Cypress est un runner basé sur un navigateur qui prend en charge les tests de composants. Veuillez lire [la page de comparaison de Vitest](https://vitest.dev/guide/comparisons.html#cypress) pour obtenir les dernières informations comparant Vitest et Cypress.
+Les principales différences entre Vitest et les runners basés sur un navigateur sont la rapidité et le contexte d'exécution. En bref, les runners basés sur un navigateur, comme Cypress, peuvent détecter des problèmes que les runners basés sur node, comme Vitest, ne peuvent pas détecter (par exemple, les problèmes de style, les événements DOM natifs réels, les cookies, le local storage et les défaillances réseau), mais les runners basés sur un navigateur sont _plusieurs ordres de grandeur plus lents que Vitest_ parce qu'ils ouvrent un navigateur, compilent vos feuilles de style, etc. Cypress est un runner basé sur un navigateur qui prend en charge les tests de composants. Veuillez lire [la page de comparaison de Vitest](https://vitest.dev/guide/comparisons.html#cypress) pour obtenir les dernières informations comparant Vitest et Cypress.
 
 ### Bibliothèques de montage {#mounting-libraries}
 
@@ -271,7 +275,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 ### Autres options {#other-options-2}
 
-- [Playwright](https://playwright.dev/) est également une excellente solution de test E2E avec une gamme plus large de support de navigateur (principalement WebKit). Voir [Pourquoi dramaturge](https://playwright.dev/docs/why-dramaturge) pour plus de détails. 
+- [Playwright](https://playwright.dev/) est également une excellente solution de test E2E avec une gamme plus large de support de navigateur (principalement WebKit). Voir [Pourquoi dramaturge](https://playwright.dev/docs/why-dramaturge) pour plus de détails.
 
 - [Nightwatch v2](https://v2.nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui donne la plus large gamme de support de navigateur.
 
@@ -310,11 +314,12 @@ Si vous utilisez Typescript, ajoutez, add `vitest/globals` dans le champ `types`
 // tsconfig.json
 
 {
- "compilerOptions": {
+  "compilerOptions": {
     "types": ["vitest/globals"]
   }
 }
 ```
+
 :::
 
 Créez ensuite un fichier se terminant par `*.test.js` dans votre projet. Vous pouvez placer tous les fichiers de test dans un répertoire de test à la racine du projet ou dans des répertoires de test à côté de vos fichiers sources. Vitest les recherchera automatiquement à l'aide de la convention de nommage.
@@ -413,6 +418,7 @@ export function withSetup(composable) {
   return [result, app]
 }
 ```
+
 ```js
 import { withSetup } from './test-utils'
 import { useFoo } from './foo'

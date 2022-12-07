@@ -1,6 +1,6 @@
 # Provide / Inject {#provide-inject}
 
-> Cette page suppose que vous avez déjà lu les [bases à propos des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
+> Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
 
 ## Passage de props en profondeur (Prop Drilling) {#prop-drilling}
 

@@ -251,7 +251,7 @@ Attach an event listener to the element.
 
 - **See also:**
   - [Event Handling](/guide/essentials/event-handling.html)
-  - [Components - Custom Events](/guide/essentials/component-basics.html#listening-to-events)
+  - [Composants - Événements personnalisés](/guide/essentials/component-basics.html#listening-to-events)
 
 ## v-bind {#v-bind}
 
@@ -337,7 +337,7 @@ Dynamically bind one or more attributes, or a component prop to an expression.
   `.camel` is not needed if you are using string templates, or pre-compiling the template with a build step.
 
 - **See also:**
-  - [Class and Style Bindings](/guide/essentials/class-and-style.html)
+  - [Liaison de classes et de styles](/guide/essentials/class-and-style.html)
   - [Composant - Détails sur le passage de props](/guide/components/props.html#prop-passing-details)
 
 ## v-model {#v-model}

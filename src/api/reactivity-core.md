@@ -109,7 +109,7 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
   ```
 
 - **See also:**
-  - [Guide - Computed Properties](/guide/essentials/computed.html)
+  - [Guide - Propriétés calculées](/guide/essentials/computed.html)
   - [Guide - Computed Debugging](/guide/extras/reactivity-in-depth.html#computed-debugging)
   - [Guide - Typing `computed()`](/guide/typescript/composition-api.html#typing-computed)
 
