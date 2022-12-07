@@ -1,8 +1,8 @@
-# Class and Style Bindings {#class-and-style-bindings}
+# Liaison de classes et de styles {#class-and-style-bindings}
 
-A common need for data binding is manipulating an element's class list and inline styles. Since `class` and `style` are both attributes, we can use `v-bind` to assign them a string value dynamically, much like with other attributes. However, trying to generate those values using string concatenation can be annoying and error-prone. For this reason, Vue provides special enhancements when `v-bind` is used with `class` and `style`. In addition to strings, the expressions can also evaluate to objects or arrays.
+La liaison de données consiste à manipuler la liste des classes et les styles CSS inline d'un élément. Puisque `class` et `style` sont tous les deux des attributs, nous pouvons utiliser `v-bind` pour leur attribuer dynamiquement une valeur de chaîne, un peu comme avec les autres attributs. Cependant, essayer de générer ces valeurs à l'aide de la concaténation de chaînes peut être ennuyeux et sujet aux erreurs. Pour cette raison, Vue fournit des améliorations spéciales lorsque `v-bind` est utilisé avec `class` et `style`. En plus des chaînes, les expressions peuvent également évaluer des objets ou des tableaux.
 
-## Binding HTML Classes {#binding-html-classes}
+## Liaison des classes HTML {#binding-html-classes}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/dynamic-css-classes-with-vue-3" title="Free Vue.js Dynamic CSS Classes Lesson"/>
@@ -12,17 +12,17 @@ A common need for data binding is manipulating an element's class list and inlin
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-dynamic-css-classes-with-vue" title="Free Vue.js Dynamic CSS Classes Lesson"/>
 </div>
 
-### Binding to Objects {#binding-to-objects}
+### Liaison par objet {#binding-to-objects-1}
 
-We can pass an object to `:class` (short for `v-bind:class`) to dynamically toggle classes:
+Nous pouvons passer un objet à `:class` (abréviation de `v-bind:class`) pour basculer dynamiquement entre les classes :
 
 ```vue-html
 <div :class="{ active: isActive }"></div>
 ```
 
-The above syntax means the presence of the `active` class will be determined by the [truthiness](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) of the data property `isActive`.
+La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la donnée "isActive".
 
-You can have multiple classes toggled by having more fields in the object. In addition, the `:class` directive can also co-exist with the plain `class` attribute. So given the following state:
+Vous pouvez basculer plusieurs classes en ayant plus de clés dans l'objet. De plus, la directive `:class` peut également coexister avec l'attribut simple `class`. Admettons la chose suivante :
 
 <div class="composition-api">
 
@@ -46,7 +46,7 @@ data() {
 
 </div>
 
-And the following template:
+Et avec le template suivant :
 
 ```vue-html
 <div
@@ -55,15 +55,15 @@ And the following template:
 ></div>
 ```
 
-It will render:
+Cela sera rendu :
 
 ```vue-html
 <div class="static active"></div>
 ```
 
-When `isActive` or `hasError` changes, the class list will be updated accordingly. For example, if `hasError` becomes `true`, the class list will become `"static active text-danger"`.
+Lorsque `isActive` ou `hasError` change, la liste des classes sera mise à jour en conséquence. Par exemple, si `hasError` devient `true`, la liste des classes deviendra `"static active text-danger"`.
 
-The bound object doesn't have to be inline:
+L'objet lié n'a pas besoin d'être décrit dans le template :
 
 <div class="composition-api">
 
@@ -95,7 +95,7 @@ data() {
 <div :class="classObject"></div>
 ```
 
-This will render the same result. We can also bind to a [computed property](./computed) that returns an object. This is a common and powerful pattern:
+Cela rendra le même résultat. Nous pouvons également lier à une [propriété calculée](./computed) qui renvoie un objet. Il s'agit d'un modèle commun et puissant :
 
 <div class="composition-api">
 
@@ -136,9 +136,9 @@ computed: {
 <div :class="classObject"></div>
 ```
 
-### Binding to Arrays {#binding-to-arrays}
+### Liaison par tableau {#binding-to-arrays-1}
 
-We can bind `:class` to an array to apply a list of classes:
+Nous pouvons lier `:class` à un tableau pour appliquer une liste de classes :
 
 <div class="composition-api">
 
@@ -166,90 +166,90 @@ data() {
 <div :class="[activeClass, errorClass]"></div>
 ```
 
-Which will render:
+Ceci sera rendu :
 
 ```vue-html
 <div class="active text-danger"></div>
 ```
 
-If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:
+Si vous souhaitez également basculer une classe dans la liste de manière conditionnelle, vous pouvez le faire avec une expression ternaire :
 
 ```vue-html
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
 ```
 
-This will always apply `errorClass`, but `activeClass` will only be applied when `isActive` is truthy.
+Cela appliquera toujours `errorClass`, mais `activeClass` ne sera appliqué que lorsque `isActive` est vrai.
 
-However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the object syntax inside array syntax:
+Cependant, cela peut être un peu verbeux si vous avez plusieurs classes conditionnelles. C'est pourquoi il est également possible d'utiliser la syntaxe objet à l'intérieur de la syntaxe tableau :
 
 ```vue-html
 <div :class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### With Components {#with-components}
+### Avec les composants {#with-components}
 
-> This section assumes knowledge of [Composants](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> Cette section suppose une connaissance des [Composants](/guide/essentials/component-basics). N'hésitez pas à sauter cette partie et à y revenir plus tard.
 
-When you use the `class` attribute on a component with a single root element, those classes will be added to the component's root element, and merged with any existing class already on it.
+Lorsque vous utilisez l'attribut `class` sur un composant avec un seul élément racine, ces classes seront ajoutées à l'élément racine du composant et fusionnées avec toute classe existante déjà présente.
 
-For example, if we have a component named `MyComponent` with the following template:
+Par exemple, si nous avons un composant nommé "MyComponent" avec le template suivant :
 
 ```vue-html
-<!-- child component template -->
+<!-- template du composant enfant -->
 <p class="foo bar">Hi!</p>
 ```
 
-Then add some classes when using it:
+Ajoutez ensuite quelques classes lors de son utilisation :
 
 ```vue-html
-<!-- when using the component -->
+<!-- usage du composant -->
 <MyComponent class="baz boo" />
 ```
 
-The rendered HTML will be:
+Le HTML rendu sera :
 
 ```vue-html
 <p class="foo bar baz boo">Hi</p>
 ```
 
-The same is true for class bindings:
+Il en va de même pour les liaisons de classe :
 
 ```vue-html
 <MyComponent :class="{ active: isActive }" />
 ```
 
-When `isActive` is truthy, the rendered HTML will be:
+Lorsque `isActive` est vrai, le rendu HTML sera :
 
 ```vue-html
-<p class="foo bar active">Hi</p>
+<p class="foo bar active">Hello</p>
 ```
 
-If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the `$attrs` component property:
+Si votre composant a plusieurs éléments racine, vous devrez définir quel élément recevra cette classe. Vous pouvez le faire en utilisant la propriété de composant `$attrs` :
 
 ```vue-html
-<!-- MyComponent template using $attrs -->
+<!-- Template de MyComponent utilisant $attrs -->
 <p :class="$attrs.class">Hi!</p>
-<span>This is a child component</span>
+<span>Ceci est un composant enfant</span>
 ```
 
 ```vue-html
 <MyComponent class="baz" />
 ```
 
-Will render:
+Sera rendu :
 
 ```html
 <p class="baz">Hi!</p>
-<span>This is a child component</span>
+<span>Ceci est un composant enfant</span>
 ```
 
-You can learn more about component attribute inheritance in [Attributs implicitement déclarés](/guide/components/attrs.html) section.
+Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Attributs implicitement déclarés](/guide/components/attrs.html).
 
-## Binding Inline Styles {#binding-inline-styles}
+## Liaison des styles inline {#binding-inline-styles}
 
-### Binding to Objects
+### Liaison par objet {#binding-to-objects-2}
 
-`:style` supports binding to JavaScript object values - it corresponds to an [HTML element's `style` property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style):
+`:style` supporte les liaisons avec des objets Javascript - ça correspond à la [propriété `style` des éléments HTML](https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/style):
 
 <div class="composition-api">
 
@@ -277,13 +277,13 @@ data() {
 <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
 ```
 
-Although camelCase keys are recommended, `:style` also supports kebab-cased CSS property keys (corresponds to how they are used in actual CSS) - for example:
+Bien que les clés camelCase soient recommandées, `:style` prend également en charge les clés de propriété CSS en casse kebab (correspond à la façon dont elles sont utilisées dans le CSS réel), par exemple :
 
 ```vue-html
 <div :style="{ 'font-size': fontSize + 'px' }"></div>
 ```
 
-It is often a good idea to bind to a style object directly so that the template is cleaner:
+C'est souvent une bonne idée de lier directement un objet de style pour que le template soit plus propre :
 
 <div class="composition-api">
 
@@ -315,26 +315,26 @@ data() {
 <div :style="styleObject"></div>
 ```
 
-Again, object style binding is often used in conjunction with computed properties that return objects.
+À nouveau, la liaison par objet est souvent utilisée conjointement avec des propriétés calculées qui renvoient des objets.
 
-### Binding to Arrays
+### Liaison par tableau {binding-to-arrays-2}
 
-We can bind `:style` to an array of multiple style objects. These objects will be merged and applied to the same element:
+Nous pouvons lier `:style` à un tableau de plusieurs objets de style. Ces objets seront fusionnés et appliqués au même élément :
 
 ```vue-html
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefixing {#auto-prefixing}
+### Préfixe automatique {#auto-prefixing}
 
-When you use a CSS property that requires a [vendor prefix](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `:style`, Vue will automatically add the appropriate prefix. Vue does this by checking at runtime to see which style properties are supported in the current browser. If the browser doesn't support a particular property then various prefixed variants will be tested to try to find one that is supported.
+Lorsque vous utilisez une propriété CSS qui nécessite un [préfixe vendeur](https://developer.mozilla.org/fr/docs/Glossary/Vendor_Prefix) dans `:style`, Vue ajoutera automatiquement le préfixe approprié. Vue le fait en vérifiant lors de l'exécution quelles propriétés de style sont prises en charge dans le navigateur actuel. Si le navigateur ne prend pas en charge une propriété particulière, différentes variantes préfixées seront testées pour essayer d'en trouver une qui soit prise en charge.
 
-### Multiple Values {#multiple-values}
+### Valeurs multiples {#multiple-values}
 
-You can provide an array of multiple (prefixed) values to a style property, for example:
+Vous pouvez fournir un tableau de plusieurs valeurs (préfixées) à une propriété de style, par exemple :
 
 ```vue-html
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-This will only render the last value in the array which the browser supports. In this example, it will render `display: flex` for browsers that support the unprefixed version of flexbox.
+Cela ne rendra que la dernière valeur du tableau pris en charge par le navigateur. Dans cet exemple, il affichera `display: flex` pour les navigateurs prenant en charge la version sans préfixe de flexbox.
