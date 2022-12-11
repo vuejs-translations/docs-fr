@@ -675,24 +675,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     ],
 
-    localeLinks: [
-      {
-        link: 'https://cn.vuejs.org',
-        text: '简体中文',
-        repo: 'https://github.com/vuejs-translations/docs-zh-cn'
-      },
-      {
-        link: 'https://ja.vuejs.org',
-        text: '日本語',
-        repo: 'https://github.com/vuejs-translations/docs-ja'
-      },
-      {
-        link: '/translations/',
-        text: 'Help Us Translate!',
-        isTranslationsDesc: true
-      }
-    ],
-
     algolia: {
       indexName: 'vuejs',
       appId: 'ML0LEBN7FQ',
