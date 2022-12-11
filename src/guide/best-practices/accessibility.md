@@ -86,28 +86,28 @@ L'un des éléments les plus importants de l'accessibilité est de s'assurer que
 
 ### Headings {#headings}
 
-Users can navigate an application through headings. Having descriptive headings for every section of your application makes it easier for users to predict the content of each section. When it comes to headings, there are a couple of recommended accessibility practices:
+Les utilisateurs peuvent naviguer dans une application à travers les titres. Le fait d'avoir des titres descriptifs pour chaque section de votre application permet aux utilisateurs de prédire plus facilement le contenu de celle-ci. En ce qui concerne les titres, il existe quelques pratiques d'accessibilité recommandées :
 
-- Nest headings in their ranking order: `<h1>` - `<h6>`
-- Don’t skip headings within a section
-- Use actual heading tags instead of styling text to give the visual appearance of headings
+- Imbriquez les titres dans leur ordre hiérarchique : `<h1>` - `<h6>`
+- Ne sautez pas les titres à l'intérieur d'une section
+- Utilisez les balises de titres plutôt que du style de texte pour représenter visuellement des titres.
 
-[Read more about headings](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
+[En lire plus à propos des titres](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
 
 ```vue-html
-<main role="main" aria-labelledby="main-title">
-  <h1 id="main-title">Main title</h1>
-  <section aria-labelledby="section-title-1">
-    <h2 id="section-title-1"> Section Title </h2>
-    <h3>Section Subtitle</h3>
-    <!-- Content -->
+<main role="main" aria-labelledby="titre-principal">
+  <h1 id="main-title">Titre principal</h1>
+  <section aria-labelledby="titre-de-section-1">
+    <h2 id="section-title-1"> Titre de section </h2>
+    <h3>Sous-titre de section</h3>
+    <!-- Contenu -->
   </section>
-  <section aria-labelledby="section-title-2">
-    <h2 id="section-title-2"> Section Title </h2>
-    <h3>Section Subtitle</h3>
-    <!-- Content -->
-    <h3>Section Subtitle</h3>
-    <!-- Content -->
+  <section aria-labelledby="titre-de-section-2">
+    <h2 id="titre-de-section-2"> Titre de section </h2>
+    <h3>Sous-titre de section</h3>
+    <!-- Contenu -->
+    <h3>Sous-titre de section</h3>
+    <!-- contenu -->
   </section>
 </main>
 ```
