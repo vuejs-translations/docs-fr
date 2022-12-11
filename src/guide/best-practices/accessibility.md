@@ -6,21 +6,21 @@ Par où commencer ?
 
 Visitez le guide de [planification et pilotage de la prise en compte de l’accessibilité Web (en anglais)](https://www.w3.org/WAI/planning-and-managing/) proposé par le [World Wide Web Consortium (W3C)](https://www.w3.org/)
 
-## Skip link {#skip-link}
+## Liens d'évitement ou d'accès rapide {#skip-link}
 
-You should add a link at the top of each page that goes directly to the main content area so users can skip content that is repeated on multiple Web pages.
+Vous devez ajouter un lien en haut de chaque page qui mène directement à la zone de contenu principale afin que les utilisateurs puissent ignorer les zones de regroupement de contenus répétées sur plusieurs pages web.
 
-Typically this is done on the top of `App.vue` as it will be the first focusable element on all your pages:
+Typiquement, cela se fait en haut de `App.vue`  car ce sera le premier élément pouvant être ciblé sur toutes vos pages:
 
 ```vue-html
 <ul class="skip-links">
   <li>
-    <a href="#main" ref="skipLink">Skip to main content</a>
+    <a href="#main" ref="skipLink">Aller au contenu principal</a>
   </li>
 </ul>
 ```
 
-To hide the link unless it is focused, you can add the following style:
+Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style suivant:
 
 ```css
 .skipLink {
@@ -40,7 +40,7 @@ To hide the link unless it is focused, you can add the following style:
 }
 ```
 
-Once a user changes route, bring focus back to the skip link. This can be achieved by calling focus on the skip link's template ref (assuming usage of `vue-router`):
+Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref template du lien d'évitement (en supposant l'utilisation de `vue-router`):
 
 <div class="options-api">
 
@@ -78,7 +78,7 @@ watch(
 
 </div>
 
-[Read documentation on skip link to main content](https://www.w3.org/WAI/WCAG21/Techniques/general/G1.html)
+[Lisez la documentation à propos des liens d'évitement vers le contenu principal](https://accessibilite.numerique.gouv.fr/methode/glossaire/#liens-d-evitement-ou-d-acces-rapide)
 
 ## Content Structure {#content-structure}
 
