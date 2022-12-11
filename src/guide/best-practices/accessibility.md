@@ -114,22 +114,60 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 
 ### Landmarks {#landmarks}
 
-[Landmarks](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) provide programmatic access to sections within an application. Users who rely on assistive technology can navigate to each section of the application and skip over content. You can use [ARIA roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) to help you achieve this.
+[Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technonologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
 
-| HTML            | ARIA Role            | Landmark Purpose                                                                                                 |
-| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| header          | role="banner"        | Prime heading: title of the page                                                                                 |
-| nav             | role="navigation"    | Collection of links suitable for use when navigating the document or related documents                           |
-| main            | role="main"          | The main or central content of the document.                                                                     |
-| footer          | role="contentinfo"   | Information about the parent document: footnotes/copyrights/links to privacy statement                           |
-| aside           | role="complementary" | Supports the main content, yet is separated and meaningful on its own content                                    |
+| HTML            | ARIA Role            | But du landmark                                                                                                  |
+|-----------------| -------------------- |------------------------------------------------------------------------------------------------------------------|
+| `<header>`      | role="banner"        | Prime heading: title of the page\*                                                                               |
+| `<nav>`         | role="navigation"    | Collection of links suitable for use when navigating the document or related documents                           |
+| `<main>`        | role="main"          | Le contenu central ou principal du dpcument.                                                                     |
+| `<footer>`      | role="contentinfo"   | Information about the parent document: footnotes/copyrights/links to privacy statement                           |
+| `<aside>`       | role="complementary" | Supports the main content, yet is separated and meaningful on its own content                                    |
 | _Not available_ | role="search"        | This section contains the search functionality for the application                                               |
-| form            | role="form"          | Collection of form-associated elements                                                                           |
-| section         | role="region"        | Content that is relevant and that users will likely want to navigate to. Label must be provided for this element |
+| `<form>`        | role="form"          | Collection of form-associated elements                                                                           |
+| `<section>`       | role="region"        | Content that is relevant and that users will likely want to navigate to. Label must be provided for this element |
 
-:::tip Tip:
-It is recommended to use landmark HTML elements with redundant landmark role attributes in order to maximize compatibility with legacy [browsers that don’t support HTML5 semantic elements](https://caniuse.com/#feat=html5semantic).
+:::tip Astuce:
+Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de rôle landmark redondants afin d'optimiser la compatibilité avec les anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5](https://caniuse.com/#feat=html5semantic).
 :::
+
+https://accessibilite.numerique.gouv.fr/methode/glossaire/#landmarks
+
+<!--
+https://accessibilite.numerique.gouv.fr/methode/glossaire/#zone-d-en-tete
+
+Zone d’en-tête 
+Zone située en haut du document et contenant généralement le titre du document, un logo, un slogan…
+
+Note : Attention à ne pas confondre cette zone d’en-tête, unique dans le site, avec tout contenu pouvant être balisé en HTML5 avec l’élément <header>.
+
+Voir la définition technique fournie par WAI-ARIA : Banner (role).
+
+________________________________________
+
+
+https://www.w3.org/TR/wai-aria-1.1/#banner
+
+banner (role)§
+A region that contains mostly site-oriented content, rather than page-specific content.
+
+Site-oriented content typically includes things such as the logo or identity of the site sponsor, and a site-specific search tool. A banner usually appears at the top of the page and typically spans the full width.
+
+User agents SHOULD treat elements with the role of banner as navigational landmarks.
+
+Within any document or application, the author SHOULD mark no more than one element with the banner role.
+
+____________________________________
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header#usage_notes
+
+The <header> element has an identical meaning to the site-wide banner landmark role, unless nested within sectioning content. Then, the <header> element is not a landmark.
+
+The <header> element can define a global site header, described as a banner in the accessibility tree. It usually includes a logo, company name, search feature, and possibly the global navigation or a slogan. It is generally located at the top of the page.
+
+Otherwise, it is a section in the accessibility tree, and usually contain the surrounding section's heading (an h1 – h6 element) and optional subheading, but this is not required.
+
+-->
 
 [Read more about landmarks](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
 
