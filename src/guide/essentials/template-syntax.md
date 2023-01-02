@@ -66,7 +66,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 ### Attributs booleans {#boolean-attributes}
 
-[Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par sa présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
+[Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par leur présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.
 
 `v-bind` fonctionne un peu différemment dans ce cas :
 

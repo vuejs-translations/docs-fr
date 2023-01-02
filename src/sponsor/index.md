@@ -45,9 +45,9 @@ Vous pouvez également essayer de convaincre votre employeur de sponsoriser Vue 
 - **Or (USD$500/mois)**:
   - Grand emplacement pour votre logo sur la première page de [vuejs.org](/).
   - Grand emplacement pour votre logo dans le fichier README de `vuejs/core` et `vuejs/vue`.
-- **Argent (USD$500/mois)**:
+- **Argent (USD$250/mois)**:
   - Emplacement moyen pour votre logo dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`.
-- **Bronze (USD$500/mois)**:
+- **Bronze (USD$100/mois)**:
   - Petit emplacement pour votre logo dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`.
 - **Soutien généreux (USD$50/mois)**:
   - Votre nom listé dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`, au-dessus des autres soutiens de particuliers.
