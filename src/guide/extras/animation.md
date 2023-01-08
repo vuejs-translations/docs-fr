@@ -145,7 +145,7 @@ In addition to color, you can also use style bindings to animate transform, widt
 
 <ElasticHeader />
 
-## Animating with Watchers {#animating-with-watchers}
+## Animer avec les observateurs {#animating-with-watchers}
 
 With some creativity, we can use watchers to animate anything based on some numerical state. For example, we can animate the number itself:
 
