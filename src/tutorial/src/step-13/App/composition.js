@@ -6,7 +6,7 @@ export default {
     ChildComp
   },
   setup() {
-    const childMsg = ref('No child msg yet')
+    const childMsg = ref("Pas encore de message de l'enfant")
 
     return {
       childMsg

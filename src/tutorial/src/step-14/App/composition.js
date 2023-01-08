@@ -6,7 +6,7 @@ export default {
     ChildComp
   },
   setup() {
-    const msg = ref('from parent')
+    const msg = ref('depuis le parent')
 
     return {
       msg
