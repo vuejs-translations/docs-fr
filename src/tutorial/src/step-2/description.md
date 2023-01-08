@@ -1,16 +1,16 @@
-# Declarative Rendering {#declarative-rendering}
+# Rendu déclaratif {#declarative-rendering}
 
 <div class="sfc">
 
-What you see in the editor is a Vue Single-File Component (SFC). An SFC is a reusable self-contained block of code that encapsulates HTML, CSS and JavaScript that belong together, written inside a `.vue` file.
+Ce que vous voyez dans l'éditeur est un composant Vue monofichier (SFC). Un SFC est un bloc de code autonome réutilisable qui encapsule le HTML, le CSS et le JavaScript qui vont ensemble, écrit dans un fichier `.vue`.
 
 </div>
 
-The core feature of Vue is **declarative rendering**: using a template syntax that extends HTML, we can describe how the HTML should look like based on JavaScript state. When the state changes, the HTML updates automatically.
+La caractéristique principale de Vue est le **rendu déclaratif** : à l'aide d'une syntaxe de modèle qui étend le HTML, nous pouvons décrire comment le HTML devrait ressembler en fonction de l'état du JavaScript. Lorsque l'état change, le HTML est automatiquement mis à jour.
 
 <div class="composition-api">
 
-State that can trigger updates when changed are considered **reactive**. We can declare reactive state using Vue's `reactive()` API. Objects created from `reactive()` are JavaScript [Proxies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) that work just like normal objects:
+Les états qui peuvent déclencher des mises à jour lorsqu'ils sont modifiés sont considérés comme **réactifs**. Nous pouvons déclarer un état réactif en utilisant l'API `reactive()` de Vue. Les objets créés par `reactive()` sont des [Proxy JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) qui fonctionnent comme des objets normaux :
 
 ```js
 import { reactive } from 'vue'
@@ -23,7 +23,7 @@ console.log(counter.count) // 0
 counter.count++
 ```
 
-`reactive()` only works on objects (including arrays and built-in types like `Map` and `Set`). `ref()`, on the other hand, can take any value type and create an object that exposes the inner value under a `.value` property:
+`reactive()` ne fonctionne que sur les objets (y compris les tableaux et les types par défaut comme `Map` et `Set`). D'un autre côté, `ref()`, peut prendre n'importe quel type de valeur et créer un objet qui expose la valeur interne sous une propriété `.value` :
 
 ```js
 import { ref } from 'vue'
@@ -31,20 +31,20 @@ import { ref } from 'vue'
 const message = ref('Hello World!')
 
 console.log(message.value) // "Hello World!"
-message.value = 'Changed'
+message.value = 'Mis à jour'
 ```
 
-Details on `reactive()` and `ref()` are discussed in <a target="_blank" href="/guide/essentials/reactivity-fundamentals.html">Guide - Reactivity Fundamentals</a>.
+Les détails sur `reactive()` et `ref()` sont abordés dans <a target="_blank" href="/guide/essentials/reactivity-fundamentals.html">Guide - Fondamentaux de la réactivité</a>.
 
 <div class="sfc">
 
-Reactive state declared in the component's `<script setup>` block can be used directly in the template. This is how we can render dynamic text based on the value of the `counter` object and `message` ref, using mustaches syntax:
+Le state réactif déclaré dans le bloc `<script setup>` du composant peut être utilisé directement dans le template. C'est ainsi que nous pouvons rendre un texte dynamique basé sur la valeur de l'objet `counter` et de la réf `message`, en utilisant la syntaxe des moustaches :
 
 </div>
 
 <div class="html">
 
-The object being passed to `createApp()` is a Vue component. A component's state should be declared inside its `setup()` function, and returned using an object:
+L'objet passé à `createApp()` est un composant Vue. Le state d'un composant doit être déclaré dans sa fonction `setup()`, et retourné en utilisant un objet :
 
 ```js{2,5}
 setup() {
@@ -57,24 +57,24 @@ setup() {
 }
 ```
 
-Properties in the returned object will be made available in the template. This is how we can render dynamic text based on the value of `message`, using mustaches syntax:
+Les propriétés renvoyées par l'objet seront disponibles dans le template. C'est ainsi que nous pouvons rendre un texte dynamique basé sur la valeur de `message`, en utilisant la syntaxe des moustaches :
 
 </div>
 
 ```vue-html
 <h1>{{ message }}</h1>
-<p>count is: {{ counter.count }}</p>
+<p>count à: {{ counter.count }}</p>
 ```
 
-Notice how we did not need to use `.value` when accessing the `message` ref in templates: it is automatically unwrapped for more succinct usage.
+Remarquez que nous n'avons pas eu besoin d'utiliser `.value` pour accéder à la référence `message` dans le template : elle est automatiquement déballée pour une utilisation plus succincte.
 
 </div>
 
 <div class="options-api">
 
-State that can trigger updates when changed are considered **reactive**. In Vue, reactive state is held in components. <span class="html">In the example code, the object being passed to `createApp()` is a component.</span>
+Un state qui peut déclencher des rafraîchissements est considéré comme **réactif**. Dans Vue, tout state réactif reste dans les composants. <span class="html">Dans l'exemple de code, l'objet passé à `createApp()` est un composant.</span>
 
-We can declare reactive state using the `data` component option, which should be a function that returns an object:
+Nous pouvons déclarer un state réactif en utilisant l'option de composant `data`, qui doit être une fonction qui renvoie un objet :
 
 <div class="sfc">
 
@@ -103,7 +103,7 @@ createApp({
 
 </div>
 
-The `message` property will be made available in the template. This is how we can render dynamic text based on the value of `message`, using mustaches syntax:
+La propriété `message` sera disponible dans le template. C'est ainsi que nous pouvons render un texte dynamique basé sur la valeur de `message`, en utilisant la syntaxe des moustaches :
 
 ```vue-html
 <h1>{{ message }}</h1>
@@ -111,7 +111,7 @@ The `message` property will be made available in the template. This is how we ca
 
 </div>
 
-The content inside the mustaches is not limited to just identifiers or paths - we can use any valid JavaScript expression:
+Le contenu à l'intérieur des moustaches n'est pas limité aux identifiants ou aux chemins - nous pouvons utiliser toute expression JavaScript valide :
 
 ```vue-html
 <h1>{{ message.split('').reverse().join('') }}</h1>
@@ -119,12 +119,12 @@ The content inside the mustaches is not limited to just identifiers or paths - w
 
 <div class="composition-api">
 
-Now, try to create some reactive state yourself, and use it to render dynamic text content for the `<h1>` in the template.
+Maintenant, essayez de créer vous-même un state réactif et utilisez-le pour rendre un contenu textuel dynamique pour le `<h1>` dans le template.
 
 </div>
 
 <div class="options-api">
 
-Now, try to create a data property yourself, and use it as the text content for the `<h1>` in the template.
+Maintenant, essayez de créer vous-même une propriété `data`, et utilisez-la comme contenu textuel pour le `<h1>` dans le template.
 
 </div>

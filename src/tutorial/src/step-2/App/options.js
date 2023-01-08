@@ -1,4 +1,4 @@
 export default {
-  // component options
-  // declare some reactive state here.
+  // options du composant
+  // déclarez du state réactif ici.
 }
