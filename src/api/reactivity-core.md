@@ -309,7 +309,7 @@ Runs a function immediately while reactively tracking its dependencies and re-ru
   ```
 
 - **See also**:
-  - [Guide - Watchers](/guide/essentials/watchers.html#watcheffect)
+  - [Guide - Observateurs](/guide/essentials/watchers.html#watcheffect)
   - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)
 
 ## watchPostEffect() {#watchposteffect}
@@ -383,7 +383,7 @@ Watches one or more reactive data sources and invokes a callback function when t
   The third optional argument is an options object that supports the following options:
 
   - **`immediate`**: trigger the callback immediately on watcher creation. Old value will be `undefined` on the first call.
-  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [Deep Watchers](/guide/essentials/watchers.html#deep-watchers).
+  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
   - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core.html#watcheffect).
   - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
@@ -459,5 +459,5 @@ Watches one or more reactive data sources and invokes a callback function when t
 
 - **See also**:
 
-  - [Guide - Watchers](/guide/essentials/watchers.html)
+  - [Guide - Observateurs](/guide/essentials/watchers.html)
   - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)

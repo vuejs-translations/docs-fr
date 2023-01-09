@@ -217,7 +217,7 @@ Imperative API for creating watchers.
   The second argument is the callback function. The callback receives the new value and the old value of the watched source.
 
   - **`immediate`**: trigger the callback immediately on watcher creation. Old value will be `undefined` on the first call.
-  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [Deep Watchers](/guide/essentials/watchers.html#deep-watchers).
+  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
   - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core.html#watcheffect).
   - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
@@ -259,7 +259,7 @@ Imperative API for creating watchers.
 
 - **See also:**
   - [Options - `watch`](/api/options-state.html#watch)
-  - [Guide - Watchers](/guide/essentials/watchers.html)
+  - [Guide - Observateurs](/guide/essentials/watchers.html)
 
 ## $emit() {#emit}
 

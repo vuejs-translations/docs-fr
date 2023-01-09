@@ -178,7 +178,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Lifecycle Hooks',
           link: '/guide/essentials/lifecycle'
         },
-        { text: 'Watchers', link: '/guide/essentials/watchers' },
+        { text: 'Observateurs', link: '/guide/essentials/watchers' },
         { text: 'Template Refs', link: '/guide/essentials/template-refs' },
         {
           text: 'Principes fondamentaux des Composants',
