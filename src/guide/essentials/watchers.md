@@ -2,7 +2,7 @@
 
 ## Exemple Basique {#basic-example}
 
-Les propriétés calculées nous permettent de calculer des valeurs dérivées de manière déclarative. Toutefois, il y a des cas dans lesquels nous devons réaliser des "effets secondaires" en réaction aux changements de l'état - par exemple, muter le DOM, ou changer une autre partie de l'état en fonction du résultat d'une opération asynchrone.
+Les propriétés calculées nous permettent de calculer des valeurs dérivées de manière déclarative. Toutefois, il y a des cas dans lesquels nous devons réaliser des "effets de bord" en réaction aux changements de l'état - par exemple, muter le DOM, ou changer une autre partie de l'état en fonction du résultat d'une opération asynchrone.
 
 <div class="options-api">
 
@@ -268,7 +268,7 @@ fetchData()
 watch(url, fetchData)
 ```
 
-Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` nous permet d'effectuer des effets secondaires immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
+Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` nous permet d'effectuer des effets de bord immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
 
 ```js
 watchEffect(async () => {
@@ -277,7 +277,7 @@ watchEffect(async () => {
 })
 ```
 
-Ici, le rappel sera immédiatement exécuté. Pendant son exécution, il va automatiquement traquer `url.value` en tant que dépendances (de la même manière qu'avec les propriétés calculées). Chaque fois que `url.value` change, le rappel sera exécuté de nouveau.
+Ici, la fonction sera immédiatement exécutée. Pendant son exécution, il va automatiquement traquer `url.value` en tant que dépendance (de la même manière qu'avec les propriétés calculées). Chaque fois que `url.value` change, le rappel sera exécuté de nouveau.
 
 Vous pouvez vous référer à [cet exemple](/examples/#fetching-data) avec `watchEffect` et une récupération de données en action.
 
@@ -287,11 +287,11 @@ Vous pouvez vous référer à [cet exemple](/examples/#fetching-data) avec `watc
 
 ### `watch` vs. `watchEffect` {#watch-vs-watcheffect}
 
-`watch` et `watchEffect` permettent tous les deux de réaliser des effets secondaires. Leur principale différence réside dans la manière dont ils traquent leurs dépendances réactives :
+`watch` et `watchEffect` permettent tous les deux de réaliser des effets de bord. Leur principale différence réside dans la manière dont ils traquent leurs dépendances réactives :
 
-- `watch` traque seulement la source explicitement observée . De plus, le rappel n'est déclenché que lorsque la source a bien changé. `watch` sépare la traque des dépendances et les effets secondaires, ce qui nous donne plus de contrôle sur le moment où le rappel doit être exécuté.
+- `watch` traque seulement la source explicitement observée . De plus, le rappel n'est déclenché que lorsque la source a bien changé. `watch` sépare la traque des dépendances et les effets de bord, ce qui nous donne plus de contrôle sur le moment où le rappel doit être exécuté.
 
-- `watchEffect`, d'un autre côté, combine la traque des dépendances et les effets secondaires en une phase. Il traque automatiquement chaque propriété réactive accédée durant son exécution synchrone. Cela est plus pratique et rend généralement le code plus concis, mais rend les dépendances réactives moins explicites.
+- `watchEffect`, d'un autre côté, combine la traque des dépendances et les effets de bord en une phase. Il traque automatiquement chaque propriété réactive accédée durant son exécution synchrone. Cela est plus pratique et rend généralement le code plus concis, mais rend les dépendances réactives moins explicites.
 
 </div>
 
