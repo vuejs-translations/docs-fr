@@ -83,7 +83,7 @@ watchEffect(() => {
 })
 ```
 
-Voir aussi: [Typing Template Refs](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
+Voir aussi: [Typer les refs du template](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
 
 </div>
 

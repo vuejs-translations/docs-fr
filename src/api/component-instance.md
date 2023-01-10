@@ -55,7 +55,7 @@ The root DOM node that the component instance is managing.
   - For components with multiple root nodes, `$el` will be the placeholder DOM node that Vue uses to keep track of the component's position in the DOM (a text node, or a comment node in SSR hydration mode).
 
   :::tip
-  For consistency, it is recommended to use [template refs](/guide/essentials/template-refs.html) for direct access to elements instead of relying on `$el`.
+  For consistency, it is recommended to use [les refs du template](/guide/essentials/template-refs.html) for direct access to elements instead of relying on `$el`.
   :::
 
 ## $options {#options}
@@ -153,7 +153,7 @@ An object of DOM elements and component instances, registered via [template refs
 
 - **See also:**
 
-  - [Template refs](/guide/essentials/template-refs.html)
+  - [Les refs du template](/guide/essentials/template-refs.html)
   - [Special Attributes - ref](./built-in-special-attributes.md#ref)
 
 ## $attrs {#attrs}
