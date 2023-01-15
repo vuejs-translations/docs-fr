@@ -179,7 +179,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/lifecycle'
         },
         { text: 'Observateurs', link: '/guide/essentials/watchers' },
-        { text: 'Template Refs', link: '/guide/essentials/template-refs' },
+        { text: 'Les refs du template', link: '/guide/essentials/template-refs' },
         {
           text: 'Principes fondamentaux des Composants',
           link: '/guide/essentials/component-basics'
