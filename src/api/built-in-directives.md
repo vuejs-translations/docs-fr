@@ -70,7 +70,7 @@ Conditionally render an element or a template fragment based on the truthy-ness 
 
   This directive triggers transitions when its condition changes.
 
-  When used together, `v-if` has a higher priority than `v-for`. We don't recommend using these two directives together on one element — see the [list rendering guide](/guide/essentials/list.html#v-for-with-v-if) for details.
+  When used together, `v-if` has a higher priority than `v-for`. We don't recommend using these two directives together on one element — see the [guide du rendu de liste](/guide/essentials/list.html#v-for-with-v-if) for details.
 
 - **See also:** [Conditional Rendering - v-if](/guide/essentials/conditional.html#v-if)
 

@@ -168,7 +168,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Rendu conditionnel',
           link: '/guide/essentials/conditional'
         },
-        { text: 'List Rendering', link: '/guide/essentials/list' },
+        { text: 'Rendu de liste', link: '/guide/essentials/list' },
         {
           text: 'Event Handling',
           link: '/guide/essentials/event-handling'

@@ -1,4 +1,4 @@
-# List Rendering {#list-rendering}
+# Rendu de liste {#list-rendering}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/list-rendering-in-vue-3" title="Free Vue.js List Rendering Lesson"/>
@@ -10,7 +10,7 @@
 
 ## `v-for` {#v-for}
 
-We can use the `v-for` directive to render a list of items based on an array. The `v-for` directive requires a special syntax in the form of `item in items`, where `items` is the source data array and `item` is an **alias** for the array element being iterated on:
+Nous pouvons utiliser la directive `v-for` pour rendre une liste d'items basée sur un tableau. La directive `v-for` nécessite une syntaxe spéciale de la forme `item in items`, où `items` est le tableau de données source et `item` est un **alias** pour l'élément du tableau sur lequel on itère :
 
 <div class="composition-api">
 
@@ -38,7 +38,7 @@ data() {
 </li>
 ```
 
-Inside the `v-for` scope, template expressions have access to all parent scope properties. In addition, `v-for` also supports an optional second alias for the index of the current item:
+À l'intérieur de la portée du `v-for`, les expressions du template ont accès à toutes les propriétés de la portée du parent. De plus, `v-for` supporte également un second et optionnel alias pour l'index de l'item actuel :
 
 <div class="composition-api">
 
@@ -88,7 +88,7 @@ const items = [{ message: 'Foo' }, { message: 'Bar' }]
 
 </div>
 
-The variable scoping of `v-for` is similar to the following JavaScript:
+La portée des variables de `v-for` est similaire au JavaScript suivant :
 
 ```js
 const parentMessage = 'Parent'
@@ -97,13 +97,13 @@ const items = [
 ]
 
 items.forEach((item, index) => {
-  // has access to outer scope `parentMessage`
-  // but `item` and `index` are only available in here
+  // a accès à `parentMessage` de la portée extérieure
+  // mais `item` et `index` ne sont disponibles qu'ici
   console.log(parentMessage, item.message, index)
 })
 ```
 
-Notice how the `v-for` value matches the function signature of the `forEach` callback. In fact, you can use destructuring on the `v-for` item alias similar to destructuring function arguments:
+Remarquez comment la valeur de `v-for` correspond à la fonction signature du rappel du `forEach`. En fait, vous pouvez utiliser la déstructuration sur l'alias item du `v-for` de la même manière que la déstructuration des arguments de fonction :
 
 ```vue-html
 <li v-for="{ message } in items">
@@ -116,7 +116,7 @@ Notice how the `v-for` value matches the function signature of the `forEach` cal
 </li>
 ```
 
-For nested `v-for`, scoping also works similar to nested functions. Each `v-for` scope has access to parent scopes:
+Pour les `v-for` imbriqués, les portées fonctionnent de la même manière qu'avec les fonctions imbriquées. Chaque portée de `v-for` a accès aux portées de ses parents :
 
 ```vue-html
 <li v-for="item in items">
@@ -126,15 +126,15 @@ For nested `v-for`, scoping also works similar to nested functions. Each `v-for`
 </li>
 ```
 
-You can also use `of` as the delimiter instead of `in`, so that it is closer to JavaScript's syntax for iterators:
+Vous pouvez également utiliser `of` comme séparateur au lieu de `in`, pour que cela soit plus proche de la syntaxe JavaScript pour les itérateurs :
 
 ```vue-html
 <div v-for="item of items"></div>
 ```
 
-## `v-for` with an Object {#v-for-with-an-object}
+## `v-for` avec un objet {#v-for-with-an-object}
 
-You can also use `v-for` to iterate through the properties of an object. The iteration order will be based on the result of calling `Object.keys()` on the object:
+Vous pouvez également utiliser `v-for` pour itérer sur les propriétés d'un objet. L'ordre d'itération sera basé sur le résultat de l'appel à `Object.keys()` sur l'objet :
 
 <div class="composition-api">
 
@@ -171,7 +171,7 @@ data() {
 </ul>
 ```
 
-You can also provide a second alias for the property's name (a.k.a. key):
+Vous pouvez également fournir un second alias pour le nom de la propriété (aussi appelé clé) :
 
 ```vue-html
 <li v-for="(value, key) in myObject">
@@ -179,7 +179,7 @@ You can also provide a second alias for the property's name (a.k.a. key):
 </li>
 ```
 
-And another for the index:
+Et un autre pour l'index :
 
 ```vue-html
 <li v-for="(value, key, index) in myObject">
@@ -198,19 +198,19 @@ And another for the index:
 
 </div>
 
-## `v-for` with a Range {#v-for-with-a-range}
+## `v-for` avec une portée {#v-for-with-a-range}
 
-`v-for` can also take an integer. In this case it will repeat the template that many times, based on a range of `1...n`.
+`v-for` peut également prendre un nombre entier. Dans ce cas il va répéter le template un certain nombre de fois, basé sur une portée `1...n`.
 
 ```vue-html
 <span v-for="n in 10">{{ n }}</span>
 ```
 
-Note here `n` starts with an initial value of `1` instead of `0`.
+Notez qu'ici `n` démarre avec une valeur initiale de `1` au lieu de `0`.
 
-## `v-for` on `<template>` {#v-for-on-template}
+## `v-for` sur le `<template>` {#v-for-on-template}
 
-Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to render a block of multiple elements. For example:
+Comme le modèle `v-if`, vous pouvez aussi utiliser une balise `<template>` avec `v-for` pour effectuer le rendu d'un bloc composé de plusieurs éléments. Par exemple :
 
 ```vue-html
 <ul>
@@ -221,25 +221,24 @@ Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to 
 </ul>
 ```
 
-## `v-for` with `v-if` {#v-for-with-v-if}
+## `v-for` avec `v-if` {#v-for-with-v-if}
 
 :::warning Note
-It's **not** recommended to use `v-if` and `v-for` on the same element due to implicit precedence. Refer to [style guide](/style-guide/rules-essential.html#avoid-v-if-with-v-for) for details.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous à [style guide](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
-When they exist on the same node, `v-if` has a higher priority than `v-for`. That means the `v-if` condition will not have access to variables from the scope of the `v-for`:
+Lorsqu'ils existent sur le même nœud, `v-if` a une priorité plus importante que `v-for`. Cela signifie que la condition du `v-if` n'aura pas accès aux variables de la portée du `v-for` :
 
 ```vue-html
 <!--
-This will throw an error because property "todo"
-is not defined on instance.
+Une erreur va être levée car la propriété "todo" n'est pas définie sur l'instance.
 -->
 <li v-for="todo in todos" v-if="!todo.isComplete">
   {{ todo.name }}
 </li>
 ```
 
-This can be fixed by moving `v-for` to a wrapping `<template>` tag (which is also more explicit):
+Cela peut être résolu en déplaçant le `v-for` sur une balise `<template>` enveloppante (ce qui est également plus explicite) :
 
 ```vue-html
 <template v-for="todo in todos">
@@ -249,21 +248,21 @@ This can be fixed by moving `v-for` to a wrapping `<template>` tag (which is als
 </template>
 ```
 
-## Maintaining State with `key` {#maintaining-state-with-key}
+## Maintenir l'état avec `key` {#maintaining-state-with-key}
 
-When Vue is updating a list of elements rendered with `v-for`, by default it uses an "in-place patch" strategy. If the order of the data items has changed, instead of moving the DOM elements to match the order of the items, Vue will patch each element in-place and make sure it reflects what should be rendered at that particular index.
+Lorsque Vue met à jour une liste d'éléments rendue avec `v-for`, il utilise par défaut une stratégie de "réparation en place". Si l'ordre des données a changé, au lieu de déplacer les éléments du DOM de manière à respecter l'ordre des items, Vue va réparer chaque élément en place et s'assurer qu'il reflète ce qui devrait être rendu à un index particulier.
 
-This default mode is efficient, but **only suitable when your list render output does not rely on child component state or temporary DOM state (e.g. form input values)**.
+Ce mode par défaut est efficace, mais **seulement approprié lorsque votre rendu de liste ne dépend pas de l'état d'un composant enfant ou de l'état temporaire du DOM (par exemple les valeurs d'entrées d'un formulaire)**.
 
-To give Vue a hint so that it can track each node's identity, and thus reuse and reorder existing elements, you need to provide a unique `key` attribute for each item:
+Pour aiguiller Vue afin qu'il puisse tracer l'identité de chaque nœud, et ainsi réutiliser et réarranger l'ordre des éléments existants, vous devez fournir un attribut `key` unique pour chaque item :
 
 ```vue-html
 <div v-for="item in items" :key="item.id">
-  <!-- content -->
+  <!-- contenu -->
 </div>
 ```
 
-When using `<template v-for>`, the `key` should be placed on the `<template>` container:
+Lorsque vous utilisez `<template v-for>`, la `key` doit être placée sur le conteneur `<template>` :
 
 ```vue-html
 <template v-for="todo in todos" :key="todo.name">
@@ -272,24 +271,24 @@ When using `<template v-for>`, the `key` should be placed on the `<template>` co
 ```
 
 :::tip Note
-`key` here is a special attribute being bound with `v-bind`. It should not be confused with the property key variable when [using `v-for` with an object](#v-for-with-an-object).
+Ici, `key` est un attribut spécial qui est lié avec `v-bind`. Il ne doit pas être confondu avec la variable de clé de propriété utilisée dans le cas d'un [`v-for` avec un objet](#v-for-with-an-object).
 :::
 
-[It is recommended](/style-guide/rules-essential.html#use-keyed-v-for) to provide a `key` attribute with `v-for` whenever possible, unless the iterated DOM content is simple (i.e. contains no components or stateful DOM elements), or you are intentionally relying on the default behavior for performance gains.
+[Il est recommandé](/style-guide/rules-essential.html#use-keyed-v-for) de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
 
-The `key` binding expects primitive values - i.e. strings and numbers. Do not use objects as `v-for` keys. For detailed usage of the `key` attribute, please see the [`key` API documentation](/api/built-in-special-attributes.html#key).
+La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez vous à la [documentation de l'API `key`](/api/built-in-special-attributes.html#key).
 
-## `v-for` with a Component {#v-for-with-a-component}
+## `v-for` avec un composant {#v-for-with-a-component}
 
-> This section assumes knowledge of [Composants](/guide/essentials/component-basics). Feel free to skip it and come back later.
+> Cette section part du principe que vous connaissez déjà les [Composants](/guide/essentials/component-basics). N'hésitez pas à la sauter et à revenir plus tard !
 
-You can directly use `v-for` on a component, like any normal element (don't forget to provide a `key`):
+Vous pouvez utiliser `v-for` directement sur un composant, comme avec n'importe quel élément (n'oubliez pas de fournir une `key`):
 
 ```vue-html
 <MyComponent v-for="item in items" :key="item.id" />
 ```
 
-However, this won't automatically pass any data to the component, because components have isolated scopes of their own. In order to pass the iterated data into the component, we should also use props:
+Toutefois, les données ne vont pas être automatiquement être passées au composant, car les composants ont chacun leur propre portée isolée. Afin de passer la donnée itérée au composant, il faut également utiliser les props :
 
 ```vue-html
 <MyComponent
@@ -300,24 +299,24 @@ However, this won't automatically pass any data to the component, because compon
 />
 ```
 
-The reason for not automatically injecting `item` into the component is because that makes the component tightly coupled to how `v-for` works. Being explicit about where its data comes from makes the component reusable in other situations.
+La raison pour laquelle on n'injecte pas automatiquement `item` dans le composant est que cela rendrait le composant étroitement lié au fonctionnement de `v-for`. Être explicite sur la source d'où proviennent les données rend le composant réutilisable dans d'autres situations.
 
 <div class="composition-api">
 
-Check out [this example of a simple todo list](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5jb25zdCBuZXdUb2RvVGV4dCA9IHJlZignJylcbmNvbnN0IHRvZG9zID0gcmVmKFtcbiAge1xuICAgIGlkOiAxLFxuICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgfSxcbiAge1xuICAgIGlkOiAyLFxuICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICB9LFxuICB7XG4gICAgaWQ6IDMsXG4gICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gIH1cbl0pXG5cbmxldCBuZXh0VG9kb0lkID0gNFxuXG5mdW5jdGlvbiBhZGROZXdUb2RvKCkge1xuICB0b2Rvcy52YWx1ZS5wdXNoKHtcbiAgICBpZDogbmV4dFRvZG9JZCsrLFxuICAgIHRpdGxlOiBuZXdUb2RvVGV4dC52YWx1ZVxuICB9KVxuICBuZXdUb2RvVGV4dC52YWx1ZSA9ICcnXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuXHQ8Zm9ybSB2LW9uOnN1Ym1pdC5wcmV2ZW50PVwiYWRkTmV3VG9kb1wiPlxuICAgIDxsYWJlbCBmb3I9XCJuZXctdG9kb1wiPkFkZCBhIHRvZG88L2xhYmVsPlxuICAgIDxpbnB1dFxuICAgICAgdi1tb2RlbD1cIm5ld1RvZG9UZXh0XCJcbiAgICAgIGlkPVwibmV3LXRvZG9cIlxuICAgICAgcGxhY2Vob2xkZXI9XCJFLmcuIEZlZWQgdGhlIGNhdFwiXG4gICAgLz5cbiAgICA8YnV0dG9uPkFkZDwvYnV0dG9uPlxuICA8L2Zvcm0+XG4gIDx1bD5cbiAgICA8dG9kby1pdGVtXG4gICAgICB2LWZvcj1cIih0b2RvLCBpbmRleCkgaW4gdG9kb3NcIlxuICAgICAgOmtleT1cInRvZG8uaWRcIlxuICAgICAgOnRpdGxlPVwidG9kby50aXRsZVwiXG4gICAgICBAcmVtb3ZlPVwidG9kb3Muc3BsaWNlKGluZGV4LCAxKVwiXG4gICAgPjwvdG9kby1pdGVtPlxuICA8L3VsPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiVG9kb0l0ZW0udnVlIjoiPHNjcmlwdCBzZXR1cD5cbmRlZmluZVByb3BzKFsndGl0bGUnXSlcbmRlZmluZUVtaXRzKFsncmVtb3ZlJ10pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8bGk+XG4gICAge3sgdGl0bGUgfX1cbiAgICA8YnV0dG9uIEBjbGljaz1cIiRlbWl0KCdyZW1vdmUnKVwiPlJlbW92ZTwvYnV0dG9uPlxuICA8L2xpPlxuPC90ZW1wbGF0ZT4ifQ==) to see how to render a list of components using `v-for`, passing different data to each instance.
+Regardez [this example of a simple todo list](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5jb25zdCBuZXdUb2RvVGV4dCA9IHJlZignJylcbmNvbnN0IHRvZG9zID0gcmVmKFtcbiAge1xuICAgIGlkOiAxLFxuICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgfSxcbiAge1xuICAgIGlkOiAyLFxuICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICB9LFxuICB7XG4gICAgaWQ6IDMsXG4gICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gIH1cbl0pXG5cbmxldCBuZXh0VG9kb0lkID0gNFxuXG5mdW5jdGlvbiBhZGROZXdUb2RvKCkge1xuICB0b2Rvcy52YWx1ZS5wdXNoKHtcbiAgICBpZDogbmV4dFRvZG9JZCsrLFxuICAgIHRpdGxlOiBuZXdUb2RvVGV4dC52YWx1ZVxuICB9KVxuICBuZXdUb2RvVGV4dC52YWx1ZSA9ICcnXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuXHQ8Zm9ybSB2LW9uOnN1Ym1pdC5wcmV2ZW50PVwiYWRkTmV3VG9kb1wiPlxuICAgIDxsYWJlbCBmb3I9XCJuZXctdG9kb1wiPkFkZCBhIHRvZG88L2xhYmVsPlxuICAgIDxpbnB1dFxuICAgICAgdi1tb2RlbD1cIm5ld1RvZG9UZXh0XCJcbiAgICAgIGlkPVwibmV3LXRvZG9cIlxuICAgICAgcGxhY2Vob2xkZXI9XCJFLmcuIEZlZWQgdGhlIGNhdFwiXG4gICAgLz5cbiAgICA8YnV0dG9uPkFkZDwvYnV0dG9uPlxuICA8L2Zvcm0+XG4gIDx1bD5cbiAgICA8dG9kby1pdGVtXG4gICAgICB2LWZvcj1cIih0b2RvLCBpbmRleCkgaW4gdG9kb3NcIlxuICAgICAgOmtleT1cInRvZG8uaWRcIlxuICAgICAgOnRpdGxlPVwidG9kby50aXRsZVwiXG4gICAgICBAcmVtb3ZlPVwidG9kb3Muc3BsaWNlKGluZGV4LCAxKVwiXG4gICAgPjwvdG9kby1pdGVtPlxuICA8L3VsPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiVG9kb0l0ZW0udnVlIjoiPHNjcmlwdCBzZXR1cD5cbmRlZmluZVByb3BzKFsndGl0bGUnXSlcbmRlZmluZUVtaXRzKFsncmVtb3ZlJ10pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8bGk+XG4gICAge3sgdGl0bGUgfX1cbiAgICA8YnV0dG9uIEBjbGljaz1cIiRlbWl0KCdyZW1vdmUnKVwiPlJlbW92ZTwvYnV0dG9uPlxuICA8L2xpPlxuPC90ZW1wbGF0ZT4ifQ==) to see how to render a list of components using `v-for`, passing different data to each instance.
 
 </div>
 <div class="options-api">
 
-Check out [this example of a simple todo list](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5leHBvcnQgZGVmYXVsdCB7XG4gIGNvbXBvbmVudHM6IHsgVG9kb0l0ZW0gfSxcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbmV3VG9kb1RleHQ6ICcnLFxuICAgICAgdG9kb3M6IFtcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAxLFxuICAgICAgICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAyLFxuICAgICAgICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWQ6IDMsXG4gICAgICAgICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gICAgICAgIH1cbiAgICAgIF0sXG4gICAgICBuZXh0VG9kb0lkOiA0XG4gICAgfVxuICB9LFxuICBtZXRob2RzOiB7XG4gICAgYWRkTmV3VG9kbygpIHtcbiAgICAgIHRoaXMudG9kb3MucHVzaCh7XG4gICAgICAgIGlkOiB0aGlzLm5leHRUb2RvSWQrKyxcbiAgICAgICAgdGl0bGU6IHRoaXMubmV3VG9kb1RleHRcbiAgICAgIH0pXG4gICAgICB0aGlzLm5ld1RvZG9UZXh0ID0gJydcbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxmb3JtIHYtb246c3VibWl0LnByZXZlbnQ9XCJhZGROZXdUb2RvXCI+XG4gICAgPGxhYmVsIGZvcj1cIm5ldy10b2RvXCI+QWRkIGEgdG9kbzwvbGFiZWw+XG4gICAgPGlucHV0XG4gICAgICB2LW1vZGVsPVwibmV3VG9kb1RleHRcIlxuICAgICAgaWQ9XCJuZXctdG9kb1wiXG4gICAgICBwbGFjZWhvbGRlcj1cIkUuZy4gRmVlZCB0aGUgY2F0XCJcbiAgICAvPlxuICAgIDxidXR0b24+QWRkPC9idXR0b24+XG4gIDwvZm9ybT5cbiAgPHVsPlxuICAgIDx0b2RvLWl0ZW1cbiAgICAgIHYtZm9yPVwiKHRvZG8sIGluZGV4KSBpbiB0b2Rvc1wiXG4gICAgICA6a2V5PVwidG9kby5pZFwiXG4gICAgICA6dGl0bGU9XCJ0b2RvLnRpdGxlXCJcbiAgICAgIEByZW1vdmU9XCJ0b2Rvcy5zcGxpY2UoaW5kZXgsIDEpXCJcbiAgICA+PC90b2RvLWl0ZW0+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJUb2RvSXRlbS52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuXHRwcm9wczogWyd0aXRsZSddLFxuICBlbWl0czogWydyZW1vdmUnXVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGxpPlxuICAgIHt7IHRpdGxlIH19XG4gICAgPGJ1dHRvbiBAY2xpY2s9XCIkZW1pdCgncmVtb3ZlJylcIj5SZW1vdmU8L2J1dHRvbj5cbiAgPC9saT5cbjwvdGVtcGxhdGU+In0=) to see how to render a list of components using `v-for`, passing different data to each instance.
+Consultez [cet exemple d'une simple todo liste](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBUb2RvSXRlbSBmcm9tICcuL1RvZG9JdGVtLnZ1ZSdcbiAgXG5leHBvcnQgZGVmYXVsdCB7XG4gIGNvbXBvbmVudHM6IHsgVG9kb0l0ZW0gfSxcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbmV3VG9kb1RleHQ6ICcnLFxuICAgICAgdG9kb3M6IFtcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAxLFxuICAgICAgICAgIHRpdGxlOiAnRG8gdGhlIGRpc2hlcydcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGlkOiAyLFxuICAgICAgICAgIHRpdGxlOiAnVGFrZSBvdXQgdGhlIHRyYXNoJ1xuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWQ6IDMsXG4gICAgICAgICAgdGl0bGU6ICdNb3cgdGhlIGxhd24nXG4gICAgICAgIH1cbiAgICAgIF0sXG4gICAgICBuZXh0VG9kb0lkOiA0XG4gICAgfVxuICB9LFxuICBtZXRob2RzOiB7XG4gICAgYWRkTmV3VG9kbygpIHtcbiAgICAgIHRoaXMudG9kb3MucHVzaCh7XG4gICAgICAgIGlkOiB0aGlzLm5leHRUb2RvSWQrKyxcbiAgICAgICAgdGl0bGU6IHRoaXMubmV3VG9kb1RleHRcbiAgICAgIH0pXG4gICAgICB0aGlzLm5ld1RvZG9UZXh0ID0gJydcbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxmb3JtIHYtb246c3VibWl0LnByZXZlbnQ9XCJhZGROZXdUb2RvXCI+XG4gICAgPGxhYmVsIGZvcj1cIm5ldy10b2RvXCI+QWRkIGEgdG9kbzwvbGFiZWw+XG4gICAgPGlucHV0XG4gICAgICB2LW1vZGVsPVwibmV3VG9kb1RleHRcIlxuICAgICAgaWQ9XCJuZXctdG9kb1wiXG4gICAgICBwbGFjZWhvbGRlcj1cIkUuZy4gRmVlZCB0aGUgY2F0XCJcbiAgICAvPlxuICAgIDxidXR0b24+QWRkPC9idXR0b24+XG4gIDwvZm9ybT5cbiAgPHVsPlxuICAgIDx0b2RvLWl0ZW1cbiAgICAgIHYtZm9yPVwiKHRvZG8sIGluZGV4KSBpbiB0b2Rvc1wiXG4gICAgICA6a2V5PVwidG9kby5pZFwiXG4gICAgICA6dGl0bGU9XCJ0b2RvLnRpdGxlXCJcbiAgICAgIEByZW1vdmU9XCJ0b2Rvcy5zcGxpY2UoaW5kZXgsIDEpXCJcbiAgICA+PC90b2RvLWl0ZW0+XG4gIDwvdWw+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJUb2RvSXRlbS52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuXHRwcm9wczogWyd0aXRsZSddLFxuICBlbWl0czogWydyZW1vdmUnXVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGxpPlxuICAgIHt7IHRpdGxlIH19XG4gICAgPGJ1dHRvbiBAY2xpY2s9XCIkZW1pdCgncmVtb3ZlJylcIj5SZW1vdmU8L2J1dHRvbj5cbiAgPC9saT5cbjwvdGVtcGxhdGU+In0=) to see how to render a list of components using `v-for`, passing different data to each instance.
 
 </div>
 
-## Array Change Detection {#array-change-detection}
+## Détection des changements pour un tableau {#array-change-detection}
 
-### Mutation Methods {#mutation-methods}
+### Méthodes de mutation {#mutation-methods}
 
-Vue is able to detect when a reactive array's mutation methods are called and trigger necessary updates. These mutation methods are:
+Vue est capable de détecter quand une méthode de mutation d'un tableau réactif est appelée et d'engendrer les mises à jour nécessaires. Ces méthodes de mutation sont :
 
 - `push()`
 - `pop()`
@@ -327,14 +326,14 @@ Vue is able to detect when a reactive array's mutation methods are called and tr
 - `sort()`
 - `reverse()`
 
-### Replacing an Array {#replacing-an-array}
+### Remplacer un tableau {#replacing-an-array}
 
-Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. `filter()`, `concat()` and `slice()`, which do not mutate the original array but **always return a new array**. When working with non-mutating methods, we should replace the old array with the new one:
+Les méthodes de mutation, comme leur nom l'indique, vont entrainer des mutations du tableau sur lequel elles sont appelées. En comparaison, il existe également des méthodes non-mutantes, par exemple `filter()`, `concat()` et `slice()`, qui ne modifie pas le tableau original mais **retournent toujours un nouveau tableau**. Lorsqu'on travaille avec des méthodes non-mutantes, il faut remplacer l'ancien tableau par le nouveau :
 
 <div class="composition-api">
 
 ```js
-// `items` is a ref with array value
+// `items` est une ref qui a pour valeur un tableau
 items.value = items.value.filter((item) => item.message.match(/Foo/))
 ```
 
@@ -347,13 +346,13 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 </div>
 
-You might think this will cause Vue to throw away the existing DOM and re-render the entire list - luckily, that is not the case. Vue implements some smart heuristics to maximize DOM element reuse, so replacing an array with another array containing overlapping objects is a very efficient operation.
+On pourrait penser que cela va pousser Vue à se débarrasser du DOM actuel et à rendre à nouveau toute la liste - heureusement, ça n'est pas le cas. Vue implémente des heuristiques intelligentes afin de maximiser la réutilisation des éléments du DOM, de manière à ce que remplacer un tableau par un autre tableau composé en partie des mêmes éléments soit une opération très efficace.
 
-## Displaying Filtered/Sorted Results {#displaying-filtered-sorted-results}
+## Afficher des résultats filtrés/triés  {#displaying-filtered-sorted-results}
 
-Sometimes we want to display a filtered or sorted version of an array without actually mutating or resetting the original data. In this case, you can create a computed property that returns the filtered or sorted array.
+Il arrive parfois que nous voulions afficher une version filtrée ou triée d'un tableau sans muter ou remettre à zéro les données originales. Dans ce cas, on peut créer une propriété calculée qui retourne le tableau filtré ou trié.
 
-For example:
+Par exemple:
 
 <div class="composition-api">
 
@@ -387,7 +386,7 @@ computed: {
 <li v-for="n in evenNumbers">{{ n }}</li>
 ```
 
-In situations where computed properties are not feasible (e.g. inside nested `v-for` loops), you can use a method:
+Dans les situations où les propriétés calculées ne sont pas envisageables (par exemple dans des boucles imbriquées `v-for`), vous pouvez utiliser une méthode :
 
 <div class="composition-api">
 
@@ -426,7 +425,7 @@ methods: {
 </ul>
 ```
 
-Be careful with `reverse()` and `sort()` in a computed property! These two methods will mutate the original array, which should be avoided in computed getters. Create a copy of the original array before calling these methods:
+Faites attention à `reverse()` et `sort()` dans une propriété calculée ! Ces deux méthodes vont muter le tableau original, ce qui doit être évité dans des accesseurs calculés. Créez plutôt une copie du tableau originale avant d'appeler ces méthodes :
 
 ```diff
 - return numbers.reverse()
