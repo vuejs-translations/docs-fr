@@ -175,7 +175,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Les hooks du cycle de vie',
           link: '/guide/essentials/lifecycle'
         },
         { text: 'Observateurs', link: '/guide/essentials/watchers' },
@@ -364,7 +364,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Les hooks du cycle de vie',
           link: '/api/composition-api-lifecycle'
         },
         {

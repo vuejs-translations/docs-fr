@@ -95,6 +95,6 @@ createApp({
 </div>
 </div>
 
-Ceci est appelé un **cycle de vie** - cela permet d'enregister un callback qui sera appelé à certains moment du cycle de vie du composant. Il y a d'autres cycles tels que <span class="options-api">`created` et `updated`</span><span class="composition-api">`onUpdated` et `onUnmounted`</span>. Consultez <a target="_blank" href="/guide/essentials/lifecycle.html#lifecycle-diagram">Le diagramme du cycle de vie</a> pour davantage de détails.
+Ceci est appelé un **cycle de vie** - cela permet d'enregistrer un callback qui sera appelé à certains moment du cycle de vie du composant. Il y a d'autres cycles tels que <span class="options-api">`created` et `updated`</span><span class="composition-api">`onUpdated` et `onUnmounted`</span>. Consultez <a target="_blank" href="/guide/essentials/lifecycle.html#lifecycle-diagram">Le diagramme du cycle de vie</a> pour davantage de détails.
 
 Maintenant, essayez d'ajouter un cycle de vie <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>, d'accéder au `<p>` via <span class="options-api">`this.$refs.p`</span><span class="composition-api">`p.value`</span>, et d'effectuer quelques opérations directes sur le DOM (ex. changer le `textContent`).
