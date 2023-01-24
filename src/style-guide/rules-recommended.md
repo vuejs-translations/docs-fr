@@ -81,7 +81,7 @@ This is the default order we recommend for component options. They're split into
 
    - `is`
 
-2. **List Rendering** (creates multiple variations of the same element)
+2. **Rendu de liste** (creates multiple variations of the same element)
 
    - `v-for`
 

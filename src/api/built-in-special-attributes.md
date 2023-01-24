@@ -35,7 +35,7 @@ The `key` special attribute is primarily used as a hint for Vue's virtual DOM al
 
   When `text` changes, the `<span>` will always be replaced instead of patched, so a transition will be triggered.
 
-- **See also:** [Guide - List Rendering - Maintaining State with `key`](/guide/essentials/list.html#maintaining-state-with-key)
+- **See also:** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list.html#maintaining-state-with-key)
 
 ## ref {#ref}
 
