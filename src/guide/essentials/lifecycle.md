@@ -35,7 +35,7 @@ Il y a également d'autres hooks qui peuvent être appelés à différentes éta
 
 <div class="options-api">
 
-Tous les hooks du cycle de vie sont appelés via leur contexte `this` qui pointe sur l'instance active actuelle qui l'invoque. Notez que vous devez éviter d'utiliser les fonctions fléchées lorsque vous déclarer des hooks du cycle de vie, puisque dans ce cas vous ne pourrez pas accéder à l'instance du composant via `this`.
+Tous les hooks du cycle de vie sont appelés via leur contexte `this` qui pointe sur l'instance active actuelle qui l'invoque. Notez que vous devez éviter d'utiliser les fonctions fléchées lorsque vous déclarez des hooks du cycle de vie, puisque dans ce cas vous ne pourrez pas accéder à l'instance du composant via `this`.
 
 </div>
 
