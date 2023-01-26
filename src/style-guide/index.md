@@ -5,7 +5,7 @@ outline: deep
 # Bonnes pratiques {#style-guide}
 
 :::warning Remarque sur la situation
-Le guide des bonnes pratiques est actuellement un peu dépassé. La plupart des exemples sont en Options API seulement, et il n'y a pas de règles concernant `<script setup>` et la Composition API. Nous prévoyons d'améliorer cela dans le futur.
+Le guide des bonnes pratiques n'est plus tout à fait à jour. La plupart des exemples sont en Options API seulement, et il n'y a pas de règles concernant `<script setup>` et la Composition API. Nous prévoyons d'améliorer cela dans le futur.
 :::
 
 Voici le guide de style officiel pour du code spécifique à Vue. Si vous travaillez sur un projet Vue, c'est une super référence pour éviter les erreurs, les pertes de temps, et les anti-patterns. Toutefois, nous ne pensons pas que des bonnes pratiques puisse être idéales pour n'importe quelle équipe ou projet, donc les écarts faits en pleine conscience en fonction de votre expérience, la pile technique environnante, et vos valeurs personnelles sont encouragés.
@@ -22,7 +22,7 @@ Ces règles aident à prévenir les erreurs, donc apprenez les et tenez-y vous c
 
 - [Voir toutes les règles de priorité A](./rules-essential)
 
-### Priorité B: Fortement recommandée{#priority-b-strongly-recommended}
+### Priorité B: Fortement recommandée {#priority-b-strongly-recommended}
 
 Ces règles ont été pensées pour améliorer la lisibilité et/ou l'expérience des développeurs dans la plupart des projets. Votre code fonctionnera toujours sans elles, mais les digressions doivent être rares et bien justifiées.
 
