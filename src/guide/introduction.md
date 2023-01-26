@@ -6,8 +6,8 @@ footer: false
 
 :::info Vous êtes en train de lire la documentation de Vue 3
 
-- La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
 - Le support de Vue 2 se termine le 31 décembre 2023. En savoir plus sur [Vue 2 Extended LTS](https://v2.vuejs.org/lts/).
+- La documentation de Vue 2 est désormais disponible sur [v2.vuejs.org](https://v2.vuejs.org/).
 - Vous souhaitez migrer depuis Vue 2 ? Jetez un oeil sur [le guide de migration (EN)](https://v3-migration.vuejs.org/).
   :::
 

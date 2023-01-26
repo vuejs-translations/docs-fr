@@ -4,6 +4,8 @@
 
 Les composants monofichiers (aussi appelés Single-File Components, abrégés en **SFC** avec une extension `.vue`) est un format de fichier spécial qui permet de regrouper la structure HTML, la logique JavaScript **et** le style CSS d'un composant Vue dans un seul fichier. Voici un exemple d'un SFC :
 
+<div class="options-api">
+
 ```vue
 <script>
 export default {
@@ -27,7 +29,31 @@ export default {
 </style>
 ```
 
-Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [Spécification de syntaxe SFC](/api/sfc-spec).
+</div>
+
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const greeting = ref('Hello World!')
+</script>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+.greeting {
+  color: red;
+  font-weight: bold;
+}
+</style>
+```
+
+</div>
+
+Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio classique HTML, CSS et JavaScript. Les blocs `<template>`, `<script>` et `<style>` encapsulent et regroupent la vue, la logique et le style d'un composant dans le même fichier. La syntaxe complète est définie dans la [Spécification de la syntaxe SFC](/api/sfc-spec).
 
 ## Pourquoi les composants monofichiers (SFC) {#why-sfc}
 

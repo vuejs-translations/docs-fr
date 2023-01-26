@@ -434,7 +434,7 @@ Declare the custom events emitted by the component.
   ```
 
 - **See also:**
-  - [Attributs implicitement déclarés](/guide/components/attrs.html)
+  - [Guide - Attributs implicitement déclarés](/guide/components/attrs.html)
   - [Guide - Typing Component Emits](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 ## expose {#expose}

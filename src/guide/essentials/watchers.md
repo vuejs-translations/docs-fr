@@ -220,11 +220,11 @@ watch(
 Les observateurs profonds nécessitent de traverser toutes les propriétés imbriquées de l'objet observé, et peuvent être consommateur de ressources lorsqu'ils sont utilisés sur des structures importantes de données. Utilisez les seulement si nécessaire, en ayant conscience des implications en matière de performances.
 :::
 
-<div class="options-api">
-
-## Les observateurs impatients \* {#eager-watchers}
+## Les observateurs impatients {#eager-watchers}
 
 `watch` est par défaut paresseux : la fonction de rappel ne sera pas appelée tant que la source observée n'aura pas changé. Mais dans certains cas, on peut souhaiter que cette même logique de rappel soit exécutée de manière précoce - par exemple, on peut vouloir récupérer des données initiales, puis les récupérer de nouveau chaque fois qu'un état pertinent change.
+
+<div class="options-api">
 
 Nous pouvons forcer la fonction de rappel d'un observateur à être exécutée immédiatement en la déclarant via un objet avec une fonction de gestion et l'option `immediate: true` : 
 
@@ -244,42 +244,60 @@ export default {
 }
 ```
 
-L'exécution initiale d'une fonction de gestion aura lieu juste avant le hook `créé`. Vue aura déjà traité les options `data`, `computed`, et `méthodes`, donc ces propriétés seront disponibles à la première invocation.
+L'exécution initiale d'une fonction de gestion aura lieu juste avant le hook `created`. Vue aura déjà traité les options `data`, `computed`, et `méthodes`, donc ces propriétés seront disponibles à la première invocation.
+  
+</div>
+
+<div class="composition-api">
+
+Nous pouvons forcer l'exécution immédiate d'un observateur en passant l'option `immediate: true` :
+
+```js
+watch(source, (newValue, oldValue) => {
+  // exécuté immédiatement, à nouveau quand la `source` changera
+}, { immediate: true })
+```
+
 </div>
 
 <div class="composition-api">
 
 ## `watchEffect()` \*\* {#watcheffect}
 
-`watch` est paresseux : la fonction de rappel ne sera pas appelée tant que la source observée n'aura pas changé. Mais dans certains cas, on peut souhaiter que cette même logique de rappel soit exécutée de manière précoce - par exemple, on peut vouloir récupérer des données initiales, puis les récupérer de nouveau chaque fois qu'un état pertinent change. On sera retrouvera alors à faire cela :
+Il est commun pour la fonction de l'observateur d'utiliser exactement le même état réactif comme source. Par exemple, considérez le code suivant, qui utiliser un observateur pour charger une ressource distante à chaque changement de la ref `todoId` :
 
 ```js
-const url = ref('https://...')
+const todoId = ref(1)
 const data = ref(null)
 
-async function fetchData() {
-  const response = await fetch(url.value)
+watch(todoId, async () => {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+  )
   data.value = await response.json()
-}
-
-// récupération immédiate
-fetchData()
-// ...puis observation d'un changement d'url
-watch(url, fetchData)
+}, { immediate: true })
 ```
+
+En particulier, remarquez comment l'observateur utilise doublement `todoId`, une fois comme source, ensuite à nouveau à l'intérieur de la fonction.
+
+This can be simplified with [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` allows us to track the callback's reactive dependencies automatically. The watcher above can be rewritten as:
 
 Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` nous permet d'effectuer des effets de bord immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
 
 ```js
 watchEffect(async () => {
-  const response = await fetch(url.value)
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${todoId.value}`
+  )
   data.value = await response.json()
 })
 ```
 
-Ici, la fonction sera immédiatement exécutée. Pendant son exécution, il va automatiquement traquer `url.value` en tant que dépendance (de la même manière qu'avec les propriétés calculées). Chaque fois que `url.value` change, le rappel sera exécuté de nouveau.
+Ici, la fonction sera exécutée immédiatement, il n'y a pas besoin de spécifier `immediate : true`. Pendant son exécution, elle suivra automatiquement `todoId.value` comme une dépendance (similaire aux propriétés calculées). Chaque fois que `todoId.value` change, la fonction sera exécutée à nouveau. Avec `watchEffect()`, nous n'avons plus besoin de passer explicitement `todoId` comme source.
 
 Vous pouvez vous référer à [cet exemple](/examples/#fetching-data) avec `watchEffect` et une récupération de données en action.
+
+Pour des exemples comme ceux-ci, avec une seule dépendance, le bénéfice de `watchEffect()` est relativement faible. Mais pour les surveillances qui ont plusieurs dépendances, l'utilisation de `watchEffect()` supprime la charge de maintenir la liste des dépendances manuellement. De plus, si vous devez surveiller plusieurs propriétés dans une structure de données imbriquée, `watchEffect()` peut s'avérer plus efficace qu'un observateur profond, car il ne suivra que les propriétés qui sont utilisées dans la fonction, plutôt que de les suivre toutes de manière récursive.
 
 :::tip
 `watchEffect` traque les dépendances seulement pendant son exécution **synchrone**. Lorsque vous l'utilisez avec un rappel asynchrone, seules les propriétés accédées avant le premier événement `await` seront traquées.

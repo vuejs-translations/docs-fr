@@ -554,7 +554,7 @@ Vue utilisera `instanceof Person` pour valider si la valeur de la prop `author` 
 
 ## Conversion en booléen {#boolean-casting}
 
-Les props avec le type `Boolean` ont des règles de conversion spéciales pour imiter le comportement des attributs booléens natifs. Étant donné un composant `<MyComponent>` avec la déclaration suivante :
+Les props avec le type `Boolean` ont des règles de conversion spéciales pour imiter le comportement des attributs booléens natifs. Admettons un composant `<MyComponent>` avec la déclaration suivante :
 
 <div class="composition-api">
 
