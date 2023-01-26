@@ -4,7 +4,7 @@ Vue utilise une syntaxe de template basée sur HTML pour permettre de lier de ma
 
 Sous le capot, Vue compile les templates en code JavaScript hautement optimisé. Combiné avec le système de réactivité, Vue est capable de déterminer intelligemment le nombre minimal de composants à restituer et d'appliquer la quantité minimale de manipulations DOM lorsque l'état de l'application change.
 
-Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [TODO(fr)écrire directement des fonctions de rendu](/guide/extras/render-function.html) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'ils ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
+Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [écrire directement des fonctions de rendu](/guide/extras/render-function.html) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'elles ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
 
 ## Interpolation de texte {#text-interpolation}
 
@@ -14,11 +14,11 @@ La forme la plus élémentaire de liaison de données est l'interpolation de tex
 <span>Message : {{ msg }}</span>
 ```
 
-La balise moustache sera remplacée par la valeur de la propriété `msg` de l'instance de composant correspondante. Il sera également mis à jour chaque fois que la propriété `msg` changera.
+La balise moustache sera remplacée par la valeur de la propriété `msg` de l'instance de composant correspondante. Elle sera également mis à jour chaque fois que la propriété `msg` changera.
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [TODO(fr)`v-html`](/api/built-in-directives.html#v-html):
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives.html#v-html):
 
 ```vue-html
 <p>Utilisation de l'interpolation de texte : {{ htmlBrut }}</p>
@@ -39,12 +39,12 @@ Ici, nous rencontrons quelque chose de nouveau. L'attribut `v-html` que vous voy
 Le contenu de `span` sera remplacé par la valeur de la propriété `htmlBrut`, interprétée comme du HTML simple - les liaisons de données sont ignorées. Notez que vous ne pouvez pas utiliser `v-html` pour composer des templates partiels, car Vue n'est pas un moteur de template basé sur des chaînes de caractères. Au lieu de cela, les composants sont préférés comme unité fondamentale pour la réutilisation et la composition de l'interface utilisateur.
 
 :::warning Avertissement de sécurité
-L'affichage dynamique de code HTML arbitraire sur votre site Web peut être très dangereux, car il peut facilement entraîner des [TODO(fr)vulnérabilités XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). N'utilisez `v-html` que sur le contenu de confiance et **jamais** sur le contenu fourni par l'utilisateur.
+L'affichage dynamique de code HTML arbitraire sur votre site Web peut être très dangereux, car il peut facilement entraîner des [vulnérabilités XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). N'utilisez `v-html` que sur le contenu de confiance et **jamais** sur le contenu fourni par l'utilisateur.
 :::
 
 ## Liaisons d'attributs {#attribute-bindings}
 
-Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [TODO(fr)`v-bind`](/api/built-in-directives.html#v-bind) :
+Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [`v-bind`](/api/built-in-directives.html#v-bind) :
 
 ```vue-html
 <div v-bind:id="idDynamique"></div>
@@ -162,9 +162,9 @@ Les fonctions appelées à l'intérieur des expressions de liaison seront appel�
 
 ### Accès global restreint {#restricted-globals-access}
 
-Les expressions de template sont en bac à sable et n'ont accès qu'à une [TODO(fr)liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
+Les expressions de template sont en bac à sable et n'ont accès qu'à une [liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
 
-Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [TODO(fr)`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
 ## Directives {#directives}
 
@@ -261,7 +261,7 @@ Les modificateurs sont des suffixes spéciaux désignés par un point, qui indiq
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Vous verrez d'autres exemples de modificateurs plus tard, [TODO(fr)pour `v-on`](./event-handling.html#event-modifiers) et [TODO(fr)pour `v-model`](./forms.html#modifiers), lorsque nous explorons ces fonctionnalités.
+Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-handling.html#event-modifiers) et [pour `v-model`](./forms.html#modifiers), lorsque nous explorons ces fonctionnalités.
 
 Et enfin, voici la syntaxe complète de la directive visualisée :
 
