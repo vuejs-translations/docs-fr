@@ -30,7 +30,7 @@ Ces règles ont été pensées pour améliorer la lisibilité et/ou l'expérienc
 
 ### Priorité C: Recommandée {#priority-c-recommended}
 
-Lorsqu'il existe plusieurs options correctes, un choix arbitraire peut être fait pour assurer une certaine cohérence. Dans ces règles, nous décrivons chaque option acceptable et suggérons un choix par défaut. Cela signifie que vous être libres de faire un choix différent dans votre code, tant que vous restez cohérent et avez une bonne raison. Je vous en prie, ayez une bonne raison ! En adaptant les standards de la communauté, vous allez :
+Lorsqu'il existe plusieurs options correctes, un choix arbitraire peut être fait pour assurer une certaine cohérence. Dans ces règles, nous décrivons chaque option acceptable et suggérons un choix par défaut. Cela signifie que vous être libres de faire un choix différent dans votre code, tant que vous restez cohérent et avez une bonne raison. Vous avez certainement une bonne raison ! En adaptant les standards de la communauté, vous allez :
 
 1. Entraîner votre cerveau à analyser plus facilement la plupart du code que vous rencontrerez
 2. Serez capable de copier et coller la plupart du code de la communauté sans modification
