@@ -224,7 +224,7 @@ Comme le modèle `v-if`, vous pouvez aussi utiliser une balise `<template>` avec
 ## `v-for` avec `v-if` {#v-for-with-v-if}
 
 :::warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous à [style guide](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous aux [bonnes pratiques](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
 Lorsqu'ils existent sur le même nœud, `v-if` a une priorité plus importante que `v-for`. Cela signifie que la condition du `v-if` n'aura pas accès aux variables de la portée du `v-for` :
