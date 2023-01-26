@@ -530,7 +530,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ],
   '/style-guide/': [
     {
-      text: 'Style Guide',
+      text: 'Bonnes pratiques',
       items: [
         {
           text: 'Overview',
