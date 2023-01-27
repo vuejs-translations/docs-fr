@@ -91,7 +91,7 @@ Mais il ne contiendront **jamais** des états globaux (par exemple, provenant de
 
 Leurs noms incluent souvent le nom d'un élément qu'ils encapsulent (par exemple, `BaseButton`, `BaseTable`), à moins qu'aucun élément n'existe pour leur usage spécifique (par exemple `BaseIcon`). Si vous créer des composants similaires pour un contexte plus spécifique, ils utiliseront presque toujours ces composants (par exemple, `BaseButton` peut être utilisé dans `ButtonSubmit`).
 
-Quelques avantages de cette convention:
+Quelques avantages de cette convention :
 
 - Lorsqu'ils sont classés par ordre alphabétique dans les éditeurs, les composants de base de votre application sont tous répertoriés ensemble, ce qui facilite leur identification.
 
@@ -213,7 +213,7 @@ components/
 |- TodoList.vue
 ```
 
-Ceci n'est pas récommandé, car pourrait entrainer:
+Ceci n'est pas recommandé, car pourrait entraîner :
 
 - De nombreux fichiers avec des noms similaires, ce qui rend le changement rapide de fichier dans les éditeurs de code plus difficile.
 - De nombreux sous-répertoires imbriqués, ce qui augmente le temps nécessaire pour parcourir les composants dans la barre latérale d'un éditeur.
@@ -260,11 +260,11 @@ components/
 **Les noms des composants doivent commencer par les mots de plus haut niveau (souvent les plus généraux) et se terminer par des mots de modification descriptifs.**
 
 ::: details Explication Détaillée
-Vous vous démandez peut-être:
+Vous vous demandez peut-être :
 
 > "Pourquoi forcerions-nous les noms de composants à utiliser un langage moins naturel?"
 
-En anglais naturel, les adjectifs et autres descripteurs apparaissent généralement avant les noms, tandis que les exceptions nécessitent des mots connecteurs. Par exemple:
+En anglais naturel, les adjectifs et autres descripteurs apparaissent généralement avant les noms, tandis que les exceptions nécessitent des mots connecteurs. Par exemple :
 
 - Coffee _with_ milk
 - Soup _of the_ day
@@ -298,7 +298,7 @@ components/
 
 Étant donné que les éditeurs organisent généralement les fichiers par ordre alphabétique, toutes les relations importantes entre les composants sont désormais évidentes en un coup d'œil.
 
-Vous pourriez être tenté de résoudre ce problème différemment, en imbriquant tous les composants de recherche dans un répertoire "recherche", puis tous les composants de paramètres dans un répertoire "paramètres". Nous vous recommandons de ne considérer cette approche que dans les très grandes applications (par exemple, plus de 100 composants), pour les raisons suivantes:
+Vous pourriez être tenté de résoudre ce problème différemment, en imbriquant tous les composants de recherche dans un répertoire "recherche", puis tous les composants de paramètres dans un répertoire "paramètres". Nous vous recommandons de ne considérer cette approche que dans les très grandes applications (par exemple, plus de 100 composants), pour les raisons suivantes :
 
 - Il faut généralement plus de temps pour naviguer dans les sous-répertoires imbriqués que pour parcourir un seul répertoire components.
 - Les conflits de nom (par exemple, plusieurs composants ButtonDelete.vue) rendent plus difficile la navigation rapide vers un composant spécifique dans un éditeur de code.
@@ -377,7 +377,7 @@ Malheuresement, HTML n'autorise pas que les éléments personnalisés soient aut
 
 **Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc.html) et dans les string templates - mais en kebab-case dans les templates du DOM.**
 
-PascalCase a quelques avantages par rapport au kebab-case:
+PascalCase a quelques avantages par rapport au kebab-case :
 
 - Les éditeurs peuvent compléter automatiquement les noms de composants dans les templates, car le PascalCase est également utilisé en JavaScript.
 - `<MyComponent>` est visuellement plus distinct d'un élément HTML que `<my-component>`, car il y a deux différences de caractères (les deux majuscules), plutôt qu'une seule (un trait d'union).
@@ -420,10 +420,10 @@ Notez également que si vous êtes déjà beaucoup investi dans l'usage du kebab
 <my-component></my-component>
 ```
 
-OR
+OU
 
 ```vue-html
-<!-- Everywhere -->
+<!-- Partout -->
 <my-component></my-component>
 ```
 
@@ -438,7 +438,7 @@ En JavaScript, le PascalCase est la convention pour les classes et les construct
 
 Comme avantage supplémentaire, l'utilisation de PascalCase dans JSX (et les templates) permet aux gens qui lisent le code de distinguer plus facilement les composants et les éléments HTML.
 
-Cependant, pour les applications qui utilisent **uniquement** les définitions de composants globales via `app.component`, nous recommandons plutôt le kebab-case. Les raisons sont:
+Cependant, pour les applications qui utilisent **uniquement** les définitions de composants globales via `app.component`, nous recommandons plutôt le kebab-case. Les raisons sont :
 
 - Il est rare que des composants globaux soient référencés en JavaScript, donc suivre une convention pour JavaScript a peu de sens.
 - Ces applications incluent toujours de nombreux templates du DOM, où [kebab-case **doit** être utilisée](#component-name-casing-in-templates).
@@ -531,7 +531,7 @@ components/
 
 ## La Casse des noms des props {#prop-name-casing}
 
-**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être en écrites en kebab-case. Le template des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des prop en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application**
+**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être en écrites en kebab-case. Le template des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des prop en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -590,12 +590,12 @@ const props = defineProps({
 // pour les SFC - assurez-vous que la casse est cohérente tout au long du projet
 // vous pouvez utiliser l'une ou l'autre des conventions, mais nous vous déconseillons de mélanger deux styles de casse différents
 <WelcomeMessage greeting-text="hi"/>
-// or
+// ou
 <WelcomeMessage greetingText="hi"/>
 ```
 
 ```vue-html
-// for in-DOM templates
+// pour les template du DOM
 <welcome-message greeting-text="hi"></welcome-message>
 ```
 
@@ -703,7 +703,7 @@ const normalizedFullName = computed(() =>
 **Les propriétés calculées complexes doivent être divisées en propriétés plus simples.**
 
 ::: details Explication Détaillée
-Les propriétés calculées plus simples et bien nommées sont:
+Les propriétés calculées plus simples et bien nommées sont :
 
 - **Plus facile à tester**
 
