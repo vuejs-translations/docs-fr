@@ -341,7 +341,7 @@ components/
 
 Les composants auto-fermants indiquent qu'ils n'ont pas seulement de contenu, mais qu'ils sont censés n'avoir aucun contenu. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
 
-Malheuresement, HTML n'autorise pas que les éléments personnalisés soient auto-fermantes - seulement les official [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
+Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermantes - seulement les official [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -786,7 +786,7 @@ const discount = computed(
   () => basePrice.value * (discountPercent.value || 0)
 )
 
-const finalPrice = compued(() => basePrice.value - discount.value)
+const finalPrice = computed(() => basePrice.value - discount.value)
 ```
 
 </div>
