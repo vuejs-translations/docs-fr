@@ -642,9 +642,9 @@ En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lig
 
 ## Expressions simples dans les templates {#simple-expressions-in-templates}
 
-Les templates de composants ne doivent inclure que des expressions simples, avec des expressions plus complexes refactorisées en propriétés computed ou en méthodes.
+Les templates de composants ne doivent inclure que des expressions simples, avec des expressions plus complexes refactorisées en propriétés calculées ou en méthodes.
 
-Les expressions complexes dans vos templates les rendent moins déclaratifs. Nous devons nous efforcer de décrire _ce qui_ devrait apparaître, et non _comment_ nous calculons cette valeur. Les propriétés computed et les méthodes permettent également de réutiliser le code.
+Les expressions complexes dans vos templates les rendent moins déclaratifs. Nous devons nous efforcer de décrire _ce qui_ devrait apparaître, et non _comment_ nous calculons cette valeur. Les propriétés calculées et les méthodes permettent également de réutiliser le code.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
