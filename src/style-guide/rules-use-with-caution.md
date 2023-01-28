@@ -8,7 +8,7 @@ Certaines fonctionnalités de Vue existent pour prévoir de rares cas particulie
 
 Préférez les sélecteurs de classes aux sélecteurs d'éléments dans les styles `scoped`, parce qu'un grand nombre de sélecteurs d'éléments sont lents.
 
-::: details Explication détaillée
+::: details Explications détaillées
 Pour limiter la portée des styles, Vue ajoute un attribut unique aux éléments des composants, tel que `data-v-f3f3eg9`. Les sélecteurs sont ensuite modifiés de manière à ce que seuls les éléments correspondant à cet attribut soient sélectionnés (par exemple `button[data-v-f3f3eg9]`).
 
 Le problème est qu'un large nombre de sélecteurs d'éléments-attributs (par exemple `button[data-v-f3f3eg9]`) sera considérablement plus lent que des sélecteurs de classes-attributs (par exemple `.btn-close[data-v-f3f3eg9]`), donc les sélecteurs de classes doivent être privilégiés lorsque c'est possible.
