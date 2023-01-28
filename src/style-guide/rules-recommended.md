@@ -128,7 +128,7 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
 Lorsque les composants commencent à prendre beaucoup d'espace ou deviennent difficiles à lire, l'ajout d'espaces entre les propriétés multi-lignes peut les rendre plus faciles à parcourir. Dans certains éditeurs, comme Vim, des options de formatage comme celle-ci peuvent également faciliter la navigation au clavier.
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```js
 props: {
@@ -212,7 +212,7 @@ computed: {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <!-- ComponentA.vue -->
