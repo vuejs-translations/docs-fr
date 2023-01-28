@@ -15,7 +15,7 @@ Le problème est qu'un large nombre de sélecteurs d'éléments-attributs (par e
 :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <template>
@@ -32,7 +32,7 @@ button {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <template>
@@ -57,7 +57,7 @@ Une application Vue idéale est composée de flux de props vers le bas, et d'év
 Le problème, c'est qu'il existe aussi de nombreux cas _simples_ où ces modèles peuvent être pratiques. Attention : ne vous laissez pas séduire par l'idée d'échanger la simplicité (être capable de comprendre le flux de votre état) contre la commodité à court terme (écrire moins de code).
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 app.component('TodoItem', {
@@ -103,7 +103,7 @@ app.component('TodoItem', {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```js
 app.component('TodoItem', {
