@@ -545,7 +545,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/style-guide/rules-strongly-recommended'
         },
         {
-          text: 'C - Recommended',
+          text: 'C - Recommandées',
           link: '/style-guide/rules-recommended'
         },
         {
