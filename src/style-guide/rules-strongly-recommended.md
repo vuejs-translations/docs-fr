@@ -9,7 +9,7 @@ Ces règles améliorent la lisibilité et/ou l'expérience des développeurs dan
 Cela vous aide à trouver plus rapidement un composant lorsque vous devez le modifier ou revoir comment l'utiliser.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 app.component('TodoList', {
@@ -24,7 +24,7 @@ app.component('TodoItem', {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -47,7 +47,7 @@ components/
 PascalCase fonctionne mieux avec l'auto-complétion dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peut parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -62,7 +62,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -119,7 +119,7 @@ Quelques avantages de cette convention :
   :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -131,7 +131,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -163,7 +163,7 @@ components/
 Cela ne signifie pas que le composant n'est utilisé que dans une seule page, mais il ne sera utilisé qu'une seule fois _par page_. Ces composants n'acceptent aucun accessoire, car ils sont spécifiques à votre application, pas à leur contexte dans votre application. Si vous trouvez le besoin d'ajouter des accessoires, c'est une bonne indication qu'il s'agit en fait d'un composant réutilisable qui n'est utilisé qu'une fois par page _pour l'instant_.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -174,7 +174,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -220,7 +220,7 @@ Ceci n'est pas recommandé, car pourrait entraîner :
   :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -238,7 +238,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -306,7 +306,7 @@ Vous pourriez être tenté de résoudre ce problème différemment, en imbriquan
   :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -321,7 +321,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -344,7 +344,7 @@ Les composants auto-fermants n'indiquent pas seulement qu'ils n'ont pas de conte
 Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermants - seulement les [éléments officiels "void"](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <!-- Dans les composants monofichiers, string templates, et JSX -->
@@ -359,7 +359,7 @@ Malheureusement, HTML n'autorise pas que les éléments personnalisés soient au
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <!-- Dans les composants monofichiers, string templates, et JSX -->
@@ -388,7 +388,7 @@ Malheureusement, en raison de l'insensibilité à la casse de HTML, les template
 Notez également que si vous êtes déjà beaucoup investi dans l'usage du kebab-case, la cohérence avec les conventions HTML et la possibilité d'utiliser la même casse dans tous vos projets peuvent être plus importantes que les avantages énumérés ci-dessus. Dans ces cas, **l'utilisation de kebab-case partout est également acceptable**.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <!-- Dans les composants monofichiers, string templates, et JSX -->
@@ -408,7 +408,7 @@ Notez également que si vous êtes déjà beaucoup investi dans l'usage du kebab
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <!-- Dans les composants monofichiers, string templates, et JSX -->
@@ -445,7 +445,7 @@ Cependant, pour les applications qui utilisent **uniquement** les définitions d
   :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 app.component('myComponent', {
@@ -474,7 +474,7 @@ export default {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```js
 app.component('MyComponent', {
@@ -508,7 +508,7 @@ export default {
 L'auto-complétion dans les éditeurs de code fait gagner énormément de temps, tandis que la clarté qu'ils fournissent est inestimable. Les abréviations peu courantes, en particulier, doivent toujours être évitées.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```
 components/
@@ -519,7 +519,7 @@ components/
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```
 components/
@@ -534,7 +534,7 @@ components/
 **Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être écrites en kebab-case. Les templates des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des props en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez d'utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 <div class="options-api">
 
@@ -564,7 +564,7 @@ const props = defineProps({
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 <div class="options-api">
 
@@ -608,7 +608,7 @@ const props = defineProps({
 En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car ils sont beaucoup plus faciles à lire. Les templates et [JSX](/guide/extras/render-function.html#jsx-tsx) méritent la même considération.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <img src="https://vuejs.org/images/logo.png" alt="Vue Logo">
@@ -621,7 +621,7 @@ En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lig
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <img
@@ -647,7 +647,7 @@ Les templates de composants ne doivent inclure que des expressions simples, avec
 Les expressions complexes dans vos templates les rendent moins déclaratifs. Nous devons nous efforcer de décrire _ce qui_ devrait apparaître, et non _comment_ nous calculons cette valeur. Les propriétés calculées et les méthodes permettent également de réutiliser le code.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 {{
@@ -660,7 +660,7 @@ Les expressions complexes dans vos templates les rendent moins déclaratifs. Nou
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <!-- Dans un template -->
@@ -721,7 +721,7 @@ Les propriétés calculées plus simples et bien nommées sont :
   :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 <div class="options-api">
 
@@ -753,7 +753,7 @@ const price = computed(() => {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 <div class="options-api">
 
@@ -800,7 +800,7 @@ const finalPrice = computed(() => basePrice.value - discount.value)
 Bien que les valeurs d'attribut sans espace ne soient pas obligées d'avoir des guillemets en HTML, cette pratique conduit souvent à _éviter_ les espaces, ce qui rend les valeurs d'attribut moins lisibles.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <input type=text>
@@ -813,7 +813,7 @@ Bien que les valeurs d'attribut sans espace ne soient pas obligées d'avoir des 
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <input type="text">
@@ -830,7 +830,7 @@ Bien que les valeurs d'attribut sans espace ne soient pas obligées d'avoir des 
 **Les raccourcis de directives (`:` pour `v-bind:`, `@` pour `v-on:` et `#` pour `v-slot`) doivent toujours être utilisés ou ne jamais l'être.**
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <input
@@ -859,7 +859,7 @@ Bien que les valeurs d'attribut sans espace ne soient pas obligées d'avoir des 
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```vue-html
 <input
