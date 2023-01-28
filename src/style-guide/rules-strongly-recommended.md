@@ -80,7 +80,7 @@ components/
 
 **Les composants de base (a.k.a. présentation, muet, ou composant pure) qui appliquent un style et des conventions spécifiques à l'application doivent tous commencer par un préfixe spécifique, tel que `Base`, `App`, ou `V`.**
 
-::: details Explication Détaillée
+::: details Explications détaillées
 Ces composants jettent les bases d'un style et d'un comportement cohérents dans votre application. Ils peuvent **seulement** contenir :
 
 - Des éléments HTML,
@@ -190,7 +190,7 @@ components/
 
 Si un composant n'a de sens que dans le contexte d'un seul composant parent, cette relation doit être évidente dans son nom. Étant donné que les éditeurs organisent généralement les fichiers par ordre alphabétique, cela permet également de conserver ces fichiers associés les uns à côté des autres.
 
-::: details Explication Détaillée
+::: details Explications détaillées
 Vous pourriez être tenté de résoudre ce problème en imbriquant les composants enfants dans des répertoires nommés d'après leur parent. Par exemple :
 
 ```
@@ -259,7 +259,7 @@ components/
 
 **Les noms des composants doivent commencer par les mots de plus haut niveau (souvent les plus généraux) et se terminer par des mots de modification descriptifs.**
 
-::: details Explication Détaillée
+::: details Explications détaillées
 Vous vous demandez peut-être :
 
 > "Pourquoi forcerions-nous les noms de composants à utiliser un langage moins naturel ?"
@@ -433,7 +433,7 @@ OU
 
 **Les noms de composants en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) devraient toujours être en PascalCase, quoiqu'ils puissent être en kebab-case dans des strings pour des applications plus simples qui n'utilisent que l'enregistrement global des composants via `app.component`.**
 
-::: details Explication Détaillée
+::: details Explications détaillées
 En JavaScript, le PascalCase est la convention pour les classes et les constructeurs de prototypes - essentiellement, tout ce qui peut avoir des instances distinctes. Les composants Vue ont également des instances, il est donc logique d'utiliser également PascalCase.
 
 Comme avantage supplémentaire, l'utilisation de PascalCase dans JSX (et les templates) permet aux gens qui lisent le code de distinguer plus facilement les composants et les éléments HTML.
@@ -702,7 +702,7 @@ const normalizedFullName = computed(() =>
 
 **Les propriétés calculées complexes doivent être divisées en propriétés plus simples.**
 
-::: details Explication Détaillée
+::: details Explications détaillées
 Les propriétés calculées plus simples et bien nommées sont :
 
 - **Plus faciles à tester**
