@@ -40,11 +40,11 @@ components/
 
 </div>
 
-## La Casse des Noms de composants {#single-file-component-filename-casing}
+## La casse des noms de composants {#single-file-component-filename-casing}
 
-**Le nom des composants monofichiers doit toujours être soit en PascalCase ou en kebab-case.**
+**Le nom des composants monofichiers doit toujours être soit en PascalCase soit en kebab-case.**
 
-PascalCase fonctionne mieux avec la saisie semi-automatique dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peuvent parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
+PascalCase fonctionne mieux avec l'auto-complétion dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peut parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -87,15 +87,15 @@ Ces composants jettent les bases d'un style et d'un comportement cohérents dans
 - D'autres composants de base, et
 - Un composant UI tiers.
 
-Mais il ne contiendront **jamais** des états globaux (par exemple, provenant de Pinia ou Vuex).
+Mais ils ne contiendront **jamais** des états globaux (par exemple, provenant de Pinia ou Vuex).
 
-Leurs noms incluent souvent le nom d'un élément qu'ils encapsulent (par exemple, `BaseButton`, `BaseTable`), à moins qu'aucun élément n'existe pour leur usage spécifique (par exemple `BaseIcon`). Si vous créer des composants similaires pour un contexte plus spécifique, ils utiliseront presque toujours ces composants (par exemple, `BaseButton` peut être utilisé dans `ButtonSubmit`).
+Leurs noms incluent souvent le nom d'un élément qu'ils encapsulent (par exemple, `BaseButton`, `BaseTable`), à moins qu'aucun élément n'existe pour leur usage spécifique (par exemple `BaseIcon`). Si vous créez des composants similaires pour un contexte plus spécifique, ils utiliseront presque toujours ces composants (par exemple, `BaseButton` peut être utilisé dans `ButtonSubmit`).
 
 Quelques avantages de cette convention :
 
 - Lorsqu'ils sont classés par ordre alphabétique dans les éditeurs, les composants de base de votre application sont tous répertoriés ensemble, ce qui facilite leur identification.
 
-- Puisque les noms des composants doivent toujours être des mots-composés, Cette convention vous fait éviter d'avoir à choisir des préfixes arbitraires pour des composants simples (e.g. MyButton, VueButton).
+- Puisque les noms des composants doivent toujours être des mots composés, cette convention vous fait éviter d'avoir à choisir des préfixes arbitraires pour des composants simples (e.g. MyButton, VueButton).
 
 - Étant donné que ces composants sont fréquemment utilisés, vous pouvez simplement les rendre globaux au lieu de les importer partout. Un préfixe rend cela possible avec Webpack :
 
@@ -158,7 +158,7 @@ components/
 
 ## Noms des composants à instance unique {#single-instance-component-names}
 
-**Les composants qui ne devraient avoir qu'une seule instance active doivent commencer par le préfixe The, pour indiquer qu'il ne peut y en avoir qu'une seule.**
+**Les composants qui ne devraient avoir qu'une seule instance active doivent commencer par le préfixe `The`, pour indiquer qu'il ne peut y en avoir qu'une seule.**
 
 Cela ne signifie pas que le composant n'est utilisé que dans une seule page, mais il ne sera utilisé qu'une seule fois _par page_. Ces composants n'acceptent aucun accessoire, car ils sont spécifiques à votre application, pas à leur contexte dans votre application. Si vous trouvez le besoin d'ajouter des accessoires, c'est une bonne indication qu'il s'agit en fait d'un composant réutilisable qui n'est utilisé qu'une fois par page _pour l'instant_.
 
@@ -262,7 +262,7 @@ components/
 ::: details Explication Détaillée
 Vous vous demandez peut-être :
 
-> "Pourquoi forcerions-nous les noms de composants à utiliser un langage moins naturel?"
+> "Pourquoi forcerions-nous les noms de composants à utiliser un langage moins naturel ?"
 
 En anglais naturel, les adjectifs et autres descripteurs apparaissent généralement avant les noms, tandis que les exceptions nécessitent des mots connecteurs. Par exemple :
 
@@ -300,7 +300,7 @@ components/
 
 Vous pourriez être tenté de résoudre ce problème différemment, en imbriquant tous les composants de recherche dans un répertoire "recherche", puis tous les composants de paramètres dans un répertoire "paramètres". Nous vous recommandons de ne considérer cette approche que dans les très grandes applications (par exemple, plus de 100 composants), pour les raisons suivantes :
 
-- Il faut généralement plus de temps pour naviguer dans les sous-répertoires imbriqués que pour parcourir un seul répertoire components.
+- Il faut généralement plus de temps pour naviguer dans les sous-répertoires imbriqués que pour parcourir un seul répertoire `components`.
 - Les conflits de nom (par exemple, plusieurs composants ButtonDelete.vue) rendent plus difficile la navigation rapide vers un composant spécifique dans un éditeur de code.
 - Le refactoring devient plus difficile, car la recherche et le remplacement ne sont souvent pas suffisants pour mettre à jour les références relatives à un composant déplacé.
   :::
@@ -337,11 +337,11 @@ components/
 
 ## Composants auto-fermants {#self-closing-components}
 
-**Les composants sans contenu doivent être auto-fermantes dans les [composants monofichiers](/guide/scaling-up/sfc.html), dans les templates, et [JSX](/guide/extras/render-function.html#jsx-tsx) - mais jamais dans les templates du DOM.**
+**Les composants sans contenu doivent être auto-fermants dans les [composants monofichiers](/guide/scaling-up/sfc.html), dans les templates, et dans [JSX](/guide/extras/render-function.html#jsx-tsx) - mais jamais dans les templates du DOM.**
 
-Les composants auto-fermants indiquent qu'ils n'ont pas seulement de contenu, mais qu'ils sont censés n'avoir aucun contenu. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
+Les composants auto-fermants n'indiquent pas seulement qu'ils n'ont pas de contenu, mais aussi qu'ils ne sont pas censés en avoir. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
 
-Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermantes - seulement les official [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
+Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermants - seulement les [éléments officiels "void"](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -373,7 +373,7 @@ Malheureusement, HTML n'autorise pas que les éléments personnalisés soient au
 
 </div>
 
-## La Casse des noms des composants dans les templates {#component-name-casing-in-templates}
+## La casse des noms de composants dans les templates {#component-name-casing-in-templates}
 
 **Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc.html) et dans les string templates - mais en kebab-case dans les templates du DOM.**
 
@@ -385,7 +385,7 @@ PascalCase a quelques avantages par rapport au kebab-case :
 
 Malheureusement, en raison de l'insensibilité à la casse de HTML, les templates du DOM doivent toujours utiliser le kebab-case.
 
-Notez également que si vous êtes déjà beaucoup investi dans l'usage du kebab-case, la cohérence avec les conventions HTML et la possibilité d'utiliser la même casse dans tous vos projets peuvent être plus importants que les avantages énumérés ci-dessus. Dans ces cas, **l'utilisation de kebab-case partout est également acceptable**.
+Notez également que si vous êtes déjà beaucoup investi dans l'usage du kebab-case, la cohérence avec les conventions HTML et la possibilité d'utiliser la même casse dans tous vos projets peuvent être plus importantes que les avantages énumérés ci-dessus. Dans ces cas, **l'utilisation de kebab-case partout est également acceptable**.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -429,9 +429,9 @@ OU
 
 </div>
 
-## La Casse des noms de composants en JS/JSX {#component-name-casing-in-js-jsx}
+## La casse des noms de composants en JS/JSX {#component-name-casing-in-js-jsx}
 
-**Les noms de composants en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) devrait toujours être en PascalCase, quoiqu'il puisse être en kebab-case dans des strings pour des applications plus simples qui n'utilisent que l'enregistrement global des composants via `app.component`.**
+**Les noms de composants en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) devraient toujours être en PascalCase, quoiqu'ils puissent être en kebab-case dans des strings pour des applications plus simples qui n'utilisent que l'enregistrement global des composants via `app.component`.**
 
 ::: details Explication Détaillée
 En JavaScript, le PascalCase est la convention pour les classes et les constructeurs de prototypes - essentiellement, tout ce qui peut avoir des instances distinctes. Les composants Vue ont également des instances, il est donc logique d'utiliser également PascalCase.
@@ -505,7 +505,7 @@ export default {
 
 **Les noms des composants devraient être écrit avec des mots entiers plutôt ques des abréviations.**
 
-L'autocomplétion dans les éditeurs de code font gagner énormément de temps, tandis que la clarté qu'ils fournissent est inestimable. Les abréviations peu courantes, en particulier, doivent toujours être évitées.
+L'auto-complétion dans les éditeurs de code fait gagner énormément de temps, tandis que la clarté qu'ils fournissent est inestimable. Les abréviations peu courantes, en particulier, doivent toujours être évitées.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -529,9 +529,9 @@ components/
 
 </div>
 
-## La Casse des noms des props {#prop-name-casing}
+## La casse des noms de prop {#prop-name-casing}
 
-**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être en écrites en kebab-case. Le template des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des prop en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
+**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être écrites en kebab-case. Les templates des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des props en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez d'utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -605,7 +605,7 @@ const props = defineProps({
 
 **Les éléments avec plusieurs attributs doivent s'étendre sur plusieurs lignes, avec un attribut par ligne.**
 
-En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car il est beaucoup plus facile à lire. Les templates et [JSX](/guide/extras/render-function.html#jsx-tsx) méritent la même considération.
+En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car ils sont beaucoup plus faciles à lire. Les templates et [JSX](/guide/extras/render-function.html#jsx-tsx) méritent la même considération.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -705,15 +705,15 @@ const normalizedFullName = computed(() =>
 ::: details Explication Détaillée
 Les propriétés calculées plus simples et bien nommées sont :
 
-- **Plus facile à tester**
+- **Plus faciles à tester**
 
   Lorsque chaque propriété calculée ne contient qu'une expression très simple, avec très peu de dépendances, il est beaucoup plus facile d'écrire des tests qui vérifient leur bon fonctionnement.
 
-- **Plus facile à lire**
+- **Plus faciles à lire**
 
   Simplifier les propriétés calculées vous oblige à donner à chaque valeur un nom descriptif, même si elle n'est pas réutilisée. Cela permet aux autres développeurs (et à vous-même) de se concentrer beaucoup plus facilement sur le code qui leur tient à cœur et de comprendre ce qui se passe.
 
-- **Plus adaptable à l'évolution des besoins**
+- **Plus adaptables à l'évolution des besoins**
 
   Toute valeur pouvant être nommée peut être utile pour la vue. Par exemple, nous pourrions décider d'afficher un message indiquant à l'utilisateur combien d'argent il a économisé. Nous pourrions également décider de calculer la taxe de vente, mais peut-être l'afficher séparément, plutôt que dans le cadre du prix final.
 
