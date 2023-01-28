@@ -4,7 +4,7 @@ Ces règles aident à prévenir les erreurs, donc apprenez les et tenez-y vous c
 
 ## Utilisez des noms de composants avec plusieurs mots {#use-multi-word-component-names}
 
-Les noms de composants créés par l'utilisateur devraient toujours être composés de plusieurs mots, à l'exception des composants de la racine `App`. Cela [évite les conflits](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name) avec les éléments HTML existants et à venir, puisqu'ils sont tous composés d'un seul mot.
+Les noms de composants créés par l'utilisateur devraient toujours être composés de plusieurs mots, à l'exception du composant racine `App`. Cela [évite les conflits](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name) avec les éléments HTML existants et à venir, puisqu'ils sont tous composés d'un seul mot.
 
 <div class="style-example style-example-bad">
 <h3>Mauvais</h3>
@@ -34,13 +34,13 @@ Les noms de composants créés par l'utilisateur devraient toujours être compos
 
 ## Utilisez des définitions de prop détaillées {#use-detailed-prop-definitions}
 
-Dans le code validé, les définitions de pop devraient toujours être le plus détaillée possible, en spécifiant au moins le(s) type(s).
+Dans le code source, les définitions de prop devraient toujours être le plus détaillées possible, en spécifiant au moins le ou les types.
 
 ::: details Explication détaillée
 [Les définitions de prop](/guide/components/props.html#prop-validation) détaillées présentent deux avantages :
 
-- Elles développent l'API du composant, de manière à ce qu'il soit facile de voir comment le composant doit être utilisé.
-- Lors du développement, Vue vous avertira si jamais un composant se voit fournir des props au mauvais format, ce qui vous aidera à saisir les potentielles sources d'erreurs.
+- Elles documentent l'API du composant, de manière à ce qu'il soit facile de voir comment le composant doit être utilisé.
+- Pendant le développement, Vue vous avertira si jamais un composant se voit fournir des props au mauvais format, ce qui vous aidera à régler les potentielles sources d'erreurs.
   :::
 
 <div class="options-api">
@@ -125,9 +125,9 @@ const props = defineProps({
 </div>
 </div>
 
-## Utilisez `v-for` avec des clés {#use-keyed-v-for}
+## Utilisez `v-for` avec une clé {#use-keyed-v-for}
 
-`key` avec `v-for` est _toujours_ requis sur les composants, afin de de maintenir l'état interne du composant à travers le sous-arbre. Cependant même pour les éléments, une bonne pratique est de maintenir un comportement prédictible, telle que [la persistance de l'objet](https://bost.ocks.org/mike/constancy/) dans les animations.
+`key` avec `v-for` est _toujours_ requis sur les composants, afin de maintenir l'état interne du composant à travers le sous-arbre. Cependant même pour les éléments, une bonne pratique est de maintenir un comportement prédictible, telle que [la persistance de l'objet](https://bost.ocks.org/mike/constancy/) dans les animations.
 
 ::: details Explication détaillée
 Imaginons que vous ayez une liste de todos :
@@ -292,16 +292,16 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 
 ## Utilisez du style avec une portée limitée au composant {#use-component-scoped-styling}
 
-Pour les applications, les styles du composant `App` et des composants de mise en page in layout components peuvent être globaux, mais tous les autres styles des composants devraient avoir une portée limitée.
+Pour les applications, les styles du composant `App` et des composants de mise en page peuvent être globaux, mais tous les autres styles des composants devraient avoir une portée limitée.
 
-Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules.html), une stratégie basée sur les classe telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
+Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules.html), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
 
 **Toutefois, pour les librairies de composants, il est préférable d'utiliser une stratégie basée sur les classes au lieu d'utiliser l'attribut `scoped`.**
 
 Cela permet de remplacer les styles internes plus facilement, avec des noms de classe compréhensibles par des humains et qui ne sont pas trop spécifiques, mais ont tout de même qu'une faible probabilité d'être à l'origine d'un conflit.
 
 ::: details Explication détaillée
-Si vous développez un projet conséquent, travaillez avec d'autres développeurs, or incluez parfois du HTML/CSS tiers(par exemple à partir d'Auth0), une gestion des portées cohérente assurera que vos styles ne s'appliquent qu'aux composants pour lesquels ils sont destinés.
+Si vous développez un projet conséquent, travaillez avec d'autres développeurs, or incluez parfois du HTML/CSS tiers (par exemple à partir d'Auth0), une gestion des portées cohérente assurera que vos styles ne s'appliquent qu'aux composants pour lesquels ils sont destinés.
 
 Au-delà de l'attribut `scoped`, utiliser des noms de classe uniques permet de s'assurer que du CSS tiers ne s'applique pas à votre HTML. Par exemple, de nombreux projets utilise les noms de classe `button`, `btn`, ou `icon`, donc même si vous n'utilisez pas de stratégie comme BEM, ajouter un préfixe spécifique à votre application ou votre composant (par exemple `ButtonClose-icon`) peut fournir une certaine protection.
 :::
