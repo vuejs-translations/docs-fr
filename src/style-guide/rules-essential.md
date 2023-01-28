@@ -36,7 +36,7 @@ Les noms de composants créés par l'utilisateur devraient toujours être compos
 
 Dans le code source, les définitions de prop devraient toujours être le plus détaillées possible, en spécifiant au moins le ou les types.
 
-::: details Explication détaillée
+::: details Explications détaillées
 [Les définitions de prop](/guide/components/props.html#prop-validation) détaillées présentent deux avantages :
 
 - Elles documentent l'API du composant, de manière à ce qu'il soit facile de voir comment le composant doit être utilisé.
@@ -129,7 +129,7 @@ const props = defineProps({
 
 `key` avec `v-for` est _toujours_ requis sur les composants, afin de maintenir l'état interne du composant à travers le sous-arbre. Cependant même pour les éléments, une bonne pratique est de maintenir un comportement prédictible, telle que [la persistance de l'objet](https://bost.ocks.org/mike/constancy/) dans les animations.
 
-::: details Explication détaillée
+::: details Explications détaillées
 Imaginons que vous ayez une liste de todos :
 
 ```js
@@ -195,7 +195,7 @@ Il y a deux situations courantes où cela peut être tentant :
 
 - Pour éviter le rendu d'une liste si elle doit être cachée (par exemple `v-for="user in users" v-if="shouldShowUsers"`). Dans ces cas, déplacez le `v-if` sur un élément conteneur (par exemple `ul`, `ol`).
 
-::: details Explication détaillée
+::: details Explications détaillées
 Lorsque Vue traite les directives, `v-if` a la priorité sur `v-for`, donc ce template :
 
 ```vue-html
@@ -300,7 +300,7 @@ Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sf
 
 Cela permet de remplacer les styles internes plus facilement, avec des noms de classe compréhensibles par des humains et qui ne sont pas trop spécifiques, mais ont tout de même qu'une faible probabilité d'être à l'origine d'un conflit.
 
-::: details Explication détaillée
+::: details Explications détaillées
 Si vous développez un projet conséquent, travaillez avec d'autres développeurs, or incluez parfois du HTML/CSS tiers (par exemple à partir d'Auth0), une gestion des portées cohérente assurera que vos styles ne s'appliquent qu'aux composants pour lesquels ils sont destinés.
 
 Au-delà de l'attribut `scoped`, utiliser des noms de classe uniques permet de s'assurer que du CSS tiers ne s'applique pas à votre HTML. Par exemple, de nombreux projets utilise les noms de classe `button`, `btn`, ou `icon`, donc même si vous n'utilisez pas de stratégie comme BEM, ajouter un préfixe spécifique à votre application ou votre composant (par exemple `ButtonClose-icon`) peut fournir une certaine protection.
