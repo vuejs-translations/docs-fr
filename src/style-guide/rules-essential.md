@@ -7,7 +7,7 @@ Ces règles aident à prévenir les erreurs, donc apprenez les et tenez-y vous c
 Les noms de composants créés par l'utilisateur devraient toujours être composés de plusieurs mots, à l'exception du composant racine `App`. Cela [évite les conflits](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name) avec les éléments HTML existants et à venir, puisqu'ils sont tous composés d'un seul mot.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <!-- dans les templates pré-compilés -->
@@ -20,7 +20,7 @@ Les noms de composants créés par l'utilisateur devraient toujours être compos
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```vue-html
 <!-- dans les templates pré-compilés -->
@@ -45,7 +45,7 @@ Dans le code source, les définitions de prop devraient toujours être le plus d
 
 <div class="options-api">
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 // OK seulement lorsque vous prototyper
@@ -55,7 +55,7 @@ props: ['status']
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```js
 props: {
@@ -87,7 +87,7 @@ props: {
 
 <div class="composition-api">
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 // OK seulement lorsque vous prototyper
@@ -97,7 +97,7 @@ const props = defineProps(['status'])
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```js
 const props = defineProps({
@@ -157,7 +157,7 @@ De notre expérience, il est préférable de _toujours_ ajouter une clé unique,
 :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <ul>
@@ -170,7 +170,7 @@ De notre expérience, il est préférable de _toujours_ ajouter une clé unique,
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```vue-html
 <ul>
@@ -248,7 +248,7 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <ul>
@@ -265,7 +265,7 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```vue-html
 <ul>
@@ -307,7 +307,7 @@ Au-delà de l'attribut `scoped`, utiliser des noms de classe uniques permet de s
 :::
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <template>
@@ -324,7 +324,7 @@ Au-delà de l'attribut `scoped`, utiliser des noms de classe uniques permet de s
 </div>
 
 <div class="style-example style-example-good">
-<h3>Correct</h3>
+<h3>OK</h3>
 
 ```vue-html
 <template>
