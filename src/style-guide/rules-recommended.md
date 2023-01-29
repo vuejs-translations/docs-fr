@@ -189,7 +189,7 @@ computed: {
 **[Les composants monofichiers](/guide/scaling-up/sfc.html) devraient toujours ordonner les balises `<script>`, `<template>`, et `<style>` de manière constante, avec `<style>` en dernier, car au moins l'un des deux autres est toujours nécessaire.**
 
 <div class="style-example style-example-bad">
-<h3>Bad</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <style>/* ... */</style>
