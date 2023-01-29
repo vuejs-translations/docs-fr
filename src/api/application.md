@@ -215,7 +215,7 @@ Registers a global custom directive if passing both a name string and a directiv
   const myDirective = app.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)
+- **See also:** [Directives personnalisées](/guide/reusability/custom-directives.html)
 
 ## app.use() {#app-use}
 
