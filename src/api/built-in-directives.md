@@ -361,7 +361,7 @@ Create a two-way binding on a form input element or a component.
 
 - **See also:**
 
-  - [Form Input Bindings](/guide/essentials/forms.html)
+  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms.html)
   - [Component Events - Usage with `v-model`](/guide/components/v-model.html)
 
 ## v-slot {#v-slot}

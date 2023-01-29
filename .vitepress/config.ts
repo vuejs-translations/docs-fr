@@ -172,7 +172,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Event Handling',
           link: '/guide/essentials/event-handling'
         },
-        { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
+        { text: 'Liaisons des entrées d\'un formulaire', link: '/guide/essentials/forms' },
         {
           text: 'Lifecycle Hooks',
           link: '/guide/essentials/lifecycle'
