@@ -549,7 +549,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/style-guide/rules-recommended'
         },
         {
-          text: 'D - Use with Caution',
+          text: 'D - À utiliser avec précaution',
           link: '/style-guide/rules-use-with-caution'
         }
       ]

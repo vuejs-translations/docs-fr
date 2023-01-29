@@ -1,21 +1,21 @@
-# Priority D Rules: Use with Caution {#priority-d-rules-use-with-caution}
+# Règles de priorité D: À utiliser avec précaution {#priority-d-rules-use-with-caution}
 
-Some features of Vue exist to accommodate rare edge cases or smoother migrations from a legacy code base. When overused however, they can make your code more difficult to maintain or even become a source of bugs. These rules shine a light on potentially risky features, describing when and why they should be avoided.
+Certaines fonctionnalités de Vue existent pour prévoir de rares cas particuliers ou des migrations plus douces depuis une base de code héritée. Toutefois, lorsqu'elles sont surexploitées, elles peuvent rendre le code plus difficile à maintenir ou même devenir une source de bugs. Ces règles mettent en lumière ces fonctionnalités potentiellement risquées, en décrivant quand et pourquoi elles devraient être évitées.
 
-## Element selectors with `scoped` {#element-selectors-with-scoped}
+## Sélecteurs d'éléments avec `scoped` {#element-selectors-with-scoped}
 
-**Element selectors should be avoided with `scoped`.**
+**Les sélecteurs d'éléments ne devraient pas être utilisés avec `scoped`.**
 
-Prefer class selectors over element selectors in `scoped` styles, because large numbers of element selectors are slow.
+Préférez les sélecteurs de classes aux sélecteurs d'éléments dans les styles `scoped`, parce qu'un grand nombre de sélecteurs d'éléments sont lents.
 
-::: details Detailed Explanation
-To scope styles, Vue adds a unique attribute to component elements, such as `data-v-f3f3eg9`. Then selectors are modified so that only matching elements with this attribute are selected (e.g. `button[data-v-f3f3eg9]`).
+::: details Explications détaillées
+Pour limiter la portée des styles, Vue ajoute un attribut unique aux éléments des composants, tel que `data-v-f3f3eg9`. Les sélecteurs sont ensuite modifiés de manière à ce que seuls les éléments correspondant à cet attribut soient sélectionnés (par exemple `button[data-v-f3f3eg9]`).
 
-The problem is that large numbers of element-attribute selectors (e.g. `button[data-v-f3f3eg9]`) will be considerably slower than class-attribute selectors (e.g. `.btn-close[data-v-f3f3eg9]`), so class selectors should be preferred whenever possible.
+Le problème est qu'un large nombre de sélecteurs d'éléments-attributs (par exemple `button[data-v-f3f3eg9]`) sera considérablement plus lent que des sélecteurs de classes-attributs (par exemple `.btn-close[data-v-f3f3eg9]`), donc les sélecteurs de classes doivent être privilégiés lorsque c'est possible.
 :::
 
 <div class="style-example style-example-bad">
-<h3>Bad</h3>
+<h3>À éviter</h3>
 
 ```vue-html
 <template>
@@ -32,7 +32,7 @@ button {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Good</h3>
+<h3>OK</h3>
 
 ```vue-html
 <template>
@@ -48,16 +48,16 @@ button {
 
 </div>
 
-## Implicit parent-child communication {#implicit-parent-child-communication}
+## Communication parent-enfant implicite {#implicit-parent-child-communication}
 
-**Props and events should be preferred for parent-child component communication, instead of `this.$parent` or mutating props.**
+**Les props et les événements doivent être privilégiés pour la communication entre les composants parent-enfant, plutôt que `this.$parent` ou les props mutants.**
 
-An ideal Vue application is props down, events up. Sticking to this convention makes your components much easier to understand. However, there are edge cases where prop mutation or `this.$parent` can simplify two components that are already deeply coupled.
+Une application Vue idéale est composée de flux de props vers le bas, et d'événements vers le haut. Respecter cette convention rendra vos composants beaucoup plus faciles à comprendre. Cependant, il existe des cas limites où la mutation de prop ou `this.$parent` peuvent simplifier deux composants déjà profondément couplés.
 
-The problem is, there are also many _simple_ cases where these patterns may offer convenience. Beware: do not be seduced into trading simplicity (being able to understand the flow of your state) for short-term convenience (writing less code).
+Le problème, c'est qu'il existe aussi de nombreux cas _simples_ où ces modèles peuvent être pratiques. Attention : ne vous laissez pas séduire par l'idée d'échanger la simplicité (être capable de comprendre le flux de votre état) contre la commodité à court terme (écrire moins de code).
 
 <div class="style-example style-example-bad">
-<h3>Bad</h3>
+<h3>À éviter</h3>
 
 ```js
 app.component('TodoItem', {
@@ -103,7 +103,7 @@ app.component('TodoItem', {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Good</h3>
+<h3>OK</h3>
 
 ```js
 app.component('TodoItem', {
