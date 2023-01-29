@@ -537,7 +537,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/style-guide/'
         },
         {
-          text: 'A - Essential',
+          text: 'A - Essentielles',
           link: '/style-guide/rules-essential'
         },
         {
