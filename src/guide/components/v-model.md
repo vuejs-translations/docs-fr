@@ -1,6 +1,6 @@
 # v-model du composant {#component-v-model}
 
-`v-model` peut être utiliser sur un composant pour implémenter une liaison à double sens.
+`v-model` peut être utilisé sur un composant pour implémenter une liaison à double sens.
 
 Tout d'abord, revoyons comment v-model est utilisé sur un élément natif :
 
