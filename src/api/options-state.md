@@ -250,7 +250,7 @@ Declare methods to be mixed into the component instance.
   }
   ```
 
-- **See also:** [Event Handling](/guide/essentials/event-handling.html)
+- **See also:** [Gestion d'événement](/guide/essentials/event-handling.html)
 
 ## watch {#watch}
 
