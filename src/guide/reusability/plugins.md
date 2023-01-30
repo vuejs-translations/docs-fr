@@ -10,7 +10,7 @@ import { createApp } from 'vue'
 const app = createApp({})
 
 app.use(myPlugin, {
-  /* options optionnelles */
+  /* options facultatives */
 })
 ```
 
@@ -36,7 +36,7 @@ Il n'y a pas de champ d'application strictement défini pour un plugin, mais les
 
 ## Écrire un plugin {#writing-a-plugin}
 
-In order to better understand how to create your own Vue.js plugins, we will create a very simplified version of a plugin that displays `i18n` (short for [Internationalization](https://en.wikipedia.org/wiki/Internationalization_and_localization)) strings.
+Afin de mieux comprendre comment créer vos propres plugins Vue.js, nous allons créer une version très simplifiée d'un plugin qui affiche les chaînes de caractères `i18n` (abréviation d'[internationalisation](https://en.wikipedia.org/wiki/Internationalization_and_localization)).
 
 Commençons par configurer l'objet plugin. Il est recommandé de le créer dans un fichier séparé et de l'exporter, comme montré ci-dessous, afin que la logique reste contenue et séparée.
 
