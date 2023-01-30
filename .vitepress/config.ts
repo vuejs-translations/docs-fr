@@ -218,7 +218,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/reusability/composables'
         },
         {
-          text: 'Custom Directives',
+          text: 'Directives personnalisées',
           link: '/guide/reusability/custom-directives'
         },
         { text: 'Plugins', link: '/guide/reusability/plugins' }

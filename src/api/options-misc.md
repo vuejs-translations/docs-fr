@@ -169,4 +169,4 @@ An object that registers directives to be made available to the component instan
 
   A hash of directives to be made available to the component instance.
 
-- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)
+- **See also:** [Directives personnalisées](/guide/reusability/custom-directives.html)
