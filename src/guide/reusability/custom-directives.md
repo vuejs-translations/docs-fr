@@ -175,7 +175,8 @@ De la même manière que pour les directives intégrées, les arguments des dire
 Ici, l'argument de la directive sera mis à jour de manière réactive en fonction de la propriété `arg` dans l'état de notre composant.
 
 :::tip Remarque
-En dehors de `el`, vous devez traiter ces arguments comme étant en lecture seule et ne jamais les modifier. Si vous devez partager des informations entre plusieurs hooks, il est recommandé de le faire par le biais de [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) de l'élément.:::
+En dehors de `el`, vous devez traiter ces arguments comme étant en lecture seule et ne jamais les modifier. Si vous devez partager des informations entre plusieurs hooks, il est recommandé de le faire par le biais de [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) de l'élément.
+:::
 
 ## Abréviations de fonctions {#function-shorthand}
 
