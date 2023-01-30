@@ -250,7 +250,7 @@ Attach an event listener to the element.
   ```
 
 - **See also:**
-  - [Event Handling](/guide/essentials/event-handling.html)
+  - [Gestion d'événement](/guide/essentials/event-handling.html)
   - [Composants - Événements personnalisés](/guide/essentials/component-basics.html#listening-to-events)
 
 ## v-bind {#v-bind}
