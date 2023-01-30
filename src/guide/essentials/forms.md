@@ -13,7 +13,7 @@ const selected = ref('')
 const multiSelected = ref([])
 </script>
 
-# Liaisons des entrées d'un formulaire {#form-input-bindings}
+# Liaisons des entrées utilisateur d'un formulaire {#form-input-bindings}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/user-inputs-vue-devtools-in-vue-3" title="Cours gratuits sur les entrées utilisateurs avec Vue.js"/>
@@ -74,7 +74,7 @@ De plus, `v-model` peut être utilisé sur des entrées de différents types, de
 
 <span id="vmodel-ime-tip"></span>
 ::: tip Remarque
-Pour les langages nécessitant un [IME](https://en.wikipedia.org/wiki/Input_method) (chinois, japonais, coréen etc.), vous remarquerez que `v-model` n'est pas mis à jour pendant la composition de l'IME. Si vous souhaitez également répondre à ces mises à jour, utilisez votre propre écouteur d'événements `input` et votre propre liaison `value` au lieu d'utiliser `v-model`.
+Pour les langages nécessitant un [IME](https://en.wikipedia.org/wiki/Input_method) (chinois, japonais, coréen etc.), vous remarquerez que `v-model` n'est pas mis à jour pendant la composition de l'IME. Si vous souhaitez également réagir à ces mises à jour, utilisez votre propre écouteur d'événements `input` et votre propre liaison `value` au lieu d'utiliser `v-model`.
 :::
 
 ### Texte multiligne {#multiline-text}
