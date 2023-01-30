@@ -10,7 +10,7 @@ const vFocus = {
 
 ## Introduction {#introduction}
 
-En plus du jeu de directives par défaut fourni dans le noyau (comme `v-model` ou `v-show`), Vue permet également d'enregistrer vos propres directives personnalisées.
+En plus du jeu de directives par défaut fourni par Vue (comme `v-model` ou `v-show`), Vue permet également d'enregistrer vos propres directives personnalisées.
 
 Nous avons introduit deux formes de code réutilisable dans Vue : [les composants](/guide/essentials/component-basics.html) et [les composables](./composables). Les composants sont les principaux éléments de construction, alors que les composables sont axés sur la réutilisation de la logique d'état. Les directives personnalisées, quant à elles, sont principalement destinées à réutiliser la logique qui implique un accès de bas niveau au DOM sur des éléments simples.
 
@@ -58,11 +58,11 @@ export default {
   <input v-focus placeholder="This should be focused" />
 </div>
 
-En supposant que vous n'ayez pas cliqué ailleurs sur la page, le champ de saisie ci-dessus devrait être auto-focalisé. Cette directive est plus utile que l'attribut `autofocus` car elle ne fonctionne pas uniquement au chargement de la page. - elle fonctionne également lorsque l'élément est inséré dynamiquement par Vue.
+En supposant que vous n'ayez pas cliqué ailleurs sur la page, le champ de saisie ci-dessus devrait être auto-focalisé. Cette directive est plus utile que l'attribut `autofocus` car elle ne fonctionne pas uniquement au chargement de la page - elle fonctionne également lorsque l'élément est inséré dynamiquement par Vue.
 
 <div class="composition-api">
 
-Dans `<script setup>`, toute variable camelCase qui commence par le préfixe `v` peut être utilisée comme une directive personnalisée. Dans l'exemple ci-dessus, `vFocus` peut être utilisé dans le modèle via `v-focus`.
+Dans `<script setup>`, toute variable camelCase qui commence par le préfixe `v` peut être utilisée comme une directive personnalisée. Dans l'exemple ci-dessus, `vFocus` peut être utilisé dans le template via `v-focus`.
 
 Si vous n'utilisez pas `<script setup>`, les directives personnalisées peuvent être enregistrées grâce à l'option `directives` :
 
@@ -100,12 +100,12 @@ app.directive('focus', {
 ```
 
 :::tip
-Les directives personnalisées ne doivent être utilisées que lorsque la fonctionnalité souhaitée ne peut être obtenue seulement par une manipulation directe du DOM. Préférez les templates déclaratifs utilisant des directives intégrées telles que `v-bind` lorsque c'est possible, car ils sont plus efficaces et respectueux du rendu côté serveur..
+Les directives personnalisées ne doivent être utilisées que lorsque la fonctionnalité souhaitée ne peut être obtenue seulement par une manipulation directe du DOM. Préférez les templates déclaratifs utilisant des directives intégrées telles que `v-bind` lorsque c'est possible, car ils sont plus efficaces et respectueux du rendu côté serveur.
 :::
 
 ## Hooks des directives {#directive-hooks}
 
-La définition d'un objet directive peut fournir plusieurs fonctions de hook (toutes optionnelles):
+La définition d'un objet directive peut fournir plusieurs fonctions de hook (toutes optionnelles) :
 
 ```js
 const myDirective = {
@@ -133,7 +133,7 @@ const myDirective = {
 
 ### Arguments d'un hook {#hook-arguments}
 
-Nous pouvons passer ces arguments aux hooks des directives :
+Les hooks des directives fournissent ces différents arguments :
 
 - `el`: l'élément auquel la directive est liée. Il peut être utilisé pour manipuler le DOM directement.
 
@@ -166,7 +166,7 @@ L'argument `binding` serait un objet de la forme de :
 }
 ```
 
-De la même manière que pour les directives intégrées, les arguments des directives personnalisées peuvent être dynamiques. Par exemple :
+De la même manière que pour les directives natives, les arguments des directives personnalisées peuvent être dynamiques. Par exemple :
 
 ```vue-html
 <div v-example:[arg]="value"></div>
