@@ -239,7 +239,7 @@ Pour résoudre ce problème, Vue fournit des **modificateurs d'événements** po
 <!-- l'événement submit ne va plus rafraîchir la page -->
 <form @submit.prevent="onSubmit"></form>
 
-<!-- les modificateurs peuvent s'enchaîner -->
+<!-- les modificateurs peuvent être chaînés -->
 <a @click.stop.prevent="doThat"></a>
 
 <!-- seulement le modificateur -->
@@ -285,7 +285,7 @@ Lorsque nous écoutons des événements du clavier, nous avons souvent besoin de
 <input @keyup.enter="submit" />
 ```
 
-Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) en tant que modificateurs en les convertissant en kebab-case.
+Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) comme des modificateurs en les convertissant en kebab-case.
 
 ```vue-html
 <input @keyup.page-down="onPageDown" />
@@ -323,7 +323,7 @@ Sur les claviers Macintosh, meta est la touche commande (⌘). Sur les claviers 
 Par exemple :
 
 ```vue-html
-<!-- Alt + Entrer -->
+<!-- Alt + Entrée -->
 <input @keyup.alt.enter="clear" />
 
 <!-- Ctrl + Clic -->
