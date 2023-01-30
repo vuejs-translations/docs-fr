@@ -337,7 +337,7 @@ Assign a global handler for uncaught errors propagating from within the applicat
 
   - Component renders
   - Event handlers
-  - Lifecycle hooks
+  - Les hooks du cycle de vie 
   - `setup()` function
   - Watchers
   - Custom directive hooks

@@ -48,7 +48,7 @@ The root DOM node that the component instance is managing.
 
 - **Details**
 
-  `$el` will be `undefined` until the component is [mounted](./options-lifecycle#mounted).
+  `$el` will be `undefined` until the component is [monté](./options-lifecycle#mounted).
 
   - For components with a single root element, `$el` will point to that element.
   - For components with text root, `$el` will point to the text node.
