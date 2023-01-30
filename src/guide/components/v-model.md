@@ -155,7 +155,6 @@ Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `upda
 
 Dans ce cas, le composant enfant doit attendre une prop `title` et émettre un évènement `update:title` pour mettre à jour la valeur du composant parent :
 
-
 <div class="composition-api">
 
 ```vue
