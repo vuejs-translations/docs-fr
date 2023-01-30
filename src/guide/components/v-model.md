@@ -149,7 +149,6 @@ const value = computed({
 
 Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
 
-
 ```vue-html
 <MyComponent v-model:title="bookTitle" />
 ```
