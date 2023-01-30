@@ -317,7 +317,8 @@ Vous pouvez utiliser les modificateurs suivant pour déclencher des écouteurs d
 - `.meta`
 
 ::: tip Note
-Sur les claviers Macintosh, meta est la touche commande (⌘). Sur les claviers Windows, meta est la touche Windows (⊞). Sur les claviers Sun Microsystems, meta est marqué d'un diamant solide (◆). Sur certains claviers, en particulier les claviers MIT et ceux des machines Lisp et leurs successeurs, tels que le clavier Knight, le clavier space-cadet, meta est étiqueté "META". Sur les claviers Symbolics, meta est étiqueté "META" ou "Meta".:::
+Sur les claviers Macintosh, meta est la touche commande (⌘). Sur les claviers Windows, meta est la touche Windows (⊞). Sur les claviers Sun Microsystems, meta est marqué d'un diamant solide (◆). Sur certains claviers, en particulier les claviers MIT et ceux des machines Lisp et leurs successeurs, tels que le clavier Knight, le clavier space-cadet, meta est étiqueté "META". Sur les claviers Symbolics, meta est étiqueté "META" ou "Meta".
+:::
 
 Par exemple :
 
