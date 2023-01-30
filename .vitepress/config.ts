@@ -170,7 +170,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Rendu de liste', link: '/guide/essentials/list' },
         {
-          text: 'Gestion d\événement',
+          text: 'Gestion d\'événement',
           link: '/guide/essentials/event-handling'
         },
         { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
