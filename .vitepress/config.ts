@@ -284,7 +284,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/typescript/composition-api'
         },
         {
-          text: 'TS with Options API',
+          text: 'TS avec l\'Options API',
           link: '/guide/typescript/options-api'
         }
       ]
