@@ -17,7 +17,7 @@ Sous le capot, le compilateur de template transforme v-model en un équivalent p
 />
 ```
 
-Lorsqu'il est utilisé sur un composant, v-model est alors équivalent à :
+Lorsqu'il est utilisé sur un composant, `v-model` est alors équivalent à :
 
 ```vue-html
 <CustomInput
@@ -72,7 +72,7 @@ defineEmits(['update:modelValue'])
 
 </div>
 
-Maintenant v-model devrait fonctionner parfaitement avec ce composant :
+Maintenant `v-model` devrait fonctionner parfaitement avec ce composant :
 
 ```vue-html
 <CustomInput v-model="searchText" />
@@ -89,7 +89,7 @@ Maintenant v-model devrait fonctionner parfaitement avec ce composant :
 
 </div>
 
-Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée` accessible en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'évènement correspondant :
+Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée`  en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'évènement correspondant :
 
 <div class="options-api">
 
@@ -147,7 +147,7 @@ const value = computed({
 
 ## Les arguments de `v-model` {#v-model-arguments}
 
-Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et update:modelValue comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
+Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
 
 
 ```vue-html
@@ -342,7 +342,7 @@ export default {
 
 Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - car elle est définie sur la liaison `v-model` `v-model.capitalize="myText"`.
 
-Maintenant que notre prop est configurée, nous pouvons vérifier les clés d'objet `modelModifiers` et écrire un gestionnaire pour modifier la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne de caractères en majuscule chaque fois que l'élément `<input />` déclenche un évènement `input`.
+Maintenant que notre prop est configurée, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour modifier la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne de caractères en majuscule chaque fois que l'élément `<input />` déclenche un évènement `input`.
 
 <div class="composition-api">
 
