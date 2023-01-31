@@ -77,7 +77,7 @@ Dans les configurations basées sur Webpack telles que Vue CLI, il est courant d
 
 - `ts-loader` ne peut vérifier que le type d'un code post-transformé. Cela ne correspond pas aux erreurs que nous voyons dans les IDE ou de `vue-tsc`, qui renvoient directement au code source.
 
-- La vérification de type peut être lente. Lorsqu'il est effectué dans le même thread /processus avec des transformations de code, cela affecte considérablement la vitesse de construction de l'ensemble de l'application.
+- La vérification de type peut être lente. Lorsqu'elle est effectuée dans le même thread /processus avec des transformations de code, cela affecte considérablement la vitesse de construction de l'ensemble de l'application.
 
 - Nous avons déjà une vérification de type exécutée directement dans notre IDE dans un processus séparé, donc le ralentissement du coût de l'expérience de développement n'est tout simplement pas un bon compromis.
 
