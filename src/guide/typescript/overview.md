@@ -71,29 +71,29 @@ Pour activer l'activer, vous devez désactiver le service de langage TS intégr�
 
 <img src="./images/takeover-mode.png" width="590" height="426" style="margin:0px auto;border-radius:8px">
 
-### Note on Vue CLI and `ts-loader` {#note-on-vue-cli-and-ts-loader}
+### Remarque à propos de Vue CLI et `ts-loader` {#note-on-vue-cli-and-ts-loader}
 
-In webpack-based setups such as Vue CLI, it is common to perform type checking as part of the module transform pipeline, for example with `ts-loader`. This, however, isn't a clean solution because the type system needs knowledge of the entire module graph to perform type checks. Individual module's transform step simply is not the right place for the task. It leads to the following problems:
+Dans les configurations basées sur Webpack telles que Vue CLI, il est courant d'effectuer une vérification de type dans le cadre du pipeline de transformation de module, par exemple avec `ts-loader`. Ceci, cependant, n'est pas une solution propre car le système de type a besoin de connaître l'ensemble du graphe de module pour effectuer des vérifications de type. L'étape de transformation d'un module individuel n'est tout simplement pas le bon endroit pour la tâche. Cela conduit aux problèmes suivants :
 
-- `ts-loader` can only type check post-transform code. This doesn't align with the errors we see in IDEs or from `vue-tsc`, which map directly back to the source code.
+- `ts-loader` ne peut vérifier que le type d'un code de post-transformé. Cela ne correspond pas aux erreurs que nous voyons dans les IDE ou de `vue-tsc`, qui renvoient directement au code source.
 
-- Type checking can be slow. When it is performed in the same thread / process with code transformations, it significantly affects the build speed of the entire application.
+- La vérification de type peut être lente. Lorsqu'il est effectué dans le même thread /processus avec des transformations de code, cela affecte considérablement la vitesse de construction de l'ensemble de l'application.
 
-- We already have type checking running right in our IDE in a separate process, so the cost of dev experience slow down simply isn't a good trade-off.
+- Nous avons déjà une vérification de type exécutée directement dans notre IDE dans un processus séparé, donc le ralentissement du coût de l'expérience de développement n'est tout simplement pas un bon compromis.
 
-If you are currently using Vue 3 + TypeScript via Vue CLI, we strongly recommend migrating over to Vite. We are also working on CLI options to enable transpile-only TS support, so that you can switch to `vue-tsc` for type checking.
+Si vous utilisez actuellement Vue 3 + TypeScript via Vue CLI, nous vous recommandons fortement de migrer vers Vite. Nous travaillons également sur les options du CLI pour activer le support de la transpilation TS uniquement, afin que vous puissiez passer à `vue-tsc` pour la vérification de type.
 
-## General Usage Notes {#general-usage-notes}
+## Remarques d'utilisation générales {#general-usage-notes}
 
 ### `defineComponent()` {#definecomponent}
 
-To let TypeScript properly infer types inside component options, we need to define components with [`defineComponent()`](/api/general.html#definecomponent):
+Pour permettre à TypeScript de déduire correctement les types dans les options de composant, nous devons définir les composants avec [`defineComponent()`](/api/general.html#definecomponent) :
 
 ```ts
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  // type inference enabled
+  // inférence de type activé
   props: {
     name: String,
     msg: { type: String, required: true }
@@ -111,13 +111,13 @@ export default defineComponent({
 })
 ```
 
-`defineComponent()` also supports inferring the props passed to `setup()` when using Composition API without `<script setup>`:
+`defineComponent()` prend également en charge l'inférence des props passées à `setup()` lors de l'utilisation de la Composition API sans `<script setup>` :
 
 ```ts
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  // type inference enabled
+  // inférence de type activé
   props: {
     message: String
   },
@@ -127,18 +127,18 @@ export default defineComponent({
 })
 ```
 
-See also:
+Voir aussi :
 
-- [Note on webpack Treeshaking](/api/general.html#note-on-webpack-treeshaking)
-- [type tests for `defineComponent`](https://github.com/vuejs/core/blob/main/test-dts/defineComponent.test-d.tsx)
+- [Note sur le Treeshaking de Webpack](/api/general.html#note-on-webpack-treeshaking)
+- [tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/test-dts/defineComponent.test-d.tsx)
 
 :::tip
-`defineComponent()` also enables type inference for components defined in plain JavaScript.
+`defineComponent()` permet également l'inférence de type pour les composants définis en JavaScript simple.
 :::
 
-### Usage in Single-File Components {#usage-in-single-file-components}
+### Utilisation dans les composants monofichiers {#usage-in-single-file-components}
 
-To use TypeScript in SFCs, add the `lang="ts"` attribute to `<script>` tags. When `lang="ts"` is present, all template expressions also enjoy stricter type checking.
+Pour utiliser TypeScript dans les SFC, ajoutez l'attribut `lang="ts"` aux balises `<script>`. Lorsque `lang="ts"` est présent, toutes les expressions de modèle bénéficient également d'une vérification de type plus stricte.
 
 ```vue
 <script lang="ts">
@@ -154,32 +154,32 @@ export default defineComponent({
 </script>
 
 <template>
-  <!-- type checking and auto-completion enabled -->
+  <!-- vérification du type et auto-complétion disponible -->
   {{ count.toFixed(2) }}
 </template>
 ```
 
-`lang="ts"` can also be used with `<script setup>`:
+`lang="ts"` peut aussi être utilisé avec `<script setup>` :
 
 ```vue
 <script setup lang="ts">
-// TypeScript enabled
+// TypeScript activité
 import { ref } from 'vue'
 
 const count = ref(1)
 </script>
 
 <template>
-  <!-- type checking and auto-completion enabled -->
+  <!-- vérification du type et auto-complétion disponible -->
   {{ count.toFixed(2) }}
 </template>
 ```
 
-### TypeScript in Templates {#typescript-in-templates}
+### TypeScript dans les templates {#typescript-in-templates}
 
-The `<template>` also supports TypeScript in binding expressions when `<script lang="ts">` or `<script setup lang="ts">` is used. This is useful in cases where you need to perform type casting in template expressions.
+Le `<template>` prend également en charge TypeScript dans les expressions de liaison lorsque `<script lang="ts">` ou `<script setup lang="ts">` est utilisé. Ceci est utile dans les cas où vous devez effectuer un casting de type dans les expressions de template.
 
-Here's a contrived example:
+Voici un exemple :
 
 ```vue
 <script setup lang="ts">
@@ -187,12 +187,12 @@ let x: string | number = 1
 </script>
 
 <template>
-  <!-- error because x could be a string -->
+  <!-- erreur parce que x pourrait être une string -->
   {{ x.toFixed(2) }}
 </template>
 ```
 
-This can be worked around with an inline type cast:
+Cela peut être contourné avec un casting litéral de type :
 
 ```vue{6}
 <script setup lang="ts">
@@ -205,10 +205,10 @@ let x: string | number = 1
 ```
 
 :::tip
-If using Vue CLI or a webpack-based setup, TypeScript in template expressions requires `vue-loader@^16.8.0`.
+Si vous utilisez Vue CLI ou une configuration basée sur un Webpack, TypeScript dans les expressions de modèle nécessite `vue-loader@^16.8.0`.
 :::
 
-## API-Specific Recipes {#api-specific-recipes}
+## Recettes spéciques aux APIs {#api-specific-recipes}
 
 - [TS with Composition API](./composition-api)
 - [TS with Options API](./options-api)
