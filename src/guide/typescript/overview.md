@@ -93,7 +93,7 @@ Pour permettre à TypeScript de déduire correctement les types dans les options
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  // inférence de type activé
+  // inférence de type activée
   props: {
     name: String,
     msg: { type: String, required: true }
