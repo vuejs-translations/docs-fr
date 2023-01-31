@@ -75,7 +75,7 @@ Pour l'activer, vous devez désactiver le service de langage TS intégré de VSC
 
 Dans les configurations basées sur Webpack telles que Vue CLI, il est courant d'effectuer une vérification de type dans le cadre du pipeline de transformation de module, par exemple avec `ts-loader`. Ceci, cependant, n'est pas une solution propre car le système de type a besoin de connaître l'ensemble du graphe de module pour effectuer des vérifications de type. L'étape de transformation d'un module individuel n'est tout simplement pas le bon endroit pour la tâche. Cela conduit aux problèmes suivants :
 
-- `ts-loader` ne peut vérifier que le type d'un code de post-transformé. Cela ne correspond pas aux erreurs que nous voyons dans les IDE ou de `vue-tsc`, qui renvoient directement au code source.
+- `ts-loader` ne peut vérifier que le type d'un code post-transformé. Cela ne correspond pas aux erreurs que nous voyons dans les IDE ou de `vue-tsc`, qui renvoient directement au code source.
 
 - La vérification de type peut être lente. Lorsqu'il est effectué dans le même thread /processus avec des transformations de code, cela affecte considérablement la vitesse de construction de l'ensemble de l'application.
 
