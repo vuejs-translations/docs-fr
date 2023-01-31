@@ -14,7 +14,7 @@ Vue est écrit en TypeScript lui-même et fournit un support TypeScript nativeme
 
 ### Vue d'ensemble {#overview}
 
-Avec une configuration basée sur Vite, le serveur de développement et le bundler ne font que de transpiler et n'effectuent aucune vérification de type. Cela garantit que le serveur de développement Vite reste extrêmement rapide même lorsque vous utilisez TypeScript.
+Avec une configuration basée sur Vite, le serveur de développement et le bundler ne font que transpiler et n'effectuent aucune vérification de type. Cela garantit que le serveur de développement Vite reste extrêmement rapide même lorsque vous utilisez TypeScript.
 
 - Pendant le développement, nous vous recommandons de vous fier à une bonne [configuration de votre IDE](#ide-support) pour un feedback instantané sur les erreurs de type.
 
