@@ -53,7 +53,7 @@ Voir aussi :
 - [Documentation officielle des options du compilateur TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 - [Avertissements concernant la compilation TypeScript d'esbuild](https://esbuild.github.io/content-types/#typescript-caveats)
 
-### Mode prise de contrôle Volar {#volar-takeover-mode}
+### Mode prise de contrôle de Volar {#volar-takeover-mode}
 
 > Cette section s'applique uniquement à VSCode + Volar.
 
