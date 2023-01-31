@@ -117,7 +117,7 @@ export default defineComponent({
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  // inférence de type activé
+  // inférence de type activée
   props: {
     message: String
   },
