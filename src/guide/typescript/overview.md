@@ -163,7 +163,7 @@ export default defineComponent({
 
 ```vue
 <script setup lang="ts">
-// TypeScript activité
+// TypeScript activé
 import { ref } from 'vue'
 
 const count = ref(1)
