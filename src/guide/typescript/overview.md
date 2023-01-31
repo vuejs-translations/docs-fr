@@ -83,7 +83,7 @@ Dans les configurations basées sur Webpack telles que Vue CLI, il est courant d
 
 Si vous utilisez actuellement Vue 3 + TypeScript via Vue CLI, nous vous recommandons fortement de migrer vers Vite. Nous travaillons également sur les options du CLI pour activer le support de la transpilation TS uniquement, afin que vous puissiez passer à `vue-tsc` pour la vérification de type.
 
-## Remarques d'utilisation générales {#general-usage-notes}
+## Remarques générales d'utilisation {#general-usage-notes}
 
 ### `defineComponent()` {#definecomponent}
 
