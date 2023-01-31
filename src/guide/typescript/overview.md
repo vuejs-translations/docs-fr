@@ -138,7 +138,7 @@ Voir aussi :
 
 ### Utilisation dans les composants monofichiers {#usage-in-single-file-components}
 
-Pour utiliser TypeScript dans les SFC, ajoutez l'attribut `lang="ts"` aux balises `<script>`. Lorsque `lang="ts"` est présent, toutes les expressions de modèle bénéficient également d'une vérification de type plus stricte.
+Pour utiliser TypeScript dans les SFC, ajoutez l'attribut `lang="ts"` aux balises `<script>`. Lorsque `lang="ts"` est présent, toutes les expressions du template bénéficient également d'une vérification de type plus stricte.
 
 ```vue
 <script lang="ts">
