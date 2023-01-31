@@ -43,7 +43,7 @@ Vue utilise un préfixe `$` lorsqu'il expose ses propres API natives via l'insta
 
 ### Proxy réactif vs. original \* {#reactive-proxy-vs-original}
 
-Dans Vue 3, les données sont rendues dynamiques en tirant parti des [Proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Les utilisateurs venant de Vue 2 doivent être conscients du cas limite suivant :
+Dans Vue 3, les données sont rendues dynamiques en tirant parti des [proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Les utilisateurs venant de Vue 2 doivent être conscients du cas limite suivant :
 
 ```js
 export default {
@@ -75,7 +75,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-Les objets réactis sont des [Proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [Reactivity in Depth](/guide/extras/reactivity-in-depth.html) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
+Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [Reactivity in Depth](/guide/extras/reactivity-in-depth.html) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
 
 Voir aussi : [Typing Reactive](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
@@ -304,7 +304,7 @@ Il est également possible de créer de manière explicite des [objets réactifs
 
 ### Proxy réactif vs. original \*\* {#reactive-proxy-vs-original-1}
 
-Il est important de noter que la valeur retournée par `reactive()` est un [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) de l'objet original, qui n'est pas égal à l'objet original :
+Il est important de noter que la valeur retournée par `reactive()` est un [proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) de l'objet original, qui n'est pas égal à l'objet original :
 
 ```js
 const raw = {}
@@ -326,7 +326,7 @@ console.log(reactive(raw) === proxy) // true
 console.log(reactive(proxy) === proxy) // vrai
 ```
 
-Cette règle s'applique tout auss bien aux objets imbriqués. En raison de la réactivité profonde, les objets imbriqués à l'intérieur d'un objet réactif sont également des proxys :
+Cette règle s'applique tout aussi bien aux objets imbriqués. En raison de la réactivité profonde, les objets imbriqués à l'intérieur d'un objet réactif sont également des proxys :
 
 ```js
 const proxy = reactive({})
@@ -475,7 +475,7 @@ const { foo } = object
 {{ foo + 1 }}
 ```
 
-Désormais le résultalt rendu sera `2`.
+Désormais le résultat rendu sera `2`.
 
 Une chose à noter est qu'une ref sera également désenveloppée si elle est la valeur finale évaluée d'une interpolation de texte (par exemple une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1`:
 
