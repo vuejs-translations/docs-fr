@@ -427,9 +427,9 @@ const { foo, bar } = obj
 
 En d'autres termes, `ref()` nous permet de créer une "référence" à n'importe quelle valeur et de la faire circuler sans perdre la réactivité. Cette capacité est très importante car elle est fréquemment utilisée pour extraire la logique dans les [fonctions composables](/guide/reusability/composables.html).
 
-### Désenvelopper une ref dans les templates \*\* {#ref-unwrapping-in-templates}
+### Déballage d'une ref dans les templates \*\* {#ref-unwrapping-in-templates}
 
-Lorsque les refs sont accédées en tant que propriétés de premier niveau dans le template, elles sont automatiquement "désenveloppées", il n'y a donc pas besoin d'utiliser `.value`. Voici l'exemple précédent du compteur, en utilisant `ref()` à la place :
+Lorsque les refs sont accédées en tant que propriétés de premier niveau dans le template, elles sont automatiquement "déballées", il n'y a donc pas besoin d'utiliser `.value`. Voici l'exemple précédent du compteur, en utilisant `ref()` à la place :
 
 ```vue{13}
 <script setup>
@@ -451,7 +451,7 @@ function increment() {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgY291bnQgPSByZWYoMClcblxuZnVuY3Rpb24gaW5jcmVtZW50KCkge1xuICBjb3VudC52YWx1ZSsrXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPnt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
-Notez que le désenveloppage ne s'applique que si la référence est une propriété de premier niveau dans le contexte du rendu du template. Par exemple, `foo` est une propriété de premier niveau, mais `object.foo` ne l'est pas.
+Notez que le déballage ne s'applique que si la référence est une propriété de premier niveau dans le contexte du rendu du template. Par exemple, `foo` est une propriété de premier niveau, mais `object.foo` ne l'est pas.
 
 Ainsi, étant donné l'objet suivant :
 
@@ -477,7 +477,7 @@ const { foo } = object
 
 Désormais le résultat rendu sera `2`.
 
-Une chose à noter est qu'une ref sera également désenveloppée si elle est la valeur finale évaluée d'une interpolation de texte (par exemple une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1`:
+Une chose à noter est qu'une ref sera également déballée si elle est la valeur finale évaluée d'une interpolation de texte (par exemple une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1`:
 
 ```vue-html
 {{ object.foo }}
@@ -485,9 +485,9 @@ Une chose à noter est qu'une ref sera également désenveloppée si elle est la
 
 Il s'agit simplement d'une fonctionnalité pratique de l'interpolation de texte et elle est équivalente à <code v-pre>{{ objet.foo.valeur }}</code>.
 
-### Désenvelopper une ref dans des objets réactifs \*\* {#ref-unwrapping-in-reactive-objects}
+### Déballage d'une ref dans des objets réactifs \*\* {#ref-unwrapping-in-reactive-objects}
 
-Lorsqu'une `ref` est accédée ou mutée en tant que propriété d'un objet réactif, elle est également automatiquement désenveloppée, donc elle se comporte comme une propriété normale :
+Lorsqu'une `ref` est accédée ou mutée en tant que propriété d'un objet réactif, elle est également automatiquement déballée, donc elle se comporte comme une propriété normale :
 
 ```js
 const count = ref(0)
@@ -512,11 +512,11 @@ console.log(state.count) // 2
 console.log(count.value) // 1
 ```
 
-Le désenveloppage des ref ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet réactif superficiel](/api/reactivity-advanced.html#shallowreactive).
+Le déballage des ref ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet réactif superficiel](/api/reactivity-advanced.html#shallowreactive).
 
-### Désenvelopper une ref dans les tableaux et les collections {#ref-unwrapping-in-arrays-and-collections}
+### Déballage d'une ref dans les tableaux et les collections {#ref-unwrapping-in-arrays-and-collections}
 
-Contrairement aux objets réactifs, aucun désenveloppage n'est effectué lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map` :
+Contrairement aux objets réactifs, aucun déballage n'est effectué lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map` :
 
 ```js
 const books = reactive([ref('Vue 3 Guide')])
