@@ -61,7 +61,7 @@ Pour que les SFC de Vue et TypeScript fonctionnent ensemble, Volar crée une ins
 
 Volar fournit une fonctionnalité appelée "Mode prise de contrôle" (ou Takeover Mode) pour améliorer les performances. En mode prise de contrôle, Volar prend en charge les fichiers Vue et TS à l'aide d'une seule instance de service de langage TS.
 
-Pour activer l'activer, vous devez désactiver le service de langage TS intégré de VSCode dans **l'espace de travail de votre projet uniquement** en suivant ces étapes :
+Pour l'activer, vous devez désactiver le service de langage TS intégré de VSCode dans **l'espace de travail de votre projet uniquement** en suivant ces étapes :
 
 1. Dans l'espace de travail de votre projet, affichez la palette de commandes avec `Ctrl + Shift + P` (macOS : `Cmd + Shift + P`).
 2. Tapez `built` et sélectionnez "Extensions : Afficher les extensions intégrées".
