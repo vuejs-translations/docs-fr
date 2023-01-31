@@ -205,7 +205,7 @@ let x: string | number = 1
 ```
 
 :::tip
-Si vous utilisez Vue CLI ou une configuration basée sur un Webpack, TypeScript dans les expressions de modèle nécessite `vue-loader@^16.8.0`.
+Si vous utilisez Vue CLI ou une configuration basée sur Webpack, TypeScript dans les expressions de modèle nécessite `vue-loader@^16.8.0`.
 :::
 
 ## Recettes spéciques aux APIs {#api-specific-recipes}
