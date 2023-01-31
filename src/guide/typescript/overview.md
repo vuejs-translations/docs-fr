@@ -210,5 +210,5 @@ Si vous utilisez Vue CLI ou une configuration basée sur un Webpack, TypeScript 
 
 ## Recettes spéciques aux APIs {#api-specific-recipes}
 
-- [TS with Composition API](./composition-api)
-- [TS with Options API](./options-api)
+- [TS avec la Composition API](./composition-api)
+- [TS avec l'Options API](./options-api)
