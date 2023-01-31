@@ -3,7 +3,7 @@
 :::info See also
 To better understand the Reactivity APIs, it is recommended to read the following chapters in the guide:
 
-- [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
+- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
 - [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
   :::
 
@@ -40,7 +40,7 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
   ```
 
 - **See also:**
-  - [Guide - Reactive Variables with `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
+  - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
   - [Guide - Typing `ref()`](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
 
 ## computed() {#computed}
@@ -187,7 +187,7 @@ Returns a reactive proxy of the object.
   ```
 
 - **See also:**
-  - [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
+  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
   - [Guide - Typing `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
 ## readonly() {#readonly}
