@@ -4,8 +4,8 @@ outline: deep
 
 # Fondamentaux de la réactivité {#reactivity-fundamentals}
 
-:::tip Préférence API
-Cette page et de nombreux autres chapitres plus loin dans le guide contiennent un contenu différent pour l'Options API et la Composition API. Actuellement, votre préférence est <span class="options-api">l'Options API</span><span class="composition-api">la Composition API</span>. Vous pouvez passer d'un style d'API à l'autre à l'aide des boutons "Préférence API" situés en haut de la barre latérale gauche.
+:::tip Préférence d'API
+Cette page et de nombreux autres chapitres plus loin dans le guide contiennent un contenu différent pour l'Options API et la Composition API. Actuellement, votre préférence est <span class="options-api">l'Options API</span><span class="composition-api">la Composition API</span>. Vous pouvez passer d'un style d'API à l'autre à l'aide des boutons "Préférence d'API" situés en haut de la barre latérale gauche.
 :::
 
 ## Déclarer un état réactif {#declaring-reactive-state}
@@ -39,11 +39,11 @@ Ces propriétés d'instance ne sont ajoutées que lors de la première création
 
 Vous pouvez ajouter une nouvelle propriété directement à `this` sans l'inclure dans `data`. Cependant, les propriétés ajoutées de cette manière ne pourront pas déclencher de mises à jour réactives.
 
-Vue utilise un préfixe `$` lorsqu'il expose ses propres API natives via l'instance du composant. Il réserve également le préfixe `_` pour les propriétés internes. Il faut éviter d'utiliser des noms qui commencent par l'un de ces caractères pour les propriétés `data` de premier niveau.
+Vue utilise un préfixe `$` lorsqu'il expose ses propres API natives via l'instance du composant. Il réserve également le préfixe `_` pour les propriétés internes. Il faut éviter d'utiliser des noms qui commencent par l'un de ces caractères pour les propriétés `data` à sa racine.
 
 ### Proxy réactif vs. original \* {#reactive-proxy-vs-original}
 
-Dans Vue 3, les données sont rendues dynamiques en tirant parti des [proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Les utilisateurs venant de Vue 2 doivent être conscients du cas limite suivant :
+Dans Vue 3, les données sont rendues dynamiques en tirant parti des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Les utilisateurs venant de Vue 2 doivent être conscients du cas limite suivant :
 
 ```js
 export default {
@@ -61,7 +61,7 @@ export default {
 }
 ```
 
-Lorsque vous accédez à `this.someObject` après lui avoir assigné une valeur, la valeur est un proxy réactif du `newObject` original. **Contrairement à Vue 2, le `newObject` original reste intact et ne sera pas rendu réactif : assurez-vous de toujours accéder à l'état réactif comme une propriété de `this`.**
+Lorsque vous accédez à `this.someObject` après lui avoir assigné une valeur, la valeur est un proxy réactif de l'objet d'origine `newObject`. **Contrairement à Vue 2, le `newObject` d'origine reste intact et ne sera pas rendu réactif : assurez-vous de toujours accéder à l'état réactif comme une propriété de `this`.**
 
 </div>
 
@@ -75,9 +75,9 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [Reactivity in Depth](/guide/extras/reactivity-in-depth.html) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
+Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [Reactivity in Depth](/guide/extras/reactivity-in-depth.html) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
 
-Voir aussi : [Typing Reactive](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
+See also: [Typing Reactive](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
 Pour utiliser un état réactif dans le template d'un composant, déclarez et renvoyez-le depuis la fonction `setup()` du composant :
 
@@ -133,7 +133,7 @@ Les méthodes exposées sont généralement utilisées comme écouteurs d'évén
 
 ### `<script setup>` \*\* {#script-setup}
 
-Exposer manuellement l'état et les méthodes via `setup()` peut être verbeux. Heureusement, cela n'est nécessaire que lorsqu'on n'utilise pas d'étape de construction. Lorsque l'on utilise des composants monofichiers, nous pouvons grandement simplifier l'utilisation avec `<script setup>` :
+Exposer manuellement l'état et les méthodes via `setup()` peut être verbeux. Heureusement, cela n'est nécessaire que lorsqu'on n'utilise pas d'outil de build. Lorsque l'on utilise des composants monofichiers, nous pouvons grandement simplifier l'utilisation avec `<script setup>` :
 
 ```vue
 <script setup>
@@ -298,13 +298,13 @@ function mutateDeeply() {
 
 </div>
 
-Il est également possible de créer de manière explicite des [objets réactifs superficiels](/api/reactivity-advanced.html#shallowreactive) où la réactivité n'est traquée qu'au niveau de la racine, mais ces objets ne sont généralement nécessaires que dans des cas d'utilisation avancée.
+Il est également possible de créer de manière explicite des [objets partiellement réactifs](/api/reactivity-advanced.html#shallowreactive) où la réactivité n'est traquée qu'au niveau de la racine, mais ces objets ne sont généralement nécessaires que dans des cas d'utilisation avancée.
 
 <div class="composition-api">
 
 ### Proxy réactif vs. original \*\* {#reactive-proxy-vs-original-1}
 
-Il est important de noter que la valeur retournée par `reactive()` est un [proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) de l'objet original, qui n'est pas égal à l'objet original :
+Il est important de noter que la valeur retournée par `reactive()` est un [proxy](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) de l'objet original, qui n'est pas égal à l'objet original :
 
 ```js
 const raw = {}
@@ -341,9 +341,9 @@ console.log(proxy.nested === raw) // false
 
 L'API `reactive()` a deux limitations :
 
-1. Elle ne fonctionne que pour les types d'objets (objets, tableaux et [objets de type collection](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections) tels que `Map` et `Set`). Elle ne peut pas contenir les [types primitifs](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) tels que `string`, `number` ou `boolean`.
+1. Elle ne fonctionne que pour les types d'objets (objets, tableaux et [objets de type collections](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects#collections_indexées) tels que `Map` et `Set`). Elle ne peut pas contenir les [types primitifs](https://developer.mozilla.org/fr/docs/Glossary/Primitive) tels que `string`, `number` ou `boolean`.
 
-2. Comme le suivi de la réactivité de Vue fonctionne sur l'accès aux propriétés, nous devons toujours conserver la même référence à l'objet réactif. Cela signifie que nous ne pouvons pas facilement "remplacer" un objet réactif car la connexion de réactivité à la première référence est perdue :
+2. Comme le suivi de la réactivité de Vue fonctionne sur l'accès aux propriétés, nous devons toujours conserver la même référence à l'objet réactif. Cela signifie que nous ne pouvons pas facilement "remplacer" un objet réactif car la connexion de réactivité à la première référence serait perdue :
 
    ```js
    let state = reactive({ count: 0 })
@@ -375,7 +375,7 @@ L'API `reactive()` a deux limitations :
 
 ## Variables réactives avec `ref()` \*\* {#reactive-variables-with-ref}
 
-Pour pallier aux limites de `reactive()`, Vue fournit également une fonction [`ref()`](/api/reactivity-core.html#ref) qui nous permet de créer des **"refs "** réactives pouvant contenir n'importe quel type de valeur :
+Pour pallier aux limites de `reactive()`, Vue fournit également une fonction [`ref()`](/api/reactivity-core.html#ref) qui nous permet de créer des **"refs"** réactives pouvant contenir n'importe quel type de valeur :
 
 ```js
 import { ref } from 'vue'
@@ -395,7 +395,7 @@ count.value++
 console.log(count.value) // 1
 ```
 
-Voir aussi : [Typing Refs](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
+See also: [Typing Refs](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
 
 De la même manière que pour les propriétés d'un objet réactif, la propriété `.value` d'une ref est réactive. De plus, lorsqu'elle contient des types d'objets, la ref convertit automatiquement sa `.value` avec `reactive()`.
 
@@ -483,7 +483,7 @@ Une chose à noter est qu'une ref sera également déballée si elle est la vale
 {{ object.foo }}
 ```
 
-Il s'agit simplement d'une fonctionnalité pratique de l'interpolation de texte et elle est équivalente à <code v-pre>{{ objet.foo.valeur }}</code>.
+Il s'agit simplement d'une fonctionnalité pratique de l'interpolation de texte et elle est équivalente à <code v-pre>{{ objet.foo.value }}</code>.
 
 ### Déballage d'une ref dans des objets réactifs \*\* {#ref-unwrapping-in-reactive-objects}
 
@@ -512,7 +512,7 @@ console.log(state.count) // 2
 console.log(count.value) // 1
 ```
 
-Le déballage des ref ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet réactif superficiel](/api/reactivity-advanced.html#shallowreactive).
+Le déballage des refs ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet partiellement réactif](/api/reactivity-advanced.html#shallowreactive).
 
 ### Déballage d'une ref dans les tableaux et les collections {#ref-unwrapping-in-arrays-and-collections}
 
@@ -534,14 +534,14 @@ console.log(map.get('count').value)
 
 ### Méthodes avec état \* {#stateful-methods}
 
-Dans certains cas, nous pouvons avoir besoin de créer dynamiquement une méthode, par exemple en créant un gestionnaire d'événements débridé :
+Dans certains cas, nous pouvons avoir besoin de créer dynamiquement une méthode, par exemple en créant un gestionnaire d'événements _debounced_ :
 
 ```js
 import { debounce } from 'lodash-es'
 
 export default {
   methods: {
-    // Débridage avec Lodash
+    // Debounce avec Lodash
     click: debounce(function () {
       // ... répond au clic ...
     }, 500)
@@ -576,7 +576,7 @@ export default {
 
 <div class="composition-api">
 
-## Transformation de la réactivité <sup class="vt-badge experimental" /> \*\* {#reactivity-transform}
+## Reactivity Transform <sup class="vt-badge experimental" /> \*\* {#reactivity-transform}
 
 Devoir utiliser `.value` avec les refs est un inconvénient imposé par les contraintes du langage JavaScript. Cependant, grâce aux transformations à la compilation nous pouvons améliorer l'ergonomie en ajoutant automatiquement `.value` aux endroits appropriés. Vue fournit une transformation compilatoire qui nous permet d'écrire l'exemple précédent du "compteur" comme ceci :
 
