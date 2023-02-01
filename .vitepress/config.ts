@@ -350,7 +350,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ],
   '/api/': [
     {
-      text: 'Global API',
+      text: 'API globale',
       items: [
         { text: 'Application', link: '/api/application' },
         {
