@@ -134,7 +134,7 @@ Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La f
 
 Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendantes de `publishedBooksMessage` lorsque `author.books` change.
 
-Voir aussi : [Typing Computed](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
+Voir aussi : [Typer les propriétés calculées](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
 </div>
 

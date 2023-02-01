@@ -292,7 +292,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: "Vue d'ensemble", link: '/guide/typescript/overview' },
         {
-          text: 'TS with Composition API',
+          text: 'TS avec la Composition API',
           link: '/guide/typescript/composition-api'
         },
         {

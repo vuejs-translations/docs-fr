@@ -120,7 +120,7 @@ Une méthode gestionnaire reçoit automatiquement l'objet événement natif du D
 
 <div class="composition-api">
 
-Voir aussi : [Typing Event Handlers](/guide/typescript/composition-api.html#typing-event-handlers) <sup class="vt-badge ts" />
+Voir aussi : [Typer les gestionnaires d'événements](/guide/typescript/composition-api.html#typing-event-handlers) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">

@@ -237,7 +237,7 @@ defineExpose({
 
 Lorsqu'un parent accède à une instance de ce composant via les refs du template, l'instance récupérée aura la forme suivante : `{ a: number, b: number }` (les refs sont automatiquement désenveloppées comme sur les instances classiques).
 
-Voir aussi : [Typing Component Template Refs](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+Voir aussi : [Typer les refs du template d'un composant](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">

@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Voir aussi : [Typing Component Props](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passée à `setup()` en premier argument :
 
@@ -432,7 +432,7 @@ emit('enlarge-text')
 </script>
 ```
 
-Voir aussi : [Typing Component Emits](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir aussi : [Typer les emits d'un composant](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits`. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument) :
 
