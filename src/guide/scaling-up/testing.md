@@ -364,7 +364,7 @@ Lorsqu'il est question de tester des composables, nous pouvons diviser en deux c
 
 Un composable dépend d'une instance de composant hôte quand il utilise une des APIs suivantes :
 
-- Lifecycle hooks
+- Hooks du cycle de vie
 - Provide / Inject
 
 Si un composable utilise uniquement les APIs de réactivité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne :

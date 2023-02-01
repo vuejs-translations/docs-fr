@@ -1,7 +1,7 @@
 # Options: Lifecycle {#options-lifecycle}
 
 :::info See also
-For shared usage of lifecycle hooks, see [Guide - Lifecycle Hooks](/guide/essentials/lifecycle.html)
+For shared usage of lifecycle hooks, see [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
 :::
 
 ## beforeCreate {#beforecreate}

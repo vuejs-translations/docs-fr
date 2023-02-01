@@ -215,7 +215,7 @@ Registers a global custom directive if passing both a name string and a directiv
   const myDirective = app.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)
+- **See also:** [Directives personnalisées](/guide/reusability/custom-directives.html)
 
 ## app.use() {#app-use}
 
@@ -337,7 +337,7 @@ Assign a global handler for uncaught errors propagating from within the applicat
 
   - Component renders
   - Event handlers
-  - Lifecycle hooks
+  - Les hooks du cycle de vie 
   - `setup()` function
   - Watchers
   - Custom directive hooks

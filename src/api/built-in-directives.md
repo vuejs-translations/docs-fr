@@ -250,7 +250,7 @@ Attach an event listener to the element.
   ```
 
 - **See also:**
-  - [Event Handling](/guide/essentials/event-handling.html)
+  - [Gestion d'événement](/guide/essentials/event-handling.html)
   - [Composants - Événements personnalisés](/guide/essentials/component-basics.html#listening-to-events)
 
 ## v-bind {#v-bind}
@@ -361,8 +361,8 @@ Create a two-way binding on a form input element or a component.
 
 - **See also:**
 
-  - [Form Input Bindings](/guide/essentials/forms.html)
-  - [Component Events - Usage with `v-model`](/guide/components/v-model.html)
+  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms.html)
+  - [Événements du composant - Utilisation avec `v-model`](/guide/components/v-model.html)
 
 ## v-slot {#v-slot}
 

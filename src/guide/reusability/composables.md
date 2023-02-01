@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) et [Lifecycle Hooks](/guide/essentials/lifecycle.html).
+Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Principes fondamentaux des composants](/guide/essentials/reactivity-fundamentals.html) et [Les hooks du cycle de vie](/guide/essentials/lifecycle.html).
 :::
 
 ## Qu'est-ce qu'un "Composable"? {#what-is-a-composable}

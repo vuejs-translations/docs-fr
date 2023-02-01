@@ -169,16 +169,22 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Rendu de liste', link: '/guide/essentials/list' },
         {
-          text: 'Event Handling',
+          text: "Gestion d'événement",
           link: '/guide/essentials/event-handling'
         },
-        { text: 'Form Input Bindings', link: '/guide/essentials/forms' },
         {
-          text: 'Lifecycle Hooks',
+          text: "Liaisons des entrées d'un formulaire",
+          link: '/guide/essentials/forms'
+        },
+        {
+          text: 'Les hooks du cycle de vie',
           link: '/guide/essentials/lifecycle'
         },
         { text: 'Observateurs', link: '/guide/essentials/watchers' },
-        { text: 'Les refs du template', link: '/guide/essentials/template-refs' },
+        {
+          text: 'Les refs du template',
+          link: '/guide/essentials/template-refs'
+        },
         {
           text: 'Principes fondamentaux des Composants',
           link: '/guide/essentials/component-basics'
@@ -193,8 +199,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/components/registration'
         },
         { text: 'Props', link: '/guide/components/props' },
-        { text: 'Gestion des évènements', link: '/guide/components/events' },
-        { text: 'Component v-model', link: '/guide/components/v-model' },
+        {
+          text: 'Gestion des évènements',
+          link: '/guide/components/events'
+        },
+        {
+          text: 'v-model du composant',
+          link: '/guide/components/v-model'
+        },
         {
           text: 'Attributs implicitement déclarés',
           link: '/guide/components/attrs'
@@ -218,7 +230,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/reusability/composables'
         },
         {
-          text: 'Custom Directives',
+          text: 'Directives personnalisées',
           link: '/guide/reusability/custom-directives'
         },
         { text: 'Plugins', link: '/guide/reusability/plugins' }
@@ -278,7 +290,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'TypeScript',
       items: [
-        { text: 'Overview', link: '/guide/typescript/overview' },
+        { text: "Vue d'ensemble", link: '/guide/typescript/overview' },
         {
           text: 'TS with Composition API',
           link: '/guide/typescript/composition-api'
@@ -364,7 +376,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-advanced'
         },
         {
-          text: 'Lifecycle Hooks',
+          text: 'Les hooks du cycle de vie',
           link: '/api/composition-api-lifecycle'
         },
         {

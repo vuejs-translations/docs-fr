@@ -13,7 +13,7 @@ const selected = ref('')
 const multiSelected = ref([])
 </script>
 
-# Form Input Bindings {#form-input-bindings}
+# Liaisons des entrées utilisateur d'un formulaire {#form-input-bindings}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/user-inputs-vue-devtools-in-vue-3" title="Cours gratuits sur les entrées utilisateurs avec Vue.js"/>
@@ -23,7 +23,7 @@ const multiSelected = ref([])
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-user-inputs-in-vue" title="Cours gratuits sur les entrées utilisateurs avec Vue.js"/>
 </div>
 
-When dealing with forms on the frontend, we often need to sync the state of form input elements with corresponding state in JavaScript. It can be cumbersome to manually wire up value bindings and change event listeners:
+Lorsque nous devons gérer des formulaires côté front, il arrive souvent que nous ayons besoin de synchroniser l'état des éléments de saisi du formulaire avec l'état correspondant en JavaScript. Cela peut être encombrant de connecter les liaisons des valeurs et de changer les écouteurs d'événements :
 
 ```vue-html
 <input
@@ -31,25 +31,25 @@ When dealing with forms on the frontend, we often need to sync the state of form
   @input="event => text = event.target.value">
 ```
 
-The `v-model` directive helps us simplify the above to:
+La directive `v-model` nous aide à simplifier le code ci-dessus par :
 
 ```vue-html
 <input v-model="text">
 ```
 
-In addition, `v-model` can be used on inputs of different types, `<textarea>`, and `<select>` elements. It automatically expands to different DOM property and event pairs based on the element it is used on:
+De plus, `v-model` peut être utilisé sur des entrées de différents types, des éléments `<textarea>`, et `<select>`. Il s'étend automatiquement aux différentes paires de propriétés et d'événements du DOM en fonction de l'élément sur lequel il est utilisé :
 
-- `<input>` with text types and `<textarea>` elements use `value` property and `input` event;
-- `<input type="checkbox">` and `<input type="radio">` use `checked` property and `change` event;
-- `<select>` use `value` as a prop and `change` as an event.
+- Les éléments `<input>` de type texte et `<textarea>` utilisent la propriété `value` et l'événement `input` ;
+- `<input type="checkbox">` et `<input type="radio">` utilisent la propriété `checked` et l'événement `change` ;
+- `<select>` utilise `value` comme prop et `change` comme événement.
 
-::: tip Note
-`v-model` will ignore the initial `value`, `checked` or `selected` attributes found on any form elements. It will always treat the current bound JavaScript state as the source of truth. You should declare the initial value on the JavaScript side, using <span class="options-api">the `data` option</span><span class="composition-api">reactivity APIs</span>.
+::: tip Remarque
+`v-model` ignorera les attributs initiaux `value`, `checked` ou `selected` trouvés sur tout élément de formulaire. Il traitera toujours l'état actuel du JavaScript lié comme la source de vérité. Vous devez déclarer la valeur initiale côté JavaScript, à l'aide de <span class="composition-api">l'API de réactivité</span><span class="options-api">de l'option `data`</span>.
 :::
 
-## Basic Usage {#basic-usage}
+## Utilisation basique {#basic-usage}
 
-### Text {#text}
+### Texte {#text}
 
 ```vue-html
 <p>Message is: {{ message }}</p>
@@ -73,11 +73,11 @@ In addition, `v-model` can be used on inputs of different types, `<textarea>`, a
 </div>
 
 <span id="vmodel-ime-tip"></span>
-::: tip Note
-For languages that require an [IME](https://en.wikipedia.org/wiki/Input_method) (Chinese, Japanese, Korean etc.), you'll notice that `v-model` doesn't get updated during IME composition. If you want to respond to these updates as well, use your own `input` event listener and `value` binding instead of using `v-model`.
+::: tip Remarque
+Pour les langages nécessitant un [IME](https://en.wikipedia.org/wiki/Input_method) (chinois, japonais, coréen etc.), vous remarquerez que `v-model` n'est pas mis à jour pendant la composition de l'IME. Si vous souhaitez également réagir à ces mises à jour, utilisez votre propre écouteur d'événements `input` et votre propre liaison `value` au lieu d'utiliser `v-model`.
 :::
 
-### Multiline text {#multiline-text}
+### Texte multiligne {#multiline-text}
 
 ```vue-html
 <span>Multiline message is:</span>
@@ -102,19 +102,19 @@ For languages that require an [IME](https://en.wikipedia.org/wiki/Input_method) 
 
 </div>
 
-Note that interpolation inside `<textarea>` won't work. Use `v-model` instead.
+Notez que l'interpolation à l'intérieur de `<textarea>` ne fonctionnera pas. Utilisez `v-model` à la place.
 
 ```vue-html
-<!-- bad -->
+<!-- À éviter -->
 <textarea>{{ text }}</textarea>
 
-<!-- good -->
+<!-- OK -->
 <textarea v-model="text"></textarea>
 ```
 
 ### Checkbox {#checkbox}
 
-Single checkbox, boolean value:
+Case à cocher unique, valeur booléenne :
 
 ```vue-html
 <input type="checkbox" id="checkbox" v-model="checked" />
@@ -137,7 +137,7 @@ Single checkbox, boolean value:
 
 </div>
 
-We can also bind multiple checkboxes to the same array or [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) value:
+Nous pouvons également lier plusieurs cases à cocher au même tableau ou à la même valeur [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) :
 
 <div class="composition-api">
 
@@ -186,7 +186,7 @@ export default {
   <label for="demo-mike">Mike</label>
 </div>
 
-In this case, the `checkedNames` array will always contain the values from the currently checked boxes.
+Dans ce cas, le tableau `checkedNames` contiendra toujours les valeurs des cases qui sont actuellement cochées.
 
 <div class="composition-api">
 
@@ -234,7 +234,7 @@ In this case, the `checkedNames` array will always contain the values from the c
 
 ### Select {#select}
 
-Single select:
+Simple select :
 
 ```vue-html
 <div>Selected: {{ selected }}</div>
@@ -268,11 +268,11 @@ Single select:
 
 </div>
 
-:::tip Note
-If the initial value of your `v-model` expression does not match any of the options, the `<select>` element will render in an "unselected" state. On iOS this will cause the user not being able to select the first item because iOS does not fire a change event in this case. It is therefore recommended to provide a disabled option with an empty value, as demonstrated in the example above.
+:::tip Remarque
+Si la valeur initiale de votre expression `v-model` ne correspond à aucune des options, l'élément `<select>` sera rendu dans un état "non sélectionné". Sous iOS, l'utilisateur ne pourra pas sélectionner le premier élément, car iOS ne déclenche pas d'événement de modification dans ce cas. Il est donc recommandé de fournir une option désactivée avec une valeur vide, comme le montre l'exemple ci-dessus.
 :::
 
-Multiple select (bound to array):
+Plusieurs select (liés à un tableau):
 
 ```vue-html
 <div>Selected: {{ selected }}</div>
@@ -305,7 +305,7 @@ Multiple select (bound to array):
 
 </div>
 
-Select options can be dynamically rendered with `v-for`:
+Les options d'un select peuvent être rendues de manière dynamique avec `v-for` :
 
 <div class="composition-api">
 
@@ -360,24 +360,24 @@ export default {
 
 </div>
 
-## Value Bindings {#value-bindings}
+## Liaisons d'une valeur {#value-bindings}
 
-For radio, checkbox and select options, the `v-model` binding values are usually static strings (or booleans for checkbox):
+Pour les options de type radio, checkbox et select, les valeurs de liaison du `v-model` sont généralement des chaînes de caractères statiques (ou des booléens pour les checkbox) :
 
 ```vue-html
-<!-- `picked` is a string "a" when checked -->
+<!-- `picked` est une chaîne de caractères valant "a" lorsqu'il est sélectionné -->
 <input type="radio" v-model="picked" value="a" />
 
-<!-- `toggle` is either true or false -->
+<!-- `toggle` peut être vrai ou faux -->
 <input type="checkbox" v-model="toggle" />
 
-<!-- `selected` is a string "abc" when the first option is selected -->
+<!-- `selected` est une chaîne de caractères valant "abc" lorsque la première option est sélectionnée -->
 <select v-model="selected">
   <option value="abc">ABC</option>
 </select>
 ```
 
-But sometimes we may want to bind the value to a dynamic property on the current active instance. We can use `v-bind` to achieve that. In addition, using `v-bind` allows us to bind the input value to non-string values.
+Mais parfois, il peut arriver que nous voulions lier la valeur à une propriété dynamique sur l'instance actuellement active. Nous pouvons utiliser `v-bind` pour ce faire. De plus, l'utilisation de `v-bind` nous permet de lier la valeur d'entrée à des valeurs autres que des chaînes de caractères.
 
 ### Checkbox
 
@@ -389,7 +389,7 @@ But sometimes we may want to bind the value to a dynamic property on the current
   false-value="no" />
 ```
 
-`true-value` and `false-value` are Vue-specific attributes that only work with `v-model`. Here the `toggle` property's value will be set to `'yes'` when the box is checked, and set to `'no'` when unchecked. You can also bind them to dynamic values using `v-bind`:
+`true-value` et `false-value` sont des attributs spécifiques à Vue qui ne fonctionnent qu'avec `v-model`. Ici, la valeur de la propriété `toggle` sera définie à `'yes'` lorsque la case est cochée, et à `'no'` lorsqu'elle est décochée. Vous pouvez également les lier à des valeurs dynamiques en utilisant `v-bind` :
 
 ```vue-html
 <input
@@ -400,7 +400,7 @@ But sometimes we may want to bind the value to a dynamic property on the current
 ```
 
 :::tip Tip
-The `true-value` and `false-value` attributes don't affect the input's `value` attribute, because browsers don't include unchecked boxes in form submissions. To guarantee that one of two values is submitted in a form (e.g. "yes" or "no"), use radio inputs instead.
+Les attributs `true-value` et `false-value` n'affectent pas l'attribut `value` de l'entrée, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaires. Pour garantir qu'une des deux valeurs est soumise dans un formulaire (par exemple, "oui" ou "non"), utilisez plutôt des entrées de type radio.
 :::
 
 ### Radio
@@ -410,9 +410,9 @@ The `true-value` and `false-value` attributes don't affect the input's `value` a
 <input type="radio" v-model="pick" :value="second" />
 ```
 
-`pick` will be set to the value of `first` when the first radio input is checked, and set to the value of `second` when the second one is checked.
+`pick` prendra la valeur `first` lorsque la première entrée radio sera cochée, et prendra la valeur `second` lorsque la seconde sera cochée.
 
-### Select Options {#select-options}
+### Options de select {#select-options}
 
 ```vue-html
 <select v-model="selected">
@@ -421,41 +421,41 @@ The `true-value` and `false-value` attributes don't affect the input's `value` a
 </select>
 ```
 
-`v-model` supports value bindings of non-string values as well! In the above example, when the option is selected, `selected` will be set to the object literal value of `{ number: 123 }`.
+`v-model` supporte également les liaisons de valeurs autres que des chaînes de caractères ! Dans l'exemple précédent, lorsque l'option est sélectionnée, `selected` sera défini comme la valeur littérale de l'objet `{ number : 123 }`.
 
-## Modifiers {#modifiers}
+## Modificateurs {#modifiers}
 
 ### `.lazy` {#lazy}
 
-By default, `v-model` syncs the input with the data after each `input` event (with the exception of IME composition as [stated above](#vmodel-ime-tip)). You can add the `lazy` modifier to instead sync after `change` events:
+Par défaut, `v-model` synchronise l'entrée avec les données après chaque événement `input` (à l'exception de la composition IME comme [indiqué ci-dessus](#vmodel-ime-tip)). Vous pouvez ajouter le modificateur `lazy` pour enclencher la synchronisation après les événements `change` :
 
 ```vue-html
-<!-- synced after "change" instead of "input" -->
+<!-- synchronisé après "change" au lieu de "input" -->
 <input v-model.lazy="msg" />
 ```
 
 ### `.number` {#number}
 
-If you want user input to be automatically typecast as a number, you can add the `number` modifier to your `v-model` managed inputs:
+Si vous voulez que l'entrée de l'utilisateur soit automatiquement typée comme un nombre, vous pouvez ajouter le modificateur `number` à vos entrées gérées par `v-model` :
 
 ```vue-html
 <input v-model.number="age" />
 ```
 
-If the value cannot be parsed with `parseFloat()`, then the original value is used instead.
+Si la valeur ne peut pas être analysée avec `parseFloat()`, alors la valeur originale est utilisée à la place.
 
-The `number` modifier is applied automatically if the input has `type="number"`.
+Le modificateur `number` est appliqué automatiquement si l'entrée possède `type="number"`.
 
 ### `.trim` {#trim}
 
-If you want whitespace from user input to be trimmed automatically, you can add the `trim` modifier to your `v-model`-managed inputs:
+Si vous voulez que les espaces blancs des entrées utilisateur soient automatiquement supprimés, vous pouvez ajouter le modificateur `trim` à vos entrées gérées par `v-model` :
 
 ```vue-html
 <input v-model.trim="msg" />
 ```
 
-## `v-model` with Components {#v-model-with-components}
+## `v-model` avec les composants {#v-model-with-components}
 
-> If you're not yet familiar with Vue's components, you can skip this for now.
+> Si vous n'êtes pas encore familiarisé avec les composants de Vue, vous pouvez sauter cette étape pour le moment.
 
-HTML's built-in input types won't always meet your needs. Fortunately, Vue components allow you to build reusable inputs with completely customized behavior. These inputs even work with `v-model`! To learn more, read about [Usage with `v-model`](/guide/components/v-model.html) in the Components guide.
+Les types de saisie natifs dans HTML ne répondent pas toujours à vos besoins. Heureusement, les composants Vue vous permettent de construire des entrées réutilisables avec un comportement complètement personnalisé. Ces entrées fonctionnent même avec `v-model` ! Pour en savoir plus, lisez à propos de l'[utilisation avec `v-model`](/guide/components/v-model.html) dans le guide des composants.
