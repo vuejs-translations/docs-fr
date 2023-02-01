@@ -1,6 +1,6 @@
 # TypeScript avec la Composition API {#typescript-with-composition-api}
 
-> Cette page part du principe que vous avez déjà lu l'aperçu sur [l'utilisation de Vue avec TypeScript](./overview).
+> Cette page part du principe que vous avez déjà pris connaissance de comment [utiliser Vue avec TypeScript](./overview).
 
 ## Typer les props des composants {#typing-component-props}
 
@@ -20,7 +20,7 @@ props.bar // number | undefined
 </script>
 ```
 
-Ceci est appelé "déclaration d'exécution", parce que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lord de l'exécution.
+Ceci est appelé "déclaration à l'exécution", parce que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lord de l'exécution.
 
 Cependant, il est généralement plus simple de définir des props avec des types purs via un argument de type générique :
 
@@ -35,7 +35,7 @@ const props = defineProps<{
 
 C'est ce qu'on appelle la "déclaration basée sur le type". Le compilateur fera de son mieux pour déduire les options d'exécution équivalentes en fonction de l'argument de type. Dans ce cas, notre deuxième exemple compile avec exactement les mêmes options d'exécution que le premier exemple.
 
-Vous pouvez utiliser la déclaration basée sur les types OU la déclaration d'exécution, mais vous ne pouvez pas utiliser les deux en même temps.
+Vous pouvez utiliser la déclaration basée sur les types OU la déclaration à l'exécution, mais vous ne pouvez pas utiliser les deux en même temps.
 
 Nous pouvons également déplacer les types des props dans une interface séparée :
 
@@ -112,7 +112,7 @@ const { name, count = 100 } = defineProps<Props>()
 </script>
 ```
 
-Actuellement ce comportement nécessite [explicit opt-in](/guide/extras/reactivity-transform.html#explicit-opt-in).
+Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform.html#explicit-opt-in).
 
 ### Sans `<script setup>` {#without-script-setup}
 
@@ -149,7 +149,7 @@ const props = defineProps<{
 </script>
 ```
 
-Pour la déclaration au moment de l'exécution, nous pouvons utiliser le type utilitaire `PropType` :
+Pour la déclaration à l'exécution, nous pouvons utiliser le type utilitaire `PropType` :
 
 ```ts
 import type { PropType } from 'vue'
@@ -172,15 +172,15 @@ export default defineComponent({
 })
 ```
 
-L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api.html#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations d'exécution utilisant `defineProps()`.
+L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api.html#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations à l'exécution utilisant `defineProps()`.
 
-## Typer les emits d'un composant {#typing-component-emits}
+## Typer les événements d'un composant {#typing-component-emits}
 
-Dans `<script setup>`, la fonction `emit` peut également être typée en utilisant la déclaration d'exécution OU la déclaration de type :
+Dans `<script setup>`, la fonction `emit` peut également être typée en utilisant la déclaration à l'exécution OU la déclaration de type :
 
 ```vue
 <script setup lang="ts">
-// exécution
+// à l'exécution
 const emit = defineEmits(['change', 'update'])
 
 // basée sur les types
@@ -295,7 +295,7 @@ Vous pouvez également spécifier un type explicite via un argument générique 
 
 ```ts
 const double = computed<number>(() => {
-  // terreur de type si un nombre n'est pas retourné
+  // erreur de type si un nombre n'est pas retourné
 })
 ```
 
@@ -326,7 +326,7 @@ function handleChange(event: Event) {
 
 ## Typer Provide / Inject {#typing-provide-inject}
 
-Provide et inject sont généralement utilisés dans des composants séparés. Pour typer correctement les valeurs injectées, Vue fournit une interface `InjectionKey`, qui est un type générique qui étend `Symbol`. Elle peut être utilisée pour synchroniser le type de la valeur injectée entre le fournisseur et le consommateur :
+Provide et Inject sont généralement utilisés dans des composants séparés. Pour typer correctement les valeurs injectées, Vue fournit une interface `InjectionKey`, qui est un type générique qui étend `Symbol`. Elle peut être utilisée pour synchroniser le type de la valeur injectée entre le fournisseur et le consommateur :
 
 ```ts
 import { provide, inject } from 'vue'
@@ -361,7 +361,7 @@ Si vous êtes sûr que la valeur est toujours fournie, vous pouvez également fo
 const foo = inject('foo') as string
 ```
 
-## Typer les refs du template {#typing-template-refs}
+## Typer les refs de template {#typing-template-refs}
 
 Les références du template doivent être créées avec un argument de type générique explicite et une valeur initiale de `null` :
 
