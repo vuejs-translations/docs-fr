@@ -230,7 +230,7 @@ declare module 'vue' {
 
 Voir aussi :
 
-- [TypeScript unit tests for component type extensions](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
+- [Tests TypeScript sur les extensions des types de composant](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
 
 ### Placement des augmentations de type {#type-augmentation-placement}
 
