@@ -35,7 +35,7 @@ Crée une instance d'application.
   const app = createApp(App)
   ```
 
-- **Voir aussi:** [Guide - Créer une application Vue](/guide/essentials/application.html)
+- **Voir aussi :** [Guide - Créer une application Vue](/guide/essentials/application.html)
 
 ## createSSRApp() {#createssrapp}
 
@@ -144,7 +144,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
   </div>
 
-- **Voir aussi:**
+- **Voir aussi :**
   - [Provide / Inject](/guide/components/provide-inject.html)
   - [App-level Provide](/guide/components/provide-inject.html#app-level-provide)
 
@@ -177,7 +177,7 @@ Enregistre un composant global si un nom et une définition de composant sont pa
   const MyComponent = app.component('my-component')
   ```
 
-- **Voir aussi:** [Enregistrement des composants](/guide/components/registration.html)
+- **Voir aussi :** [Enregistrement des composants](/guide/components/registration.html)
 
 ## app.directive() {#app-directive}
 
@@ -215,7 +215,7 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
   const myDirective = app.directive('my-directive')
   ```
 
-- **Voir aussi:** [Directives personnalisées](/guide/reusability/custom-directives.html)
+- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives.html)
 
 ## app.use() {#app-use}
 
@@ -250,7 +250,7 @@ Installe un [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **Voir aussi:** [Plugins](/guide/reusability/plugins.html)
+- **Voir aussi :** [Plugins](/guide/reusability/plugins.html)
 
 ## app.mixin() {#app-mixin}
 
@@ -297,7 +297,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Voir aussi:** [Global API - version](/api/general.html#version)
+- **Voir aussi :** [Global API - version](/api/general.html#version)
 
 ## app.config {#app-config}
 
@@ -391,7 +391,7 @@ Définissez-le sur `true` pour activer le suivi des performances d'initialisatio
 
 - **Type**: `boolean`
 
-- **Voir aussi:** [Guide - Performance](/guide/best-practices/performance.html)
+- **Voir aussi :** [Guide - Performance](/guide/best-practices/performance.html)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
@@ -426,7 +426,7 @@ Spécifie une méthode de vérification pour reconnaître les éléments personn
   }
   ```
 
-- **Voir aussi:** [Vue et Web Components](/guide/extras/web-components.html)
+- **Voir aussi :** [Vue et Web Components](/guide/extras/web-components.html)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
