@@ -1,6 +1,6 @@
 # TypeScript avec l'Options API {#typescript-with-options-api}
 
-> Cette page suppose que vous avez déjà lu l'aperçu de [Using Vue with TypeScript](./overview).
+> Cette page suppose que vous avez déjà pris connaissance de [l'utilisation de Vue avec TypeScript](./overview).
 
 :::tip
 Bien que Vue prenne en charge l'utilisation de TypeScript avec l'Options API, il est recommandé d'utiliser Vue avec TypeScript via la Composition API car elle offre une inférence de type plus simple, plus efficace et plus robuste.
@@ -92,11 +92,11 @@ export default defineComponent({
 })
 ```
 
-Cela évite à TypeScript de devoir déduire le type de `this` à l'intérieur de ces fonctions, ce qui, malheureusement, peut faire échouer l'inférence de type.  C'était une [limitation de conception](https://github.com/microsoft/TypeScript/issues/38845), et elle a été corrigé dans [TypeScript 4.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#improved-function-inference-in-objects-and-methods).
+Cela évite à TypeScript de devoir déduire le type de `this` à l'intérieur de ces fonctions, ce qui, malheureusement, peut faire échouer l'inférence de type. C'était une [limitation de conception](https://github.com/microsoft/TypeScript/issues/38845), et elle a été corrigé dans [TypeScript 4.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html#improved-function-inference-in-objects-and-methods).
 
-## Typer les émissions d'un composant {#typing-component-emits}
+## Typer les événements d'un composant {#typing-component-emits}
 
-Nous pouvons déclarer le type de charge utile attendue pour un événement émis en utilisant la syntaxe objet de l'option `emits`. De plus, tous les événements émis non déclarés produiront une erreur de type lorsqu'ils seront appelés :
+Nous pouvons déclarer les données d'un événement émis en utilisant la syntaxe objet de l'option `emits`. De plus, tous les événements émis non déclarés produiront une erreur de type lorsqu'ils seront appelés :
 
 ```ts
 import { defineComponent } from 'vue'
@@ -215,7 +215,7 @@ export default defineComponent({
 
 ## Augmenter les propriétés globales {#augmenting-global-properties}
 
-Certains plugins installent des propriétés disponibles globalement dans toutes les instances de composants via [`app.config.globalProperties`](/api/application.html#app-config-globalproperties). Par exemple, nous pouvons installer `this.$http` pour la récupération des données ou `this.$translate` pour l'internationalisation. Pour que cela fonctionne bien avec TypeScript, Vue expose une interface `ComponentCustomProperties` conçue pour être augmentée via [TypeScript module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) :
+Certains plugins installent des propriétés disponibles globalement dans toutes les instances de composants via [`app.config.globalProperties`](/api/application.html#app-config-globalproperties). Par exemple, nous pouvons installer `this.$http` pour la récupération des données ou `this.$translate` pour l'internationalisation. Pour que cela fonctionne bien avec TypeScript, Vue expose une interface `ComponentCustomProperties` conçue pour être augmentée via [l'augmentation de module TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) :
 
 ```ts
 import axios from 'axios'
@@ -232,14 +232,14 @@ Voir aussi :
 
 - [TypeScript unit tests for component type extensions](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
 
-### Placement des augmentations d'un type {#type-augmentation-placement}
+### Placement des augmentations de type {#type-augmentation-placement}
 
-We can put this type augmentation in a `.ts` file, or in a project-wide `*.d.ts` file. Either way, make sure it is included in `tsconfig.json`. For library / plugin authors, this file should be specified in the `types` property in `package.json`.
+Nous pouvons placer cette augmentation de type dans un fichier `.ts`, ou dans un fichier `*.d.ts` à l'échelle du projet. Dans les deux cas, assurez-vous qu'il est inclus dans `tsconfig.json`. Pour les auteurs de bibliothèques / plugins, ce fichier doit être spécifié dans la propriété `types` du `package.json`.
 
-In order to take advantage of module augmentation, you will need to ensure the augmentation is placed in a [TypeScript module](https://www.typescriptlang.org/docs/handbook/modules.html). That is to say, the file needs to contain at least one top-level `import` or `export`, even if it is just `export {}`. If the augmentation is placed outside of a module, it will overwrite the original types rather than augmenting them!
+Pour profiter de l'augmentation de module, vous devez vous assurer que l'augmentation est placée dans un [module TypeScript] (https://www.typescriptlang.org/docs/handbook/modules.html). En d'autres termes, le fichier doit contenir au moins un `import` ou un `export` de premier niveau, même s'il s'agit juste d'un `export {}`. Si l'augmentation est placée en dehors d'un module, elle écrasera les types originaux au lieu de les augmenter !
 
 ```ts
-// Does not work, overwrites the original types.
+// Ne fonctionne pas, écrase les types d'origine.
 declare module 'vue' {
   interface ComponentCustomProperties {
     $translate: (key: string) => string
@@ -248,7 +248,7 @@ declare module 'vue' {
 ```
 
 ```ts
-// Works correctly
+// Fonctionne correctement
 export {}
 
 declare module 'vue' {
@@ -290,4 +290,4 @@ Le placement de cette augmentation est soumis aux [mêmes restrictions](#type-au
 
 Voir aussi :
 
-- [TypeScript unit tests for component type extensions](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
+- [Tests TypeScript sur les extensions des types de composant](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
