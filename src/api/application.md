@@ -16,7 +16,7 @@ Crée une instance d'application.
 
 - **Exemple**
 
-  Avec composant racine litéral :
+  Avec un composant racine littéral :
 
   ```js
   import { createApp } from 'vue'
@@ -57,9 +57,9 @@ Monte l'instance d'application dans un élément conteneur.
 
   L'argument peut être soit un élément réel du DOM, soit un sélecteur CSS (le premier élément correspondant sera utilisé). Renvoie l'instance du composant racine.
 
-  Si le composant a un template ou une fonction de rendu défini, il remplacera tous les nœuds DOM existants à l'intérieur du conteneur. Sinon, si le compilateur est disponible, le `innerHTML` du conteneur sera utilisé comme template.
+  Si le composant a un template ou une fonction de rendu défini, il remplacera tous les nœuds du DOM existants à l'intérieur du conteneur. Sinon, si le compilateur est disponible, le `innerHTML` du conteneur sera utilisé comme template.
 
-  En mode d'hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr.html#hydration-mismatch), les nœuds DOM existants seront transformés pour correspondre à la sortie attendue.
+  En mode hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr.html#hydration-mismatch), les nœuds du DOM existants seront transformés pour correspondre à la sortie attendue.
 
   Pour chaque instance d'application, `mount()` ne peut être appelée qu'une seule fois.
 
@@ -72,7 +72,7 @@ Monte l'instance d'application dans un élément conteneur.
   app.mount('#app')
   ```
 
-  Peut également être montée sur un élément DOM réel :
+  Peut également être montée sur un élément du DOM réel :
 
   ```js
   app.mount(document.body.firstChild)
@@ -206,7 +206,7 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
     /* custom directive hooks */
   })
 
-  // enregistrement (function de directive)
+  // enregistrement (raccourci d'une fonction de directive)
   app.directive('my-directive', () => {
     /* ... */
   })
@@ -231,7 +231,7 @@ Installe un [plugin](/guide/reusability/plugins.html).
 
 - **Détails**
 
-  Attend le plug-in comme premier argument et les options facultatives du plug-in comme deuxième argument.
+  Attend le plugin comme premier argument et les options facultatives du plugin comme deuxième argument.
 
   Le plugin peut être soit un objet avec une méthode `install()`, soit simplement une fonction qui sera utilisée comme méthode `install()`. Les options (deuxième argument de `app.use()`) seront transmises à la méthode `install()` du plugin.
 
@@ -313,7 +313,7 @@ console.log(app.config)
 
 ## app.config.errorHandler {#app-config-errorhandler}
 
-Installer un gestionnaire global pour les erreurs non détectées se propageant depuis l'application.
+Installe un gestionnaire global pour les erreurs non détectées se propageant depuis l'application.
 
 - **Type**
 
@@ -340,8 +340,8 @@ Installer un gestionnaire global pour les erreurs non détectées se propageant 
   - Les hooks du cycle de vie
   - Fonction `setup()`
   - Observateurs
-  - Hook de directives personnalisés
-  - Hook de transition
+  - Hooks de directives personnalisés
+  - Hooks de transition
 
 - **Exemple**
 
@@ -353,7 +353,7 @@ Installer un gestionnaire global pour les erreurs non détectées se propageant 
 
 ## app.config.warnHandler {#app-config-warnhandler}
 
-Ajouter un gestionnaire personnalisé pour les avertissements d'exécution de Vue.
+Ajoute un gestionnaire personnalisé pour les avertissements d'exécution de Vue.
 
 - **Type**
 
@@ -369,7 +369,7 @@ Ajouter un gestionnaire personnalisé pour les avertissements d'exécution de Vu
 
 - **Détails**
 
-  Le gestionnaire d'avertissement attend le message d'avertissement comme premier argument, l'instance du composant source comme deuxième argument et une chaîne de trace de composant comme troisième.
+  Le gestionnaire d'avertissement attend le message d'avertissement comme premier argument, l'instance du composant source comme deuxième argument et les traces du composant comme troisième.
 
   Il peut être utilisé pour filtrer des avertissements spécifiques afin de réduire la verbosité de la console. Tous les avertissements de Vue doivent être traités pendant le développement, donc cela n'est recommandé que pendant les sessions de débogage pour se concentrer sur des avertissements spécifiques parmi tant d'autres, et doit être supprimé une fois le débogage terminé.
 
@@ -387,7 +387,7 @@ Ajouter un gestionnaire personnalisé pour les avertissements d'exécution de Vu
 
 ## app.config.performance {#app-config-performance}
 
-Définissez-le sur `true` pour activer le suivi des performances d'initialisation, de compilation, de rendu et de correctif des composants dans le panneau de performances/timeline de l'outil de développement du navigateur. Fonctionne uniquement en mode développement et dans les navigateurs prenant en charge l'API [performance.mark](https://developer.mozilla.org/fr/docs/Web/API/Performance/mark).
+Définissez-le sur `true` pour activer le suivi des performances d'initialisation, de compilation, de rendu et de correction des composants dans le panneau de performances/timeline de l'outil de développement du navigateur. Fonctionne uniquement en mode développement et dans les navigateurs prenant en charge l'API [performance.mark](https://developer.mozilla.org/fr/docs/Web/API/Performance/mark).
 
 - **Type**: `boolean`
 
@@ -395,10 +395,10 @@ Définissez-le sur `true` pour activer le suivi des performances d'initialisatio
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configuration des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering.html#compileroptions).
+Configure des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering.html#compileroptions).
 
 ::: warning Important
-Cette option de configuration n'est respectée que lors de l'utilisation de la version complète (c'est-à-dire `vue.js` qui peut compiler des templates dans le navigateur). Si vous utilisez la construction uniquement à l'exécution avec une configuration de construction, les options du compilateur doivent être transmises plutôt à `@vue/compiler-dom` via les configurations de l'outil de build.
+Cette option de configuration n'est respectée que lors de l'utilisation de la version complète (c'est-à-dire `vue.js` qui peut compiler des templates dans le navigateur). Si vous utilisez le build uniquement à l'exécution avec une configuration de build, les options du compilateur doivent être transmises plutôt à `@vue/compiler-dom` via les configurations de l'outil de build.
 
 - Pour `vue-loader`: [passez via l'option `compilerOptions` du loader](https://vue-loader.vuejs.org/options.html#compileroptions). Aussi, regardez [comment le configurer avec `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
 
@@ -438,7 +438,7 @@ Ajuste le comportement des espaces blancs des templates.
 
 - **Détails**
 
-  Vue supprime/condense les caractères d'espacement dans les template pour produire une sortie compilée plus efficace. La stratégie par défaut est "condense", avec le comportement suivant :
+  Vue supprime/condense les caractères d'espacement dans les templates pour produire une sortie compilée plus efficace. La stratégie par défaut est "condense", avec le comportement suivant :
 
   1. Les caractères d'espacement de début/fin à l'intérieur d'un élément sont condensés en un seul espace.
   2. Les caractères d'espacement entre les éléments qui contiennent des retours à la ligne sont supprimés.
@@ -571,7 +571,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
   }
 
   app.mount('#app')
-  // logge 'Hello Vue'
+ // logue 'Hello Vue'
   ```
 
 - **See also:** [Component Instance - `$options`](/api/component-instance.html#options)
