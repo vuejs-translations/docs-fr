@@ -89,7 +89,7 @@ The resolved component options used for instantiating the current component inst
   })
   ```
 
-- **Voir aussi:** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
+- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 

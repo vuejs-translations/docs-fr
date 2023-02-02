@@ -400,9 +400,9 @@ Configure des options du compilateur fonctionnant à l'exécution. Les valeurs d
 ::: warning Important
 Cette option de configuration n'est respectée que lors de l'utilisation de la version complète (c'est-à-dire `vue.js` qui peut compiler des templates dans le navigateur). Si vous utilisez le build uniquement à l'exécution avec une configuration de build, les options du compilateur doivent être transmises plutôt à `@vue/compiler-dom` via les configurations de l'outil de build.
 
-- Pour `vue-loader`: [passez via l'option `compilerOptions` du loader](https://vue-loader.vuejs.org/options.html#compileroptions). Aussi, regardez [comment le configurer avec `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
+- Pour `vue-loader` : [passez via l'option `compilerOptions` du loader](https://vue-loader.vuejs.org/options.html#compileroptions). Aussi, regardez [comment le configurer avec `vue-cli`](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
 
-- Pour `vite`: [passez via les options de `@vitejs/plugin-vue`](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options).
+- Pour `vite` : [passez via les options de `@vitejs/plugin-vue`](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#options).
   :::
 
 ### app.config.compilerOptions.isCustomElement {#app-config-compileroptions-iscustomelement}
