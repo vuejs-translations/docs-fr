@@ -3,7 +3,7 @@
 :::info See also
 To better understand the Reactivity APIs, it is recommended to read the following chapters in the guide:
 
-- [Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
+- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
 - [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
   :::
 
@@ -39,8 +39,8 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
   console.log(count.value) // 1
   ```
 
-- **See also:**
-  - [Guide - Reactive Variables with `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
+- **Voir aussi :**
+  - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
   - [Guide - Typer `ref()`](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
 
 ## computed() {#computed}
@@ -186,8 +186,8 @@ Returns a reactive proxy of the object.
   console.log(obj.count === count.value) // true
   ```
 
-- **See also:**
-  - [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
+- **Voir aussi :**
+  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
   - [Guide - Typer `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
 ## readonly() {#readonly}

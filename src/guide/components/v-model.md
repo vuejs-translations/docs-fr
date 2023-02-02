@@ -202,7 +202,7 @@ export default {
 
 ## Liaisons multiple avec `v-model` {#multiple-v-model-bindings}
 
-En tirant parti de la possibilité de cibler une prop et un évènement en particulier, comme nous l'avons appris précédemment avec les [arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant..
+En tirant parti de la possibilité de cibler une prop et un évènement en particulier, comme nous l'avons appris précédemment avec les [arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
 
 Chaque v-model se synchronisera avec une prop différente, sans avoir besoin d'options supplémentaires dans le composant :
 
