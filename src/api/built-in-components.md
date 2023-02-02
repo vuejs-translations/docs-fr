@@ -118,7 +118,7 @@ Provides animated transition effects to a **single** element or component.
   </Transition>
   ```
 
-- **See also:** [`<Transition>` Guide](/guide/built-ins/transition.html)
+- **Voir aussi :** [Guide sur `<Transition>`](/guide/built-ins/transition.html)
 
 ## `<TransitionGroup>` {#transitiongroup}
 

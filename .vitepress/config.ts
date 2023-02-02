@@ -237,7 +237,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Built-in Components',
+      text: 'Composants intégrés',
       items: [
         { text: 'Transition', link: '/guide/built-ins/transition' },
         {
@@ -296,7 +296,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/typescript/composition-api'
         },
         {
-          text: 'TS avec l\'Options API',
+          text: "TS avec l'Options API",
           link: '/guide/typescript/options-api'
         }
       ]
