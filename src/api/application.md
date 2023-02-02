@@ -389,7 +389,7 @@ Ajoute un gestionnaire personnalisé pour les avertissements d'exécution de Vue
 
 Définissez-le sur `true` pour activer le suivi des performances d'initialisation, de compilation, de rendu et de correction des composants dans le panneau de performances/timeline de l'outil de développement du navigateur. Fonctionne uniquement en mode développement et dans les navigateurs prenant en charge l'API [performance.mark](https://developer.mozilla.org/fr/docs/Web/API/Performance/mark).
 
-- **Type**: `boolean`
+- **Type** : `boolean`
 
 - **Voir aussi :** [Guide - Performance](/guide/best-practices/performance.html)
 
