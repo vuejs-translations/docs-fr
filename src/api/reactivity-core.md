@@ -39,9 +39,9 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
   console.log(count.value) // 1
   ```
 
-- **See also:**
+- **Voir aussi :**
   - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
-  - [Guide - Typing `ref()`](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
+  - [Guide - Typer `ref()`](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
 
 ## computed() {#computed}
 
@@ -111,7 +111,7 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
 - **See also:**
   - [Guide - Propriétés calculées](/guide/essentials/computed.html)
   - [Guide - Computed Debugging](/guide/extras/reactivity-in-depth.html#computed-debugging)
-  - [Guide - Typing `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
+  - [Guide - Typer `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
 ## reactive() {#reactive}
 
@@ -186,9 +186,9 @@ Returns a reactive proxy of the object.
   console.log(obj.count === count.value) // true
   ```
 
-- **See also:**
+- **Voir aussi :**
   - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
-  - [Guide - Typing `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
+  - [Guide - Typer `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
 ## readonly() {#readonly}
 

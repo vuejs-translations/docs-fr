@@ -83,7 +83,7 @@ Denotes a [ref du template](/guide/essentials/template-refs.html).
 - **See also:**
   - [Guide - Template Refs](/guide/essentials/template-refs.html)
   - [Guide - Typer les refs du template](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
-  - [Guide - Typing Component Template Refs](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+  - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
 
 ## is {#is}
 
