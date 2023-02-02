@@ -247,9 +247,9 @@ Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la se
 
 ## Liaison des styles inline {#binding-inline-styles}
 
-### Liaison par objet {#binding-to-objects-2}
+### Liaison par objet {#binding-to-objects-1}
 
-`:style` supporte les liaisons avec des objets Javascript - ça correspond à la [propriété `style` des éléments HTML](https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/style):
+`:style` supporte les liaisons avec des objets JavaScript - ça correspond à la [propriété `style` des éléments HTML](https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/style):
 
 <div class="composition-api">
 
@@ -317,7 +317,7 @@ data() {
 
 À nouveau, la liaison par objet est souvent utilisée conjointement avec des propriétés calculées qui renvoient des objets.
 
-### Liaison par tableau {binding-to-arrays-2}
+### Liaison par tableau {binding-to-arrays-1}
 
 Nous pouvons lier `:style` à un tableau de plusieurs objets de style. Ces objets seront fusionnés et appliqués au même élément :
 

@@ -379,7 +379,7 @@ Pour les options de type radio, checkbox et select, les valeurs de liaison du `v
 
 Mais parfois, il peut arriver que nous voulions lier la valeur à une propriété dynamique sur l'instance actuellement active. Nous pouvons utiliser `v-bind` pour ce faire. De plus, l'utilisation de `v-bind` nous permet de lier la valeur d'entrée à des valeurs autres que des chaînes de caractères.
 
-### Checkbox
+### Checkbox {#checkbox-1}
 
 ```vue-html
 <input
@@ -403,7 +403,7 @@ Mais parfois, il peut arriver que nous voulions lier la valeur à une propriét�
 Les attributs `true-value` et `false-value` n'affectent pas l'attribut `value` de l'entrée, car les navigateurs n'incluent pas les cases non cochées dans les soumissions de formulaires. Pour garantir qu'une des deux valeurs est soumise dans un formulaire (par exemple, "oui" ou "non"), utilisez plutôt des entrées de type radio.
 :::
 
-### Radio
+### Radio {#radio-1}
 
 ```vue-html
 <input type="radio" v-model="pick" :value="first" />
