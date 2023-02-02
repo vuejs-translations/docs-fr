@@ -272,7 +272,7 @@ Called after the component instance is inserted into the DOM as part of a tree c
   }
   ```
 
-- **See also:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **See also:** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
@@ -288,7 +288,7 @@ Called after the component instance is removed from the DOM as part of a tree ca
   }
   ```
 
-- **See also:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **See also:** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
