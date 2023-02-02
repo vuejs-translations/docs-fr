@@ -20,7 +20,7 @@ props.bar // number | undefined
 </script>
 ```
 
-Ceci est appelé "déclaration à l'exécution", parce que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lord de l'exécution.
+Ceci est appelé "déclaration à l'exécution" de fait que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lord de l'exécution.
 
 Cependant, il est généralement plus simple de définir des props avec des types purs via un argument de type générique :
 
@@ -33,7 +33,7 @@ const props = defineProps<{
 </script>
 ```
 
-C'est ce qu'on appelle la "déclaration basée sur le type". Le compilateur fera de son mieux pour déduire les options d'exécution équivalentes en fonction de l'argument de type. Dans ce cas, notre deuxième exemple compile avec exactement les mêmes options d'exécution que le premier exemple.
+C'est ce qu'on appelle la "déclaration basée sur le type". Le compilateur fera de son mieux pour déduire les options à l'exécution équivalentes en fonction de l'argument de type. Dans ce cas, notre deuxième exemple compile avec exactement les mêmes options à l'exécution que le premier exemple.
 
 Vous pouvez utiliser la déclaration basée sur les types OU la déclaration à l'exécution, mais vous ne pouvez pas utiliser les deux en même temps.
 
@@ -52,7 +52,7 @@ const props = defineProps<Props>()
 
 #### Limitations de syntaxe {#syntax-limitations}
 
-Afin de générer le code d'exécution correct, l'argument générique pour `defineProps()` doit être l'un des suivants :
+Afin de générer le code exécuté correct, l'argument générique pour `defineProps()` doit être l'un des suivants :
 
 - Un type d'objet littéral:
 
@@ -95,7 +95,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-Ceci sera compilé en options `default` équivalentes aux props d'exécution. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
+Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
 De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform.html) qui est toujours expérimentale :
 
@@ -107,7 +107,7 @@ interface Props {
 }
 
 // destructuration réactive pour defineProps()
-// la valeur par défaut est compilée en option équivalente d'exécution
+// la valeur par défaut est compilée en option à l'exécution équivalente
 const { name, count = 100 } = defineProps<Props>()
 </script>
 ```
