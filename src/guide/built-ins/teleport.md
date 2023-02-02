@@ -1,6 +1,6 @@
 # Teleport {#teleport}
 
- <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Free Vue.js Teleport Lesson"/>
+ <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Leçon gratuit sur Teleport de Vue.js"/>
 
 `<Teleport>` est un composant natif qui nous permet de "téléporter" une partie du template d'un composant dans un nœud du DOM qui existe en dehors de la hiérarchie du DOM de ce composant.
 
@@ -168,7 +168,7 @@ Dans certains cas, nous pouvons vouloir désactiver `<Teleport>` de manière con
 </Teleport>
 ```
 
-Où l'état "isMobile" peut être mis à jour dynamiquement à la détection de changements de media query.
+L'état "isMobile" peut être mis à jour dynamiquement à la détection de changements de media query.
 
 ## Plusieurs Teleports sur la même cible {#multiple-teleports-on-the-same-target}
 
