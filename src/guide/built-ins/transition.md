@@ -62,7 +62,7 @@ Voici un exemple de l'utilisation la plus basique :
 </div>
 
 :::tip
-`<Transition>` ne prend en charge qu'un seul élément ou composant comme contenu d'emplacement. Si le contenu est un composant, le composant doit également avoir un seul élément racine.
+`<Transition>` ne prend en charge qu'un seul élément ou composant comme contenu du slot. Si le contenu est un composant, le composant doit également avoir un seul élément racine.
 :::
 
 Lorsqu'un élément d'un composant `<Transition>` est inséré ou supprimé, voici ce qui se passe :
@@ -123,7 +123,7 @@ Pour une transition nommée, ses classes de transition seront préfixées par so
 
 ### Transitions CSS {#css-transitions}
 
-`<Transition>` est le plus souvent utilisé en combinaison avec [les transitions CSS natives](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions), comme on le voit dans l'exemple de base ci-dessus. La propriété CSS `transition` est un raccourci qui nous permet de spécifier plusieurs aspects d'une transition, y compris les propriétés qui doivent être animées, la durée de la transition et les [courbes d'accélération](https://developer.mozilla.org/fr/docs/Web/CSS/easing-function).
+`<Transition>` est le plus souvent utilisé en combinaison avec [les transitions CSS natives](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions), comme on le voit dans l'exemple basique ci-dessus. La propriété CSS `transition` est un raccourci qui nous permet de spécifier plusieurs aspects d'une transition, y compris les propriétés qui doivent être animées, la durée de la transition et les [courbes d'accélération](https://developer.mozilla.org/fr/docs/Web/CSS/easing-function).
 
 Voici un exemple plus avancé qui effectue la transition de plusieurs propriétés, avec différentes durées et courbes d'accélération pour l'entrée et la sortie :
 
@@ -168,7 +168,7 @@ Voici un exemple plus avancé qui effectue la transition de plusieurs propriét�
 
 ### Animations CSS {#css-animations}
 
-[Les animations CSS natives](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Animations/Using_CSS_animations) sont appliquées de la même manière que les transitions CSS, à la différence que `*-enter-from` n'est pas supprimé immédiatement après l'insertion de l'élément, mais lors d'un événement `animationend`.
+[Les animations CSS natives](https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Animations/Using_CSS_animations) sont appliquées de la même manière que les transitions CSS, à la différence que `*-enter-from` n'est pas supprimée immédiatement après l'insertion de l'élément, mais lors d'un événement `animationend`.
 
 Pour la plupart des animations CSS, nous pouvons simplement les déclarer sous les classes `*-enter-active` et `*-leave-active`. Voici un exemple :
 
@@ -291,7 +291,7 @@ Bien que les classes de transition ne soient appliquées qu'à l'élément enfan
 Nous pouvons même ajouter un délai de transition à l'élément imbriqué lors de l'entrée, ce qui crée une séquence d'animation d'entrée décalée :
 
 ```css{3}
-/* retarder l'entrée de l'élément imbriqué pour un effet décalé */
+/* retarde l'entrée de l'élément imbriqué pour un effet décalé */
 .nested-enter-active .inner {
   transition-delay: 0.25s;
 }
@@ -319,11 +319,11 @@ Si nécessaire, vous pouvez également spécifier des valeurs distinctes pour le
 
 Vous remarquerez peut-être que les animations présentées ci-dessus utilisent principalement des propriétés telles que "transform" et "opacity". Ces propriétés sont efficaces pour animer car :
 
-1. Ils n'affectent pas la mise en page du document pendant l'animation, ils ne déclenchent donc pas de calculs de mise en page CSS coûteux sur chaque image d'animation.
+1. Elles n'affectent pas la mise en page du document pendant l'animation, elles ne déclenchent donc pas de calculs de mise en page CSS coûteux sur chaque image d'animation.
 
 2. La plupart des navigateurs modernes peuvent tirer parti de l'accélération matérielle GPU lors de l'animation de `transform`.
 
-En comparaison, des propriétés telles que `height` ou `margin` déclencheront la mise en page CSS, elles sont donc beaucoup plus coûteuses à animer et doivent être utilisées avec prudence. Nous pouvons vérifier des ressources comme [CSS-Triggers](https://csstriggers.com/) pour voir quelles propriétés déclencheront la mise en page si nous les animons.
+En comparaison, des propriétés telles que `height` ou `margin` déclencheront la mise en page CSS, elles sont donc beaucoup plus coûteuses à animer et doivent être utilisées avec prudence. Nous pouvons consulter des ressources comme [CSS-Triggers](https://csstriggers.com/) pour voir quelles propriétés déclencheront la mise en page si nous les animons.
 
 ## Hooks JavaScript {#javascript-hooks}
 
@@ -354,8 +354,8 @@ function onBeforeEnter(el) {}
 // appelée une frame après l'insertion de l'élément.
 // utilisez ceci pour démarrer l'animation d'entrée.
 function onEnter(el, done) {
-  // appelle le callback done pour indiquer la fin de la transition.
-  // facultatif si utilisé en combinaison avec CSS
+  // appelée le fonction de rappel done pour indiquer la fin de la transition.
+  // facultatif si utilisée en combinaison avec CSS
   done()
 }
 
@@ -371,7 +371,7 @@ function onBeforeLeave(el) {}
 // utilisez ceci pour démarrer l'animation de sortie.
 function onLeave(el, done) {
   // appelle le callback done pour indiquer la fin de la transition
-  // facultatif si utilisé en combinaison avec CSS
+  // facultatif si utilisée en combinaison avec CSS
   done()
 }
 
@@ -390,7 +390,7 @@ function onLeaveCancelled(el) {}
 export default {
   // ...
   methods: {
-    // appelé avant que l'élément ne soit inséré dans le DOM.
+    // appelée avant que l'élément ne soit inséré dans le DOM.
     // utilisez ceci pour définir l'état "enter-from" de l'élément
     onBeforeEnter(el) {},
 
@@ -398,7 +398,7 @@ export default {
     // utilisez ceci pour démarrer l'animation d'entrée.
     onEnter(el, done) {
       // appelle le callback done pour indiquer la fin de la transition.
-      // facultatif si utilisé en combinaison avec CSS
+      // facultatif si utilisée en combinaison avec CSS
       done()
     },
 
@@ -406,7 +406,7 @@ export default {
     onAfterEnter(el) {},
     onEnterCancelled(el) {},
 
-    // appelée avant le hook de congé.
+    // appelée avant le hook de sortie.
     // la plupart du temps, vous devez simplement utiliser le hook de sortie.
     onBeforeLeave(el) {},
 
@@ -525,7 +525,7 @@ En plus de basculer un élément avec `v-if` /`v-show`, nous pouvons également 
 
 ## Modes des transition {#transition-modes}
 
-Dans l'exemple précédent, les éléments d'entrée et de sortie sont animés en même temps, et nous avons dû les rendre `position: absolute` pour éviter le problème de mise en page lorsque les deux éléments sont présents dans le DOM.
+Dans l'exemple précédent, les éléments d'entrée et de sortie sont animés en même temps, et nous avons dû les appliquer `position: absolute` pour éviter le problème de mise en page lorsque les deux éléments sont présents dans le DOM.
 
 Cependant, dans certains cas, ce n'est pas une option, ou ce n'est tout simplement pas le comportement souhaité. Nous pouvons vouloir que l'élément sortant soit animé en premier, et que l'élément entrant ne soit inséré **qu'après** que l'animation de départ ne soit terminée. Orchestrer manuellement de telles animations serait très compliqué - heureusement, nous pouvons activer ce comportement en passant à `<Transition>` la prop `mode` :
 

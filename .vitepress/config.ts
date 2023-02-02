@@ -237,7 +237,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Composants intégrés',
+      text: 'Composants natifs',
       items: [
         { text: 'Transition', link: '/guide/built-ins/transition' },
         {
