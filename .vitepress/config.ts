@@ -152,7 +152,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/essentials/template-syntax'
         },
         {
-          text: 'Reactivity Fundamentals',
+          text: 'Fondamentaux de la réactivité',
           link: '/guide/essentials/reactivity-fundamentals'
         },
         {
