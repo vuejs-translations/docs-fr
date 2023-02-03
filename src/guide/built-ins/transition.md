@@ -527,7 +527,7 @@ En plus de basculer un élément avec `v-if` /`v-show`, nous pouvons également 
 
 Dans l'exemple précédent, les éléments d'entrée et de sortie sont animés en même temps, et nous avons dû les appliquer `position: absolute` pour éviter le problème de mise en page lorsque les deux éléments sont présents dans le DOM.
 
-Cependant, dans certains cas, ce n'est pas une option, ou ce n'est tout simplement pas le comportement souhaité. Nous pouvons vouloir que l'élément sortant soit animé en premier, et que l'élément entrant ne soit inséré **qu'après** que l'animation de départ ne soit terminée. Orchestrer manuellement de telles animations serait très compliqué - heureusement, nous pouvons activer ce comportement en passant à `<Transition>` la prop `mode` :
+Cependant, dans certains cas, ce n'est pas une option, ou ce n'est tout simplement pas le comportement souhaité. Nous pouvons vouloir que l'élément sortant soit animé en premier, et que l'élément entrant ne soit inséré **qu'après** que l'animation de départ soit terminée. Orchestrer manuellement de telles animations serait très compliqué - heureusement, nous pouvons activer ce comportement en passant à `<Transition>` la prop `mode` :
 
 ```vue-html
 <Transition mode="out-in">
