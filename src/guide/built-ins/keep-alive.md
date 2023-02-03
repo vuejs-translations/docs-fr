@@ -50,7 +50,7 @@ Maintenant, l'état sera persistant à travers les changements de composants :
 Lorsqu'il est utilisé dans les [templates du DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), il doit être référencé comme `<keep-alive>`.
 :::
 
-## Inclure / Exclure {#include-exclude}
+## Include / Exclude {#include-exclude}
 
 Par défaut, `<KeepAlive>` va mettre en cache toute instance de composant qu'il contient. Nous pouvons personnaliser ce comportement via les props `include` et `exclude`. Ces deux options peuvent être une chaîne de caractères délimitée par des virgules, une `RegExp`, ou un tableau contenant l'un ou l'autre type :
 
