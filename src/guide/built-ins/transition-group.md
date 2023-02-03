@@ -16,7 +16,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 - [Les modes de transition](./transition.html#transition-modes) ne sont pas disponibles, car nous n'alternons plus entre des éléments qui s'excluent mutuellement.
 
-- Les éléments à l'intérieur sont **toujours obligés** d'avoir un attribut unique `key`.
+- Les éléments à l'intérieur sont **contraints de toujours** avoir un attribut unique `key`.
 
 - Les classes de transition CSS seront appliquées aux éléments individuels de la liste, **pas** au groupe/conteneur lui-même.
 
@@ -24,7 +24,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 Lorsqu'il est utilisé dans les [templates du DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), il doit être référencé comme `<transition-group>`.
 :::
 
-## Entrée / Sortie des transitions {#enter-leave-transitions}
+## Transitions d'Entrée / Sortie {#enter-leave-transitions}
 
 Voici un exemple d'application des transitions d'entrée / sortie dans une liste `v-for` en utilisant `<TransitionGroup>` :
 
@@ -50,7 +50,7 @@ Voici un exemple d'application des transitions d'entrée / sortie dans une liste
 
 <ListBasic />
 
-## Déplacer des transitions {#move-transitions}
+## Transitions de mouvements {#move-transitions}
 
 La démonstration ci-dessus présente des défauts évidents : lorsqu'un élément est inséré ou retiré, les éléments qui l'entourent "sautent" instantanément au lieu de se déplacer en douceur. Nous pouvons corriger ce problème en ajoutant quelques règles CSS supplémentaires :
 
@@ -102,7 +102,7 @@ En communiquant avec les transitions JavaScript par le biais d'attributs de donn
 </TransitionGroup>
 ```
 
-Ensuite, dans les hooks JavaScript, nous animons l'élément avec un délai basé sur l'attribut de données. Cet exemple utilise la [bibliothèque GreenSock] (https://greensock.com/) pour réaliser l'animation :
+Ensuite, dans les hooks JavaScript, nous animons l'élément avec un délai basé sur l'attribut de données. Cet exemple utilise la [bibliothèque GreenSock](https://greensock.com/) pour réaliser l'animation :
 
 ```js{5}
 function onEnter(el, done) {
@@ -130,6 +130,6 @@ function onEnter(el, done) {
 
 ---
 
-**Related**
+**Référence**
 
 - [Référence de l'API `<TransitionGroup>`](/api/built-in-components.html#transitiongroup)
