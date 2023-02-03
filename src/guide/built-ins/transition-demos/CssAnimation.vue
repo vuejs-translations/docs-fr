@@ -7,7 +7,7 @@ let show = $ref(true)
     <button @click="show = !show">Toggle</button>
     <Transition name="bounce">
       <p v-if="show" style="margin-top: 20px; text-align: center">
-        Hello here is some bouncy text!
+        Bonjour voici un texte plein d'entrain !
       </p>
     </Transition>
   </div>
