@@ -4,7 +4,7 @@
 
 Ce projet est un fork de vuejs/docs dont le but est de centraliser les efforts pour sa traduction en français.
 
-Merci de vous référer à la partie [Contributing](#contributing) et spécifiquement à ce dépôt la partie [Directives de contribution](#Directives-de-contribution) afin de nous prêter main forte en bonne et due forme.
+Merci de vous référer à la partie [Contributing](#contributing) et surtout de suivre le **[document de contribution](CONTRIBUTING.md)** afin de nous prêter main forte en ayant les bons réflexes.
 
 Il est important également de prendre connaissances des [bonnes pratiques pour la traduction de la documentation](https://github.com/vuejs-translations/guidelines).
 
