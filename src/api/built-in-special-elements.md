@@ -67,7 +67,7 @@ A "meta component" for rendering dynamic components or elements.
   <component :is="href ? 'a' : 'span'"></component>
   ```
 
-  The [built-in components](./built-in-components.html) can all be passed to `is`, but you must register them if you want to pass them by name. For example:
+  The [composants natifs](./built-in-components.html) can all be passed to `is`, but you must register them if you want to pass them by name. For example:
 
   ```vue
   <script>

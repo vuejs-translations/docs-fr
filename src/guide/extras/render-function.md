@@ -559,7 +559,7 @@ Passing slots as functions allows them to be invoked lazily by the child compone
 
 ### Built-in Components {#built-in-components}
 
-[Built-in components](/api/built-in-components.html) such as `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` and `<Suspense>` must be imported for use in render functions:
+[Les composants natifs](/api/built-in-components.html) such as `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` and `<Suspense>` must be imported for use in render functions:
 
 <div class="composition-api">
 
