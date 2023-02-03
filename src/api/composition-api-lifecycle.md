@@ -281,7 +281,7 @@ Registers a callback to be called after the component instance is inserted into 
   function onActivated(callback: () => void): void
   ```
 
-- **See also:** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## onDeactivated() {#ondeactivated}
 
@@ -295,7 +295,7 @@ Registers a callback to be called after the component instance is removed from t
   function onDeactivated(callback: () => void): void
   ```
 
-- **See also:** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 

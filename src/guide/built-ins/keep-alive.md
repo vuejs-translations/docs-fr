@@ -14,7 +14,7 @@ Dans le chapitre sur les principes fondamentaux des composants, nous avons prés
 <component :is="activeComponent" />
 ```
 
-Par défaut, une instance de composant active est démontée lorsque l'on en change. Cela entraîne la perte de tout état modifié qu'elle comporte. Lorsque ce composant est affiché à nouveau, une nouvelle instance sera créée avec uniquement l'état initial.
+Par défaut, une instance du composant actif est démontée lorsqu'on le change. Cela entraîne la perte de tout état modifié qu'elle comporte. Lorsque ce composant est affiché à nouveau, une nouvelle instance sera créée avec uniquement l'état initial.
 
 Dans l'exemple ci-dessous, nous avons deux composants ayant un état - A contient un compteur, tandis que B contient un message synchronisé avec une entrée via `v-model`. Essayez de mettre à jour l'état de l'un d'entre eux, changez de page, puis revenez :
 
@@ -22,7 +22,7 @@ Dans l'exemple ci-dessous, nous avons deux composants ayant un état - A contien
 
 Vous remarquerez qu'au retour, l'état modifié précédent a été réinitialisé.
 
-La création d'une nouvelle instance de composant lors du changement est normalement un comportement utile, mais dans ce cas, nous aimerions vraiment que les deux instances de composant soient préservées même lorsqu'elles sont inactives. Pour résoudre ce problème, nous pouvons envelopper notre composant dynamique avec le composant intégré `<KeepAlive>` :
+La création d'une nouvelle instance de composant lors du changement est normalement un comportement utile, mais dans ce cas, nous aimerions vraiment que les deux instances de composant soient préservées même lorsqu'elles sont inactives. Pour résoudre ce problème, nous pouvons envelopper notre composant dynamique avec le composant natif `<KeepAlive>` :
 
 ```vue-html
 <!-- Les composants inactifs seront mis en cache ! -->
@@ -79,7 +79,7 @@ Depuis la version 3.2.34, un composant monofichier utilisant `<script setup>` d�
 
 ## Maximum d'instances mises en cache {#max-cached-instances}
 
-We can limit the maximum number of component instances that can be cached via the `max` prop. When `max` is specified, `<KeepAlive>` behaves like an [LRU cache](<https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)>): if the number of cached instances is about to exceed the specified max count, the least recently accessed cached instance will be destroyed to make room for the new one.
+Nous pouvons limiter le nombre maximum d'instances de composants qui peuvent être mises en cache via la prop `max`. Lorsque `max` est spécifié, `<KeepAlive>` se comporte comme un [cache LRU](<https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)>) : si le nombre d'instances mises en cache est sur le point de dépasser le nombre maximum spécifié, l'instance mise en cache la moins récemment activée sera détruite pour faire place à la nouvelle.
 
 ```vue-html
 <KeepAlive :max="10">
@@ -139,6 +139,6 @@ Notez que :
 
 ---
 
-**Connexe**
+**Référence**
 
 - [Référence de l'API `<KeepAlive>`](/api/built-in-components.html#keepalive)
