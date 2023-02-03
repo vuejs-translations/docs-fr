@@ -6,27 +6,27 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 # TransitionGroup {#transitiongroup}
 
-`<TransitionGroup>` is a built-in component designed for animating the insertion, removal, and order change of elements or components that are rendered in a list.
+`<TransitionGroup>` est un composant natif conçu pour animer l'insertion, la suppression et le changement d'ordre des éléments ou des composants qui sont rendus dans une liste.
 
-## Differences from `<Transition>` {#differences-from-transition}
+## Différences avec `<Transition>` {#differences-from-transition}
 
-`<TransitionGroup>` supports the same props, CSS transition classes, and JavaScript hook listeners as `<Transition>`, with the following differences:
+`<TransitionGroup>` prend en charge les mêmes props, classes de transition CSS et écouteurs de hooks JavaScript que `<Transition>`, avec les différences suivantes :
 
-- By default, it doesn't render a wrapper element. But you can specify an element to be rendered with the `tag` prop.
+- Par défaut, il ne rend pas d'élément en contenant d'autres. Mais vous pouvez spécifier un élément à rendre avec la prop `tag`.
 
-- [Transition modes](./transition.html#transition-modes) are not available, because we are no longer alternating between mutually exclusive elements.
+- [Les modes de transition](./transition.html#transition-modes) ne sont pas disponibles, car nous n'alternons plus entre des éléments qui s'excluent mutuellement.
 
-- Elements inside are **always required** to have a unique `key` attribute.
+- Les éléments à l'intérieur sont **contraints de toujours** avoir un attribut unique `key`.
 
-- CSS transition classes will be applied to individual elements in the list, **not** to the group / container itself.
+- Les classes de transition CSS seront appliquées aux éléments individuels de la liste, **pas** au groupe/conteneur lui-même.
 
 :::tip
-When used in [templates DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), it should be referenced as `<transition-group>`.
+Lorsqu'il est utilisé dans les [templates du DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), il doit être référencé comme `<transition-group>`.
 :::
 
-## Enter / Leave Transitions {#enter-leave-transitions}
+## Transitions d'Entrée / Sortie {#enter-leave-transitions}
 
-Here is an example of applying enter / leave transitions to a `v-for` list using `<TransitionGroup>`:
+Voici un exemple d'application des transitions d'entrée / sortie dans une liste `v-for` en utilisant `<TransitionGroup>` :
 
 ```vue-html
 <TransitionGroup name="list" tag="ul">
@@ -50,12 +50,12 @@ Here is an example of applying enter / leave transitions to a `v-for` list using
 
 <ListBasic />
 
-## Move Transitions {#move-transitions}
+## Transitions de mouvements {#move-transitions}
 
-The above demo has some obvious flaws: when an item is inserted or removed, its surrounding items instantly "jump" into place instead of moving smoothly. We can fix this by adding a few additional CSS rules:
+La démonstration ci-dessus présente des défauts évidents : lorsqu'un élément est inséré ou retiré, les éléments qui l'entourent "sautent" instantanément au lieu de se déplacer en douceur. Nous pouvons corriger ce problème en ajoutant quelques règles CSS supplémentaires :
 
 ```css{1,13-17}
-.list-move, /* apply transition to moving elements */
+.list-move, /* appliquer la transition aux éléments mobiles */
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s ease;
@@ -67,22 +67,22 @@ The above demo has some obvious flaws: when an item is inserted or removed, its 
   transform: translateX(30px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
+/* s'assure que les éléments sortants sont retirés du flux de la mise en page afin que le déplacement
+   des animations soit calculé correctement. */
 .list-leave-active {
   position: absolute;
 }
 ```
 
-Now it looks much better - even animating smoothly when the whole list is shuffled:
+Maintenant, c'est beaucoup mieux - elle s'anime même en douceur lorsque la liste entière est mélangée :
 
 <ListMove />
 
-[Full Example](/examples/#list-transition)
+[Exemple complet](/examples/#list-transition)
 
-## Staggering List Transitions {#staggering-list-transitions}
+## Échelonner des transitions de liste {#staggering-list-transitions}
 
-By communicating with JavaScript transitions through data attributes, it's also possible to stagger transitions in a list. First, we render the index of an item as a data attribute on the DOM element:
+En communiquant avec les transitions JavaScript par le biais d'attributs de données, il est également possible d'échelonner les transitions dans une liste. Tout d'abord, nous rendons l'index d'un élément comme un attribut de données sur l'élément du DOM :
 
 ```vue-html{11}
 <TransitionGroup
@@ -102,7 +102,7 @@ By communicating with JavaScript transitions through data attributes, it's also 
 </TransitionGroup>
 ```
 
-Then, in JavaScript hooks, we animate the element with a delay based on the data attribute. This example is using the [GreenSock library](https://greensock.com/) to perform the animation:
+Ensuite, dans les hooks JavaScript, nous animons l'élément avec un délai basé sur l'attribut de données. Cet exemple utilise la [bibliothèque GreenSock](https://greensock.com/) pour réaliser l'animation :
 
 ```js{5}
 function onEnter(el, done) {
@@ -130,6 +130,6 @@ function onEnter(el, done) {
 
 ---
 
-**Related**
+**Référence**
 
-- [`<TransitionGroup>` API reference](/api/built-in-components.html#transitiongroup)
+- [Référence de l'API `<TransitionGroup>`](/api/built-in-components.html#transitiongroup)
