@@ -141,7 +141,7 @@ export default {
 
 <Colors />
 
-En plus de la couleur, vous pouvez également utiliser des liens de style pour animer la transformation, la largeur ou la hauteur. Vous pouvez même animer des chemins SVG en utilisant la physique de ressort - après tout, ce sont tous des liens de données d'attribut :
+En plus de la couleur, vous pouvez également utiliser des liaisons de style pour animer la transformation, la largeur ou la hauteur. Vous pouvez même animer des chemins SVG en utilisant la physique de ressort - après tout, ce sont toutes des liaisons de données d'attributs :
 
 <ElasticHeader />
 
