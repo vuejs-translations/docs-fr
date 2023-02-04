@@ -33,7 +33,7 @@ For profiling performance during local development:
 
 - [Chrome DevTools Performance Panel](https://developer.chrome.com/docs/devtools/evaluate-performance/)
   - [`app.config.performance`](/api/application.html#app-config-performance) enables Vue-specific performance markers in Chrome DevTools' performance timeline.
-- [Vue DevTools Extension](/guide/scaling-up/tooling.html#browser-devtools) also provides a performance profiling feature.
+- [L'extension Vue DevTools](/guide/scaling-up/tooling.html#browser-devtools) also provides a performance profiling feature.
 
 ## Page Load Optimizations {#page-load-optimizations}
 

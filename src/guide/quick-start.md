@@ -51,7 +51,7 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction.html#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction.html#options-api). Voici quelques conseils supplémentaires :
 
 - L'IDE recommandé est [Visual Studio Code] (https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). [Si vous utilisez d'autres éditeurs, lisez la [section support IDE](/guide/scaling-up/tooling.html#ide-support).
-- Le [Guide des outillages](/guide/scaling-up/tooling.html) fournit plus de détails sur l'outillage, notamment sur l'intégration avec les frameworks back-end.
+- [Guide - Outils](/guide/scaling-up/tooling.html) fournit plus de détails sur l'outillage, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
 - Si vous avez chooisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
 

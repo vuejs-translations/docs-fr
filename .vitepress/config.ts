@@ -253,7 +253,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Scaling Up',
       items: [
         { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
-        { text: 'Tooling', link: '/guide/scaling-up/tooling' },
+        { text: 'Outils', link: '/guide/scaling-up/tooling' },
         { text: 'Routing', link: '/guide/scaling-up/routing' },
         {
           text: 'State Management',
