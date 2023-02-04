@@ -90,7 +90,7 @@ export default {
 
 ## Animations pilotées par l'état {#state-driven-animations}
 
-Certaines transitions peuvent être appliquées en interpolant des valeurs, par exemple en liant un style à un élément pendant qu'une interaction se produit. Prenons l'exemple suivant :
+Certaines transitions peuvent être appliquées en interpolant des valeurs, par exemple en liant un style à un élément pendant qu'une interaction se produit. Prenons cet exemple :
 
 <div class="composition-api">
 
