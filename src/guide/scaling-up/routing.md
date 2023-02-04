@@ -1,29 +1,29 @@
 # Routing {#routing}
 
-## Client-Side vs. Server-Side Routing {#client-side-vs-server-side-routing}
+## Routage côté client vs. côté serveur {#client-side-vs-server-side-routing}
 
-Routing on the server side means the server sending a response based on the URL path that the user is visiting. When we click on a link in a traditional server-rendered web app, the browser receives an HTML response from the server and reloads the entire page with the new HTML.
+Le routage côté serveur signifie que le serveur envoie une réponse basée sur le chemin URL que l'utilisateur visite. Lorsque nous cliquons sur un lien dans une application web traditionnelle à rendu serveur, le navigateur reçoit une réponse HTML du serveur et recharge la page entière avec le nouveau HTML.
 
-In a [Single-Page Application](https://developer.mozilla.org/en-US/docs/Glossary/SPA) (SPA), however, the client-side JavaScript can intercept the navigation, dynamically fetch new data, and update the current page without full page reloads. This typically results in a more snappy user experience, especially for use cases that are more like actual "applications", where the user is expected to perform many interactions over a long period of time.
+Cependant, dans une [application monopage](https://developer.mozilla.org/fr/docs/Glossary/SPA) (SPA), le JavaScript côté client peut intercepter la navigation, récupérer dynamiquement de nouvelles données, et mettre à jour la page actuelle sans la recharger entièrement. Il en résulte généralement une expérience utilisateur plus rapide, en particulier pour les cas d'utilisation qui ressemblent davantage à des "applications" réelles, où l'utilisateur est censé effectuer de nombreuses interactions sur une longue période de temps.
 
-In such SPAs, the "routing" is done on the client side, in the browser. A client-side router is responsible for managing the application's rendered view using browser APIs such as [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) or the [`hashchange` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event).
+Dans ces SPA, le "routage" est effectué côté client, dans le navigateur. Un routeur côté client est chargé de gérer la vue rendue de l'application à l'aide d'API de navigateur telles que [l'API History](https://developer.mozilla.org/fr/docs/Web/API/History) ou [l'événement `hashchange`](https://developer.mozilla.org/fr/docs/Web/API/Window/hashchange_event).
 
-## Official Router {#official-router}
+## Router officiel {#official-router}
 
 <!-- TODO update links -->
 <div>
-  <VueSchoolLink href="https://vueschool.io/courses/vue-router-4-for-everyone" title="Free Vue Router Course">
-    Watch a Free Video Course on Vue School
+  <VueSchoolLink href="https://vueschool.io/courses/vue-router-4-for-everyone" title="Leçon gratuite sur le router de Vue">
+    Regarder un cours vidéo gratuit sur Vue School
   </VueSchoolLink>
 </div>
 
-Vue is well-suited for building SPAs. For most SPAs, it's recommended to use the officially-supported [Vue Router library](https://github.com/vuejs/router). For more details, see Vue Router's [documentation](https://router.vuejs.org/).
+Vue est bien adapté à la création de SPA. Pour la plupart des SPA, il est recommandé d'utiliser la [bibliothèque Vue Router](https://github.com/vuejs/router) officiellement supportée. Pour plus de détails, consultez la [documentation] de Vue Router (https://router.vuejs.org/).
 
-## Simple Routing from Scratch {#simple-routing-from-scratch}
+## Routage simple à partir de zéro {#simple-routing-from-scratch}
 
-If you only need very simple routing and do not wish to involve a full-featured router library, you can do so with [Composants Dynamiques](/guide/essentials/component-basics.html#dynamic-components) and update the current component state by listening to browser [`hashchange` events](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event) or using the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History).
+Si vous n'avez besoin que d'un routage très simple et que vous ne souhaitez pas utiliser une bibliothèque de routeurs complète, vous pouvez utiliser des [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components) et mettre à jour l'état actuel du composant en écoutant les [événements `hashchange`](https://developer.mozilla.org/fr/docs/Web/API/Window/hashchange_event) du navigateur ou en utilisant l'[API History](https://developer.mozilla.org/fr/docs/Web/API/History).
 
-Here's a bare-bone example:
+Voici un exemple concret :
 
 <div class="composition-api">
 
