@@ -16,7 +16,7 @@ First, let's discuss the two major aspects of web performance:
 
 While it would be ideal to maximize both, different frontend architectures tend to affect how easy it is to attain desired performance in these aspects. In addition, the type of application you are building greatly influences what you should prioritize in terms of performance. Therefore, the first step of ensuring optimal performance is picking the right architecture for the type of application you are building:
 
-- Consult [Ways of Using Vue](/guide/extras/ways-of-using-vue.html) to see how you can leverage Vue in different ways.
+- Consult [Méthodes d'utilisation de Vue](/guide/extras/ways-of-using-vue.html) to see how you can leverage Vue in different ways.
 
 - Jason Miller discusses the types of web applications and their respective ideal implementation / delivery in [Application Holotypes](https://jasonformat.com/application-holotypes/).
 
