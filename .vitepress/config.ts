@@ -305,7 +305,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Extra Topics',
       items: [
         {
-          text: "Méthodes d'utilisation de Vue",
+          text: "Manières d'utiliser Vue",
           link: '/guide/extras/ways-of-using-vue'
         },
         {
