@@ -362,7 +362,7 @@ console.log(ctx.teleports) // { '#teleported': 'teleported content' }
 ```
 
 You need to inject the teleport markup into the correct location in your final page HTML similar to how you need to inject the main app markup.
-Vous devez injecter le markup de téléportation dans l'emplacement correct dans votre HTML de page finale, similaire à comment vous devez injecter le markup principal de l'application.
+Vous devez injecter le markup de téléportation dans l'emplacement correct dans votre HTML de page finale, tout comme vous devez injecter le markup principal de l'application.
 
 :::tip
 Évitez de cibler `body` lorsque vous utilisez Teleports et SSR ensemble - généralement, `<body>` contiendra d'autres contenus rendus sur le serveur ce qui rend impossible pour Teleports de déterminer le bon emplacement de départ pour l'hydratation.
