@@ -272,7 +272,7 @@ Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaqu
 
 The recommended solution is to create a new instance of the entire application - including the router and global stores - on each request. Then, instead of directly importing it in our components, we provide the shared state using [app-level provide](/guide/components/provide-inject.html#app-level-provide) and inject it in components that need it:
 
-La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [le fournisseur de niveau d'application](/guide/components/provide-inject.html#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
+La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [Provide au niveau de l'application](/guide/components/provide-inject.html#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
 
 ```js
 // app.js (partagé entre le serveur et le client)
