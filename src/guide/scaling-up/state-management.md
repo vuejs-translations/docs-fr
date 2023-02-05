@@ -223,7 +223,7 @@ The fact that Vue's reactivity system is decoupled from the component model make
 
 ## SSR Considerations {#ssr-considerations}
 
-If you are building an application that leverages [Server-Side Rendering (SSR)](./ssr), the above pattern can lead to issues due to the store being a singleton shared across multiple requests. This is discussed in [more details](./ssr#cross-request-state-pollution) in the SSR guide.
+If you are building an application that leverages [Rendu côté serveur (SSR)](./ssr), the above pattern can lead to issues due to the store being a singleton shared across multiple requests. This is discussed in [more details](./ssr#cross-request-state-pollution) in the SSR guide.
 
 ## Pinia {#pinia}
 
