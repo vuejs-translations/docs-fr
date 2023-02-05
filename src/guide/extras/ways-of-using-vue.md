@@ -45,7 +45,7 @@ Il existe deux types de SSG : monopage et multi-page. Les deux types pré-renden
 
 - Une SSG à plusieurs pages charge une nouvelle page à chaque navigation. L'avantage est qu'elle peut livrer un JS minimal - ou pas du tout s'il n'y a pas besoin d'interaction ! Certains frameworks SSG à plusieurs pages, tels que [Astro](https://astro.build/) prennent également en charge une "hydratation partielle" - ce qui vous permet d'utiliser des composants Vue pour créer des "îlots" interactifs à l'intérieur de l'HTML statique.
 
-Les SSG à une seule page conviennent mieux si vous attendez une interactivité non négligeable, des sessions profondes ou des éléments / états persistants à travers les navigations. Dans le cas contraire, une SSG à plusieurs pages serait un choix plus judicieux.
+Les SSG monopages conviennent mieux si vous attendez une interactivité non négligeable, des sessions profondes ou des éléments / états persistants à travers les navigations. Dans le cas contraire, une SSG à plusieurs pages serait un choix plus judicieux.
 
 L'équipe Vue maintient également un générateur de site statique appelé  [VitePress](https://vitepress.vuejs.org/), qui alimente le site web que vous êtes en train de lire en ce moment même! VitePress prend en charge les deux types de SSG. [Nuxt](https://nuxt.com/) prend également en charge le SSG. Vous pouvez même mélanger SSR et SSG pour différentes routes dans la même application Nuxt.
 
