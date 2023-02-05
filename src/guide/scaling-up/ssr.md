@@ -307,7 +307,7 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
    <p><div>hi</div></p>
    ```
 
-   Si nous produisons ceci dans notre HTML rendu par le serveur, le navigateur terminera le premier `<p>` lorsque `<div>` sera rencontré et le parser en la structure de DOM suivante :
+   Si nous produisons ceci dans notre HTML rendu par le serveur, le navigateur terminera le premier `<p>` lorsque `<div>` sera rencontré et l'analysera en la structure de DOM suivante :
 
    ```html
    <p></p>
