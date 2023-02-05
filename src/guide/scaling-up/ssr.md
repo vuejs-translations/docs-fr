@@ -84,7 +84,7 @@ Cela devrait imprimer ce qui suit sur la ligne de commande :
 <button>1</button>
 ```
 
-La fonction [`renderToString()`](/api/ssr.html#rendertostring) prend une instance d'application Vue et renvoie une Promise qui correspond au rendu HTML de l'application. Il est également possible d'effectuer un rendu en continu à l'aide de la [Node.js Stream API](https://nodejs.org/api/stream.html) ou de la [Web Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). Consultez la [SSR API Reference](/api/ssr.html) pour plus de détails.
+La fonction [`renderToString()`](/api/ssr.html#rendertostring) prend une instance d'application Vue et renvoie une Promise qui correspond au rendu HTML de l'application. Il est également possible d'effectuer un rendu en continu à l'aide de la [Node.js Stream API](https://nodejs.org/api/stream.html) ou de la [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Consultez la [SSR API Reference](/api/ssr.html) pour plus de détails.
 
 Nous pouvons ensuite déplacer le code Vue SSR dans un gestionnaire de requêtes serveur, qui englobe le balisage de l'application avec la page HTML complète. Nous allons utiliser [`express`](https://expressjs.com/) pour les étapes suivantes :
 
