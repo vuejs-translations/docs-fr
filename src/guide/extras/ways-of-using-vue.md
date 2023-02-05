@@ -25,7 +25,7 @@ Vue fournit des bibliothèques de base et un [support d'outils exhaustif](/guide
 - Intégrations TypeScript
 - Utilitaires de test
 
-Les SPAs nécessitent généralement que le backend expose des points de terminaison d'API, mais vous pouvez également associer Vue à des solutions telles que [Inertia.js](https://inertiajs.com) pour bénéficier des avantages d'une SPA tout en conservant un modèle de développement centré sur le serveur.
+Les SPAs nécessitent généralement que le backend expose une API, mais vous pouvez également associer Vue à des solutions telles que [Inertia.js](https://inertiajs.com) pour bénéficier des avantages d'une SPA tout en conservant un modèle de développement centré sur le serveur.
 
 ## Fullstack / SSR {#fullstack-ssr}
 
