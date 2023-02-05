@@ -8,7 +8,7 @@ Met à jour le contenu texte d'un élément.
 
 - **Détails**
 
-  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, de sorte qu'il écrasera tout contenu existant dans l'élément. Si vous devez mettre à jour `textContent`, vous devez utiliser les [interpolations moustaches](/guide/essentials/template-syntax.html#text-interpolation) à la place.
+  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, de sorte qu'elle écrasera tout contenu existant dans l'élément. Si vous devez mettre à jour `textContent`, vous devez utiliser les [interpolations moustaches](/guide/essentials/template-syntax.html#text-interpolation) à la place.
 
 - **Exemple**
 
@@ -52,7 +52,7 @@ Fait basculer la visibilité de l'élément en fonction de la véracité de la v
 
 - **Détails**
 
-  `v-show` fonctionne en fixant la propriété CSS `display` via des styles en ligne, et essaiera de respecter la valeur initiale `display` lorsque l'élément est visible. Il déclenche également des transitions lorsque sa condition change.
+  `v-show` fonctionne en fixant la propriété CSS `display` via des styles en ligne, et essaiera de respecter la valeur initiale `display` lorsque l'élément est visible. Elle déclenche également des transitions lorsque sa condition change.
 
 - **Voir aussi :** [Rendu conditionnel - v-show](/guide/essentials/conditional.html#v-show)
 
@@ -64,7 +64,7 @@ Rend conditionnellement un élément ou un fragment de template en fonction de l
 
 - **Détails**
 
-  Lorsqu'un élément `v-if` est activé / désactivé, l'élément et les directives / composants qu'il contient sont détruits et reconstruits. Si la condition initiale est fausse, le contenu interne ne sera pas rendu du tout.
+  Lorsqu'un élément comportant `v-if` est activé / désactivé, l'élément et les directives / composants qu'il contient sont détruits et reconstruits. Si la condition initiale est fausse, le contenu interne ne sera pas rendu du tout.
 
   Peut être utilisée sur `<template>` pour désigner un bloc conditionnel contenant uniquement du texte ou plusieurs éléments.
 
@@ -194,7 +194,7 @@ Attache un écouteur d'événements à l'élément.
 
   Le type d'événement est indiqué par l'argument. L'expression peut être un nom de méthode, une déclaration en ligne, ou omise si des modificateurs sont présents.
 
-  Lorsqu'il est utilisé sur un élément normal, elle écoute uniquement les [**événements natifs du DOM**](https://developer.mozilla.org/fr/docs/Web/Events). Lorsqu'elle est utilisée sur un composant d'éléments personnalisés, elle écoute les **événements personnalisés** émis sur ce composant enfant.
+  Lorsqu'elle est utilisée sur un élément normal, elle écoute uniquement les [**événements natifs du DOM**](https://developer.mozilla.org/fr/docs/Web/Events). Lorsqu'elle est utilisée sur un composant d'éléments personnalisés, elle écoute les **événements personnalisés** émis sur ce composant enfant.
 
   Lorsqu'elle écoute les événements natifs du DOM, la méthode reçoit l'événement natif comme seul argument. Si vous utilisez une déclaration en ligne, la déclaration a accès à la propriété spéciale `$event` : `v-on:click="handle('ok', $event)"`.
 
