@@ -14,7 +14,7 @@ Vous pouvez utiliser Vue pour [construire des composants web standards](/guide/e
 
 ## Application monopage (SPA) {#single-page-application-spa}
 
-Certaines applications nécessitent une interactivité riche, une profondeur de session importante et une logique étatique non triviale sur le frontend. La meilleure manière de construire de telles applications consiste à utiliser une architecture où Vue contrôle non seulement toutes les pages, mais gère également les mises à jour de données et la navigation sans avoir à recharger la page. Ce type d'application est généralement appelé une Application à une seule page (SPA).
+Certaines applications nécessitent une interactivité riche, une profondeur de session importante et une logique d'état non triviale sur le frontend. La meilleure manière de construire de telles applications consiste à utiliser une architecture où Vue contrôle non seulement toutes les pages, mais gère également les mises à jour de données et la navigation sans avoir à recharger la page. Ce type d'application est généralement appelé une application monopage (SPA).
 
 Vue fournit des bibliothèques de base et un [support d'outils exhaustif](/guide/scaling-up/tooling) avec une expérience de développeur incroyable pour construire des SPAs modernes, y compris :
 
