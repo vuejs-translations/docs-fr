@@ -354,7 +354,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Application', link: '/api/application' },
         {
-          text: 'General',
+          text: 'Généralités',
           link: '/api/general'
         }
       ]
