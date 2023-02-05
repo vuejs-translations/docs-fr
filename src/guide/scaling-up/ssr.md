@@ -200,7 +200,7 @@ De plus, pour charger les fichiers client dans le navigateur, nous devons égale
 2. Charger l'entrée client en ajoutant `<script type="module" src="/client.js"></script>` à la coque HTML.
 3. Prend en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) à la coque HTML.
 
-[Essayez l'exemple complété sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js).  Le bouton est maintenant interactif !
+[Essayez l'exemple complété sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js). Le bouton est maintenant interactif !
 
 ## Solutions de haut niveau {#higher-level-solutions}
 
