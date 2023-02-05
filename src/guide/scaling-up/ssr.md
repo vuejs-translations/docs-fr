@@ -78,7 +78,7 @@ Après, lancez :
 > node example.js
 ```
 
-Il devrait imprimer ce qui suit sur la ligne de commande :
+Cela devrait imprimer ce qui suit sur la ligne de commande :
 
 ```
 <button>1</button>
