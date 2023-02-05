@@ -31,7 +31,7 @@ Les SPAs nécessitent généralement que le backend expose une API, mais vous po
 
 Les SPAs entièrement côté client posent problème lorsque l'application est sensible au SEO et au temps d'accès au contenu. Cela est dû au fait que le navigateur recevra une page HTML totalement vide et devra attendre que le JavaScript soit téléchargé avant de rendre quoi que ce soit.
 
-Vue fournit des API de première classe pour "rendre" une application Vue en chaînes HTML sur le serveur. Cela permet au serveur de renvoyer du HTML déjà rendu, permettant aux utilisateurs finaux de voir immédiatement le contenu tandis que le JavaScript est en cours de téléchargement. Vue hydratera alors l'application côté client pour la rendre interactive. Cela s'appelle [Server-Side Rendering (SSR)](/guide/scaling-up/ssr) et améliore considérablement les métriques Core Web Vital telles que [Largest Contentful Paint (LCP)](https://web.dev/lcp/).
+Vue fournit des API de première classe pour "rendre" une application Vue en chaînes HTML sur le serveur. Cela permet au serveur de renvoyer de l'HTML déjà rendu, permettant aux utilisateurs finaux de voir immédiatement le contenu tandis que le JavaScript est en cours de téléchargement. Vue hydratera alors l'application côté client pour la rendre interactive. Cela s'appelle [Rendu côté serveur ou _Server-Side Rendering_ (SSR)](/guide/scaling-up/ssr) et améliore considérablement les métriques Core Web Vital telles que [Largest Contentful Paint (LCP)](https://web.dev/lcp/).
 
 Il y a des frameworks de haut niveau basés sur Vue, par exemple [Nuxt](https://nuxt.com/), qui permettent de développer une application avec Vue et JavaScript.
 
