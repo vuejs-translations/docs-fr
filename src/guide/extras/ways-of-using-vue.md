@@ -19,7 +19,7 @@ Certaines applications nécessitent une interactivité riche, une profondeur de 
 Vue fournit des bibliothèques de base et un [support d'outils exhaustif](/guide/scaling-up/tooling) avec une expérience de développeur incroyable pour construire des SPAs modernes, y compris :
 
 - Routeur côté client
-- Chaîne d'outils de construction rapide
+- Chaîne d'outils de build rapide
 - Support IDE
 - Outils de développement pour navigateur
 - Intégrations TypeScript
