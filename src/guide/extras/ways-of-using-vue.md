@@ -39,7 +39,7 @@ Il existe des frameworks basés sur Vue de niveau supérieur construits sur ce p
 
 Le rendu côté serveur peut être effectué à l'avance si les données requises sont statiques. Cela signifie que nous pouvons pré-rendre une application entière en HTML et les servir en tant que fichiers statiques. Cela améliore les performances du site et simplifie le déploiement, car nous n'avons plus besoin de rendre dynamiquement les pages à chaque requête. Vue peut toujours hydrater de telles applications pour fournir une interactivité riche côté client. Cette technique est communément appelée génération de site statique (SSG), également connue sous le nom de [JAMStack](https://jamstack.org/what-is-jamstack/).
 
-Il existe deux types de SSG : une seule page et multi-page. Les deux types pré-rendent le site en HTML statique, la différence étant que :
+Il existe deux types de SSG : monopage et multi-page. Les deux types pré-rendent le site en HTML statique, la différence étant que :
 
 - Après le chargement initial de la page, une SSG à une seule page "hydrate" la page en une SPA. Cela nécessite un payload JS plus important et un coût d'hydratation plus élevé, mais les navigations ultérieures seront plus rapides, car il n'aura qu'à mettre à jour partiellement le contenu de la page au lieu de recharger toute la page.
 
