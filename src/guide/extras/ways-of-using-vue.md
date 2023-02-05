@@ -4,7 +4,7 @@ Nous pensons qu'il n'existe pas de solution unique pour le web. C'est pourquoi V
 
 ## Script autonome {#standalone-script}
 
-Vue peut être utilisé comme un fichier de script autonome, sans étape de construction requise! Si vous avez déjà un framework backend qui rend la plupart de l'HTML ou si votre logique frontend n'est pas assez complexe pour justifier une étape de construction, c'est la manière la plus facile d'intégrer Vue à votre pile. Vous pouvez considérer Vue comme un remplacement plus déclaratif de jQuery dans de tels cas.
+Vue peut être utilisé comme un fichier de script autonome, sans étape de build requise! Si vous avez déjà un framework backend qui rend la plupart de l'HTML ou si votre logique frontend n'est pas assez complexe pour justifier une étape de build, c'est la manière la plus facile d'intégrer Vue à votre pile technique. Vous pouvez considérer Vue comme un remplacement plus déclaratif de jQuery dans de tels cas.
 
 Vue fournit également une distribution alternative appelée [petite-vue](https://github.com/vuejs/petite-vue) qui est spécifiquement optimisée pour améliorer progressivement les HTML existants. Il a un jeu de fonctionnalités plus petit, mais est extrêmement léger et utilise une implémentation plus efficace dans les scénarios sans étape de construction.
 
