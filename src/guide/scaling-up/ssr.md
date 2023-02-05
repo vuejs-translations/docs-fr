@@ -54,7 +54,7 @@ Jetons un coup d'œil à l'exemple le plus simple de Vue SSR en action.
 2. Exécutez `npm init -y`
 3. Ajoutez `"type": "module"` dans `package.json` pour que Node.js fonctionne en [ES modules mode](https://nodejs.org/api/esm.html#modules-ecmascript-modules).
 4. Exécutez `npm install vue`
-5.  Créez un fichier `example.js` :
+5. Créez un fichier `example.js` :
 
 ```js
 // cela fonctionne en Node.js sur le serveur.
