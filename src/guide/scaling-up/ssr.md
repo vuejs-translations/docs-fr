@@ -34,7 +34,7 @@ Il y a aussi des compromis à considérer lors de l'utilisation du SSR :
 
 - Charge supplémentaire côté serveur. Le rendu d'une application complète dans Node.js sera plus gourmand en CPU que le simple service de fichiers statiques, donc si vous prévoyez une forte fréquentation, préparez-vous à une charge correspondante sur le serveur et utilisez judicieusement les stratégies de mise en cache.
 
-Avant d'utiliser SSR pour votre application, la première question à se poser est de savoir si vous en avez réellement besoin. Cela dépend principalement de l'importance du temps d'affichage pour votre application. Par exemple, si vous construisez un tableau de bord interne où quelques centaines de millisecondes supplémentaires au chargement initial n'ont pas une grande importance, SSR serait un surdimensionnement. Cependant, dans les cas où le temps d'affichage est absolument crucial, SSR peut vous aider à obtenir les meilleures performances possibles au chargement initial.
+Avant d'utiliser le SSR pour votre application, la première question à se poser est de savoir si vous en avez réellement besoin. Cela dépend principalement de l'importance du temps d'affichage pour votre application. Par exemple, si vous construisez un tableau de bord interne où quelques centaines de millisecondes supplémentaires au chargement initial n'ont pas une grande importance, le SSR serait un surdimensionnement. Cependant, dans les cas où le temps d'affichage est absolument crucial, le SSR peut vous aider à obtenir les meilleures performances possibles au chargement initial.
 
 ### SSR vs. SSG {#ssr-vs-ssg}
 
