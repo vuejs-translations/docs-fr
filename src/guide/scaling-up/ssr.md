@@ -48,11 +48,11 @@ Si vous envisagez l'utilisation du SSR uniquement pour améliorer le référence
 
 ### Rendu d'une application {#rendering-an-app}
 
-Jetons un coup d'œil à l'exemple le plus simple de Vue SSR en action.
+Jetons un coup d'œil à l'exemple le plus simple du SSR de Vue en action.
 
 1. Créez un nouveau répertoire et `cd` à l'intérieur
 2. Exécutez `npm init -y`
-3. Ajoutez `"type": "module"` dans `package.json` pour que Node.js fonctionne en [ES modules mode](https://nodejs.org/api/esm.html#modules-ecmascript-modules).
+3. Ajoutez `"type": "module"` dans `package.json` pour que Node.js fonctionne en [Mode modules ES](https://nodejs.org/api/esm.html#modules-ecmascript-modules).
 4. Exécutez `npm install vue`
 5. Créez un fichier `example.js` :
 
@@ -128,11 +128,11 @@ Enfin, exécutez `node server.js` et visitez `http://localhost:3000`. Vous devri
 
 [Essayez-le sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example-basic?file=index.js)
 
-### Client Hydration {#client-hydration}
+### Hydratation des clients {#client-hydration}
 
 Si vous cliquez sur le bouton, vous verrez que le nombre ne change pas. L'HTML est complètement statique côté client car nous n'avons pas chargé Vue dans le navigateur.
 
-Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, elle crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements DOM.
+Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, elle crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
 
 Pour monter une application en mode hydratation, nous devons utiliser [`createSSRApp()`](/api/application.html#createssrapp) au lieu de `createApp()`:
 
@@ -197,8 +197,8 @@ server.get('/', (req, res) => {
 De plus, pour charger les fichiers client dans le navigateur, nous devons également :
 
 1. Servir les fichiers client en ajoutant `server.use(express.static('.'))` dans `server.js`.
-2. Charger l'entrée client en ajoutant `<script type="module" src="/client.js"></script>` à la coque HTML.
-3. Prend en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) à la coque HTML.
+2. Charger l'entrée client en ajoutant `<script type="module" src="/client.js"></script>` au fichier HTML.
+3. Prend en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) au fichier HTML.
 
 [Essayez l'exemple complété sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js). Le bouton est maintenant interactif !
 
@@ -209,12 +209,12 @@ Lorsque vous passez d'un exemple à une application SSR en production, il y a be
 - Prendre en charge les SFC Vue et d'autres exigences de l'étape de build. En fait, nous aurons besoin de coordonner deux builds pour la même application : un pour le client et un pour le serveur.
 
   :::tip
-  Les composants Vue sont compilés différemment lorsqu'ils sont utilisés en SSR - les modèles sont compilés en concaténations de chaînes au lieu de fonctions de rendu de DOM virtuel pour un rendu plus efficace en performance.
+  Les composants Vue sont compilés différemment lorsqu'ils sont utilisés en SSR - les templates sont compilés en concaténations de chaînes au lieu de fonctions de rendu de DOM virtuel pour un rendu plus efficace en performance.
   :::
 
 - Dans le gestionnaire de requête du serveur, afficher le HTML avec les liens de ressources client corrects et les astuces de ressources optimales. Il peut également être nécessaire de basculer entre le mode SSR et SSG, ou même de mélanger les deux dans la même application.
 
-- Gestion du routage, de la récupération de données et des magasins de gestion d'état de manière universelle.
+- Gestion du routage, de la récupération de données et des stores de gestion d'état de manière universelle.
 
 Une implémentation complète serait assez complexe et dépend de la chaîne d'outils de build que vous avez choisie. Par conséquent, nous vous recommandons fortement d'adopter une solution plus élevée et orientée afin d'abstraire la complexité pour vous. Ci-dessous, nous présenterons quelques solutions SSR recommandées dans l'écosystème Vue.
 
@@ -228,41 +228,37 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Quasar {#quasar}
 
-[Quasar](https://quasar.dev) est une solution complète basée sur Vue qui vous permet de cibler du SPA, du SSR, de la PWA, de l'application mobile, de l'application de bureau et de l'extension de navigateur en utilisant une seule base de code. Il gère non seulement la mise en place du build, mais fournit également une collection complète de composants d'interface utilisateur conformes à Material Design.
+[Quasar](https://quasar.dev) est une solution complète basée sur Vue qui vous permet de cibler du SPA, du SSR, de la PWA, de l'application mobile, de l'application de bureau et de l'extension de navigateur en utilisant une seule base de code. Elle gère non seulement la mise en place du build, mais fournit également une collection complète de composants d'interface utilisateur conformes à Material Design.
 
 ### Vite SSR {#vite-ssr}
 
-Vite fournit [un support intégré pour le rendu côté serveur de Vue](https://vitejs.dev/guide/ssr.html), mais il est intentionnellement de niveau bas. Si vous souhaitez aller directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails difficiles pour vous.
+Vite fournit [un support intégré pour le rendu côté serveur de Vue](https://vitejs.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
 
-Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour la construction. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
+Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour le build. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
 
 ## Écrire un code convivial pour du SSR {#writing-ssr-friendly-code}
 
-Indépendamment de votre configuration de construction ou de votre choix de framework de haut niveau, il existe des principes qui s'appliquent à toutes les applications Vue SSR.
+Indépendamment de votre configuration de build ou de votre choix de framework de haut niveau, il existe des principes qui s'appliquent à toutes les applications Vue SSR.
 
 ### Réactivité sur le serveur {#reactivity-on-the-server}
 
-Pendant le SSR, chaque URL de demande correspond à un état souhaité de notre application. Il n'y a pas d'interaction utilisateur et aucune mise à jour DOM, donc la réactivité n'est pas nécessaire sur le serveur. Par défaut, la réactivité est désactivée pendant le SSR pour une meilleure performance.
+Pendant le SSR, chaque URL requêtée correspond à un état souhaité de notre application. Il n'y a pas d'interaction utilisateur et aucune mise à jour du DOM, donc la réactivité n'est pas nécessaire sur le serveur. Par défaut, la réactivité est désactivée pendant le SSR pour une meilleure performance.
 
 ### Les hooks du cycle de vie du composant {#component-lifecycle-hooks}
 
-Depuis qu'il n'y a plus de mises à jour dynamiques, les hooks de cycle de vie tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> ou <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> ne seront **PAS** appelées pendant le SSR et ne seront exécutées que côté client.<span class="options-api"> Les seuls hooks qui sont appelés pendant le SSR sont `beforeCreate` et `created`</span>
+Depuis qu'il n'y a plus de mises à jour dynamiques, les hooks de cycle de vie tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> ou <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> ne seront **PAS** appelés pendant le SSR et ne seront exécutés que côté client.<span class="options-api"> Les seuls hooks qui sont appelés pendant le SSR sont `beforeCreate` et `created`</span>
 
 Vous devriez éviter le code qui produit des effets secondaires qui nécessitent un nettoyage dans <span class="options-api">`beforeCreate` et `created`</span><span class="composition-api">`setup()` ou dans le scope de `<script setup>`</span>. Un exemple d'effets secondaires est la configuration de minuteries avec `setInterval`. Dans le code exécuté côté client, nous pouvons configurer une minuterie et la démonter dans <span class="options-api">`beforeUnmount`</span><span class="composition-api">`onBeforeUnmount`</span> ou <span class="options-api">`unmounted`</span><span class="composition-api">`onUnmounted`</span>. Cependant, étant donné que les hooks de démontage ne seront jamais appelés pendant le SSR, les minuteries resteront à jamais. Pour éviter cela, déplacez votre code d'effets secondaires dans <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
 
-###  Accès aux API spécifiques à la plateforme {#access-to-platform-specific-apis}
-
-Universal code cannot assume access to platform-specific APIs, so if your code directly uses browser-only globals like `window` or `document`, they will throw errors when executed in Node.js, and vice-versa.
+### Accès aux API spécifiques à la plateforme {#access-to-platform-specific-apis}
 
 Le code universel ne peut pas supposer l'accès aux API spécifiques à la plateforme, donc si votre code utilise directement des éléments spécifiques au navigateur comme `window` ou `document`, ils lanceront des erreurs lorsqu'ils seront exécutés dans Node.js et vice-versa.
 
-For tasks that are shared between server and client but with different platform APIs, it's recommended to wrap the platform-specific implementations inside a universal API, or use libraries that do this for you. For example, you can use [`node-fetch`](https://github.com/node-fetch/node-fetch) to use the same fetch API on both server and client.
-
-Pour les tâches partagées entre le serveur et le client mais avec des API de plateforme différentes, il est recommandé de wraper les implémentations spécifiques à la plateforme dans une API universelle ou d'utiliser des bibliothèques qui le font pour vous. Par exemple, vous pouvez utiliser [`node-fetch`](https://github.com/node-fetch/node-fetch) pour utiliser la même API fetch sur le serveur et le client.
+Pour les tâches partagées entre le serveur et le client mais avec des API de plateforme différentes, il est recommandé d'envelopper les implémentations spécifiques à la plateforme dans une API universelle ou d'utiliser des bibliothèques qui le font pour vous. Par exemple, vous pouvez utiliser [`node-fetch`](https://github.com/node-fetch/node-fetch) pour utiliser la même API fetch sur le serveur et le client.
 
 Pour les API spécifiques au navigateur, la démarche courante consiste à y accéder de manière paresseuse dans des hooks de cycle de vie client uniquement tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
 
-Notez que si une bibliothèque tiers n'est pas écrite en vue d'une utilisation universelle, il peut être difficile de l'intégrer dans une application rendue côté serveur. Vous _pourriez_ être en mesure de la faire fonctionner en simulant certaines des globales, mais ce serait un bricolage et peut interférer avec le code de détection de l'environnement d'autres bibliothèques.
+Notez que si une bibliothèque tiers n'est pas écrite en vue d'une utilisation universelle, il peut être difficile de l'intégrer dans une application rendue côté serveur. Vous _pourriez_ être en mesure de la faire fonctionner en simulant certaines des globales, mais ce serait un bricolage et pourrait interférer avec le code de détection de l'environnement d'autres bibliothèques.
 
 ### Pollution d'État à demande croisée {#cross-request-state-pollution}
 
@@ -270,7 +266,7 @@ Dans le chapitre de Gestion d'État, nous avons introduit un [patron de gestion 
 
 Le modèle déclare un état partagé dans le scope d'un module JavaScript. Cela les rend **singletons** - c'est-à-dire qu'il n'y a qu'une seule instance de l'objet réactif tout au long de la vie de notre application. Cela fonctionne comme prévu dans une application Vue côté client, car les modules de notre application sont initialisés à nouveau pour chaque visite de page navigateur.
 
-Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuite à une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état cross-request.**
+Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état cross-request.**
 
 Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaque demande, tout comme nous le faisons dans les navigateurs. Cependant, l'initialisation des modules JavaScript peut être coûteuse, ce qui affecterait significativement les performances du serveur.
 
@@ -286,9 +282,9 @@ import { createStore } from './store.js'
 // appelé sur chaque demande
 export function createApp() {
   const app = createSSRApp(/* ... */)
-  // créer une nouvelle instance de store par requête
+  // crée une nouvelle instance de store par requête
   const store = createStore(/* ... */)
-  // fournir un store au niveau de l'application
+  // fournis un store au niveau de l'application
   app.provide('store', store)
   // expose également le store à des fins d'hydratation
   return { app, store }
@@ -301,7 +297,7 @@ Les bibliothèques de gestion d'état comme Pinia sont conçues dans cet esprit.
 
 Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendue de l'application côté client, il y aura une erreur de désaccord d'hydratation. Le désaccord d'hydratation est généralement introduit par les causes suivantes :
 
-1. Le modèle contient une structure de nesting HTML non valide, et le HTML rendu a été "corrigé" par le comportement de parsing HTML natif du navigateur. Par exemple, une erreur courante est que [`<div>` ne peut pas être placé à l'intérieur de `<p>`](https://stackoverflow.com/questions/8397852/why-cant-the-p-tag-contain-a-div-tag-inside-it):
+1. Le modèle contient une structure HTML imbriqué non valide, et le HTML rendu a été "corrigé" par le comportement d'analyse syntaxique du HTML natif du navigateur. Par exemple, une erreur courante est que [`<div>` ne peut pas être placée à l'intérieur de `<p>`](https://stackoverflow.com/questions/8397852/why-cant-the-p-tag-contain-a-div-tag-inside-it):
 
    ```html
    <p><div>hi</div></p>
@@ -322,7 +318,7 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
    2. Use a random number generator library that supports generating with seeds, and guarantee the server run and the client run are using the same seed (e.g. by including the seed in serialized state and retrieving it on the client).
    Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et assurez-vous que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
 
-3. Le serveur et le client se trouvent dans des fuseaux horaires différents. Parfois, nous pouvons vouloir convertir un horodatage en temps local de l'utilisateur. Cependant, le fuseau horaire lors de l'exécution du serveur et le fuseau horaire lors de l'exécution du client ne sont pas toujours les mêmes, et nous ne pouvons pas toujours connaître de manière fiable le fuseau horaire de l'utilisateur lors de l'exécution du serveur. Dans de tels cas, la conversion de l'heure locale doit également être effectuée en tant qu'opération uniquement côté client.
+3. Le serveur et le client se trouvent dans des fuseaux horaires différents. Parfois, nous pouvons vouloir convertir un timestamp en temps local de l'utilisateur. Cependant, le fuseau horaire lors de l'exécution du serveur et le fuseau horaire lors de l'exécution du client ne sont pas toujours les mêmes, et nous ne pouvons pas toujours connaître de manière fiable le fuseau horaire de l'utilisateur lors de l'exécution du serveur. Dans de tels cas, la conversion de l'heure locale doit également être effectuée en tant qu'opération uniquement côté client.
 
 Lorsque Vue rencontre une incohérence d'hydratation, il tentera de récupérer automatiquement et de régler le DOM pré-rendu pour correspondre à l'état côté client. Cela entraînera une perte de performance de rendu due à la suppression de nœuds incorrects et au montage de nouveaux nœuds, mais dans la plupart des cas, l'application devrait continuer à fonctionner comme prévu. Cela dit, il est toujours préférable d'éliminer les incohérences d'hydratation pendant le développement.
 
