@@ -12,7 +12,7 @@ Vue fournit également une distribution alternative appelée [petite-vue](https:
 
 Vous pouvez utiliser Vue pour [construire des composants web standards](/guide/extras/web-components) qui peuvent être intégrés dans n'importe quelle page HTML, quelle que soit la manière dont ils sont rendus. Cette option vous permet de tirer parti de Vue de manière complètement agnostique pour le consommateur: les composants web résultants peuvent être intégrés dans des applications legacy, dans du HTML statique, ou même dans des applications construites avec d'autres frameworks.
 
-## Application à une seule page (SPA) {#single-page-application-spa}
+## Application monopage (SPA) {#single-page-application-spa}
 
 Certaines applications nécessitent une interactivité riche, une profondeur de session importante et une logique étatique non triviale sur le frontend. La meilleure manière de construire de telles applications consiste à utiliser une architecture où Vue contrôle non seulement toutes les pages, mais gère également les mises à jour de données et la navigation sans avoir à recharger la page. Ce type d'application est généralement appelé une Application à une seule page (SPA).
 
