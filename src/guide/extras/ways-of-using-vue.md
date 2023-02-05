@@ -43,7 +43,7 @@ Il existe deux types de SSG : monopage et multi-page. Les deux types pré-renden
 
 - Après le chargement initial de la page, une SSG à une seule page "hydrate" la page en une SPA. Cela nécessite un payload JS plus important et un coût d'hydratation plus élevé, mais les navigations ultérieures seront plus rapides, car il n'aura qu'à mettre à jour partiellement le contenu de la page au lieu de recharger toute la page.
 
-- Une SSG à plusieurs pages charge une nouvelle page à chaque navigation. L'avantage est qu'elle peut livrer un JS minimal - ou pas du tout s'il n'y a pas besoin d'interaction ! Certains frameworks SSG à plusieurs pages, tels que [Astro](https://astro.build/) prennent en charge également une "hydratation partielle" - ce qui vous permet d'utiliser des composants Vue pour créer des "îlots" interactifs à l'intérieur de l'HTML statique.
+- Une SSG à plusieurs pages charge une nouvelle page à chaque navigation. L'avantage est qu'elle peut livrer un JS minimal - ou pas du tout s'il n'y a pas besoin d'interaction ! Certains frameworks SSG à plusieurs pages, tels que [Astro](https://astro.build/) prennent également en charge une "hydratation partielle" - ce qui vous permet d'utiliser des composants Vue pour créer des "îlots" interactifs à l'intérieur de l'HTML statique.
 
 Les SSG à une seule page conviennent mieux si vous attendez une interactivité non négligeable, des sessions profondes ou des éléments / états persistants à travers les navigations. Dans le cas contraire, une SSG à plusieurs pages serait un choix plus judicieux.
 
