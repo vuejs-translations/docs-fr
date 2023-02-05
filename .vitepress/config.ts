@@ -329,7 +329,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/web-components'
         },
         {
-          text: 'Animation Techniques',
+          text: "Techniques d'animation",
           link: '/guide/extras/animation'
         },
         {
