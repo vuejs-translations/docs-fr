@@ -206,7 +206,7 @@ De plus, pour charger les fichiers client dans le navigateur, nous devons égale
 
 Lorsque vous passez d'un exemple à une application SSR en production, il y a beaucoup plus de considérations à prendre en compte. Nous aurons besoin de :
 
-- Prise en charge des SFC Vue et d'autres exigences de la phase de construction. En fait, nous aurons besoin de coordonner deux builds pour la même application: un pour le client et un pour le serveur.
+- Prendre en charge les SFC Vue et d'autres exigences de l'étape de build. En fait, nous aurons besoin de coordonner deux builds pour la même application : un pour le client et un pour le serveur.
 
   :::tip
   Les composants Vue sont compilés différemment lorsqu'ils sont utilisés en SSR - les modèles sont compilés en concaténations de chaînes au lieu de fonctions de rendu de DOM virtuel pour un rendu plus efficace en performance.
