@@ -320,7 +320,7 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
    1. Utilisez `v-if` + `onMounted` pour rendre uniquement sur le client la partie dépendante de valeurs aléatoires. Votre framework peut également disposer de fonctionnalités intégrées pour faciliter cela, par exemple le composant `<ClientOnly>` de VitePress.
 
    2. Use a random number generator library that supports generating with seeds, and guarantee the server run and the client run are using the same seed (e.g. by including the seed in serialized state and retrieving it on the client).
-   Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et garantissez que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
+   Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et assurez-vous que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
 
 3. Le serveur et le client se trouvent dans des fuseaux horaires différents. Parfois, nous pouvons vouloir convertir un horodatage en temps local de l'utilisateur. Cependant, le fuseau horaire lors de l'exécution du serveur et le fuseau horaire lors de l'exécution du client ne sont pas toujours les mêmes, et nous ne pouvons pas toujours connaître de manière fiable le fuseau horaire de l'utilisateur lors de l'exécution du serveur. Dans de tels cas, la conversion de l'heure locale doit également être effectuée en tant qu'opération uniquement côté client.
 
