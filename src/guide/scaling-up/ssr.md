@@ -23,7 +23,7 @@ Par rapport à une application monopage (SPA) côté client, l'avantage du SSR r
 - **Meilleur référencement** : les crawlers de moteur de recherche verront directement la page entièrement rendue.
 
   :::tip
-  Pour l'instant, Google et Bing peuvent indexer correctement les applications JavaScript synchrones. Synchrone étant le mot clé là-bas. Si votre application commence par un indicateur de chargement, puis récupère du contenu via Ajax, le crawler n'attendra pas que vous terminiez. Cela signifie que si vous avez du contenu récupéré de manière asynchrone sur des pages où le référencement est important, le SSR peut être nécessaire.
+  Pour l'instant, Google et Bing peuvent indexer correctement les applications JavaScript synchrones. Synchrone étant le mot clé ici. Si votre application commence par un indicateur de chargement, puis récupère du contenu via Ajax, le crawler n'attendra pas que vous terminiez. Cela signifie que si vous avez du contenu récupéré de manière asynchrone sur des pages où le référencement est important, le SSR peut être nécessaire.
   :::
 
 Il y a aussi des compromis à considérer lors de l'utilisation du SSR :
