@@ -14,7 +14,7 @@ Une application Vue.js rendue côté serveur peut également être considérée 
 
 ### Pourquoi le SSR ? {#why-ssr}
 
-Par rapport à une application côté client Single-Page (SPA), l'avantage du SSR réside principalement dans :
+Par rapport à une application monopage (SPA) côté client, l'avantage du SSR réside principalement dans :
 
 - **Temps d'affichage plus rapide** : cela est plus important sur une connexion internet lente ou sur des dispositifs lents. Le balisage rendu côté serveur n'a pas besoin d'attendre que tout le JavaScript soit téléchargé et exécuté pour être affiché, de sorte que votre utilisateur verra une page entièrement rendue plus rapidement. De plus, la récupération de données est effectuée côté serveur lors de la première visite, ce qui a probablement une connexion plus rapide à votre base de données que le client. Cela entraîne généralement une amélioration des métriques [Core Web Vitals](https://web.dev/vitals/), une meilleure expérience utilisateur et peut être critique pour les applications où le temps d'affichage est directement associé au taux de conversion.
 
