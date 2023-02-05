@@ -365,7 +365,7 @@ You need to inject the teleport markup into the correct location in your final p
 Vous devez injecter le markup de téléportation dans l'emplacement correct dans votre HTML de page finale, tout comme vous devez injecter le markup principal de l'application.
 
 :::tip
-Évitez de cibler `body` lorsque vous utilisez Teleports et SSR ensemble - généralement, `<body>` contiendra d'autres contenus rendus sur le serveur ce qui rend impossible pour Teleports de déterminer le bon emplacement de départ pour l'hydratation.
+Évitez de cibler `body` lorsque vous utilisez Teleports et le SSR ensemble - généralement, `<body>` contiendra d'autres contenus rendus sur le serveur ce qui rend impossible pour Teleports de déterminer le bon emplacement de départ pour l'hydratation.
 
 Préférez plutôt un conteneur dédié, par exemple `<div id="teleported"></div>` qui ne contient que le contenu téléporté.
 :::
