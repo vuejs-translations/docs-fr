@@ -1,6 +1,6 @@
 # Méthodes d'utilisation de Vue {#ways-of-using-vue}
 
-Nous pensons qu'il n'existe pas de solution unique pour le web. C'est pourquoi Vue est conçu pour être flexible et facilement adoptable. Selon votre cas d'utilisation, Vue peut être utilisé de différentes manières pour trouver l'équilibre optimal entre la complexité de la pile, l'expérience de développement et les performances finales.
+Nous pensons qu'il n'existe pas de solution unique pour le web. C'est pourquoi Vue est conçu pour être flexible et facilement adoptable. Selon votre cas d'utilisation, Vue peut être utilisé de différentes manières pour trouver l'équilibre optimal entre la complexité de la pile technique, l'expérience de développement et les performances finales.
 
 ## Script autonome {#standalone-script}
 
