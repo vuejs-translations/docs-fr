@@ -1,10 +1,10 @@
-# Directives intégrées {#built-in-directives}
+# Directives natives {#built-in-directives}
 
 ## v-text {#v-text}
 
 Met à jour le contenu texte d'un élément.
 
-- **Reçoit :** `string`
+- **Attendu :** `string`
 
 - **Détails**
 
@@ -24,7 +24,7 @@ Met à jour le contenu texte d'un élément.
 
 Met à jour le [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) de l'élément.
 
-- **Reçoit :** `string`
+- **Attendu :** `string`
 
 - **Détails :**
 
@@ -48,7 +48,7 @@ Met à jour le [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element
 
 Fait basculer la visibilité de l'élément en fonction de la véracité de la valeur de l'expression.
 
-- **Reçoit :** `any`
+- **Attendu :** `any`
 
 - **Détails**
 
@@ -60,7 +60,7 @@ Fait basculer la visibilité de l'élément en fonction de la véracité de la v
 
 Rend conditionnellement un élément ou un fragment de template en fonction de la véracité de la valeur de l'expression.
 
-- **Reçoit :** `any`
+- **Attendu :** `any`
 
 - **Détails**
 
@@ -103,7 +103,7 @@ Désigne le "bloc else" pour `v-if` ou une chaîne `v-if` / `v-else-if`.
 
 Désigne le "bloc else if" pour `v-if`. Peut être enchaîné.
 
-- **Reçoit :** `any`
+- **Attendu :** `any`
 
 - **Détails**
 
@@ -134,7 +134,7 @@ Désigne le "bloc else if" pour `v-if`. Peut être enchaîné.
 
 Rend l'élément ou le bloc d'un template plusieurs fois en fonction des données sources.
 
-- **Reçoit :** `Array | Object | number | string | Iterable`
+- **Attendu :** `Array | Object | number | string | Iterable`
 
 - **Détails**
 
@@ -173,7 +173,7 @@ Attache un écouteur d'événements à l'élément.
 
 - **Raccourci :** `@`
 
-- **Reçoit :** `Function | Inline Statement | Object (sans argument)`
+- **Attendu :** `Function | Inline Statement | Object (sans argument)`
 
 - **Argument :** `event` (optionnel lors de l'utilisation de la syntaxe objet)
 
@@ -259,7 +259,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
 - **Raccourci :** `:` ou `.` (lorsqu'on utilise le modificateur `.prop`)
 
-- **Reçoit :** `any (avec argument) | Object (sans argument)`
+- **Attendu :** `any (avec argument) | Object (sans argument)`
 
 - **Argument :** `attrOrProp (optionnel)`
 
@@ -344,7 +344,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
 Crée une liaison bidirectionnelle sur un élément de saisie de formulaire ou un composant.
 
-- **Reçoit :** varie en fonction de la valeur de l'élément d'entrée du formulaire ou de la sortie des composants
+- **Attendu :** varie en fonction de la valeur de l'élément d'entrée du formulaire ou de la sortie des composants
 
 - **Limitée à :**
 
@@ -370,7 +370,7 @@ Désigne les slots nommés ou les slots scopés qui s'attendent à recevoir des 
 
 - **Raccourci :** `#`
 
-- **Reçoit :** Une expression JavaScript valide en tant qu'argument de fonction, y compris concernant la déstructuration. Facultatif - uniquement nécessaire si l'on s'attend à ce que des props soient passés au slot.
+- **Attendu :** Une expression JavaScript valide en tant qu'argument de fonction, y compris concernant la déstructuration. Facultatif - uniquement nécessaire si l'on s'attend à ce que des props soient passés au slot.
 
 - **Argument :** nom du slot (facultatif, la valeur par défaut est `default`)
 
@@ -465,7 +465,7 @@ Rend l'élément et le composant une seule fois, et ignore les mises à jour fut
 
 ## v-memo <sup class="vt-badge" data-text="3.2+" /> {#v-memo}
 
-- **Reçoit :** `any[]`
+- **Attendu :** `any[]`
 
 - **Détails**
 
