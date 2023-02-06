@@ -4,7 +4,8 @@
 
 **Actions à effectuer :**
 
-- [ ] Mettre en cohérence toute référence à la page traduite qui serait présente sur d'autres page  
+- [ ] Vérifier que le nombre de lignes supprimées égale le nombre de lignes ajoutées
+- [ ] Mettre en cohérence toute référence à la page traduite qui serait présente sur d'autres pages  
   <!-- Simple recherche du nom du fichier que vous êtes entrain de traduire et vérifier que les titres soient cohérents -->
 - [ ] Mettre à jour le lien du menu  
   <!-- À effectuer sur .vitepress/config.ts -->

@@ -297,7 +297,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Voir aussi :** [Global API - version](/api/general.html#version)
+- **Voir aussi :** [API générale - version](/api/general.html#version)
 
 ## app.config {#app-config}
 
