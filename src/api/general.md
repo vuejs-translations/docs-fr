@@ -134,7 +134,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
   Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
 
-- **Voir aussi :** [Guide - Using Vue with TypeScript](/guide/typescript/overview.html#general-usage-notes)
+- **Voir aussi :** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview.html#general-usage-notes)
 
 ## defineAsyncComponent() {#defineasynccomponent}
 
