@@ -10,7 +10,7 @@ outline: deep
 
 Vue.js est un framework pour développer des applications côté client avec des composants qui produisent et manipulent le DOM. Il peut également rendre les composants en HTML côté serveur et les hydrater en une application interactive côté client.
 
-Une application Vue.js rendue côté serveur peut également être considérée "isomorphe" ou "universelle", dans le sens que la majorité de votre code d'application s'exécute à la fois sur le serveur **et** sur le client.
+Une application Vue côté serveur peut être "isomorphe" ou "universelle", avec la majorité du code qui s'exécute sur le serveur **et** le client.
 
 ### Pourquoi le SSR ? {#why-ssr}
 
