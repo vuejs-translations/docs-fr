@@ -22,7 +22,7 @@ Met à jour le contenu texte d'un élément.
 
 ## v-html {#v-html}
 
-Met à jour le [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) de l'élément.
+Met à jour [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/innerHTML) de l'élément.
 
 - **Attendu :** `string`
 
@@ -46,19 +46,19 @@ Met à jour le [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element
 
 ## v-show {#v-show}
 
-Fait basculer la visibilité de l'élément en fonction de la véracité de la valeur de l'expression.
+Fait basculer la visibilité de l'élément en fonction de la valeur évaluée à vrai ou faux de l'expression.
 
 - **Attendu :** `any`
 
 - **Détails**
 
-  `v-show` fonctionne en fixant la propriété CSS `display` via des styles en ligne, et essaiera de respecter la valeur initiale `display` lorsque l'élément est visible. Elle déclenche également des transitions lorsque sa condition change.
+  `v-show` fonctionne en fixant la propriété CSS `display` via des styles littéraux, et essaiera de respecter la valeur initiale `display` lorsque l'élément est visible. Elle déclenche également des transitions lorsque sa condition change.
 
 - **Voir aussi :** [Rendu conditionnel - v-show](/guide/essentials/conditional.html#v-show)
 
 ## v-if {#v-if}
 
-Rend conditionnellement un élément ou un fragment de template en fonction de la véracité de la valeur de l'expression.
+Rend conditionnellement un élément ou un fragment de template en fonction de la valeur de l'expression, évaluée à vrai ou faux.
 
 - **Attendu :** `any`
 
@@ -70,13 +70,13 @@ Rend conditionnellement un élément ou un fragment de template en fonction de l
 
   Cette directive déclenche des transitions lorsque sa condition change.
 
-  When used together, `v-if` has a higher priority than `v-for`. We don't recommend using these two directives together on one element — see the [guide du rendu de liste](/guide/essentials/list.html#v-for-with-v-if) for details.
+  Lorsqu'elles sont utilisées ensemble, `v-if' a une priorité plus élevée que `v-for'. Il est déconseillé d'utiliser ces deux directives ensemble sur un même élément - voir le [guide du rendu de liste](/guide/essentials/list.html#v-for-with-v-if) pour plus de détails.
 
 - **Voir aussi :** [Rendu conditionnel - v-if](/guide/essentials/conditional.html#v-if)
 
 ## v-else {#v-else}
 
-Désigne le "bloc else" pour `v-if` ou une chaîne `v-if` / `v-else-if`.
+Représente le bloc "else" pour `v-if` ou une chaîne `v-if` / `v-else-if`.
 
 - **N'attend pas d'expression**
 
@@ -101,7 +101,7 @@ Désigne le "bloc else" pour `v-if` ou une chaîne `v-if` / `v-else-if`.
 
 ## v-else-if {#v-else-if}
 
-Désigne le "bloc else if" pour `v-if`. Peut être enchaîné.
+Désigne le bloc "else if" pour `v-if`. Peut être chaîné.
 
 - **Attendu :** `any`
 
@@ -192,7 +192,7 @@ Attache un écouteur d'événements à l'élément.
 
 - **Détails**
 
-  Le type d'événement est indiqué par l'argument. L'expression peut être un nom de méthode, une déclaration en ligne, ou omise si des modificateurs sont présents.
+  Le type d'événement est indiqué par l'argument. L'expression peut être un nom de méthode, une déclaration littérale, ou omise si des modificateurs sont présents.
 
   Lorsqu'elle est utilisée sur un élément normal, elle écoute uniquement les [**événements natifs du DOM**](https://developer.mozilla.org/fr/docs/Web/Events). Lorsqu'elle est utilisée sur un composant d'éléments personnalisés, elle écoute les **événements personnalisés** émis sur ce composant enfant.
 
@@ -209,7 +209,7 @@ Attache un écouteur d'événements à l'élément.
   <!-- événement dynamique -->
   <button v-on:[event]="doThis"></button>
 
-  <!-- expression en ligne -->
+  <!-- expression littérale -->
   <button v-on:click="doThat('hello', $event)"></button>
 
   <!-- raccourci -->
@@ -233,7 +233,7 @@ Attache un écouteur d'événements à l'élément.
   <!-- modificateur de clé en utilisant keyAlias -->
   <input @keyup.enter="onEnter" />
 
-  <!-- l'événement de clic sera déclenché au maximum une fois -->
+  <!-- l'événement de clic sera déclenché seulement une fois -->
   <button v-on:click.once="doThis"></button>
 
   <!-- syntaxe objet -->
@@ -267,7 +267,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
   - `.camel` - transforme le nom de l'attribut kebab-case en camelCase.
   - `.prop` - force une liaison à être définie comme une propriété du DOM. <sup class="vt-badge">3.2+</sup>
-  - `.attr` - force une liaison à être définie comme une propriété du DOM. <sup class="vt-badge">3.2+</sup>
+  - `.attr` - force une liaison à être définie comme un attribut du DOM. <sup class="vt-badge">3.2+</sup>
 
 - **Utilisation :**
 
@@ -334,7 +334,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
   <svg :view-box.camel="viewBox"></svg>
   ```
 
-  `.camel` n'est pas nécessaire si vous utilisez des templates en chaînes de caractères, ou si vous pré-compilez le template avec une étape de build.
+  `.camel` n'est pas nécessaire si vous utilisez des templates en chaînes de caractères, ou si vous pré-compilez le template avec un outil de build.
 
 - **Voir aussi :**
   - [Liaison de classes et de styles](/guide/essentials/class-and-style.html)
@@ -351,7 +351,7 @@ Crée une liaison bidirectionnelle sur un élément de saisie de formulaire ou u
   - `<input>`
   - `<select>`
   - `<textarea>`
-  - components
+  - composants
 
 - **Modificateurs :**
 
@@ -479,7 +479,7 @@ Rend l'élément et le composant une seule fois, et ignore les mises à jour fut
 
   Lors du rendu du composant, si `valueA` et `valueB` restent les mêmes, toutes les mises à jour de cette `<div>` et de ses enfants seront ignorées. En fait, même la création du VNode du DOM virtuel sera ignorée puisque la copie mémorisée de la sous-arborescence peut être réutilisée.
 
-  Il est important de spécifier le tableau de mémorisation correctement, sinon nous pourrions sauter des mises à jour qui devraient dans les faits être appliquées. `v-memo` avec un tableau de dépendances vide (`v-memo="[]"`) serait fonctionnellement équivalent à `v-once`.
+  Il est important de spécifier le tableau de mémorisation correctement, sinon nous pourrions sauter des mises à jour qui devraient normalement être appliquées. `v-memo` avec un tableau de dépendances vide (`v-memo="[]"`) serait fonctionnellement équivalent à `v-once`.
 
   **Utilisation avec `v-for`**
 
