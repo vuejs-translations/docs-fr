@@ -5,7 +5,7 @@ pageClass: api
 # Composants natifs {#built-in-components}
 
 :::info Enregistrement et utilisation
-Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils sont aussi arborescents : ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
+Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils sont d'ailleurs élaguables : ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
 
 Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function.html), il faut les importer explicitement. Par exemple :
 
@@ -320,7 +320,7 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
 
 - **Détails**
 
-  `<Suspense>` accepte deux slots : le slot `#default` et le slot `#fallback`. Il affichera le contenu du slot de "fallback" tout en rendant le slot par défaut en mémoire.
+  `<Suspense>` accepte deux slots : le slot `#default` et le slot `#fallback`. Il affichera le contenu du slot de secours tout en rendant le slot par défaut en mémoire.
 
   S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async.html) et des composants avec [`async setup()`](/guide/built-ins/suspense.html#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
 
