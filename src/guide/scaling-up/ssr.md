@@ -38,11 +38,11 @@ Pensez à vos besoins en temps d'affichage avant d'utiliser SSR pour votre appli
 
 ### SSR vs. SSG {#ssr-vs-ssg}
 
-**La génération de site statique (SSG)**, également appelée pré-rendu, est une autre technique populaire pour construire des sites web rapides. Si les données nécessaires pour le rendu côté serveur d'une page sont les mêmes pour chaque utilisateur, alors au lieu de rendre la page à chaque fois qu'une demande est reçue, nous pouvons la rendre une seule fois, à l'avance, pendant le processus de build. Les pages pré-rendues sont générées et servies en tant que fichiers HTML statiques.
+**La génération de site statique (SSG)**, également appelée pré-rendu, est une autre technique populaire pour construire des sites web rapides. Le rendu préalable des pages peut améliorer les performances en les rendant en une seule fois pour chaque utilisateur si les données nécessaires sont les mêmes. Les pages sont alors générées et servies sous forme de fichiers HTML statiques.
 
-SSG conserve les mêmes caractéristiques de performance que les applications en SSR : il offre une excellente performance en termes de temps-à-contenu. En même temps, il est moins cher et plus facile à déployer que les applications SSR car la sortie est du HTML et des actifs statiques. Le mot clé ici est **statique** : SSG ne peut être appliqué qu'à des pages consommant des données statiques, c'est-à-dire des données connues au moment du build et qui ne changent pas entre les déploiements. À chaque fois que les données changent, un nouveau déploiement est nécessaire.
+SSG a des caractéristiques similaires à SSR en termes de performance, mais est plus facile à déployer et moins coûteux. Il ne peut être utilisé que pour les pages avec des données statiques qui ne changent pas entre les déploiements et nécessite un nouveau déploiement à chaque fois que les données changent.
 
-Si vous envisagez l'utilisation du SSR uniquement pour améliorer le référencement (SEO) d'un petit nombre de pages marketing (par exemple, `/`, `/about`, `/contact`, etc.), alors vous voulez probablement du SSG au lieu du SSR. Le SSG est également idéal pour les sites web basés sur du contenu tels que les sites de documentation ou les blogs. En fait, ce site web que vous êtes en train de lire est généré de manière statique à l'aide de [VitePress](https://vitepress.vuejs.org/), un générateur de site statique alimenté par Vue.
+Si vous envisagez l'utilisation du SSR uniquement pour améliorer le référencement (SEO) d'un petit nombre de pages marketing (par exemple, `/`, `/about`, `/contact`, etc.), alors vous voulez probablement du SSG au lieu du SSR. Le SSG convient aux sites web de contenu, tels que les blogs et les sites de documentation. Il est utilisé pour générer des sites web statiques, comme ce site que vous lisez maintenant qui est créé avec [VitePress](https://vitepress.vuejs.org/).
 
 ## Tutoriel de base {#basic-tutorial}
 
@@ -84,9 +84,9 @@ Cela devrait imprimer ce qui suit sur la ligne de commande :
 <button>1</button>
 ```
 
-La fonction [`renderToString()`](/api/ssr.html#rendertostring) prend une instance d'application Vue et renvoie une Promise qui correspond au rendu HTML de l'application. Il est également possible d'effectuer un rendu en continu à l'aide de la [Node.js Stream API](https://nodejs.org/api/stream.html) ou de la [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Consultez la [SSR API Reference](/api/ssr.html) pour plus de détails.
+La fonction [`renderToString()`](/api/ssr.html#rendertostring) rend une application Vue en HTML et renvoie une Promise avec le rendu. Il peut également être rendu en continu avec l'API de stream [Node.js Stream API](https://nodejs.org/api/stream.html) ou [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Voir la [SSR API Reference](/api/ssr.html) pour plus d'informations.
 
-Nous pouvons ensuite déplacer le code Vue SSR dans un gestionnaire de requêtes serveur, qui englobe le balisage de l'application avec la page HTML complète. Nous allons utiliser [`express`](https://expressjs.com/) pour les étapes suivantes :
+Nous utilisons [`express`](https://expressjs.com/) pour inclure le code Vue SSR dans une page HTML complète sur le serveur :
 
 - Lancez `npm install express`
 - Créez le fichier `server.js` suivant :
@@ -204,7 +204,7 @@ De plus, pour charger les fichiers client dans le navigateur, nous devons égale
 
 ## Solutions de haut niveau {#higher-level-solutions}
 
-Lorsque vous passez d'un exemple à une application SSR en production, il y a beaucoup plus de considérations à prendre en compte. Nous aurons besoin de :
+Pour une application SSR en production, plusieurs considérations supplémentaires doivent être prises en compte :
 
 - Prendre en charge les SFC Vue et d'autres exigences de l'étape de build. En fait, nous aurons besoin de coordonner deux builds pour la même application : un pour le client et un pour le serveur.
 
@@ -228,7 +228,7 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Quasar {#quasar}
 
-[Quasar](https://quasar.dev) est une solution complète basée sur Vue qui vous permet de cibler du SPA, du SSR, de la PWA, de l'application mobile, de l'application de bureau et de l'extension de navigateur en utilisant une seule base de code. Elle gère non seulement la mise en place du build, mais fournit également une collection complète de composants d'interface utilisateur conformes à Material Design.
+[Quasar](https://quasar.dev) est une plateforme basée sur Vue qui vous permet de développer des applications pour plusieurs plateformes (SSR, SPA, PWA, mobile, bureau, extension de navigateur) avec un seul code de base. Il fournit également des composants d'interface utilisateur conformes à Material Design.
 
 ### Vite SSR {#vite-ssr}
 
