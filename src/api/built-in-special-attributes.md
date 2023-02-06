@@ -105,5 +105,5 @@ Used for binding [composants dynamiques](/guide/essentials/component-basics.html
 
 - **See also:**
 
-  - [Built-in Special Element - `<component>`](/api/built-in-special-elements.html#component)
+  - [Éléments spéciaux natifs - `<component>`](/api/built-in-special-elements.html#component)
   - [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
