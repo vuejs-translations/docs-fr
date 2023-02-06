@@ -5,7 +5,7 @@ pageClass: api
 # Composants natifs {#built-in-components}
 
 :::info Enregistrement et utilisation
-Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils sont d'ailleurs élaguables : ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
+Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
 
 Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function.html), il faut les importer explicitement. Par exemple :
 
@@ -262,6 +262,7 @@ Lorsqu'un composant est activé/désactivé à l'intérieur de `<KeepAlive>`, se
 ## `<Teleport>` {#teleport}
 
 Rend le contenu de son slot à une autre partie du DOM.
+
 - **Props**
 
   ```ts
