@@ -33,7 +33,7 @@ Les SPAs entièrement côté client posent problème lorsque l'application est s
 
 Vue fournit des API de première classe pour "rendre" une application Vue en chaînes HTML sur le serveur. Cela permet au serveur de renvoyer de l'HTML déjà rendu, permettant aux utilisateurs finaux de voir immédiatement le contenu tandis que le JavaScript est en cours de téléchargement. Vue hydratera alors l'application côté client pour la rendre interactive. Cela s'appelle [Rendu côté serveur ou _Server-Side Rendering_ (SSR)](/guide/scaling-up/ssr) et améliore considérablement les métriques Core Web Vital telles que [Largest Contentful Paint (LCP)](https://web.dev/lcp/).
 
-Il y a des frameworks de haut niveau basés sur Vue, par exemple [Nuxt](https://nuxt.com/), qui permettent de développer une application avec Vue et JavaScript.
+Il y a des frameworks basés sur Vue, par exemple [Nuxt](https://nuxt.com/), qui permettent de développer une application avec Vue et JavaScript.
 
 ## JAMStack / SSG {#jamstack-ssg}
 
