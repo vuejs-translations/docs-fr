@@ -8,13 +8,13 @@ outline: deep
 
 ### Qu'est-ce que le SSR ? {#what-is-ssr}
 
-Vue.js est un framework pour développer des applications côté client. Par défaut, les composants Vue produisent et manipulent le DOM dans le navigateur en tant que sortie. Cependant, il est également possible de rendre les mêmes composants en chaînes HTML sur le serveur, de les envoyer directement au navigateur et de finalement "hydrater" le balisage statique en une application entièrement interactive côté client.
+Vue.js est un framework pour développer des applications côté client avec des composants qui produisent et manipulent le DOM. Il peut également rendre les composants en HTML côté serveur et les hydrater en une application interactive côté client.
 
 Une application Vue.js rendue côté serveur peut également être considérée "isomorphe" ou "universelle", dans le sens que la majorité de votre code d'application s'exécute à la fois sur le serveur **et** sur le client.
 
 ### Pourquoi le SSR ? {#why-ssr}
 
-Par rapport à une application monopage (SPA) côté client, l'avantage du SSR réside principalement dans :
+L'avantage du SSR par rapport à une application monopage SPA côté client :
 
 - **Temps d'affichage plus rapide** : cela est plus important sur une connexion internet ou sur des périphériques lents. Le balisage rendu côté serveur n'a pas besoin d'attendre que tout le JavaScript soit téléchargé et exécuté pour être affiché, de sorte que votre utilisateur verra une page entièrement rendue plus rapidement. De plus, la récupération de données est effectuée côté serveur lors de la première visite, ce qui permet probablement une connexion plus rapide à votre base de données que le client. Cela entraîne généralement une amélioration des métriques [Core Web Vitals](https://web.dev/vitals/), une meilleure expérience utilisateur et peut être critique pour les applications où le temps d'affichage est directement associé au taux de conversion.
 
@@ -209,7 +209,7 @@ Lorsque vous passez d'un exemple à une application SSR en production, il y a be
 - Prendre en charge les SFC Vue et d'autres exigences de l'étape de build. En fait, nous aurons besoin de coordonner deux builds pour la même application : un pour le client et un pour le serveur.
 
   :::tip
-  Les composants Vue sont compilés différemment lorsqu'ils sont utilisés en SSR - les templates sont compilés en concaténations de chaînes au lieu de fonctions de rendu de DOM virtuel pour un rendu plus efficace en performance.
+  Les composants Vue sont compilés différemment en SSR : les templates compilés sont compilés en chaînes, par rapport à des fonctions de rendu de DOM virtuel, pour une performance accrue.
   :::
 
 - Dans le gestionnaire de requête du serveur, afficher le HTML avec les liens de ressources client corrects et les astuces de ressources optimales. Il peut également être nécessaire de basculer entre le mode SSR et SSG, ou même de mélanger les deux dans la même application.
@@ -224,7 +224,7 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Nuxt {#nuxt}
 
-[Nuxt](https://nuxt.com/) est une plateforme de haut niveau construite sur l'écosystème Vue qui offre une expérience de développement simplifiée pour écrire des applications Vue universelles. Encore mieux, vous pouvez également l'utiliser en tant que générateur de site statique! Nous vous recommandons fortement de l'essayer.
+[Nuxt](https://nuxt.com/) Nuxt est une plateforme Vue simplifiée pour développer des applications universelles et peut être utilisée comme générateur de site statique. Nous vous recommandons fortement de l'essayer.
 
 ### Quasar {#quasar}
 
@@ -311,7 +311,7 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
    <p></p>
    ```
 
-2. Les données utilisées lors de la mise en forme contiennent des valeurs générées aléatoirement. Étant donné que la même application s'exécutera deux fois - une fois sur le serveur et une fois sur le client - les valeurs aléatoires ne sont pas garanties d'être les mêmes entre les deux exécutions. Il existe deux façons d'éviter les incohérences causées par les valeurs aléatoires :
+2. Les données de mise en forme avec des valeurs aléatoires causent des incohérences lors de l'exécution serveur/client. Pour éviter cela, il existe deux solutions.
 
    1. Utilisez `v-if` + `onMounted` pour rendre uniquement sur le client la partie dépendante de valeurs aléatoires. Votre framework peut également disposer de fonctionnalités intégrées pour faciliter cela, par exemple le composant `<ClientOnly>` de VitePress.
 
