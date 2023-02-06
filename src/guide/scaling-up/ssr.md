@@ -318,13 +318,13 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
    2. Use a random number generator library that supports generating with seeds, and guarantee the server run and the client run are using the same seed (e.g. by including the seed in serialized state and retrieving it on the client).
    Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et assurez-vous que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
 
-3. Le serveur et le client se trouvent dans des fuseaux horaires différents. Parfois, nous pouvons vouloir convertir un timestamp en temps local de l'utilisateur. Cependant, le fuseau horaire lors de l'exécution du serveur et le fuseau horaire lors de l'exécution du client ne sont pas toujours les mêmes, et nous ne pouvons pas toujours connaître de manière fiable le fuseau horaire de l'utilisateur lors de l'exécution du serveur. Dans de tels cas, la conversion de l'heure locale doit également être effectuée en tant qu'opération uniquement côté client.
+3. Le temps local pour l'utilisateur ne peut pas toujours être déterminé sur le serveur en raison de différences de fuseau horaire, il doit donc être converti côté client.
 
 Lorsque Vue rencontre une incohérence d'hydratation, il tentera de récupérer automatiquement et de régler le DOM pré-rendu pour correspondre à l'état côté client. Cela entraînera une perte de performance de rendu due à la suppression de nœuds incorrects et au montage de nouveaux nœuds, mais dans la plupart des cas, l'application devrait continuer à fonctionner comme prévu. Cela dit, il est toujours préférable d'éliminer les incohérences d'hydratation pendant le développement.
 
 ### Directives personnalisées {#custom-directives}
 
-Comme la plupart des directives personnalisées impliquent une manipulation directe du DOM, elles sont ignorées lors du SSR. Cependant, si vous souhaitez spécifier comment une directive personnalisée doit être rendue (c'est-à-dire quels attributs elle devrait ajouter à l'élément rendu), vous pouvez utiliser le hook de directive `getSSRProps` :
+Les directives personnalisées ne sont pas prises en compte lors du SSR. Mais si vous souhaitez spécifier comment une directive personnalisée doit être rendue, vous pouvez les rendre en utilisant le hook `getSSRProps` :
 
 ```js
 const myDirective = {
