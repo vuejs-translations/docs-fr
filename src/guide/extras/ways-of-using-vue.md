@@ -8,7 +8,7 @@ Vue peut être utilisé comme un fichier de script autonome, sans outil de build
 
 Vue fournit également une distribution alternative appelée [petite-vue](https://github.com/vuejs/petite-vue) qui est spécifiquement optimisée pour améliorer progressivement l'HTML existant. Elle a un jeu de fonctionnalités plus restreint, mais est extrêmement légère et utilise une implémentation plus efficace dans les scénarios sans étape de build.
 
-## Composants web intégrés {#embedded-web-components}
+## Intégration des Web Components {#embedded-web-components}
 
 Vous pouvez utiliser Vue pour [construire des composants web standards](/guide/extras/web-components) qui peuvent être intégrés dans n'importe quelle page HTML, quelle que soit la manière dont ils sont rendus. Cette option vous permet de tirer parti de Vue de manière complètement agnostique pour le consommateur: les composants web résultants peuvent être intégrés dans des applications legacy, dans du HTML statique, ou même dans des applications construites avec d'autres frameworks.
 
