@@ -147,7 +147,6 @@ const app = createSSRApp({
 // Le montage d'une application SSR sur le client suppose
 // que le HTML a été pré-rendu et qu'il effectuera une
 // hydratation au lieu de monter de nouveaux noeuds du DOM.
-
 app.mount('#app')
 ```
 
@@ -218,10 +217,6 @@ Pour une application SSR en production, plusieurs considérations supplémentair
 
 Une implémentation complète serait assez complexe et dépend de la chaîne d'outils de build que vous avez choisie. Par conséquent, nous vous recommandons fortement d'adopter une solution plus élevée et orientée afin d'abstraire la complexité pour vous. Ci-dessous, nous présenterons quelques solutions SSR recommandées dans l'écosystème Vue.
 
-
-
-
-
 ### Nuxt {#nuxt}
 
 [Nuxt](https://nuxt.com/) Nuxt est une plateforme Vue simplifiée pour développer des applications universelles et peut être utilisée comme générateur de site statique. Nous vous recommandons fortement de l'essayer.
@@ -269,8 +264,6 @@ Le modèle déclare un état partagé dans le scope d'un module JavaScript. Cela
 Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état cross-request.**
 
 Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaque demande, tout comme nous le faisons dans les navigateurs. Cependant, l'initialisation des modules JavaScript peut être coûteuse, ce qui affecterait significativement les performances du serveur.
-
-The recommended solution is to create a new instance of the entire application - including the router and global stores - on each request. Then, instead of directly importing it in our components, we provide the shared state using [app-level provide](/guide/components/provide-inject.html#app-level-provide) and inject it in components that need it:
 
 La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [Provide au niveau de l'application](/guide/components/provide-inject.html#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
 
