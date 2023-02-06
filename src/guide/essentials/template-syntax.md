@@ -168,7 +168,7 @@ Les variables globales non explicitement incluses dans la liste, par exemple les
 
 ## Directives {#directives}
 
-Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives clé-en-main](/api/built-in-directives.html), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
+Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives.html), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
 
 Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives.html#v-if) comme exemple :
 
