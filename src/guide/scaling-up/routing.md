@@ -4,7 +4,7 @@
 
 Le routage côté serveur signifie que le serveur envoie une réponse basée sur le chemin URL que l'utilisateur visite. Lorsque nous cliquons sur un lien dans une application web traditionnelle à rendu serveur, le navigateur reçoit une réponse HTML du serveur et recharge la page entière avec le nouveau HTML.
 
-Cependant, dans une [application monopage](https://developer.mozilla.org/fr/docs/Glossary/SPA) (SPA), le JavaScript côté client peut intercepter la navigation, récupérer dynamiquement de nouvelles données, et mettre à jour la page actuelle sans la recharger entièrement. Il en résulte généralement une expérience utilisateur plus rapide, en particulier pour les cas d'utilisation qui ressemblent davantage à des "applications" réelles, où l'utilisateur est censé effectuer de nombreuses interactions sur une longue période de temps.
+Cependant, dans une [application à page unique](https://developer.mozilla.org/fr/docs/Glossary/SPA) (SPA), le JavaScript côté client peut intercepter la navigation, récupérer dynamiquement de nouvelles données, et mettre à jour la page actuelle sans la recharger entièrement. Il en résulte généralement une expérience utilisateur plus rapide, en particulier pour les cas d'utilisation qui ressemblent davantage à des "applications" réelles, où l'utilisateur est censé effectuer de nombreuses interactions sur une longue période de temps.
 
 Dans ces SPA, le "routage" est effectué côté client, dans le navigateur. Un routeur côté client est chargé de gérer la vue rendue de l'application à l'aide d'API de navigateur telles que [l'API History](https://developer.mozilla.org/fr/docs/Web/API/History) ou [l'événement `hashchange`](https://developer.mozilla.org/fr/docs/Web/API/Window/hashchange_event).
 
@@ -17,7 +17,7 @@ Dans ces SPA, le "routage" est effectué côté client, dans le navigateur. Un r
   </VueSchoolLink>
 </div>
 
-Vue est bien adapté à la création de SPA. Pour la plupart des SPA, il est recommandé d'utiliser la [bibliothèque Vue Router](https://github.com/vuejs/router) officiellement supportée. Pour plus de détails, consultez la [documentation] de Vue Router (https://router.vuejs.org/).
+Vue est bien adapté à la création de SPA. Pour la plupart des SPA, il est recommandé d'utiliser la [bibliothèque Vue Router](https://github.com/vuejs/router) officiellement supportée. Pour plus de détails, consultez la [documentation de Vue Router](https://router.vuejs.org/).
 
 ## Routage simple à partir de zéro {#simple-routing-from-scratch}
 
