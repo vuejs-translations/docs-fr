@@ -1,4 +1,4 @@
-# API Globale : Généralités {#global-api-general}
+# API Globale : Générale {#global-api-general}
 
 ## version {#version}
 
@@ -110,11 +110,11 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
 - **Détails**
 
-  Le premier argument attend un objet d'options de composant. La valeur retournée sera le même objet d'options, puisque la fonction est essentiellement une non-op d'exécution pour l'inférence de type seulement.
+  Le premier argument attend un objet d'options de composant. La valeur retournée sera le même objet d'options, puisque la fonction est essentiellement sans opération à l'exécution pour seulement apporter l'inférence de type.
 
   Notez que le type retourné est un peu spécial : il s'agit d'un type constructeur dont le type d'instance est le type d'instance du composant déduit en fonction des options. C'est utilisé pour l'inférence de type lorsque le type retourné est utilisé comme balise dans du TSX.
 
-  Vous pouvez extraire le type d'instance d'un composant (équivalent au type de `this` dans ses options) à partir du type retourné par `defineComponent()` de cette façon  :
+  Vous pouvez extraire le type d'instance d'un composant (équivalent au type de `this` dans ses options) à partir du type retourné par `defineComponent()` de cette façon :
 
   ```ts
   const Foo = defineComponent(/* ... */)
@@ -124,7 +124,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
   ### Note sur le treeshaking de webpack {#note-on-webpack-treeshaking}
 
-  Étant donné que `defineComponent()` est un appel de fonction, on pourrait attendre qu'il produise des effets secondaires pour certains outils de build, par exemple webpack. Cela empêchera le composant d'être retiré de l'arbre même s'il n'est jamais utilisé.
+  Étant donné que `defineComponent()` est un appel de fonction, on pourrait attendre qu'il produise des effets de bord pour certains outils de build, par exemple webpack. Cela empêchera le composant d'être retiré de l'arbre même s'il n'est jamais utilisé.
 
   Pour indiquer à webpack que cet appel de fonction peut être retirée en toute tranquillité, vous pouvez ajouter un commentaire `/*#__PURE__*/` avant l'appel de fonction :
 
@@ -132,7 +132,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
   export default /*#__PURE__*/ defineComponent(/* ... */)
   ```
 
-  Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le paquet de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
+  Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
 
 - **Voir aussi :** [Guide - Using Vue with TypeScript](/guide/typescript/overview.html#general-usage-notes)
 
@@ -169,7 +169,7 @@ Définit un composant asynchrone qui est chargé de manière paresseuse uniqueme
 
 ## defineCustomElement() {#definecustomelement}
 
-Cette méthode accepte le même argument que [`defineComponent`](#definecomponent), mais renvoie un constructeur natif de la classe [élément personnalisé](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements) à la place.
+Cette méthode accepte le même argument que [`defineComponent`](#definecomponent), mais renvoie à la place un constructeur natif de la classe [Custom Element](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements).
 
 - **Type**
 
@@ -187,7 +187,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
 - **Détails**
 
-  En plus des options classiques du composant, `defineCustomElement()` supporte également une option spéciale `styles`, qui doit être un tableau de chaînes de caractères CSS en ligne, pour fournir le CSS qui doit être injecté dans la racine superficielle de l'élément.
+  En plus des options classiques du composant, `defineCustomElement()` supporte également une option spéciale `styles`, qui doit être un tableau de chaînes de caractères CSS en ligne, pour fournir le CSS qui doit être injecté dans la racine du shadow DOM de l'élément.
 
   La valeur retournée est un constructeur d'élément personnalisé qui peut être enregistré en utilisant [`customElements.define()`](https://developer.mozilla.org/fr/docs/Web/API/CustomElementRegistry/define).
 
