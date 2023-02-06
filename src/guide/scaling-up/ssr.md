@@ -259,7 +259,7 @@ Notez que si une bibliothèque tiers n'est pas écrite en vue d'une utilisation 
 
 Dans le chapitre de Gestion d'État, nous avons introduit un [patron de gestion d'état simple en utilisant les API de réactivité](state-management.html#simple-state-management-with-reactivity-api). Dans un contexte SSR, ce modèle nécessite des ajustements supplémentaires.
 
-Le modèle déclare un état partagé dans le scope d'un module JavaScript. Cela les rend **singletons** - c'est-à-dire qu'il n'y a qu'une seule instance de l'objet réactif tout au long de la vie de notre application. Cela fonctionne comme prévu dans une application Vue côté client, car les modules de notre application sont initialisés à nouveau pour chaque visite de page navigateur.
+Le modèle déclare un état partagé dans la portée d'un module JavaScript. Cela les rend **singletons** - c'est-à-dire qu'il n'y a qu'une seule instance de l'objet réactif tout au long de la vie de notre application. Cela fonctionne comme prévu dans une application Vue côté client, car les modules de notre application sont initialisés à nouveau pour chaque visite de page navigateur.
 
 Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état cross-request.**
 
@@ -308,8 +308,7 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
 
    1. Utilisez `v-if` + `onMounted` pour rendre uniquement sur le client la partie dépendante de valeurs aléatoires. Votre framework peut également disposer de fonctionnalités intégrées pour faciliter cela, par exemple le composant `<ClientOnly>` de VitePress.
 
-   2. Use a random number generator library that supports generating with seeds, and guarantee the server run and the client run are using the same seed (e.g. by including the seed in serialized state and retrieving it on the client).
-   Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et assurez-vous que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
+   2. Utilisez une bibliothèque de générateur de nombres aléatoires qui prend en charge la génération avec des seeds, et assurez-vous que l'exécution du serveur et l'exécution du client utilisent la même seed (par exemple en incluant la seed dans l'état sérialisé et en la récupérant sur le client).
 
 3. Le temps local pour l'utilisateur ne peut pas toujours être déterminé sur le serveur en raison de différences de fuseau horaire, il doit donc être converti côté client.
 
@@ -350,7 +349,6 @@ const html = await renderToString(app, ctx)
 console.log(ctx.teleports) // { '#teleported': 'teleported content' }
 ```
 
-You need to inject the teleport markup into the correct location in your final page HTML similar to how you need to inject the main app markup.
 Vous devez injecter le markup de téléportation dans l'emplacement correct dans votre HTML de page finale, tout comme vous devez injecter le markup principal de l'application.
 
 :::tip
