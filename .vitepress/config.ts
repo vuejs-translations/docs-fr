@@ -254,9 +254,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
         { text: 'Outils', link: '/guide/scaling-up/tooling' },
-        { text: 'Routing', link: '/guide/scaling-up/routing' },
+        { text: 'Routage', link: '/guide/scaling-up/routing' },
         {
-          text: 'State Management',
+          text: "Gestion d'état",
           link: '/guide/scaling-up/state-management'
         },
         { text: 'Testing', link: '/guide/scaling-up/testing' },
@@ -305,7 +305,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Extra Topics',
       items: [
         {
-          text: 'Ways of Using Vue',
+          text: "Manières d'utiliser Vue",
           link: '/guide/extras/ways-of-using-vue'
         },
         {
@@ -329,7 +329,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/web-components'
         },
         {
-          text: 'Animation Techniques',
+          text: "Techniques d'animation",
           link: '/guide/extras/animation'
         },
         {
@@ -354,7 +354,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Application', link: '/api/application' },
         {
-          text: 'General',
+          text: 'Générale',
           link: '/api/general'
         }
       ]
@@ -409,7 +409,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Built-ins',
       items: [
         { text: 'Directives', link: '/api/built-in-directives' },
-        { text: 'Components', link: '/api/built-in-components' },
+        { text: 'Composants', link: '/api/built-in-components' },
         {
           text: 'Special Elements',
           link: '/api/built-in-special-elements'
