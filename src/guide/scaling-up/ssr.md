@@ -20,7 +20,7 @@ Par rapport à une application monopage (SPA) côté client, l'avantage du SSR r
 
 - **Modèle mental unifié** : vous pouvez utiliser le même langage et le même modèle mental déclaratif orienté composant pour développer votre application entière, au lieu de sauter sans arrêt entre un système de modèle de backend et un framework frontend.
 
-- **Meilleur référencement** : les crawlers de moteur de recherche verront directement la page entièrement rendue.
+- **Meilleur référencement** : les robots d'indexation de moteur de recherche verront directement la page entièrement rendue.
 
   :::tip
   Pour l'instant, Google et Bing peuvent indexer correctement les applications JavaScript synchrones. Synchrone étant le mot clé ici. Si votre application commence par un indicateur de chargement, puis récupère du contenu via Ajax, le crawler n'attendra pas que vous terminiez. Cela signifie que si vous avez du contenu récupéré de manière asynchrone sur des pages où le référencement est important, le SSR peut être nécessaire.
