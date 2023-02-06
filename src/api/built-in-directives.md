@@ -36,7 +36,7 @@ Met à jour le [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element
 
   Dans les [composants monofichiers](/guide/scaling-up/sfc), les styles `scoped` ne s'appliqueront pas au contenu de `v-html`, car ce HTML n'est pas traité par le compilateur de templates de Vue. Si vous souhaitez cibler le contenu de `v-html` avec un CSS scopé, vous pouvez utiliser des [modules CSS](./sfc-css-features.html#css-modules) ou un élément `<style>` global supplémentaire avec une stratégie de scoping manuelle telle que BEM.
 
-- **Exemple:**
+- **Exemple**
 
   ```vue-html
   <div v-html="html"></div>
@@ -200,7 +200,7 @@ Attache un écouteur d'événements à l'élément.
 
   `v-on` supporte également la liaison à un objet de paires événement / écouteur sans argument. Notez que lorsque vous utilisez la syntaxe objet, elle ne supporte aucun modificateur.
 
-- **Exemple:**
+- **Exemple**
 
   ```vue-html
   <!-- méthode gestionnaire -->
@@ -279,7 +279,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
   Lorsqu'elle est utilisée sans argument, elle peut être utilisée pour lier un objet contenant des paires nom-valeur d'attributs.
 
-- **Exemple:**
+- **Exemple**
 
   ```vue-html
   <!-- lie un attribut -->
@@ -379,7 +379,7 @@ Désigne les slots nommés ou les slots scopés qui s'attendent à recevoir des 
   - `<template>`
   - [composants](/guide/components/slots.html#scoped-slots) (pour un seul slot par défaut avec des props)
 
-- **Exemple:**
+- **Exemple**
 
   ```vue-html
   <!-- Slots nommés -->
@@ -425,7 +425,7 @@ Ignore la compilation pour cet élément et tous ses enfants.
 
   À l'intérieur de l'élément contenant `v-pre`, toute la syntaxe du template Vue sera préservée et rendue telle quelle. Le cas d'utilisation le plus courant est l'affichage brut des balises moustaches.
 
-- **Exemple:**
+- **Exemple**
 
   ```vue-html
   <span v-pre>{{ this will not be compiled }}</span>
@@ -517,7 +517,7 @@ Utilisée pour cacher un template non compilé jusqu'à ce qu'il soit prêt.
 
   `v-cloak` restera sur l'élément jusqu'à ce que l'instance du composant associé soit montée. Combiné à des règles CSS telles que `[v-cloak] { display : none }`, elle peut être utilisée pour masquer les templates bruts jusqu'à ce que le composant soit prêt.
 
-- **Exemple:**
+- **Exemple**
 
   ```css
   [v-cloak] {
