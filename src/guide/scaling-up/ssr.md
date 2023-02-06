@@ -16,14 +16,14 @@ Une application Vue côté serveur peut être "isomorphe" ou "universelle", avec
 
 L'avantage du SSR par rapport à une application monopage SPA côté client :
 
-- **Temps d'affichage plus rapide** : cela est plus important sur une connexion internet ou sur des périphériques lents. Le balisage rendu côté serveur n'a pas besoin d'attendre que tout le JavaScript soit téléchargé et exécuté pour être affiché, de sorte que votre utilisateur verra une page entièrement rendue plus rapidement. De plus, la récupération de données est effectuée côté serveur lors de la première visite, ce qui permet probablement une connexion plus rapide à votre base de données que le client. Cela entraîne généralement une amélioration des métriques [Core Web Vitals](https://web.dev/vitals/), une meilleure expérience utilisateur et peut être critique pour les applications où le temps d'affichage est directement associé au taux de conversion.
+- **Temps d'affichage plus rapide** : cela est plus important sur une connexion internet ou sur des périphériques lents. Le rendu côté serveur permet qu'une page soit rendue plus rapidement car elle n'a pas besoin d'attendre le téléchargement et l'exécution du JavaScript. La récupération des données se fait également côté serveur, ce qui peut améliorer la vitesse de connexion à la base de données. Cela peut entraîner une amélioration de l'expérience utilisateur et des métriques [Core Web Vitals](https://web.dev/vitals/), en particulier pour les applications où le temps d'affichage est important pour le taux de conversion.
 
 - **Modèle mental unifié** : vous pouvez utiliser le même langage et le même modèle mental déclaratif orienté composant pour développer votre application entière, au lieu de sauter sans arrêt entre un système de modèle de backend et un framework frontend.
 
 - **Meilleur référencement** : les robots d'indexation de moteur de recherche verront directement la page entièrement rendue.
 
   :::tip
-  Pour l'instant, Google et Bing peuvent indexer correctement les applications JavaScript synchrones. Synchrone étant le mot clé ici. Si votre application commence par un indicateur de chargement, puis récupère du contenu via Ajax, le crawler n'attendra pas que vous terminiez. Cela signifie que si vous avez du contenu récupéré de manière asynchrone sur des pages où le référencement est important, le SSR peut être nécessaire.
+  Les moteurs de recherche, par exemple Google et Bing, peuvent indexer correctement les applications JavaScript synchronisées. Si l'application utilise du contenu chargé de manière asynchrone, le rendu côté serveur peut être nécessaire pour un bon référencement.
   :::
 
 Il y a aussi des compromis à considérer lors de l'utilisation du SSR :
@@ -32,9 +32,9 @@ Il y a aussi des compromis à considérer lors de l'utilisation du SSR :
 
 - Configuration de build et exigences de déploiement plus complexes. Contrairement à une SPA entièrement statique qui peut être déployée sur n'importe quel serveur de fichiers statiques, une application SSR nécessite un environnement où un serveur Node.js peut s'exécuter.
 
-- Charge supplémentaire côté serveur. Le rendu d'une application complète dans Node.js sera plus gourmand en CPU que le simple service de fichiers statiques, donc si vous prévoyez une forte fréquentation, préparez-vous à une charge correspondante sur le serveur et utilisez judicieusement les stratégies de mise en cache.
+- Charge supplémentaire côté serveur. Le rendu d'une application dans Node.js sera plus gourmand en ressources, il faut prévoir une charge supplémentaire sur le serveur et utiliser les stratégies de mise en cache
 
-Avant d'utiliser le SSR pour votre application, la première question à se poser est de savoir si vous en avez réellement besoin. Cela dépend principalement de l'importance du temps d'affichage pour votre application. Par exemple, si vous construisez un tableau de bord interne où quelques centaines de millisecondes supplémentaires au chargement initial n'ont pas une grande importance, le SSR serait un surdimensionnement. Cependant, dans les cas où le temps d'affichage est absolument crucial, le SSR peut vous aider à obtenir les meilleures performances possibles au chargement initial.
+Pensez à vos besoins en temps d'affichage avant d'utiliser SSR pour votre application, car cela peut consommer plus de CPU que les fichiers statiques. Si le temps d'affichage n'est pas crucial, SSR peut être inutile. Mais si c'est important, SSR peut améliorer les performances au chargement initial.
 
 ### SSR vs. SSG {#ssr-vs-ssg}
 
