@@ -52,8 +52,8 @@ export default {
 
 Il s'agit d'une unité autonome composée de la manière suivante :
 
-- L' **état**, la source de vérité qui dirige notre application;
-- La **vue**, une cartographie déclarative de l' **état**;
+- L'**état**, la source de vérité qui dirige notre application;
+- La **vue**, une cartographie déclarative de l'**état**;
 - Les **actions**, les différentes manières dont l'état pourrait changer, en réaction aux entrées de l'utilisateur dans la **vue**.
 
 C'est une représentation simple du concept de "flux de données à sens unique" :
@@ -69,7 +69,7 @@ Toutefois, la simplicité commence à disparaître lorsque nous avons **plusieur
 
 Dans le premier cas, une solution possible consiste à "élever" l'état partagé jusqu'à un composant ancêtre commun, puis à le transmettre en tant que props. Cependant, cela devient rapidement fastidieux dans les arbres de composants avec des hiérarchies profondes, conduisant à un autre problème connu sous le nom de [Prop Drilling](/guide/components/provide-inject.html#prop-drilling).
 
-Dans le deuxième cas, nous nous retrouvons souvent à utiliser des solutions telles que la recherche d'instances directes parent/enfant par le biais des refs de template, ou à essayer de modifier et de synchroniser plusieurs copies de l'état par le biais d'événements émis. Ces deux modèles sont fragiles et conduisent rapidement à un code non maintenable.
+Dans le deuxième cas, nous nous retrouvons souvent à utiliser des solutions telles que l'atteinte d'instances directes parent/enfant par le biais des refs de template, ou à essayer de modifier et de synchroniser plusieurs copies de l'état par le biais d'événements émis. Ces deux modèles sont fragiles et conduisent rapidement à un code non maintenable.
 
 Une solution plus simple et plus directe consiste à extraire l'état partagé des composants, et à le gérer dans un singleton global. Ainsi, notre arbre de composants devient une grande "vue", et n'importe quel composant peut accéder à l'état ou déclencher des actions, peut importe où il se trouve dans l'arbre !
 
@@ -230,14 +230,14 @@ Si vous construisez une application qui utilise le [Server-Side Rendering (SSR)]
 Si notre solution de gestion d'état à la main suffit dans les scénarios simples, il y a beaucoup plus d'éléments à prendre en compte dans les applications de production à grande échelle :
 
 - Des conventions plus solides pour la collaboration en équipe
-- L'intégration avec les Vue DevTools, y compris la ligne de temps, l'inspection des composants et le débogage par voyage dans le temps.
-- Remplacement du module chaud
+- L'intégration avec les Vue DevTools, y compris la timeline, l'inspection des composants et le débogage par voyage dans le temps.
+- Remplacement de module à chaud
 - Prise en charge du rendu côté serveur
 
-[Pinia](https://pinia.vuejs.org) est une bibliothèque de gestion d'état qui implémente tout ce qui précède. Elle est maintenue par l'équipe centrale de Vue, et fonctionne à la fois avec Vue 2 et Vue 3.
+[Pinia](https://pinia.vuejs.org) est une bibliothèque de gestion d'état qui implémente tout ce qui précède. Elle est maintenue par l'équipe principale de Vue, et fonctionne à la fois avec Vue 2 et Vue 3.
 
-Les utilisateurs actuels connaissent peut-être [Vuex] (https://vuex.vuejs.org/), l'ancienne bibliothèque officielle de gestion d'état pour Vue. Pinia jouant le même rôle dans l'écosystème, Vuex est désormais en mode maintenance. Elle fonctionne toujours, mais ne proposera plus de nouvelles fonctionnalités. Il est recommandé d'utiliser Pinia pour les nouvelles applications.
+Les utilisateurs actuels connaissent peut-être [Vuex](https://vuex.vuejs.org/), l'ancienne bibliothèque officielle de gestion d'état pour Vue. Pinia jouant le même rôle dans l'écosystème, Vuex est désormais en mode maintenance. Elle fonctionne toujours, mais ne proposera plus de nouvelles fonctionnalités. Il est recommandé d'utiliser Pinia pour les nouvelles applications.
 
 Pinia a commencé comme une exploration de ce à quoi pourrait ressembler la prochaine itération de Vuex, incorporant de nombreuses idées issues des discussions de l'équipe centrale pour Vuex 5. Finalement, nous avons réalisé que Pinia implémentait déjà la plupart de ce que nous voulions dans Vuex 5, et donc nous avons finalement décidé d'en faire la nouvelle recommandation.
 
-Par rapport à Vuex, Pinia offre une API plus simple avec moins de cérémonies, propose des API de type Composition-API et, surtout, dispose d'une solide prise en charge de l'inférence de type lorsqu'elle est utilisée avec TypeScript.
+Par rapport à Vuex, Pinia offre une API plus simple avec moins de fioritures, propose des API de type Composition-API et, surtout, dispose d'une solide prise en charge de l'inférence de type lorsqu'elle est utilisée avec TypeScript.
