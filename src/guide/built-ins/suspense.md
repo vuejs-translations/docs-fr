@@ -4,39 +4,39 @@ outline: deep
 
 # Suspense {#suspense}
 
-:::warning Experimental Feature
-`<Suspense>` is an experimental feature. It is not guaranteed to reach stable status and the API may change before it does.
+:::warning Fonctionnalité expérimentale
+`<Suspense>` est une fonctionnalité expérimentale. Il n'est pas garanti qu'elle atteigne un statut stable et l'API peut changer avant ce stade.
 :::
 
-`<Suspense>` is a built-in component for orchestrating async dependencies in a component tree. It can render a loading state while waiting for multiple nested async dependencies down the component tree to be resolved.
+`<Suspense>` est un composant natif pour orchestrer les dépendances asynchrones dans un arbre de composants. Il peut assurer le rendu d'un état de chargement en attendant que les multiples dépendances asynchrones imbriquées dans l'arbre de composants soient résolues.
 
-## Async Dependencies {#async-dependencies}
+## Dépendances asynchrones {#async-dependencies}
 
-To explain the problem `<Suspense>` is trying to solve and how it interacts with these async dependencies, let's imagine a component hierarchy like the following:
+Pour expliquer le problème que `<Suspense>` essaie de résoudre et comment il interagit avec ces dépendances asynchrones, imaginons une hiérarchie de composants comme celle qui suit :
 
 ```
 <Suspense>
 └─ <Dashboard>
    ├─ <Profile>
-   │  └─ <FriendStatus> (component with async setup())
+   │  └─ <FriendStatus> (composant avec un setup() asynchrone)
    └─ <Content>
-      ├─ <ActivityFeed> (async component)
-      └─ <Stats> (async component)
+      ├─ <ActivityFeed> (composant asynchrone)
+      └─ <Stats> (composant asynchrone)
 ```
 
-In the component tree there are multiple nested components whose rendering depends on some async resource to be resolved first. Without `<Suspense>`, each of them will need to handle its own loading / error and loaded states. In the worst case scenario, we may see three loading spinners on the page, with content displayed at different times.
+Dans l'arbre des composants, il y a plusieurs composants imbriqués dont le rendu dépend d'une ressource asynchrone qui doit d'abord être résolue. Sans `<Suspense>`, chacun d'entre eux devra gérer son propre chargement, ses erreurs, et ses états de chargement. Dans le pire des cas, nous pourrions voir trois roues de chargement sur la page, avec un contenu qui s'affiche à des moments différents.
 
-The `<Suspense>` component gives us the ability to display top-level loading / error states while we wait on these nested async dependencies to be resolved.
+Le composant `<Suspense>` nous donne la possibilité d'afficher des états de chargement/erreur de haut niveau pendant que nous attendons que ces dépendances asynchrones imbriquées soient résolues.
 
-There are two types of async dependencies that `<Suspense>` can wait on:
+Il existe deux types de dépendances asynchrones pour lesquelles `<Suspense>` peut attendre :
 
-1. Components with an async `setup()` hook. This includes components using `<script setup>` with top-level `await` expressions.
+1. Les composants avec un hook `setup()` asynchrone. Cela inclut les composants utilisant `<script setup>` avec des expressions `await` de haut niveau.
 
-2. [Composants asynchrones](/guide/components/async.html).
+2. [Les composants asynchrones](/guide/components/async.html).
 
 ### `async setup()` {#async-setup}
 
-A Composition API component's `setup()` hook can be async:
+Le hook `setup()` d'un composant utilisé avec la Composition API peut être asynchrone :
 
 ```js
 export default {
@@ -50,7 +50,7 @@ export default {
 }
 ```
 
-If using `<script setup>`, the presence of top-level `await` expressions automatically makes the component an async dependency:
+Si vous utilisez `<script setup>`, la présence d'expressions `await` de haut niveau fait automatiquement du composant une dépendance asynchrone :
 
 ```vue
 <script setup>
@@ -63,53 +63,53 @@ const posts = await res.json()
 </template>
 ```
 
-### Async Components {#async-components}
+### Composants asynchrones {#async-components}
 
-Async components are **"suspensible"** by default. This means that if it has a `<Suspense>` in the parent chain, it will be treated as an async dependency of that `<Suspense>`. In this case, the loading state will be controlled by the `<Suspense>`, and the component's own loading, error, delay and timeout options will be ignored.
+Les composants asynchrones sont, par défaut,  **"suspensibles "**. Cela signifie que s'il a un `<Suspense>` dans la chaîne parentale, un composant asynchrone sera traité comme une dépendance asynchrone de ce `<Suspense>`. Dans ce cas, l'état de chargement sera contrôlé par le `<Suspense>`, et les options de chargement, d'erreur, de délai et de temporisation propres au composant seront ignorées.
 
-The async component can opt-out of `Suspense` control and let the component always control its own loading state by specifying `suspensible: false` in its options.
+Le composant asynchrone peut désactiver le contrôle de `Suspense` et laisser le composant contrôler son propre état de chargement en spécifiant `suspensible : false` dans ses options.
 
-## Loading State {#loading-state}
+## État de chargement {#loading-state}
 
-The `<Suspense>` component has two slots: `#default` and `#fallback`. Both slots only allow for **one** immediate child node. The node in the default slot is shown if possible. If not, the node in the fallback slot will be shown instead.
+Le composant `<Suspense>` possède deux slots : `#default` et `#fallback`. Les deux slots n'acceptent qu'un seul nœud comme enfant direct. Le nœud dans le slot par défaut est affiché si cela est possible. Sinon, le nœud dans le slot de secours sera affiché.
 
 ```vue-html
 <Suspense>
-  <!-- component with nested async dependencies -->
+  <!-- composant avec des dépendances asynchrones imbriquées -->
   <Dashboard />
 
-  <!-- loading state via #fallback slot -->
+  <!-- état de chargement via le slot #fallback -->
   <template #fallback>
     Loading...
   </template>
 </Suspense>
 ```
 
-On initial render, `<Suspense>` will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a **pending** state. During the pending state, the fallback content will be displayed. When all encountered async dependencies have been resolved, `<Suspense>` enters a **resolved** state and the resolved default slot content is displayed.
+Lors du rendu initial, `<Suspense>` rendra le contenu de son slot par défaut en mémoire. Si des dépendances asynchrones sont rencontrées pendant le processus, il entrera dans un état d'**attente**. Pendant l'état d'attente, le contenu de secours sera affiché. Lorsque toutes les dépendances asynchrones rencontrées sont résolues, `<Suspense>` entre dans un état **résolu** et le contenu résolu du slot par défaut est affiché.
 
-If no async dependencies were encountered during the initial render, `<Suspense>` will directly go into a resolved state.
+Si aucune dépendance asynchrone n'a été rencontrée lors du rendu initial, `<Suspense>` passera directement dans un état résolu.
 
-Once in a resolved state, `<Suspense>` will only revert to a pending state if the root node of the `#default` slot is replaced. New async dependencies nested deeper in the tree will **not** cause the `<Suspense>` to revert to a pending state.
+Une fois dans un état résolu, `<Suspense>` ne reviendra à un état d'attente que si le nœud racine du slot `#default` est remplacé. Les nouvelles dépendances asynchrones imbriquées plus profondément dans l'arbre ne feront **pas** repasser le `<Suspense>` à l'état d'attente.
 
-When a revert happens, fallback content will not be immediately displayed. Instead, `<Suspense>` will display the previous `#default` content while waiting for the new content and its async dependencies to be resolved. This behavior can be configured with the `timeout` prop: `<Suspense>` will switch to fallback content if it takes longer than `timeout` to render the new default content. A `timeout` value of `0` will cause the fallback content to be displayed immediately when default content is replaced.
+Lorsqu'il y a un retour en arrière, le contenu de secours ne sera pas immédiatement affiché. À la place, `<Suspense>` affichera le contenu `#default` précédent en attendant que le nouveau contenu et ses dépendances asynchrones soient résolus. Ce comportement peut être configuré avec la prop `timeout` : `<Suspense>` basculera vers un contenu de secours si le rendu du nouveau contenu par défaut prend plus de temps que la valeur de `timeout`. Une valeur de `timeout` de `0` fera que le contenu de secours sera affiché immédiatement lorsque le contenu par défaut sera remplacé.
 
-## Events {#events}
+## Événements {#events}
 
-The `<Suspense>` component emits 3 events: `pending`, `resolve` and `fallback`. The `pending` event occurs when entering a pending state. The `resolve` event is emitted when new content has finished resolving in the `default` slot. The `fallback` event is fired when the contents of the `fallback` slot are shown.
+Le composant `<Suspense>` émet trois événements : `pending`, `resolve` et `fallback`. L'événement `pending` est émis lorsqu'on entre dans un état d'attente. L'événement `resolve` est émis lorsqu'un nouveau contenu a fini d'être résolu dans le slot `default`. L'événement `fallback` est émis lorsque le contenu du slot `fallback` est affiché.
 
-The events could be used, for example, to show a loading indicator in front of the old DOM while new components are loading.
+Les événements peuvent être utilisés, par exemple, pour afficher un indicateur de chargement au niveau de l'ancien DOM pendant le chargement des nouveaux composants.
 
-## Error Handling {#error-handling}
+## Gestion des erreurs {#error-handling}
 
-`<Suspense>` currently does not provide error handling via the component itself - however, you can use the [`errorCaptured`](/api/options-lifecycle.html#errorcaptured) option or the [`onErrorCaptured()`](/api/composition-api-lifecycle.html#onerrorcaptured) hook to capture and handle async errors in the parent component of `<Suspense>`.
+Il n'y a actuellement pas de gestion des erreurs fournie par `<Suspense>` lui même - cependant, vous pouvez utiliser l'option [`errorCaptured`](/api/options-lifecycle.html#errorcaptured) ou le hook [`onErrorCaptured()`](/api/composition-api-lifecycle.html#onerrorcaptured) pour intercepter et gérer les erreurs asynchrones dans le composant parent de `<Suspense>`.
 
-## Combining with Other Components {#combining-with-other-components}
+## Combinaison avec d'autres composants {#combining-with-other-components}
 
-It is common to want to use `<Suspense>` in combination with the [`<Transition>`](./transition) and [`<KeepAlive>`](./keep-alive) components. The nesting order of these components is important to get them all working correctly.
+Il est courant de vouloir utiliser `<Suspense>` en combinaison avec les composants [`<Transition>`](./transition) et [`<KeepAlive>`](./keep-alive). L'ordre d'imbrication de ces composants est important pour qu'ils fonctionnent tous correctement.
 
-In addition, these components are often used in conjunction with the `<RouterView>` component from [Vue Router](https://router.vuejs.org/).
+De plus, ces composants sont souvent utilisés en association avec le composant `<RouterView>` de [Vue Router](https://router.vuejs.org/).
 
-The following example shows how to nest these components so that they all behave as expected. For simpler combinations you can remove the components that you don't need:
+L'exemple suivant montre comment imbriquer ces composants afin qu'ils se comportent tous comme prévu. Pour des combinaisons plus simples, vous pouvez supprimer les composants dont vous n'avez pas besoin :
 
 ```vue-html
 <RouterView v-slot="{ Component }">
@@ -117,10 +117,10 @@ The following example shows how to nest these components so that they all behave
     <Transition mode="out-in">
       <KeepAlive>
         <Suspense>
-          <!-- main content -->
+          <!-- contenu principal -->
           <component :is="Component"></component>
 
-          <!-- loading state -->
+          <!-- état de chargement -->
           <template #fallback>
             Loading...
           </template>
@@ -131,4 +131,4 @@ The following example shows how to nest these components so that they all behave
 </RouterView>
 ```
 
-Vue Router has built-in support for [lazily loading components](https://router.vuejs.org/guide/advanced/lazy-loading.html) using dynamic imports. These are distinct from async components and currently they will not trigger `<Suspense>`. However, they can still have async components as descendants and those can trigger `<Suspense>` in the usual way.
+Vue Router supporte nativement les [composants chargés de manière paresseuse](https://router.vuejs.org/guide/advanced/lazy-loading.html) via l'utilisation des importations dynamiques. Ceux-ci sont distincts des composants asynchrones et, actuellement, ils ne déclenchent pas `<Suspense>`. Cependant, ils peuvent toujours avoir des composants asynchrones comme descendants et ceux-ci peuvent déclencher `<Suspense>` de manière normale.
