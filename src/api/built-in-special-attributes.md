@@ -33,7 +33,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
   </transition>
   ```
 
-  Quand`text` change, le `<span>` sera toujours remplacé au lieu d'être corrigé, donc une transition sera déclenchée.
+  Quand `text` change, le `<span>` sera toujours remplacé au lieu d'être corrigé, donc une transition sera déclenchée.
 
 - **Voir aussi :** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list.html#maintaining-state-with-key)
 
