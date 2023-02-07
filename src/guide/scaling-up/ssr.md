@@ -132,7 +132,7 @@ Enfin, exécutez `node server.js` et visitez `http://localhost:3000`. Vous devri
 
 Si vous cliquez sur le bouton, vous verrez que le nombre ne change pas. L'HTML est complètement statique côté client car nous n'avons pas chargé Vue dans le navigateur.
 
-Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, elle crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
+Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, il crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
 
 Pour monter une application en mode hydratation, nous devons utiliser [`createSSRApp()`](/api/application.html#createssrapp) au lieu de `createApp()`:
 
