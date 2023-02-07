@@ -65,7 +65,7 @@ Si les SFC nécessitent une étape de compilation, les avantages sont nombreux e
 - [CSS à portée limitée au composant](/api/sfc-css-features)
 - [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
 - Meilleures optimisations à la compilation grâce à l'analyse croisée du template et des scripts.
-- [Support IDE](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
+- [Support des environnements de développement](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
 - Prise en charge nativement du remplacement de modules à chaud (HMR).
 
 SFC est une caractéristique déterminante de Vue en tant que framework, et c'est l'approche recommandée pour utiliser Vue dans les scénarios suivants :
@@ -94,7 +94,7 @@ Les balises `<style>` à l'intérieur des SFC sont généralement injectées com
 
 Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [Playground SFC de Vue](https://sfc.vuejs.org/).
 
-Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outillages pour SFC](/guide/scaling-up/tooling).
+Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outils pour SFC](/guide/scaling-up/tooling).
 
 ## Qu'en est-il de la séparation des responsabilités ? {#what-about-separation-of-concerns}
 

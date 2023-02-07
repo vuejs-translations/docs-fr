@@ -14,10 +14,10 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Tutoriel', link: '/tutorial/' },
       { text: 'Exemples', link: '/examples/' },
       { text: 'Commencer', link: '/guide/quick-start' },
-      // { text: 'Conventions', link: '/style-guide/' },
+      { text: 'Bonnes pratiques', link: '/style-guide/' },
       {
         text: 'Vue 2 Docs',
-        link: 'https://v2.vuejs.org'
+        link: 'https://v2.fr.vuejs.org'
       },
       {
         text: 'Migration depuis Vue 2',
@@ -253,7 +253,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Scaling Up',
       items: [
         { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
-        { text: 'Tooling', link: '/guide/scaling-up/tooling' },
+        { text: 'Outils', link: '/guide/scaling-up/tooling' },
         { text: 'Routage', link: '/guide/scaling-up/routing' },
         {
           text: "Gestion d'état",
@@ -415,7 +415,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/built-in-special-elements'
         },
         {
-          text: 'Special Attributes',
+          text: 'Attributs spéciaux',
           link: '/api/built-in-special-attributes'
         }
       ]

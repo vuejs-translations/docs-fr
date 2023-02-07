@@ -154,7 +154,7 @@ An object of DOM elements and component instances, registered via [template refs
 - **See also:**
 
   - [Les refs du template](/guide/essentials/template-refs.html)
-  - [Special Attributes - ref](./built-in-special-attributes.md#ref)
+  - [Attributs spéciaux - ref](./built-in-special-attributes.md#ref)
 
 ## $attrs {#attrs}
 
