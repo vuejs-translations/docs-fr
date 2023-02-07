@@ -78,7 +78,7 @@ Après, lancez :
 > node example.js
 ```
 
-Cela devrait imprimer ce qui suit sur la ligne de commande :
+Cela devrait retourner :
 
 ```
 <button>1</button>
@@ -211,7 +211,7 @@ Pour une application SSR en production, plusieurs considérations supplémentair
   Les composants Vue sont compilés différemment en SSR : les templates compilés sont compilés en chaînes, par rapport à des fonctions de rendu de DOM virtuel, pour une performance accrue.
   :::
 
-- Dans le gestionnaire de requête du serveur, afficher le HTML avec les liens de ressources client corrects et les astuces de ressources optimales. Il peut également être nécessaire de basculer entre le mode SSR et SSG, ou même de mélanger les deux dans la même application.
+- Dans le gestionnaire de requête du serveur, afficher le HTML avec les liens corrects des ressources clientes et autres ressources optimisées. Il peut également être nécessaire de basculer entre le mode SSR et SSG, ou même de mélanger les deux dans la même application.
 
 - Gestion du routage, de la récupération de données et des stores de gestion d'état de manière universelle.
 
@@ -227,7 +227,7 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Vite SSR {#vite-ssr}
 
-Vite fournit [un support intégré pour le rendu côté serveur de Vue](https://vitejs.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
+Vite fournit [un support natif pour le rendu côté serveur de Vue](https://vitejs.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
 
 Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour le build. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
 
@@ -241,7 +241,7 @@ Pendant le SSR, chaque URL requêtée correspond à un état souhaité de notre 
 
 ### Les hooks du cycle de vie du composant {#component-lifecycle-hooks}
 
-Depuis qu'il n'y a plus de mises à jour dynamiques, les hooks de cycle de vie tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> ou <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> ne seront **PAS** appelés pendant le SSR et ne seront exécutés que côté client.<span class="options-api"> Les seuls hooks qui sont appelés pendant le SSR sont `beforeCreate` et `created`</span>
+Vu qu'il n'y a pas de mises à jour dynamiques, les hooks de cycle de vie tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> ou <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> ne seront **PAS** appelés pendant le SSR et ne seront exécutés que côté client.<span class="options-api"> Les seuls hooks qui sont appelés pendant le SSR sont `beforeCreate` et `created`</span>
 
 Vous devriez éviter le code qui produit des effets secondaires qui nécessitent un nettoyage dans <span class="options-api">`beforeCreate` et `created`</span><span class="composition-api">`setup()` ou dans la portée de `<script setup>`</span>. Un exemple d'effets secondaires est la configuration de minuteries avec `setInterval`. Dans le code exécuté côté client, nous pouvons configurer une minuterie et la démonter dans <span class="options-api">`beforeUnmount`</span><span class="composition-api">`onBeforeUnmount`</span> ou <span class="options-api">`unmounted`</span><span class="composition-api">`onUnmounted`</span>. Cependant, étant donné que les hooks de démontage ne seront jamais appelés pendant le SSR, les minuteries resteront à jamais. Pour éviter cela, déplacez votre code d'effets secondaires dans <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
 
@@ -261,7 +261,7 @@ Dans le chapitre de Gestion d'État, nous avons introduit un [patron de gestion 
 
 Le modèle déclare un état partagé dans la portée d'un module JavaScript. Cela les rend **singletons** - c'est-à-dire qu'il n'y a qu'une seule instance de l'objet réactif tout au long de la vie de notre application. Cela fonctionne comme prévu dans une application Vue côté client, car les modules de notre application sont initialisés à nouveau pour chaque visite de page navigateur.
 
-Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état cross-request.**
+Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état par demandes croisées.**
 
 Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaque demande, tout comme nous le faisons dans les navigateurs. Cependant, l'initialisation des modules JavaScript peut être coûteuse, ce qui affecterait significativement les performances du serveur.
 
@@ -272,12 +272,12 @@ La solution recommandée est de créer une nouvelle instance de l'application en
 import { createSSRApp } from 'vue'
 import { createStore } from './store.js'
 
-// appelé sur chaque demande
+// appelée sur chaque demande
 export function createApp() {
   const app = createSSRApp(/* ... */)
   // crée une nouvelle instance de store par requête
   const store = createStore(/* ... */)
-  // fournis un store au niveau de l'application
+  // fournit un store au niveau de l'application
   app.provide('store', store)
   // expose également le store à des fins d'hydratation
   return { app, store }
