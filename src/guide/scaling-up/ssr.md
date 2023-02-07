@@ -255,7 +255,7 @@ Pour les API spécifiques au navigateur, la démarche courante consiste à y acc
 
 Notez que si une bibliothèque tiers n'est pas écrite en vue d'une utilisation universelle, il peut être difficile de l'intégrer dans une application rendue côté serveur. Vous _pourriez_ être en mesure de la faire fonctionner en simulant certaines des globales, mais ce serait un bricolage et pourrait interférer avec le code de détection de l'environnement d'autres bibliothèques.
 
-### Pollution d'État à demande croisée {#cross-request-state-pollution}
+### Pollution d'état par demandes croisées {#cross-request-state-pollution}
 
 Dans le chapitre de Gestion d'État, nous avons introduit un [patron de gestion d'état simple en utilisant les API de réactivité](state-management.html#simple-state-management-with-reactivity-api). Dans un contexte SSR, ce modèle nécessite des ajustements supplémentaires.
 
