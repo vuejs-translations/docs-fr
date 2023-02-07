@@ -146,7 +146,7 @@ const app = createSSRApp({
 
 // Le montage d'une application SSR sur le client suppose
 // que le HTML a été pré-rendu et qu'il effectuera une
-// hydratation au lieu de monter de nouveaux noeuds du DOM.
+// hydratation au lieu de monter de nouveaux nœuds du DOM.
 app.mount('#app')
 ```
 
