@@ -411,7 +411,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Directives', link: '/api/built-in-directives' },
         { text: 'Composants', link: '/api/built-in-components' },
         {
-          text: 'Special Elements',
+          text: 'Éléments spéciaux',
           link: '/api/built-in-special-elements'
         },
         {
