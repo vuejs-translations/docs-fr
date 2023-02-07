@@ -219,7 +219,7 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Nuxt {#nuxt}
 
-[Nuxt](https://nuxt.com/) Nuxt est une plateforme Vue simplifiée pour développer des applications universelles et peut être utilisée comme générateur de site statique. Nous vous recommandons fortement de l'essayer.
+[Nuxt](https://nuxt.com/) est une plateforme Vue simplifiée pour développer des applications universelles et peut être utilisée comme générateur de site statique. Nous vous recommandons fortement de l'essayer.
 
 ### Quasar {#quasar}
 
@@ -231,7 +231,7 @@ Vite fournit [un support natif pour le rendu côté serveur de Vue](https://vite
 
 Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour le build. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
 
-## Écrire un code convivial pour du SSR {#writing-ssr-friendly-code}
+## Écrire du code SSR propre {#writing-ssr-friendly-code}
 
 Indépendamment de votre configuration de build ou de votre choix de framework de haut niveau, il existe des principes qui s'appliquent à toutes les applications Vue SSR.
 
