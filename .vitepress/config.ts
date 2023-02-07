@@ -14,10 +14,10 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Tutoriel', link: '/tutorial/' },
       { text: 'Exemples', link: '/examples/' },
       { text: 'Commencer', link: '/guide/quick-start' },
-      // { text: 'Conventions', link: '/style-guide/' },
+      { text: 'Bonnes pratiques', link: '/style-guide/' },
       {
         text: 'Vue 2 Docs',
-        link: 'https://v2.vuejs.org'
+        link: 'https://v2.fr.vuejs.org'
       },
       {
         text: 'Migration depuis Vue 2',
