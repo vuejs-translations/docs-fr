@@ -9,11 +9,11 @@ aside: false
 - [English](https://vuejs.org/) [[source](https://github.com/vuejs/docs)]
 - [简体中文 / Simplified Chinese](https://cn.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-zh-cn)]
 - [日本語 / Japanese](https://ja.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ja)]
+- [Français](https://fr.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-fr)]
 
 ## Langues en cours de traduction {#work-in-progress-languages}
 
 - [Українська / Ukrainian](https://ua.vuejs.org) [[source](https://github.com/vuejs-translations/docs-ua)]
-- [Français](https://vuejs-docs-fr.netlify.app/) [[source](https://github.com/vuejs-translations/docs-fr)]
 
 ## Commencer une nouvelle traduction {#starting-a-new-translation}
 
