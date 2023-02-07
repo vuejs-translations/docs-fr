@@ -1,7 +1,7 @@
 # Éléments spéciaux natifs {#built-in-special-elements}
 
 :::info Pas des composants
-`<component>`, `<slot>` et `<template>` sont des fonctionnalités semblables aux composants et font partie de la syntaxe des templates. Ce ne sont pas de véritables composants et ils sont supprimés lors de la compilation des templates. En tant que tels, ils sont conventionnellement écrits en minuscules dans les modèles.
+`<component>`, `<slot>` et `<template>` sont des fonctionnalités semblables aux composants et font partie de la syntaxe des templates. Ce ne sont pas de véritables composants et ils sont supprimés lors de la compilation des templates. En tant que tels, ils sont conventionnellement écrits en minuscules dans les templates.
 :::
 
 ## `<component>` {#component}
@@ -108,11 +108,11 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
   En pratique, ce cas de figure n'est pas courant car les champs de formulaire natifs sont généralement enveloppés dans des composants dans les applications réelles. Si vous avez besoin d'utiliser directement un élément natif, vous pouvez diviser manuellement le "v-model" en un attribut et un événement.
 
-- **Voir aussi :** [Composants Dynamiques](/guide/essentials/component-basics.html#dynamic-components)
+- **Voir aussi :** [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
 
 ## `<slot>` {#slot}
 
-Indique la place content le contenu d'un slot dans les templates.
+Indique l'emplacement du contenu d'un slot dans les templates.
 
 - **Props**
 
@@ -154,7 +154,7 @@ La balise `<template>` est utilisée comme placeholder lorsque nous voulons util
   
   Si aucune de ces directives n'est présente, il sera rendu comme un [élément natif `<template>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/template) à la place.
 
-  Un `<template>` avec un `v-for` peut aussi avoir un attribut [`key`] (/api/built-in-special-attributes.html#key). Tous les autres attributs et directives seront rejetés, car ils n'ont pas de sens sans l'élément correspondant.
+  Un `<template>` avec un `v-for` peut aussi avoir un attribut [`key`](/api/built-in-special-attributes.html#key). Tous les autres attributs et directives seront rejetés, car ils n'ont pas de sens sans l'élément correspondant.
 
   Les composants monofichiers utilisent une [top-level `<template>` tag](/api/sfc-spec.html#language-blocks) pour envelopper l'ensemble du template. Cette utilisation est distincte de l'utilisation de `<template>` décrite ci-dessus. Cette balise de haut niveau ne fait pas partie du modèle lui-même et ne supporte pas la syntaxe template, comme les directives.
 
