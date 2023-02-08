@@ -1,8 +1,8 @@
-# Custom Renderer API {#custom-renderer-api}
+# API de rendu personnalisé {#custom-renderer-api}
 
 ## createRenderer() {#createrenderer}
 
-Creates a custom renderer. By providing platform-specific node creation and manipulation APIs, you can leverage Vue's core runtime to target non-DOM environments.
+Crée un rendu personnalisé. En fournissant des API de création et de manipulation de nœuds spécifiques à la plate-forme, vous pouvez tirer parti du noyau d'exécution de Vue pour cibler les environnements non DOM.
 
 - **Type**
 
@@ -22,7 +22,7 @@ Creates a custom renderer. By providing platform-specific node creation and mani
       key: string,
       prevValue: any,
       nextValue: any,
-      // the rest is unused for most custom renderers
+      // le reste n'est pas utilisé pour la plupart des moteurs de rendu personnalisés.
       isSVG?: boolean,
       prevChildren?: VNode<HostNode, HostElement>[],
       parentComponent?: ComponentInternalInstance | null,
@@ -48,7 +48,7 @@ Creates a custom renderer. By providing platform-specific node creation and mani
     parentNode(node: HostNode): HostElement | null
     nextSibling(node: HostNode): HostNode | null
 
-    // optional, DOM-specific
+    // optionnel, spécifique au DOM
     querySelector?(selector: string): HostElement | null
     setScopeId?(el: HostElement, id: string): void
     cloneNode?(node: HostNode): HostNode
@@ -61,7 +61,7 @@ Creates a custom renderer. By providing platform-specific node creation and mani
   }
   ```
 
-- **Example**
+- **Exemple**
 
   ```js
   import { createRenderer } from '@vue/runtime-core'
@@ -74,12 +74,12 @@ Creates a custom renderer. By providing platform-specific node creation and mani
     // ...
   })
 
-  // `render` is the low-level API
-  // `createApp` returns an app instance
+  // `render` est l'API de bas niveau
+  // `createApp` retourne une instance de l'application
   export { render, createApp }
 
-  // re-export Vue core APIs
+  // réexporte les API principales de Vue
   export * from '@vue/runtime-core'
   ```
 
-  Vue's own `@vue/runtime-dom` is [implemented using the same API](https://github.com/vuejs/core/blob/main/packages/runtime-dom/src/index.ts). For a simpler implementation, check out [`@vue/runtime-test`](https://github.com/vuejs/core/blob/main/packages/runtime-test/src/index.ts) which is a private package for Vue's own unit testing.
+  Le propre `@vue/runtime-dom` de Vue est [implémenté en utilisant la même API](https://github.com/vuejs/core/blob/main/packages/runtime-dom/src/index.ts). Pour une implémentation plus simple, consultez [`@vue/runtime-test`](https://github.com/vuejs/core/blob/main/packages/runtime-test/src/index.ts) qui est un paquet privé pour les tests unitaires de Vue.
