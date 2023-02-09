@@ -8,6 +8,6 @@ Vous avez terminé le tutoriel !
 
 - Parcourir le [Guide principal](/guide/essentials/application.html), qui couvre tous les sujets que nous avons appris jusqu'à présent de manière plus détaillée, et bien plus encore.
 
-- Consultez des [Exemples](/exemples/) plus pratiques.
+- Consultez des [Exemples](/examples/) plus pratiques.
 
 Nous sommes impatients de voir ce que vous construirez ensuite !
