@@ -2,7 +2,7 @@
 
 ## Signalement des vulnérabilités {#reporting-vulnerabilities}
 
-Lorsqu'une vulnérabilité est signalée, elle devient immédiatement notre principale préoccupation, et un collaborateur à temps plein laisse tout tomber pour y travailler. Pour signaler une vulnérabilité, veuillez envoyer un mail à [security@vuejs.org](mailto:security@vuejs.org).
+Lorsqu'une vulnérabilité est signalée, elle devient immédiatement notre principale préoccupation, et un collaborateur à temps plein se concentre pour y remédier. Pour signaler une vulnérabilité, veuillez envoyer un mail à [security@vuejs.org](mailto:security@vuejs.org).
 
 Bien que la découverte de nouvelles vulnérabilités soit rare, nous recommandons également de toujours utiliser les dernières versions de Vue et de ses bibliothèques annexes officielles pour garantir que votre application reste aussi sûre que possible.
 
@@ -167,7 +167,7 @@ Nous recevons parfois des rapports de vulnérabilité sur la façon dont il est 
 
 La règle générale est que si vous autorisez l'exécution d'un contenu non nettoyé fourni par l'utilisateur (HTML, JavaScript ou même CSS), vous vous exposez à des attaques. Ce conseil est valable que vous utilisiez Vue, un autre framework ou même aucun framework.
 
-Outre les recommandations formulées ci-dessus concernant les [dangers potentiels] (#potential-dangers), nous vous recommandons également de vous familiariser avec ces ressources :
+Outre les recommandations formulées ci-dessus concernant les [dangers potentiels](#potential-dangers), nous vous recommandons également de vous familiariser avec ces ressources :
 
 - [Aide-mémoire sur la sécurité HTML5](https://html5sec.org/)
 - [Aide-mémoire de l'OWASP sur la prévention du Cross Site Scripting (XSS)](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
