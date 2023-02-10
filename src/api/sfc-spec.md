@@ -74,7 +74,7 @@ La gestion des blocs personnalisés dépendra des outils utilisés - si vous sou
 
 Un SFC déduit automatiquement le nom du composant à partir de son **nom de fichier** dans les cas suivants :
 
-- formatage des avertissements de développement
+- Formatage des avertissements de développement
 - Inspection via les DevTools
 - Autoréférence récursive. Par exemple, un fichier nommé `FooBar.vue` peut se référer à lui-même comme `<FooBar/>` dans son template. Cela est toutefois moins prioritaire que les composants explicitement enregistrés / importés.
 
@@ -88,7 +88,7 @@ Les blocs peuvent déclarer des langages de pré-processeur en utilisant l'attri
 </script>
 ```
 
-`lang` peut être appliqué à n'importe quel bloc - par exemple, nous pouvons utiliser `<style>` avec [Sass] (https://sass-lang.com/) et `<template>` avec [Pug] (https://pugjs.org/api/getting-started.html) :
+`lang` peut être appliqué à n'importe quel bloc - par exemple, nous pouvons utiliser `<style>` avec [Sass](https://sass-lang.com/) et `<template>` avec [Pug](https://pugjs.org/api/getting-started.html) :
 
 ```vue-html
 <template lang="pug">
