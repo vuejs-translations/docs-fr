@@ -12,7 +12,7 @@ La règle de sécurité la plus fondamentale lorsque vous utilisez Vue est de **
 
 ```js
 Vue.createApp({
-  template: `<div>` + userProvidedString + `</div>` // NEVER DO THIS
+  template: `<div>` + userProvidedString + `</div>` // NE JAMAIS FAIRE ÇA
 }).mount('#app')
 ```
 
