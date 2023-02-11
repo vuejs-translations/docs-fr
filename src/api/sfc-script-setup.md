@@ -67,9 +67,9 @@ const count = ref(0)
 </template>
 ```
 
-## Using Components {#using-components}
+## Utilisation des composants {#using-components}
 
-Values in the scope of `<script setup>` can also be used directly as custom component tag names:
+Les valeurs dans la portée de `<script setup>` peuvent également être utilisées directement comme noms de balises de composants personnalisés :
 
 ```vue
 <script setup>
@@ -81,11 +81,11 @@ import MyComponent from './MyComponent.vue'
 </template>
 ```
 
-Think of `MyComponent` as being referenced as a variable. If you have used JSX, the mental model is similar here. The kebab-case equivalent `<my-component>` also works in the template - however PascalCase component tags are strongly recommended for consistency. It also helps differentiating from native custom elements.
+Voyez `MyComponent` comme référencé à l'instar d'une variable. Si vous avez utilisé du JSX, le modèle mental est le même ici. L'équivalent en casse kebab `<my-component>` fonctionne aussi dans le template - mais les balises de composant en casse Pascal sont fortement recommandées pour des raisons de cohérence. Cela permet également de faire la différence avec les éléments personnalisés natifs.
 
-### Dynamic Components {#dynamic-components}
+### Composants dynamiques {#dynamic-components}
 
-Since components are referenced as variables instead of registered under string keys, we should use dynamic `:is` binding when using dynamic components inside `<script setup>`:
+Puisque les composants sont référencés comme des variables au lieu d'être enregistrés sous des clés de chaîne de caractères, nous devons utiliser la liaison dynamique `:is` lorsque nous utilisons des composants dynamiques dans `<script setup>` :
 
 ```vue
 <script setup>
@@ -99,21 +99,21 @@ import Bar from './Bar.vue'
 </template>
 ```
 
-Note how the components can be used as variables in a ternary expression.
+Notez comment les composants peuvent être utilisés comme variables dans une expression ternaire.
 
-### Recursive Components {#recursive-components}
+### Composants récursifs {#recursive-components}
 
-An SFC can implicitly refer to itself via its filename. E.g. a file named `FooBar.vue` can refer to itself as `<FooBar/>` in its template.
+Un composant monopage peut implicitement se référer à lui-même via son nom de fichier. Par exemple, un fichier nommé `FooBar.vue` peut se référer à lui-même comme `<FooBar/>` dans son template.
 
-Note this has lower priority than imported components. If you have a named import that conflicts with the component's inferred name, you can alias the import:
+Notez cependant que la priorité est inférieure à celle des composants importés. Si vous avez une importation nommée qui entre en conflit avec le nom inféré du composant, vous pouvez utiliser un alias pour l'importation :
 
 ```js
 import { FooBar as FooBarChild } from './components'
 ```
 
-### Namespaced Components {#namespaced-components}
+### Composants d'un espace de nom {#namespaced-components}
 
-You can use component tags with dots like `<Foo.Bar>` to refer to components nested under object properties. This is useful when you import multiple components from a single file:
+Vous pouvez utiliser des balises de composants avec des points comme `<Foo.Bar>` pour faire référence à des composants imbriqués dans des propriétés d'objets. Ceci est utile lorsque vous importez plusieurs composants à partir d'un seul fichier :
 
 ```vue
 <script setup>
@@ -127,15 +127,15 @@ import * as Form from './form-components'
 </template>
 ```
 
-## Using Custom Directives {#using-custom-directives}
+## Utilisation de directives personnalisées {#using-custom-directives}
 
-Globally registered custom directives just work as normal. Local custom directives don't need to be explicitly registered with `<script setup>`, but they must follow the naming scheme `vNameOfDirective`:
+Les directives personnalisées enregistrées de manière globale fonctionnent normalement. Les directives locales personnalisées n'ont pas besoin d'être explicitement enregistrées avec `<script setup>`, mais elles doivent suivre le schéma de dénomination `vNameOfDirective` :
 
 ```vue
 <script setup>
 const vMyDirective = {
   beforeMount: (el) => {
-    // do something with the element
+    // faire quelque chose avec l'élément
   }
 }
 </script>
@@ -144,7 +144,7 @@ const vMyDirective = {
 </template>
 ```
 
-If you're importing a directive from elsewhere, it can be renamed to fit the required naming scheme:
+Si vous importez une directive d'ailleurs, vous pouvez la renommer pour qu'elle corresponde au schéma de dénomination requis :
 
 ```vue
 <script setup>
