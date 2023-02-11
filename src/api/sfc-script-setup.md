@@ -246,9 +246,9 @@ La prise en charge de la combinaison de `<script setup>` et de `<script>` dans l
 
 Si vous vous trouvez dans un scénario non pris en charge, vous devriez envisager d'utiliser une fonction explicite [`setup()`](/api/composition-api-setup.html), au lieu d'utiliser `<script setup>`.
 
-## Top-level `await` {#top-level-await}
+## `await` de haut niveau {#top-level-await}
 
-Top-level `await` can be used inside `<script setup>`. The resulting code will be compiled as `async setup()`:
+Un `await` de haut niveau peut être utilisé à l'intérieur de `<script setup>`. Le code résultant sera compilé comme `async setup()` :
 
 ```vue
 <script setup>
@@ -256,17 +256,17 @@ const post = await fetch(`/api/post/1`).then((r) => r.json())
 </script>
 ```
 
-In addition, the awaited expression will be automatically compiled in a format that preserves the current component instance context after the `await`.
+De plus, l'expression attendue sera automatiquement compilée dans un format qui préserve le contexte de l'instance du composant courant après le `await`.
 
-:::warning Note
-`async setup()` must be used in combination with `Suspense`, which is currently still an experimental feature. We plan to finalize and document it in a future release - but if you are curious now, you can refer to its [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) to see how it works.
+:::warning Remarque
+`async setup()` doit être utilisée en combinaison avec `Suspense`, qui est actuellement encore une fonctionnalité expérimentale. Nous prévoyons de la finaliser et de la documenter dans une prochaine version - mais si vous êtes curieux, vous pouvez vous référer à ses [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) pour voir comment elle fonctionne.
 :::
 
-## TypeScript-only Features <sup class="vt-badge ts" /> {#typescript-only-features}
+## Fonctionnalités propres à TypeScript <sup class="vt-badge ts" /> {#typescript-only-features}
 
-### Type-only props/emit declarations {#type-only-props-emit-declarations}
+### Déclarations de types pour props / emit {#type-only-props-emit-declarations}
 
-Props and emits can also be declared using pure-type syntax by passing a literal type argument to `defineProps` or `defineEmits`:
+Les props et les emits peuvent également être déclarés en utilisant une syntaxe de type pur en passant un argument de type littéral à `defineProps` ou `defineEmits` :
 
 ```ts
 const props = defineProps<{
@@ -280,24 +280,24 @@ const emit = defineEmits<{
 }>()
 ```
 
-- `defineProps` or `defineEmits` can only use either runtime declaration OR type declaration. Using both at the same time will result in a compile error.
+- `defineProps` ou `defineEmits` ne peuvent utiliser que la déclaration à l'exécution OU la déclaration de type. L'utilisation des deux en même temps entraînera une erreur de compilation.
 
-- When using type declaration, the equivalent runtime declaration is automatically generated from static analysis to remove the need for double declaration and still ensure correct runtime behavior.
+- Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique afin de supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
 
-  - In dev mode, the compiler will try to infer corresponding runtime validation from the types. For example here `foo: String` is inferred from the `foo: string` type. If the type is a reference to an imported type, the inferred result will be `foo: null` (equal to `any` type) since the compiler does not have information of external files.
+  - En mode développement, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple, ici, `foo : String` est déduit du type `foo : string`. Si le type est une référence à un type importé, le résultat déduit sera `foo : null` (égal au type `any`) puisque le compilateur n'a pas d'information sur les fichiers externes.
 
-  - In prod mode, the compiler will generate the array format declaration to reduce bundle size (the props here will be compiled into `['foo', 'bar']`)
+  - En mode production, le compilateur va générer la déclaration au format tableau pour réduire la taille du paquet (les props ici seront compilées en `['foo', 'bar']`).
 
-  - The emitted code is still TypeScript with valid typing, which can be further processed by other tools.
+  - Le code émis est toujours du TypeScript avec un typage valide, qui peut être traité par d'autres outils.
 
-- As of now, the type declaration argument must be one of the following to ensure correct static analysis:
+- À partir de là, l'argument de la déclaration de type doit être l'un des suivants pour garantir une analyse statique correcte :
 
-  - A type literal
-  - A reference to an interface or a type literal in the same file
+  - Un littéral de type
+  - Une référence à une interface ou à un littéral de type dans le même fichier.
 
-  Currently complex types and type imports from other files are not supported. It is possible to support type imports in the future.
+  Actuellement, les types complexes et les importations de types à partir d'autres fichiers ne sont pas pris en charge. Il est possible que les importations de types soient prises en charge à l'avenir.
 
-### Default props values when using type declaration {#default-props-values-when-using-type-declaration}
+### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
 
 One drawback of the type-only `defineProps` declaration is that it doesn't have a way to provide default values for the props. To resolve this problem, a `withDefaults` compiler macro is also provided:
 
@@ -317,4 +317,4 @@ This will be compiled to equivalent runtime props `default` options. In addition
 
 ## Restrictions {#restrictions}
 
-Due to the difference in module execution semantics, code inside `<script setup>` relies on the context of an SFC. When moved into external `.js` or `.ts` files, it may lead to confusion for both developers and tools. Therefore, **`<script setup>`** cannot be used with the `src` attribute.
+En raison de la différence de sémantique d'exécution des modules, le code contenu dans `<script setup>` s'appuie sur le contexte d'un composant monofichier. Lorsqu'il est déplacé dans des fichiers externes `.js` ou `.ts`, il peut être source de confusion pour les développeurs et les outils. Par conséquent, **`<script setup>`** ne peut pas être utilisée avec l'attribut `src`.
