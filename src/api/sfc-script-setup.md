@@ -179,9 +179,9 @@ Si vous utilisez TypeScript, il est également possible de [déclarer les props 
 
 ## defineExpose() {#defineexpose}
 
-Components using `<script setup>` are **closed by default** - i.e. the public instance of the component, which is retrieved via template refs or `$parent` chains, will **not** expose any of the bindings declared inside `<script setup>`.
+Les composants utilisant `<script setup>` sont **fermés par défaut** - c'est à dire que l'instance publique du composant, qui est récupérée via les refs du template ou les chaînes de caractères `$parent`, n'exposera **aucune** des liaisons déclarées dans `<script setup>`.
 
-To explicitly expose properties in a `<script setup>` component, use the `defineExpose` compiler macro:
+Pour exposer explicitement des propriétés dans un composant utilisant `<script setup>`, utilisez la macro de compilation `defineExpose` :
 
 ```vue
 <script setup>
@@ -197,11 +197,11 @@ defineExpose({
 </script>
 ```
 
-When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
+Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a : nombre, b : nombre }` (les refs sont automatiquement déballés comme pour les instances normales).
 
-## `useSlots()` & `useAttrs()` {#useslots-useattrs}
+## `useSlots()` et `useAttrs()` {#useslots-useattrs}
 
-Usage of `slots` and `attrs` inside `<script setup>` should be relatively rare, since you can access them directly as `$slots` and `$attrs` in the template. In the rare case where you do need them, use the `useSlots` and `useAttrs` helpers respectively:
+L'utilisation de `slots` et `attrs` à l'intérieur de `<script setup>` devrait être relativement rare, puisque vous pouvez y accéder directement via `$slots` et `$attrs` dans le template. Dans les rares cas où vous en avez besoin, utilisez respectivement les utilitaires `useSlots` et `useAttrs` :
 
 ```vue
 <script setup>
@@ -212,22 +212,22 @@ const attrs = useAttrs()
 </script>
 ```
 
-`useSlots` and `useAttrs` are actual runtime functions that return the equivalent of `setupContext.slots` and `setupContext.attrs`. They can be used in normal composition API functions as well.
+`useSlots` et `useAttrs` sont des fonctions d'exécution qui retournent l'équivalent de `setupContext.slots` et `setupContext.attrs`. Elles peuvent également être utilisées dans les fonctions classiques de la Composition API.
 
-## Usage alongside normal `<script>` {#usage-alongside-normal-script}
+## Utilisation en parallèle du `<script>` normal {#usage-alongside-normal-script}
 
-`<script setup>` can be used alongside normal `<script>`. A normal `<script>` may be needed in cases where we need to:
+`<script setup>` peut être utilisée en parallèle du `<script>` normal. Un `<script>` normal peut être nécessaire dans les cas où nous avons besoin de :
 
-- Declare options that cannot be expressed in `<script setup>`, for example `inheritAttrs` or custom options enabled via plugins.
-- Declaring named exports.
-- Run side effects or create objects that should only execute once.
+- Déclarer des options qui ne peuvent pas être exprimées dans `<script setup>`, par exemple `inheritAttrs` ou des options personnalisées activées par des plugins.
+- Déclarer des exportations nommées.
+- Exécuter des effets secondaires ou créer des objets qui ne doivent être exécutés qu'une fois.
 
 ```vue
 <script>
-// normal <script>, executed in module scope (only once)
+// <script> normal, exécuté dans la portée du module (une seule fois)
 runSideEffectOnce()
 
-// declare additional options
+// déclare des options supplémentaires
 export default {
   inheritAttrs: false,
   customOptions: {}
@@ -235,16 +235,16 @@ export default {
 </script>
 
 <script setup>
-// executed in setup() scope (for each instance)
+// exécuté dans la portée de setup() (pour chaque instance)
 </script>
 ```
 
-Support for combining `<script setup>` and `<script>` in the same component is limited to the scenarios described above. Specifically:
+La prise en charge de la combinaison de `<script setup>` et de `<script>` dans le même composant est limitée aux scénarios décrits ci-dessus. Plus précisément :
 
-- Do **NOT** use a separate `<script>` section for options that can already be defined using `<script setup>`, such as `props` and `emits`.
-- Variables created inside `<script setup>` are not added as properties to the component instance, making them inaccessible from the Options API. Mixing APIs in this way is strongly discouraged.
+- N'utilisez **PAS** une section `<script>` distincte pour les options qui peuvent déjà être définies à l'aide de `<script setup>`, comme `props` et `emits`.
+- Les variables créées à l'intérieur de `<script setup>` ne sont pas ajoutées comme propriétés à l'instance du composant, ce qui les rend inaccessibles depuis l'Options API. Il est fortement déconseillé de mélanger les API de cette manière.
 
-If you find yourself in one of the scenarios that is not supported then you should consider switching to an explicit [`setup()`](/api/composition-api-setup.html) function, instead of using `<script setup>`.
+Si vous vous trouvez dans un scénario non pris en charge, vous devriez envisager d'utiliser une fonction explicite [`setup()`](/api/composition-api-setup.html), au lieu d'utiliser `<script setup>`.
 
 ## Top-level `await` {#top-level-await}
 
