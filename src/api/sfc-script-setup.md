@@ -1,15 +1,15 @@
 # \<script setup> {#script-setup}
 
-`<script setup>` is a compile-time syntactic sugar for using Composition API inside Single-File Components (SFCs). It is the recommended syntax if you are using both SFCs and Composition API. It provides a number of advantages over the normal `<script>` syntax:
+`<script setup>` est un sucre syntaxique de compilation pour l'utilisation de la Composition API dans les composants monopages (SFC). C'est la syntaxe recommandée si vous utilisez à la fois les SFC et la Composition API. Elle offre un certain nombre d'avantages par rapport à la syntaxe classique `<script>` :
 
-- More succinct code with less boilerplate
-- Ability to declare props and emitted events using pure TypeScript
-- Better runtime performance (the template is compiled into a render function in the same scope, without an intermediate proxy)
-- Better IDE type-inference performance (less work for the language server to extract types from code)
+- Un code plus succinct avec moins de répétitions
+- Possibilité de déclarer des props et des événements émis en utilisant du TypeScript pur.
+- Meilleures performances d'exécution (le template est compilé dans une fonction de rendu dans la même portée, sans proxy intermédiaire).
+- Meilleures performances de l'environnement de développement concernant l'inférence de type (moins de travail pour le serveur de langage pour extraire les types du code).
 
-## Basic Syntax {#basic-syntax}
+## Syntaxe basique {#basic-syntax}
 
-To opt-in to the syntax, add the `setup` attribute to the `<script>` block:
+Pour utiliser cette syntaxe, ajoutez l'attribut `setup` au bloc `<script>` :
 
 ```vue
 <script setup>
@@ -17,18 +17,18 @@ console.log('hello script setup')
 </script>
 ```
 
-The code inside is compiled as the content of the component's `setup()` function. This means that unlike normal `<script>`, which only executes once when the component is first imported, code inside `<script setup>` will **execute every time an instance of the component is created**.
+Le code qu'il contient est compilé en tant que contenu de la fonction `setup()` du composant. Cela signifie que, contrairement au `<script>` normal, qui ne s'exécute qu'une fois lorsque le composant est importé pour la première fois, le code contenu dans `<script setup>` sera **exécuté à chaque fois qu'une instance du composant sera créée**.
 
-### Top-level bindings are exposed to template {#top-level-bindings-are-exposed-to-template}
+### Les liaisons de haut niveau sont exposées au template {#top-level-bindings-are-exposed-to-template}
 
-When using `<script setup>`, any top-level bindings (including variables, function declarations, and imports) declared inside `<script setup>` are directly usable in the template:
+Lorsque vous utilisez `<script setup>`, toutes les liaisons de haut niveau (y compris les variables, les déclarations de fonctions et les imports) déclarées dans `<script setup>` sont directement utilisables dans le template :
 
 ```vue
 <script setup>
 // variable
 const msg = 'Hello!'
 
-// functions
+// fonctions
 function log() {
   console.log(msg)
 }
@@ -39,7 +39,7 @@ function log() {
 </template>
 ```
 
-Imports are exposed in the same fashion. This means you can directly use an imported helper function in template expressions without having to expose it via the `methods` option:
+Les importations sont exposées de la même manière. Cela signifie que vous pouvez utiliser directement une fonction utilitaire importée dans des expressions de template sans avoir à l'exposer via l'option `methods` :
 
 ```vue
 <script setup>
@@ -51,9 +51,9 @@ import { capitalize } from './helpers'
 </template>
 ```
 
-## Reactivity {#reactivity}
+## Réactivité {#reactivity}
 
-Reactive state needs to be explicitly created using [Reactivity APIs](./reactivity-core.html). Similar to values returned from a `setup()` function, refs are automatically unwrapped when referenced in templates:
+L'état réactif doit être créé explicitement à l'aide des [API de réactivité](./reactivity-core.html). Comme les valeurs retournées par une fonction `setup()`, les refs sont automatiquement déballées lorsqu'elles sont référencées dans les templates :
 
 ```vue
 <script setup>
