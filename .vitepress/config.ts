@@ -282,7 +282,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/best-practices/accessibility'
         },
         {
-          text: 'Security',
+          text: 'Sécurité',
           link: '/guide/best-practices/security'
         }
       ]

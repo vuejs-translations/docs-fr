@@ -23,7 +23,7 @@ A string template for the component.
   If the root component of your application doesn't have a `template` or `render` option specified, Vue will try to use the `innerHTML` of the mounted element as the template instead.
 
   :::warning Security Note
-  Only use template sources that you can trust. Do not use user-provided content as your template. See [Security Guide](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) for more details.
+  Only use template sources that you can trust. Do not use user-provided content as your template. See [guide sur la sécurité](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) for more details.
   :::
 
 ## render {#render}
