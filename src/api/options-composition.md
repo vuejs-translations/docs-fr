@@ -171,7 +171,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
 
 ## mixins {#mixins}
 
-An array of option objects to be mixed into the current component.
+Un tableau d'objets d'options à introduire dans le composant actuel.
 
 - **Type**
 
@@ -181,17 +181,17 @@ An array of option objects to be mixed into the current component.
   }
   ```
 
-- **Details:**
+- **Détails:**
 
-  The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options like normal instance objects, and they will be merged against the eventual options using the certain option merging logic. For example, if your mixin contains a `created` hook and the component itself also has one, both functions will be called.
+  L'option `mixins` accepte un tableau d'objets mixins. Ces objets mixins peuvent contenir des options d'instance comme des objets d'instance normaux, et ils seront fusionnés avec les options éventuelles en utilisant la logique de fusion des options. Par exemple, si votre mixin contient un hook `created` et que le composant lui-même en possède un, les deux fonctions seront appelées.
 
-  Mixin hooks are called in the order they are provided, and called before the component's own hooks.
+  Les hooks des mixins sont appelés dans l'ordre où ils sont fournis, et sont appelés avant les propres hooks du composant.
 
-  :::warning No Longer Recommended
-  In Vue 2, mixins were the primary mechanism for creating reusable chunks of component logic. While mixins continue to be supported in Vue 3, [Composition API](/guide/reusability/composables.html) is now the preferred approach for code reuse between components.
+  :::warning Plus recommandé
+  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables de la logique des composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables.html) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
-- **Example:**
+- **Exemple:**
 
   ```js
   const mixin = {
@@ -213,7 +213,7 @@ An array of option objects to be mixed into the current component.
 
 ## extends {#extends}
 
-A "base class" component to extend from.
+Un composant de la "classe de base" à partir duquel on peut étendre un composant.
 
 - **Type:**
 
@@ -223,15 +223,15 @@ A "base class" component to extend from.
   }
   ```
 
-- **Details:**
+- **Détails:**
 
-  Allows one component to extend another, inheriting its component options.
+  Permet à un composant d'en étendre un autre, en héritant de ses options de composant.
 
-  From an implementation perspective, `extends` is almost identical to `mixins`. The component specified by `extends` will be treated as though it were the first mixin.
+  Du point de vue de l'implémentation, `extends` est presque identique à `mixins`. Le composant spécifié par `extends` sera traité comme s'il était le premier mixin.
 
-  However, `extends` and `mixins` express different intents. The `mixins` option is primarily used to compose chunks of functionality, whereas `extends` is primarily concerned with inheritance.
+  Cependant, `extends` et `mixins` expriment des intentions différentes. L'option `mixins` est principalement utilisée pour composer des morceaux de fonctionnalité, alors que `extends` est principalement concerné par l'héritage.
 
-  As with `mixins`, any options will be merged using the relevant merge strategy.
+  Comme avec `mixins`, toutes les options seront fusionnées en utilisant la stratégie de fusion appropriée.
 
 - **Example:**
 
