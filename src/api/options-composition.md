@@ -1,4 +1,4 @@
-# Options: Composition {#options-composition}
+# Options : Composition {#options-composition}
 
 ## provide {#provide}
 
