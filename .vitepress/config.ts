@@ -425,7 +425,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Syntax Specification', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
-        { text: 'CSS Features', link: '/api/sfc-css-features' }
+        { text: 'Fonctionnalités CSS', link: '/api/sfc-css-features' }
       ]
     },
     {
