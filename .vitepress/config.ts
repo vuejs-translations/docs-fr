@@ -423,7 +423,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Composant monofichiers',
       items: [
-        { text: 'Syntax Specification', link: '/api/sfc-spec' },
+        { text: 'Spécifications liées à la syntaxe', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
         { text: 'CSS Features', link: '/api/sfc-css-features' }
       ]
