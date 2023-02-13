@@ -389,7 +389,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Options API',
       items: [
         { text: 'Options: State', link: '/api/options-state' },
-        { text: 'Options: Rendering', link: '/api/options-rendering' },
+        { text: 'Options : Rendu', link: '/api/options-rendering' },
         {
           text: 'Options: Lifecycle',
           link: '/api/options-lifecycle'
