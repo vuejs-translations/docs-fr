@@ -398,7 +398,7 @@ defineProps({
   propE: {
     type: Object,
     // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
-    // d'une fonction de fabrique. La fonction reçoit les props bruts
+    // d'une fonction factory. La fonction reçoit les props bruts
     // reçus par le composant en tant qu'argument.
     default(rawProps) {
       return { message: 'hello' }
@@ -414,7 +414,7 @@ defineProps({
   // Fonction avec une valeur par défaut
   propG: {
     type: Function,
-    // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
+    // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction factory - il s'agit d'une fonction servant de valeur par défaut
     default() {
       return 'Default function'
     }
@@ -451,7 +451,7 @@ export default {
     propE: {
       type: Object,
       // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
-      // d'une fonction de fabrique. La fonction reçoit les props bruts
+      // d'une fonction factory. La fonction reçoit les props bruts
       // reçus par le composant en tant qu'argument.
       default(rawProps) {
         return { message: 'hello' }
@@ -467,7 +467,7 @@ export default {
     // Fonction avec une valeur par défaut
     propG: {
       type: Function,
-      // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction de fabrique - il s'agit d'une fonction servant de valeur par défaut
+      // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction factory - il s'agit d'une fonction servant de valeur par défaut
       default() {
         return 'Default function'
       }
