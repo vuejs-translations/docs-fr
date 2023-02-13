@@ -37,35 +37,35 @@ Pour l'analyse des performances durant le développement local :
 
 ## Optimisation du chargement des pages {#page-load-optimizations}
 
-Il existe de nombreux aspects indépendants du framework pour optimiser les performances de chargement des pages - consultez [ce guide web.dev](https://web.dev/fast/) pour un tour d'horizon complet. Ici, nous nous concentrerons principalement sur les techniques spécifiques à Vue.
+Il existe de nombreux aspects indépendants du framework pour optimiser les performances de chargement des pages - consultez [le guide web.dev](https://web.dev/fast/) pour un tour d'horizon complet. Ici, nous nous concentrerons principalement sur les techniques spécifiques à Vue.
 
 ### Choisir la bonne architecture {#choosing-the-right-architecture}
 
-Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté client pur souffre d'un temps d'accès au contenu ralenti. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr.html) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et l'améliorer avec Vue sur le client.
+Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté purement client souffre d'un temps d'accès au contenu plus lent. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr.html) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et le rendre interactif avec Vue côté client.
 
 Si votre application doit être une SPA, mais qu'elle comporte des pages marketing (accueil, à propos, blog), envoyez-les séparément ! Vos pages marketing devraient idéalement être déployées en HTML statique avec un minimum de JS, en utilisant la SSG.
 
-### Taille des paquets et suppression des arbres {#bundle-size-and-tree-shaking}
+### Taille des paquets et _Tree-shaking_ {#bundle-size-and-tree-shaking}
 
 L'un des moyens les plus efficaces d'améliorer les performances de chargement des pages consiste à envoyer des paquets JavaScript plus petits. Voici quelques moyens de réduire la taille des paquets lorsque vous utilisez Vue :
 
 - Utilisez un outil de build si possible.
 
-  - De nombreuses API de Vue peuvent être ["retirées de l'arbre"](https://developer.mozilla.org/fr/docs/Glossary/Tree_shaking) si elles sont groupées via un outil de construction moderne. Par exemple, si vous n'utilisez pas le composant natif `<Transition>`, il ne sera pas inclus dans le paquet de production final. La suppression des arbres peut également supprimer d'autres modules inutilisés dans votre code source.
+  - De nombreuses API de Vue peuvent être ["retirées de l'arbre"](https://developer.mozilla.org/fr/docs/Glossary/Tree_shaking) si elles sont groupées via un outil de construction moderne. Par exemple, si vous n'utilisez pas le composant natif `<Transition>`, il ne sera pas inclus dans le paquet de production final. Le _tree-shaking_ peut également supprimer d'autres modules inutilisés dans votre code source.
 
   - Lors de l'utilisation d'un outil de build, les templates sont pré-compilés afin que nous n'ayons pas besoin d'envoyer le compilateur Vue au navigateur. Cela permet d'économiser **14kb** de JavaScript au format min + gzipped et d'éviter le coût de la compilation au moment de l'exécution.
 
 - Faites attention à la taille lorsque vous incorporez de nouvelles dépendances ! Dans les applications du monde réel, les paquets trop volumineux sont le plus souvent le résultat de l'introduction de lourdes dépendances sans s'en rendre compte.
 
-  - Si vous utilisez un outil de build, préférez les dépendances qui offrent des formats de modules ES et qui sont compatibles avec la suppression des arbres. Par exemple, préférez `lodash-es` à `lodash`.
+  - Si vous utilisez un outil de build, préférez les dépendances qui offrent des formats de modules ES et qui sont compatibles au _tree-shaking._ Par exemple, préférez `lodash-es` à `lodash`.
 
   - Vérifiez la taille d'une dépendance et évaluez si elle vaut le coup par rapport à la fonctionnalité qu'elle apporte. Notez que si la dépendance peut être supprimée de l'arbre, l'augmentation réelle de la taille dépendra des API que vous importerez réellement. Des outils comme [bundlejs.com](https://bundlejs.com/) peuvent être utilisés pour des vérifications rapides, mais la mesure avec votre configuration de build réelle sera toujours la plus précise.
 
-- Si vous utilisez Vue principalement pour l'amélioration progressive et préférez éviter un outil de build, envisagez d'utiliser [petite-vue](https://github.com/vuejs/petite-vue) (seulement **6kb**) à la place.
+- Si vous utilisez Vue principalement pour une intégration progressive et préférez éviter un outil de build, envisagez plutôt d'utiliser [petite-vue](https://github.com/vuejs/petite-vue) (seulement **6kb**).
 
 ### Séparation du code {#code-splitting}
 
-Le fractionnement du code consiste pour un outil de build à diviser le paquet d'applications en plusieurs petits morceaux, qui peuvent ensuite être chargés à la demande ou en parallèle. Avec un fractionnement de code approprié, les fonctionnalités requises au chargement de la page peuvent être téléchargées immédiatement, les morceaux supplémentaires n'étant chargés paresseusement qu'en cas de besoin, ce qui améliore les performances.
+Le fractionnement du code consiste pour un outil de build à diviser le paquet d'applications en plusieurs petits morceaux, qui peuvent ensuite être chargés à la demande ou en parallèle. Avec un fractionnement de code approprié, les fonctionnalités requises au chargement de la page peuvent être téléchargées immédiatement, les morceaux supplémentaires n'étant chargés à la volée qu'en cas de besoin, ce qui améliore les performances.
 
 Les bundlers comme Rollup (sur lequel Vite est basé) ou webpack peuvent créer automatiquement des morceaux de code fractionnés en détectant la syntaxe d'importation dynamique ESM :
 
@@ -77,7 +77,7 @@ function loadLazy() {
 }
 ```
 
-Le chargement paresseux est optimal pour les fonctionnalités qui ne sont pas immédiatement nécessaires après le chargement initial de la page. Dans les applications Vue, il peut être utilisé en combinaison avec la fonctionnalité [composants asynchrones](/guide/components/async.html) de Vue pour créer des morceaux fractionnés pour les arbres de composants :
+Le chargement à la volée est optimal pour les fonctionnalités qui ne sont pas immédiatement nécessaires après le chargement initial de la page. Dans les applications Vue, il peut être utilisé en combinaison avec la fonctionnalité [composants asynchrones](/guide/components/async.html) de Vue pour créer des morceaux fractionnés pour les arbres de composants :
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -88,7 +88,7 @@ import { defineAsyncComponent } from 'vue'
 const Foo = defineAsyncComponent(() => import('./Foo.vue'))
 ```
 
-Pour les applications utilisant Vue Router, il est fortement recommandé d'utiliser le chargement paresseux pour les composants de route. Vue Router a un support explicite pour le chargement paresseux, séparé de `defineAsyncComponent`. Voir [le chargement paresseux des routes](https://router.vuejs.org/guide/advanced/lazy-loading.html) pour plus de détails.
+Pour les applications utilisant Vue Router, il est fortement recommandé d'utiliser le chargement à la volée pour les composants de route. Vue Router a un support explicite pour le chargement à la volée, séparé de `defineAsyncComponent`. Voir [le chargement à la volée des routes](https://router.vuejs.org/guide/advanced/lazy-loading.html) pour plus de détails.
 
 ## Optimisations des mises à jour {#update-optimizations}
 
@@ -103,7 +103,7 @@ Dans Vue, un composant enfant ne se met à jour que lorsqu'au moins une de ses p
   :active-id="activeId" />
 ```
 
-Dans le composant `<ListItem>`, il utilise ses props `id` et `activeId` pour déterminer s'il s'agit de l'élément actif. Bien que cela fonctionne, le problème est que chaque fois que `activeId` change, **l'entièreté** des `<ListItem>` inclus dans la liste doit être mis à jour !
+Dans le composant `<ListItem>`, les props `id` et `activeId` sont utilisées pour déterminer s'il s'agit de l'élément actif. Bien que cela fonctionne, le problème est que chaque fois que `activeId` change, **l'entièreté** des `<ListItem>` inclus dans la liste doit être mis à jour !
 
 Dans l'idéal, seuls les éléments dont le statut d'activation a changé devraient être mis à jour. Nous pouvons y parvenir en déplaçant le calcul du statut d'activation dans le parent, et en faisant en sorte que `<ListItem>` accepte directement une prop `active` à la place :
 
@@ -142,7 +142,7 @@ La mise en œuvre de la virtualisation des listes n'est pas facile, heureusement
 
 ### Réduire la surcharge de réactivité pour les grandes structures immuables {#reduce-reactivity-overhead-for-large-immutable-structures}
 
-Le système de réactivité de Vue est profond par défaut. Bien que cela rende la gestion de l'état intuitive, cela crée un certain niveau de surcharge lorsque la taille des données est importante, car chaque accès à une propriété déclenche des pièges de proxy qui effectuent un suivi des dépendances. Ce problème est généralement perceptible lorsque l'on traite de grands tableaux d'objets profondément imbriqués, où un seul rendu doit accéder à plus de 100 000 propriétés, et ne devrait donc affecter que des cas d'utilisation très spécifiques.
+Le système de réactivité de Vue est profond par défaut. Bien que cela rende la gestion de l'état intuitive, cela crée un certain niveau de surcharge lorsque la taille des données est importante, car chaque accès à une propriété déclenche un mécanisme des proxys qui effectuent un suivi des dépendances. Ce problème est généralement perceptible lorsque l'on traite de grands tableaux d'objets profondément imbriqués, où un seul rendu doit accéder à plus de 100 000 propriétés, et ne devrait donc affecter que des cas d'utilisation très spécifiques.
 
 Vue fournit une échappatoire pour contourner la réactivité profonde en utilisant [`shallowRef()`](/api/reactivity-advanced.html#shallowref) et [`shallowReactive()`](/api/reactivity-advanced.html#shallowreactive). Les API peu profondes créent un état qui n'est réactif qu'au niveau de la racine, et exposent tous les objets imbriqués sans les modifier. L'accès aux propriétés imbriquées reste ainsi rapide, mais la contrepartie est que nous devons désormais traiter tous les objets imbriqués comme des objets immuables et que les mises à jour ne peuvent être déclenchées qu'en remplaçant l'état racine :
 
