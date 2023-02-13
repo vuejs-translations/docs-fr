@@ -1,6 +1,6 @@
 # \<script setup> {#script-setup}
 
-`<script setup>` est un sucre syntaxique de compilation pour l'utilisation de la Composition API dans les composants monopages (SFC). C'est la syntaxe recommandée si vous utilisez à la fois les SFC et la Composition API. Elle offre un certain nombre d'avantages par rapport à la syntaxe classique `<script>` :
+`<script setup>` est un sucre syntaxique de compilation pour l'utilisation de la Composition API dans les composants monofichiers (SFC). C'est la syntaxe recommandée si vous utilisez à la fois les SFC et la Composition API. Elle offre un certain nombre d'avantages par rapport à la syntaxe classique `<script>` :
 
 - Un code plus succinct avec moins de répétitions
 - Possibilité de déclarer des props et des événements émis en utilisant du TypeScript pur.
@@ -21,7 +21,7 @@ Le code qu'il contient est compilé en tant que contenu de la fonction `setup()`
 
 ### Les liaisons de haut niveau sont exposées au template {#top-level-bindings-are-exposed-to-template}
 
-Lorsque vous utilisez `<script setup>`, toutes les liaisons de haut niveau (y compris les variables, les déclarations de fonctions et les imports) déclarées dans `<script setup>` sont directement utilisables dans le template :
+Lorsque vous utilisez `<script setup>`, toute liaison de haut niveau (y compris les variables, les déclarations de fonctions et les imports) déclarées dans `<script setup>` est directement utilisable dans le template :
 
 ```vue
 <script setup>
@@ -111,7 +111,7 @@ Notez cependant que la priorité est inférieure à celle des composants import�
 import { FooBar as FooBarChild } from './components'
 ```
 
-### Composants d'un espace de nom {#namespaced-components}
+### Composants sous espace de nom {#namespaced-components}
 
 Vous pouvez utiliser des balises de composants avec des points comme `<Foo.Bar>` pour faire référence à des composants imbriqués dans des propriétés d'objets. Ceci est utile lorsque vous importez plusieurs composants à partir d'un seul fichier :
 
@@ -179,7 +179,7 @@ Si vous utilisez TypeScript, il est également possible de [déclarer les props 
 
 ## defineExpose() {#defineexpose}
 
-Les composants utilisant `<script setup>` sont **fermés par défaut** - c'est à dire que l'instance publique du composant, qui est récupérée via les refs du template ou les chaînes de caractères `$parent`, n'exposera **aucune** des liaisons déclarées dans `<script setup>`.
+Les composants utilisant `<script setup>` sont **fermés par défaut** - c'est à dire que l'instance publique du composant, qui est récupérée via les refs du template ou via `$parent`, n'exposera **aucune** des liaisons déclarées dans `<script setup>`.
 
 Pour exposer explicitement des propriétés dans un composant utilisant `<script setup>`, utilisez la macro de compilation `defineExpose` :
 
@@ -197,7 +197,7 @@ defineExpose({
 </script>
 ```
 
-Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a : nombre, b : nombre }` (les refs sont automatiquement déballés comme pour les instances normales).
+Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a: number, b: number }` (les refs sont automatiquement déballés comme pour les instances normales).
 
 ## `useSlots()` et `useAttrs()` {#useslots-useattrs}
 
@@ -284,7 +284,7 @@ const emit = defineEmits<{
 
 - Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique afin de supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
 
-  - En mode développement, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple, ici, `foo : String` est déduit du type `foo : string`. Si le type est une référence à un type importé, le résultat déduit sera `foo : null` (égal au type `any`) puisque le compilateur n'a pas d'information sur les fichiers externes.
+  - En mode développement, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple, ici, `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal au type `any`) puisque le compilateur n'a pas d'information sur les fichiers externes.
 
   - En mode production, le compilateur va générer la déclaration au format tableau pour réduire la taille du paquet (les props ici seront compilées en `['foo', 'bar']`).
 
@@ -299,7 +299,7 @@ const emit = defineEmits<{
 
 ### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
 
-One drawback of the type-only `defineProps` declaration is that it doesn't have a way to provide default values for the props. To resolve this problem, a `withDefaults` compiler macro is also provided:
+Un inconvénient de la déclaration de type `defineProps` est qu'elle ne permet pas de fournir des valeurs par défaut pour les props. Pour résoudre ce problème, une macro de compilation `withDefaults` est également fournie :
 
 ```ts
 export interface Props {
@@ -313,7 +313,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-This will be compiled to equivalent runtime props `default` options. In addition, the `withDefaults` helper provides type checks for the default values, and ensures the returned `props` type has the optional flags removed for properties that do have default values declared.
+Ceci sera compilé en options `default` pour les props d'exécution. De plus, l'utilitaire `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type de `props` retourné n'a pas les flags optionnels pour les propriétés qui ont des valeurs par défaut de déclarées.
 
 ## Restrictions {#restrictions}
 
