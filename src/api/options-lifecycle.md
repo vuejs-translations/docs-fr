@@ -333,4 +333,4 @@ Fonction asynchrone qui doit être résolue avant que l'instance du composant ne
   }
   ```
 
-- **Voir aussi :** [Server-Side Rendering](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté client](/guide/scaling-up/ssr.html)
