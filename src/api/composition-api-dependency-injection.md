@@ -66,7 +66,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
 
   Le premier argument est la clé d'injection. Vue remontera la chaîne des parents pour localiser une valeur fournie avec une clé correspondante. Si plusieurs composants de la chaîne des parents fournissent la même clé, celui qui est le plus proche du composant qui injecte la valeur l'emportera sur ceux qui sont plus haut dans la chaîne. Si aucune valeur avec la clé correspondante n'a été trouvée, `inject()` renvoie `undefined` sauf si une valeur par défaut est fournie.
 
-  Le second argument est optionnel et représente la valeur par défaut à utiliser si aucune valeur correspondante n'a été trouvée. Il peut aussi être une fonction d'usine pour retourner des valeurs qui sont coûteuses à créer. Si la valeur par défaut est une fonction, alors `false` doit être passé comme troisième argument pour indiquer que la fonction doit être utilisée comme valeur au lieu de l'usine.
+  Le second argument est optionnel et représente la valeur par défaut à utiliser si aucune valeur correspondante n'a été trouvée. Il peut aussi être une fonction _factory_ pour retourner des valeurs qui sont coûteuses à créer. Si la valeur par défaut est une fonction, alors `false` doit être passé comme troisième argument pour indiquer que la fonction doit être utilisée comme valeur au lieu de celle produite par la _factory_.
 
   Comme pour les API d'enregistrement des hooks de cycle de vie, `inject()` doit être appelée de manière synchrone pendant la phase `setup()` d'un composant.
 
