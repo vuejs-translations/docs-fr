@@ -12,7 +12,7 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
   }
   ```
 
-- **Détails:**
+- **Détails :**
 
   `provide` et [`inject`](#inject) sont utilisées ensemble pour permettre à un composant ancêtre de servir d'injecteur de dépendances pour tous ses descendants, peu importe la profondeur de la hiérarchie des composants, tant qu'ils sont de la même lignée.
 
@@ -75,7 +75,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-- **Détails**
+- **Détails :**
 
   L'option `inject` doit être soit :
 
@@ -84,7 +84,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
     - La clé (chaîne de caractères ou symbole) à rechercher dans les injections disponibles, ou bien
     - Un objet où :
       - La propriété `from` est la clé (chaîne de caractères ou symbole) à rechercher dans les injections disponibles, et
-      - La propriété `default` est utilisée comme valeur de secours. Comme pour les valeurs par défaut des props, une fonction d'usine est nécessaire pour les types objets afin d'éviter le partage de valeurs entre plusieurs instances de composants.
+      - La propriété `default` est utilisée comme valeur de secours. Comme pour les valeurs par défaut des props, une fonction _factory_ est nécessaire pour les types objets afin d'éviter le partage de valeurs entre plusieurs instances de composants.
 
   Une propriété injectée sera `undefined` si aucune propriété correspondante ou valeur par défaut n'a été fournie.
 
@@ -154,7 +154,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-  Comme pour les valeurs par défaut des props, vous devez utiliser une fonction d'usine pour les valeurs non primitives :
+  Comme pour les valeurs par défaut des props, vous devez utiliser une fonction _factory_ pour les valeurs non primitives :
 
   ```js
   const Child = {
@@ -181,17 +181,17 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   }
   ```
 
-- **Détails:**
+- **Détails :**
 
   L'option `mixins` accepte un tableau d'objets mixins. Ces objets mixins peuvent contenir des options d'instance comme des objets d'instance normaux, et ils seront fusionnés avec les options éventuelles en utilisant la logique de fusion des options. Par exemple, si votre mixin contient un hook `created` et que le composant lui-même en possède un, les deux fonctions seront appelées.
 
   Les hooks des mixins sont appelés dans l'ordre où ils sont fournis, et sont appelés avant les propres hooks du composant.
 
-  :::warning Plus recommandé
-  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables de la logique des composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables.html) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
+  :::warning N'est plus recommandé
+  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables.html) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
-- **Exemple:**
+- **Exemple :**
 
   ```js
   const mixin = {
@@ -223,7 +223,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
   }
   ```
 
-- **Détails:**
+- **Détails :**
 
   Permet à un composant d'en étendre un autre, en héritant de ses options de composant.
 
@@ -233,7 +233,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
 
   Comme avec `mixins`, toutes les options seront fusionnées en utilisant la stratégie de fusion appropriée.
 
-- **Example:**
+- **Exemple :**
 
   ```js
   const CompA = { ... }
