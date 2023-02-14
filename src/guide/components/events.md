@@ -78,7 +78,7 @@ Il est parfois utile d'émettre une valeur spécifique avec un évènement. Par 
 </button>
 ```
 
-Ensuite, lorsque nous écoutons l'évènement dans le composant parent, nous pouvons utiliser une fonction flèchée comme écouteur, ce qui nous permet d'accéder à l'argument de l'évènement :
+Ensuite, lorsque nous écoutons l'évènement dans le composant parent, nous pouvons utiliser une fonction fléchée comme écouteur, ce qui nous permet d'accéder à l'argument de l'évènement :
 
 ```vue-html
 <MyButton @increase-by="(n) => count += n" />
