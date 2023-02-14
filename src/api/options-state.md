@@ -287,18 +287,18 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
 
 - **Détails :**
 
-  L'option `watch` attend un objet où les clés sont les propriétés de l'instance du composant réactif à surveiller (par exemple les propriétés déclarées via `data` ou `computed`) - et les valeurs sont les fonctions de secours correspondantes. La fonction de secours reçoit à la fois la nouvelle valeur et l'ancienne valeur de la source surveillée.
+  L'option `watch` attend un objet où les clés sont les propriétés de l'instance du composant réactif à surveiller (par exemple les propriétés déclarées via `data` ou `computed`) - et les valeurs sont les fonctions de rappel correspondantes. La fonction de rappel reçoit à la fois la nouvelle valeur et l'ancienne valeur de la source surveillée.
 
   La clé peut être une propriété racine, mais également un simple chemin délimité par des points, par exemple `a.b.c`. Notez que cette utilisation ne prend **pas** en charge les expressions complexes - seuls les chemins délimités par des points sont acceptés. Si vous devez surveiller des sources de données complexes, utilisez plutôt l'API impérative [`$watch()`](/api/component-instance.html#watch).
 
-  La valeur peut également être une chaîne de caractères d'un nom de méthode (déclarée via `methods`), ou un objet qui contient des options supplémentaires. Lorsque vous utilisez la syntaxe objet, la fonction de secours doit être déclarée via le champ `handler`. Les options supplémentaires incluent :
+  La valeur peut également être une chaîne de caractères d'un nom de méthode (déclarée via `methods`), ou un objet qui contient des options supplémentaires. Lorsque vous utilisez la syntaxe objet, la fonction de rappel doit être déclarée via le champ `handler`. Les options supplémentaires incluent :
 
-  - **`immediate`** : déclenche la fonction de secours immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`** : force l'avancée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de secours se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`** : ajuste le timing du nettoyage de la fonction de secours. Voir [Timing de nettoyage des fonctions de secours](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
+  - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
+  - **`deep`** : force l'avancée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
+  - **`flush`** : ajuste le timing du nettoyage de la fonction de rappel. Voir [Timing de nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
-  Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des fonctions de secours d'un observateur car elles n'auront pas accès à l'instance du composant via `this`.
+  Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des fonctions de rappel d'un observateur car elles n'auront pas accès à l'instance du composant via `this`.
 
 - **Exemple :**
 
@@ -322,7 +322,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
       },
       // chaînes de caractères représentant le nom d'une méthode
       b: 'someMethod',
-      // la fonction de secours sera appelée chaque fois que l'une des propriétés de l'objet surveillé changera, quelle que soit la profondeur de l'imbrication
+      // la fonction de rappel sera appelée chaque fois que l'une des propriétés de l'objet surveillé changera, quelle que soit la profondeur de l'imbrication
       c: {
         handler(val, oldVal) {
           console.log('c changed')
@@ -333,14 +333,14 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
       'c.d': function (val, oldVal) {
         // faire quelque chose
       },
-      // la fonction de secours sera appelée immédiatement après le début de l'observation
+      // la fonction de rappel sera appelée immédiatement après le début de l'observation
       e: {
         handler(val, oldVal) {
           console.log('e changed')
         },
         immediate: true
       },
-      // vous pouvez passer un tableau de fonctions de secours, elles seront appelées une par une
+      // vous pouvez passer un tableau de fonctions de rappel, elles seront appelées une par une
       f: [
         'handle1',
         function handle2(val, oldVal) {
