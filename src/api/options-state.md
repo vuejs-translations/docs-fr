@@ -289,7 +289,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
 
   L'option `watch` attend un objet où les clés sont les propriétés de l'instance du composant réactif à surveiller (par exemple les propriétés déclarées via `data` ou `computed`) - et les valeurs sont les fonctions de secours correspondantes. La fonction de secours reçoit à la fois la nouvelle valeur et l'ancienne valeur de la source surveillée.
 
-  La clé peut être une propriété racine, mais également un simple chemin délimité par des points, par exemple `a.b.c`. Notez que cette utilisation ne prend **pas** en charge les expressions complexe - seuls les chemins délimités par des points sont acceptés. Si vous devez surveiller des sources de données complexes, utilisez plutôt l'API impérative [`$watch()`](/api/component-instance.html#watch).
+  La clé peut être une propriété racine, mais également un simple chemin délimité par des points, par exemple `a.b.c`. Notez que cette utilisation ne prend **pas** en charge les expressions complexes - seuls les chemins délimités par des points sont acceptés. Si vous devez surveiller des sources de données complexes, utilisez plutôt l'API impérative [`$watch()`](/api/component-instance.html#watch).
 
   La valeur peut également être une chaîne de caractères d'un nom de méthode (déclarée via `methods`), ou un objet qui contient des options supplémentaires. Lorsque vous utilisez la syntaxe objet, la fonction de secours doit être déclarée via le champ `handler`. Les options supplémentaires incluent :
 
