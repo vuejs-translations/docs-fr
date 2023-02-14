@@ -247,7 +247,7 @@ N'hésitez pas à inspecter cet élément dans les outils de développeur de Chr
 
 #### `aria-labelledby` {#aria-labelledby}
 
-Using [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) is similar to `aria-label` except it is used if the label text is visible on screen. It is paired to other elements by their `id` and you can link multiple `id`s:
+Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) est similaire à `aria-label` à l'exception du fait que c'est utilisé si le libellé est visible à l'écran. Associez le à d'autres éléments par leurs `id` et vous pourrez associer plusieurs `id`s:
 
 ```vue-html
 <form
