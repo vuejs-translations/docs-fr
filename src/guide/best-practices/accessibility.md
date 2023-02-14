@@ -362,13 +362,14 @@ Il vaut mieux fournir toutes les informations dont l'utilisateur a besoin pour r
 
 ### Instructions {#instructions}
 
-When adding instructions for your input fields, make sure to link it correctly to the input.
-You can provide additional instructions and bind multiple ids inside an [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby). This allows for more flexible design.
+Lorsque vous ajoutez des instructions pour vos champs de saisie, assurez-vous de les associer correctement aux champs de saisie.
+
+Vou pouvez fournir des instructions complémentaires et associer plusieurs ids à l'intérieur d'un [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby). Cela permet un design plus flexible.
 
 ```vue-html
 <fieldset>
   <legend>Using aria-labelledby</legend>
-  <label id="date-label" for="date">Current Date:</label>
+  <label id="date-label" for="date">Date courante:</label>
   <input
     type="date"
     name="date"
@@ -379,12 +380,12 @@ You can provide additional instructions and bind multiple ids inside an [`aria-l
 </fieldset>
 ```
 
-Alternatively, you can attach the instructions to the input with [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby):
+De façon alternative, vous pouvez attacher les instructions au champ avec [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby):
 
 ```vue-html
 <fieldset>
-  <legend>Using aria-describedby</legend>
-  <label id="dob" for="dob">Date of Birth:</label>
+  <legend>En utilisant aria-describedby</legend>
+  <label id="dob" for="dob">Date de naissance:</label>
   <input type="date" name="dob" id="dob" aria-describedby="dob-instructions" />
   <p id="dob-instructions">MM/DD/YYYY</p>
 </fieldset>
