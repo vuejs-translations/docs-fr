@@ -313,7 +313,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-Ceci sera compilé en options `default` pour les props d'exécution. De plus, l'utilitaire `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type de `props` retourné n'a pas les flags optionnels pour les propriétés qui ont des valeurs par défaut de déclarées.
+Ceci sera compilé en props avec la valeur `default`. De plus, l'utilitaire `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type de `props` retourné n'a pas les flags optionnels pour les propriétés qui ont des valeurs par défaut de déclarées.
 
 ## Restrictions {#restrictions}
 
