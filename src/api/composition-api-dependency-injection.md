@@ -54,7 +54,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   // avec valeur par défaut
   function inject<T>(key: InjectionKey<T> | string, defaultValue: T): T
 
-  // en utilisant une usine
+  // en utilisant une fonction factory
   function inject<T>(
     key: InjectionKey<T> | string,
     defaultValue: () => T,
@@ -93,7 +93,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   // injection avec une valeur par défaut
   const bar = inject('foo', 'default value')
 
-  // injection avec une valeur par défaut usine
+  // injection avec une valeur par défaut via une fonction factory
   const baz = inject('foo', () => new Map())
 
   // injection avec la valeur par défaut de la fonction, en passant le 3ème argument
