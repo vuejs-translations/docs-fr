@@ -395,7 +395,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/options-lifecycle'
         },
         {
-          text: 'Options: Composition',
+          text: 'Options : Composition',
           link: '/api/options-composition'
         },
         { text: 'Options: Misc', link: '/api/options-misc' },
