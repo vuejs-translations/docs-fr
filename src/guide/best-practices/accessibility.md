@@ -358,7 +358,7 @@ Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [crit�
 }
 ```
 
-Il vaut mieux fournir toutes les informations dont l'utilisateur a besoin pour remplir les formulairesà l'extérieur des champs de saisie.
+Il vaut mieux fournir toutes les informations dont l'utilisateur a besoin pour remplir les formulaires à l'extérieur des champs de saisie.
 
 ### Instructions {#instructions}
 
