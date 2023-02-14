@@ -562,18 +562,18 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
   - [Visual Aria](https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-US)
   - [Silktide Website Accessibility Simulator](https://chrome.google.com/webstore/detail/silktide-website-accessib/okcpiimdfkpkjcbihbmhppldhiebhhaf?hl=en-US)
 
-### Users {#users}
+### Utilisateurs {#users}
 
-The World Health Organization estimates that 15% of the world's population has some form of disability, 2-4% of them severely so. That is an estimated 1 billion people worldwide; making people with disabilities the largest minority group in the world.
+L'Organisation Mondiale de la Santé estime que 15% de la population mondiale est atteinte d'une forme de handicap, 2-4% d'entre elle de handicaps sévères. Ceci est estimé à 1 milliard de personnes dans le monde; faisant des personnes avec un handicap la plus grande minorité au monde.
 
-There are a huge range of disabilities, which can be divided roughly into four categories:
+Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quatre catégories:
 
-- _[Visual](https://webaim.org/articles/visual/)_ - These users can benefit from the use of screen readers, screen magnification, controlling screen contrast, or braille display.
-- _[Auditory](https://webaim.org/articles/auditory/)_ - These users can benefit from captioning, transcripts or sign language video.
-- _[Motor](https://webaim.org/articles/motor/)_ - These users can benefit from a range of [assistive technologies for motor impairments](https://webaim.org/articles/motor/assistive): voice recognition software, eye tracking, single-switch access, head wand, sip and puff switch, oversized trackball mouse, adaptive keyboard or other assistive technologies.
-- _[Cognitive](https://webaim.org/articles/cognitive/)_ - These users can benefit from supplemental media, structural organization of content, clear and simple writing.
+- _[Visuel](https://webaim.org/articles/visual/)_ - Ces utilisateurs peuvent bénéficier de l'utilisation de liseurs d'écran, d'outils d'agrandissement, du contrôle du contraste ou de plage braille.
+- _[Auditif](https://webaim.org/articles/auditory/)_ - Ces utilisateurs peuvent bénéficier de sous-titres, de transcriptions ou de vidéos en langages des signes.
+- _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de  [technologies d'assistance pour les assistive technologies for handicaps moteurs](https://webaim.org/articles/motor/assistive): logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
+- _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de média supplémentaire, d'une organisation structurelle du contenuThese users can benefit from supplemental media, d'un style d'écriture clair et simple.
 
-Check out the following links from WebAim to understand from users:
+Rendez-vous aux liens suivants de WebAim pour comprendre d'utilisateurs:
 
 - [Web Accessibility Perspectives: Explore the Impact and Benefits for Everyone](https://www.w3.org/WAI/perspective-videos/)
 - [Stories of Web Users](https://www.w3.org/WAI/people-use-web/user-stories/)
