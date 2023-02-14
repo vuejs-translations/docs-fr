@@ -102,7 +102,7 @@ La différence est qu'un élément avec `v-show` sera toujours rendu et restera 
 
 `v-if` est un rendu conditionnel "réel" car il garantit que les écouteurs d'événements et les composants enfants à l'intérieur du bloc conditionnel sont correctement détruits et recréés lors des basculements.
 
-`v-if` est également **paresseux** : si la condition est fausse lors du rendu initial, il ne fera rien - le bloc conditionnel ne sera rendu que lorsque la condition deviendra vraie pour la première fois.
+`v-if` fonctionne également **à la volée** : si la condition est fausse lors du rendu initial, il ne fera rien - le bloc conditionnel ne sera rendu que lorsque la condition deviendra vraie pour la première fois.
 
 En comparaison, `v-show` est beaucoup plus simple - l'élément est toujours rendu quelle que soit la condition initiale, avec un basculement basé sur CSS.
 
