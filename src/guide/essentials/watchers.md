@@ -222,7 +222,7 @@ Les observateurs profonds nécessitent de traverser toutes les propriétés imbr
 
 ## Les observateurs impatients {#eager-watchers}
 
-`watch` est par défaut paresseux : la fonction de rappel ne sera pas appelée tant que la source observée n'aura pas changé. Mais dans certains cas, on peut souhaiter que cette même logique de rappel soit exécutée de manière précoce - par exemple, on peut vouloir récupérer des données initiales, puis les récupérer de nouveau chaque fois qu'un état pertinent change.
+`watch` fonctionne à la volée par défaut : la fonction de rappel ne sera pas appelée tant que la source observée n'aura pas changé. Mais dans certains cas, on peut souhaiter que cette même logique de rappel soit exécutée de manière précoce - par exemple, on peut vouloir récupérer des données initiales, puis les récupérer de nouveau chaque fois qu'un état pertinent change.
 
 <div class="options-api">
 
