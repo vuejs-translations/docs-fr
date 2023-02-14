@@ -533,27 +533,27 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-### Assistive Technologies {#assistive-technologies}
+### Technologies d'assistance {#assistive-technologies}
 
-- Screen Readers
+- Liseurs d'écran
   - [NVDA](https://www.nvaccess.org/download/)
   - [VoiceOver](https://www.apple.com/accessibility/mac/vision/)
   - [JAWS](https://www.freedomscientific.com/products/software/jaws/?utm_term=jaws%20screen%20reader&utm_source=adwords&utm_campaign=All+Products&utm_medium=ppc&hsa_tgt=kwd-394361346638&hsa_cam=200218713&hsa_ad=296201131673&hsa_kw=jaws%20screen%20reader&hsa_grp=52663682111&hsa_net=adwords&hsa_mt=e&hsa_src=g&hsa_acc=1684996396&hsa_ver=3&gclid=Cj0KCQjwnv71BRCOARIsAIkxW9HXKQ6kKNQD0q8a_1TXSJXnIuUyb65KJeTWmtS6BH96-5he9dsNq6oaAh6UEALw_wcB)
   - [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
-- Zooming Tools
+- Outils de loupe
   - [MAGic](https://www.freedomscientific.com/products/software/magic/)
   - [ZoomText](https://www.zoomtext.com/)
   - [Magnifier](https://support.microsoft.com/en-us/help/11542/windows-use-magnifier-to-make-things-easier-to-see)
 
-### Testing {#testing}
+### Tester l'accessibilité {#testing}
 
-- Automated Tools
+- Outils automatisés
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
   - [WAVE](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
-- Color Tools
+- Outils de vérification des couleurs
   - [WebAim Color Contrast](https://webaim.org/resources/contrastchecker/)
   - [WebAim Link Color Contrast](https://webaim.org/resources/linkcontrastchecker)
-- Other Helpful Tools
+- Autres outils utiles
   - [HeadingMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en…)
   - [Color Oracle](https://colororacle.org)
   - [Focus Indicator](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=en-US…)
