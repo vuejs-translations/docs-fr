@@ -58,7 +58,7 @@ export default {
 
 - Un seul fichier `*.vue` peut contenir plusieurs balises `<style>`.
 
-- Une balise `<style>` peut avoir des attributs `scoped` ou `module` (voir [SFC Style Features](/api/sfc-css-features) pour plus de détails) pour aider à encapsuler les styles dans le composant actuel. Plusieurs balises `<style>` avec différents modes d'encapsulation peuvent coexister dans le même composant.
+- Une balise `<style>` peut avoir des attributs `scoped` ou `module` (voir [les fonctionnalités de style pour les composants monofichiers](/api/sfc-css-features) pour plus de détails) pour aider à encapsuler les styles dans le composant actuel. Plusieurs balises `<style>` avec différents modes d'encapsulation peuvent coexister dans le même composant.
 
 ### Blocs personnalisés {#custom-blocks}
 
