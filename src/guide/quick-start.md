@@ -165,7 +165,7 @@ Vous pouvez ajouter des entrées pour d'autres dépendances à l'Import Map, ass
 :::tip Support navigateur du Import Maps
 Pour le moment, les Import Maps ne sont disponibles que dans les navigateurs basés sur Chromium, nous vous recommandons donc d'utiliser Chrome ou Edge pendant le processus d'apprentissage.
 
-Si vous utilisez Firefox, le support n'est proposé qu'à partir de la version 102+ et nécessite d'être activé via la config `dom.importMaps.enabled` dans `about:config`.
+Si vous utilisez Firefox, c'est supporté par défaut à partir de la version 108+ sinon nécessite d'être activé via la config `dom.importMaps.enabled` dans `about:config` pour les versions 102 et supérieures.
 
 Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vous pouvez ajouter le support (polyfill) avec [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
@@ -180,6 +180,8 @@ Au fur et à mesure que nous progressons dans le guide, il se peut que nous devi
 
 ```html
 <!-- index.html -->
+<div id="app"></div>
+
 <script type="module">
   import { createApp } from 'vue'
   import MyComposant from './my-composant.js'

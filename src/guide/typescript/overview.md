@@ -18,7 +18,7 @@ Avec une configuration basée sur Vite, le serveur de développement et le bundl
 
 - Pendant le développement, nous vous recommandons de vous fier à une bonne [configuration de votre IDE](#ide-support) pour un feedback instantané sur les erreurs de type.
 
-- Si vous utilisez des SFC, utilisez [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/vue-language-tools/vue-tsc) pour la vérification du type en ligne de commande et pour la génération de déclarations de type. `vue-tsc` fonctionne avec `tsc`, l'interface en ligne de commande officielle de TypeScript. Il fonctionne en grande partie de la même manière que `tsc` sauf qu'il prend en charge les SFC de Vue en plus des fichiers TypeScript. Vous pouvez exécuter `vue-tsc` en mode *watch* en parallèle avec le serveur de développement Vite, ou utiliser un plugin Vite comme [vite-plugin-checker](https://vite-plugin-checker.netlify.app/) qui exécute les vérifications dans un thread de travail séparé.
+- Si vous utilisez des SFC, utilisez [`vue-tsc`](https://github.com/vuejs/language-tools/tree/master/packages/vue-tsc) pour la vérification du type en ligne de commande et pour la génération de déclarations de type. `vue-tsc` fonctionne avec `tsc`, l'interface en ligne de commande officielle de TypeScript. Il fonctionne en grande partie de la même manière que `tsc` sauf qu'il prend en charge les SFC de Vue en plus des fichiers TypeScript. Vous pouvez exécuter `vue-tsc` en mode *watch* en parallèle avec le serveur de développement Vite, ou utiliser un plugin Vite comme [vite-plugin-checker](https://vite-plugin-checker.netlify.app/) qui exécute les vérifications dans un thread de travail séparé.
 
 - Vue CLI prend également en charge TypeScript, mais n'est plus recommandé. Voir [les notes ci-dessous](#note-on-vue-cli-and-ts-loader).
 
@@ -130,7 +130,7 @@ export default defineComponent({
 Voir aussi :
 
 - [Note sur le Treeshaking de Webpack](/api/general.html#note-on-webpack-treeshaking)
-- [Tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/test-dts/defineComponent.test-d.tsx)
+- [Tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/packages/dts-test/defineComponent.test-d.tsx)
 
 :::tip
 `defineComponent()` permet également l'inférence de type pour les composants définis en JavaScript simple.
