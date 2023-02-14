@@ -436,20 +436,20 @@ Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance
 <p aria-hidden="true">Ceci est caché aux liseurs d'écran.</p>
 ```
 
-### Buttons {#buttons}
+### Boutons {#buttons}
 
-When using buttons inside a form, you must set the type to prevent submitting the form.
-You can also use an input to create buttons:
+Lorsque vous utilisez des boutons à l'intérieur d'un formulaire, vous devez indiquer en indiquer le type éviter la soumission du formulaire.
+Vous pouvez aussi utiliser un input pour créer des boutons:
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
-  <!-- Buttons -->
-  <button type="button">Cancel</button>
-  <button type="submit">Submit</button>
+  <!-- Boutons -->
+  <button type="button">Annuler</button>
+  <button type="submit">Soumettre</button>
 
   <!-- Input buttons -->
-  <input type="button" value="Cancel" />
-  <input type="submit" value="Submit" />
+  <input type="button" value="Annuler" />
+  <input type="submit" value="Soumettre" />
 </form>
 ```
 
