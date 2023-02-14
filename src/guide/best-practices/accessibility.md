@@ -457,34 +457,34 @@ Vous pouvez aussi utiliser un input pour créer des boutons:
 
 ### Functional Images {#functional-images}
 
-You can use this technique to create functional images.
+Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
-- Input fields
+- Champs de saisie
 
-  - These images will act as a submit type button on forms
+  - Ces images feront office de boutons de soumission pour les formulaires
 
   ```vue-html
   <form role="search">
-    <label for="search" class="hidden-visually">Search: </label>
+    <label for="search" class="hidden-visually">Recherche: </label>
     <input type="text" name="search" id="search" v-model="search" />
     <input
       type="image"
       class="btnImg"
       src="https://img.icons8.com/search"
-      alt="Search"
+      alt="Recherche"
     />
   </form>
   ```
 
-- Icons
+- Icônes
 
 ```vue-html
 <form role="search">
-  <label for="searchIcon" class="hidden-visually">Search: </label>
+  <label for="searchIcon" class="hidden-visually">Recherche: </label>
   <input type="text" name="searchIcon" id="searchIcon" v-model="searchIcon" />
   <button type="submit">
     <i class="fas fa-search" aria-hidden="true"></i>
-    <span class="hidden-visually">Search</span>
+    <span class="hidden-visually">Recherche</span>
   </button>
 </form>
 ```
