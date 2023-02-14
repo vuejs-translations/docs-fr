@@ -1,7 +1,7 @@
 # Options : Cycle de vie {#options-lifecycle}
 
-:::info See also
-For shared usage of lifecycle hooks, see [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
+:::info Voir aussi
+Pour en savoir plus sur l'utilisation partagée des hooks du cycle de vie, consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
 :::
 
 ## beforeCreate {#beforecreate}
@@ -74,7 +74,7 @@ Appelé après que le composant ait été monté.
 
   - Tous ses composants enfants synchrones ont été montés (n'inclut pas les composants asynchrones ou les composants à l'intérieur des arbres `<Suspense>`).
 
-  - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela ne garantit que l'arbre du DOM du composant est déjà placé dans le _document_ , même si le conteneur racine de l'application y est.
+  - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
   Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr.html).
 
@@ -82,7 +82,7 @@ Appelé après que le composant ait été monté.
 
 ## beforeUpdate {#beforeupdate}
 
-Appelé juste avant que le composant ne soit sur le point de mettre à jour son arbre du DOM  après un changement d'état réactif.
+Appelé juste avant que le composant ne soit sur le point de mettre à jour son arbre du DOM après un changement d'état réactif.
 
 - **Type :**
 
@@ -188,7 +188,7 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
   - Rendu de composants
   - Gestionnaires d'événements
   - Hooks de cycle de vie
-  - Fonction `setup()`.
+  - Fonction `setup()`
   - Observateurs
   - Hooks de directives personnalisées
   - Hooks de transition
@@ -203,7 +203,7 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
   - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
 
-  - Si plusieurs hooks `errorCaptured` existent sur la chaîne descendante ou la chaîne ascendante d'un composant, ils seront tous invoqués sur la même erreur, suivant un ordre allant de bas en haut. Cela est comparable au mécanisme de bouillonnement des événements natifs du DOM.
+  - Si plusieurs hooks `errorCaptured` existent sur la chaîne descendante ou la chaîne ascendante d'un composant, ils seront tous invoqués sur la même erreur, suivant un ordre allant de bas en haut. Cela est comparable au mécanisme de _bubbling_ des événements natifs du DOM.
 
   - Si le hook `errorCaptured` lui-même lance une erreur, cette erreur et l'erreur capturée originellement sont envoyées à `app.config.errorHandler`.
 
@@ -319,18 +319,18 @@ Fonction asynchrone qui doit être résolue avant que l'instance du composant ne
     },
     async serverPrefetch() {
       // le composant est rendu dans le cadre de la requête initiale.
-      // les données sont pré-récupérées sur le serveur car cela est plus que via le client.
+      // les données sont pré-récupérées sur le serveur car cela est plus rapide que via le client.
       this.data = await fetchOnServer(/* ... */)
     },
     async mounted() {
       if (!this.data) {
         // si les données ne sont pas définies au moment du montage, cela signifie que le composant
-        // est rendu dynamiquement sur le client. Effectuez plutôt une
-        // récupération côté client à la place.
+        // est rendu dynamiquement sur le client.
+        // Effectue la récupération côté client.
         this.data = await fetchOnClient(/* ... */)
       }
     }
   }
   ```
 
-- **Voir aussi :** [Rendu côté client](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr.html)
