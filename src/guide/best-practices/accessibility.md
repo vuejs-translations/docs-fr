@@ -493,14 +493,14 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
 ## Standards {#standards}
 
-The World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) develops web accessibility standards for the different components:
+Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe les standards d'accessibilité pour les différents composants:
 
 - [User Agent Accessibility Guidelines (UAAG)](https://www.w3.org/WAI/standards-guidelines/uaag/)
-  - web browsers and media players, including some aspects of assistive technologies
+  - navigateurs web et lecteurs de média, includant certains aspects de technologies d'assistance
 - [Authoring Tool Accessibility Guidelines (ATAG)](https://www.w3.org/WAI/standards-guidelines/atag/)
-  - authoring tools
+  - outils de création de contenu
 - [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-  - web content - used by developers, authoring tools, and accessibility evaluation tools
+  - contenu web - utilisé par des développeurs, outils de création de contnu, outils d'évaluation d'accessibilité
 
 ### Web Content Accessibility Guidelines (WCAG) {#web-content-accessibility-guidelines-wcag}
 
