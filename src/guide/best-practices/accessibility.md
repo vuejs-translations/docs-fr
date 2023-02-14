@@ -277,7 +277,7 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 #### `aria-describedby` {#aria-describedby}
 
-[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) is used the same way as `aria-labelledby` except provides a description with additional information that the user might need. This can be used to describe the criteria for any input:
+[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) est utilisé de la même manière que  `aria-labelledby` à l'exception qu'il fournit une descriptio  avec de l'information supplémentaire pour l'utilisateur. Cela peut être utilisé pour décrire le critère pour n'importe que champs:
 
 ```vue-html
 <form
@@ -286,28 +286,28 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
   method="post"
   autocomplete="on"
 >
-  <h1 id="billing">Billing</h1>
+  <h1 id="billing">Facturation</h1>
   <div class="form-item">
-    <label for="name">Full Name:</label>
+    <label for="name">Nom complet:</label>
     <input
       type="text"
       name="name"
       id="name"
       v-model="name"
-      aria-labelledby="billing name"
+      aria-labelledby="nom de facturation"
       aria-describedby="nameDescription"
     />
-    <p id="nameDescription">Please provide first and last name.</p>
+    <p id="nameDescription">Veuillez renseigner le prénom puis prénom.</p>
   </div>
-  <button type="submit">Submit</button>
+  <button type="submit">Envoyer</button>
 </form>
 ```
 
 <!-- <common-codepen-snippet title="Form ARIA describedby" slug="gOgxxQE" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-You can see the description by inspecting Chrome DevTools:
+Vous pouvez voir la description en inspectant depuis les outils de développeur Chrome:
 
-![Chrome Developer Tools showing input accessible name from aria-labelledby and description with aria-describedby](./images/AccessibleARIAdescribedby.png)
+![Outils de développeur Chrome montrant un nom de champs accessible depuis aria-labelledby et décrit avec aria-describedby](./images/AccessibleARIAdescribedby.png)
 
 ### Placeholder {#placeholder}
 
