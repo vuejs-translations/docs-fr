@@ -429,11 +429,11 @@ Nous pouvons utiliser du CSS pour cacher visuellement des éléments mais les la
 
 #### `aria-hidden="true"` {#aria-hidden-true}
 
-Adding `aria-hidden="true"` will hide the element from assistive technology but leave it visually available for other users. Do not use it on focusable elements, purely on decorative, duplicated or offscreen content.
+Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments focusables, uniquement sur des éléments décoratifs ou du contenu hors écran.
 
 ```vue-html
-<p>This is not hidden from screen readers.</p>
-<p aria-hidden="true">This is hidden from screen readers.</p>
+<p>Ceci n'est pas caché au liseurs d'écran.</p>
+<p aria-hidden="true">Ceci est caché aux liseurs d'écran.</p>
 ```
 
 ### Buttons {#buttons}
