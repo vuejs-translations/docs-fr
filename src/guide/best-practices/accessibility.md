@@ -173,9 +173,9 @@ Otherwise, it is a section in the accessibility tree, and usually contain the su
 
 ## Semantic Forms {#semantic-forms}
 
-When creating a form, you can use the following elements: `<form>`, `<label>`, `<input>`, `<textarea>`, and `<button>`
+Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants: `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
 
-Labels are typically placed on top or to the left of the form fields:
+Les labels sont en général placés en haut ou à gauche des champs de formulaire:
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
@@ -194,34 +194,34 @@ Labels are typically placed on top or to the left of the form fields:
 
 <!-- <common-codepen-snippet title="Simple Form" slug="dyNzzWZ" :height="368" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Notice how you can include `autocomplete='on'` on the form element and it will apply to all inputs in your form. You can also set different [values for autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for each input.
+Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaure et il sera appliqué à à tous les input de votre formulaire. Vous pouvez aussi positionner différentes [valeur pour l'attribut autocomplete](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete) pour chaque input.
 
 ### Labels {#labels}
 
-Provide labels to describe the purpose of all form control; linking `for` and `id`:
+Utilisez des labels pour décrire le but de chaque controle de formulaire; en liant `for` et `id`.
 
 ```vue-html
-<label for="name">Name</label>
+<label for="name">Nom</label>
 <input type="text" name="name" id="name" v-model="name" />
 ```
 
 <!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-If you inspect this element in your chrome developer tools and open the Accessibility tab inside the Elements tab, you will see how the input gets its name from the label:
+Si vous inspectez cet élément dans vos outils de dévelopeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Elements, vous verrez comment le champ prends son nom du label:
 
-![Chrome Developer Tools showing input accessible name from label](./images/AccessibleLabelChromeDevTools.png)
+![Outils de développement Chrom montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
 
-:::warning Warning:
-Though you might have seen labels wrapping the input fields like this:
+:::warning Attention:
+Vous pourriez avoir vu cette façon d'envelopper un champs de saisie par un label de la façon suivante:
 
 ```vue-html
 <label>
-  Name:
+  Nom:
   <input type="text" name="name" id="name" v-model="name" />
 </label>
 ```
 
-Explicitly setting the labels with a matching id is better supported by assistive technology.
+Associer les labels avec un id correspondant est mieux supporté par les technologies d'assistance.
 :::
 
 #### `aria-label` {#aria-label}
