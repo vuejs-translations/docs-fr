@@ -393,23 +393,23 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 
 <!-- <common-codepen-snippet title="Form Instructions" slug="WNREEqv" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Hiding Content {#hiding-content}
+### Cacher du contenu {#hiding-content}
 
-Usually it is not recommended to visually hide labels, even if the input has an accessible name. However, if the functionality of the input can be understood with surrounding content, then we can hide the visual label.
+En règle générale, il n'est pas recommendé de cacher visuellement des labels, même si le champa un nom accessible. Cependant, si la fonctionalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
 
-Let's look at this search field:
+Regardons ce champ de recherche:
 
 ```vue-html
 <form role="search">
-  <label for="search" class="hidden-visually">Search: </label>
+  <label for="search" class="hidden-visually">Recherche: </label>
   <input type="text" name="search" id="search" v-model="search" />
-  <button type="submit">Search</button>
+  <button type="submit">Recherche</button>
 </form>
 ```
 
-We can do this because the search button will help visual users identify the purpose of the input field.
+Nous pouvons faire cela car le bouton de recherche va aider les utilisateurs visuels à identifier le but du champ de saisie.
 
-We can use CSS to visually hide elements but keep them available for assistive technology:
+Nous pouvons utiliser du CSS pour cacher visuellement des éléments mais les laisser disponibles pour les technologies d'assistance:
 
 ```css
 .hidden-visually {
