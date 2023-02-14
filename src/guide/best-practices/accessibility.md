@@ -311,11 +311,11 @@ Vous pouvez voir la description en inspectant depuis les outils de développeur 
 
 ### Placeholder {#placeholder}
 
-Avoid using placeholders as they can confuse many users.
+Evitez d'utiliser des placeholders car ils perturbent beaucoup d'utilisateurs.
 
-One of the issues with placeholders is that they don't meet the [color contrast criteria](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) by default; fixing the color contrast makes the placeholder look like pre-populated data in the input fields. Looking at the following example, you can see that the Last Name placeholder which meets the color contrast criteria looks like pre-populated data:
+Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [critères de contraste de couleur](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) par défaut; corriger le contraste de couleur donne l'impression que le champs est pré-rempli avec une valeur. En regardant l'exemple suivant, vous pouvez voir que le placeholder Last Name conforme aux critères de contraste semble être pré-rempli:
 
-![Accessible placeholder](./images/AccessiblePlaceholder.png)
+![Placeholder accessible](./images/AccessiblePlaceholder.png)
 
 ```vue-html
 <form
@@ -334,7 +334,7 @@ One of the issues with placeholders is that they don't meet the [color contrast 
       :placeholder="item.placeholder"
     />
   </div>
-  <button type="submit">Submit</button>
+  <button type="submit">Envoyer</button>
 </form>
 ```
 
@@ -358,7 +358,7 @@ One of the issues with placeholders is that they don't meet the [color contrast 
 }
 ```
 
-It is best to provide all the information the user needs to fill out forms outside any inputs.
+Il vaut mieux fournir toutes les informations dont l'utilisateur a besoin pour remplir les formulairesà l'extérieur des champs de saisie.
 
 ### Instructions {#instructions}
 
