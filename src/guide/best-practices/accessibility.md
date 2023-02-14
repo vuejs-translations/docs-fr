@@ -256,24 +256,24 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
   method="post"
   autocomplete="on"
 >
-  <h1 id="billing">Billing</h1>
+  <h1 id="billing">Facturation</h1>
   <div class="form-item">
-    <label for="name">Name:</label>
+    <label for="name">Nom:</label>
     <input
       type="text"
       name="name"
       id="name"
       v-model="name"
-      aria-labelledby="billing name"
+      aria-labelledby="nom de facturation"
     />
   </div>
-  <button type="submit">Submit</button>
+  <button type="submit">Envoyer</button>
 </form>
 ```
 
 <!-- <common-codepen-snippet title="Form ARIA labelledby" slug="MWJvvBe" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-![Chrome Developer Tools showing input accessible name from aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
+![Outils de développeur de Chrome montrant le nom du champs accessible viaaria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
 
 #### `aria-describedby` {#aria-describedby}
 
