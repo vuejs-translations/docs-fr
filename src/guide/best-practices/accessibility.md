@@ -519,7 +519,7 @@ Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe
 
 #### Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA) {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
 
-W3C's WAI-ARIA provides guidance on how to build dynamic content and advanced user interface controls.
+WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique et des contrôles avancés d'interface utilisateur.
 
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [WAI-ARIA Authoring Practices 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
