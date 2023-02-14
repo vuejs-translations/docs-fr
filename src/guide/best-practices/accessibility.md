@@ -152,9 +152,9 @@ la compatibilité avec les
 anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5](https://caniuse.com/#feat=html5semantic).
 :::
 
-[Read more about landmarks](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
+[Aller plus loin à propos des landmarks](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
 
-## Semantic Forms {#semantic-forms}
+## Formulaires sémantiques {#semantic-forms}
 
 Lors de la création d'un formulaire, vous pouvez utiliser les éléments
 suivants: `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
@@ -178,7 +178,7 @@ Les labels sont en général placés en haut ou à gauche des champs de formulai
 
 <!-- <common-codepen-snippet title="Simple Form" slug="dyNzzWZ" :height="368" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaure et il sera appliqué à à tous les
+Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaure et il sera appliqué à tous les
 input de votre formulaire. Vous pouvez aussi positionner
 différentes [valeur pour l'attribut autocomplete](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete)
 pour chaque input.
