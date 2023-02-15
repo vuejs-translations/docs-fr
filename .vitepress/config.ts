@@ -398,7 +398,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Options : Composition',
           link: '/api/options-composition'
         },
-        { text: 'Options: Misc', link: '/api/options-misc' },
+        { text: 'Options : Divers', link: '/api/options-misc' },
         {
           text: 'Component Instance',
           link: '/api/component-instance'
