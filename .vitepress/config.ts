@@ -391,7 +391,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Options: State', link: '/api/options-state' },
         { text: 'Options : Rendu', link: '/api/options-rendering' },
         {
-          text: 'Options: Lifecycle',
+          text: 'Options : Cycle de vie',
           link: '/api/options-lifecycle'
         },
         {

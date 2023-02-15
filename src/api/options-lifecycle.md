@@ -1,14 +1,14 @@
-# Options: Lifecycle {#options-lifecycle}
+# Options : Cycle de vie {#options-lifecycle}
 
-:::info See also
-For shared usage of lifecycle hooks, see [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
+:::info Voir aussi
+Pour en savoir plus sur l'utilisation partagée des hooks du cycle de vie, consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
 :::
 
 ## beforeCreate {#beforecreate}
 
-Called when the instance is initialized.
+Appelé lors de l'initialisation de l'instance.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -16,17 +16,17 @@ Called when the instance is initialized.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  Called immediately when the instance is initialized, after props resolution, before processing other options such as `data()` or `computed`.
+  Appelé immédiatement lorsque l'instance est initialisée, après la résolution des props, et avant le traitement d'autres options telles que `data()` ou `computed`.
 
-  Note that the `setup()` hook of Composition API is called before any Options API hooks, even `beforeCreate()`.
+  Notez que le hook `setup()` de la Composition API est appelé avant tous les hooks de l'Options API, même `beforeCreate()`.
 
 ## created {#created}
 
-Called after the instance has finished processing all state-related options.
+Appelé après que l'instance ait terminé de traiter toutes les options liées à l'état.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -34,15 +34,15 @@ Called after the instance has finished processing all state-related options.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  When this hooks is called, the following have been set up: reactive data, computed properties, methods, and watchers. However, the mounting phase has not been started, and the `$el` property will not be available yet.
+  Lorsque ce hook est appelé, les éléments suivants ont déjà été mis en place : données réactives, propriétés calculées, méthodes et observateurs. Cependant, la phase de montage n'a pas été lancée, et la propriété `$el` n'est encore disponible.
 
 ## beforeMount {#beforemount}
 
-Called right before the component is to be mounted.
+Appelé juste avant que le composant soit monté.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -50,17 +50,17 @@ Called right before the component is to be mounted.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet. It is about to execute its DOM render effect for the first time.
+  Lorsque ce hook est appelé, le composant a fini de configurer son état réactif, mais aucun noeud du DOM n'a encore été créé. Il est sur le point d'exécuter son effet de rendu du DOM pour la première fois.
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
 ## mounted {#mounted}
 
-Called after the component has been mounted.
+Appelé après que le composant ait été monté.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -68,23 +68,23 @@ Called after the component has been mounted.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  A component is considered mounted after:
+  Un composant est considéré comme monté après que :
 
-  - All of its synchronous child components have been mounted (does not include async components or components inside `<Suspense>` trees).
+  - Tous ses composants enfants synchrones ont été montés (n'inclut pas les composants asynchrones ou les composants à l'intérieur des arbres `<Suspense>`).
 
-  - Its own DOM tree has been created and inserted into the parent container. Note it only guarantees that the component's DOM tree is in-document if the application's root container is also in-document.
+  - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
-  This hook is typically used for performing side effects that need access to the component's rendered DOM, or for limiting DOM-related code to the client in a [server-rendered application](/guide/scaling-up/ssr.html).
+  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr.html).
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
 ## beforeUpdate {#beforeupdate}
 
-Called right before the component is about to update its DOM tree due to a reactive state change.
+Appelé juste avant que le composant ne soit sur le point de mettre à jour son arbre du DOM après un changement d'état réactif.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -92,17 +92,17 @@ Called right before the component is about to update its DOM tree due to a react
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  This hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify component state inside this hook.
+  Ce hook peut être utilisé pour accéder à l'état du DOM avant que Vue ne le mette à jour. Il est également possible de modifier l'état d'un composant à l'intérieur de ce hook.
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
 ## updated {#updated}
 
-Called after the component has updated its DOM tree due to a reactive state change.
+Appelé après que le composant ait mis à jour son arbre du DOM suite à un changement d'état réactif.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -110,23 +110,23 @@ Called after the component has updated its DOM tree due to a reactive state chan
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  A parent component's updated hook is called after that of its child components.
+  Le hook _updated_ d'un composant parent est appelé après celui de ses composants enfants.
 
-  This hook is called after any DOM update of the component, which can be caused by different state changes. If you need to access the updated DOM after a specific state change, use [nextTick()](/api/general.html#nexttick) instead.
+  Ce hook est appelé après toute mise à jour du DOM du composant, laquelle peut être causée par différents changements d'état. Si vous devez accéder au DOM mis à jour après un changement d'état spécifique, utilisez plutôt [nextTick()](/api/general.html#nexttick).
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
   :::warning
-  Do not mutate component state in the updated hook - this will likely lead to an infinite update loop!
+  Ne modifiez pas l'état du composant dans le hook _updated_ - cela conduirait à une boucle de mises à jour infinie !
   :::
 
 ## beforeUnmount {#beforeunmount}
 
-Called right before a component instance is to be unmounted.
+Appelé juste avant que l'instance d'un composant ne soit démontée.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -134,17 +134,17 @@ Called right before a component instance is to be unmounted.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  When this hook is called, the component instance is still fully functional.
+  Lorsque ce hook est appelé, l'instance du composant est toujours totalement fonctionnelle.
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
 ## unmounted {#unmounted}
 
-Called after the component has been unmounted.
+Appelé après que le composant ait été démonté.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -152,23 +152,23 @@ Called after the component has been unmounted.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  A component is considered unmounted after:
+  Un composant est considéré comme démonté après que :
 
-  - All of its child components have been unmounted.
+  - Tous ses composants enfants ont été démontés.
 
-  - All of its associated reactive effects (render effect and computed / watchers created during `setup()`) have been stopped.
+  - Tous ses effets réactifs associés (effet de rendu et propriétés calculées / observateurs créés pendant `setup()`) ont été arrêtés.
 
-  Use this hook to clean up manually created side effects such as timers, DOM event listeners or server connections.
+  Utilisez ce hook pour nettoyer manuellement les effets secondaires créés, tels que les minuteurs, les écouteurs d'événements du DOM ou les connexions au serveur.
 
-  **This hook is not called during server-side rendering.**
+  **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
 ## errorCaptured {#errorcaptured}
 
-Called when an error propagating from a descendant component has been captured.
+Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -181,41 +181,41 @@ Called when an error propagating from a descendant component has been captured.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  Errors can be captured from the following sources:
+  Les erreurs peuvent être capturées à partir des sources suivantes :
 
-  - Component renders
-  - Event handlers
-  - Lifecycle hooks
-  - `setup()` function
-  - Watchers
-  - Custom directive hooks
-  - Transition hooks
+  - Rendu de composants
+  - Gestionnaires d'événements
+  - Hooks de cycle de vie
+  - Fonction `setup()`
+  - Observateurs
+  - Hooks de directives personnalisées
+  - Hooks de transition
 
-  The hook receives three arguments: the error, the component instance that triggered the error, and an information string specifying the error source type.
+  Ce hook reçoit trois arguments : l'erreur, l'instance du composant qui a déclenché l'erreur, et une information sous forme de chaînes de caractères spécifiant le type de source de l'erreur.
 
-  You can modify component state in `errorCaptured()` to display an error state to the user. However, it is important that the error state should not render the original content that caused the error; otherwise the component will be thrown into an infinite render loop.
+  Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important que l'état d'erreur ne rende pas le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
 
-  The hook can return `false` to stop the error from propagating further. See error propagation details below.
+  Le hook peut retourner `false` pour empêcher la propagation de l'erreur. Consultez les détails sur la propagation des erreurs ci-dessous.
 
-  **Error Propagation Rules**
+  **Règles concernant la propagation des erreurs**
 
-  - By default, all errors are still sent to the application-level [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) if it is defined, so that these errors can still be reported to an analytics service in a single place.
+  - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
 
-  - If multiple `errorCaptured` hooks exist on a component's inheritance chain or parent chain, all of them will be invoked on the same error, in the order of bottom to top. This is similar to the bubbling mechanism of native DOM events.
+  - Si plusieurs hooks `errorCaptured` existent sur la chaîne descendante ou la chaîne ascendante d'un composant, ils seront tous invoqués sur la même erreur, suivant un ordre allant de bas en haut. Cela est comparable au mécanisme de _bubbling_ des événements natifs du DOM.
 
-  - If the `errorCaptured` hook itself throws an error, both this error and the original captured error are sent to `app.config.errorHandler`.
+  - Si le hook `errorCaptured` lui-même lance une erreur, cette erreur et l'erreur capturée originellement sont envoyées à `app.config.errorHandler`.
 
-  - An `errorCaptured` hook can return `false` to prevent the error from propagating further. This is essentially saying "this error has been handled and should be ignored." It will prevent any additional `errorCaptured` hooks or `app.config.errorHandler` from being invoked for this error.
+  - Un hook `errorCaptured` peut retourner `false` pour empêcher l'erreur de se propager plus loin. Cela revient à dire "cette erreur a été traitée et doit être ignorée". Cela empêchera tout autre hook `errorCaptured` ou `app.config.errorHandler` d'être invoqué pour cette erreur.
 
 ## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
 
-Called when a reactive dependency has been tracked by the component's render effect.
+Appelé lorsqu'une dépendance réactive a été traquée par l'effet de rendu du composant.
 
-**This hook is development-mode-only and not called during server-side rendering.**
+**Ce hook est réservé au mode développement et n'est pas appelé pendant le rendu côté serveur.**
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -230,15 +230,15 @@ Called when a reactive dependency has been tracked by the component's render eff
   }
   ```
 
-- **See also:** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
-Called when a reactive dependency triggers the component's render effect to be re-run.
+Appelé lorsqu'une dépendance réactive déclenche la ré-exécution de l'effet de rendu du composant.
 
-**This hook is development-mode-only and not called during server-side rendering.**
+**Ce hook est réservé au mode développement et n'est pas appelé pendant le rendu côté serveur.**
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -256,15 +256,15 @@ Called when a reactive dependency triggers the component's render effect to be r
   }
   ```
 
-- **See also:** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
 ## activated {#activated}
 
-Called after the component instance is inserted into the DOM as part of a tree cached by [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Appelé après l'insertion de l'instance du composant dans le DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
-**This hook is not called during server-side rendering.**
+**Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -276,11 +276,11 @@ Called after the component instance is inserted into the DOM as part of a tree c
 
 ## deactivated {#deactivated}
 
-Called after the component instance is removed from the DOM as part of a tree cached by [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Appelé après que l'instance du composant ait été retirée du DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
-**This hook is not called during server-side rendering.**
+**Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -292,9 +292,9 @@ Called after the component instance is removed from the DOM as part of a tree ca
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
-Async function to be resolved before the component instance is to be rendered on the server.
+Fonction asynchrone qui doit être résolue avant que l'instance du composant ne soit rendue sur le serveur.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -302,13 +302,13 @@ Async function to be resolved before the component instance is to be rendered on
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  If the hook returns a Promise, the server renderer will wait until the Promise is resolved before rendering the component.
+  Si le hook renvoie une promesse, le moteur de rendu du serveur attendra qu'elle soit résolue avant d'effectuer le rendu du composant.
 
-  This hook is only called during server-side rendering can be used to perform server-only data fetching.
+  Ce hook n'est appelé que pendant le rendu côté serveur et peut être utilisé pour effectuer une récupération de données sur le serveur uniquement.
 
-- **Example**
+- **Exemple :**
 
   ```js
   export default {
@@ -318,19 +318,19 @@ Async function to be resolved before the component instance is to be rendered on
       }
     },
     async serverPrefetch() {
-      // component is rendered as part of the initial request
-      // pre-fetch data on server as it is faster than on the client
+      // le composant est rendu dans le cadre de la requête initiale.
+      // les données sont pré-récupérées sur le serveur car cela est plus rapide que via le client.
       this.data = await fetchOnServer(/* ... */)
     },
     async mounted() {
       if (!this.data) {
-        // if data is null on mount, it means the component
-        // is dynamically rendered on the client. Perform a
-        // client-side fetch instead.
+        // si les données ne sont pas définies au moment du montage, cela signifie que le composant
+        // est rendu dynamiquement sur le client.
+        // Effectue la récupération côté client.
         this.data = await fetchOnClient(/* ... */)
       }
     }
   }
   ```
 
-- **See also:** [Server-Side Rendering](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr.html)
