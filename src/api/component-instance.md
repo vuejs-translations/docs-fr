@@ -137,7 +137,7 @@ An object representing the [slots](/guide/components/slots.html) passed by the p
 
   If a slot is a [scoped slot](/guide/components/slots.html#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
 
-- **See also:** [Render Functions - Rendering Slots](/guide/extras/render-function.html#rendering-slots)
+- **See also:** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function.html#rendering-slots)
 
 ## $refs {#refs}
 
