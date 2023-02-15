@@ -647,15 +647,15 @@ const vnode = withDirectives(h('div'), [
 
 Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function.html#resolvedirective).
 
-## Functional Components {#functional-components}
+## Composants fonctionnels {#functional-components}
 
-Functional components are an alternative form of component that don't have any state of their own. They act like pure functions: props in, vnodes out. They are rendered without creating a component instance (i.e. no `this`), and without the usual component lifecycle hooks.
+Les composants fonctionnels sont une autre forme de composants qui n'ont pas d'état propre. Ils agissent comme de pures fonctions : props in, vnodes out. Ils sont rendus sans créer d'instance de composant (c'est-à-dire sans `this`), et sans les hooks habituels du cycle de vie des composants.
 
-To create a functional component we use a plain function, rather than an options object. The function is effectively the `render` function for the component.
+Pour créer un composant fonctionnel, nous utilisons une simple fonction, plutôt qu'un objet d'options. La fonction est effectivement la fonction `render` du composant.
 
 <div class="composition-api">
 
-The signature of a functional component is the same as the `setup()` hook:
+La signature d'un composant fonctionnel est la même que celle du hook `setup()` :
 
 ```js
 function MyComponent(props, { slots, emit, attrs }) {
@@ -666,7 +666,7 @@ function MyComponent(props, { slots, emit, attrs }) {
 </div>
 <div class="options-api">
 
-As there is no `this` reference for a functional component, Vue will pass in the `props` as the first argument:
+Comme il n'y a pas de référence `this` pour un composant fonctionnel, Vue passera les `props` comme premier argument :
 
 ```js
 function MyComponent(props, context) {
@@ -674,23 +674,23 @@ function MyComponent(props, context) {
 }
 ```
 
-The second argument, `context`, contains three properties: `attrs`, `emit`, and `slots`. These are equivalent to the instance properties [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), and [`$slots`](/api/component-instance.html#slots) respectively.
+Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), et [`$slots`](/api/component-instance.html#slots) respectivement.
 
 </div>
 
-Most of the usual configuration options for components are not available for functional components. However, it is possible to define [`props`](/api/options-state.html#props) and [`emits`](/api/options-state.html#emits) by adding them as properties:
+La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state.html#props) et [`emits`](/api/options-state.html#emits) en les ajoutant comme propriétés :
 
 ```js
 MyComponent.props = ['value']
 MyComponent.emits = ['click']
 ```
 
-If the `props` option is not specified, then the `props` object passed to the function will contain all attributes, the same as `attrs`. The prop names will not be normalized to camelCase unless the `props` option is specified.
+Si l'option `props` n'est pas spécifiée, alors l'objet `props` passé à la fonction contiendra tous les attributs, de la même manière que `attrs`. Les noms de prop ne seront pas formatés en camelCase, sauf si l'option `props` est spécifiée.
 
-For functional components with explicit `props`, [attribute fallthrough](/guide/components/attrs.html) works much the same as with normal components. However, for functional components that don't explicitly specify their `props`, only the `class`, `style`, and `onXxx` event listeners will be inherited from the `attrs` by default. In either case, `inheritAttrs` can be set to `false` to disable attribute inheritance:
+Pour les composants fonctionnels avec des `props` explicites, [la traversée des attributs](/guide/components/attrs.html) fonctionne à peu près comme pour les composants normaux. Cependant, pour les composants fonctionnels qui ne spécifient pas explicitement leurs `props`, seuls les écouteurs d'événements `class`, `style`, et `onXxx` seront hérités des `attrs` par défaut. Dans les deux cas, `inheritAttrs` peut être mis à `false` pour désactiver l'héritage des attributs :
 
 ```js
 MyComponent.inheritAttrs = false
 ```
 
-Functional components can be registered and consumed just like normal components. If you pass a function as the first argument to `h()`, it will be treated as a functional component.
+Les composants fonctionnels peuvent être enregistrés et consommés tout comme les composants normaux. Si vous passez une fonction comme premier argument à `h()`, elle sera traitée comme un composant fonctionnel.
