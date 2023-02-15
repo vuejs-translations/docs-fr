@@ -380,7 +380,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/composition-api-lifecycle'
         },
         {
-          text: 'Dependency Injection',
+          text: 'Injection de dépendances',
           link: '/api/composition-api-dependency-injection'
         }
       ]
