@@ -388,7 +388,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Options API',
       items: [
-        { text: 'Options: State', link: '/api/options-state' },
+        { text: 'Options : État', link: '/api/options-state' },
         { text: 'Options : Rendu', link: '/api/options-rendering' },
         {
           text: 'Options : Cycle de vie',

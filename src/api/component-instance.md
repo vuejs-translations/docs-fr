@@ -289,7 +289,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
 - **See also:**
 
   - [Composant - Gestion des évènements](/guide/components/events.html)
-  - [`emits` option](./options-state.html#emits)
+  - [L'option `emits`](./options-state.html#emits)
 
 ## $forceUpdate() {#forceupdate}
 
