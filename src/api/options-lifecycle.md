@@ -195,7 +195,7 @@ Called when an error propagating from a descendant component has been captured.
 
   The hook receives three arguments: the error, the component instance that triggered the error, and an information string specifying the error source type.
 
-  You can modify component state in `errorCaptured()` to display an error state to the user. However, it is important that the error state should not render the original content that caused the error; otherwise the component will be thrown into an infinite render loop.
+  Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important de ne pas rendre le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
 
   The hook can return `false` to stop the error from propagating further. See error propagation details below.
 
