@@ -321,7 +321,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/rendering-mechanism'
         },
         {
-          text: 'Render Functions & JSX',
+          text: 'Fonctions de rendu & JSX',
           link: '/guide/extras/render-function'
         },
         {
