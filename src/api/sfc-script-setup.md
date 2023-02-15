@@ -1,15 +1,15 @@
 # \<script setup> {#script-setup}
 
-`<script setup>` is a compile-time syntactic sugar for using Composition API inside Single-File Components (SFCs). It is the recommended syntax if you are using both SFCs and Composition API. It provides a number of advantages over the normal `<script>` syntax:
+`<script setup>` est un sucre syntaxique de compilation pour l'utilisation de la Composition API dans les composants monofichiers (SFC). C'est la syntaxe recommandée si vous utilisez à la fois les SFC et la Composition API. Elle offre un certain nombre d'avantages par rapport à la syntaxe classique `<script>` :
 
-- More succinct code with less boilerplate
-- Ability to declare props and emitted events using pure TypeScript
-- Better runtime performance (the template is compiled into a render function in the same scope, without an intermediate proxy)
-- Better IDE type-inference performance (less work for the language server to extract types from code)
+- Un code plus succinct avec moins de répétitions
+- Possibilité de déclarer des props et des événements émis en utilisant du TypeScript pur.
+- Meilleures performances d'exécution (le template est compilé dans une fonction de rendu dans la même portée, sans proxy intermédiaire).
+- Meilleures performances de l'environnement de développement concernant l'inférence de type (moins de travail pour le serveur de langage pour extraire les types du code).
 
-## Basic Syntax {#basic-syntax}
+## Syntaxe basique {#basic-syntax}
 
-To opt-in to the syntax, add the `setup` attribute to the `<script>` block:
+Pour utiliser cette syntaxe, ajoutez l'attribut `setup` au bloc `<script>` :
 
 ```vue
 <script setup>
@@ -17,18 +17,18 @@ console.log('hello script setup')
 </script>
 ```
 
-The code inside is compiled as the content of the component's `setup()` function. This means that unlike normal `<script>`, which only executes once when the component is first imported, code inside `<script setup>` will **execute every time an instance of the component is created**.
+Le code qu'il contient est compilé en tant que contenu de la fonction `setup()` du composant. Cela signifie que, contrairement au `<script>` normal, qui ne s'exécute qu'une fois lorsque le composant est importé pour la première fois, le code contenu dans `<script setup>` sera **exécuté à chaque fois qu'une instance du composant sera créée**.
 
-### Top-level bindings are exposed to template {#top-level-bindings-are-exposed-to-template}
+### Les liaisons de haut niveau sont exposées au template {#top-level-bindings-are-exposed-to-template}
 
-When using `<script setup>`, any top-level bindings (including variables, function declarations, and imports) declared inside `<script setup>` are directly usable in the template:
+Lorsque vous utilisez `<script setup>`, toute liaison de haut niveau (y compris les variables, les déclarations de fonctions et les imports) déclarées dans `<script setup>` est directement utilisable dans le template :
 
 ```vue
 <script setup>
 // variable
 const msg = 'Hello!'
 
-// functions
+// fonctions
 function log() {
   console.log(msg)
 }
@@ -39,7 +39,7 @@ function log() {
 </template>
 ```
 
-Imports are exposed in the same fashion. This means you can directly use an imported helper function in template expressions without having to expose it via the `methods` option:
+Les importations sont exposées de la même manière. Cela signifie que vous pouvez utiliser directement une fonction utilitaire importée dans des expressions de template sans avoir à l'exposer via l'option `methods` :
 
 ```vue
 <script setup>
@@ -51,9 +51,9 @@ import { capitalize } from './helpers'
 </template>
 ```
 
-## Reactivity {#reactivity}
+## Réactivité {#reactivity}
 
-Reactive state needs to be explicitly created using [Reactivity APIs](./reactivity-core.html). Similar to values returned from a `setup()` function, refs are automatically unwrapped when referenced in templates:
+L'état réactif doit être créé explicitement à l'aide des [API de réactivité](./reactivity-core.html). Comme les valeurs retournées par une fonction `setup()`, les refs sont automatiquement déballées lorsqu'elles sont référencées dans les templates :
 
 ```vue
 <script setup>
@@ -67,9 +67,9 @@ const count = ref(0)
 </template>
 ```
 
-## Using Components {#using-components}
+## Utilisation des composants {#using-components}
 
-Values in the scope of `<script setup>` can also be used directly as custom component tag names:
+Les valeurs dans la portée de `<script setup>` peuvent également être utilisées directement comme noms de balises de composants personnalisés :
 
 ```vue
 <script setup>
@@ -81,11 +81,11 @@ import MyComponent from './MyComponent.vue'
 </template>
 ```
 
-Think of `MyComponent` as being referenced as a variable. If you have used JSX, the mental model is similar here. The kebab-case equivalent `<my-component>` also works in the template - however PascalCase component tags are strongly recommended for consistency. It also helps differentiating from native custom elements.
+Voyez `MyComponent` comme référencé à l'instar d'une variable. Si vous avez utilisé du JSX, le modèle mental est le même ici. L'équivalent en casse kebab `<my-component>` fonctionne aussi dans le template - mais les balises de composant en casse Pascal sont fortement recommandées pour des raisons de cohérence. Cela permet également de faire la différence avec les éléments personnalisés natifs.
 
-### Dynamic Components {#dynamic-components}
+### Composants dynamiques {#dynamic-components}
 
-Since components are referenced as variables instead of registered under string keys, we should use dynamic `:is` binding when using dynamic components inside `<script setup>`:
+Puisque les composants sont référencés comme des variables au lieu d'être enregistrés sous des clés de chaîne de caractères, nous devons utiliser la liaison dynamique `:is` lorsque nous utilisons des composants dynamiques dans `<script setup>` :
 
 ```vue
 <script setup>
@@ -99,21 +99,21 @@ import Bar from './Bar.vue'
 </template>
 ```
 
-Note how the components can be used as variables in a ternary expression.
+Notez comment les composants peuvent être utilisés comme variables dans une expression ternaire.
 
-### Recursive Components {#recursive-components}
+### Composants récursifs {#recursive-components}
 
-An SFC can implicitly refer to itself via its filename. E.g. a file named `FooBar.vue` can refer to itself as `<FooBar/>` in its template.
+Un composant monopage peut implicitement se référer à lui-même via son nom de fichier. Par exemple, un fichier nommé `FooBar.vue` peut se référer à lui-même comme `<FooBar/>` dans son template.
 
-Note this has lower priority than imported components. If you have a named import that conflicts with the component's inferred name, you can alias the import:
+Notez cependant que la priorité est inférieure à celle des composants importés. Si vous avez une importation nommée qui entre en conflit avec le nom inféré du composant, vous pouvez utiliser un alias pour l'importation :
 
 ```js
 import { FooBar as FooBarChild } from './components'
 ```
 
-### Namespaced Components {#namespaced-components}
+### Composants sous espace de nom {#namespaced-components}
 
-You can use component tags with dots like `<Foo.Bar>` to refer to components nested under object properties. This is useful when you import multiple components from a single file:
+Vous pouvez utiliser des balises de composants avec des points comme `<Foo.Bar>` pour faire référence à des composants imbriqués dans des propriétés d'objets. Ceci est utile lorsque vous importez plusieurs composants à partir d'un seul fichier :
 
 ```vue
 <script setup>
@@ -127,15 +127,15 @@ import * as Form from './form-components'
 </template>
 ```
 
-## Using Custom Directives {#using-custom-directives}
+## Utilisation de directives personnalisées {#using-custom-directives}
 
-Globally registered custom directives just work as normal. Local custom directives don't need to be explicitly registered with `<script setup>`, but they must follow the naming scheme `vNameOfDirective`:
+Les directives personnalisées enregistrées de manière globale fonctionnent normalement. Les directives locales personnalisées n'ont pas besoin d'être explicitement enregistrées avec `<script setup>`, mais elles doivent suivre le schéma de dénomination `vNameOfDirective` :
 
 ```vue
 <script setup>
 const vMyDirective = {
   beforeMount: (el) => {
-    // do something with the element
+    // faire quelque chose avec l'élément
   }
 }
 </script>
@@ -144,7 +144,7 @@ const vMyDirective = {
 </template>
 ```
 
-If you're importing a directive from elsewhere, it can be renamed to fit the required naming scheme:
+Si vous importez une directive d'ailleurs, vous pouvez la renommer pour qu'elle corresponde au schéma de dénomination requis :
 
 ```vue
 <script setup>
@@ -152,9 +152,9 @@ import { myDirective as vMyDirective } from './MyDirective.js'
 </script>
 ```
 
-## defineProps() & defineEmits() {#defineprops-defineemits}
+## defineProps() et defineEmits() {#defineprops-defineemits}
 
-To declare options like `props` and `emits` with full type inference support, we can use the `defineProps` and `defineEmits` APIs, which are automatically available inside `<script setup>`:
+Pour déclarer des options comme `props` et `emits` avec une prise en charge complète de l'inférence de type, nous pouvons utiliser les API `defineProps` et `defineEmits`, qui sont automatiquement disponibles dans `<script setup>` :
 
 ```vue
 <script setup>
@@ -167,21 +167,21 @@ const emit = defineEmits(['change', 'delete'])
 </script>
 ```
 
-- `defineProps` and `defineEmits` are **compiler macros** only usable inside `<script setup>`. They do not need to be imported, and are compiled away when `<script setup>` is processed.
+- `defineProps` et `defineEmits` sont des **macros de compilation** utilisables uniquement à l'intérieur de `<script setup>`. Elles n'ont pas besoin d'être importées, et sont compilées lorsque `<script setup>` est traité.
 
-- `defineProps` accepts the same value as the `props` option, while `defineEmits` accepts the same value as the `emits` option.
+- `defineProps` accepte la même valeur que l'option `props`, tandis que `defineEmits` accepte la même valeur que l'option `emits`.
 
-- `defineProps` and `defineEmits` provide proper type inference based on the options passed.
+- `defineProps` et `defineEmits` fournissent une inférence de type appropriée basée sur les options passées.
 
-- The options passed to `defineProps` and `defineEmits` will be hoisted out of setup into module scope. Therefore, the options cannot reference local variables declared in setup scope. Doing so will result in a compile error. However, it _can_ reference imported bindings since they are in the module scope as well.
+- Les options passées à `defineProps` et `defineEmits` seront placées en dehors de setup dans la portée du module. Par conséquent, les options ne peuvent pas faire référence à des variables locales déclarées dans la portée de setup. Cela entraînerait une erreur de compilation. Cependant, elles _peuvent_ faire référence à des liaisons importées puisqu'elles sont également dans la portée du module.
 
-If you are using TypeScript, it is also possible to [declare props and emits using pure type annotations](#typescript-only-features).
+Si vous utilisez TypeScript, il est également possible de [déclarer les props et les emits à l'aide d'annotations de type pur](#typescript-only-features).
 
 ## defineExpose() {#defineexpose}
 
-Components using `<script setup>` are **closed by default** - i.e. the public instance of the component, which is retrieved via template refs or `$parent` chains, will **not** expose any of the bindings declared inside `<script setup>`.
+Les composants utilisant `<script setup>` sont **fermés par défaut** - c'est à dire que l'instance publique du composant, qui est récupérée via les refs du template ou via `$parent`, n'exposera **aucune** des liaisons déclarées dans `<script setup>`.
 
-To explicitly expose properties in a `<script setup>` component, use the `defineExpose` compiler macro:
+Pour exposer explicitement des propriétés dans un composant utilisant `<script setup>`, utilisez la macro de compilation `defineExpose` :
 
 ```vue
 <script setup>
@@ -197,11 +197,11 @@ defineExpose({
 </script>
 ```
 
-When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
+Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a: number, b: number }` (les refs sont automatiquement déballés comme pour les instances normales).
 
-## `useSlots()` & `useAttrs()` {#useslots-useattrs}
+## `useSlots()` et `useAttrs()` {#useslots-useattrs}
 
-Usage of `slots` and `attrs` inside `<script setup>` should be relatively rare, since you can access them directly as `$slots` and `$attrs` in the template. In the rare case where you do need them, use the `useSlots` and `useAttrs` helpers respectively:
+L'utilisation de `slots` et `attrs` à l'intérieur de `<script setup>` devrait être relativement rare, puisque vous pouvez y accéder directement via `$slots` et `$attrs` dans le template. Dans les rares cas où vous en avez besoin, utilisez respectivement les utilitaires `useSlots` et `useAttrs` :
 
 ```vue
 <script setup>
@@ -212,22 +212,22 @@ const attrs = useAttrs()
 </script>
 ```
 
-`useSlots` and `useAttrs` are actual runtime functions that return the equivalent of `setupContext.slots` and `setupContext.attrs`. They can be used in normal composition API functions as well.
+`useSlots` et `useAttrs` sont des fonctions d'exécution qui retournent l'équivalent de `setupContext.slots` et `setupContext.attrs`. Elles peuvent également être utilisées dans les fonctions classiques de la Composition API.
 
-## Usage alongside normal `<script>` {#usage-alongside-normal-script}
+## Utilisation en parallèle du `<script>` normal {#usage-alongside-normal-script}
 
-`<script setup>` can be used alongside normal `<script>`. A normal `<script>` may be needed in cases where we need to:
+`<script setup>` peut être utilisée en parallèle du `<script>` normal. Un `<script>` normal peut être nécessaire dans les cas où nous avons besoin de :
 
-- Declare options that cannot be expressed in `<script setup>`, for example `inheritAttrs` or custom options enabled via plugins.
-- Declaring named exports.
-- Run side effects or create objects that should only execute once.
+- Déclarer des options qui ne peuvent pas être exprimées dans `<script setup>`, par exemple `inheritAttrs` ou des options personnalisées activées par des plugins.
+- Déclarer des exportations nommées.
+- Exécuter des effets secondaires ou créer des objets qui ne doivent être exécutés qu'une fois.
 
 ```vue
 <script>
-// normal <script>, executed in module scope (only once)
+// <script> normal, exécuté dans la portée du module (une seule fois)
 runSideEffectOnce()
 
-// declare additional options
+// déclare des options supplémentaires
 export default {
   inheritAttrs: false,
   customOptions: {}
@@ -235,20 +235,20 @@ export default {
 </script>
 
 <script setup>
-// executed in setup() scope (for each instance)
+// exécuté dans la portée de setup() (pour chaque instance)
 </script>
 ```
 
-Support for combining `<script setup>` and `<script>` in the same component is limited to the scenarios described above. Specifically:
+La prise en charge de la combinaison de `<script setup>` et de `<script>` dans le même composant est limitée aux scénarios décrits ci-dessus. Plus précisément :
 
-- Do **NOT** use a separate `<script>` section for options that can already be defined using `<script setup>`, such as `props` and `emits`.
-- Variables created inside `<script setup>` are not added as properties to the component instance, making them inaccessible from the Options API. Mixing APIs in this way is strongly discouraged.
+- N'utilisez **PAS** une section `<script>` distincte pour les options qui peuvent déjà être définies à l'aide de `<script setup>`, comme `props` et `emits`.
+- Les variables créées à l'intérieur de `<script setup>` ne sont pas ajoutées comme propriétés à l'instance du composant, ce qui les rend inaccessibles depuis l'Options API. Il est fortement déconseillé de mélanger les API de cette manière.
 
-If you find yourself in one of the scenarios that is not supported then you should consider switching to an explicit [`setup()`](/api/composition-api-setup.html) function, instead of using `<script setup>`.
+Si vous vous trouvez dans un scénario non pris en charge, vous devriez envisager d'utiliser une fonction explicite [`setup()`](/api/composition-api-setup.html), au lieu d'utiliser `<script setup>`.
 
-## Top-level `await` {#top-level-await}
+## `await` de haut niveau {#top-level-await}
 
-Top-level `await` can be used inside `<script setup>`. The resulting code will be compiled as `async setup()`:
+Un `await` de haut niveau peut être utilisé à l'intérieur de `<script setup>`. Le code résultant sera compilé comme `async setup()` :
 
 ```vue
 <script setup>
@@ -256,17 +256,17 @@ const post = await fetch(`/api/post/1`).then((r) => r.json())
 </script>
 ```
 
-In addition, the awaited expression will be automatically compiled in a format that preserves the current component instance context after the `await`.
+De plus, l'expression attendue sera automatiquement compilée dans un format qui préserve le contexte de l'instance du composant courant après le `await`.
 
-:::warning Note
-`async setup()` must be used in combination with `Suspense`, which is currently still an experimental feature. We plan to finalize and document it in a future release - but if you are curious now, you can refer to its [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) to see how it works.
+:::warning Remarque
+`async setup()` doit être utilisée en combinaison avec `Suspense`, qui est actuellement encore une fonctionnalité expérimentale. Nous prévoyons de la finaliser et de la documenter dans une prochaine version - mais si vous êtes curieux, vous pouvez vous référer à ses [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) pour voir comment elle fonctionne.
 :::
 
-## TypeScript-only Features <sup class="vt-badge ts" /> {#typescript-only-features}
+## Fonctionnalités propres à TypeScript <sup class="vt-badge ts" /> {#typescript-only-features}
 
-### Type-only props/emit declarations {#type-only-props-emit-declarations}
+### Déclarations de types pour props / emit {#type-only-props-emit-declarations}
 
-Props and emits can also be declared using pure-type syntax by passing a literal type argument to `defineProps` or `defineEmits`:
+Les props et les emits peuvent également être déclarés en utilisant une syntaxe de type pur en passant un argument de type littéral à `defineProps` ou `defineEmits` :
 
 ```ts
 const props = defineProps<{
@@ -280,26 +280,26 @@ const emit = defineEmits<{
 }>()
 ```
 
-- `defineProps` or `defineEmits` can only use either runtime declaration OR type declaration. Using both at the same time will result in a compile error.
+- `defineProps` ou `defineEmits` ne peuvent utiliser que la déclaration à l'exécution OU la déclaration de type. L'utilisation des deux en même temps entraînera une erreur de compilation.
 
-- When using type declaration, the equivalent runtime declaration is automatically generated from static analysis to remove the need for double declaration and still ensure correct runtime behavior.
+- Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique afin de supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
 
-  - In dev mode, the compiler will try to infer corresponding runtime validation from the types. For example here `foo: String` is inferred from the `foo: string` type. If the type is a reference to an imported type, the inferred result will be `foo: null` (equal to `any` type) since the compiler does not have information of external files.
+  - En mode développement, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple, ici, `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal au type `any`) puisque le compilateur n'a pas d'information sur les fichiers externes.
 
-  - In prod mode, the compiler will generate the array format declaration to reduce bundle size (the props here will be compiled into `['foo', 'bar']`)
+  - En mode production, le compilateur va générer la déclaration au format tableau pour réduire la taille du paquet (les props ici seront compilées en `['foo', 'bar']`).
 
-  - The emitted code is still TypeScript with valid typing, which can be further processed by other tools.
+  - Le code émis est toujours du TypeScript avec un typage valide, qui peut être traité par d'autres outils.
 
-- As of now, the type declaration argument must be one of the following to ensure correct static analysis:
+- À partir de là, l'argument de la déclaration de type doit être l'un des suivants pour garantir une analyse statique correcte :
 
-  - A type literal
-  - A reference to an interface or a type literal in the same file
+  - Un littéral de type
+  - Une référence à une interface ou à un littéral de type dans le même fichier.
 
-  Currently complex types and type imports from other files are not supported. It is possible to support type imports in the future.
+  Actuellement, les types complexes et les importations de types à partir d'autres fichiers ne sont pas pris en charge. Il est possible que les importations de types soient prises en charge à l'avenir.
 
-### Default props values when using type declaration {#default-props-values-when-using-type-declaration}
+### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
 
-One drawback of the type-only `defineProps` declaration is that it doesn't have a way to provide default values for the props. To resolve this problem, a `withDefaults` compiler macro is also provided:
+Un inconvénient de la déclaration de type `defineProps` est qu'elle ne permet pas de fournir des valeurs par défaut pour les props. Pour résoudre ce problème, une macro de compilation `withDefaults` est également fournie :
 
 ```ts
 export interface Props {
@@ -313,8 +313,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-This will be compiled to equivalent runtime props `default` options. In addition, the `withDefaults` helper provides type checks for the default values, and ensures the returned `props` type has the optional flags removed for properties that do have default values declared.
+Ceci sera compilé en props avec la valeur `default`. De plus, l'utilitaire `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type de `props` retourné n'a pas les flags optionnels pour les propriétés qui ont des valeurs par défaut de déclarées.
 
 ## Restrictions {#restrictions}
 
-Due to the difference in module execution semantics, code inside `<script setup>` relies on the context of an SFC. When moved into external `.js` or `.ts` files, it may lead to confusion for both developers and tools. Therefore, **`<script setup>`** cannot be used with the `src` attribute.
+En raison de la différence de sémantique d'exécution des modules, le code contenu dans `<script setup>` s'appuie sur le contexte d'un composant monofichier. Lorsqu'il est déplacé dans des fichiers externes `.js` ou `.ts`, il peut être source de confusion pour les développeurs et les outils. Par conséquent, **`<script setup>`** ne peut pas être utilisée avec l'attribut `src`.

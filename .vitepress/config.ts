@@ -380,7 +380,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/composition-api-lifecycle'
         },
         {
-          text: 'Dependency Injection',
+          text: 'Injection de dépendances',
           link: '/api/composition-api-dependency-injection'
         }
       ]
@@ -388,17 +388,17 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Options API',
       items: [
-        { text: 'Options: State', link: '/api/options-state' },
+        { text: 'Options : État', link: '/api/options-state' },
         { text: 'Options : Rendu', link: '/api/options-rendering' },
         {
-          text: 'Options: Lifecycle',
+          text: 'Options : Cycle de vie',
           link: '/api/options-lifecycle'
         },
         {
           text: 'Options : Composition',
           link: '/api/options-composition'
         },
-        { text: 'Options: Misc', link: '/api/options-misc' },
+        { text: 'Options : Divers', link: '/api/options-misc' },
         {
           text: 'Component Instance',
           link: '/api/component-instance'
@@ -433,7 +433,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Render Function', link: '/api/render-function' },
         { text: 'Server-Side Rendering', link: '/api/ssr' },
-        { text: 'TypeScript Utility Types', link: '/api/utility-types' },
+        { text: 'Types utilitaires TypeScript', link: '/api/utility-types' },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
       ]
     }
