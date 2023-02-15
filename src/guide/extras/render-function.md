@@ -218,30 +218,30 @@ function render() {
 
 ## JSX / TSX {#jsx-tsx}
 
-[JSX](https://facebook.github.io/jsx/) is an XML-like extension to JavaScript that allows us to write code like this:
+Le [JSX](https://facebook.github.io/jsx/) est une extension de JavaScript semblable au XML qui permet d'écrire du code de cette manière :
 
 ```jsx
 const vnode = <div>hello</div>
 ```
 
-Inside JSX expressions, use curly braces to embed dynamic values:
+Dans les expressions JSX, utilisez des accolades pour intégrer des valeurs dynamiques :
 
 ```jsx
 const vnode = <div id={dynamicId}>hello, {userName}</div>
 ```
 
-`create-vue` and Vue CLI both have options for scaffolding projects with pre-configured JSX support. If you are configuring JSX manually, please refer to the documentation of [`@vue/babel-plugin-jsx`](https://github.com/vuejs/jsx-next) for details.
+`create-vue` et Vue CLI possède tous deux des options pour élaborer des projets avec un support du JSX préconfiguré. Si vous configurez le JSX manuellement, veuillez consulter la documentation de [`@vue/babel-plugin-jsx`](https://github.com/vuejs/jsx-next) pour plus de détails.
 
-Although first introduced by React, JSX actually has no defined runtime semantics and can be compiled into various different outputs. If you have worked with JSX before, do note that **Vue JSX transform is different from React's JSX transform**, so you can't use React's JSX transform in Vue applications. Some notable differences from React JSX include:
+Bien qu'il ait été introduit par React, le JSX n'a pas de sémantique d'exécution définie et peut être compilé en différents résultats. Si vous avez déjà travaillé avec le JSX, notez que **la transformation du JSX de Vue est différente de la transformation du JSX de React**, vous ne pouvez donc pas utiliser la transformation du JSX de React dans les applications Vue. Voici quelques différences notables par rapport au JSX de React :
 
-- You can use HTML attributes such as `class` and `for` as props - no need to use `className` or `htmlFor`.
-- Passing children to components (i.e. slots) [works differently](#passing-slots).
+- Vous pouvez utiliser des attributs HTML tels que `class` et `for` comme props - il n'est pas nécessaire d'utiliser `className` ou `htmlFor`.
+- Passer des enfants à des composants (c'est-à-dire des slots) [fonctionne différemment](#passing-slots).
 
-Vue's type definition also provides type inference for TSX usage. When using TSX, make sure to specify `"jsx": "preserve"` in `tsconfig.json` so that TypeScript leaves the JSX syntax intact for Vue JSX transform to process.
+La définition de type de Vue fournit également une inférence de type pour l'utilisation de TSX. Lorsque vous utilisez TSX, assurez-vous de spécifier `"jsx" : "preserve"` dans `tsconfig.json` afin que TypeScript laisse la syntaxe du JSX intacte afin que la transformation du JSX par Vue puisse fonctionner correctement.
 
-## Render Function Recipes {#render-function-recipes}
+## Modèles de fonctions de rendu {#render-function-recipes}
 
-Below we will provide some common recipes for implementing template features as their equivalent render functions / JSX.
+Nous vous proposons ci-dessous quelques modèles courants pour mettre en œuvre les fonctionnalités des templates via leur équivalent en fonctions de rendu / JSX.
 
 ### `v-if` {#v-if}
 
@@ -254,7 +254,7 @@ Template:
 </div>
 ```
 
-Equivalent render function / JSX:
+Équivalent en fonction de rendu / JSX :
 
 <div class="composition-api">
 
@@ -291,14 +291,14 @@ Template:
 </ul>
 ```
 
-Equivalent render function / JSX:
+Équivalent en fonction de rendu / JSX :
 
 <div class="composition-api">
 
 ```js
 h(
   'ul',
-  // assuming `items` is a ref with array value
+  // en supposant que `items` est une ref avec une valeur de tableau
   items.value.map(({ id, text }) => {
     return h('li', { key: id }, text)
   })
@@ -337,7 +337,7 @@ h(
 
 ### `v-on` {#v-on}
 
-Props with names that start with `on` followed by an uppercase letter are treated as event listeners. For example, `onClick` is the equivalent of `@click` in templates.
+Les props dont le nom commence par `on` suivi d'une lettre majuscule sont traitées comme des écouteurs d'événements. Par exemple, `onClick` est l'équivalent de `@click` dans les templates.
 
 ```js
 h(
@@ -361,19 +361,19 @@ h(
 </button>
 ```
 
-#### Event Modifiers {#event-modifiers}
+#### Modificateurs d'événement {#event-modifiers}
 
-For the `.passive`, `.capture`, and `.once` event modifiers, they can be concatenated after the event name using camelCase.
+Les modificateurs d'événements `.passive`, `.capture`, et `.once` peuvent être concaténés après le nom de l'événement en utilisant camelCase.
 
-For example:
+Par exemple :
 
 ```js
 h('input', {
   onClickCapture() {
-    /* listener in capture mode */
+    /* écouteur d'événement en mode capture */
   },
   onKeyupOnce() {
-    /* triggers only once */
+    /* ne se déclenche qu'une seule fois */
   },
   onMouseoverOnceCapture() {
     /* once + capture */
@@ -389,7 +389,7 @@ h('input', {
 />
 ```
 
-For other event and key modifiers, the [`withModifiers`](/api/render-function.html#withmodifiers) helper can be used:
+Pour les autres modificateurs d'événements et de clés, l'utilitaire [`withModifiers`](/api/render-function.html#withmodifiers) peut être utilisé :
 
 ```js
 import { withModifiers } from 'vue'
@@ -403,9 +403,9 @@ h('div', {
 <div onClick={withModifiers(() => {}, ['self'])} />
 ```
 
-### Components {#components}
+### Composants {#components}
 
-To create a vnode for a component, the first argument passed to `h()` should be the component definition. This means when using render functions, it is unnecessary to register components - you can just use the imported components directly:
+Pour créer un vnode pour un composant, le premier argument passé à `h()` doit être la définition du composant. Cela signifie que lorsque vous utilisez les fonctions de rendu, il n'est pas nécessaire d'enregistrer les composants - vous pouvez utiliser directement les composants importés :
 
 ```js
 import Foo from './Foo.vue'
@@ -427,9 +427,9 @@ function render() {
 }
 ```
 
-As we can see, `h` can work with components imported from any file format as long as it's a valid Vue component.
+Comme nous pouvons le constater, `h` peut fonctionner avec des composants importés depuis n'importe quel format de fichier tant qu'il s'agit d'un composant Vue valide.
 
-Dynamic components are straightforward with render functions:
+Les composants dynamiques sont simples à utiliser avec les fonctions de rendu :
 
 ```js
 import Foo from './Foo.vue'
@@ -446,24 +446,24 @@ function render() {
 }
 ```
 
-If a component is registered by name and cannot be imported directly (for example, globally registered by a library), it can be programmatically resolved by using the [`resolveComponent()`](/api/render-function.html#resolvecomponent) helper.
+Si un composant est enregistré via son nom et ne peut pas être importé directement (par exemple, s'il est enregistré globalement par une bibliothèque), il peut être l'être en utilisant l'utilitaire [`resolveComponent()`](/api/render-function.html#resolvecomponent).
 
-### Rendering Slots {#rendering-slots}
+### Rendu de slots {#rendering-slots}
 
 <div class="composition-api">
 
-In render functions, slots can be accessed from the `setup()` context. Each slot on the `slots` object is a **function that returns an array of vnodes**:
+Dans les fonctions de rendu, les slots sont accessibles via le contexte `setup()`. Chaque slot de l'objet `slots` est une **fonction qui retourne un tableau de vnodes** :
 
 ```js
 export default {
   props: ['message'],
   setup(props, { slots }) {
     return () => [
-      // default slot:
+      // slot par défaut :
       // <div><slot /></div>
       h('div', slots.default()),
 
-      // named slot:
+      // slot nommé :
       // <div><slot name="footer" :text="message" /></div>
       h(
         'div',
@@ -476,20 +476,20 @@ export default {
 }
 ```
 
-JSX equivalent:
+Équivalent en JSX:
 
 ```jsx
-// default
+// par défaut
 <div>{slots.default()}</div>
 
-// named
+// nommé
 <div>{slots.footer({ text: props.message })}</div>
 ```
 
 </div>
 <div class="options-api">
 
-In render functions, slots can be accessed from [`this.$slots`](/api/component-instance.html#slots):
+Dans les fonctions de rendu, les slots sont accessibles via [`this.$slots`](/api/component-instance.html#slots) :
 
 ```js
 export default {
@@ -511,7 +511,7 @@ export default {
 }
 ```
 
-JSX equivalent:
+Équivalent en JSX :
 
 ```jsx
 // <div><slot /></div>
@@ -523,17 +523,17 @@ JSX equivalent:
 
 </div>
 
-### Passing Slots {#passing-slots}
+### Passer des slots {#passing-slots}
 
-Passing children to components works a bit differently from passing children to elements. Instead of an array, we need to pass either a slot function, or an object of slot functions. Slot functions can return anything a normal render function can return - which will always be normalized to arrays of vnodes when accessed in the child component.
+Passer des enfants à des composants et passer des enfants à des éléments ne fonctionnent pas de la même manière. Au lieu d'un tableau, nous devons passer soit une fonction slot, soit un objet de fonctions slot. Les fonctions slot peuvent retourner tout ce qu'une fonction de rendu normale peut renvoyer - ce qui est retourné sera toujours normalisé en tableaux de vnodes lors de leur appel dans le composant enfant.
 
 ```js
-// single default slot
+// simple slot par défaut
 h(MyComponent, () => 'hello')
 
-// named slots
-// notice the `null` is required to avoid
-// the slots object being treated as props
+// slots nommés
+// remarquez que `null` est requis afin d'éviter que
+// l'objet de slots soit traité comme une prop 
 h(MyComponent, null, {
   default: () => 'default slot',
   foo: () => h('div', 'foo'),
@@ -541,13 +541,13 @@ h(MyComponent, null, {
 })
 ```
 
-JSX equivalent:
+Équivalent en JSX :
 
 ```jsx
-// default
+// par défaut
 <MyComponent>{() => 'hello'}</MyComponent>
 
-// named
+// nommé
 <MyComponent>{{
   default: () => 'default slot',
   foo: () => <div>foo</div>,
@@ -555,11 +555,11 @@ JSX equivalent:
 }}</MyComponent>
 ```
 
-Passing slots as functions allows them to be invoked lazily by the child component. This leads to the slot's dependencies being tracked by the child instead of the parent, which results in more accurate and efficient updates.
+Passer des slots en tant que fonctions leur permet d'être invoqués à la volée par le composant enfant. Ainsi, les dépendances du slot sont traquées par l'enfant plutôt que par le parent, ce qui permet des mises à jour plus précises et plus efficaces.
 
-### Built-in Components {#built-in-components}
+### Composants natifs {#built-in-components}
 
-[Les composants natifs](/api/built-in-components.html) such as `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` and `<Suspense>` must be imported for use in render functions:
+[Les composants natifs](/api/built-in-components.html) tels que `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` et `<Suspense>` doivent être importés pour être utilisés dans les fonctions de rendu :
 
 <div class="composition-api">
 
@@ -590,7 +590,7 @@ export default {
 
 ### `v-model` {#v-model}
 
-The `v-model` directive is expanded to `modelValue` and `onUpdate:modelValue` props during template compilation—we will have to provide these props ourselves:
+La directive `v-model` est enrichie par les props `modelValue` et `onUpdate:modelValue` lors de la compilation du template - nous devons fournir ces props nous-mêmes :
 
 <div class="composition-api">
 
@@ -626,14 +626,14 @@ export default {
 
 </div>
 
-### Custom Directives {#custom-directives}
+### Directives personnalisées {#custom-directives}
 
-Custom directives can be applied to a vnode using [`withDirectives`](/api/render-function.html#withdirectives):
+Les directives personnalisées peuvent être appliquées à un vnode en utilisant [`withDirectives`](/api/render-function.html#withdirectives) :
 
 ```js
 import { h, withDirectives } from 'vue'
 
-// a custom directive
+// une directive personnalisée
 const pin = {
   mounted() { /* ... */ },
   updated() { /* ... */ }
@@ -645,7 +645,7 @@ const vnode = withDirectives(h('div'), [
 ])
 ```
 
-If the directive is registered by name and cannot be imported directly, it can be resolved using the [`resolveDirective`](/api/render-function.html#resolvedirective) helper.
+Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function.html#resolvedirective).
 
 ## Functional Components {#functional-components}
 
