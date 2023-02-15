@@ -1,14 +1,14 @@
-# Utility Types {#utility-types}
+# Types utilitaires {#utility-types}
 
 :::info
-This page only lists a few commonly used utility types that may need explanation for their usage. For a full list of exported types, consult the [source code](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
+Cette page ne liste que quelques types d'utilitaires couramment utilisés et dont l'utilisation peut nécessiter une explication. Pour une liste complète des types exportés, consultez le [code source](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
 :::
 
 ## PropType\<T> {#proptype-t}
 
-Used to annotate a prop with more advanced types when using runtime props declarations.
+Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisation de déclarations de props à l'exécution.
 
-- **Example**
+- **Exemple :**
 
   ```ts
   import type { PropType } from 'vue'
@@ -22,7 +22,7 @@ Used to annotate a prop with more advanced types when using runtime props declar
   export default {
     props: {
       book: {
-        // provide more specific type to `Object`
+        // fournit un type plus spécifique à `Object`.
         type: Object as PropType<Book>,
         required: true
       }
@@ -30,13 +30,13 @@ Used to annotate a prop with more advanced types when using runtime props declar
   }
   ```
 
-- **See also:** [Guide - Typing Component Props](/guide/typescript/options-api.html#typing-component-props)
+- **Voir aussi :** [Guide - Typer les props des composants](/guide/typescript/options-api.html#typing-component-props)
 
 ## ComponentCustomProperties {#componentcustomproperties}
 
-Used to augment the component instance type to support custom global properties.
+Utilisé pour augmenter le type de l'instance du composant afin de prendre en charge les propriétés globales personnalisées.
 
-- **Example**
+- **Exemple :**
 
   ```ts
   import axios from 'axios'
@@ -50,16 +50,16 @@ Used to augment the component instance type to support custom global properties.
   ```
 
   :::tip
-  Augmentations must be placed in a module `.ts` or `.d.ts` file. See [Type Augmentation Placement](/guide/typescript/options-api.html#augmenting-global-properties) for more details.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
   :::
 
-- **See also:** [Guide - Augmenting Global Properties](/guide/typescript/options-api.html#augmenting-global-properties)
+- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api.html#augmenting-global-properties)
 
 ## ComponentCustomOptions {#componentcustomoptions}
 
-Used to augment the component options type to support custom options.
+Utilisé pour augmenter le type des options du composant afin de prendre en charge les options personnalisées.
 
-- **Example**
+- **Exemple :**
 
   ```ts
   import { Route } from 'vue-router'
@@ -72,16 +72,16 @@ Used to augment the component options type to support custom options.
   ```
 
   :::tip
-  Augmentations must be placed in a module `.ts` or `.d.ts` file. See [Type Augmentation Placement](/guide/typescript/options-api.html#augmenting-global-properties) for more details.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
   :::
 
-- **See also:** [Guide - Augmenting Custom Options](/guide/typescript/options-api.html#augmenting-custom-options)
+- **Voir aussi :** [Guide - Augmenter les options personnalisées](/guide/typescript/options-api.html#augmenting-custom-options)
 
 ## ComponentCustomProps {#componentcustomprops}
 
-Used to augment allowed TSX props in order to use non-declared props on TSX elements.
+Utilisé pour augmenter les props TSX autorisées afin d'utiliser des props non déclarées sur des éléments TSX.
 
-- **Example**
+- **Exemple :**
 
   ```ts
   declare module 'vue' {
@@ -94,21 +94,21 @@ Used to augment allowed TSX props in order to use non-declared props on TSX elem
   ```
 
   ```tsx
-  // now works even if hello is not a declared prop
+  // fonctionne maintenant même si hello n'est pas une prop déclarée
   <MyComponent hello="world" />
   ```
 
   :::tip
-  Augmentations must be placed in a module `.ts` or `.d.ts` file. See [Type Augmentation Placement](/guide/typescript/options-api.html#augmenting-global-properties) for more details.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
   :::
 
 ## CSSProperties {#cssproperties}
 
-Used to augment allowed values in style property bindings.
+Utilisé pour augmenter les valeurs autorisées dans les liaisons de propriétés de style.
 
-- **Example**
+- **Exemple :**
 
-  Allow any custom CSS property
+  Permet l'utilisation de n'importe quelle propriété CSS personnalisée
 
   ```ts
   declare module 'vue' {
@@ -126,11 +126,11 @@ Used to augment allowed values in style property bindings.
   ```
 
  :::tip
-  Augmentations must be placed in a module `.ts` or `.d.ts` file. See [Type Augmentation Placement](/guide/typescript/options-api.html#augmenting-global-properties) for more details.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
   :::
   
-  :::info See also
-SFC `<style>` tags support linking CSS values to dynamic component state using the `v-bind` CSS function. This allows for custom properties without type augmentation. 
+  :::info Voir aussi
+Les balises `<style>` des composants monofichiers permettent de lier les valeurs CSS à l'état dynamique des composants via la fonction CSS `v-bind`. Cela permet d'obtenir des propriétés personnalisées sans augmentation de type.
 
-- [v-bind() in CSS](/api/sfc-css-features.html#v-bind-in-css)
+- [v-bind() dans du CSS](/api/sfc-css-features.html#v-bind-in-css)
   :::

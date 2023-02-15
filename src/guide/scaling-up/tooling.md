@@ -53,7 +53,7 @@ Si vous recherchez une alternative plus légère pour une utilisation sans étap
 
 ## Support des environnements de développement {#ide-support}
 
-- La configuration IDE recommandée est [VSCode](https://code.visualstudio.com/) + l'extension [Volar](https://github.com/johnsoncodehk/volar). Volar fournit la coloration syntaxique, la prise en charge de TypeScript et l'intellisense pour les expressions des templates et les props des composants.
+- La configuration IDE recommandée est [VSCode](https://code.visualstudio.com/) + l'extension [Vue Language Features (Volar)](https://github.com/johnsoncodehk/volar). L'extension fournit la coloration syntaxique, la prise en charge de TypeScript et l'intellisense pour les expressions des templates et les props des composants.
 
   :::tip
   Volar remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension officielle VSCode pour Vue 2. Si vous avez Vetur actuellement installé, assurez-vous de le désactiver dans les projets Vue 3.

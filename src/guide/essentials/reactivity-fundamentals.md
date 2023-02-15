@@ -451,7 +451,7 @@ function increment() {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgY291bnQgPSByZWYoMClcblxuZnVuY3Rpb24gaW5jcmVtZW50KCkge1xuICBjb3VudC52YWx1ZSsrXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPnt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
-Notez que le déballage ne s'applique que si la référence est une propriété de premier niveau dans le contexte du rendu du template. Par exemple, `foo` est une propriété de premier niveau, mais `object.foo` ne l'est pas.
+Notez que le déballage ne s'applique que si la référence est une propriété de premier niveau dans le contexte du rendu du template. Par exemple, `object` est une propriété de premier niveau, mais `object.foo` ne l'est pas.
 
 Ainsi, étant donné l'objet suivant :
 
@@ -465,7 +465,7 @@ L'expression suivante ne fonctionnera **PAS** comme prévu :
 {{ object.foo + 1 }}
 ```
 
-Le résultat rendu sera `[object Object]` car `object.foo` est un objet ref. Nous pouvons corriger cela en faisant de `foo` une propriété de premier niveau :
+Le résultat rendu sera `[object Object]1` car `object.foo` est un objet ref. Nous pouvons corriger cela en faisant de `foo` une propriété de premier niveau :
 
 ```js
 const { foo } = object

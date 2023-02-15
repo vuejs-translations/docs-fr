@@ -282,7 +282,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/best-practices/accessibility'
         },
         {
-          text: 'Security',
+          text: 'Sécurité',
           link: '/guide/best-practices/security'
         }
       ]
@@ -389,13 +389,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Options API',
       items: [
         { text: 'Options: State', link: '/api/options-state' },
-        { text: 'Options: Rendering', link: '/api/options-rendering' },
+        { text: 'Options : Rendu', link: '/api/options-rendering' },
         {
           text: 'Options: Lifecycle',
           link: '/api/options-lifecycle'
         },
         {
-          text: 'Options: Composition',
+          text: 'Options : Composition',
           link: '/api/options-composition'
         },
         { text: 'Options: Misc', link: '/api/options-misc' },
@@ -423,9 +423,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Composant monofichiers',
       items: [
-        { text: 'Syntax Specification', link: '/api/sfc-spec' },
+        { text: 'Spécifications liées à la syntaxe', link: '/api/sfc-spec' },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
-        { text: 'CSS Features', link: '/api/sfc-css-features' }
+        { text: 'Fonctionnalités CSS', link: '/api/sfc-css-features' }
       ]
     },
     {
@@ -433,7 +433,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Render Function', link: '/api/render-function' },
         { text: 'Server-Side Rendering', link: '/api/ssr' },
-        { text: 'TypeScript Utility Types', link: '/api/utility-types' },
+        { text: 'Types utilitaires TypeScript', link: '/api/utility-types' },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
       ]
     }
