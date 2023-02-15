@@ -2,17 +2,17 @@
 outline: deep
 ---
 
-# Render Functions & JSX {#render-functions-jsx}
+# Fonctions de rendu et JSX {#render-functions-jsx}
 
-Vue recommends using templates to build applications in the vast majority of cases. However, there are situations where we need the full programmatic power of JavaScript. That's where we can use the **render function**.
+Vue recommande d'utiliser des templates pour construire des applications dans la plupart des cas. Cependant, il existe des situations où nous avons besoin de toute la puissance programmatique de JavaScript. C'est alors que nous pouvons utiliser la fonction **render**.
 
-> If you are new to the concept of virtual DOM and render functions, make sure to read the [Rendering Mechanism](/guide/extras/rendering-mechanism.html) chapter first.
+> Si les concepts de DOM virtuel et de fonctions de rendu vous sont inconnus, lisez d'abord le chapitre [Mécanismes de rendu](/guide/extras/rendering-mechanism.html).
 
-## Basic Usage {#basic-usage}
+## Utilisation basique {#basic-usage}
 
-### Creating Vnodes {#creating-vnodes}
+### Créer des Vnodes {#creating-vnodes}
 
-Vue provides an `h()` function for creating vnodes:
+Vue fournit une fonction `h()` afin de créer des vnodes :
 
 ```js
 import { h } from 'vue'
@@ -21,47 +21,47 @@ const vnode = h(
   'div', // type
   { id: 'foo', class: 'bar' }, // props
   [
-    /* children */
+    /* enfants */
   ]
 )
 ```
 
-`h()` is short for **hyperscript** - which means "JavaScript that produces HTML (hypertext markup language)". This name is inherited from conventions shared by many virtual DOM implementations. A more descriptive name could be `createVnode()`, but a shorter name helps when you have to call this function many times in a render function.
+`h()` est l'abréviation de **hyperscript** - ce qui signifie "JavaScript produisant du HTML (langage de balises pour l'hypertexte)". Ce nom est hérité de conventions partagées par de nombreuses implémentations du DOM virtuel. Un nom plus descriptif serait `createVnode()`, mais un nom plus court aide lorsque vous devez appeler cette fonction plusieurs fois dans une fonction de rendu.
 
-The `h()` function is designed to be very flexible:
+La fonction `h()` est conçue pour être très flexible :
 
 ```js
-// all arguments except the type are optional
+// tous les arguments, sauf le type, sont facultatifs
 h('div')
 h('div', { id: 'foo' })
 
-// both attributes and properties can be used in props
-// Vue automatically picks the right way to assign it
+// les attributs et les propriétés peuvent être utilisés dans les props
+// Vue choisit automatiquement la bonne façon de les assigner
 h('div', { class: 'bar', innerHTML: 'hello' })
 
-// props modifiers such as .prop and .attr can be added
-// with '.' and `^' prefixes respectively
+// des modificateurs de props tels que .prop et .attr peuvent être ajoutés
+// via les préfixes '.' et `^' respectivement
 h('div', { '.name': 'some-name', '^width': '100' })
 
-// class and style have the same object / array
-// value support that they have in templates
+// la classe et le style ont la même prise en charge pour la valeur d'objet / tableau
+// qu'ils ont dans les modèles
 h('div', { class: [foo, { bar }], style: { color: 'red' } })
 
-// event listeners should be passed as onXxx
+// les écouteurs d'événements doivent être passés suivant le modèle onXxx
 h('div', { onClick: () => {} })
 
-// children can be a string
+// les enfants peuvent être une chaîne de caractères
 h('div', { id: 'foo' }, 'hello')
 
-// props can be omitted when there are no props
+// les props peuvent être omises lorsqu'il n'y en a pas
 h('div', 'hello')
 h('div', [h('span', 'hello')])
 
-// children array can contain mixed vnodes and strings
+// le tableau représentant les enfants peut contenir un mélange de vnodes et de chaînes de caractères.
 h('div', ['hello', h('span', 'hello')])
 ```
 
-The resulting vnode has the following shape:
+Le vnode résultant a la forme suivante :
 
 ```js
 const vnode = h('div', { id: 'foo' }, [])
@@ -72,11 +72,11 @@ vnode.children // []
 vnode.key // null
 ```
 
-:::warning Note
-The full `VNode` interface contains many other internal properties, but it is strongly recommended to avoid relying on any properties other than the ones listed here. This avoids unintended breakage in case the internal properties are changed.
+:::warning Remarque
+L'interface complète `VNode` contient de nombreuses autres propriétés internes, mais il est fortement recommandé d'éviter de s'appuyer sur d'autres propriétés que celles listées ici. Cela permet d'éviter les ruptures involontaires en cas de modification des propriétés internes.
 :::
 
-### Declaring Render Functions {#declaring-render-functions}
+### Déclarer des fonctions de rendu {#declaring-render-functions}
 
 <div class="composition-api">
 
