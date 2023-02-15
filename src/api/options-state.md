@@ -85,7 +85,7 @@ Déclare les props d'un composant.
 
   Avec la syntaxe basée sur les objets, chaque prop peut ensuite définir les options suivantes :
 
-  - **`type`** : Peut être l'un des constructeurs natifs suivants : `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction de constructeur personnalisée ou un tableau de ces dernières. En mode développement, Vue vérifiera si la valeur d'une prop correspond au type déclaré, et enverra un avertissement si ce n'est pas le cas. Voir la [validation de prop](/guide/components/props.html#prop-validation) pour plus de détails.
+  - **`type`** : Peut être l'un des constructeurs natifs suivants : `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction constructeur personnalisée ou un tableau de ces dernières. En mode développement, Vue vérifiera si la valeur d'une prop correspond au type déclaré, et enverra un avertissement si ce n'est pas le cas. Voir la [validation de prop](/guide/components/props.html#prop-validation) pour plus de détails.
 
     Notez également qu'une prop de type `Boolean` modifie le comportement de la conversion de sa valeur, tant en mode développement qu'en production. Voir la [conversion en booléen](/guide/components/props.html#boolean-casting) pour plus de détails.
 
@@ -294,7 +294,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
   La valeur peut également être une chaîne de caractères d'un nom de méthode (déclarée via `methods`), ou un objet qui contient des options supplémentaires. Lorsque vous utilisez la syntaxe objet, la fonction de rappel doit être déclarée via le champ `handler`. Les options supplémentaires incluent :
 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`** : force l'avancée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
+  - **`deep`** : force la traversée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
   - **`flush`** : ajuste le timing du nettoyage de la fonction de rappel. Voir [Timing de nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
