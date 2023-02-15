@@ -206,7 +206,7 @@ Enregistre un hook qui sera appelé lorsqu'une erreur venant d'un composant desc
 
   Ce hook reçoit trois arguments : l'erreur, l'instance du composant qui a déclenché l'erreur, et une information sous forme de chaînes de caractères spécifiant le type de source de l'erreur.
 
-  Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important que l'état d'erreur ne rende pas le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
+  Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important de ne pas rendre le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
 
   Le hook peut retourner `false` pour empêcher la propagation de l'erreur. Consultez les détails sur la propagation des erreurs ci-dessous.
 
@@ -309,7 +309,7 @@ Enregistre une fonction asynchrone à résoudre avant que l'instance du composan
 
 - **Détails :**
 
-  ISi la fonction de rappel renvoie une promesse, le moteur de rendu du serveur attendra qu'elle soit résolue avant de rendre le composant.
+  Si la fonction de rappel renvoie une promesse, le moteur de rendu du serveur attendra qu'elle soit résolue avant de rendre le composant.
 
   Ce hook n'est appelé que pendant le rendu côté serveur et peut être utilisé pour effectuer une récupération de données sur le serveur uniquement.
 
