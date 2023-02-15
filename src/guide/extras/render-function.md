@@ -10,7 +10,7 @@ Vue recommande d'utiliser des templates pour construire des applications dans la
 
 ## Utilisation basique {#basic-usage}
 
-### Créer des Vnodes {#creating-vnodes}
+### Créer des vnodes {#creating-vnodes}
 
 Vue fournit une fonction `h()` afin de créer des vnodes :
 
@@ -80,7 +80,7 @@ L'interface complète `VNode` contient de nombreuses autres propriétés interne
 
 <div class="composition-api">
 
-When using templates with Composition API, the return value of the `setup()` hook is used to expose data to the template. When using render functions, however, we can directly return the render function instead:
+Lorsque vous utilisez des templates avec la Composition API, la valeur retournée par le hook `setup()` est utilisée pour exposer les données au template. Cependant, lors de l'utilisation de fonctions de rendu, nous pouvons retourner directement la fonction de rendu à la place :
 
 ```js
 import { ref, h } from 'vue'
@@ -92,15 +92,15 @@ export default {
   setup(props) {
     const count = ref(1)
 
-    // return the render function
+    // retourne la fonction de rendu
     return () => h('div', props.msg + count.value)
   }
 }
 ```
 
-The render function is declared inside `setup()` so it naturally has access to the props and any reactive state declared in the same scope.
+La fonction de rendu est déclarée à l'intérieur de `setup()`, elle a donc naturellement accès aux props et à tout état réactif déclaré dans la même portée.
 
-In addition to returning a single vnode, you can also return strings or arrays:
+En plus de retourner un seul vnode, vous pouvez également retourner des chaînes de caractères ou des tableaux :
 
 ```js
 export default {
@@ -115,7 +115,7 @@ import { h } from 'vue'
 
 export default {
   setup() {
-    // use an array to return multiple root nodes
+    // utiliser un tableau pour retourner plusieurs nœuds racines
     return () => [
       h('div'),
       h('div'),
@@ -126,13 +126,13 @@ export default {
 ```
 
 :::tip
-Make sure to return a function instead of directly returning values! The `setup()` function is called only once per component, while the returned render function will be called multiple times.
+Assurez-vous de retourner une fonction au lieu de retourner directement des valeurs ! La fonction `setup()` n'est appelée qu'une seule fois par composant, alors que la fonction de rendu retournée sera appelée plusieurs fois.
 :::
 
 </div>
 <div class="options-api">
 
-We can declare render functions using the `render` option:
+Nous pouvons déclarer des fonctions de rendu en utilisant l'option `render` :
 
 ```js
 import { h } from 'vue'
@@ -149,9 +149,9 @@ export default {
 }
 ```
 
-The `render()` function has access to the component instance via `this`.
+La fonction `render()` a accès à l'instance du composant via `this`.
 
-In addition to returning a single vnode, you can also return strings or arrays:
+En plus de retourner un seul vnode, vous pouvez également retourner des chaînes de caractères ou des tableaux :
 
 ```js
 export default {
@@ -166,7 +166,7 @@ import { h } from 'vue'
 
 export default {
   render() {
-    // use an array to return multiple root nodes
+    // utiliser un tableau pour retourner plusieurs nœuds racines
     return [
       h('div'),
       h('div'),
@@ -178,7 +178,7 @@ export default {
 
 </div>
 
-If a render function component doesn't need any instance state, they can also be declared directly as a function for brevity:
+Si un composant d'une fonction de rendu n'a pas besoin d'état d'instance, il peut également être déclaré directement comme une fonction pour des raisons de simplicité :
 
 ```js
 function Hello() {
@@ -186,24 +186,24 @@ function Hello() {
 }
 ```
 
-That's right, this is a valid Vue component! See [Functional Components](#functional-components) for more details on this syntax.
+C'est exact, c'est un composant Vue valide ! Voir [les composants fonctionnels](#functional-components) pour plus de détails sur cette syntaxe.
 
-### Vnodes Must Be Unique {#vnodes-must-be-unique}
+### Les vnodes doivent être uniques {#vnodes-must-be-unique}
 
-All vnodes in the component tree must be unique. That means the following render function is invalid:
+Tous les vnodes présents dans l'arbre des composants doivent être uniques. Cela signifie que la fonction de rendu suivante n'est pas valide :
 
 ```js
 function render() {
   const p = h('p', 'hi')
   return h('div', [
-    // Yikes - duplicate vnodes!
+    // Oups - duplication de vnodes!
     p,
     p
   ])
 }
 ```
 
-If you really want to duplicate the same element/component many times, you can do so with a factory function. For example, the following render function is a perfectly valid way of rendering 20 identical paragraphs:
+Si vous voulez vraiment dupliquer le même élément/composant, vous pouvez le faire via une fonction _factory_. Par exemple, la fonction de rendu suivante est un moyen parfaitement valable de rendre 20 paragraphes identiques :
 
 ```js
 function render() {
