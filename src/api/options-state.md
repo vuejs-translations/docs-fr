@@ -81,7 +81,7 @@ Déclare les props d'un composant.
   Dans Vue, toutes les props d'un composant doivent être déclarées de manière explicite. Les props peuvent être déclarées de deux manières :
 
   - Forme simple utilisant un tableau de chaînes de caractères
-  - Forme complète utilisant un objet où chaque clé d'une propriété représente le nom de la prop, et la valeur représente son type (une fonction de constructeur) ou des options avancées.
+  - Forme complète utilisant un objet où chaque clé d'une propriété représente le nom de la prop, et la valeur représente son type (une fonction constructeur) ou des options avancées.
 
   Avec la syntaxe basée sur les objets, chaque prop peut ensuite définir les options suivantes :
 
