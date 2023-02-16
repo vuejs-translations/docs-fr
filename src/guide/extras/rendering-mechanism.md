@@ -58,7 +58,7 @@ So why does Vue recommend templates by default? There are a number of reasons:
 
 2. Templates are easier to statically analyze due to their more deterministic syntax. This allows Vue's template compiler to apply many compile-time optimizations to improve the performance of the virtual DOM (which we will discuss below).
 
-In practice, templates are sufficient for most use cases in applications. Render functions are typically only used in reusable components that need to deal with highly dynamic rendering logic. Render function usage is discussed in more detail in [Render Functions & JSX](./render-function).
+In practice, templates are sufficient for most use cases in applications. Render functions are typically only used in reusable components that need to deal with highly dynamic rendering logic. Render function usage is discussed in more detail in [Fonctions de rendu et JSX](./render-function).
 
 ## Compiler-Informed Virtual DOM {#compiler-informed-virtual-dom}
 
