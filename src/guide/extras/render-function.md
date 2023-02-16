@@ -44,10 +44,10 @@ h('div', { class: 'bar', innerHTML: 'hello' })
 h('div', { '.name': 'some-name', '^width': '100' })
 
 // la classe et le style ont la même prise en charge pour la valeur d'objet / tableau
-// qu'ils ont dans les modèles
+// qu'ils ont dans les templates
 h('div', { class: [foo, { bar }], style: { color: 'red' } })
 
-// les écouteurs d'événements doivent être passés suivant le modèle onXxx
+// les écouteurs d'événements doivent être passés suivant le format onXxx
 h('div', { onClick: () => {} })
 
 // les enfants peuvent être une chaîne de caractères
@@ -237,11 +237,11 @@ Bien qu'il ait été introduit par React, le JSX n'a pas de sémantique d'exécu
 - Vous pouvez utiliser des attributs HTML tels que `class` et `for` comme props - il n'est pas nécessaire d'utiliser `className` ou `htmlFor`.
 - Passer des enfants à des composants (c'est-à-dire des slots) [fonctionne différemment](#passing-slots).
 
-La définition de type de Vue fournit également une inférence de type pour l'utilisation de TSX. Lorsque vous utilisez TSX, assurez-vous de spécifier `"jsx" : "preserve"` dans `tsconfig.json` afin que TypeScript laisse la syntaxe du JSX intacte afin que la transformation du JSX par Vue puisse fonctionner correctement.
+La définition de type de Vue fournit également une inférence de type pour l'utilisation de TSX. Lorsque vous utilisez TSX, assurez-vous de spécifier `"jsx": "preserve"` dans `tsconfig.json` afin que TypeScript laisse la syntaxe du JSX intacte pour le bon fonctionnement de la transformation du JSX par Vue.
 
-## Modèles de fonctions de rendu {#render-function-recipes}
+## Exemples de fonctions de rendu {#render-function-recipes}
 
-Nous vous proposons ci-dessous quelques modèles courants pour mettre en œuvre les fonctionnalités des templates via leur équivalent en fonctions de rendu / JSX.
+Nous vous proposons ci-dessous quelques exemples courants pour mettre en œuvre les fonctionnalités des templates via leur équivalent en fonctions de rendu / JSX.
 
 ### `v-if` {#v-if}
 
@@ -649,7 +649,7 @@ Si la directive est enregistrée par son nom et ne peut être importée directem
 
 ## Composants fonctionnels {#functional-components}
 
-Les composants fonctionnels sont une autre forme de composants qui n'ont pas d'état propre. Ils agissent comme de pures fonctions : props in, vnodes out. Ils sont rendus sans créer d'instance de composant (c'est-à-dire sans `this`), et sans les hooks habituels du cycle de vie des composants.
+Les composants fonctionnels sont une autre forme de composants qui n'ont pas d'état propre. Ils agissent comme de pures fonctions : props en entrée, vnodes en sortie. Ils sont rendus sans créer d'instance de composant (c'est-à-dire sans `this`), et sans les hooks habituels du cycle de vie des composants.
 
 Pour créer un composant fonctionnel, nous utilisons une simple fonction, plutôt qu'un objet d'options. La fonction est effectivement la fonction `render` du composant.
 
