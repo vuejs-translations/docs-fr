@@ -12,7 +12,7 @@ Vue recommande d'utiliser des templates pour construire des applications dans la
 
 ### Créer des vnodes {#creating-vnodes}
 
-Vue fournit une fonction `h()` afin de créer des vnodes :
+Vue fournit une fonction `h()` afin de créer des nœuds virtuels, également appelés vnodes :
 
 ```js
 import { h } from 'vue'
