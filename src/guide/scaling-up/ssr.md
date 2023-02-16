@@ -84,7 +84,7 @@ Cela devrait retourner :
 <button>1</button>
 ```
 
-La fonction [`renderToString()`](/api/ssr.html#rendertostring) rend une application Vue en HTML et renvoie une Promise avec le rendu. Il peut également être rendu en continu avec l'API de stream [Node.js Stream API](https://nodejs.org/api/stream.html) ou [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Voir la [SSR API Reference](/api/ssr.html) pour plus d'informations.
+La fonction [`renderToString()`](/api/ssr.html#rendertostring) rend une application Vue en HTML et renvoie une Promise avec le rendu. Il peut également être rendu en continu avec l'API de stream [Node.js Stream API](https://nodejs.org/api/stream.html) ou [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Voir la [référence de l'API SSR](/api/ssr.html) pour plus d'informations.
 
 Nous utilisons [`express`](https://expressjs.com/) pour inclure le code Vue SSR dans une page HTML complète sur le serveur :
 
