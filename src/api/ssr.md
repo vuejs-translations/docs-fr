@@ -47,7 +47,7 @@
 
 ## renderToNodeStream() {#rendertonodestream}
 
-Effectue le rendu de l'entrée comme un [stream lisible Node.js](https://nodejs.org/api/stream.html#stream_class_stream_readable).
+Effectue le rendu de l'entrée comme un [_Readable Stream_ de Node.js](https://nodejs.org/api/stream.html#stream_class_stream_readable).
 
 - **Exporté depuis `vue/server-renderer`**
 
@@ -73,7 +73,7 @@ Effectue le rendu de l'entrée comme un [stream lisible Node.js](https://nodejs.
 
 ## pipeToNodeWritable() {#pipetonodewritable}
 
-Effectue le rendu et le transfert vers une instance existante d'un [stream modifiable Node.js](https://nodejs.org/api/stream.html#stream_writable_streams).
+Effectue le rendu et le transfert vers une instance existante d'un [_Writable Stream_ de Node.js](https://nodejs.org/api/stream.html#stream_writable_streams).
 
 - **Exporté depuis `vue/server-renderer`**
 
@@ -96,7 +96,7 @@ Effectue le rendu et le transfert vers une instance existante d'un [stream modif
 
 ## renderToWebStream() {#rendertowebstream}
 
-Effectue le rendu de l'entrée sous forme de [stream web lisible](https://developer.mozilla.org/fr/docs/Web/API/Streams_API).
+Effectue le rendu de l'entrée sous forme d'un [_Readable Stream_ web](https://developer.mozilla.org/fr/docs/Web/API/Streams_API).
 
 - **Exporté depuis `vue/server-renderer`**
 
@@ -112,7 +112,7 @@ Effectue le rendu de l'entrée sous forme de [stream web lisible](https://develo
 - **Exemple :**
 
   ```js
-  // dans un environnement prenant en charge ReadableStream
+  // dans un environnement prenant en charge _ReadableStream_
   return new Response(renderToWebStream(app))
   ```
 
@@ -122,7 +122,7 @@ Effectue le rendu de l'entrée sous forme de [stream web lisible](https://develo
 
 ## pipeToWebWritable() {#pipetowebwritable}
 
-Effectue le rendu et la transmission à une instance existante d'un [stream modifiable web](https://developer.mozilla.org/fr/docs/Web/API/WritableStream).
+Effectue le rendu et le transfert à une instance existante d'un [_Writable Stream_ web](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream).
 
 - **Exporté depuis `vue/server-renderer`**
 
@@ -181,7 +181,7 @@ Effectue le rendu de l'entrée en mode streaming en utilisant une simple interfa
     {
       push(chunk) {
         if (chunk === null) {
-          // fait
+          // terminé
           console(`render complete: ${res}`)
         } else {
           res += chunk
@@ -216,7 +216,7 @@ Une API d'exécution utilisée pour récupérer l'objet de contexte transmis à 
   // https://vitejs.dev/guide/ssr.html#conditional-logic
   if (import.meta.env.SSR) {
     const ctx = useSSRContext()
-    // ...joint des propriétés au contexte
+    // ...attache des propriétés au contexte
   }
   </script>
   ```
