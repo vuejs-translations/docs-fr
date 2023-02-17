@@ -432,7 +432,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Advanced APIs',
       items: [
         { text: 'Render Function', link: '/api/render-function' },
-        { text: 'Server-Side Rendering', link: '/api/ssr' },
+        { text: 'Rendu côté serveur', link: '/api/ssr' },
         { text: 'Types utilitaires TypeScript', link: '/api/utility-types' },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
       ]
