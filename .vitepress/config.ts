@@ -368,7 +368,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-core'
         },
         {
-          text: 'Reactivity: Utilities',
+          text: 'Réactivité : Utilitaires',
           link: '/api/reactivity-utilities'
         },
         {
