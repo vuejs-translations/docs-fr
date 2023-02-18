@@ -14,7 +14,7 @@ This FAQ assumes prior experience with Vue - in particular, experience with Vue 
 
 Composition API is a set of APIs that allows us to author Vue components using imported functions instead of declaring options. It is an umbrella term that covers the following APIs:
 
-- [Reactivity API](/api/reactivity-core.html), e.g. `ref()` and `reactive()`, that allows us to directly create reactive state, computed state, and watchers.
+- [API de réactivité](/api/reactivity-core.html), e.g. `ref()` and `reactive()`, that allows us to directly create reactive state, computed state, and watchers.
 
 - [Les hooks du cycle de vie ](/api/composition-api-lifecycle.html), e.g. `onMounted()` and `onUnmounted()`, that allow us to programmatically hook into the component lifecycle.
 
