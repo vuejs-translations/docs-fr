@@ -97,7 +97,7 @@ Créé des nœuds virtuels du DOM (vnodes).
 
 ## mergeProps() {#mergeprops}
 
-Fusionne plusieurs objets de props avec un traitement spécial pour certaines props.
+Fusionne plusieurs objets de props avec une gestions spéciale pour certaines props.
 
 - **Type :**
 
@@ -105,17 +105,17 @@ Fusionne plusieurs objets de props avec un traitement spécial pour certaines pr
   function mergeProps(...args: object[]): object
   ```
 
-- **Details**
+- **Détails :**
 
-  `mergeProps()` supports merging multiple props objects with special handling for the following props:
+  `mergeProps()` permet de fusionner plusieurs objets de props avec une gestion spéciale pour les props suivantes :
 
   - `class`
   - `style`
-  - `onXxx` event listeners - multiple listeners with the same name will be merged into an array.
+  - Écouteurs d'événements `onXxx` - plusieurs écouteurs avec le même nom seront fusionnés dans un tableau.
 
-  If you do not need the merge behavior and want simple overwrites, native object spread can be used instead.
+  Si vous n'avez pas besoin de la fusion et que vous voulez simplement écraser, la propagation d'objet natif peut être utilisée à la place.
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { mergeProps } from 'vue'
@@ -141,23 +141,23 @@ Fusionne plusieurs objets de props avec un traitement spécial pour certaines pr
 
 ## cloneVNode() {#clonevnode}
 
-Clones a vnode.
+Clone un vnode.
 
-- **Type**
+- **Type :**
 
   ```ts
   function cloneVNode(vnode: VNode, extraProps?: object): VNode
   ```
 
-- **Details**
+- **Détails :**
 
-  Returns a cloned vnode, optionally with extra props to merge with the original.
+  Renvoie un vnode cloné, avec éventuellement des props supplémentaires à fusionner avec l'original.
 
-  Vnodes should be considered immutable once created, and you should not mutate the props of an existing vnode. Instead, clone it with different / extra props.
+  Les vnodes doivent être considérés comme immuables une fois créés, et vous ne devez pas modifier les propriétés d'un vnode existant. Au lieu de cela, clonez-le avec des props différentes / supplémentaires.
 
-  Vnodes have special internal properties, so cloning them is not as simple as an object spread. `cloneVNode()` handles most of the internal logic.
+  Les vnodes ont des propriétés internes spéciales, donc les cloner n'est pas aussi simple qu'une propagation d'objet. `cloneVNode()` gère la plupart de la logique interne.
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { h, cloneVNode } from 'vue'
@@ -168,9 +168,9 @@ Clones a vnode.
 
 ## isVNode() {#isvnode}
 
-Checks if a value is a vnode.
+Vérifie si une valeur est un vnode ou non.
 
-- **Type**
+- **Type :**
 
   ```ts
   function isVNode(value: unknown): boolean
@@ -178,23 +178,23 @@ Checks if a value is a vnode.
 
 ## resolveComponent() {#resolvecomponent}
 
-For manually resolving a registered component by name.
+Utilisée pour résoudre manuellement un composant enregistré via son nom.
 
-- **Type**
+- **Type :**
 
   ```ts
   function resolveComponent(name: string): Component | string
   ```
 
-- **Details**
+- **Détails :**
 
-  **Note: you do not need this if you can import the component directly.**
+  **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
 
-  `resolveComponent()` must be called inside<span class="composition-api"> either `setup()` or</span> the render function in order to resolve from the correct component context.
+  `resolveComponent()` doit être appelée à l'intérieur<span class="composition-api">de `setup()` ou</span> de la fonction de rendu afin de résoudre à partir du bon contexte de composant.
 
-  If the component is not found, a runtime warning will be emitted, and the name string is returned.
+  Si le composant n'est pas trouvé, un avertissement exécution est émis lors de l'exécution et le est retourné sous forme de chaîne de caractères. 
 
-- **Example**
+- **Exemple :**
 
   <div class="composition-api">
 
@@ -228,33 +228,33 @@ For manually resolving a registered component by name.
 
   </div>
 
-- **See also:** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function.html#components)
+- **Voir aussi :** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function.html#components)
 
 ## resolveDirective() {#resolvedirective}
 
-For manually resolving a registered directive by name.
+Utilisée pour résoudre manuellement une directive enregistrée via son nom.
 
-- **Type**
+- **Type :**
 
   ```ts
   function resolveDirective(name: string): Directive | undefined
   ```
 
-- **Details**
+- **D2tails :**
 
-  **Note: you do not need this if you can import the component directly.**
+  **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
 
-  `resolveDirective()` must be called inside<span class="composition-api"> either `setup()` or</span> the render function in order to resolve from the correct component context.
+  `resolveDirective()` doit être appelée à l'intérieur de<span class="composition-api">la fonction `setup()` ou</span> la fonction de rendu afin de résoudre à partir du bon contexte de composant.
 
-  If the directive is not found, a runtime warning will be emitted, and the function returns `undefined`.
+  Si la directive n'est pas trouvée, un avertissement sera émis lors de l'exécution et la fonction retournera `undefined`.
 
-- **See also:** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
+- **Voir aussi :** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
-For adding custom directives to vnodes.
+Utilisée pour ajouter des directives personnalisées aux vnodes.
 
-- **Type**
+- **Type :**
 
   ```ts
   function withDirectives(
@@ -262,7 +262,7 @@ For adding custom directives to vnodes.
     directives: DirectiveArguments
   ): VNode
 
-  // [Directive, value, argument, modifiers]
+  // [Directive, valeur, argument, modificateurs]
   type DirectiveArguments = Array<
     | [Directive]
     | [Directive, any]
@@ -271,16 +271,16 @@ For adding custom directives to vnodes.
   >
   ```
 
-- **Details**
+- **Détails :**
 
-  Wraps an existing vnode with custom directives. The second argument is an array of custom directives. Each custom directive is also represented as an array in the form of `[Directive, value, argument, modifiers]`. Tailing elements of the array can be omitted if not needed.
+  Enveloppe un vnode existant avec des directives personnalisées. Le second argument est un tableau de directives personnalisées. Chaque directive personnalisée est également représentée par un tableau sous la forme `[Directive, valeur, argument, modificateurs]`. Les éléments finaux du tableau peuvent être omis s'ils ne sont pas nécessaires.
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { h, withDirectives } from 'vue'
 
-  // a custom directive
+  // une directive personnalisée
   const pin = {
     mounted() {
       /* ... */
@@ -296,29 +296,29 @@ For adding custom directives to vnodes.
   ])
   ```
 
-- **See also:** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
+- **Voir aussi :** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
-For adding built-in [`v-on` modifiers](/guide/essentials/event-handling.html#event-modifiers) to an event handler function.
+Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event-handling.html#event-modifiers) à une fonction de gestion d'événements.
 
-- **Type**
+- **Type :**
 
   ```ts
   function withModifiers(fn: Function, modifiers: string[]): Function
   ```
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { h, withModifiers } from 'vue'
 
   const vnode = h('button', {
-    // equivalent of v-on.stop.prevent
+    // équivalent à v-on.stop.prevent
     onClick: withModifiers(() => {
       // ...
     }, ['stop', 'prevent'])
   })
   ```
 
-- **See also:** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function.html#event-modifiers)
+- **Voir aussi :** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function.html#event-modifiers)
