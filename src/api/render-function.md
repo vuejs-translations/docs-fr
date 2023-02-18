@@ -1,20 +1,20 @@
-# Render Function APIs {#render-function-apis}
+# API du rendu de fonction {#render-function-apis}
 
 ## h() {#h}
 
-Creates virtual DOM nodes (vnodes).
+Créé des nœuds virtuels du DOM (vnodes).
 
-- **Type**
+- **Type :**
 
   ```ts
-  // full signature
+  // signature complète
   function h(
     type: string | Component,
     props?: object | null,
     children?: Children | Slot | Slots
   ): VNode
 
-  // omitting props
+  // en omettant des props
   function h(type: string | Component, children?: Children | Slot): VNode
 
   type Children = string | number | boolean | VNode | null | Children[]
@@ -24,68 +24,68 @@ Creates virtual DOM nodes (vnodes).
   type Slots = { [name: string]: Slot }
   ```
 
-  > Types are simplified for readability.
+  > Le type est simplifié dans un souci de lisibilité.
 
-- **Details**
+- **Détails :**
 
-  The first argument can either be a string (for native elements) or a Vue component definition. The second argument is the props to be passed, and the third argument is the children.
+  Le premier argument peut être une chaîne de caractères (pour les éléments natifs) ou une définition de composant Vue. Le deuxième argument est la props à passer, et le troisième argument représente les enfants.
 
-  When creating a component vnode, the children must be passed as slot functions. A single slot function can be passed if the component expects only the default slot. Otherwise, the slots must be passed as an object of slot functions.
+  Lors de la création d'un vnode de composant, les enfants doivent être passés en tant que fonctions slot. Une seule fonction slot peut être transmise si le composant n'attend que le slot par défaut. Sinon, les slots doivent être passés comme un objet de fonctions slot.
 
-  For convenience, the props argument can be omitted when the children is not a slots object.
+  Pour des raisons pratiques, l'argument props peut être omis lorsque les enfants ne sont pas un objet slots.
 
-- **Example**
+- **Exemple :**
 
-  Creating native elements:
+  Création d'éléments natifs :
 
   ```js
   import { h } from 'vue'
 
-  // all arguments except the type are optional
+  // tous les arguments, à l'exception du type, sont optionnels
   h('div')
   h('div', { id: 'foo' })
 
-  // both attributes and properties can be used in props
-  // Vue automatically picks the right way to assign it
+  // les attributs ainsi que les propriétés peuvent être utilisées dans les props
+  // Vue choisit automatiquement la bonne façon de les assigner
   h('div', { class: 'bar', innerHTML: 'hello' })
 
-  // class and style have the same object / array
-  // value support like in templates
+  // pour les classes et les styles, les valeurs d'objet / tableau
+  // sont prises en charges, tout comme dans les templates
   h('div', { class: [foo, { bar }], style: { color: 'red' } })
 
-  // event listeners should be passed as onXxx
+  // les écouteurs d'événements doivent être passés suivant le format onXxx
   h('div', { onClick: () => {} })
 
-  // children can be a string
+  // les enfants peuvent être des chaînes de caractères
   h('div', { id: 'foo' }, 'hello')
 
-  // props can be omitted when there are no props
+  // on peut omettre les props lorsqu'il n'y en a pas
   h('div', 'hello')
   h('div', [h('span', 'hello')])
 
-  // children array can contain mixed vnodes and strings
+  // les tableaux d'enfants peuvent contenir à la fois des vnodes et des chaînes de caractères
   h('div', ['hello', h('span', 'hello')])
   ```
 
-  Creating components:
+  Création d'un composant :
 
   ```js
   import Foo from './Foo.vue'
 
-  // passing props
+  // passage de props
   h(Foo, {
-    // equivalent of some-prop="hello"
+    // équivalent à some-prop="hello"
     someProp: 'hello',
-    // equivalent of @update="() => {}"
+    // équivalent à @update="() => {}"
     onUpdate: () => {}
   })
 
-  // passing single default slot
+  // passage d'un unique slot par défaut
   h(Foo, () => 'default slot')
 
-  // passing named slots
-  // notice the `null` is required to avoid
-  // slots object being treated as props
+  // passage de slots nommés
+  // notez que `null` est nécessaire pour éviter
+  // à l'objet de slots d'être traité en tant que props
   h(MyComponent, null, {
     default: () => 'default slot',
     foo: () => h('div', 'foo'),
@@ -93,13 +93,13 @@ Creates virtual DOM nodes (vnodes).
   })
   ```
 
-- **See also:** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function.html#creating-vnodes)
+- **Voir aussi :** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function.html#creating-vnodes)
 
 ## mergeProps() {#mergeprops}
 
-Merge multiple props objects with special handling for certain props.
+Fusionne plusieurs objets de props avec un traitement spécial pour certaines props.
 
-- **Type**
+- **Type :**
 
   ```ts
   function mergeProps(...args: object[]): object
