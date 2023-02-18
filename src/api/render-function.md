@@ -240,7 +240,7 @@ Utilisée pour résoudre manuellement une directive enregistrée via son nom.
   function resolveDirective(name: string): Directive | undefined
   ```
 
-- **D2tails :**
+- **Détails :**
 
   **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
 
