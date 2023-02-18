@@ -2,7 +2,7 @@
 
 ## isRef() {#isref}
 
-Vérifie si une valeur est un objet de ref.
+Vérifie si une valeur est un objet ref.
 
 - **Type :**
 
