@@ -111,7 +111,7 @@ createElementVNode("div", {
 }, null, 2 /* classe */)
 ```
 
-Le dernier argument, `2`, est une [option de correction] (https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs options de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les options en utilisant des [opérations sur les bits] (https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
+Le dernier argument, `2`, est une [option de correction](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs options de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les options en utilisant des [opérations sur les bits](https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
 
 ```js
 if (vnode.patchFlag & PatchFlags.CLASS /* 2 */) {
