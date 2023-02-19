@@ -126,7 +126,7 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 | aside           | role="complementary" | Supporte le contenu principale, malgré tout est séparé et a du sens par lui-même                                               |
 | _Not available_ | role="search"        | Cette section contient la fonctionalité de recherche pour l'application                                                        |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
-| section         | role="region"        | Cpntenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
+| section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
 
 :::tip Astuce:
 Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de rôle landmark redondants afin d'optimiser la compatibilité avec les anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5](https://caniuse.com/#feat=html5semantic).
