@@ -49,8 +49,7 @@ Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style su
 }
 ```
 
-Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en
-appelant focus sur la ref template du lien d'évitement (en supposant l'utilisation de `vue-router`):
+Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref template du lien d'évitement (en supposant l'utilisation de `vue-router`):
 
 <div class="options-api">
 
