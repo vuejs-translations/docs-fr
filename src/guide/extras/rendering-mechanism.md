@@ -88,78 +88,78 @@ En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils se
 
 ### Options de correction {#patch-flags}
 
-For a single element with dynamic bindings, we can also infer a lot of information from it at compile time:
+Nous pouvons également déduire de nombreuses informations concernant un élément unique possédant des liaisons dynamiques au moment de la compilation :
 
 ```vue-html
-<!-- class binding only -->
+<!-- simplement une liaison de classe -->
 <div :class="{ active }"></div>
 
-<!-- id and value bindings only -->
+<!-- simplement des liaisons de classe et d'id -->
 <input :id="id" :value="value">
 
-<!-- text children only -->
+<!-- simplement un texte enfant -->
 <div>{{ dynamic }}</div>
 ```
 
-[Inspect in Template Explorer](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2IDpjbGFzcz1cInsgYWN0aXZlIH1cIj48L2Rpdj5cblxuPGlucHV0IDppZD1cImlkXCIgOnZhbHVlPVwidmFsdWVcIj5cblxuPGRpdj57eyBkeW5hbWljIH19PC9kaXY+Iiwib3B0aW9ucyI6e319)
+[Inspection dans l'explorateur de template](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2IDpjbGFzcz1cInsgYWN0aXZlIH1cIj48L2Rpdj5cblxuPGlucHV0IDppZD1cImlkXCIgOnZhbHVlPVwidmFsdWVcIj5cblxuPGRpdj57eyBkeW5hbWljIH19PC9kaXY+Iiwib3B0aW9ucyI6e319)
 
-When generating the render function code for these elements, Vue encodes the type of update each of them needs directly in the vnode creation call:
+Lors de la génération du code de la fonction de rendu pour ces éléments, Vue encode le type de mise à jour dont chacun d'entre eux a besoin directement dans l'appel de création de vnode :
 
 ```js{3}
 createElementVNode("div", {
   class: _normalizeClass({ active: _ctx.active })
-}, null, 2 /* CLASS */)
+}, null, 2 /* classe */)
 ```
 
-The last argument, `2`, is a [patch flag](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). An element can have multiple patch flags, which will be merged into a single number. The runtime renderer can then check against the flags using [bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operation) to determine whether it needs to do certain work:
+Le dernier argument, `2`, est une [option de correction] (https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs options de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les options en utilisant des [opérations sur les bits] (https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
 
 ```js
 if (vnode.patchFlag & PatchFlags.CLASS /* 2 */) {
-  // update the element's class
+  // met à jour la classe de l'élément
 }
 ```
 
-Bitwise checks are extremely fast. With the patch flags, Vue is able to do the least amount of work necessary when updating elements with dynamic bindings.
+Les vérifications par bit sont extrêmement rapides. Grâce aux options de correction, Vue est en mesure d'effectuer le moins d'opérations possible lors de la mise à jour des éléments avec des liaisons dynamiques.
 
-Vue also encodes the type of children a vnode has. For example, a template that has multiple root nodes is represented as a fragment. In most cases, we know for sure that the order of these root nodes will never change, so this information can also be provided to the runtime as a patch flag:
+Vue encode également le type des enfants d'un vnode. Par exemple, un template qui possède plusieurs nœuds racines est représenté comme un fragment. Dans la plupart des cas, nous savons avec certitude que l'ordre de ces nœuds racines ne changera jamais, de sorte que cette information peut également être fournie au moment de l'exécution en tant qu'indicateur de patch :
 
 ```js{4}
 export function render() {
   return (_openBlock(), _createElementBlock(_Fragment, null, [
-    /* children */
+    /* enfants */
   ], 64 /* STABLE_FRAGMENT */))
 }
 ```
 
-The runtime can thus completely skip child-order reconciliation for the root fragment.
+Lors de l'exécution, la réconciliation de l'ordre des enfants pour le fragment racine peut donc être totalement ignorée.
 
-### Tree Flattening {#tree-flattening}
+### Réduction d'un arbre {#tree-flattening}
 
-Taking another look at the generated code from the previous example, you'll notice the root of the returned virtual DOM tree is created using a special `createElementBlock()` call:
+Si vous regardez à nouveau le code généré dans l'exemple précédent, vous remarquerez que la racine de l'arbre du DOM virtuel retourné est créée en utilisant un appel spécial à `createElementBlock()` :
 
 ```js{2}
 export function render() {
   return (_openBlock(), _createElementBlock(_Fragment, null, [
-    /* children */
+    /* enfants */
   ], 64 /* STABLE_FRAGMENT */))
 }
 ```
 
-Conceptually, a "block" is a part of the template that has stable inner structure. In this case, the entire template has a single block because it does not contain any structural directives like `v-if` and `v-for`.
+Conceptuellement, un "bloc" est une partie du template qui a une structure interne stable. Dans notre cas, le modèle template n'a qu'un seul bloc car il ne contient pas de directives structurelles comme `v-if` et `v-for`.
 
-Each block tracks any descendant nodes (not just direct children) that have patch flags. For example:
+Chaque bloc traque tous les nœuds descendants (pas seulement les enfants directs) possédant des options de correction. Par exemple :
 
 ```vue-html{3,5}
 <div> <!-- root block -->
-  <div>...</div>         <!-- not tracked -->
-  <div :id="id"></div>   <!-- tracked -->
-  <div>                  <!-- not tracked -->
-    <div>{{ bar }}</div> <!-- tracked -->
+  <div>...</div>         <!-- non traqué -->
+  <div :id="id"></div>   <!-- traqué -->
+  <div>                  <!-- non traqué -->
+    <div>{{ bar }}</div> <!-- traqué -->
   </div>
 </div>
 ```
 
-The result is a flattened array that contains only the dynamic descendant nodes:
+Il en résulte un tableau réduit qui ne contient que les nœuds descendants dynamiques :
 
 ```
 div (block root)
@@ -167,26 +167,26 @@ div (block root)
 - div with {{ bar }} binding
 ```
 
-When this component needs to re-render, it only needs to traverse the flattened tree instead of the full tree. This is called **Tree Flattening**, and it greatly reduces the number of nodes that need to be traversed during virtual DOM reconciliation. Any static parts of the template are effectively skipped.
+Lorsque ce composant doit effectuer un nouveau rendu, il ne doit parcourir que l'arbre réduit au lieu de l'arbre complet. C'est ce qu'on appelle la réduction de l'arbre (**Tree Flattening**), et cela réduit considérablement le nombre de nœuds qui doivent être traversés pendant la réconciliation virtuelle du DOM. Toutes les parties statiques du template sont ignorées.
 
-`v-if` and `v-for` directives will create new block nodes:
+Les directives `v-if' et `v-for' vont créer de nouveaux nœuds pour un bloc :
 
 ```vue-html
-<div> <!-- root block -->
+<div> <!-- bloc racine -->
   <div>
-    <div v-if> <!-- if block -->
+    <div v-if> <!-- bloc if -->
       ...
     <div>
   </div>
 </div>
 ```
 
-A child block is tracked inside the parent block's array of dynamic descendants. This retains a stable structure for the parent block.
+Un bloc enfant est traqué à l'intérieur du tableau des descendants dynamiques du bloc parent. Cela permet au bloc parent de conserver une structure stable.
 
-### Impact on SSR Hydration {#impact-on-ssr-hydration}
+### Conséquences sur l'hydratation SSR {#impact-on-ssr-hydration}
 
-Both patch flags and tree flattening also greatly improve Vue's [SSR Hydration](/guide/scaling-up/ssr.html#client-hydration) performance:
+Les options de correction et la réduction des arbres améliorent également considérablement les performances de Vue en matière d'[hydratation SSR](/guide/scaling-up/ssr.html#client-hydration) :
 
-- Single element hydration can take fast paths based on the corresponding vnode's patch flag.
+- L'hydratation d'un seul élément peut utiliser des chemins rapides basés sur les options de correction du vnode correspondant.
 
-- Only block nodes and their dynamic descendants need to be traversed during hydration, effectively achieving partial hydration at the template level.
+- Seuls les nœuds de bloc et leurs descendants dynamiques doivent être parcourus pendant l'hydratation, ce qui permet d'obtenir une hydratation partielle au niveau du template.
