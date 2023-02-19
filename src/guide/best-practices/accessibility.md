@@ -60,7 +60,6 @@ export default {
 <div class="composition-api">
 
 ```vue
-
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
