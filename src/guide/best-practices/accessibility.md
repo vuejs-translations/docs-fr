@@ -46,7 +46,6 @@ Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'
 <div class="options-api">
 
 ```vue
-
 <script>
 export default {
   watch: {
