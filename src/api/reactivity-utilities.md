@@ -1,4 +1,4 @@
-# API de réactivité : Utilitaires {#reactivity-api-utilities}
+# API de la réactivité : Utilitaires {#reactivity-api-utilities}
 
 ## isRef() {#isref}
 
@@ -10,12 +10,12 @@ Vérifie si une valeur est un objet ref.
   function isRef<T>(r: Ref<T> | unknown): r is Ref<T>
   ```
 
-  Notez que le type retourné est un [prédicat de type](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates), ce qui signifie que `isRef` peut être utilisée comme garde de type :
+  Notez que le type retourné est un [prédicat de type](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates), ce qui signifie que `isRef` peut être utilisée comme un garde de type :
 
   ```ts
   let foo: unknown
   if (isRef(foo)) {
-    // le type de foo est réduit à Ref<unknown>
+    // le type de foo est déduit à Ref<unknown>
     foo.value
   }
   ```
@@ -149,7 +149,7 @@ Convertit un objet réactif en un objet simple où chaque propriété de l'objet
       bar: 2
     })
 
-    // ...logique pour l'état
+    // ...opération logique sur l'état
 
     // conversion en refs lors du retour
     return toRefs(state)
