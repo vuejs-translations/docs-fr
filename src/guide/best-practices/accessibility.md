@@ -32,7 +32,6 @@ Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style su
   margin-left: -72px;
   opacity: 0;
 }
-
 .skipLink:focus {
   opacity: 1;
   background-color: white;
