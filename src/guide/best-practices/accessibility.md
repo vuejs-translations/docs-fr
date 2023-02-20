@@ -173,7 +173,7 @@ Si vous inspectez cet élément dans vos outils de dévelopeur chrome et que vou
 
 ![Outils de développement Chrom montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
 
-:::warning Attention:
+:::warning Attention :
 Vous pourriez avoir vu cette façon d'envelopper un champs de saisie par un label de la façon suivante:
 
 ```vue-html
