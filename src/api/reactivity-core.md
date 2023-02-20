@@ -1,4 +1,4 @@
-# API de réactivité : Essentiel {#reactivity-api-core}
+# API de la réactivité : Essentiel {#reactivity-api-core}
 
 :::info Voir aussi
 Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
