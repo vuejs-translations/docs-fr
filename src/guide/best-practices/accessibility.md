@@ -127,7 +127,7 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
 | section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
 
-:::tip Astuce:
+:::tip Remarque :
 Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de rôle landmark redondants afin d'optimiser la compatibilité avec les anciens [navigateurs qui ne prennent pas en charge les éléments sémantiques HTML5](https://caniuse.com/#feat=html5semantic).
 :::
 
