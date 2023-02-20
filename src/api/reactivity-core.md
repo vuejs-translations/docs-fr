@@ -258,7 +258,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
   Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush: 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des fonction de rappel](/guide/essentials/watchers.html#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush: 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
 
-  La valeur de retour est une fonction gestionnaire qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
+  La valeur de retour est une fonction de gestion qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
 
 - **Exemple :**
 
@@ -376,7 +376,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - Un objet réactif
   - ...ou un tableau des éléments ci-dessus.
 
-  Le second argument est la fonction de rappel qui sera appelée lorsque la source sera modifiée. Celle-ci reçoit trois arguments : la nouvelle valeur, l'ancienne, et une fonction pour enregistrer un rappel de nettoyage des effets secondaires. Le rappel de nettoyage sera appelé juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente.
+  Le second argument est la fonction de rappel qui sera appelée lorsque la source sera modifiée. Celle-ci reçoit trois arguments : la nouvelle valeur, l'ancienne, et une fonction pour enregistrer une fonction de nettoyage des effets secondaires. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisée pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente.
 
   Lors de l'observation de plusieurs sources, la fonction de rappel reçoit deux tableaux contenant les nouvelles / anciennes valeurs correspondant au tableau des sources.
 
@@ -387,7 +387,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
-  Par rapport à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
+  Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 
   - Exécuter l'effet secondaire à la volée ;
   - Être plus spécifique quant à l'état qui doit déclencher la ré-exécution de l'observateur ;
@@ -424,7 +424,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   })
   ```
 
-  Lorsque vous utilisez une source accesseur, l'observateur ne se déclenche que si la valeur de retour de l'accesseur a changé. Si vous voulez que la fonction de rappel se déclenche même lors de mutations profondes, vous devez explicitement forcer l'observateur à fonctionner en mode profond avec `{ deep : true }`. Notez qu'en mode profond, la nouvelle valeur et l'ancienne seront le même objet si la fonction de rappel a été déclenchée par une mutation profonde :
+  Lorsque vous utilisez une source accesseur, l'observateur ne se déclenche que si la valeur de retour de l'accesseur a changé. Si vous voulez que la fonction de rappel se déclenche même lors de mutations profondes, vous devez explicitement forcer l'observateur à fonctionner en mode profond avec `{ deep: true }`. Notez qu'en mode profond, la nouvelle valeur et l'ancienne seront le même objet si la fonction de rappel a été déclenchée par une mutation profonde :
 
   ```js
   const state = reactive({ count: 0 })
