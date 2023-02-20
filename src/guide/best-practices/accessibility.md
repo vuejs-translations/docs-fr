@@ -8,9 +8,9 @@ Visitez le guide de [planification et pilotage de la prise en compte de l’acce
 
 ## Liens d'évitement ou d'accès rapide {#skip-link}
 
-Vous devez ajouter un lien en haut de chaque page qui mène directement à la zone de contenu principale afin que les  utilisateurs puissent ignorer les zones de regroupement de contenus répétées sur plusieurs pages web.
+Vous devez ajouter un lien en haut de chaque page qui mène directement à la zone de contenu principale afin que les utilisateurs puissent ignorer les zones de regroupement de contenus répétées sur plusieurs pages web.
 
-Typiquement, cela se fait en haut de `App.vue`  car ce sera le premier élément pouvant être ciblé sur toutes vos pages:
+Typiquement, cela se fait en haut de `App.vue`  car ce sera le premier élément pouvant être ciblé sur toutes vos pages :
 
 ```vue-html
 <ul class="skip-links">
@@ -20,7 +20,7 @@ Typiquement, cela se fait en haut de `App.vue`  car ce sera le premier élément
 </ul>
 ```
 
-Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style suivant:
+Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style suivant :
 
 ```css
 .skipLink {
@@ -82,7 +82,7 @@ watch(
 
 ## Structuration de l'information {#content-structure}
 
-L'un des éléments les plus importants de l'accessibilité est de s'assurer que le design peut soutenir une mise en œuvre  accessible. Le design doit tenir compte non seulement du contraste des couleurs, de la sélection des polices, du  dimensionnement du texte et de la langue, mais également de la structure du contenu dans l'application.
+L'un des éléments les plus importants de l'accessibilité est de s'assurer que le design peut soutenir une mise en œuvre accessible. Le design doit tenir compte non seulement du contraste des couleurs, de la sélection des polices, du dimensionnement du texte et de la langue, mais également de la structure du contenu dans l'application.
 
 ### Headings {#headings}
 
@@ -114,7 +114,7 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 
 ### Landmarks {#landmarks}
 
-[Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role)permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technonologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
+[Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role)permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
 
 | HTML            | ARIA Role            | But du landmark                                                                                                                |
 |-----------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -123,7 +123,7 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 | main            | role="main"          | Le contenu central ou principal du document.                                                                                   |
 | footer          | role="contentinfo"   | Information à propos du document parent: notes de pied de page/copyrights/liens vers la déclaration de confidentialité         |
 | aside           | role="complementary" | Supporte le contenu principale, malgré tout est séparé et a du sens par lui-même                                               |
-| _Not available_ | role="search"        | Cette section contient la fonctionalité de recherche pour l'application                                                        |
+| _Not available_ | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
 | section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
 
@@ -137,7 +137,7 @@ Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de
 
 Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants: `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
 
-Les labels sont en général placés en haut ou à gauche des champs de formulaire:
+Les labels sont en général placés en haut ou à gauche des champs de formulaire :
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
@@ -156,11 +156,11 @@ Les labels sont en général placés en haut ou à gauche des champs de formulai
 
 <!-- <common-codepen-snippet title="Simple Form" slug="dyNzzWZ" :height="368" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaure et il sera appliqué à tous les input de votre formulaire. Vous pouvez aussi positionner différentes [valeur pour l'attribut autocomplete](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete) pour chaque input.
+Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaire et il sera appliqué à tous les input de votre formulaire. Vous pouvez aussi positionner différentes [valeurs pour l'attribut autocomplete](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete) pour chaque input.
 
 ### Labels {#labels}
 
-Utilisez des labels pour décrire le but de chaque controle de formulaire; en liant `for` et `id`.
+Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; en liant `for` et `id`.
 
 ```vue-html
 <label for="name">Nom</label>
@@ -169,12 +169,12 @@ Utilisez des labels pour décrire le but de chaque controle de formulaire; en li
 
 <!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Si vous inspectez cet élément dans vos outils de dévelopeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Elements, vous verrez comment le champ prends son nom du label:
+Si vous inspectez cet élément dans vos outils de développeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Elements, vous verrez comment le champ prends son nom du label :
 
 ![Outils de développement Chrom montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
 
 :::warning Attention :
-Vous pourriez avoir vu cette façon d'envelopper un champs de saisie par un label de la façon suivante:
+Vous pourriez avoir vu cette façon d'envelopper un champ de saisie par un label de la façon suivante :
 
 ```vue-html
 <label>
@@ -188,7 +188,7 @@ Associer les labels avec un id correspondant est mieux supporté par les technol
 
 #### `aria-label` {#aria-label}
 
-Vous pouvez aussi donner un nom accessible au champs avec [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
+Vous pouvez aussi donner un nom accessible au champ avec [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
 
 ```vue-html
 <label for="name">Nom</label>
@@ -209,7 +209,7 @@ N'hésitez pas à inspecter cet élément dans les outils de développeur de Chr
 
 #### `aria-labelledby` {#aria-labelledby}
 
-Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) est similaire à `aria-label` à l'exception du fait que c'est utilisé si le libellé est visible à l'écran. Associez le à d'autres éléments par leurs `id` et vous pourrez associer plusieurs `id`s:
+Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) est similaire à `aria-label` à l'exception du fait que c'est utilisé si le libellé est visible à l'écran. Associez-le à d'autres éléments par leurs `id` et vous pourrez associer plusieurs `id`s:
 
 ```vue-html
 <form
@@ -239,7 +239,7 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 #### `aria-describedby` {#aria-describedby}
 
-[aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) est utilisé de la même manière que  `aria-labelledby` à l'exception qu'il fournit une descriptio avec de l'information supplémentaire pour l'utilisateur. Cela peut être utilisé pour décrire le critère pour n'importe que champs:
+L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) est utilisé de la même manière que  `aria-labelledby` à l'exception qu'il fournit une description avec de l'information supplémentaire pour l'utilisateur. Cela peut être utilisé pour décrire le critère pour n'importe quel champ :
 
 ```vue-html
 <form
@@ -267,15 +267,15 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 <!-- <common-codepen-snippet title="Form ARIA describedby" slug="gOgxxQE" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Vous pouvez voir la description en inspectant depuis les outils de développeur Chrome:
+Vous pouvez voir la description en inspectant depuis les outils de développeur Chrome :
 
 ![Outils de développeur Chrome montrant un nom de champs accessible depuis aria-labelledby et décrit avec aria-describedby](./images/AccessibleARIAdescribedby.png)
 
 ### Placeholder {#placeholder}
 
-Evitez d'utiliser des placeholders car ils perturbent beaucoup d'utilisateurs.
+Évitez d'utiliser des placeholders car ils perturbent beaucoup d'utilisateurs.
 
-Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [critères de contraste de couleur](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) par défaut; corriger le contraste de couleur donne l'impression que le champs est pré-rempli avec une valeur. En regardant l'exemple suivant, vous pouvez voir que le placeholder Last Name conforme aux critères de contraste semble être pré-rempli:
+Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [critères de contraste de couleur](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) par défaut ; corriger le contraste de couleur donne l'impression que le champ est pré-rempli avec une valeur. En regardant l'exemple suivant, vous pouvez voir que le placeholder Last Name conforme aux critères de contraste semble être pré-rempli :
 
 ![Placeholder accessible](./images/AccessiblePlaceholder.png)
 
@@ -356,7 +356,7 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 
 ### Cacher du contenu {#hiding-content}
 
-En règle générale, il n'est pas recommendé de cacher visuellement des labels, même si le champa un nom accessible. Cependant, si la fonctionalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
+En règle générale, il n'est pas recommandé de cacher visuellement des labels, même si le champ un nom accessible. Cependant, si la fonctionnalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
 
 Regardons ce champ de recherche:
 
@@ -368,9 +368,9 @@ Regardons ce champ de recherche:
 </form>
 ```
 
-Nous pouvons faire cela car le bouton de recherche va aider les utilisateurs visuels à identifier le but du champ de saisie.
+Nous pouvons faire cela, car le bouton de recherche va aider les utilisateurs visuels à identifier le but du champ de saisie.
 
-Nous pouvons utiliser du CSS pour cacher visuellement des éléments mais les laisser disponibles pour les technologies d'assistance:
+Nous pouvons utiliser du CSS pour cacher visuellement des éléments, mais les laisser disponibles pour les technologies d'assistance :
 
 ```css
 .hidden-visually {
@@ -390,7 +390,7 @@ Nous pouvons utiliser du CSS pour cacher visuellement des éléments mais les la
 
 #### `aria-hidden="true"` {#aria-hidden-true}
 
-Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments focusables, uniquement sur des éléments décoratifs ou du contenu hors écran.
+Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance, mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments "focusables", uniquement sur des éléments décoratifs ou du contenu hors écran.
 
 ```vue-html
 <p>Ceci n'est pas caché au liseurs d'écran.</p>
@@ -400,7 +400,7 @@ Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance
 ### Boutons {#buttons}
 
 Lorsque vous utilisez des boutons à l'intérieur d'un formulaire, vous devez indiquer en indiquer le type éviter la soumission du formulaire.
-Vous pouvez aussi utiliser un input pour créer des boutons:
+Vous pouvez aussi utiliser un input pour créer des boutons :
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
@@ -454,18 +454,18 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
 ## Standards {#standards}
 
-Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe les standards d'accessibilité pour les différents composants:
+Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe les standards d'accessibilité pour les différents composants :
 
 - [User Agent Accessibility Guidelines (UAAG)](https://www.w3.org/WAI/standards-guidelines/uaag/)
-  - navigateurs web et lecteurs de média, includant certains aspects de technologies d'assistance
+  - navigateurs web et lecteurs de média, incluant certains aspects de technologies d'assistance
 - [Authoring Tool Accessibility Guidelines (ATAG)](https://www.w3.org/WAI/standards-guidelines/atag/)
   - outils de création de contenu
 - [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-  - contenu web - utilisé par des développeurs, outils de création de contnu, outils d'évaluation d'accessibilité
+  - contenu web - utilisé par des développeurs, outils de création de contenu, outils d'évaluation d'accessibilité
 
 ### Web Content Accessibility Guidelines (WCAG) {#web-content-accessibility-guidelines-wcag}
 
-[WCAG 2.1](https://www.w3.org/TR/WCAG21/) étend [WCAG 2.0](https://www.w3.org/TR/WCAG20/) et permet l'implémentation de nouvelles technologies en tenant compte de l'évolution du web. Le W3C encourage l'utilisation de la version la plus récente de WCAG lors du développement ou de la mise à jour des vos pratiques d'accessibilité Web.
+[WCAG 2.1](https://www.w3.org/TR/WCAG21/) étend [WCAG 2.0](https://www.w3.org/TR/WCAG20/) et permet l'implémentation de nouvelles technologies en tenant compte de l'évolution du web. Le W3C encourage l'utilisation de la version la plus récente de WCAG lors du développement ou de la mise à jour de vos pratiques d'accessibilité Web.
 
 #### WCAG 2.1 Quatre principaux principes de guidance (abbreviated as POUR): {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
 
@@ -476,7 +476,7 @@ Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe
 - [Compréhensible](https://www.w3.org/TR/WCAG21/#understandable)
   - Les informations et l’utilisation de l’interface utilisateur doivent être compréhensibles par tous les utilisateurs
 - [Robuste](https://www.w3.org/TR/WCAG21/#robust)
-  - Les utilisateurs doivent pouvoir continuer d'accéder au contenu au fur et a mesure que la technologie avance
+  - Les utilisateurs doivent pouvoir continuer d'accéder au contenu au fur et à mesure que la technologie avance
 
 #### Web Accessibility Initiative – Accessible Rich Internet Applications (WAI-ARIA) {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
 
@@ -522,16 +522,16 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
 
 ### Utilisateurs {#users}
 
-L'Organisation Mondiale de la Santé estime que 15% de la population mondiale est atteinte d'une forme de handicap, 2-4% d'entre elle de handicaps sévères. Ceci est estimé à 1 milliard de personnes dans le monde; faisant des personnes avec un handicap la plus grande minorité au monde.
+L'Organisation Mondiale de la Santé estime que 15% de la population mondiale est atteinte d'une forme de handicap, 2-4% d'entre elle de handicaps sévères. Ceci est estimé à 1 milliard de personnes dans le monde ; faisant des personnes avec un handicap la plus grande minorité au monde.
 
 Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quatre catégories:
 
 - _[Visuel](https://webaim.org/articles/visual/)_ - Ces utilisateurs peuvent bénéficier de l'utilisation de liseurs d'écran, d'outils d'agrandissement, du contrôle du contraste ou de plage braille.
 - _[Auditif](https://webaim.org/articles/auditory/)_ - Ces utilisateurs peuvent bénéficier de sous-titres, de transcriptions ou de vidéos en langages des signes.
-- _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de  [technologies d'assistance pour les assistive technologies for handicaps moteurs](https://webaim.org/articles/motor/assistive): logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
-- _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de média supplémentaire, d'une organisation structurelle du contenuThese users can benefit from supplemental media, d'un style d'écriture clair et simple.
+- _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de [technologies d'assistance pour les assistive technologies for handicaps moteurs ](https://webaim.org/articles/motor/assistive): logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
+- _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de média supplémentaire, d'une organisation structurelle du contenu, d'un style d'écriture clair et simple.
 
-Rendez-vous aux liens suivants de WebAim pour comprendre d'utilisateurs:
+Rendez-vous aux liens suivants de WebAim pour comprendre d'utilisateurs :
 
 - [Web Accessibility Perspectives: Explore the Impact and Benefits for Everyone](https://www.w3.org/WAI/perspective-videos/)
 - [Stories of Web Users](https://www.w3.org/WAI/people-use-web/user-stories/)
