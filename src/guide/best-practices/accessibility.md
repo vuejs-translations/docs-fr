@@ -178,7 +178,7 @@ Vous pourriez avoir vu cette façon d'envelopper un champs de saisie par un labe
 
 ```vue-html
 <label>
-  Nom:
+  Nom :
   <input type="text" name="name" id="name" v-model="name" />
 </label>
 ```
