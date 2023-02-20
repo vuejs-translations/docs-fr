@@ -1,17 +1,17 @@
-# Reactivity API: Core {#reactivity-api-core}
+# API de la réactivité : Essentiel {#reactivity-api-core}
 
-:::info See also
-To better understand the Reactivity APIs, it is recommended to read the following chapters in the guide:
+:::info Voir aussi
+Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
 
 - [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
-- [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
   :::
 
 ## ref() {#ref}
 
-Takes an inner value and returns a reactive and mutable ref object, which has a single property `.value` that points to the inner value.
+Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a qu'une seule propriété `.value` pointant sur la valeur interne.
 
-- **Type**
+- **Type :**
 
   ```ts
   function ref<T>(value: T): Ref<UnwrapRef<T>>
@@ -21,15 +21,15 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  The ref object is mutable - i.e. you can assign new values to `.value`. It is also reactive - i.e. any read operations to `.value` are tracked, and write operations will trigger associated effects.
+  L'objet ref est mutable - c'est-à-dire que vous pouvez attribuer de nouvelles valeurs à `.value`. Il est également réactif - c'est-à-dire que toute lecture de `.value` est traquée, et que les opérations d'écriture déclenchent les effets associés.
 
-  If an object is assigned as a ref's value, the object is made deeply reactive with [reactive()](#reactive). This also means if the object contains nested refs, they will be deeply unwrapped.
+  Si un objet est assigné comme valeur d'une ref, l'objet est rendu profondément réactif via [reactive()](#reactive). Cela signifie également que si l'objet contient des refs imbriquées, elles seront déballées en profondeur.
 
-  To avoid the deep conversion, use [`shallowRef()`](./reactivity-advanced.html#shallowref) instead.
+  Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced.html#shallowref).
 
-- **Example**
+- **Exemple :**
 
   ```js
   const count = ref(0)
@@ -45,19 +45,19 @@ Takes an inner value and returns a reactive and mutable ref object, which has a 
 
 ## computed() {#computed}
 
-Takes a getter function and returns a readonly reactive [ref](#ref) object for the returned value from the getter. It can also take an object with `get` and `set` functions to create a writable ref object.
+Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lecture seule pour la valeur retournée par la fonction acesseur. Elle peut aussi prendre un objet avec les fonctions `get` et `set` pour créer un objet ref modifiable.
 
-- **Type**
+- **Type :**
 
   ```ts
-  // read-only
+  // lecture seule
   function computed<T>(
     getter: () => T,
-    // see "Computed Debugging" link below
+    // voir "Débogage des propriétés calculées" plus bas
     debuggerOptions?: DebuggerOptions
   ): Readonly<Ref<Readonly<T>>>
 
-  // writable
+  // modifiable
   function computed<T>(
     options: {
       get: () => T
@@ -67,9 +67,9 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
   ): Ref<T>
   ```
 
-- **Example**
+- **Exemple :**
 
-  Creating a readonly computed ref:
+  Création d'une ref d'une propriété calculée en lecture seule :
 
   ```js
   const count = ref(1)
@@ -77,10 +77,10 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
 
   console.log(plusOne.value) // 2
 
-  plusOne.value++ // error
+  plusOne.value++ // erreur
   ```
 
-  Creating a writable computed ref:
+  Création d'une ref d'une propriété calculée modifiable :
 
   ```js
   const count = ref(1)
@@ -95,7 +95,7 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
   console.log(count.value) // 0
   ```
 
-  Debugging:
+  Débogage :
 
   ```js
   const plusOne = computed(() => count.value + 1, {
@@ -108,73 +108,73 @@ Takes a getter function and returns a readonly reactive [ref](#ref) object for t
   })
   ```
 
-- **See also:**
+- **Voir aussi :**
   - [Guide - Propriétés calculées](/guide/essentials/computed.html)
   - [Guide - Computed Debugging](/guide/extras/reactivity-in-depth.html#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
 ## reactive() {#reactive}
 
-Returns a reactive proxy of the object.
+Retourne un proxy réactif de l'objet.
 
-- **Type**
+- **Type :**
 
   ```ts
   function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
   ```
 
-- **Details**
+- **Détails :**
 
-  The reactive conversion is "deep": it affects all nested properties. A reactive object also deeply unwraps any properties that are [refs](#ref) while maintaining reactivity.
+  La conversion réactive est "profonde" : elle affecte toutes les propriétés imbriquées. Un objet réactif déballe également en profondeur toutes les propriétés qui sont des [refs](#ref) tout en maintenant la réactivité.
 
-  It should also be noted that there is no ref unwrapping performed when the ref is accessed as an element of a reactive array or a native collection type like `Map`.
+  Il faut également noter qu'il n'y a pas de déballage de refs lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map`.
 
-  To avoid the deep conversion and only retain reactivity at the root level, use [shallowReactive()](./reactivity-advanced.html#shallowreactive) instead.
+  Pour éviter la conversion profonde et ne conserver la réactivité qu'au niveau de la racine, utilisez plutôt [shallowReactive()](./reactivity-advanced.html#shallowreactive).
 
-  The returned object and its nested objects are wrapped with [ES Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) and **not** equal to the original objects. It is recommended to work exclusively with the reactive proxy and avoid relying on the original object.
+  L'objet retourné et ses objets imbriqués sont enveloppés par un [proxy ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et **non** égaux aux objets originaux. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de se fier à l'objet original.
 
-- **Example**
+- **Exemple :**
 
-  Creating a reactive object:
+  Création d'un objet réactif :
 
   ```js
   const obj = reactive({ count: 0 })
   obj.count++
   ```
 
-  Ref unwrapping:
+  Déballage de refs :
 
   ```ts
   const count = ref(1)
   const obj = reactive({ count })
 
-  // ref will be unwrapped
+  // la ref sera déballée
   console.log(obj.count === count.value) // true
 
-  // it will update `obj.count`
+  // cela va mettre à jour `obj.count`
   count.value++
   console.log(count.value) // 2
   console.log(obj.count) // 2
 
-  // it will also update `count` ref
+  // la ref `count` va également être mise à jour
   obj.count++
   console.log(obj.count) // 3
   console.log(count.value) // 3
   ```
 
-  Note that refs are **not** unwrapped when accessed as array or collection elements:
+  Notez que les refs ne sont **pas** déballées lorsqu'on y accède en tant qu'éléments de tableau ou de collection :
 
   ```js
   const books = reactive([ref('Vue 3 Guide')])
-  // need .value here
+  // besoin d'utiliser .value ici
   console.log(books[0].value)
 
   const map = reactive(new Map([['count', ref(0)]]))
-  // need .value here
+  // besoin d'utiliser .value ici
   console.log(map.get('count').value)
   ```
 
-  When assigning a [ref](#ref) to a `reactive` property, that ref will also be automatically unwrapped:
+  Lorsque vous assignez une [ref](#ref) à une propriété `reactive`, cette ref sera également automatiquement déballée :
 
   ```ts
   const count = ref(1)
@@ -192,9 +192,9 @@ Returns a reactive proxy of the object.
 
 ## readonly() {#readonly}
 
-Takes an object (reactive or plain) or a [ref](#ref) and returns a readonly proxy to the original.
+Prend un objet (réactif ou simple) ou une [ref](#ref) et renvoie un proxy en lecture seule vers l'original.
 
-- **Type**
+- **Type :**
 
   ```ts
   function readonly<T extends object>(
@@ -202,13 +202,13 @@ Takes an object (reactive or plain) or a [ref](#ref) and returns a readonly prox
   ): DeepReadonly<UnwrapNestedRefs<T>>
   ```
 
-- **Details**
+- **Détails :**
 
-  A readonly proxy is deep: any nested property accessed will be readonly as well. It also has the same ref-unwrapping behavior as `reactive()`, except the unwrapped values will also be made readonly.
+  Un proxy en lecture seule est profond : toute propriété imbriquée à laquelle on accède sera également en lecture seule. Il a également le même comportement en termes de déballage que `reactive()`, sauf que les valeurs déballées seront aussi en lecture seule.
 
-  To avoid the deep conversion, use [shallowReadonly()](./reactivity-advanced.html#shallowreadonly) instead.
+  Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced.html#shallowreadonly).
 
-- **Example**
+- **Exemple :**
 
   ```js
   const original = reactive({ count: 0 })
@@ -216,22 +216,22 @@ Takes an object (reactive or plain) or a [ref](#ref) and returns a readonly prox
   const copy = readonly(original)
 
   watchEffect(() => {
-    // works for reactivity tracking
+    // fonctionne pour le suivi de la réactivité
     console.log(copy.count)
   })
 
-  // mutating original will trigger watchers relying on the copy
+  // La mutation de l'original déclenchera les observateurs qui s'appuient sur la copie
   original.count++
 
-  // mutating the copy will fail and result in a warning
-  copy.count++ // warning!
+  // la mutation de la copie échouera et donnera lieu à un avertissement
+  copy.count++ // avertissement !
   ```
 
 ## watchEffect() {#watcheffect}
 
-Runs a function immediately while reactively tracking its dependencies and re-runs it whenever the dependencies are changed.
+Exécute immédiatement une fonction tout en suivant de manière réactive ses dépendances et la ré-exécute dès que les dépendances sont modifiées.
 
-- **Type**
+- **Type :**
 
   ```ts
   function watchEffect(
@@ -242,7 +242,7 @@ Runs a function immediately while reactively tracking its dependencies and re-ru
   type OnCleanup = (cleanupFn: () => void) => void
 
   interface WatchEffectOptions {
-    flush?: 'pre' | 'post' | 'sync' // default: 'pre'
+    flush?: 'pre' | 'post' | 'sync' // par défaut : 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
   }
@@ -250,51 +250,51 @@ Runs a function immediately while reactively tracking its dependencies and re-ru
   type StopHandle = () => void
   ```
 
-- **Details**
+- **Détails :**
 
-  The first argument is the effect function to be run. The effect function receives a function that can be used to register a cleanup callback. The cleanup callback will be called right before the next time the effect is re-run, and can be used to clean up invalidated side effects, e.g. a pending async request (see example below).
+  Le premier argument est la fonction à exécuter qui reçoit elle-même en argument une fonction qui peut être utilisée pour enregistrer une fonction de nettoyage. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
 
-  The second argument is an optional options object that can be used to adjust the effect's flush timing or to debug the effect's dependencies.
+  Le second argument est un objet optionnel d'options qui peut être utilisé pour ajuster le timing du nettoyage de l'effet ou pour déboguer ses dépendances.
 
-  By default, watchers will run just prior to component rendering. Setting `flush: 'post'` will defer the watcher until after component rendering. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) for more information. In rare cases, it might be necessary to trigger a watcher immediately when a reactive dependency changes, e.g. to invalidate a cache. This can be achieved using `flush: 'sync'`. However, this setting should be used with caution, as it can lead to problems with performance and data consistency if multiple properties are being updated at the same time.
+  Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush: 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush: 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
 
-  The return value is a handle function that can be called to stop the effect from running again.
+  La valeur de retour est une fonction de gestion qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
 
-- **Example**
+- **Exemple :**
 
   ```js
   const count = ref(0)
 
   watchEffect(() => console.log(count.value))
-  // -> logs 0
+  // -> affiche 0
 
   count.value++
-  // -> logs 1
+  // -> affiche 1
   ```
 
-  Side effect cleanup:
+  Nettoyage des effets secondaires :
 
   ```js
   watchEffect(async (onCleanup) => {
     const { response, cancel } = doAsyncWork(id.value)
-    // `cancel` will be called if `id` changes
-    // so that previous pending request will be cancelled
-    // if not yet completed
+    // `cancel` sera appelé si `id` change
+    // de manière à ce que la demande précédente soit annulée
+    // si elle n'est pas encore terminée
     onCleanup(cancel)
     data.value = await response
   })
   ```
 
-  Stopping the watcher:
+  Arrêter l'observateur :
 
   ```js
   const stop = watchEffect(() => {})
 
-  // when the watcher is no longer needed:
+  // lorsqu'on a plus besoin de l'observateur :
   stop()
   ```
 
-  Options:
+  Options :
 
   ```js
   watchEffect(() => {}, {
@@ -308,33 +308,33 @@ Runs a function immediately while reactively tracking its dependencies and re-ru
   })
   ```
 
-- **See also**:
+- **Voir aussi **:
   - [Guide - Observateurs](/guide/essentials/watchers.html#watcheffect)
   - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)
 
 ## watchPostEffect() {#watchposteffect}
 
-Alias of [`watchEffect()`](#watcheffect) with `flush: 'post'` option.
+Alias de [`watchEffect()`](#watcheffect) avec l'option `flush : 'post'`.
 
 ## watchSyncEffect() {#watchsynceffect}
 
-Alias of [`watchEffect()`](#watcheffect) with `flush: 'sync'` option.
+Alias de [`watchEffect()`](#watcheffect) avec l'option `flush : 'sync'`.
 
 ## watch() {#watch}
 
-Watches one or more reactive data sources and invokes a callback function when the sources change.
+Observe une ou plusieurs sources de données réactives et invoque une fonction de rappel lorsque les sources changent.
 
-- **Type**
+- **Type :**
 
   ```ts
-  // watching single source
+  // observation d'une source unique
   function watch<T>(
     source: WatchSource<T>,
     callback: WatchCallback<T>,
     options?: WatchOptions
   ): StopHandle
 
-  // watching multiple sources
+  // observation de plusieurs sources
   function watch<T>(
     sources: WatchSource<T>[],
     callback: WatchCallback<T[]>,
@@ -349,10 +349,10 @@ Watches one or more reactive data sources and invokes a callback function when t
 
   type WatchSource<T> =
     | Ref<T> // ref
-    | (() => T) // getter
+    | (() => T) // accesseur
     | T extends object
     ? T
-    : never // reactive object
+    : never // objet réactif
 
   interface WatchOptions extends WatchEffectOptions {
     immediate?: boolean // default: false
@@ -363,39 +363,39 @@ Watches one or more reactive data sources and invokes a callback function when t
   }
   ```
 
-  > Types are simplified for readability.
+  > Le type est simplifié dans un souci de lisibilité.
 
-- **Details**
+- **Détails :**
 
-  `watch()` is lazy by default - i.e. the callback is only called when the watched source has changed.
+  `watch()` fonctionne à la volée par défaut - c'est-à-dire que la fonction de rappel n'est appelée que lorsque la source surveillée a changé.
 
-  The first argument is the watcher's **source**. The source can be one of the following:
+  Le premier argument est la **source** de l'observateur. La source peut être l'une des suivantes :
 
-  - A getter function that returns a value
-  - A ref
-  - A reactive object
-  - ...or an array of the above.
+  - Une fonction accesseur qui renvoie une valeur
+  - Une ref
+  - Un objet réactif
+  - ...ou un tableau des éléments ci-dessus.
 
-  The second argument is the callback that will be called when the source changes. The callback receives three arguments: the new value, the old value, and a function for registering a side effect cleanup callback. The cleanup callback will be called right before the next time the effect is re-run, and can be used to clean up invalidated side effects, e.g. a pending async request.
+  Le second argument est la fonction de rappel qui sera appelée lorsque la source sera modifiée. Celle-ci reçoit trois arguments : la nouvelle valeur, l'ancienne, et une fonction pour enregistrer une fonction de nettoyage des effets secondaires. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisée pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente.
 
-  When watching multiple sources, the callback receives two arrays containing new / old values corresponding to the source array.
+  Lors de l'observation de plusieurs sources, la fonction de rappel reçoit deux tableaux contenant les nouvelles / anciennes valeurs correspondant au tableau des sources.
 
-  The third optional argument is an options object that supports the following options:
+  Le troisième argument optionnel est un objet d'options qui prend en charge les options suivantes :
 
-  - **`immediate`**: trigger the callback immediately on watcher creation. Old value will be `undefined` on the first call.
-  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
+  - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
+  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
-  Compared to [`watchEffect()`](#watcheffect), `watch()` allows us to:
+  Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 
-  - Perform the side effect lazily;
-  - Be more specific about what state should trigger the watcher to re-run;
-  - Access both the previous and current value of the watched state.
+  - Exécuter l'effet secondaire à la volée ;
+  - Être plus spécifique quant à l'état qui doit déclencher la ré-exécution de l'observateur ;
+  - Accéder à la fois à la valeur précédente et à la valeur actuelle de l'état surveillé.
 
-- **Example**
+- **Exemple :**
 
-  Watching a getter:
+  Observation d'un accesseur :
 
   ```js
   const state = reactive({ count: 0 })
@@ -407,7 +407,7 @@ Watches one or more reactive data sources and invokes a callback function when t
   )
   ```
 
-  Watching a ref:
+  Observation d'une ref :
 
   ```js
   const count = ref(0)
@@ -416,7 +416,7 @@ Watches one or more reactive data sources and invokes a callback function when t
   })
   ```
 
-  When watching multiple sources, the callback receives arrays containing new / old values corresponding to the source array:
+  Lorsque l'on observe plusieurs sources, la fonction de rappel reçoit des tableaux contenant les nouvelles / anciennes valeurs correspondant au tableau source :
 
   ```js
   watch([fooRef, barRef], ([foo, bar], [prevFoo, prevBar]) => {
@@ -424,7 +424,7 @@ Watches one or more reactive data sources and invokes a callback function when t
   })
   ```
 
-  When using a getter source, the watcher only fires if the getter's return value has changed. If you want the callback to fire even on deep mutations, you need to explicitly force the watcher into deep mode with `{ deep: true }`. Note in deep mode, the new value and the old will be the same object if the callback was triggered by a deep mutation:
+  Lorsque vous utilisez une source accesseur, l'observateur ne se déclenche que si la valeur de retour de l'accesseur a changé. Si vous voulez que la fonction de rappel se déclenche même lors de mutations profondes, vous devez explicitement forcer l'observateur à fonctionner en mode profond avec `{ deep: true }`. Notez qu'en mode profond, la nouvelle valeur et l'ancienne seront le même objet si la fonction de rappel a été déclenchée par une mutation profonde :
 
   ```js
   const state = reactive({ count: 0 })
@@ -437,16 +437,16 @@ Watches one or more reactive data sources and invokes a callback function when t
   )
   ```
 
-  When directly watching a reactive object, the watcher is automatically in deep mode:
+  Lorsqu'il observe directement un objet réactif, l'observateur est automatiquement en mode profond :
 
   ```js
   const state = reactive({ count: 0 })
   watch(state, () => {
-    /* triggers on deep mutation to state */
+    /* se déclenche lors des mutations profondes de l'état */
   })
   ```
 
-  `watch()` shares the same flush timing and debugging options with [`watchEffect()`](#watcheffect):
+`watch()` a les mêmes options de timing et de débogage que [`watchEffect()`](#watcheffect) :
 
   ```js
   watch(source, callback, {
@@ -460,28 +460,28 @@ Watches one or more reactive data sources and invokes a callback function when t
   })
   ```
 
-  Stopping the watcher:
+  Arrêter l'observateur :
 
   ```js
   const stop = watch(source, callback)
 
-  // when the watcher is no longer needed:
+  // lorsqu'on n'a plus besoin de l'observateur :
   stop()
   ```
 
-  Side effect cleanup:
+  Nettoyage des effets secondaires :
 
   ```js
   watch(id, async (newId, oldId, onCleanup) => {
     const { response, cancel } = doAsyncWork(newId)
-    // `cancel` will be called if `id` changes, cancelling
-    // the previous request if it hasn't completed yet
+    // `cancel` sera appelée si `id` change, annulant
+    // la requête précédente si elle n'est pas terminée
     onCleanup(cancel)
     data.value = await response
   })
   ```
 
-- **See also**:
+- **Voir aussi **:
 
   - [Guide - Observateurs](/guide/essentials/watchers.html)
   - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)
