@@ -23,7 +23,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
 
 - **Détails :**
 
-  TL'objet ref est mutable - c'est-à-dire que vous pouvez attribuer de nouvelles valeurs à `.value`. Il est également réactif - c'est-à-dire que toute lecture de `.value` est traquée, et que les opérations d'écriture déclenchent les effets associés.
+  L'objet ref est mutable - c'est-à-dire que vous pouvez attribuer de nouvelles valeurs à `.value`. Il est également réactif - c'est-à-dire que toute lecture de `.value` est traquée, et que les opérations d'écriture déclenchent les effets associés.
 
   Si un objet est assigné comme valeur d'une ref, l'objet est rendu profondément réactif via [reactive()](#reactive). Cela signifie également que si l'objet contient des refs imbriquées, elles seront déballées en profondeur.
 
@@ -242,7 +242,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   type OnCleanup = (cleanupFn: () => void) => void
 
   interface WatchEffectOptions {
-    flush?: 'pre' | 'post' | 'sync' // default: 'pre'
+    flush?: 'pre' | 'post' | 'sync' // par défaut : 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
   }
@@ -252,11 +252,11 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
 - **Détails :**
 
-  Le premier argument est la fonction à exécuter. La fonction reçoit elle-même une fonction qui peut être utilisée pour enregistrer un rappel de nettoyage. Le rappel de nettoyage sera appelé juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
+  Le premier argument est la fonction à exécuter qui reçoit elle-même en argument une fonction qui peut être utilisée pour enregistrer une fonction de nettoyage. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
 
   Le second argument est un objet optionnel d'options qui peut être utilisé pour ajuster le timing du nettoyage de l'effet ou pour déboguer ses dépendances.
 
-  Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush : 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush : 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
+  Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush: 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des fonction de rappel](/guide/essentials/watchers.html#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush: 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
 
   La valeur de retour est une fonction gestionnaire qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
 
@@ -446,7 +446,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   })
   ```
 
-`watch()` a les mêmes options de minuteur et de débogage que [`watchEffect()`](#watcheffect) :
+`watch()` a les mêmes options de timing et de débogage que [`watchEffect()`](#watcheffect) :
 
   ```js
   watch(source, callback, {
@@ -465,7 +465,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   ```js
   const stop = watch(source, callback)
 
-  // lorsqu'on a plus besoin de l'observateur :
+  // lorsqu'on n'a plus besoin de l'observateur :
   stop()
   ```
 
