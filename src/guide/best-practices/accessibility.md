@@ -534,7 +534,7 @@ Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quat
 - _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de [technologies d'assistance pour les assistive technologies for handicaps moteurs ](https://webaim.org/articles/motor/assistive): logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
 - _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de média supplémentaire, d'une organisation structurelle du contenu, d'un style d'écriture clair et simple.
 
-Rendez-vous aux liens suivants de WebAim pour comprendre d'utilisateurs :
+Rendez-vous aux liens suivants de WebAim pour comprendre via des retours d'expérience d'utilisateurs :
 
-- [Web Accessibility Perspectives: Explore the Impact and Benefits for Everyone](https://www.w3.org/WAI/perspective-videos/)
-- [Stories of Web Users](https://www.w3.org/WAI/people-use-web/user-stories/)
+- [Perspectives sur l'accessibilité du Web: En explorer les imapacts et bénifices pour tous](https://www.w3.org/WAI/perspective-videos/)
+- [Histoires d'utilisateurs du Web](https://www.w3.org/WAI/people-use-web/user-stories/)
