@@ -220,7 +220,7 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 >
   <h1 id="billing">Facturation</h1>
   <div class="form-item">
-    <label for="name">Nom:</label>
+    <label for="name">Nom :</label>
     <input
       type="text"
       name="name"
