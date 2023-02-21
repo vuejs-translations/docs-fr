@@ -250,7 +250,7 @@ L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Acces
 >
   <h1 id="billing">Facturation</h1>
   <div class="form-item">
-    <label for="name">Nom complet:</label>
+    <label for="name">Nom complet :</label>
     <input
       type="text"
       name="name"
