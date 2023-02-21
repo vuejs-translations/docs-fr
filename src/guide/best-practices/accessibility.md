@@ -426,7 +426,7 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
   ```vue-html
   <form role="search">
-    <label for="search" class="hidden-visually">Recherche: </label>
+    <label for="search" class="hidden-visually">Recherche : </label>
     <input type="text" name="search" id="search" v-model="search" />
     <input
       type="image"
