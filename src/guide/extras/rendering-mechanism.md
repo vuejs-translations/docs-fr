@@ -8,7 +8,7 @@ Comment Vue fait pour partir d'un template et le transformer en nœuds du DOM ? 
 
 ## DOM virtuel {#virtual-dom}
 
-Vous avez probablement entendu parler du terme "DOM virtuel", sur lequel le système de rendu de Vue s'appuie.
+Vous avez probablement entendu parler du terme "virtual DOM", sur lequel le système de rendu de Vue s'appuie.
 
 Le DOM virtuel (VDOM) est un concept de programmation dans lequel une représentation idéale, ou "virtuelle", d'une interface utilisateur est conservée en mémoire et synchronisée avec le DOM "réel". Le concept a été lancé par [React](https://reactjs.org/), et a été adapté dans de nombreux autres frameworks avec différentes implémentations, y compris Vue.
 
@@ -30,7 +30,7 @@ Ici, un `vnode` est un objet JavaScript simple (un "nœud virtuel") représentan
 
 Un moteur d'exécution peut parcourir un arbre du DOM virtuel et construire un arbre du DOM réel à partir de celui-ci. Ce processus est appelé le **montage**.
 
-Si nous avons deux copies d'arbres du DOM virtuel, le moteur de rendu peut également parcourir et comparer les deux arbres, en déterminant les différences, et appliquer ces changements au DOM réel. Ce processus est appelé **correction**, également connu sous le nom de "différenciation" ou "réconciliation".
+Si nous avons deux copies d'arbres du DOM virtuel, le moteur de rendu peut également parcourir et comparer les deux arbres, en déterminant les différences, et appliquer ces changements au DOM réel. Ce processus est appelé **patch**, également connu sous le nom de "diffing" ou "réconciliation".
 
 Le principal avantage du DOM virtuel est qu'il donne au développeur la possibilité de créer, inspecter et composer de manière programmatique les structures d'interface utilisateur souhaitées de façon déclarative, tout en laissant la manipulation directe du DOM au moteur de rendu.
 
@@ -42,11 +42,11 @@ Au niveau le plus élevé, voici ce qui se passe lorsqu'un composant Vue est mon
 
 2. **Montage** : Le moteur d'exécution invoque les fonctions de rendu, parcourt l'arbre du DOM virtuel retourné et crée des nœuds DOM réels en fonction. Cette étape est réalisée comme un [effet réactif](./reactivity-in-depth), et garde donc la trace de toutes les dépendances réactives qui ont été utilisées.
 
-3. **Correction** : Quand une dépendance utilisée pendant le montage change, l'effet est ré-exécuté. Cette fois, un nouvel arbre du DOM virtuel mis à jour est créé. Le moteur d'exécution parcourt le nouvel arbre, le compare avec l'ancien et applique les mises à jour nécessaires au DOM réel.
+3. **Correction** (Patch) : Quand une dépendance utilisée pendant le montage change, l'effet est ré-exécuté. Cette fois, un nouvel arbre du DOM virtuel mis à jour est créé. Le moteur d'exécution parcourt le nouvel arbre, le compare avec l'ancien et applique les mises à jour nécessaires au DOM réel.
 
 ![render pipeline](./images/render-pipeline.png)
 
-<!-- https://www.figma.com/file/elViLsnxGJ9lsQVsuhwqxM/Rendering-Mechanism -->
+<!-- https://www.figma.com/file/3PBt9OrE2B9Qx6QTPLs7tl/render-pipeline?node-id=0%3A1&t=SiamAt8Jd3WM5P7I-0-->
 
 ## Templates vs. Fonctions de rendu {#templates-vs-render-functions}
 
@@ -54,7 +54,7 @@ Les templates Vue sont compilés en fonctions de rendu du DOM virtuel. Vue fourn
 
 Dans ce cas, pourquoi Vue recommande-t-il les templates par défaut ? Il y a un plusieurs raisons :
 
-1. Les templates se rapprochent du HTML réel. Il est donc plus facile de réutiliser des extraits HTML existants, d'appliquer les meilleures pratiques en matière d'accessibilité, de créer un style avec du CSS, et pour les concepteurs de comprendre le code et de le modifier.
+1. Les templates se rapprochent du HTML réel. Il est donc plus facile de réutiliser des extraits HTML existants, d'appliquer les meilleures pratiques en matière d'accessibilité, de créer un style avec du CSS, et pour les designers de comprendre le code et de le modifier.
 
 2. Les templates sont plus faciles à analyser statiquement en raison de leur syntaxe plus déterministe. Cela permet au compilateur de templates de Vue d'appliquer de nombreuses optimisations au moment de la compilation afin d'améliorer les performances du DOM virtuel (que nous aborderons plus loin).
 
@@ -97,7 +97,7 @@ Nous pouvons également déduire de nombreuses informations concernant un élém
 <!-- simplement des liaisons de classe et d'id -->
 <input :id="id" :value="value">
 
-<!-- simplement un texte enfant -->
+<!-- seulement un texte -->
 <div>{{ dynamic }}</div>
 ```
 
@@ -108,7 +108,7 @@ Lors de la génération du code de la fonction de rendu pour ces éléments, Vue
 ```js{3}
 createElementVNode("div", {
   class: _normalizeClass({ active: _ctx.active })
-}, null, 2 /* classe */)
+}, null, 2 /* CLASS */)
 ```
 
 Le dernier argument, `2`, est une [option de correction](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs options de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les options en utilisant des [opérations sur les bits](https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
@@ -169,7 +169,7 @@ div (block root)
 
 Lorsque ce composant doit effectuer un nouveau rendu, il ne doit parcourir que l'arbre réduit au lieu de l'arbre complet. C'est ce qu'on appelle la réduction de l'arbre (**Tree Flattening**), et cela réduit considérablement le nombre de nœuds qui doivent être traversés pendant la réconciliation virtuelle du DOM. Toutes les parties statiques du template sont ignorées.
 
-Les directives `v-if' et `v-for' vont créer de nouveaux nœuds pour un bloc :
+Les directives `v-if` et `v-for` vont créer de nouveaux nœuds pour un bloc :
 
 ```vue-html
 <div> <!-- bloc racine -->
