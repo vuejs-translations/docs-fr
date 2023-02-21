@@ -533,5 +533,5 @@ Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quat
 
 Rendez-vous aux liens suivants de WebAim pour comprendre via des retours d'expérience d'utilisateurs :
 
-- [Perspectives sur l'accessibilité du Web: En explorer les imapacts et bénifices pour tous](https://www.w3.org/WAI/perspective-videos/)
+- [Perspectives sur l'accessibilité du Web: En explorer les impacts et bénéfices pour tous](https://www.w3.org/WAI/perspective-videos/)
 - [Histoires d'utilisateurs du Web](https://www.w3.org/WAI/people-use-web/user-stories/)
