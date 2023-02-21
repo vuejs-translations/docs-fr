@@ -68,14 +68,14 @@ Cependant d'autres façons de faire existent. Dans Vue, le framework a le contr�
 
 Nous aborderons ci-dessous quelques optimisations importantes réalisées par le compilateur de templates Vue dans le but d'améliorer les performances d'exécution du DOM virtuel.
 
-### Remontée statique {#static-hoisting}
+### Hissage statique (_Static hoisting_) {#static-hoisting}
 
 Il arrive régulièrement que certaines parties d'un template ne contiennent pas de liaisons dynamiques :
 
 ```vue-html{2-3}
 <div>
-  <div>foo</div> <!-- remonté -->
-  <div>bar</div> <!-- remonté -->
+  <div>foo</div> <!-- hissée -->
+  <div>bar</div> <!-- hissée -->
   <div>{{ dynamic }}</div>
 </div>
 ```
@@ -84,17 +84,17 @@ Il arrive régulièrement que certaines parties d'un template ne contiennent pas
 
 Les divs `foo` et `bar` sont statiques - recréer des vnodes et les différencier à chaque rendu est inutile. Le compilateur Vue extrait automatiquement les appels de création de vnodes de la fonction de rendu, et réutilise les mêmes vnodes à chaque rendu. Le moteur de rendu est également capable de ne pas les différencier quand il remarque que l'ancien et le nouveau vnode sont les mêmes.
 
-En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils seront condensés en un seul "vnode statique" qui contient une simple chaîne de caractères HTML pour tous ces nœuds ([Exemple](https://vue-next-template-explorer.netlify. app/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Ces vnodes statiques sont montés en modifiant directement `innerHTML`. Ils mettent également en cache les nœuds du DOM correspondants lors du montage initial - si le même élément de contenu est réutilisé ailleurs dans l'application, de nouveaux noeuds du DOM sont créés en utilisant la méthode native `cloneNode()`, ce qui est extrêmement efficace.
+En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils seront condensés en un seul "vnode statique" qui contient une simple chaîne de caractères HTML pour tous ces nœuds ([Exemple](https://vue-next-template-explorer.netlify.app/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Ces vnodes statiques sont montés en modifiant directement `innerHTML`. Ils mettent également en cache les nœuds du DOM correspondants lors du montage initial - si le même élément de contenu est réutilisé ailleurs dans l'application, de nouveaux nœuds du DOM sont créés en utilisant la méthode native `cloneNode()`, ce qui est extrêmement efficace.
 
 ### Options de correction {#patch-flags}
 
 Nous pouvons également déduire de nombreuses informations concernant un élément unique possédant des liaisons dynamiques au moment de la compilation :
 
 ```vue-html
-<!-- simplement une liaison de classe -->
+<!-- seulement une liaison de classe -->
 <div :class="{ active }"></div>
 
-<!-- simplement des liaisons de classe et d'id -->
+<!-- seulement des liaisons de value et de l'id -->
 <input :id="id" :value="value">
 
 <!-- seulement un texte -->
