@@ -206,34 +206,34 @@ Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Compos
 
 </div>
 
-## Runtime vs. Compile-time Reactivity {#runtime-vs-compile-time-reactivity}
+## Réactivité à l'exécution vs. à la compilation {#runtime-vs-compile-time-reactivity}
 
-Vue's reactivity system is primarily runtime-based: the tracking and triggering are all performed while the code is running directly in the browser. The pros of runtime reactivity are that it can work without a build step, and there are fewer edge cases. On the other hand, this makes it constrained by the syntax limitations of JavaScript.
+Le système de réactivité de Vue est principalement basé sur l'exécution : le suivi et le déclenchement sont tous deux effectués pendant l'exécution du code, directement dans le navigateur. Les avantages de la réactivité d'exécution sont qu'elle peut fonctionner sans outil de build et qu'il y a moins de cas limites. En revanche, elle est limitée par les contraintes syntaxiques de JavaScript.
 
-We have already encountered a limitation in the previous example: JavaScript does not provide a way for us to intercept the reading and writing of local variables, so we have to always access reactive state as object properties, using either reactive objects or refs.
+Nous avons déjà rencontré une limitation dans l'exemple précédent : JavaScript ne nous permet pas d'intercepter la lecture et l'écriture des variables locales. Nous devons donc toujours accéder à l'état réactif via les propriétés d'un objet, en utilisant des objets réactifs ou des refs.
 
-We have been experimenting with the [Reactivity Transform](/guide/extras/reactivity-transform.html) feature to reduce the code verbosity:
+Nous avons expérimenté la fonctionnalité [Reactivity Transform](/guide/extras/reactivity-transform.html) pour réduire la verbosité du code :
 
 ```js
 let A0 = $ref(0)
 let A1 = $ref(1)
 
-// track on variable read
+// traque lors de la lecture de la variable
 const A2 = $computed(() => A0 + A1)
 
-// trigger on variable write
+// se déclenche lorsque la variable est modifiée
 A0 = 2
 ```
 
-This snippet compiles into exactly what we'd have written without the transform, by automatically appending `.value` after references to the variables. With Reactivity Transform, Vue's reactivity system becomes a hybrid one.
+Le résultat de la compilation de cet extrait de code sera le même que celui résultant de ce que nous aurions écrit sans la transformation, via l'ajout automatique de `.value` après les références aux variables. Avec Reactivity Transform, le système de réactivité de Vue devient un système hybride.
 
-## Reactivity Debugging {#reactivity-debugging}
+## Déboguer la réactivité {#reactivity-debugging}
 
-It's great that Vue's reactivity system automatically tracks dependencies, but in some cases we may want to figure out exactly what is being tracked, or what is causing a component to re-render.
+C'est une bonne chose que le système de réactivité de Vue traque automatiquement les dépendances, mais dans certains cas, il se peut que nous voulions savoir exactement ce qui est traqué, ou ce qui provoque le nouveau rendu d'un composant.
 
-### Component Debugging Hooks {#component-debugging-hooks}
+### Hooks de débogage des composants {#component-debugging-hooks}
 
-We can debug what dependencies are used during a component's render and which dependency is triggering an update using the <span class="options-api">`renderTracked`</span><span class="composition-api">`onRenderTracked`</span> and <span class="options-api">`renderTriggered`</span><span class="composition-api">`onRenderTriggered`</span> lifecycle hooks. Both hooks will receive a debugger event which contains information on the dependency in question. It is recommended to place a `debugger` statement in the callbacks to interactively inspect the dependency:
+Nous pouvons vérifier quelles dépendances sont utilisées pendant le rendu d'un composant et quelle dépendance déclenche une mise à jour à l'aide des hooks de cycle de vie <span class="options-api">`renderTracked`</span><span class="composition-api">`onRenderTracked`</span> et <span class="options-api">`renderTriggered`</span><span class="composition-api">`onRenderTriggered`</span>. Les deux hooks recevront un événement de débogage qui contient des informations sur la dépendance en question. Il est recommandé de placer une instruction `debugger` dans les fonctions de rappel pour inspecter de manière interactive la dépendance :
 
 <div class="composition-api">
 
@@ -268,10 +268,10 @@ export default {
 </div>
 
 :::tip
-Component debug hooks only work in development mode.
+Les hooks de débogage des composants ne fonctionnent qu'en mode développement.
 :::
 
-The debug event objects have the following type:
+Les objets d'événements de débogage ont le type suivant :
 
 <span id="debugger-event"></span>
 
