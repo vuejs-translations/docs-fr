@@ -196,7 +196,7 @@ Par exemple, si nous avons un composant nommé "MyComponent" avec le template su
 
 ```vue-html
 <!-- template du composant enfant -->
-<p class="foo bar">Hi!</p>
+<p class="foo bar">Hello !</p>
 ```
 
 Ajoutez ensuite quelques classes lors de son utilisation :
@@ -209,7 +209,7 @@ Ajoutez ensuite quelques classes lors de son utilisation :
 Le HTML rendu sera :
 
 ```vue-html
-<p class="foo bar baz boo">Hi</p>
+<p class="foo bar baz boo">Hi!</p>
 ```
 
 Il en va de même pour les liaisons de classe :
@@ -221,14 +221,14 @@ Il en va de même pour les liaisons de classe :
 Lorsque `isActive` est vrai, le rendu HTML sera :
 
 ```vue-html
-<p class="foo bar active">Hello</p>
+<p class="foo bar active">Hello !</p>
 ```
 
 Si votre composant a plusieurs éléments racine, vous devrez définir quel élément recevra cette classe. Vous pouvez le faire en utilisant la propriété de composant `$attrs` :
 
 ```vue-html
 <!-- Template de MyComponent utilisant $attrs -->
-<p :class="$attrs.class">Hi!</p>
+<p :class="$attrs.class">Hello !</p>
 <span>Ceci est un composant enfant</span>
 ```
 
@@ -239,7 +239,7 @@ Si votre composant a plusieurs éléments racine, vous devrez définir quel él�
 Sera rendu :
 
 ```html
-<p class="baz">Hi!</p>
+<p class="baz">Hello !</p>
 <span>Ceci est un composant enfant</span>
 ```
 

@@ -88,7 +88,7 @@ Article principal : [Using Vue with TypeScript](/guide/typescript/overview).
 
 - [Volar](https://github.com/johnsoncodehk/volar) fournit une vérification de type pour les composants monofichiers utilisant des blocs `<script lang="ts">`, y compris les expressions de templates et la validation de props entre composants.
 
-- Utilisez [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/vue-language-tools/vue-tsc) pour effectuer la même vérification de type depuis la ligne de commande, ou pour générer des fichiers `d.ts` pour les composants monofichiers.
+- Utilisez [`vue-tsc`](https://github.com/vuejs/language-tools/tree/master/packages/vue-tsc) pour effectuer la même vérification de type depuis la ligne de commande, ou pour générer des fichiers `d.ts` pour les composants monofichiers.
 
 ## Testing {#testing}
 
