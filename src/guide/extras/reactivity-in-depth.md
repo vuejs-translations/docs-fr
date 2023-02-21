@@ -63,11 +63,11 @@ This `whenDepsChange()` function has the following tasks:
 
 3. Detect when a variable is mutated. E.g. when `A0` is assigned a new value, notify all its subscriber effects to re-run.
 
-## How Reactivity Works in Vue {#how-reactivity-works-in-vue}
+## Fonctionnement de la réactivité dans Vue {#how-reactivity-works-in-vue}
 
-We can't really track the reading and writing of local variables like in the example. There's just no mechanism for doing that in vanilla JavaScript. What we **can** do though, is intercept the reading and writing of **object properties**.
+Nous ne pouvons pas tout à fait suivre la lecture et l'écriture des variables locales comme dans l'exemple. Il n'y a tout simplement pas de mécanisme pour le faire dans le JavaScript classique. Ce que nous **pouvons** faire cependant, c'est intercepter la lecture et l'écriture des **propriétés d'un objet**.
 
-There are two ways of intercepting property access in JavaScript: [getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) / [setters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) and [Proxies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Vue 2 used getter / setters exclusively due to browser support limitations. In Vue 3, Proxies are used for reactive objects and getter / setters are used for refs. Here's some pseudo-code that illustrates how they work:
+Il existe deux façons d'intercepter l'accès aux propriétés en JavaScript : [les accesseurs](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/get) / [les mutateurs](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/set) et [les proxys](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Vue 2 utilisait exclusivement les accesseurs / mutateurs en raison des limitations de prise en charge du navigateur. Dans Vue 3, les proxys sont utilisés pour les objets réactifs et les accesseurs / mutateurs sont utilisés pour les refs. Voici un pseudo-code qui illustre leur fonctionnement :
 
 ```js{4,9,17,22}
 function reactive(obj) {
@@ -99,20 +99,20 @@ function ref(value) {
 ```
 
 :::tip
-Code snippets here and below are meant to explain the core concepts in the simplest form possible, so many details are omitted, and edge cases ignored.
+Ces extraits de code et ceux situés ci-dessous ont pour but d'expliquer les concepts de base de la manière la plus simple possible, c'est pourquoi de nombreux détails sont omis et les cas limites ignorés.
 :::
 
-This explains a few [limitations of reactive objects](/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive) that we have discussed in the fundamentals section:
+Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux des composants :
 
-- When you assign or destructure a reactive object's property to a local variable, the reactivity is "disconnected" because access to the local variable no longer triggers the get / set proxy traps.
+- Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, la réactivité est "déconnectée" car l'accès à la variable locale ne déclenche plus les pièges d'accès / de mutation du proxy.
 
-- The returned proxy from `reactive()`, although behaving just like the original, has a different identity if we compare it to the original using the `===` operator.
+- Le proxy retourné par `reactive()`, bien que se comportant comme l'original, n'a pas la même identité lorsqu'on le compare à ce dernier en utilisant l'opérateur `===`.
 
-Inside `track()`, we check whether there is a currently running effect. If there is one, we lookup the subscriber effects (stored in a Set) for the property being tracked, and add the effect to the Set:
+Dans `track()`, nous vérifions s'il existe un effet en cours d'exécution. S'il y en a un, nous recherchons les effets abonnés (stockés dans un Set) à la propriété suivie, et ajoutons l'effet au Set :
 
 ```js
-// This will be set right before an effect is about
-// to be run. We'll deal with this later.
+// Cela sera défini juste avant qu'un effet soit sur le point
+// d'être exécuté. Nous nous en occuperons plus tard.
 let activeEffect
 
 function track(target, key) {
@@ -123,9 +123,9 @@ function track(target, key) {
 }
 ```
 
-Effect subscriptions are stored in a global `WeakMap<target, Map<key, Set<effect>>>` data structure. If no subscribing effects Set was found for a property (tracked for the first time), it will be created. This is what the `getSubscribersForProperty()` function does, in short. For simplicity, we will skip its details.
+Les abonnements aux effets sont stockés dans une structure de données globale `WeakMap<target, Map<key, Set<effect>>`. Si aucun Set d'effets souscripteurs n'a été trouvé pour une propriété (suivie pour la première fois), il sera créé. C'est en résumé ce que fait la fonction `getSubscribersForProperty()`. Pour plus de simplicité, nous n'entrerons pas dans les détails.
 
-Inside `trigger()`, we again lookup the subscriber effects for the property. But this time we invoke them instead:
+Dans `trigger()`, nous recherchons à nouveau les effets abonnés à la propriété. Mais cette fois, nous les invoquons :
 
 ```js
 function trigger(target, key) {
@@ -134,7 +134,7 @@ function trigger(target, key) {
 }
 ```
 
-Now let's circle back to the `whenDepsChange()` function:
+Maintenant, revenons à la fonction `whenDepsChange()` :
 
 ```js
 function whenDepsChange(update) {
@@ -147,11 +147,11 @@ function whenDepsChange(update) {
 }
 ```
 
-It wraps the raw `update` function in an effect that sets itself as the current active effect before running the actual update. This enables `track()` calls during the update to locate the current active effect.
+Elle enveloppe la fonction brute `update` dans un effet étant l'effet actif actuel avant d'exécuter la mise à jour correspondante. Cela permet aux appels `track()` pendant la mise à jour de localiser l'effet actif actuel.
 
-At this point, we have created an effect that automatically tracks its dependencies, and re-runs whenever a dependency changes. We call this a **Reactive Effect**.
+À ce stade, nous avons créé un effet qui traque automatiquement ses dépendances et qui s'exécute à nouveau dès qu'une d'elles change. Nous appelons cela un **effet réactif**.
 
-Vue provides an API that allows you to create reactive effects: [`watchEffect()`](/api/reactivity-core.html#watcheffect). In fact, you may have noticed that it works pretty similarly to the magical `whenDepsChange()` in the example. We can now rework the original example using actual Vue APIs:
+Vue fournit une API qui vous permet de créer des effets réactifs : [`watchEffect()`](/api/reactivity-core.html#watcheffect). En fait, vous avez peut-être remarqué qu'elle fonctionne de manière assez similaire à la fonction magique `whenDepsChange()` de l'exemple. Nous pouvons maintenant retravailler l'exemple original en utilisant les API de Vue :
 
 ```js
 import { ref, watchEffect } from 'vue'
@@ -161,15 +161,15 @@ const A1 = ref(1)
 const A2 = ref()
 
 watchEffect(() => {
-  // tracks A0 and A1
+  // traque A0 et A1
   A2.value = A0.value + A1.value
 })
 
-// triggers the effect
+// déclenche l'effet
 A0.value = 2
 ```
 
-Using a reactive effect to mutate a ref isn't the most interesting use case - in fact, using a computed property makes it more declarative:
+L'utilisation d'un effet réactif pour modifier une ref n'est pas le cas d'utilisation le plus intéressant - en fait, l'utilisation d'une propriété calculée rend cela plus déclaratif :
 
 ```js
 import { ref, computed } from 'vue'
@@ -181,9 +181,9 @@ const A2 = computed(() => A0.value + A1.value)
 A0.value = 2
 ```
 
-Internally, `computed` manages its invalidation and re-computation using a reactive effect.
+En interne, `computed` gère son invalidation et son re-calcul en utilisant un effet réactif.
 
-So what's an example of a common and useful reactive effect? Well, updating the DOM! We can implement simple "reactive rendering" like this:
+Alors, quel pourrait être un exemple d'un effet réactif courant et utile ? Et bien, la mise à jour du DOM ! Nous pouvons implémenter un simple "rendu réactif" de cette manière :
 
 ```js
 import { ref, watchEffect } from 'vue'
@@ -194,15 +194,15 @@ watchEffect(() => {
   document.body.innerHTML = `count is: ${count.value}`
 })
 
-// updates the DOM
+// met à jour le DOM
 count.value++
 ```
 
-In fact, this is pretty close to how a Vue component keeps the state and the DOM in sync - each component instance creates a reactive effect to render and update the DOM. Of course, Vue components use much more efficient ways to update the DOM than `innerHTML`. This is discussed in [Rendering Mechanism](./rendering-mechanism).
+En fait, cela est assez proche de la façon dont un composant Vue maintient l'état et le DOM synchronisés - chaque instance de composant crée un effet réactif pour rendre et mettre à jour le DOM. Bien sûr, les composants Vue utilisent des moyens beaucoup plus efficaces pour mettre à jour le DOM que `innerHTML`. Ce point est abordé dans [Rendering Mechanism](./rendering-mechanism).
 
 <div class="options-api">
 
-The `ref()`, `computed()` and `watchEffect()` APIs are all part of the Composition API. If you have only been using Options API with Vue so far, you'll notice that Composition API is closer to how Vue's reactivity system works under the hood. In fact, in Vue 3 the Options API is implemented on top of the Composition API. All property access on the component instance (`this`) triggers getter / setters for reactivity tracking, and options like `watch` and `computed` invoke their Composition API equivalents internally.
+Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Composition API. Si vous n'avez utilisé que l'Options API avec Vue jusqu'à présent, vous remarquerez que la Composition API est plus proche de la façon dont le système de réactivité de Vue fonctionne sous le capot. En fait, dans Vue 3, l'Options API est mise en œuvre par dessus l'Options API. Tous les accès aux propriétés de l'instance du composant (`this`) déclenchent des accesseurs / mutateurs pour le suivi de la réactivité, et les options comme `watch` et `computed` invoquent leurs équivalents de la Composition API en interne.
 
 </div>
 
