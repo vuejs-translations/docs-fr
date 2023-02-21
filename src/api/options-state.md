@@ -45,7 +45,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Voir aussi :** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
 
 ## props {#props}
 
@@ -296,7 +296,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
   - **`deep`** : force la traversée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
   - **`flush`** : ajuste le timing du nettoyage de la fonction de rappel. Voir [Timing de nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
   Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des fonctions de rappel d'un observateur car elles n'auront pas accès à l'instance du composant via `this`.
 

@@ -359,7 +359,7 @@ Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela r
 
 ## Lecture complémentaire {#further-reading}
 
-- [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
+- [La réactivité en profondeur](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
 - [Gestion d'état](/guide/scaling-up/state-management.html) : pour les patterns de gestion d'état partagés par plusieurs composants.
 - [Tester les composables](/guide/scaling-up/testing.html#testing-composables) : conseils sur les tests de composables.
 - [VueUse](https://vueuse.org/): une collection de composables Vue. Le code source est également une excellente ressource d'apprentissage.
