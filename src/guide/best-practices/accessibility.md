@@ -330,7 +330,7 @@ Vous pouvez fournir des instructions complémentaires et associer plusieurs ids 
 ```vue-html
 <fieldset>
   <legend>Using aria-labelledby</legend>
-  <label id="date-label" for="date">Date courante:</label>
+  <label id="date-label" for="date">Date actuelle :</label>
   <input
     type="date"
     name="date"
