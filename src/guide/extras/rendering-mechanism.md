@@ -40,7 +40,7 @@ Au niveau le plus élevé, voici ce qui se passe lorsqu'un composant Vue est mon
 
 1. **Compilation** : Les templates Vue sont compilés en **fonctions de rendu** : fonctions qui retournent des arbres du DOM virtuel. Cette étape peut être effectuée soit à l'avance via un outil de build, soit à la volée en utilisant le compilateur d'exécution.
 
-2. **Montage** : Le moteur d'exécution invoque les fonctions de rendu, parcourt l'arbre du DOM virtuel retourné et crée des nœuds DOM réels en fonction. Cette étape est réalisée comme un [effet réactif](./réactivité-en-profondeur), et garde donc la trace de toutes les dépendances réactives qui ont été utilisées.
+2. **Montage** : Le moteur d'exécution invoque les fonctions de rendu, parcourt l'arbre du DOM virtuel retourné et crée des nœuds DOM réels en fonction. Cette étape est réalisée comme un [effet réactif](./reactivity-in-depth), et garde donc la trace de toutes les dépendances réactives qui ont été utilisées.
 
 3. **Correction** : Quand une dépendance utilisée pendant le montage change, l'effet est ré-exécuté. Cette fois, un nouvel arbre du DOM virtuel mis à jour est créé. Le moteur d'exécution parcourt le nouvel arbre, le compare avec l'ancien et applique les mises à jour nécessaires au DOM réel.
 
