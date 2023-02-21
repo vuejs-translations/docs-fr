@@ -135,7 +135,7 @@ Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de
 
 ## Formulaires sémantiques {#semantic-forms}
 
-Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants: `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
+Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants : `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
 
 Les labels sont en général placés en haut ou à gauche des champs de formulaire :
 
