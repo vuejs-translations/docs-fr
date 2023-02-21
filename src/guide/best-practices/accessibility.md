@@ -441,7 +441,7 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
 ```vue-html
 <form role="search">
-  <label for="searchIcon" class="hidden-visually">Recherche: </label>
+  <label for="searchIcon" class="hidden-visually">Recherche : </label>
   <input type="text" name="searchIcon" id="searchIcon" v-model="searchIcon" />
   <button type="submit">
     <i class="fas fa-search" aria-hidden="true"></i>
