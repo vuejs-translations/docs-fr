@@ -358,7 +358,7 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 
 En règle générale, il n'est pas recommandé de cacher visuellement des labels, même si le champ un nom accessible. Cependant, si la fonctionnalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
 
-Regardons ce champ de recherche:
+Regardons ce champ de recherche :
 
 ```vue-html
 <form role="search">
