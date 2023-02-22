@@ -4,7 +4,7 @@
 Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
 
 - [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
-- [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
+- [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
   :::
 
 ## ref() {#ref}

@@ -6,7 +6,7 @@ outline: deep
 import SpreadSheet from './demos/SpreadSheet.vue'
 </script>
 
-# La réactivité en profondeur {#reactivity-in-depth}
+# La réactivité en détails {#reactivity-in-depth}
 
 L'une des caractéristiques les plus distinctives de Vue est son système de réactivité discret. L'état des composants est constitué d'objets JavaScript réactifs. Lorsque vous les modifiez, la vue se met à jour. Cela rend la gestion de l'état simple et intuitive, mais il est toutefois important de comprendre comment cela fonctionne pour éviter certains problèmes courants. Dans cette section, nous allons nous pencher sur certains détails de bas niveau du système de réactivité de Vue.
 

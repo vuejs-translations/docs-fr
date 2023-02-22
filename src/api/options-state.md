@@ -45,7 +45,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Voir aussi :** [La réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## props {#props}
 

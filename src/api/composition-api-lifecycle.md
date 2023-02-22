@@ -241,7 +241,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,7 +267,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## onActivated() {#onactivated}
 
