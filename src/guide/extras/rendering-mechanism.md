@@ -86,7 +86,7 @@ Les divs `foo` et `bar` sont statiques - recréer des vnodes et les différencie
 
 En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils seront condensés en un seul "vnode statique" qui contient une simple chaîne de caractères HTML pour tous ces nœuds ([Exemple](https://vue-next-template-explorer.netlify.app/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Ces vnodes statiques sont montés en modifiant directement `innerHTML`. Ils mettent également en cache les nœuds du DOM correspondants lors du montage initial - si le même élément de contenu est réutilisé ailleurs dans l'application, de nouveaux nœuds du DOM sont créés en utilisant la méthode native `cloneNode()`, ce qui est extrêmement efficace.
 
-### Options de correction {#patch-flags}
+### Marques de correction {#patch-flags}
 
 Nous pouvons également déduire de nombreuses informations concernant un élément unique possédant des liaisons dynamiques au moment de la compilation :
 
@@ -111,7 +111,7 @@ createElementVNode("div", {
 }, null, 2 /* CLASS */)
 ```
 
-Le dernier argument, `2`, est une [option de correction](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs options de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les options en utilisant des [opérations sur les bits](https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
+Le dernier argument, `2`, est une [option de correction](https://github.com/vuejs/core/blob/main/packages/shared/src/patchFlags.ts). Un élément peut avoir plusieurs marques de correction, qui seront fusionnées en un seul nombre. Le moteur d'exécution peut alors vérifier les marques en utilisant des [opérations sur les bits](https://en.wikipedia.org/wiki/Bitwise_operation) pour déterminer s'il doit effectuer certaines opération :
 
 ```js
 if (vnode.patchFlag & PatchFlags.CLASS /* 2 */) {
@@ -119,7 +119,7 @@ if (vnode.patchFlag & PatchFlags.CLASS /* 2 */) {
 }
 ```
 
-Les vérifications par bit sont extrêmement rapides. Grâce aux options de correction, Vue est en mesure d'effectuer le moins d'opérations possible lors de la mise à jour des éléments avec des liaisons dynamiques.
+Les vérifications par bit sont extrêmement rapides. Grâce aux marques de correction, Vue est en mesure d'effectuer le moins d'opérations possible lors de la mise à jour des éléments avec des liaisons dynamiques.
 
 Vue encode également le type des enfants d'un vnode. Par exemple, un template qui possède plusieurs nœuds racines est représenté comme un fragment. Dans la plupart des cas, nous savons avec certitude que l'ordre de ces nœuds racines ne changera jamais, de sorte que cette information peut également être fournie au moment de l'exécution en tant qu'indicateur de patch :
 
@@ -147,7 +147,7 @@ export function render() {
 
 Conceptuellement, un "bloc" est une partie du template qui a une structure interne stable. Dans notre cas, le modèle template n'a qu'un seul bloc car il ne contient pas de directives structurelles comme `v-if` et `v-for`.
 
-Chaque bloc traque tous les nœuds descendants (pas seulement les enfants directs) possédant des options de correction. Par exemple :
+Chaque bloc traque tous les nœuds descendants (pas seulement les enfants directs) possédant des marques de correction. Par exemple :
 
 ```vue-html{3,5}
 <div> <!-- root block -->
@@ -185,8 +185,8 @@ Un bloc enfant est traqué à l'intérieur du tableau des descendants dynamiques
 
 ### Conséquences sur l'hydratation SSR {#impact-on-ssr-hydration}
 
-Les options de correction et la réduction des arbres améliorent également considérablement les performances de Vue en matière d'[hydratation SSR](/guide/scaling-up/ssr.html#client-hydration) :
+Les marques de correction et la réduction des arbres améliorent également considérablement les performances de Vue en matière d'[hydratation SSR](/guide/scaling-up/ssr.html#client-hydration) :
 
-- L'hydratation d'un seul élément peut utiliser des chemins rapides basés sur les options de correction du vnode correspondant.
+- L'hydratation d'un seul élément peut utiliser des chemins rapides basés sur les marques de correction du vnode correspondant.
 
 - Seuls les nœuds de bloc et leurs descendants dynamiques doivent être parcourus pendant l'hydratation, ce qui permet d'obtenir une hydratation partielle au niveau du template.
