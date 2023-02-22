@@ -24,11 +24,11 @@ Créé des nœuds virtuels du DOM (vnodes).
   type Slots = { [name: string]: Slot }
   ```
 
-  > Le type est simplifié dans un souci de lisibilité.
+  > Les types sont simplifiés dans un souci de lisibilité.
 
 - **Détails :**
 
-  Le premier argument peut être une chaîne de caractères (pour les éléments natifs) ou une définition de composant Vue. Le deuxième argument est la props à passer, et le troisième argument représente les enfants.
+  Le premier argument peut être une chaîne de caractères (pour les éléments natifs) ou une définition de composant Vue. Le deuxième argument est les props à passer, et le troisième argument représente les enfants.
 
   Lors de la création d'un vnode de composant, les enfants doivent être passés en tant que fonctions slot. Une seule fonction slot peut être transmise si le composant n'attend que le slot par défaut. Sinon, les slots doivent être passés comme un objet de fonctions slot.
 
@@ -97,7 +97,7 @@ Créé des nœuds virtuels du DOM (vnodes).
 
 ## mergeProps() {#mergeprops}
 
-Fusionne plusieurs objets de props avec une gestions spéciale pour certaines props.
+Fusionne plusieurs objets de props avec une gestion spéciale pour certaines props.
 
 - **Type :**
 
@@ -155,7 +155,7 @@ Clone un vnode.
 
   Les vnodes doivent être considérés comme immuables une fois créés, et vous ne devez pas modifier les propriétés d'un vnode existant. Au lieu de cela, clonez-le avec des props différentes / supplémentaires.
 
-  Les vnodes ont des propriétés internes spéciales, donc les cloner n'est pas aussi simple qu'une propagation d'objet. `cloneVNode()` gère la plupart de la logique interne.
+  Les vnodes ont des propriétés internes spéciales, donc les cloner n'est pas aussi simple qu'une copie d'objet. `cloneVNode()` gère la plupart de la logique interne.
 
 - **Exemple :**
 
@@ -192,7 +192,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
 
   `resolveComponent()` doit être appelée à l'intérieur<span class="composition-api">de `setup()` ou</span> de la fonction de rendu afin de résoudre à partir du bon contexte de composant.
 
-  Si le composant n'est pas trouvé, un avertissement exécution est émis lors de l'exécution et le est retourné sous forme de chaîne de caractères. 
+  Si le composant n'est pas trouvé, un avertissement exécution est émis lors de l'exécution et le nom est retourné sous forme de chaîne de caractères. 
 
 - **Exemple :**
 
