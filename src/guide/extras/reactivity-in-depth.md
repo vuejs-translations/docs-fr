@@ -65,7 +65,7 @@ Cette fonction `whenDepsChange()` assure les tâches suivantes :
 
 ## Fonctionnement de la réactivité dans Vue {#how-reactivity-works-in-vue}
 
-Nous ne pouvons pas tout à fait suivre la lecture et l'écriture des variables locales comme dans l'exemple. Il n'y a tout simplement pas de mécanisme pour le faire dans le JavaScript classique. Ce que nous **pouvons** faire cependant, c'est intercepter la lecture et l'écriture des **propriétés d'un objet**.
+Nous ne pouvons pas tout à fait suivre la lecture et l'écriture des variables locales comme dans l'exemple. Il n'y a tout simplement pas de mécanisme pour le faire avec du JavaScript classique. Ce que nous **pouvons** faire cependant, c'est intercepter la lecture et l'écriture des **propriétés d'un objet**.
 
 Il existe deux façons d'intercepter l'accès aux propriétés en JavaScript : [les accesseurs](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/get) / [les mutateurs](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/set) et [les proxys](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Vue 2 utilisait exclusivement les accesseurs / mutateurs en raison des limitations de prise en charge du navigateur. Dans Vue 3, les proxys sont utilisés pour les objets réactifs et les accesseurs / mutateurs sont utilisés pour les refs. Voici un pseudo-code qui illustre leur fonctionnement :
 
@@ -102,9 +102,9 @@ function ref(value) {
 Ces extraits de code et ceux situés ci-dessous ont pour but d'expliquer les concepts de base de la manière la plus simple possible, c'est pourquoi de nombreux détails sont omis et les cas limites ignorés.
 :::
 
-Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux des composants :
+Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux :
 
-- Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, la réactivité est "déconnectée" car l'accès à la variable locale ne déclenche plus les pièges d'accès / de mutation du proxy.
+- Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, la réactivité est "déconnectée" car l'accès à la variable locale ne déclenche plus les mécanismes d'accès / de mutation du proxy.
 
 - Le proxy retourné par `reactive()`, bien que se comportant comme l'original, n'a pas la même identité lorsqu'on le compare à ce dernier en utilisant l'opérateur `===`.
 
@@ -202,7 +202,7 @@ En fait, cela est assez proche de la façon dont un composant Vue maintient l'é
 
 <div class="options-api">
 
-Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Composition API. Si vous n'avez utilisé que l'Options API avec Vue jusqu'à présent, vous remarquerez que la Composition API est plus proche de la façon dont le système de réactivité de Vue fonctionne sous le capot. En fait, dans Vue 3, l'Options API est mise en œuvre par dessus l'Options API. Tous les accès aux propriétés de l'instance du composant (`this`) déclenchent des accesseurs / mutateurs pour le suivi de la réactivité, et les options comme `watch` et `computed` invoquent leurs équivalents de la Composition API en interne.
+Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Composition API. Si vous n'avez utilisé que l'Options API avec Vue jusqu'à présent, vous remarquerez que la Composition API est plus proche de la façon dont le système de réactivité de Vue fonctionne sous le capot. En fait, dans Vue 3, l'Options API est mise en œuvre par dessus la Composition API. Tous les accès aux propriétés de l'instance du composant (`this`) déclenchent des accesseurs / mutateurs pour le suivi de la réactivité, et les options comme `watch` et `computed` invoquent leurs équivalents de la Composition API en interne.
 
 </div>
 
