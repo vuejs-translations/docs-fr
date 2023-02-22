@@ -8,17 +8,17 @@ import SpreadSheet from './demos/SpreadSheet.vue'
 
 # La réactivité en profondeur {#reactivity-in-depth}
 
-One of Vue’s most distinctive features is the unobtrusive reactivity system. Component state consists of reactive JavaScript objects. When you modify them, the view updates. It makes state management simple and intuitive, but it’s also important to understand how it works to avoid some common gotchas. In this section, we are going to dig into some of the lower-level details of Vue’s reactivity system.
+L'une des caractéristiques les plus distinctives de Vue est son système de réactivité discret. L'état des composants est constitué d'objets JavaScript réactifs. Lorsque vous les modifiez, la vue se met à jour. Cela rend la gestion de l'état simple et intuitive, mais il est toutefois important de comprendre comment cela fonctionne pour éviter certains problèmes courants. Dans cette section, nous allons nous pencher sur certains détails de bas niveau du système de réactivité de Vue.
 
-## What is Reactivity? {#what-is-reactivity}
+## Qu'est-ce que la réactivité ? {#what-is-reactivity}
 
-This term comes up in programming quite a bit these days, but what do people mean when they say it? Reactivity is a programming paradigm that allows us to adjust to changes in a declarative manner. The canonical example that people usually show, because it’s a great one, is an Excel spreadsheet:
+De nos jours, ce terme revient fréquemment lorsqu'on parle de programmation, mais que veulent vraiment dire les gens lorsqu'ils le prononcent ? La réactivité est un paradigme de programmation qui nous permet de nous adapter aux changements de manière déclarative. L'exemple canonique que les gens utilisent habituellement, parce qu'il est excellent, est une feuille de calcul Excel :
 
 <SpreadSheet />
 
-Here cell A2 is defined via a formula of `= A0 + A1` (you can click on A2 to view or edit the formula), so the spreadsheet gives us 3. No surprises there. But if you update A0 or A1, you'll notice that A2 automagically updates too.
+Ici, la cellule A2 est définie par une formule `= A0 + A1` (vous pouvez cliquer sur A2 pour afficher ou modifier la formule), donc le tableur nous donne 3. Pas de surprise ici. Mais si vous mettez à jour A0 ou A1, vous remarquerez que A2 se met automatiquement à jour, comme par magie.
 
-JavaScript doesn’t usually work like this. If we were to write something comparable in JavaScript:
+JavaScript ne fonctionne généralement pas de cette manière. Si nous devions écrire quelque chose d'équivalent dans ce langage :
 
 ```js
 let A0 = 1
@@ -31,9 +31,9 @@ A0 = 2
 console.log(A2) // Still 3
 ```
 
-When we mutate `A0`, `A2` does not change automatically.
+Lorsque nous modifions `A0`, `A2` ne change pas automatiquement.
 
-So how would we do this in JavaScript? First, in order to re-run the code that updates `A2`, let's wrap it in a function:
+Alors comment faire en JavaScript ? Tout d'abord, afin de ré-exécuter le code qui met à jour `A2`, enveloppons-le dans une fonction :
 
 ```js
 let A2
@@ -43,25 +43,25 @@ function update() {
 }
 ```
 
-Then, we need to define a few terms:
+Ensuite, nous devons définir quelques termes :
 
-- The `update()` function produces a **side effect**, or **effect** for short, because it modifies the state of the program.
+- La fonction `update()` produit un **effet secondaire**, ou **effet** pour faire court, car elle modifie l'état du programme.
 
-- `A0` and `A1` are considered **dependencies** of the effect, as their values are used to perform the effect. The effect is said to be a **subscriber** to its dependencies.
+- `A0` et `A1` sont considérées comme des **dépendances** de l'effet, puisque leurs valeurs sont utilisées pour le réaliser. On dit que l'effet est un **souscripteur** de ses dépendances.
 
-What we need is a magic function that can invoke `update()` (the **effect**) whenever `A0` or `A1` (the **dependencies**) change:
+Ce dont nous avons besoin, c'est d'une fonction magique qui puisse invoquer `update()` (l' **effet**) chaque fois que `A0` ou `A1` (les **dépendances**) changent :
 
 ```js
 whenDepsChange(update)
 ```
 
-This `whenDepsChange()` function has the following tasks:
+Cette fonction `whenDepsChange()` assure les tâches suivantes :
 
-1. Track when a variable is read. E.g. when evaluating the expression `A0 + A1`, both `A0` and `A1` are read.
+1. Traquer quand une variable est lue. Par exemple, lors de l'évaluation de l'expression `A0 + A1`, les deux variables `A0` et `A1` sont lues.
 
-2. If a variable is read when there is a currently running effect, make that effect a subscriber to that variable. E.g. because `A0` and `A1` are read when `update()` is being executed, `update()` becomes a subscriber to both `A0` and `A1` after the first call.
+2. Si une variable est lue lorsqu'il y a un effet en cours d'exécution, abonner cet effet à cette variable. Par exemple, comme `A0` et `A1` sont lues lorsque `update()` est en cours d'exécution, `update()` devient abonné à la fois à `A0` et `A1` après le premier appel.
 
-3. Detect when a variable is mutated. E.g. when `A0` is assigned a new value, notify all its subscriber effects to re-run.
+3. Détecter quand une variable est mutée. Par exemple, lorsqu'une nouvelle valeur est attribuée à `A0`, il faut notifier à tous ses effets abonnés de s'exécuter à nouveau.
 
 ## Fonctionnement de la réactivité dans Vue {#how-reactivity-works-in-vue}
 
@@ -411,22 +411,22 @@ export function useMachine(options) {
 
 [RxJS](https://rxjs.dev/) est une bibliothèque permettant de travailler avec des flux d'événements asynchrones. La bibliothèque [VueUse](https://vueuse.org/) fournit le module complémentaire [`@vueuse/rxjs`](https://vueuse.org/rxjs/readme.html) permettant de connecter les flux RxJS au système de réactivité de Vue.
 
-## Connection to Signals
+## Connexion aux Signaux
 
-Quite a few other frameworks have introduced reactivity primitives similar to Vue refs, under the term "signals":
+De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de Vue, sous le terme "signaux" :
 
-- [Solid Signals](https://www.solidjs.com/docs/latest/api#createsignal)
-- [Angular Signals](https://github.com/angular/angular/discussions/49090)
-- [Preact Signals](https://preactjs.com/guide/v10/signals/)
-- [Qwik Signals](https://qwik.builder.io/docs/components/state/#usesignal)
+- [Signaux de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
+- [Signaux d'Angular](https://github.com/angular/angular/discussions/49090)
+- [Signaux de Preact](https://preactjs.com/guide/v10/signals/)
+- [Signaux de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fundamentally, signals are the same kind of reactivity primitive as Vue refs. It's a value container that provides dependency tracking on access and effect trigger on mutation. In some contexts, signals are also related to the rendering model where updates are performed through fine-grained subscriptions, although it is not a necessary trait for something to be called signals.
+Fondamentalement, les signaux sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets lors de la mutation. Dans certains contextes, les signaux sont également liés au modèle de rendu, les mises à jour sont alors  effectuées par le biais d'abonnements finement ajustés, bien que cela ne soit pas nécessaire pour en faire un signal.
 
-Among these implementations, the design of Preact and Qwik's signals are very similar to Vue's [shallowRef](/api/reactivity-advanced.html#shallowref): all three provide a mutable interface via the `.value` property.
+Parmi ces implémentations, la conception des signaux de Preact et de Qwik est très similaire à celle de [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : les trois fournissent une interface mutable via la propriété `.value`.
 
-### Solid Signals
+### Signaux de Solid
 
-Solid's `useSignal()` API design emphasizes read / write segregation. Signals are exposed as a read-only getter and a separate setter:
+La conception de l'API `useSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signaux sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
 
 ```js
 const [count, setCount] = createSignal(0)
@@ -435,7 +435,7 @@ count() // access the value
 setCount(1) // update the value
 ```
 
-Notice how the `count` signal can be passed down without the setter. This ensures that the state can never be mutated unless the setter is also explicitly exposed. Whether this safety guarantee justifies the more verbose syntax could be subject to the requirement of the project and personal taste - but in case you prefer this API style, you can easily replicate it in Vue:
+Remarquez comment le signal `count` peut être transmis sans utiliser le mutateur. Cela assure que l'état ne peut jamais être muté à moins que le mutateur soit également explicitement exposé. La question de savoir si cette garantie de sécurité justifie la syntaxe plus verbeuse peut être questionnée par les exigences du projet et vos goûts personnels - mais si vous préférez ce style d'API, vous pouvez facilement reproduire ce schéma dans Vue :
 
 ```js
 import { shallowRef, triggerRef } from 'vue'
@@ -451,27 +451,27 @@ export function createSignal(value, options) {
 }
 ```
 
-[Try it in the Playground](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
+[Essayer en ligne](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
 
-### Angular Signals
+### Signaux d'Angular
 
-Angular is undergoing some fundamental changes by foregoing dirty-checking and introducing its own implementation of a reactivity primitive. The Angular Signal API looks like this:
+Angular subit en ce moment des changements fondamentaux en renonçant au dirt-checking et en introduisant sa propre implémentation d'une primitive de réactivité. L'API du signal d'Angular ressemble à ça :
 
 ```js
 const count = signal(0)
 
-count() // access the value
-count.set(1) // set new value
-count.update((v) => v + 1) // update based on previous value
+count() // accède à la valeur
+count.set(1) // assigne la nouvelle valeur
+count.update((v) => v + 1) // met à jour en fonction de la valeur précédente
 
-// mutate deep objects with same identity
+// mute les objets profonds ayant la même identité
 const state = signal({ count: 0 })
 state.mutate((o) => {
   o.count++
 })
 ```
 
-Again, we can easily replicate the API in Vue:
+Une fois de plus, nous pouvons facilement répliquer l'API dans Vue :
 
 ```js
 import { shallowRef, triggerRef } from 'vue'
@@ -493,11 +493,11 @@ export function signal(initialValue) {
 }
 ```
 
-[Try it in the Playground](https://sfc.vuejs.org/#eNp9U8uO2zAM/BVCl3XaxO72mCZBi/YLeuhJQOE4jKOtLRmU5C1g+N9LWbI3j2JvEjkckqPRIL51Xd57FFuxsxWpzoFF57uD1KrtDDkYwKpal80aKtN23uEJRjiTaeEpL0pd+6akTYTkL/ZJaqkro61juNcO9qk8+7SaEyfjjw1yZibMshXsD7GAjx/gM2N3RZyHJ+GLw7ZrSod8A9hdng/fJ3ZltzAMS+U47grOzZgfsVECxbZ3qKN3zmj4WjWq+rOXYmLKfXfiXlkfpurhIzyvpJjwAEpXhC1qN5UXsf49LpYz7D7XE3LgrnZXLOuJtYi6b9qyYz2N5pcZAl6mhJWC14lkUvDThbsUF+c6uy0Ke67Ce77Y3FBd8CknnkK1mKNtN0cyrxaJiaVYX3EUHOyRNoT6hIT0Hucd9IE30I5Sj7zKgz14mTdbXcqmMa8/8bwGR6qukabzYrPSwu8Hz/Eck8fw70Rz9rpyilVPLlNaOVU2v8rG4yrKFE1HwYlLx1vcG8oyKpqR8j7kQsqGN+TEFAi5Yc4uQd434KJvOBoP3PMWnMJZirAVY13rXaybDibVpcuC/nIlU0apmPi3Eq/Pgv9PluWL1ei4840kFTdcBJ4BV5zpV85CjGL8B7sPb9o=)
+[Essayer en ligne](https://sfc.vuejs.org/#eNp9U8uO2zAM/BVCl3XaxO72mCZBi/YLeuhJQOE4jKOtLRmU5C1g+N9LWbI3j2JvEjkckqPRIL51Xd57FFuxsxWpzoFF57uD1KrtDDkYwKpal80aKtN23uEJRjiTaeEpL0pd+6akTYTkL/ZJaqkro61juNcO9qk8+7SaEyfjjw1yZibMshXsD7GAjx/gM2N3RZyHJ+GLw7ZrSod8A9hdng/fJ3ZltzAMS+U47grOzZgfsVECxbZ3qKN3zmj4WjWq+rOXYmLKfXfiXlkfpurhIzyvpJjwAEpXhC1qN5UXsf49LpYz7D7XE3LgrnZXLOuJtYi6b9qyYz2N5pcZAl6mhJWC14lkUvDThbsUF+c6uy0Ke67Ce77Y3FBd8CknnkK1mKNtN0cyrxaJiaVYX3EUHOyRNoT6hIT0Hucd9IE30I5Sj7zKgz14mTdbXcqmMa8/8bwGR6qukabzYrPSwu8Hz/Eck8fw70Rz9rpyilVPLlNaOVU2v8rG4yrKFE1HwYlLx1vcG8oyKpqR8j7kQsqGN+TEFAi5Yc4uQd434KJvOBoP3PMWnMJZirAVY13rXaybDibVpcuC/nIlU0apmPi3Eq/Pgv9PluWL1ei4840kFTdcBJ4BV5zpV85CjGL8B7sPb9o=)
 
-Compared to Vue refs, Solid and Angular's getter-based API style provide some interesting trade-offs when used in Vue components:
+Par rapport aux références Vue, Solid et le style d'API basé sur les accesseurs d'Angular offrent quelques compromis intéressants lorsqu'ils sont utilisés dans des composants Vue :
 
-- `()` is slightly less verbose than `.value`, but updating the value is more verbose.
-- There is no ref-unwrapping: accessing values always require `()`. This makes value access consistent everywhere. This also means you can pass raw signals down as component props.
+- `()` est légèrement moins verbeux que `.value`, mais la mise à jour de la valeur l'est d'avantage.
+- Les refs ne sont pas enveloppées : l'accès aux valeurs nécessite toujours `()`. Cela rend l'accès aux valeurs cohérent partout. Cela signifie également que vous pouvez transmettre des signaux bruts vers le bas en tant que props de composants.
 
-Whether these API styles suit you is to some extent subjective. Our goal here is to demonstrate the underlying similarity and trade-offs between these different API designs. We also want to show that Vue is flexible: you are not really locked into the existing APIs. Should it be necessary, you can create your own reactivity primitive API to suit more specific needs.
+Que ces styles d'API vous conviennent ou non est dans une certaine mesure subjectif. Notre objectif ici est de démontrer la similarité sous-jacente et les compromis entre ces différentes conceptions d'API. Nous voulons également montrer que Vue est flexible : vous n'êtes pas vraiment enfermé dans les API existantes. Si cela s'avère nécessaire, vous pouvez créer votre propre API primitive de réactivité pour répondre à des besoins plus spécifiques.
