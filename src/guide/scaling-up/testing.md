@@ -243,7 +243,7 @@ Les tests End-to-end n'importent pas le code de votre application Vue, mais repo
 
 Les tests End-to-end valident de nombreuses couches de votre application. Ils peuvent soit cibler votre application localement, soit même un environnement de staging déployé. Les tests exercés sur votre environnement de staging incluent non seulement votre code frontend et votre serveur statique, mais également tous les services et infrastructures backend associés.
 
-> The more your tests resemble the way your software is used, the more confidence they can give you. - [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106) - Author of the Testing Library
+> Plus vos tests ressemblent à l'utilisation de votre application, plus ils peuvent vous donner confiance. [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106), auteur de la bibliothèque de tests
 
 En testant l'impact des actions des utilisateurs sur votre application, les tests E2E sont souvent la clé d'une plus grande confiance dans le bon fonctionnement ou non d'une application.
 
