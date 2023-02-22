@@ -317,7 +317,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/reactivity-in-depth'
         },
         {
-          text: 'Rendering Mechanism',
+          text: 'Mécanismes de rendu',
           link: '/guide/extras/rendering-mechanism'
         },
         {
