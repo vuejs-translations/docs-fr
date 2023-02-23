@@ -28,7 +28,7 @@ let A2 = A0 + A1
 console.log(A2) // 3
 
 A0 = 2
-console.log(A2) // Still 3
+console.log(A2) // Toujours 3
 ```
 
 Lorsque nous modifions `A0`, `A2` ne change pas automatiquement.
@@ -49,7 +49,7 @@ Ensuite, nous devons définir quelques termes :
 
 - `A0` et `A1` sont considérées comme des **dépendances** de l'effet, puisque leurs valeurs sont utilisées pour le réaliser. On dit que l'effet est un **souscripteur** de ses dépendances.
 
-Ce dont nous avons besoin, c'est d'une fonction magique qui puisse invoquer `update()` (l' **effet**) chaque fois que `A0` ou `A1` (les **dépendances**) changent :
+Ce dont nous avons besoin, c'est d'une fonction magique qui puisse invoquer `update()` (l'**effet**) chaque fois que `A0` ou `A1` (les **dépendances**) changent :
 
 ```js
 whenDepsChange(update)
@@ -411,28 +411,28 @@ export function useMachine(options) {
 
 [RxJS](https://rxjs.dev/) est une bibliothèque permettant de travailler avec des flux d'événements asynchrones. La bibliothèque [VueUse](https://vueuse.org/) fournit le module complémentaire [`@vueuse/rxjs`](https://vueuse.org/rxjs/readme.html) permettant de connecter les flux RxJS au système de réactivité de Vue.
 
-## Connexion aux Signaux
+## Connexion aux Signals
 
 De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de Vue, sous le terme "signaux" :
 
-- [Signaux de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
-- [Signaux d'Angular](https://github.com/angular/angular/discussions/49090)
-- [Signaux de Preact](https://preactjs.com/guide/v10/signals/)
-- [Signaux de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
+- [Signals de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
+- [Signals d'Angular](https://github.com/angular/angular/discussions/49090)
+- [Signals de Preact](https://preactjs.com/guide/v10/signals/)
+- [Signals de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fondamentalement, les signaux sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets lors de la mutation. Dans certains contextes, les signaux sont également liés au modèle de rendu, les mises à jour sont alors  effectuées par le biais d'abonnements finement ajustés, bien que cela ne soit pas nécessaire pour en faire un signal.
+Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets lors de la mutation. Dans certains contextes, les signals sont également liés au modèle de rendu, les mises à jour sont alors effectuées par le biais d'abonnements finement ajustés, bien que cela ne soit pas nécessaire pour en faire un signal.
 
-Parmi ces implémentations, la conception des signaux de Preact et de Qwik est très similaire à celle de [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : les trois fournissent une interface mutable via la propriété `.value`.
+Parmi ces implémentations, la conception des signals de Preact et de Qwik est très similaire à celle de [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : les trois fournissent une interface mutable via la propriété `.value`.
 
 ### Signaux de Solid
 
-La conception de l'API `useSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signaux sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
+La conception de l'API `useSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
 
 ```js
 const [count, setCount] = createSignal(0)
 
-count() // access the value
-setCount(1) // update the value
+count() // accès à la valeur
+setCount(1) // mise à jour de la valeur
 ```
 
 Remarquez comment le signal `count` peut être transmis sans utiliser le mutateur. Cela assure que l'état ne peut jamais être muté à moins que le mutateur soit également explicitement exposé. La question de savoir si cette garantie de sécurité justifie la syntaxe plus verbeuse peut être questionnée par les exigences du projet et vos goûts personnels - mais si vous préférez ce style d'API, vous pouvez facilement reproduire ce schéma dans Vue :
@@ -453,7 +453,7 @@ export function createSignal(value, options) {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
 
-### Signaux d'Angular
+### Signals d'Angular
 
 Angular subit en ce moment des changements fondamentaux en renonçant au dirt-checking et en introduisant sa propre implémentation d'une primitive de réactivité. L'API du signal d'Angular ressemble à ça :
 
@@ -498,6 +498,6 @@ export function signal(initialValue) {
 Par rapport aux références Vue, Solid et le style d'API basé sur les accesseurs d'Angular offrent quelques compromis intéressants lorsqu'ils sont utilisés dans des composants Vue :
 
 - `()` est légèrement moins verbeux que `.value`, mais la mise à jour de la valeur l'est d'avantage.
-- Les refs ne sont pas enveloppées : l'accès aux valeurs nécessite toujours `()`. Cela rend l'accès aux valeurs cohérent partout. Cela signifie également que vous pouvez transmettre des signaux bruts vers le bas en tant que props de composants.
+- Les refs ne sont pas enveloppées : l'accès aux valeurs nécessite toujours `()`. Cela rend l'accès aux valeurs cohérent partout. Cela signifie également que vous pouvez transmettre des signals bruts vers le bas en tant que props de composants.
 
 Que ces styles d'API vous conviennent ou non est dans une certaine mesure subjectif. Notre objectif ici est de démontrer la similarité sous-jacente et les compromis entre ces différentes conceptions d'API. Nous voulons également montrer que Vue est flexible : vous n'êtes pas vraiment enfermé dans les API existantes. Si cela s'avère nécessaire, vous pouvez créer votre propre API primitive de réactivité pour répondre à des besoins plus spécifiques.
