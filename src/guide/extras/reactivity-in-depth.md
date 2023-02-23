@@ -455,7 +455,7 @@ export function createSignal(value, options) {
 
 ### Signals d'Angular
 
-Angular subit en ce moment des changements fondamentaux en renonçant au dirt-checking et en introduisant sa propre implémentation d'une primitive de réactivité. L'API du signal d'Angular ressemble à ça :
+Angular subit en ce moment des changements fondamentaux en renonçant au _dirt-checking_ et en introduisant sa propre implémentation d'une primitive de réactivité. L'API du signal d'Angular ressemble à ça :
 
 ```js
 const count = signal(0)
