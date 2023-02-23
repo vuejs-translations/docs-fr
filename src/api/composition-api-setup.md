@@ -1,17 +1,17 @@
 # Composition API: setup() {#composition-api-setup}
 
 :::info Note
-This page documents the usage of the `setup` component option. If you are using Composition API with Single-File Components, [`<script setup>`](/api/sfc-script-setup.html) is recommended for a more succinct and ergonomic syntax.
+Cette page détaille l'usage du composant `setup`. Si vous utilisez la Composition API dans des composants monofichiers, [`<script setup>`](/api/sfc-script-setup.html) est recommandé pour une syntaxe succincte et ergonomique.
 :::
 
-The `setup()` hook serves as the entry point for Composition API usage in components in the following cases:
+Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants:
 
-1. Using Composition API without a build step;
-2. Integrating with Composition-API-based code in an Options API component.
+1. Si vous souhaitez utiliser la Composition API sans étape de build;
+2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Option API.
 
-## Basic Usage {#basic-usage}
+## Usage concret {#basic-usage}
 
-We can declare reactive state using [Reactivity APIs](./reactivity-core.html) and expose them to the template by returning an object from `setup()`. The properties on the returned object will also be made available on the component instance (if other options are used):
+On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée):
 
 ```vue
 <script>
@@ -21,7 +21,8 @@ export default {
   setup() {
     const count = ref(0)
 
-    // expose to template and other options API hooks
+    // expose la variable count dans le template
+    // et dans tous les autres hooks de l'Option API
     return {
       count
     }
@@ -38,15 +39,15 @@ export default {
 </template>
 ```
 
-[refs](/api/reactivity-core.html#ref) returned from `setup` are [automatically shallow unwrapped](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) when accessed in the template so you do not need to use `.value` when accessing them. They are also unwrapped in the same way when accessed on `this`.
+Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le modèle, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également distribuées de la même façon lorsqu'elles sont invoquées sur `this`.
 
-`setup()` itself does not have access to the component instance - `this` will have a value of `undefined` inside `setup()`. You can access Composition-API-exposed values from Options API, but not the other way around.
+`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par l'API de Composition depuis l'Options API, mais pas l'inverse.
 
-`setup()` should return an object _synchronously_. The only case when `async setup()` can be used is when the component is a descendant of a [Suspense](../guide/built-ins/suspense.html) component.
+`setup()` devrait renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
 
-## Accessing Props {#accessing-props}
+## Accéder aux props {#accessing-props}
 
-The first argument in the `setup` function is the `props` argument. Just as you would expect in a standard component, `props` inside of a `setup` function are reactive and will be updated when new props are passed in.
+Le premier argument dans la fonction `setup` est l'argument `props`. Tout comme l'on s'y attendrait dans un composant standard, les `props` à l'intérieur d'une fonction `setup` sont réactives et seront mises à jour lorsque de nouvelles props seront transmises.
 
 ```js
 export default {
@@ -59,49 +60,50 @@ export default {
 }
 ```
 
-Note that if you destructure the `props` object, the destructured variables will lose reactivity. It is therefore recommended to always access props in the form of `props.xxx`.
+Notez que si vous déstructurez l'objet `props`, les variables déstructurées perdront leur réactivité. Il est donc recommandé d'accéder aux props sous la forme de `props.xxx`.
 
-If you really need to destructure the props, or need to pass a prop into an external function while retaining reactivity, you can do so with the [toRefs()](./reactivity-utilities.html#torefs) and [toRef()](/api/reactivity-utilities.html#toref) utility APIs:
+Si vous avez vraiment besoin de déstructurer les props, ou si vous devez passer une prop dans une fonction externe tout en conservant la réactivité, vous pouvez le faire avec les utilitaires de l'API de Réactivité [toRefs()](./reactivity-utilities.html#torefs) et [toRef()](/api/reactivity-utilities.html#toref).
 
 ```js
 import { toRefs, toRef } from 'vue'
 
 export default {
   setup(props) {
-    // turn `props` into an object of refs, then destructure
+    // transforme props en un objet réactif puis le déstructure
     const { title } = toRefs(props)
-    // `title` is a ref that tracks `props.title`
+    // `title` est une ref rattachée à `props.title` 
     console.log(title.value)
 
-    // OR, turn a single property on `props` into a ref
+    // Une autre alternative est de transformer votre props en une autre ref
     const title = toRef(props, 'title')
   }
 }
 ```
 
-## Setup Context {#setup-context}
+## Contexte de la fonction Setup {#setup-context}
 
-The second argument passed to the `setup` function is a **Setup Context** object. The context object exposes other values that may be useful inside `setup`:
+Le deuxième argument passé à la fonction `setup` est un objet **Context**. Cet objet expose d'autres valeurs qui peuvent être utiles à l'intérieur de `setup`:
 
 ```js
 export default {
   setup(props, context) {
-    // Attributes (Non-reactive object, equivalent to $attrs)
+    // Attributs (objet non réactif, équivalent à $attrs)
     console.log(context.attrs)
 
-    // Slots (Non-reactive object, equivalent to $slots)
+    // Slots (objet non réactif, équivalent à $slots)
     console.log(context.slots)
 
-    // Emit events (Function, equivalent to $emit)
+    // Émettre des événements (fonction, équivalent à $emit)
     console.log(context.emit)
 
-    // Expose public properties (Function)
+    // Exposer des propriétés publiques (fonction)
     console.log(context.expose)
   }
 }
 ```
 
-The context object is not reactive and can be safely destructured:
+L'objet contexte n'est pas réactif et peut être déstructuré en toute sécurité:
+
 
 ```js
 export default {
@@ -111,30 +113,30 @@ export default {
 }
 ```
 
-`attrs` and `slots` are stateful objects that are always updated when the component itself is updated. This means you should avoid destructuring them and always reference properties as `attrs.x` or `slots.x`. Also note that, unlike `props`, the properties of `attrs` and `slots` are **not** reactive. If you intend to apply side effects based on changes to `attrs` or `slots`, you should do so inside an `onBeforeUpdate` lifecycle hook.
+`attrs` et `slots` sont des objets d'état qui sont toujours mis à jour lorsque le composant lui-même est mis à jour. Cela signifie que vous devriez éviter de les déstructurer et toujours faire référence aux propriétés comme `attrs.x` ou `slots.x`. Notez également que, contrairement aux `props`, les propriétés d'`attrs` et de `slots` **ne sont pas réactives**. Si vous avez l'intention d'appliquer des effets secondaires en fonction des changements apportés à `attrs` ou `slots`, vous devriez le faire à l'intérieur du cycle de vie `onBeforeUpdate`.
 
-### Exposing Public Properties {#exposing-public-properties}
+### Exposer des propriétés publiques {#exposing-public-properties}
 
-`expose` is a function that can be used to explicitly limit the properties exposed when the component instance is accessed by a parent component via [les refs du template](/guide/essentials/template-refs.html#ref-on-component):
+`expose` est une fonction qui peut être utilisée pour limiter explicitement les propriétés exposées lorsque l'instance de composant est accédée par un composant parent via [les refs du template](/guide/essentials/template-refs.html#ref-on-component):
 
 ```js{5,10}
 export default {
   setup(props, { expose }) {
-    // make the instance "closed" -
-    // i.e. do not expose anything to the parent
+    // rendre l'instance inaccessible, fermée —
+    //  c.-à-d. n'exposera rien au parent
     expose()
 
     const publicCount = ref(0)
     const privateCount = ref(0)
-    // selectively expose local state
+    // n'exposer qu'une sélection de l'instance locale
     expose({ count: publicCount })
   }
 }
 ```
 
-## Usage with Render Functions {#usage-with-render-functions}
+## Usage avec les fonctions de rendu {#usage-with-render-functions}
 
-`setup` can also return a [render function](/guide/extras/render-function.html) which can directly make use of the reactive state declared in the same scope:
+`setup` peut également retourner [une fonction de rendu](/guide/extras/render-function.html) qui peut directement utiliser l'état réactif déclaré dans le scope partagé:
 
 ```js{6}
 import { h, ref } from 'vue'
@@ -147,9 +149,9 @@ export default {
 }
 ```
 
-Returning a render function prevents us from returning anything else. Internally that shouldn't be a problem, but it can be problematic if we want to expose methods of this component to the parent component via template refs.
+Retourner une fonction de rendu nous empêche de retourner autre chose. En pratique, cela ne devrait pas poser de problème mais cela peut être problématique si nous voulons exposer des méthodes de ce composant enfant au composant parent via les refs du template.
 
-We can solve this problem by calling [`expose()`](#exposing-public-properties):
+Nous pouvons résoudre ce problème en appellant [`expose()`](#exposing-public-properties):
 
 ```js{8-10}
 import { h, ref } from 'vue'
@@ -168,4 +170,4 @@ export default {
 }
 ```
 
-The `increment` method would then be available in the parent component via a template ref.
+La méthode `increment` serait dès lors disponible dans le composant parent via une référence.
