@@ -313,7 +313,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/composition-api-faq'
         },
         {
-          text: 'Reactivity in Depth',
+          text: 'La réactivité en détails',
           link: '/guide/extras/reactivity-in-depth'
         },
         {
