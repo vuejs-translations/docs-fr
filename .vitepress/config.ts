@@ -678,7 +678,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     algolia: {
       indexName: 'fr-vuejs',
       appId: 'HH5AXEOM9U',
-      apiKey: '7f97f7ae2e3b0eb2c5f453a1191022c',
+      apiKey: 'b33b47187a1497e2a75b99d8a4deee38',
       searchParameters: {
         facetFilters: ['version:v3']
       }
