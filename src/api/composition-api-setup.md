@@ -9,7 +9,7 @@ Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composi
 1. Si vous souhaitez utiliser la Composition API sans étape de build;
 2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Option API.
 
-## Basic Usage {#basic-usage}
+## Usage basique {#basic-usage}
 
 On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée):
 
