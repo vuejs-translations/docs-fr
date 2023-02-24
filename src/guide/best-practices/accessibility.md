@@ -88,7 +88,7 @@ L'un des éléments les plus importants de l'accessibilité est de s'assurer que
 
 Les utilisateurs peuvent naviguer dans une application à travers les titres. Le fait d'avoir des titres descriptifs pour chaque section de votre application permet aux utilisateurs de prédire plus facilement le contenu de celle-ci. En ce qui concerne les titres, il existe quelques pratiques d'accessibilité recommandées :
 
-- Imbriquez les titres dans leur ordre hiérarchique : `<h1>` - `<h6>`
+- Imbriquez les titres dans leur ordre hiérarchique : `<h1>` - `<h6>`
 - Ne sautez pas les titres à l'intérieur d'une section
 - Utilisez les balises de titres plutôt que du style de texte pour représenter visuellement des titres.
 
@@ -118,10 +118,10 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 
 | HTML            | ARIA Role            | But du landmark                                                                                                                |
 |-----------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| header          | role="banner"        | Entête principales: titre de la page\*                                                                                         |
+| header          | role="banner"        | Entête principales : titre de la page\*                                                                                        |
 | nav             | role="navigation"    | Collection de liens utilisables lors de la navigation dans le document ou vers des documents associés                          |
 | main            | role="main"          | Le contenu central ou principal du document.                                                                                   |
-| footer          | role="contentinfo"   | Information à propos du document parent: notes de pied de page/copyrights/liens vers la déclaration de confidentialité         |
+| footer          | role="contentinfo"   | Information à propos du document parent : notes de pied de page/copyrights/liens vers la déclaration de confidentialité        |
 | aside           | role="complementary" | Supporte le contenu principale, malgré tout est séparé et a du sens par lui-même                                               |
 | _Not available_ | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
@@ -135,14 +135,14 @@ Il est recommandé d'utiliser des éléments HTML landmark avec des attributs de
 
 ## Formulaires sémantiques {#semantic-forms}
 
-Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants : `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
+Lors de la création d'un formulaire, vous pouvez utiliser les éléments suivants : `<form>`, `<label>`, `<input>`, `<textarea>`, et `<button>`
 
 Les labels sont en général placés en haut ou à gauche des champs de formulaire :
 
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
   <div v-for="item in formItems" :key="item.id" class="form-item">
-    <label :for="item.id">{{ item.label }}: </label>
+    <label :for="item.id">{{ item.label }} : </label>
     <input
       :type="item.type"
       :id="item.id"
@@ -209,7 +209,7 @@ N'hésitez pas à inspecter cet élément dans les outils de développeur de Chr
 
 #### `aria-labelledby` {#aria-labelledby}
 
-Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) est similaire à `aria-label` à l'exception du fait que c'est utilisé si le libellé est visible à l'écran. Associez-le à d'autres éléments par leurs `id` et vous pourrez associer plusieurs `id`s:
+Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) est similaire à `aria-label` à l'exception du fait que c'est utilisé si le libellé est visible à l'écran. Associez-le à d'autres éléments par leurs `id` et vous pourrez associer plusieurs `id`:
 
 ```vue-html
 <form
@@ -287,7 +287,7 @@ Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [crit�
   autocomplete="on"
 >
   <div v-for="item in formItems" :key="item.id" class="form-item">
-    <label :for="item.id">{{ item.label }}: </label>
+    <label :for="item.id">{{ item.label }} : </label>
     <input
       type="text"
       :id="item.id"
@@ -362,7 +362,7 @@ Regardons ce champ de recherche :
 
 ```vue-html
 <form role="search">
-  <label for="search" class="hidden-visually">Recherche: </label>
+  <label for="search" class="hidden-visually">Recherche : </label>
   <input type="text" name="search" id="search" v-model="search" />
   <button type="submit">Recherche</button>
 </form>
@@ -467,7 +467,7 @@ Le World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) développe
 
 [WCAG 2.1](https://www.w3.org/TR/WCAG21/) étend [WCAG 2.0](https://www.w3.org/TR/WCAG20/) et permet l'implémentation de nouvelles technologies en tenant compte de l'évolution du web. Le W3C encourage l'utilisation de la version la plus récente de WCAG lors du développement ou de la mise à jour de vos pratiques d'accessibilité Web.
 
-#### WCAG 2.1 Quatre principaux principes de guidance (abbreviated as POUR): {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
+#### WCAG 2.1 Quatre principaux principes de guidance (POUR en abrégé) : {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
 
 - [Perceptible](https://www.w3.org/TR/WCAG21/#perceivable)
   - Les utilisateurs doivent être capables de percevoir l'information qui leur est présentée
@@ -531,10 +531,10 @@ Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quat
 
 - _[Visuel](https://webaim.org/articles/visual/)_ - Ces utilisateurs peuvent bénéficier de l'utilisation de liseurs d'écran, d'outils d'agrandissement, du contrôle du contraste ou de plage braille.
 - _[Auditif](https://webaim.org/articles/auditory/)_ - Ces utilisateurs peuvent bénéficier de sous-titres, de transcriptions ou de vidéos en langages des signes.
-- _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de [technologies d'assistance pour les assistive technologies for handicaps moteurs ](https://webaim.org/articles/motor/assistive): logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
+- _[Moteur](https://webaim.org/articles/motor/)_ - Ces utilisateurs peuvent bénéficier d'un large spectre de [technologies d'assistance pour les assistive technologies for handicaps moteurs ](https://webaim.org/articles/motor/assistive) : logiciels de reconnaissance vocale, eye tracking, accès par bouton unique, head wand, sip and puff switch, souris trackball surdimensionnée, clavier adaptatif ou autres technologies d'assistance.
 - _[Cognitif](https://webaim.org/articles/cognitive/)_ - Ces utilisateurs peuvent bénéficier de média supplémentaire, d'une organisation structurelle du contenu, d'un style d'écriture clair et simple.
 
 Rendez-vous aux liens suivants de WebAim pour comprendre via des retours d'expérience d'utilisateurs :
 
-- [Perspectives sur l'accessibilité du Web: En explorer les impacts et bénéfices pour tous](https://www.w3.org/WAI/perspective-videos/)
+- [Perspectives sur l'accessibilité du Web : En explorer les impacts et bénéfices pour tous](https://www.w3.org/WAI/perspective-videos/)
 - [Histoires d'utilisateurs du Web](https://www.w3.org/WAI/people-use-web/user-stories/)
