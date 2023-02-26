@@ -1,17 +1,16 @@
 # Composition API: setup() {#composition-api-setup}
 
+## Utilisation basique {#basic-usage}
 :::info Note
-This page documents the usage of the `setup` component option. If you are using Composition API with Single-File Components, [`<script setup>`](/api/sfc-script-setup.html) is recommended for a more succinct and ergonomic syntax.
+Cette page documente l'usage de `setup`. Si vous utilisez la Composition API avec les composants monofichiers, [`<script setup>`](/api/sfc-script-setup.html) est recommandé pour une syntaxe plus succincte et ergonomique.
 :::
 
-Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants:
+Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants :
 
-1. Si vous souhaitez utiliser la Composition API sans étape de build;
+1. Si vous souhaitez utiliser la Composition API sans outil de build;
 2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Option API.
 
-## Usage basique {#basic-usage}
-
-On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée):
+On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée) :
 
 ```vue
 <script>
@@ -41,7 +40,7 @@ export default {
 
 Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le modèle, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également distribuées de la même façon lorsqu'elles sont invoquées sur `this`.
 
-`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par l'API de Composition depuis l'Options API, mais pas l'inverse.
+`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Options API, mais pas l'inverse.
 
 `setup()` devrait renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
 
@@ -113,30 +112,30 @@ export default {
 }
 ```
 
-`attrs` et `slots` sont des objets d'état qui sont toujours mis à jour lorsque le composant lui-même est mis à jour. Cela signifie que vous devriez éviter de les déstructurer et toujours faire référence aux propriétés comme `attrs.x` ou `slots.x`. Notez également que, contrairement aux `props`, les propriétés d'`attrs` et de `slots` **ne sont pas réactives**. Si vous avez l'intention d'appliquer des effets secondaires en fonction des changements apportés à `attrs` ou `slots`, vous devriez le faire à l'intérieur du cycle de vie `onBeforeUpdate`.
+`attrs` et `slots` sont des objets d'état qui sont toujours mis à jour lorsque le composant lui-même est mis à jour. Cela signifie que vous devriez éviter de les déstructurer et toujours faire référence aux propriétés via `attrs.x` ou `slots.x`. Notez également que, contrairement aux `props`, les propriétés d'`attrs` et de `slots` **ne sont pas réactives**. Si vous avez l'intention d'appliquer des effets secondaires en fonction des changements apportés à `attrs` ou `slots`, vous devriez le faire à l'intérieur du hook de cycle de vie `onBeforeUpdate`.
 
 ### Exposer des propriétés publiques {#exposing-public-properties}
 
-`expose` est une fonction qui peut être utilisée pour limiter explicitement les propriétés exposées lorsque l'instance de composant est accédée par un composant parent via [les refs du template](/guide/essentials/template-refs.html#ref-on-component):
+`expose` est une fonction qui peut être utilisée pour limiter explicitement les propriétés exposées lorsque l'instance de composant est accédée par un composant parent via [les refs du template](/guide/essentials/template-refs.html#ref-on-component) :
 
 ```js{5,10}
 export default {
   setup(props, { expose }) {
-    // rendre l'instance inaccessible, fermée —
-    //  c.-à-d. n'exposera rien au parent
+    // rend l'instance inaccessible
+    // c.-à-d. n'exposera rien au parent
     expose()
 
     const publicCount = ref(0)
     const privateCount = ref(0)
-    // n'exposer qu'une sélection de l'instance locale
+    // n'expose qu'une sélection de l'état local
     expose({ count: publicCount })
   }
 }
 ```
 
-## Usage avec les fonctions de rendu {#usage-with-render-functions}
+## Utilisation avec les fonctions de rendu {#usage-with-render-functions}
 
-`setup` peut également retourner [une fonction de rendu](/guide/extras/render-function.html) qui peut directement utiliser l'état réactif déclaré dans le scope partagé:
+`setup` peut également retourner [une fonction de rendu](/guide/extras/render-function.html) qui peut directement utiliser l'état réactif déclaré dans le scope partagé :
 
 ```js{6}
 import { h, ref } from 'vue'
@@ -151,7 +150,7 @@ export default {
 
 Retourner une fonction de rendu nous empêche de retourner autre chose. En pratique, cela ne devrait pas poser de problème mais cela peut être problématique si nous voulons exposer des méthodes de ce composant enfant au composant parent via les refs du template.
 
-Nous pouvons résoudre ce problème en appellant [`expose()`](#exposing-public-properties):
+Nous pouvons résoudre ce problème en appellant [`expose()`](#exposing-public-properties) :
 
 ```js{8-10}
 import { h, ref } from 'vue'
