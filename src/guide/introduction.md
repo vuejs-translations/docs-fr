@@ -202,7 +202,7 @@ L'API Options est centrée sur le concept d'une "instance de composant" (`this` 
 
 L'API de Composition est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle offre une plus grande liberté d'écriture et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
 
-Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [FAQ sur l'API de Composition](/guide/extras/composition-api-faq).
+Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [FAQ de la Composition API](/guide/extras/composition-api-faq).
 
 Si Vue est nouveau pour vous, voici notre recommandation générale :
 
