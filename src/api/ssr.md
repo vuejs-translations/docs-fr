@@ -138,7 +138,7 @@ Effectue le rendu et le transfert à une instance existante d'un [_Writable Stre
 
 - **Exemple :**
 
-  Cette fonction est généralement utilisée en combinaison avec [`TransformStream`] (https://developer.mozilla.org/fr/docs/Web/API/TransformStream) :
+  Cette fonction est généralement utilisée en combinaison avec [`TransformStream`](https://developer.mozilla.org/fr/docs/Web/API/TransformStream) :
 
   ```js
   // TransformStream est disponible dans des environnements tels que les espaces de travail de CloudFlare.
