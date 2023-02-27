@@ -284,7 +284,7 @@ Si vous importez explicitement les macros à partir de `vue/macros`, le type fon
 ## Activation explicite {#explicit-opt-in}
 
 :::warning
-The following only applies up to Vue version 3.3 and below. Core support will be removed in 3.4 and above. If you intend to continue using the transform, please migrate to [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) instead.
+Ce qui suit ne s'applique qu'aux versions 3.3 et inférieures de Vue. La prise en charge par le noyau sera supprimée à partir de la version 3.4. Si vous voulez continuer à utiliser la transformation, veuillez migrer vers [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) à la place.
 :::
 
 ### Vite {#vite}
