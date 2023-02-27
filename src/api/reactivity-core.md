@@ -4,7 +4,7 @@
 Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
 
 - [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
-- [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html)
+- [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
   :::
 
 ## ref() {#ref}
@@ -110,7 +110,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
 
 - **Voir aussi :**
   - [Guide - Propriétés calculées](/guide/essentials/computed.html)
-  - [Guide - Computed Debugging](/guide/extras/reactivity-in-depth.html#computed-debugging)
+  - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth.html#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
 ## reactive() {#reactive}
@@ -310,7 +310,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
 - **Voir aussi **:
   - [Guide - Observateurs](/guide/essentials/watchers.html#watcheffect)
-  - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)
+  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging)
 
 ## watchPostEffect() {#watchposteffect}
 
@@ -385,7 +385,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
   - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth.html#watcher-debugging).
 
   Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 
@@ -484,4 +484,4 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 - **Voir aussi **:
 
   - [Guide - Observateurs](/guide/essentials/watchers.html)
-  - [Guide - Watcher Debugging](/guide/extras/reactivity-in-depth.html#watcher-debugging)
+  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging)

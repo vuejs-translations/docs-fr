@@ -355,11 +355,11 @@ La recommandation est d'employer les composables pour centraliser une logique pu
 
 ### vs. les hooks de React {#vs-react-hooks}
 
-Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ de la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
+Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ sur la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
 
 ## Lecture complémentaire {#further-reading}
 
-- [Réactivité en profondeur](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
+- [La réactivité en détails](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
 - [Gestion d'état](/guide/scaling-up/state-management.html) : pour les patterns de gestion d'état partagés par plusieurs composants.
 - [Tester les composables](/guide/scaling-up/testing.html#testing-composables) : conseils sur les tests de composables.
 - [VueUse](https://vueuse.org/): une collection de composables Vue. Le code source est également une excellente ressource d'apprentissage.

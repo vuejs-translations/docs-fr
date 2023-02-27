@@ -278,7 +278,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/best-practices/performance'
         },
         {
-          text: 'Accessibility',
+          text: 'Accessibilité',
           link: '/guide/best-practices/accessibility'
         },
         {
@@ -309,11 +309,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'Composition API FAQ',
+          text: 'FAQ sur la Composition API',
           link: '/guide/extras/composition-api-faq'
         },
         {
-          text: 'Reactivity in Depth',
+          text: 'La réactivité en détails',
           link: '/guide/extras/reactivity-in-depth'
         },
         {
@@ -332,15 +332,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: "Techniques d'animation",
           link: '/guide/extras/animation'
         },
-        {
-          text: 'Reactivity Transform',
-          link: '/guide/extras/reactivity-transform'
-        }
         // {
         //   text: 'Building a Library for Vue',
         //   link: '/guide/extras/building-a-library'
         // },
-        // { text: 'Custom Renderers', link: '/guide/extras/custom-renderer' },
         // {
         //   text: 'Vue for React Devs',
         //   link: '/guide/extras/vue-for-react-devs'

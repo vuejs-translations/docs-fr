@@ -230,7 +230,7 @@ Appelé lorsqu'une dépendance réactive a été traquée par l'effet de rendu d
   }
   ```
 
-- **Voir aussi :** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
@@ -256,7 +256,7 @@ Appelé lorsqu'une dépendance réactive déclenche la ré-exécution de l'effet
   }
   ```
 
-- **Voir aussi :** [Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## activated {#activated}
 
