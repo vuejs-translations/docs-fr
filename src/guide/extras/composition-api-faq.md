@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# FAQ de la Composition API {#composition-api-faq}
+# FAQ sur la Composition API {#composition-api-faq}
 
 :::tip
 Cette FAQ part du principe que avez déjà une expérience avec Vue - en particulier, une expérience avec Vue 2, en utilisant principalement l'Options API.
