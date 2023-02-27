@@ -208,22 +208,11 @@ Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Compos
 
 ## Réactivité à l'exécution vs. à la compilation {#runtime-vs-compile-time-reactivity}
 
-Le système de réactivité de Vue est principalement basé sur l'exécution : le suivi et le déclenchement sont tous deux effectués pendant l'exécution du code, directement dans le navigateur. Les avantages de la réactivité d'exécution sont qu'elle peut fonctionner sans outil de build et qu'il y a moins de cas limites. En revanche, elle est limitée par les contraintes syntaxiques de JavaScript.
+Le système de réactivité de Vue est principalement basé sur l'exécution : le suivi et le déclenchement sont tous deux effectués pendant l'exécution du code, directement dans le navigateur. Les avantages de la réactivité d'exécution sont qu'elle peut fonctionner sans outil de build et qu'il y a moins de cas limites. En revanche, elle est limitée par les contraintes syntaxiques de JavaScript nécessitant l'usage de conteneur de valeur comme pour les refs de Vue.
 
-Nous avons déjà rencontré une limitation dans l'exemple précédent : JavaScript ne nous permet pas d'intercepter la lecture et l'écriture des variables locales. Nous devons donc toujours accéder à l'état réactif via les propriétés d'un objet, en utilisant des objets réactifs ou des refs.
+Some frameworks, such as [Svelte](https://svelte.dev/), choose to overcome such limitations by implementing reactivity during compilation. It analyzes and transforms the code in order to simulate reactivity. The compilation step allows the framework to alter the semantics of JavaScript itself - for example, implicitly injecting code that performs dependency analysis and effect triggering around access to locally defined variables. The downside is that such transforms require a build step, and altering JavaScript semantics is essentially creating a language that looks like JavaScript but compiles into something else.
 
-Nous avons expérimenté la fonctionnalité [Reactivity Transform](/guide/extras/reactivity-transform.html) pour réduire la verbosité du code :
-
-```js
-let A0 = $ref(0)
-let A1 = $ref(1)
-
-// traque lors de la lecture de la variable
-const A2 = $computed(() => A0 + A1)
-
-// se déclenche lorsque la variable est modifiée
-A0 = 2
-```
+The Vue team did explore this direction via an experimental feature called [Reactivity Transform](/guide/extras/reactivity-transform.html), but in the end we have decided that it would not be a good fit for the project due to [the reasoning here](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
 Le résultat de la compilation de cet extrait de code sera le même que celui résultant de ce que nous aurions écrit sans la transformation, via l'ajout automatique de `.value` après les références aux variables. Avec Reactivity Transform, le système de réactivité de Vue devient un système hybride.
 
@@ -413,20 +402,24 @@ export function useMachine(options) {
 
 ## Connexion aux Signals
 
-De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de Vue, sous le terme "signaux" :
+De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de la Composition API de Vue, sous le terme "signals" :
 
 - [Signals de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
 - [Signals d'Angular](https://github.com/angular/angular/discussions/49090)
 - [Signals de Preact](https://preactjs.com/guide/v10/signals/)
 - [Signals de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets lors de la mutation. Dans certains contextes, les signals sont également liés au modèle de rendu, les mises à jour sont alors effectuées par le biais d'abonnements finement ajustés, bien que cela ne soit pas nécessaire pour en faire un signal.
+Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets de bord lors de la mutation. This reactivity-primitive-based paradigm isn't a particularly new concept in the frontend world: it dates back to implementations like [Knockout observables](https://knockoutjs.com/documentation/observables.html) and [Meteor Tracker](https://docs.meteor.com/api/tracker.html) from more than a decade ago. Vue Options API and the React state management library [MobX](https://mobx.js.org/) are also based on the same principles, but hide the primitives behind object properties.
 
-Parmi ces implémentations, la conception des signals de Preact et de Qwik est très similaire à celle de [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : les trois fournissent une interface mutable via la propriété `.value`.
+Although not a necessary trait for something to qualify as signals, today the concept is often discussed alongside the rendering model where updates are performed through fine-grained subscriptions. Due to the use of Virtual DOM, Vue currently [relies on compilers to achieve similar optimizations](https://vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). However, we are also exploring a new Solid-inspired compilation strategy (Vapor Mode) that does not rely on Virtual DOM and takes more advantage of Vue's built-in reactivity system.
+
+### API Design Trade-Offs
+
+The design of Preact and Qwik's signals are very similar to Vue's [shallowRef](/api/reactivity-advanced.html#shallowref): all three provide a mutable interface via the `.value` property. We will focus the discussion on Solid and Angular signals.
 
 ### Signaux de Solid
 
-La conception de l'API `useSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
+La conception de l'API `createSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
 
 ```js
 const [count, setCount] = createSignal(0)
@@ -453,7 +446,7 @@ export function createSignal(value, options) {
 
 [Essayer en ligne](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
 
-### Signals d'Angular
+#### Signals d'Angular
 
 Angular subit en ce moment des changements fondamentaux en renonçant au _dirt-checking_ et en introduisant sa propre implémentation d'une primitive de réactivité. L'API du signal d'Angular ressemble à ça :
 
