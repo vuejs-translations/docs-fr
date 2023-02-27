@@ -402,7 +402,7 @@ export function useMachine(options) {
 
 ## Connexion aux Signals
 
-De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de la Composition API de Vue, sous le terme "signal" :
+De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de la Composition API de Vue, sous le terme "Signals" :
 
 - [Signals de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
 - [Signals d'Angular](https://github.com/angular/angular/discussions/49090)
