@@ -1,9 +1,9 @@
 # Reactivity Transform {#reactivity-transform}
 
-:::danger Deprecated Experimental Feature
-Reactivity Transform was an experimental feature, and has been deprecated. Please read about [the reasoning here](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+:::danger Fonctionnalité expérimentale dépréciée
+Reactivity Transform était une fonctionnalité expérimentale, et a été dépréciée. Consultez [le raisonnement ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
-It will eventually be removed Vue core in a future minor release. If you still intend to use it, it is now available via the [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) plugin.
+Elle sera probablement supprimée du noyau de Vue dans une version mineure à venir. Si vous voulez continuer de l'utiliser, cela est désormais possible en utilisant le plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
 :::
 
 :::tip Spécifique à la Composition API
