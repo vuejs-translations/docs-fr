@@ -208,11 +208,11 @@ Les API `ref()`, `computed()` et `watchEffect()` font toutes partie de la Compos
 
 ## Réactivité à l'exécution vs. à la compilation {#runtime-vs-compile-time-reactivity}
 
-Le système de réactivité de Vue est principalement basé sur l'exécution : le suivi et le déclenchement sont tous deux effectués pendant l'exécution du code, directement dans le navigateur. Les avantages de la réactivité d'exécution sont qu'elle peut fonctionner sans outil de build et qu'il y a moins de cas limites. En revanche, elle est limitée par les contraintes syntaxiques de JavaScript nécessitant l'usage de conteneur de valeur comme pour les refs de Vue.
+Le système de réactivité de Vue est principalement basé sur l'exécution : la traque et le déclenchement sont tous deux effectués pendant l'exécution du code, directement dans le navigateur. Les avantages de la réactivité d'exécution sont qu'elle peut fonctionner sans outil de build et qu'il y a moins de cas limites. En revanche, elle est limitée par les contraintes syntaxiques de JavaScript nécessitant l'usage de conteneur de valeur comme pour les refs de Vue.
 
-Some frameworks, such as [Svelte](https://svelte.dev/), choose to overcome such limitations by implementing reactivity during compilation. It analyzes and transforms the code in order to simulate reactivity. The compilation step allows the framework to alter the semantics of JavaScript itself - for example, implicitly injecting code that performs dependency analysis and effect triggering around access to locally defined variables. The downside is that such transforms require a build step, and altering JavaScript semantics is essentially creating a language that looks like JavaScript but compiles into something else.
+Certains frameworks, tels que [Svelte](https://svelte.dev/), choisissent de surmonter ces limitations en implémentant la réactivité lors de la compilation. Il analyse et transforme le code afin de simuler la réactivité. La compilation permet au framework de modifier la sémantique de JavaScript lui-même - par exemple, en injectant implicitement du code qui effectue une analyse de dépendance et un déclenchement d'effet autour de l'accès à des variables définies localement. L'inconvénient est que de telles transformations nécessitent un outil de build, et la modification de la sémantique JavaScript crée essentiellement un langage qui ressemble à JavaScript mais se compile en quelque chose d'autre.
 
-The Vue team did explore this direction via an experimental feature called [Reactivity Transform](/guide/extras/reactivity-transform.html), but in the end we have decided that it would not be a good fit for the project due to [the reasoning here](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+L'équipe Vue a exploré cette direction via une fonctionnalité expérimentale appelée [Reactivity Transform](/guide/extras/reactivity-transform.html), mais en fin de compte, nous avons décidé que cela ne conviendrait pas au projet pour [les raisons énoncées ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
 Le résultat de la compilation de cet extrait de code sera le même que celui résultant de ce que nous aurions écrit sans la transformation, via l'ajout automatique de `.value` après les références aux variables. Avec Reactivity Transform, le système de réactivité de Vue devient un système hybride.
 
@@ -402,22 +402,22 @@ export function useMachine(options) {
 
 ## Connexion aux Signals
 
-De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de la Composition API de Vue, sous le terme "signals" :
+De nombreux autres frameworks ont introduit des primitives de réactivité similaires aux refs de la Composition API de Vue, sous le terme "signal" :
 
 - [Signals de Solid](https://www.solidjs.com/docs/latest/api#createsignal)
 - [Signals d'Angular](https://github.com/angular/angular/discussions/49090)
 - [Signals de Preact](https://preactjs.com/guide/v10/signals/)
 - [Signals de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets de bord lors de la mutation. This reactivity-primitive-based paradigm isn't a particularly new concept in the frontend world: it dates back to implementations like [Knockout observables](https://knockoutjs.com/documentation/observables.html) and [Meteor Tracker](https://docs.meteor.com/api/tracker.html) from more than a decade ago. Vue Options API and the React state management library [MobX](https://mobx.js.org/) are also based on the same principles, but hide the primitives behind object properties.
+Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets de bord lors de la mutation. Ce paradigme basé sur la réactivité primitive n'est pas un concept particulièrement nouveau dans le monde front-end : il remonte à des implémentations telles que les [observables Knockout](https://knockoutjs.com/documentation/observables.html) et [Meteor Tracker]( https://docs.meteor.com/api/tracker.html) d'il y a plus de dix ans. L'Options API de Vue et la bibliothèque de gestion d'état [MobX](https://mobx.js.org/) de React sont également basées sur les mêmes principes, mais cachent les primitives derrière les propriétés d'objet.
 
-Although not a necessary trait for something to qualify as signals, today the concept is often discussed alongside the rendering model where updates are performed through fine-grained subscriptions. Due to the use of Virtual DOM, Vue currently [relies on compilers to achieve similar optimizations](https://vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). However, we are also exploring a new Solid-inspired compilation strategy (Vapor Mode) that does not rely on Virtual DOM and takes more advantage of Vue's built-in reactivity system.
+Bien qu'il ne s'agisse pas d'un trait nécessaire pour que quelque chose soit qualifié de signal, le concept est aujourd'hui souvent discuté parallèlement au mode de rendu où les mises à jour sont effectuées via des abonnements à granularité fine. En raison de l'utilisation de Virtual DOM, Vue [s'appuie actuellement sur des compilateurs pour obtenir des optimisations similaires](https://vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Cependant, nous explorons également une nouvelle stratégie de compilation inspirée de Solid (Vapor Mode) qui ne se repose pas sur le Virtual DOM et tire davantage parti du système de réactivité intégré de Vue.
 
-### API Design Trade-Offs
+### Compromis du design d'API
 
-The design of Preact and Qwik's signals are very similar to Vue's [shallowRef](/api/reactivity-advanced.html#shallowref): all three provide a mutable interface via the `.value` property. We will focus the discussion on Solid and Angular signals.
+La conception des Signals de Preact et de Qwik est très similaire à [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : tous les trois fournissent une interface mutable via la propriété `.value`. Nous concentrerons la discussion sur les Signals de Solid et de Angular.
 
-### Signaux de Solid
+### Signals de Solid
 
 La conception de l'API `createSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
 
