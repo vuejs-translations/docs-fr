@@ -50,10 +50,10 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 
 Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction.html#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction.html#options-api). Voici quelques conseils supplémentaires :
 
-- L'IDE recommandé est [Visual Studio Code] (https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). [Si vous utilisez d'autres éditeurs, lisez la [section support IDE](/guide/scaling-up/tooling.html#ide-support).
-- [Guide - Outils](/guide/scaling-up/tooling.html) fournit plus de détails sur l'outillage, notamment sur l'intégration avec les frameworks back-end.
+- L'environnement de développement recommandé est [Visual Studio Code](https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). Si vous utilisez d'autres éditeurs, lisez la [section sur le support des environnements de développement](/guide/scaling-up/tooling.html#ide-support).
+- [Guide - Outils](/guide/scaling-up/tooling.html) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
-- Si vous avez chooisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
+- Si vous avez choisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
 
 Dès que vous êtes prêts à livrer votre application en production, exécutez la commande suivante :
 
@@ -62,7 +62,7 @@ Dès que vous êtes prêts à livrer votre application en production, exécutez 
 
 Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment.html) pour en savoir plus sur l'envoi de votre application en production.
 
-[Etapes suivantes >](#etapes-suivantes)
+[Étapes suivantes >](#etapes-suivantes)
 
 ## Utiliser Vue depuis un CDN {#using-vue-from-cdn}
 
@@ -72,13 +72,13 @@ Vous pouvez utiliser Vue directement depuis un CDN via une balise script :
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 ```
 
-Ici nous utilisons [unpkg](https://unpkg.com/), mais vous pouvez utiliser tout autre CDN qui sert des paquets NPM, par exemple [jsdelivr](https://www.jsdelivr.com/package/npm/vue) ou [cdnjs](https://cdnjs.com/libraries/vue). Bien évidement, vous pouvez également télécharger le fichier pour le servir par vous-même.
+Ici nous utilisons [unpkg](https://unpkg.com/), mais vous pouvez utiliser tout autre CDN qui sert des paquets NPM, par exemple [jsdelivr](https://www.jsdelivr.com/package/npm/vue) ou [cdnjs](https://cdnjs.com/libraries/vue). Bien évidemment, vous pouvez également télécharger le fichier pour le servir par vous-même.
 
-Lorsque Vue est utilisé depuis un CDN, aucun outil de build n'est nécessaire. Cela permet d'avoir une configuration plus simple, et plus adapté pour enrichir du HTML statique ou d'intégrer un framework backend. Par contre, vous n'aurez pas la possibilité de bénéficier de la syntaxe des components monofichiers (SFC).
+Lorsque Vue est utilisé depuis un CDN, aucun outil de build n'est nécessaire. Cela permet d'avoir une configuration plus simple, et plus adaptée pour enrichir du HTML statique ou intégrer un framework backend. Par contre, vous n'aurez pas la possibilité de bénéficier de la syntaxe des components monofichiers (SFC).
 
 ### Utiliser le build global {#using-the-global-build}
 
-Le lien au-dessus charge le _build global_ de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'object global `Vue`. Ci-dessous, un exemple utilisant le build global :
+Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'objet global `Vue`. Ci-dessous, un exemple utilisant le build global :
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -100,7 +100,7 @@ Le lien au-dessus charge le _build global_ de Vue, où toutes les API haut-nivea
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
 
-### Utiliser le buiES Module Build {#using-the-es-module-build}
+### Utiliser le build des modules ES {#using-the-es-module-build}
 
 Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. La plupart des navigateurs supportant désormais les modules ES nativement, nous pouvons utiliser Vue depuis un CDN via les modules ES natifs :
 
@@ -120,7 +120,7 @@ Bien que le build global fonctionne, nous utiliserons principalement la syntaxe 
 </script>
 ```
 
-Notez que nous utilisant `<script type="module">`, et que l'url CRN importée pointe vers le **build des modules ES** de Vue.
+Notez que nous utilisons `<script type="module">`, et que l'url CDN importée pointe vers le **build des modules ES** de Vue.
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
 
@@ -162,10 +162,10 @@ Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Imp
 
 Vous pouvez ajouter des entrées pour d'autres dépendances à l'Import Map, assurez-vous simplement qu'elles pointent vers la version des modules ES de la bibliothèque que vous avez l'intention d'utiliser.
 
-:::tip Support navigateur du Import Maps
+:::tip Support navigateur de l'Import Maps
 Pour le moment, les Import Maps ne sont disponibles que dans les navigateurs basés sur Chromium, nous vous recommandons donc d'utiliser Chrome ou Edge pendant le processus d'apprentissage.
 
-Si vous utilisez Firefox, c'est supporté par défaut à partir de la version 108+ sinon nécessite d'être activé via la config `dom.importMaps.enabled` dans `about:config` pour les versions 102 et supérieures.
+Si vous utilisez Firefox, c'est supporté par défaut à partir de la version 108+ sinon vous devez l'activer via la config `dom.importMaps.enabled` dans `about:config` pour les versions 102 et supérieures.
 
 Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vous pouvez ajouter le support (polyfill) avec [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
@@ -200,7 +200,7 @@ export default {
 }
 ```
 
-Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevés parce que les modules ES ne peuvent fonctionner via le protocol `file://`. Pour pouvoir fonctionner, vous devez servir votre `index.html` sur le protocole `http://`, avec un serveur HTTP local.
+Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevées parce que les modules ES ne peuvent fonctionner via le protocol `file://`. Pour qu'ils fonctionnent, vous devez servir votre `index.html` sur le protocole `http://`, avec un serveur HTTP local.
 
 Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez `npx serve` depuis la ligne de commande dans le même répertoire que votre fichier HTML. Vous pouvez également utiliser n'importe quel autre serveur HTTP qui peut servir des fichiers statiques avec les types MIME corrects.
 
@@ -208,7 +208,7 @@ Vous avez peut-être remarqué que le template du composant importé est soulign
 
 ### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
 
-De nombreux exemples pour l'API de composition utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup.html).
+De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup.html).
 
 ## Étapes suivantes {#next-steps}
 

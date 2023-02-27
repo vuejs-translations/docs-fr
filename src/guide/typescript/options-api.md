@@ -236,7 +236,7 @@ Voir aussi :
 
 Nous pouvons placer cette augmentation de type dans un fichier `.ts`, ou dans un fichier `*.d.ts` à l'échelle du projet. Dans les deux cas, assurez-vous qu'il est inclus dans `tsconfig.json`. Pour les auteurs de bibliothèques / plugins, ce fichier doit être spécifié dans la propriété `types` du `package.json`.
 
-Pour profiter de l'augmentation de module, vous devez vous assurer que l'augmentation est placée dans un [module TypeScript] (https://www.typescriptlang.org/docs/handbook/modules.html). En d'autres termes, le fichier doit contenir au moins un `import` ou un `export` de premier niveau, même s'il s'agit juste d'un `export {}`. Si l'augmentation est placée en dehors d'un module, elle écrasera les types originaux au lieu de les augmenter !
+Pour profiter de l'augmentation de module, vous devez vous assurer que l'augmentation est placée dans un [module TypeScript](https://www.typescriptlang.org/docs/handbook/modules.html). En d'autres termes, le fichier doit contenir au moins un `import` ou un `export` de premier niveau, même s'il s'agit juste d'un `export {}`. Si l'augmentation est placée en dehors d'un module, elle écrasera les types originaux au lieu de les augmenter !
 
 ```ts
 // Ne fonctionne pas, écrase les types d'origine.
