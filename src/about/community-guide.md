@@ -14,7 +14,7 @@ Nous allons répondre ici à la fois à ce que la communauté peut faire pour vo
 
 Notre [Code de bonne conduite](/about/coc) est un guide destiné à faciliter notre enrichissement à tous ainsi que celui des communautés techniques auxquelles nous participons.
 
-### Restez informé {#stay-in-the-know}
+### Restez informé(e) {#stay-in-the-know}
 
 - Suivez notre [compte Twitter officiel](https://twitter.com/vuejs).
 - Suivez les [membres de l'équipe](./team) sur Twitter ou GitHub.
@@ -23,7 +23,7 @@ Notre [Code de bonne conduite](/about/coc) est un guide destiné à faciliter no
 
 ### Obtenez de l'aide {#get-support}
 
-- [Discord Chat](https://chat.vuejs.org/) : Un endroit où les développeurs de Vue peuvent se rencontrer et discuter en temps réel.
+- [Discord Chat](https://chat.vuejs.org/) : Un endroit où les développeuses et développeurs de Vue peuvent se rencontrer et discuter en temps réel.
 - [Forum](https://forum.vuejs.org/) : Le meilleur endroit pour poser des questions et obtenir des réponses sur Vue et son écosystème.
 - [Communauté DEV](https://dev.to/t/vue) : Partagez et discutez des sujets liés à Vue sur Dev.to.
 - [Rencontres](https://events.vuejs.org/meetups) : Vous souhaitez trouver des passionnés de Vue comme vous ? Vous souhaitez devenir un leader de la communauté ? Nous avons l'aide et le soutien dont vous avez besoin ici même !
@@ -49,7 +49,7 @@ Le tri d'une issue implique de collecter les informations manquantes, de reprodu
 
 Nous recevons chaque jour de nombreuses issues dans [nos dépôts sur GitHub](https://github.com/vuejs). Notre bande passante est limitée par rapport au nombre d'utilisateurs, de sorte que le tri des issues à lui seul peut demander un effort considérable à l'équipe. En nous aidant à les trier, vous nous permettez de devenir plus efficaces, ce qui nous permet de consacrer du temps à des tâches plus prioritaires.
 
-Vous n'êtes pas obligé de trier une issue dans le but de la corriger (même si ce serait bien aussi). Partager le résultat de votre enquête, par exemple le commit qui a conduit au bug, peut déjà nous faire gagner un temps énorme.
+Il n'est pas demandé de trier une issue dans le but de la corriger (même si ce serait bien aussi). Partager le résultat de votre enquête, par exemple le commit qui a conduit au bug, peut déjà nous faire gagner un temps énorme.
 
 ### Contribuer au code {#contribute-code}
 
@@ -63,7 +63,7 @@ Les corrections de bugs sont les bienvenues à tout moment. Pour les nouvelles f
 
 Outre le fait de répondre aux questions et de partager des ressources dans le forum et le chat, il existe d'autres moyens moins évidents de partager et d'étendre vos connaissances :
 
-- **Développez des supports d'apprentissage.** On dit souvent que la meilleure façon d'apprendre est d'enseigner. Si vous faites quelque chose d'intéressant avec Vue, renforcez votre expertise en écrivant un article de blog, en développant un atelier, ou même en publiant un résumé et partagez le sur les réseaux sociaux.
+- **Développez des supports d'apprentissage.** On dit souvent que la meilleure façon d'apprendre est d'enseigner. Si vous faites quelque chose d'intéressant avec Vue, renforcez votre expertise en écrivant un article de blog, en développant un atelier, ou même en publiant un résumé et en le partageant sur les réseaux sociaux.
 - **Surveillez un dépôt qui vous tient à coeur.** Vous recevrez des notifications dès qu'il y a de l'activité dans ce dépôt, ce qui vous permettra d'être au courant des discussions en cours et des fonctionnalités à venir. C'est un moyen fantastique d'acquérir de l'expertise afin d'être en mesure d'aider à résoudre les issues et les pull request.
 
 ### Traduire la documentation {#translate-docs}
@@ -76,8 +76,8 @@ Consultez le [Guide des traductions](/translations/) pour plus de détails sur l
 
 Il y a beaucoup de choses que vous pouvez faire pour aider Vue à se développer dans votre communauté :
 
-- **Présentez un talk lors d'une réunion locale.** Qu'il s'agisse d'une présentation ou d'un atelier, vous pouvez apporter beaucoup de valeur à votre communauté en aidant les développeurs Vue, nouveaux ou expérimentés, à poursuivre leur apprentissage.
-- **Organisez une réunion.** S'il n'y a pas encore de réunion Vue dans votre région, vous pouvez créer la vôtre ! Utilisez les [ressources de events.vuejs.org](https://events.vuejs.org/resources/#getting-started) pour faire de votre réunion une réussite !
-- **Aidez les organisateurs d'une réunion.** Il n'y a jamais trop d'aide quand il s'agit d'organiser un événement, alors offrez votre aide aux organisateurs locaux pour faire de chaque événement un succès.
+- **Présentez un talk lors d'une rencontre locale.** Qu'il s'agisse d'une présentation ou d'un atelier, vous pouvez apporter beaucoup de valeur à votre communauté en aidant les développeurs Vue, nouveaux ou expérimentés, à poursuivre leur apprentissage.
+- **Organisez une rencontre.** S'il n'y a pas encore de rencontre Vue dans votre région, vous pouvez créer la vôtre ! Utilisez les [ressources de events.vuejs.org](https://events.vuejs.org/resources/#getting-started) pour faire de votre rencontre une réussite !
+- **Aidez les organisateurs d'une rencontre.** Il n'y a jamais trop d'aide quand il s'agit d'organiser un événement, alors offrez votre aide aux organisateurs locaux pour faire de chaque événement un succès.
 
 Si vous avez des questions sur la façon dont vous pouvez vous impliquer davantage au sein de votre communauté locale Vue, contactez-nous sur Twitter à l'adresse [@vuejs_events](https://www.twitter.com/vuejs_events) !
