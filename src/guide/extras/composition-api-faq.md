@@ -8,7 +8,7 @@ outline: deep
 Cette FAQ part du principe que avez déjà une expérience avec Vue - en particulier, une expérience avec Vue 2, en utilisant principalement l'Options API.
 :::
 
-## Qu'est-ce que la Composition API? {#what-is-composition-api}
+## Qu'est-ce que la Composition API ? {#what-is-composition-api}
 
 <VueSchoolLink href="https://vueschool.io/lessons/introduction-to-the-vue-js-3-composition-api" title="Cours gratuit sur la Composition API"/>
 
@@ -90,9 +90,9 @@ Cela avait conduit de nombreux développeurs qui voulaient utiliser Vue avec TS 
 
 À titre de comparaison, la Composition API utilise principalement des variables et des fonctions simples, qui sont naturellement adaptées aux types. Le code écrit dans la Composition API peut bénéficier d'une inférence de type complète, avec un faible besoin d'utiliser des indications de type manuelles. La plupart du temps, le code de la Composition API aura une apparence similaire en TypeScript et en JavaScript. Cela permet également aux utilisateurs de JavaScript ordinaire de bénéficier d'une inférence de type partielle.
 
-### Un paquet de production réduit et moins de coûts généraux {#smaller-production-bundle-and-less-overhead}
+### Un paquet de production réduit {#smaller-production-bundle-and-less-overhead}
 
-Le code écrit en Composition API et `<script setup>` est également plus efficace et plus facile à compresser que son équivalent en Options API. En effet, le template d'un composant `<script setup>` est compilé comme une fonction en ligne dans le même scope que le code `<script setup>`. Contrairement à l'accès aux propriétés à partir de `this`, le code du template compilé peut accéder directement aux variables déclarées à l'intérieur de `<script setup>`, sans proxy d'instance entre les deux. Cela conduit également à une meilleure compression, car tous les noms de variables peuvent être raccourcis en toute sécurité.
+Le code écrit en Composition API et `<script setup>` est également plus efficace et plus facile à compresser que son équivalent en Options API. En effet, le template d'un composant `<script setup>` est compilé en une fonction dans le même scope que le code `<script setup>`. Contrairement à l'accès aux propriétés à partir de `this`, le code du template compilé peut accéder directement aux variables déclarées à l'intérieur de `<script setup>`, sans proxy d'instance entre les deux. Cela conduit également à une meilleure compression, car tous les noms de variables peuvent être raccourcis en toute sécurité.
 
 ## Relations avec l'Options API {#relationship-with-options-api}
 
@@ -100,29 +100,29 @@ Le code écrit en Composition API et `<script setup>` est également plus effica
 
 Certains utilisateurs passant de l'Options API à la Composition API ont trouvé leur code moins bien organisé, et en ont conclu que la Composition API était "moins bien" en termes d'organisation du code. Nous recommandons aux utilisateurs ayant une telle opinion de considérer ce problème sous un angle différent.
 
-Il est vrai que la Composition API ne fournit plus les "garde-fous" qui vous guident pour placer votre code dans les emplacements adaptés. En contrepartie, vous pouvez écrire du code de composant comme vous le feriez pour du JavaScript normal. Cela signifie que **vous pouvez et devez appliquer toutes les meilleures pratiques d'organisation du code à votre code Composition API comme vous le feriez pour écrire du JavaScript normal**. Si vous pouvez écrire du JavaScript bien organisé, vous devriez également être en mesure d'écrire du code de même facture en Composition API.
+Il est vrai que la Composition API ne fournit plus les "garde-fous" qui vous guident pour placer votre code dans les emplacements adaptés. En contrepartie, vous pouvez écrire du code de composant comme vous le feriez avec du JavaScript normal. Cela signifie que **vous pouvez et devez appliquer toutes les meilleures pratiques d'organisation du code à votre code Composition API comme vous le feriez pour écrire du JavaScript normal**. Si vous pouvez écrire du JavaScript bien organisé, vous devriez également être en mesure d'écrire du code de même facture en Composition API.
 
-L'Options API vous permet de "penser moins" lorsque vous écrivez du code de composant, ce qui explique pourquoi de nombreux utilisateurs l'adorent. Toutefois, en réduisant la charge mentale, elle vous enferme également dans le modèle d'organisation du code prescrit sans échappatoire, ce qui peut rendre difficile la refactorisation ou l'amélioration de la qualité du code dans les projets à grande échelle. À cet égard, la Composition API offre une meilleure évolutivité à long terme.
+L'Options API vous permet de "moins réfléchir" lorsque vous écrivez du code de composant, ce qui explique pourquoi de nombreux utilisateurs l'adorent. Toutefois, en réduisant la charge mentale, elle vous enferme également dans le modèle d'organisation du code prescrit sans échappatoire, ce qui peut rendre difficile la refactorisation ou l'amélioration de la qualité du code dans les projets à grande échelle. À cet égard, la Composition API offre une meilleure évolutivité à long terme.
 
 ### Est-ce que la Composition API couvre tous les cas d'utilisation ? {#does-composition-api-cover-all-use-cases}
 
 Oui, en termes de logique avec état. Lorsque vous utilisez la Composition API, seules quelques options peuvent encore être nécessaires : `props`, `emits`, `name`, et `inheritAttrs`. Si vous utilisez `<script setup>`, alors `inheritAttrs` est typiquement la seule option qui peut nécessiter un bloc `<script>` séparé.
 
-Si vous avez l'intention d'utiliser exclusivement la Composition API (ainsi que les options énumérées ci-dessus), vous pouvez réduire de quelques kilobytes votre paquet de production grâce à une [marque de compilation](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) qui supprime le code lié à l'Options API de Vue. Notez que cela affecte également les composants Vue dans vos dépendances.
+Si vous avez l'intention d'utiliser exclusivement la Composition API (ainsi que les options énumérées ci-dessus), vous pouvez réduire de quelques kilobytes votre paquet de production grâce à un [flag de compilation](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) qui supprime le code lié à l'Options API de Vue. Notez que cela affecte également les composants Vue dans vos dépendances.
 
 ### Puis-je utiliser les deux API simultanément ? {#can-i-use-both-apis-together}
 
 Oui. Vous pouvez utiliser la Composition API via l'option [`setup()`](/api/composition-api-setup.html) dans un composant en Options API.
 
-Toutefois, nous ne vous recommandons de le faire que si vous disposez d'une base de code existante en Options API qui doit s'intégrer à de nouvelles fonctionnalités / bibliothèques externes écrites avec la Composition API.
+Toutefois, nous vous recommandons de le faire que si vous disposez d'une base de code existante en Options API qui doit s'intégrer à de nouvelles fonctionnalités / bibliothèques externes écrites avec la Composition API.
 
 ### L'Options API va-t-elle être dépréciée ? {#will-options-api-be-deprecated}
 
 Non, nous n'avons pas l'intention de le faire. L'Options API fait partie intégrante de Vue et c'est la raison pour laquelle de nombreux développeurs l'apprécient. Nous sommes également conscients que de nombreux avantages de la Composition API ne se manifestent que dans les projets à grande échelle, et l'Options API reste un choix solide pour de nombreux scénarios de complexité faible à moyenne.
 
-## Relations avec l'API de classe {#relationship-with-class-api}
+## Relations avec la Class API {#relationship-with-class-api}
 
-Nous ne recommandons plus l'utilisation de l'API de classe avec Vue 3, étant donné que la Composition API offre une excellente intégration de TypeScript avec des avantages supplémentaires en matière de réutilisation de la logique et d'organisation du code.
+Nous ne recommandons plus l'utilisation de la Class API avec Vue 3, étant donné que la Composition API offre une excellente intégration de TypeScript avec des avantages supplémentaires en matière de réutilisation de la logique et d'organisation du code.
 
 ## Comparaison avec les hooks de React {#comparison-with-react-hooks}
 
@@ -132,11 +132,11 @@ Les hooks React sont invoqués de manière répétée à chaque fois qu'un compo
 
 - Les hooks sont appelés dans un certain ordre et ne peuvent pas être conditionnels.
 
-- Les variables déclarées dans un composant React peuvent être interceptées par une fermeture de hook et devenir "périmées" si le développeur ne transmet pas le tableau de dépendances correct. Cela conduit les développeurs React à s'appuyer sur les règles ESLint pour s'assurer que les dépendances correctes sont transmises. Cependant, la règle n'est souvent pas assez intelligente et sur-compense l'exactitude, ce qui entraîne une invalidation inutile et des maux de tête lorsque des cas limites sont rencontrés.
+- Les variables déclarées dans un composant React peuvent être interceptées par un hook et devenir "périmées" si le développeur ne transmet pas correctement le tableau de dépendances. Cela conduit les développeurs React à s'appuyer sur les règles ESLint pour s'assurer que les dépendances correctes sont transmises. Cependant, la règle n'est souvent pas assez intelligente et sur-compense l'exactitude, ce qui entraîne une invalidation inutile et des maux de tête lorsque des cas limites sont rencontrées.
 
 - Les calculs coûteux requièrent l'utilisation de `useMemo`, qui nécessite à nouveau de passer manuellement le bon tableau de dépendances.
 
-- Les gestionnaires d'événements passés aux composants enfants provoquent par défaut des mises à jour inutiles des enfants, et nécessitent l'utilisation explicite de `Callback` pour optimiser. Cela est presque toujours nécessaire, et nécessite à nouveau un tableau de dépendances correct. Négliger cela conduit à sur-rendre les applications par défaut et peut causer des problèmes de performance sans que l'on s'en rende compte.
+- Les gestionnaires d'événements passés aux composants enfants provoquent par défaut des mises à jour inutiles des enfants, et nécessitent l'utilisation explicite de `useCallback` pour optimiser. Cela est presque toujours nécessaire, et nécessite à nouveau un tableau de dépendances correct. Négliger cela conduit à sur-rendre les applications par défaut et peut causer des problèmes de performance sans que l'on s'en rende compte.
 
 - Le problème des fermetures périmées, combiné aux fonctionnalités concurrentes, rend difficile de repérer le moment où un morceau de code d'un hook est exécuté, et rend difficile de travailler avec un état mutable qui devrait persister à travers les rendus (via `useRef`).
 
