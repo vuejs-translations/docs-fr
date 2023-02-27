@@ -409,7 +409,7 @@ De nombreux autres frameworks ont introduit des primitives de réactivité simil
 - [Signals de Preact](https://preactjs.com/guide/v10/signals/)
 - [Signals de Qwik](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fondamentalement, les signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets de bord lors de la mutation. Ce paradigme basé sur la réactivité primitive n'est pas un concept particulièrement nouveau dans le monde front-end : il remonte à des implémentations telles que les [observables Knockout](https://knockoutjs.com/documentation/observables.html) et [Meteor Tracker]( https://docs.meteor.com/api/tracker.html) d'il y a plus de dix ans. L'Options API de Vue et la bibliothèque de gestion d'état [MobX](https://mobx.js.org/) de React sont également basées sur les mêmes principes, mais cachent les primitives derrière les propriétés d'objet.
+Fondamentalement, les Signals sont le même genre de primitive de réactivité que les refs de Vue. Il s'agit d'un conteneur de valeurs qui permet la traque des dépendances lors de l'accès et le déclenchement d'effets de bord lors de la mutation. Ce paradigme basé sur la réactivité primitive n'est pas un concept particulièrement nouveau dans le monde front-end : il remonte à des implémentations telles que les [observables Knockout](https://knockoutjs.com/documentation/observables.html) et [Meteor Tracker]( https://docs.meteor.com/api/tracker.html) d'il y a plus de dix ans. L'Options API de Vue et la bibliothèque de gestion d'état [MobX](https://mobx.js.org/) de React sont également basées sur les mêmes principes, mais cachent les primitives derrière les propriétés d'objet.
 
 Bien qu'il ne s'agisse pas d'un trait nécessaire pour que quelque chose soit qualifié de signal, le concept est aujourd'hui souvent discuté parallèlement au mode de rendu où les mises à jour sont effectuées via des abonnements à granularité fine. En raison de l'utilisation de Virtual DOM, Vue [s'appuie actuellement sur des compilateurs pour obtenir des optimisations similaires](https://vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Cependant, nous explorons également une nouvelle stratégie de compilation inspirée de Solid (Vapor Mode) qui ne se repose pas sur le Virtual DOM et tire davantage parti du système de réactivité intégré de Vue.
 
@@ -419,7 +419,7 @@ La conception des Signals de Preact et de Qwik est très similaire à [shallowRe
 
 ### Signals de Solid
 
-La conception de l'API `createSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
+La conception de l'API `createSignal()` de Solid met l'accent sur la séparation de la lecture et de l'écriture. Les Signals sont exposés sous la forme d'un accesseur en lecture seule et d'un mutateur séparé :
 
 ```js
 const [count, setCount] = createSignal(0)
@@ -491,6 +491,6 @@ export function signal(initialValue) {
 Par rapport aux références Vue, Solid et le style d'API basé sur les accesseurs d'Angular offrent quelques compromis intéressants lorsqu'ils sont utilisés dans des composants Vue :
 
 - `()` est légèrement moins verbeux que `.value`, mais la mise à jour de la valeur l'est d'avantage.
-- Les refs ne sont pas enveloppées : l'accès aux valeurs nécessite toujours `()`. Cela rend l'accès aux valeurs cohérent partout. Cela signifie également que vous pouvez transmettre des signals bruts vers le bas en tant que props de composants.
+- Les refs ne sont pas enveloppées : l'accès aux valeurs nécessite toujours `()`. Cela rend l'accès aux valeurs cohérent partout. Cela signifie également que vous pouvez transmettre des Signals bruts vers le bas en tant que props de composants.
 
 Que ces styles d'API vous conviennent ou non est dans une certaine mesure subjectif. Notre objectif ici est de démontrer la similarité sous-jacente et les compromis entre ces différentes conceptions d'API. Nous voulons également montrer que Vue est flexible : vous n'êtes pas vraiment enfermé dans les API existantes. Si cela s'avère nécessaire, vous pouvez créer votre propre API primitive de réactivité pour répondre à des besoins plus spécifiques.
