@@ -143,7 +143,7 @@ Version partiallement réactive de [`reactive()`](./reactivity-core.html#reactiv
 
 - **Détails :**
 
-  Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet réactif superficiel. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
+  Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet partiellement réactif. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
 
   :::warning À utiliser avec précaution
   Les structures de données partiallement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
