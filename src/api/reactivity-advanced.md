@@ -16,7 +16,7 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
 - **Détails :**
 
-  Contrairement à `ref()`, la valeur interne d'une référence partiellement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
+  Contrairement à `ref()`, la valeur interne d'une ref partiellement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
 
   `shallowRef()` est généralement utilisée pour l'optimisation des performances de grandes structures de données ou l'intégration avec des systèmes de gestion d'état externes.
 
@@ -38,7 +38,7 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
 ## triggerRef() {#triggerref}
 
-Force le déclenchement d'effets qui dépendent d'une [ref partiellement réactive](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une référence partiellement réactive.
+Force le déclenchement d'effets qui dépendent d'une [ref partiellement réactive](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une ref partiellement réactive.
 
 - **Type :**
 
@@ -58,7 +58,7 @@ Force le déclenchement d'effets qui dépendent d'une [ref partiellement réacti
     console.log(shallow.value.greet)
   })
 
-  // Cela ne déclenchera pas l'effet car la référence est partiellement réactive
+  // Cela ne déclenchera pas l'effet car la ref est partiellement réactive
   shallow.value.greet = 'Hello, universe'
 
   // Logue "Hello, universe"
@@ -221,7 +221,7 @@ Renvoie l'objet brut d'origine d'un proxy créé par Vue.
 
   `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
 
-  Il s'agit d'une solution d'échappement qui peut être utilisée pour lire temporairement sans encourir d'accès au proxy / de surcharge de suivi ou pour écrire sans déclencher de modifications. Il n'est **pas** recommandé de conserver une référence persistante à l'objet d'origine. À utiliser avec précaution.
+  Il s'agit d'une solution d'échappement qui peut être utilisée pour lire temporairement sans encourir d'accès au proxy / de surcharge de suivi ou pour écrire sans déclencher de modifications. Il n'est **pas** recommandé de conserver une ref persistante à l'objet d'origine. À utiliser avec précaution.
 
 - **Exemple :**
 
