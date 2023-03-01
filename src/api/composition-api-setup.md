@@ -7,7 +7,7 @@ Cette page documente l'usage de `setup`. Si vous utilisez la Composition API ave
 
 Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants :
 
-1. Si vous souhaitez utiliser la Composition API sans outil de build;
+1. Si vous souhaitez utiliser la Composition API sans étape de build;
 2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Option API.
 
 On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée) :
@@ -38,9 +38,9 @@ export default {
 </template>
 ```
 
-Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le modèle, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également distribuées de la même façon lorsqu'elles sont invoquées sur `this`.
+Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le template, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également déballées de la même façon lorsqu'elles sont invoquées sur `this`.
 
-`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Options API, mais pas l'inverse.
+`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Option API, mais pas l'inverse.
 
 `setup()` devrait renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
 
@@ -68,12 +68,12 @@ import { toRefs, toRef } from 'vue'
 
 export default {
   setup(props) {
-    // transforme props en un objet réactif puis le déstructure
+    // transforme props en un objet de refs puis le déstructure
     const { title } = toRefs(props)
     // `title` est une ref rattachée à `props.title` 
     console.log(title.value)
 
-    // Une autre alternative est de transformer votre props en une autre ref
+    // Ou, transformer l'une des props en une ref
     const title = toRef(props, 'title')
   }
 }
@@ -81,7 +81,7 @@ export default {
 
 ## Contexte de la fonction Setup {#setup-context}
 
-Le deuxième argument passé à la fonction `setup` est un objet **Context**. Cet objet expose d'autres valeurs qui peuvent être utiles à l'intérieur de `setup`:
+Le deuxième argument passé à la fonction `setup` est un objet **Setup Context**. Cet objet expose d'autres valeurs qui peuvent être utiles à l'intérieur de `setup` :
 
 ```js
 export default {
@@ -101,7 +101,7 @@ export default {
 }
 ```
 
-L'objet contexte n'est pas réactif et peut être déstructuré en toute sécurité:
+L'objet contexte n'est pas réactif et peut être déstructuré en toute sécurité :
 
 
 ```js
