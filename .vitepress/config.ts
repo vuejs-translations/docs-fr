@@ -41,7 +41,7 @@ const nav: ThemeConfig['nav'] = [
       {
         text: 'Ressources',
         items: [
-          { text: 'Partenaires', link: '/ecosystem/partners' },
+          { text: 'Partenaires', link: '/partners/' },
           { text: 'Thèmes', link: '/ecosystem/themes' },
           {
             text: 'Offres d’emploi',
