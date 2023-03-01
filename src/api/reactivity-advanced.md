@@ -2,7 +2,7 @@
 
 ## shallowRef() {#shallowref}
 
-Version partiallement réactive de [`ref()`](./reactivity-core.html#ref).
+Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
 - **Type**
 
@@ -16,7 +16,7 @@ Version partiallement réactive de [`ref()`](./reactivity-core.html#ref).
 
 - **Détails :**
 
-  Contrairement à `ref()`, la valeur interne d'une référence partiallement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
+  Contrairement à `ref()`, la valeur interne d'une référence partiellement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
 
   `shallowRef()` est généralement utilisé pour l'optimisation des performances de grandes structures de données ou l'intégration avec des systèmes de gestion d'état externes.
 
@@ -38,7 +38,7 @@ Version partiallement réactive de [`ref()`](./reactivity-core.html#ref).
 
 ## triggerRef() {#triggerref}
 
-Force le déclenchement d'effets qui dépendent d'une [ref supperficielle](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une référence partiallement réactive.
+Force le déclenchement d'effets qui dépendent d'une [ref supperficielle](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une référence partiellement réactive.
 
 - **Type :**
 
@@ -58,7 +58,7 @@ Force le déclenchement d'effets qui dépendent d'une [ref supperficielle](#shal
     console.log(shallow.value.greet)
   })
 
-  // Cela ne déclenchera pas l'effet car la référence est partiallement réactive
+  // Cela ne déclenchera pas l'effet car la référence est partiellement réactive
   shallow.value.greet = 'Hello, universe'
 
   // Logue "Hello, universe"
@@ -133,7 +133,7 @@ Crée une référence personnalisée avec un contrôle explicite sur son suivi d
 
 ## shallowReactive() {#shallowreactive}
 
-Version partiallement réactive de [`reactive()`](./reactivity-core.html#reactive).
+Version partiellement réactive de [`reactive()`](./reactivity-core.html#reactive).
 
 - **Type :**
 
@@ -146,7 +146,7 @@ Version partiallement réactive de [`reactive()`](./reactivity-core.html#reactiv
   Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet partiellement réactif. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
 
   :::warning À utiliser avec précaution
-  Les structures de données partiallement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
+  Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
   :::
 
 - **Exemple :**
@@ -171,7 +171,7 @@ Version partiallement réactive de [`reactive()`](./reactivity-core.html#reactiv
 
 ## shallowReadonly() {#shallowreadonly}
 
-Version partiallement réactive de [`readonly()`](./reactivity-core.html#readonly).
+Version partiellement réactive de [`readonly()`](./reactivity-core.html#readonly).
 
 - **Type :**
 
@@ -184,7 +184,7 @@ Version partiallement réactive de [`readonly()`](./reactivity-core.html#readonl
   Contrairement à `readonly()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont en lecture seule. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
 
   :::warning À utiliser avec précaution
-  Les structures de données partiallement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
+  Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
   :::
 
 - **Exemple :**
@@ -254,7 +254,7 @@ Marque un objet afin qu'il ne soit jamais converti en proxy. Renvoie l'objet lui
   ```
 
   :::warning À utiliser avec précaution
-  `markRaw()` et les API partiallement réactives telles que `shallowReactive()` vous permettent de désactiver de manière sélective la conversion profonde réactive/lecture seule par défaut et d'intégrer des objets bruts sans proxy dans votre graphe d'état. Ils peuvent être utilisés pour diverses raisons :
+  `markRaw()` et les API partiellement réactives telles que `shallowReactive()` vous permettent de désactiver de manière sélective la conversion profonde réactive/lecture seule par défaut et d'intégrer des objets bruts sans proxy dans votre graphe d'état. Ils peuvent être utilisés pour diverses raisons :
 
   - Certaines valeurs ne doivent tout simplement pas être rendues réactives, par exemple une instance de classe tierce complexe ou un objet de composant Vue.
 
