@@ -10,7 +10,7 @@ Voici quelques exemples de comportements qui contribuent à créer un environnem
 
 - Utiliser un langage accueillant et inclusif
 - Respecter les différents points de vue et expériences
-- Accepter avec élégance les critiques constructives
+- Accepter avec bienveillance les critiques constructives
 - Se concentrer sur ce qui est le mieux pour la communauté
 - Faire preuve d'empathie envers les autres membres de la communauté
 
@@ -24,22 +24,22 @@ Les comportements inacceptables de la part des participants incluent :
 
 ## Nos responsabilités {#our-responsibilities}
 
-Les chefs de projet sont chargés de clarifier les normes définissant un comportement acceptable et sont censés prendre des mesures correctives appropriées et équitables en réponse à tout cas de comportement inacceptable.
+Les responsables du projet sont chargés de clarifier les normes définissant un comportement acceptable et sont censés prendre des mesures correctives appropriées et équitables en réponse à tout cas de comportement inacceptable.
 
-Les chefs du projet ont le droit et la responsabilité de supprimer, modifier ou rejeter des commentaires, des commits, du code, des modifications de wiki, des issues et d'autres contributions qui ne sont pas conformes au présent code de bonne conduite, ou de bannir temporairement ou définitivement tout contributeur pour d'autres comportements qu'ils jugeraient inappropriés, menaçants, offensants ou nuisibles.
+Les responsables du projet ont le droit et la responsabilité de supprimer, modifier ou rejeter des commentaires, des commits, du code, des modifications de wiki, des issues et d'autres contributions qui ne sont pas conformes au présent code de bonne conduite, ou de bannir temporairement ou définitivement tout contributeur pour d'autres comportements qu'ils jugeraient inappropriés, menaçants, offensants ou nuisibles.
 
 ## Portée {#scope}
 
-Ce code de bonne conduite s'applique à la fois dans les espaces du projet et dans les espaces publics lorsqu'une personne représente le projet ou sa communauté. Les exemples de représentation d'un projet ou d'une communauté comprennent l'utilisation d'une adresse électronique officielle du projet, la publication d'un message via un compte officiel sur les médias sociaux, ou le fait d'agir en tant que représentant désigné lors d'un événement en ligne ou hors ligne. La représentation d'un projet peut être définie plus précisément et clarifiée par les chefs de projet.
+Ce code de bonne conduite s'applique à la fois dans les espaces du projet et dans les espaces publics lorsqu'une personne représente le projet ou sa communauté. Les exemples de représentation d'un projet ou d'une communauté comprennent l'utilisation d'une adresse électronique officielle du projet, la publication d'un message via un compte officiel sur les médias sociaux, ou le fait d'agir en tant que représentant désigné lors d'un événement en ligne ou hors ligne. La représentation d'un projet peut être définie plus précisément et clarifiée par les responsables du projet.
 
 ## Mise en application {#enforcement}
 
 Les cas d'abus, de harcèlement ou de tout autre comportement inacceptable peuvent être signalés en contactant l'équipe du projet à l'adresse community@vuejs.org. Toutes les plaintes seront examinées et étudiées et donneront lieu à une réponse jugée nécessaire et appropriée aux circonstances. L'équipe du projet est tenue de maintenir la confidentialité à l'égard du rapporteur d'un incident. De plus amples détails sur les politiques d'application spécifiques pourront être publiés séparément.
 
-Les chefs de projet qui ne suivent pas ou n'appliquent pas le code de bonne conduite de bonne foi peuvent subir des sanctions temporaires ou permanentes déterminées par les autres membres de la direction du projet.
+Les responsables du projet qui ne suivent pas ou n'appliquent pas le code de bonne conduite de bonne foi peuvent subir des sanctions temporaires ou permanentes déterminées par les autres membres de la direction du projet.
 
 ## Mentions légales {#attribution}
 
-Le présent code de bonne conduite est adapté de la [Convention des contributeurs] [page d'accueil], version 1.4, disponible à l'adresse https://www.contributor-covenant.org/version/1/4/code-of-conduct.html.
+Le présent code de bonne conduite est adapté de la [Convention des contributeurs][page d'accueil], version 1.4, disponible à l'adresse https://www.contributor-covenant.org/version/1/4/code-of-conduct.html.
 
 [page d'accueil]: https://www.contributor-covenant.org
