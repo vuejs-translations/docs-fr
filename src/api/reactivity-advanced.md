@@ -4,7 +4,7 @@
 
 Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
-- **Type**
+- **Type :**
 
   ```ts
   function shallowRef<T>(value: T): ShallowRef<T>
@@ -18,7 +18,7 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
   Contrairement à `ref()`, la valeur interne d'une référence partiellement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
 
-  `shallowRef()` est généralement utilisé pour l'optimisation des performances de grandes structures de données ou l'intégration avec des systèmes de gestion d'état externes.
+  `shallowRef()` est généralement utilisée pour l'optimisation des performances de grandes structures de données ou l'intégration avec des systèmes de gestion d'état externes.
 
 - **Exemple :**
 
@@ -67,7 +67,7 @@ Force le déclenchement d'effets qui dépendent d'une [ref supperficielle](#shal
 
 ## customRef() {#customref}
 
-Crée une référence personnalisée avec un contrôle explicite sur son suivi des dépendances et le déclenchement des mises à jour.
+Crée une ref personnalisée avec un contrôle explicite sur son suivi des dépendances et le déclenchement des mises à jour.
 
 - **Type :**
 
@@ -87,11 +87,11 @@ Crée une référence personnalisée avec un contrôle explicite sur son suivi d
 
   `customRef()` attend une fonction _factory_, qui reçoit les fonctions `track` et `trigger` comme arguments et doit renvoyer un objet avec les méthodes `get` et `set`.
 
-  En général, `track()` doit être appelé à l'intérieur de `get()`, et `trigger()` doit être appelé à l'intérieur de `set()`. Cependant, vous avez un contrôle total sur le moment où ils doivent être appelés.
+  En général, `track()` doit être appelée à l'intérieur de `get()`, et `trigger()` doit être appelée à l'intérieur de `set()`. Cependant, vous avez un contrôle total sur le moment où elles doivent être appelées.
 
 - **Exemple :**
 
-  Création d'une référence _debounced_ qui ne met à jour la valeur qu'après un certain délai après le dernier appel défini :
+  Création d'une ref _debounced_ qui ne met à jour la valeur qu'après un certain délai après le dernier appel défini :
 
   ```js
   import { customRef } from 'vue'
@@ -143,7 +143,7 @@ Version partiellement réactive de [`reactive()`](./reactivity-core.html#reactiv
 
 - **Détails :**
 
-  Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet partiellement réactif. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
+  Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet partiellement réactif. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de ref ne seront **pas** automatiquement déballées.
 
   :::warning À utiliser avec précaution
   Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
@@ -181,7 +181,7 @@ Version partiellement réactive de [`readonly()`](./reactivity-core.html#readonl
 
 - **Détails :**
 
-  Contrairement à `readonly()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont en lecture seule. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de référence ne seront **pas** automatiquement déballées.
+  Contrairement à `readonly()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont en lecture seule. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de ref ne seront **pas** automatiquement déballées.
 
   :::warning À utiliser avec précaution
   Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
@@ -197,7 +197,7 @@ Version partiellement réactive de [`readonly()`](./reactivity-core.html#readonl
     }
   })
 
-  // muter les propriétés propre de l'état va échouer
+  // muter les propriétés propres de l'état va échouer
   state.foo++
 
   // ...mais fonctionne sur des objets imbriqués
@@ -219,7 +219,7 @@ Renvoie l'objet brut d'origine d'un proxy créé par Vue.
 
 - **Détails :**
 
-  `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly ), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
+  `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
 
   Il s'agit d'une solution d'échappement qui peut être utilisée pour lire temporairement sans encourir d'accès au proxy / de surcharge de suivi ou pour écrire sans déclencher de modifications. Il n'est **pas** recommandé de conserver une référence persistante à l'objet d'origine. À utiliser avec précaution.
 
@@ -236,7 +236,7 @@ Renvoie l'objet brut d'origine d'un proxy créé par Vue.
 
 Marque un objet afin qu'il ne soit jamais converti en proxy. Renvoie l'objet lui-même.
 
-- **Typ :**
+- **Type :**
 
   ```ts
   function markRaw<T extends object>(value: T): T
@@ -254,13 +254,13 @@ Marque un objet afin qu'il ne soit jamais converti en proxy. Renvoie l'objet lui
   ```
 
   :::warning À utiliser avec précaution
-  `markRaw()` et les API partiellement réactives telles que `shallowReactive()` vous permettent de désactiver de manière sélective la conversion profonde réactive/lecture seule par défaut et d'intégrer des objets bruts sans proxy dans votre graphe d'état. Ils peuvent être utilisés pour diverses raisons :
+  `markRaw()` et les API partiellement réactives telles que `shallowReactive()` vous permettent de désactiver de manière sélective la conversion profonde réactive/lecture seule par défaut et d'intégrer des objets bruts sans proxy dans votre graphe d'état. Elles peuvent être utilisées pour diverses raisons :
 
   - Certaines valeurs ne doivent tout simplement pas être rendues réactives, par exemple une instance de classe tierce complexe ou un objet de composant Vue.
 
   - Ignorer la conversion proxy peut améliorer les performances lors du rendu de grandes listes avec des sources de données immuables.
 
-  Ils sont considérés comme avancés car l'objet brut n'est définie qu'au niveau racine, donc si vous définissez un objet brut imbriqué et non marqué comme brut dans un objet réactif, puis y accédez à nouveau, vous récupérez la version proxyfiée. Cela peut entraîner des **risques d'identité** - par exemple effectuer une opération qui repose sur l'identité de l'objet mais en utilisant à la fois la version brute et la version proxyfiée du même objet :
+  Elles sont considérées comme avancées car l'objet brut n'est défini qu'au niveau racine, donc si vous définissez un objet brut imbriqué et non marqué comme brut dans un objet réactif, puis y accédez à nouveau, vous récupérez la version proxyfiée. Cela peut entraîner des **risques d'identité** - par exemple effectuer une opération qui repose sur l'identité de l'objet mais en utilisant à la fois la version brute et la version proxyfiée du même objet :
 
   ```js
   const foo = markRaw({
@@ -281,7 +281,7 @@ Marque un objet afin qu'il ne soit jamais converti en proxy. Renvoie l'objet lui
 
 ## effectScope() {#effectscope}
 
-Crée un objet de portée d'effet qui peut capturer les effets réactifs (c'est-à-dire _computed_ et les observateurs) créés en son sein afin que ces effets puissent être disposés ensemble. Pour des cas d'utilisation détaillés de cette API, veuillez consulter son [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0041-reactivity-effect-scope.md) correspondant.
+Crée un objet de portée d'effet qui peut capturer les effets réactifs (c'est-à-dire les propriétés calculées et les observateurs) créés en son sein afin que ces effets puissent être disposés. Pour des cas d'utilisation détaillés de cette API, veuillez consulter son [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0041-reactivity-effect-scope.md) correspondant.
 
 - **Type :**
 

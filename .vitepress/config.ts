@@ -372,7 +372,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-utilities'
         },
         {
-          text: 'Réactivité: Avancé',
+          text: 'Réactivité : Avancé',
           link: '/api/reactivity-advanced'
         },
         {
@@ -421,7 +421,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Composant monofichiers',
+      text: 'Composants monofichiers',
       items: [
         {
           text: 'Spécifications liées à la syntaxe',
