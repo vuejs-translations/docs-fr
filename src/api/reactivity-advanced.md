@@ -38,7 +38,7 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
 
 ## triggerRef() {#triggerref}
 
-Force le déclenchement d'effets qui dépendent d'une [ref supperficielle](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une référence partiellement réactive.
+Force le déclenchement d'effets qui dépendent d'une [ref partiellement réactive](#shallowref). Ceci est généralement utilisé après avoir effectué des mutations profondes sur la valeur interne d'une référence partiellement réactive.
 
 - **Type :**
 
