@@ -677,12 +677,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     algolia: {
-      indexName: 'vuejs',
-      appId: 'ML0LEBN7FQ',
-      apiKey: 'f49cbd92a74532cc55cfbffa5e5a7d01',
-      searchParameters: {
-        facetFilters: ['version:v3']
-      }
+      indexName: 'fr-vuejs',
+      appId: 'HH5AXEOM9U',
+      apiKey: 'b33b47187a1497e2a75b99d8a4deee38',
     },
 
     carbonAds: {
