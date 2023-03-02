@@ -110,7 +110,7 @@ const nav: ThemeConfig['nav'] = [
         text: 'Guide de la communauté',
         link: '/about/community-guide'
       },
-      { text: 'Code de Conduite', link: '/about/coc' },
+      { text: 'Code de bonne conduite', link: '/about/coc' },
       {
         text: 'Le documentaire',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
