@@ -355,7 +355,7 @@ La recommandation est d'employer les composables pour centraliser une logique pu
 
 ### vs. les hooks de React {#vs-react-hooks}
 
-Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ de la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
+Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela ressemble beaucoup aux hooks personnalisés de React. La Composition API a été en partie inspirée des hooks de React, et les composables Vue sont en effet similaires aux hooks de React en termes de capacités de composition logique. Cependant, les composables Vue sont basés sur le système de réactivité de Vue, qui est fondamentalement différent du modèle d'exécution des hooks React. Ceci est discuté plus en détail dans la [FAQ sur la Composition API](/guide/extras/composition-api-faq#comparison-with-react-hooks).
 
 ## Lecture complémentaire {#further-reading}
 

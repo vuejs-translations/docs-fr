@@ -41,7 +41,7 @@ const nav: ThemeConfig['nav'] = [
       {
         text: 'Ressources',
         items: [
-          { text: 'Partenaires', link: '/ecosystem/partners' },
+          { text: 'Partenaires', link: '/partners/' },
           { text: 'Thèmes', link: '/ecosystem/themes' },
           {
             text: 'Offres d’emploi',
@@ -107,10 +107,10 @@ const nav: ThemeConfig['nav'] = [
       { text: 'L’équipe', link: '/about/team' },
       { text: 'Déploiements', link: '/about/releases' },
       {
-        text: 'Community Guide',
+        text: 'Guide de la communauté',
         link: '/about/community-guide'
       },
-      { text: 'Code de Conduite', link: '/about/coc' },
+      { text: 'Code de bonne conduite', link: '/about/coc' },
       {
         text: 'Le documentaire',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
@@ -309,7 +309,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/ways-of-using-vue'
         },
         {
-          text: 'Composition API FAQ',
+          text: 'FAQ sur la Composition API',
           link: '/guide/extras/composition-api-faq'
         },
         {
@@ -332,15 +332,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: "Techniques d'animation",
           link: '/guide/extras/animation'
         },
-        {
-          text: 'Reactivity Transform',
-          link: '/guide/extras/reactivity-transform'
-        }
         // {
         //   text: 'Building a Library for Vue',
         //   link: '/guide/extras/building-a-library'
         // },
-        // { text: 'Custom Renderers', link: '/guide/extras/custom-renderer' },
         // {
         //   text: 'Vue for React Devs',
         //   link: '/guide/extras/vue-for-react-devs'
@@ -372,7 +367,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-utilities'
         },
         {
-          text: 'Reactivity: Advanced',
+          text: 'Réactivité : Avancé',
           link: '/api/reactivity-advanced'
         },
         {
@@ -421,9 +416,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Composant monofichiers',
+      text: 'Composants monofichiers',
       items: [
-        { text: 'Spécifications liées à la syntaxe', link: '/api/sfc-spec' },
+        {
+          text: 'Spécifications liées à la syntaxe',
+          link: '/api/sfc-spec'
+        },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
         { text: 'Fonctionnalités CSS', link: '/api/sfc-css-features' }
       ]
@@ -433,7 +431,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Fonctions de rendu', link: '/api/render-function' },
         { text: 'Rendu côté serveur', link: '/api/ssr' },
-        { text: 'Types utilitaires TypeScript', link: '/api/utility-types' },
+        {
+          text: 'Types utilitaires TypeScript',
+          link: '/api/utility-types'
+        },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
       ]
     }
