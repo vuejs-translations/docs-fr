@@ -367,7 +367,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/reactivity-utilities'
         },
         {
-          text: 'Reactivity: Advanced',
+          text: 'Réactivité : Avancé',
           link: '/api/reactivity-advanced'
         },
         {
@@ -416,9 +416,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Composant monofichiers',
+      text: 'Composants monofichiers',
       items: [
-        { text: 'Spécifications liées à la syntaxe', link: '/api/sfc-spec' },
+        {
+          text: 'Spécifications liées à la syntaxe',
+          link: '/api/sfc-spec'
+        },
         { text: '<script setup>', link: '/api/sfc-script-setup' },
         { text: 'Fonctionnalités CSS', link: '/api/sfc-css-features' }
       ]
@@ -428,7 +431,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Fonctions de rendu', link: '/api/render-function' },
         { text: 'Rendu côté serveur', link: '/api/ssr' },
-        { text: 'Types utilitaires TypeScript', link: '/api/utility-types' },
+        {
+          text: 'Types utilitaires TypeScript',
+          link: '/api/utility-types'
+        },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
       ]
     }
