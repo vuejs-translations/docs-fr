@@ -105,7 +105,7 @@ const nav: ThemeConfig['nav'] = [
     items: [
       { text: 'FAQ', link: '/about/faq' },
       { text: 'L’équipe', link: '/about/team' },
-      { text: 'Déploiements', link: '/about/releases' },
+      { text: 'Releases', link: '/about/releases' },
       {
         text: 'Guide de la communauté',
         link: '/about/community-guide'
