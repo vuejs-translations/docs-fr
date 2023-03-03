@@ -1,4 +1,4 @@
-# Questions fréquemment posées {#frequently-asked-questions}
+# Foire aux questions {#frequently-asked-questions}
 
 ## Qui maintient Vue? {#who-maintains-vue}
 
@@ -10,7 +10,7 @@ Le développement de Vue est principalement financé par des sponsors et nous so
 
 Vue 3 est la dernière version majeure de Vue. Elle contient de nouvelles fonctionnalités qui ne sont pas présentes dans Vue 2, comme Teleport, Suspense, et la possibilité de combiner plusieurs éléments racines par template. Elle contient également des changements importants qui la rendent incompatible avec Vue 2. Tous les détails sont documentés dans le [Guide de migration vers Vue 3](https://v3-migration.vuejs.org/).
 
-Malgré les différences, la majorité des API de Vue sont partagées entre les deux versions majeures, donc la plupart de vos connaissances de Vue 2 continueront à fonctionner dans Vue 3. Notamment, l'API de composition était à l'origine une fonctionnalité réservée à Vue 3, mais elle a été intégrée à Vue 2 de façon rétroactive et est disponible avec [Vue 2.7](https://github.com/vuejs/vue/blob/main/CHANGELOG.md#270-2022-07-01).
+Malgré les différences, la majorité des API de Vue sont partagées entre les deux versions majeures, donc la plupart de vos connaissances de Vue 2 continueront à fonctionner dans Vue 3. Notamment, la Composition API était à l'origine une fonctionnalité réservée à Vue 3, mais elle a été intégrée à Vue 2 de façon rétroactive et est disponible avec [Vue 2.7](https://github.com/vuejs/vue/blob/main/CHANGELOG.md#270-2022-07-01).
 
 En général, Vue 3 offre des paquets plus petits, de meilleures performances, une meilleure évolutivité et une meilleure prise en charge de TypeScript / intégration avec l'environnement de développement. Si vous démarrez un nouveau projet, Vue 3 est recommandé. Il n'y a que quelques raisons pour lesquelles vous pourriez considérer d'utiliser Vue 2 :
 
@@ -44,7 +44,7 @@ Vue est utilisé en production par des organisations renommées dans le monde en
 
 Vue 3 est l'un des frameworks frontend grand public les plus performants, et gère la plupart des cas d'utilisation des applications web avec facilité, sans nécessiter d'optimisations manuelles.
 
-Dans les scénarios de test de stress, Vue surpasse React et Angular avec une marge décente dans le [js-framework-benchmark](https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html). Il est également au coude à coude avec certains des frameworks sans DOM virtuel de niveau production les plus rapides du benchmark.
+Dans les scénarios de test de stress, Vue surpasse React et Angular avec une marge décente dans le [js-framework-benchmark](https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html). Il est également au coude à coude avec certains des frameworks sans DOM virtuel les plus rapides du benchmark.
 
 Notez que les benchmarks synthétiques comme ceux présentés ci-dessus se concentrent sur les performances de rendu brutes avec des optimisations dédiées et peuvent ne pas être totalement représentatifs des résultats de performance du monde réel. Si vous vous intéressez davantage aux performances de chargement des pages, vous pouvez vérifier ce qui est avancé sur ce site à l'aide de [WebPageTest](https://www.webpagetest.org/lighthouse) ou de [PageSpeed Insights](https://pagespeed.web.dev/). Ce site est propulsé par Vue lui-même, avec un pré-rendu SSG, une hydratation complète de la page et une navigation côté client SPA. Il obtient un score de 100 en termes de performances sur un Moto G4 émulé avec une accélération du processeur de 4x sur des réseaux 4G lents.
 
@@ -52,11 +52,11 @@ Vous pouvez en savoir plus sur la façon dont Vue optimise automatiquement les p
 
 ## Est-ce que Vue est léger ? {#is-vue-lightweight}
 
-Lorsque vous utilisez une étape de build, de nombreuses API de Vue peuvent être ["retirées de l'arbre"](https://developer.mozilla.org/fr/docs/Glossary/Tree_shaking). Par exemple, si vous n'utilisez pas le composant natif `<Transition>`, il ne sera pas inclus dans le paquet de production final.
+Lorsque vous utilisez un outil de build, de nombreuses API de Vue peuvent être ["retirées de l'arbre"](https://developer.mozilla.org/fr/docs/Glossary/Tree_shaking). Par exemple, si vous n'utilisez pas le composant natif `<Transition>`, il ne sera pas inclus dans le paquet de production final.
 
 Une application Vue "hello world" qui n'utilise que les API absolument nécessaires a une taille de base d'environ **16 Ko** seulement, après minification et compression Brotli. La taille réelle de l'application dépendra du nombre de fonctionnalités optionnelles que vous utilisez dans le framework. Dans le cas improbable où une application utilise toutes les fonctionnalités de Vue, la taille totale lors de l'exécution sera d'environ **27 Ko**.
 
-Lorsque Vue est utilisé sans outil de build, non seulement nous perdons la possibilité d'alléger l'arbre, mais nous devons également envoyer le compilateur de templates au navigateur. Cela fait gonfler la taille à environ **41 Ko**. Par conséquent, si vous utilisez Vue principalement pour l'amélioration progressive sans étape de build, envisagez d'utiliser [petite-vue](https://github.com/vuejs/petite-vue) (seulement **6 Ko**) à la place.
+Lorsque Vue est utilisé sans outil de build, non seulement nous perdons la possibilité d'alléger l'arbre, mais nous devons également envoyer le compilateur de templates au navigateur. Cela fait gonfler la taille à environ **41 Ko**. Par conséquent, si vous utilisez Vue principalement pour l'amélioration progressive sans outil de build, envisagez d'utiliser [petite-vue](https://github.com/vuejs/petite-vue) (seulement **6 Ko**) à la place.
 
 Certains frameworks, comme Svelte, utilisent une stratégie de compilation qui produit un résultat extrêmement léger dans les scénarios à un seul composant. Cependant, [notre recherche](https://github.com/yyx990803/vue-svelte-size-analysis) montre que la différence de taille dépend fortement du nombre de composants dans l'application. Bien que Vue ait une taille de base plus importante, il génère moins de code par composant. Dans les scénarios réels, une application Vue peut très bien finir par être plus légère.
 
