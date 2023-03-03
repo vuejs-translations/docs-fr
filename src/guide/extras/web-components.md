@@ -1,6 +1,6 @@
 # Vue et les Web Components {#vue-and-web-components}
 
-Les [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) est un terme générique pour l'ensemble des APIs web natives qui permettent aux développeurs de créer des éléments personnalisés réutilisables.
+Les [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) est un terme générique pour l'ensemble des API web natives qui permettent aux développeurs de créer des éléments personnalisés réutilisables.
 
 Nous considérons que Vue et les Web Components sont avant tout des technologies complémentaires. Vue offre un excellent support pour la consommation et la création d'éléments personnalisés. Que vous intégriez des éléments personnalisés dans une application Vue existante ou que vous utilisiez Vue pour créer et distribuer des éléments personnalisés, vous êtes au bon endroit.
 
@@ -54,7 +54,7 @@ module.exports = {
       .tap(options => ({
         ...options,
         compilerOptions: {
-          // traiter toute balise commençant par ion- comme des éléments personnalisés
+          // traiter toute balise commençant par ion- comme un élément personnalisé
           isCustomElement: tag => tag.startsWith('ion-')
         }
       }))
@@ -64,7 +64,7 @@ module.exports = {
 
 ### Passer des propriétés DOM {#passing-dom-properties}
 
-Étant donné que les attributs DOM ne peuvent être que des chaînes de caractères, nous devons transmettre des données complexes à des éléments personnalisés en tant que propriétés DOM. Lors de la définition de props sur un élément personnalisé, Vue 3 vérifie automatiquement la présence de la propriété DOM à l'aide de l'opérateur "in" et préfère définir la valeur en tant que propriété DOM si la clé est présente. Cela signifie que, dans la plupart des cas, vous n'aurez pas besoin d'y penser si l'élément personnalisé suit les [bonnes pratiques recommandées](https://web.dev/custom-elements-best-practices/).
+Bien que que les attributs DOM ne peuvent être que des chaînes de caractères, nous devons transmettre des données complexes à des éléments personnalisés en tant que propriétés DOM. Lors de la définition de props sur un élément personnalisé, Vue 3 vérifie automatiquement la présence de la propriété DOM à l'aide de l'opérateur "in" et préfère définir la valeur en tant que propriété DOM si la clé est présente. Cela signifie que, dans la plupart des cas, vous n'aurez pas besoin d'y penser si l'élément personnalisé suit les [bonnes pratiques recommandées](https://web.dev/custom-elements-best-practices/).
 
 Cependant, il peut y avoir de rares cas où les données doivent être transmises en tant que propriété DOM, mais l'élément personnalisé ne définit / ne reflète pas correctement la propriété (provoquant l'échec de la vérification `in`). Dans ce cas, vous pouvez forcer la définition d'une liaison `v-bind` en tant que propriété DOM à l'aide du modificateur `.prop` :
 
@@ -77,7 +77,7 @@ Cependant, il peut y avoir de rares cas où les données doivent être transmise
 
 ## Créer des éléments personnalisés avec Vue {#building-custom-elements-with-vue}
 
-Le principal avantage des éléments personnalisés est qu'ils peuvent être utilisés avec n'importe quel framework, ou même sans framework. Cela les rend parfaits pour distribuer des composants là où le consommateur final n'utilise peut-être pas la même pile frontale, ou lorsque vous souhaitez isoler l'application finale des détails d'implémentation des composants qu'elle utilise.
+Le principal avantage des éléments personnalisés est qu'ils peuvent être utilisés avec n'importe quel framework, ou même sans framework. Cela les rend parfaits pour distribuer des composants là où le consommateur final n'utilise peut-être pas la même stack frontend, ou lorsque vous souhaitez isoler l'application finale des détails d'implémentation des composants qu'elle utilise.
 
 ### defineCustomElement {#definecustomelement}
 
@@ -102,11 +102,11 @@ const MyVueElement = defineCustomElement({
 
 // Enregistre l'élément personnalisé.
 // Après l'enregistrement, toutes les balises `<my-vue-element>`
-// sur la page sera mis à jour.
+// sur la page seront mises à jour.
 customElements.define('my-vue-element', MyVueElement)
 
 // Vous pouvez également instancier programmatiquement l'élément :
-// (ne peut être fait qu'après inscription)
+// (ne peut être fait qu'après l'enregistrement)
 document.body.appendChild(
   new MyVueElement({
     // props initiales (facultatif)
@@ -126,13 +126,13 @@ document.body.appendChild(
 
 #### Props {#props}
 
-- Toutes les props déclarées à l'aide de l'option `props` seront définis sur l'élément personnalisé en tant que propriétés. Vue gérera automatiquement la réflexion entre les attributs / propriétés le cas échéant.
+- Toutes les props déclarées à l'aide de l'option `props` seront définies sur l'élément personnalisé en tant que propriétés. Vue gérera automatiquement la réflexion entre les attributs / propriétés le cas échéant.
 
   - Les attributs sont toujours reflétés dans les propriétés correspondantes.
 
   - Les propriétés avec des valeurs primitives (`string`, `boolean` ou `number`) sont reflétées en tant qu'attributs.
 
-- Vue convertit également automatiquement les props déclarées avec les types `Boolean` ou `Number` dans le type souhaité lorsqu'ils sont définis en tant qu'attributs (qui sont toujours des chaînes de caractères). Par exemple, étant donné la déclaration props suivante :
+- Vue convertit également automatiquement les props déclarées avec les types `Boolean` ou `Number` dans le type souhaité lorsqu'elles sont définies en tant qu'attributs (qui sont toujours des chaînes de caractères). Par exemple, étant donné la déclaration de props suivante :
 
   ```js
   props: {
@@ -151,7 +151,7 @@ document.body.appendChild(
 
 #### Événements {#events}
 
-Les événements émis via `this.$emit` ou la configuration `emit` sont distribués en tant que [CustomEvents](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events#adding_custom_data_%E2%80% 93_customevent) natifs sur l'élément personnalisé. Des arguments d'événement supplémentaires (données) seront exposés sous forme de tableau sur l'objet CustomEvent en tant que propriété `detail`.
+Les événements émis via `this.$emit` ou la configuration `emit` sont distribués en tant que [CustomEvents](https://developer.mozilla.org/fr/docs/Web/Events/Creating_and_triggering_events#adding_custom_data_%E2%80%93_customevent) natifs sur l'élément personnalisé. Des arguments d'événement supplémentaires (données) seront exposés sous forme de tableau sur l'objet CustomEvent en tant que propriété `detail`.
 
 #### Slots {#slots}
 
@@ -185,10 +185,10 @@ import Example from './Example.ce.vue'
 
 console.log(Example.styles) // ["/* css litéral */"]
 
-// convertir en constructeur d'élément personnalisé
+// convertion en constructeur d'élément personnalisé
 const ExampleElement = defineCustomElement(Example)
 
-// enregistre
+// enregistrement
 customElements.define('my-example', ExampleElement)
 ```
 
@@ -199,7 +199,7 @@ Si vous souhaitez personnaliser les fichiers à importer en mode élément perso
 
 ### Conseils pour une bibliothèque d'éléments personnalisés Vue {#tips-for-a-vue-custom-elements-library}
 
-Lors de la création d'éléments personnalisés avec Vue, les éléments s'appuieront sur l'environnement d'exécution de Vue. Il y a un coût de taille de base d'environ 16 Ko en fonction du nombre de fonctionnalités utilisées. Cela signifie qu'il n'est pas idéal d'utiliser Vue si vous expédiez un seul élément personnalisé - vous pouvez utiliser du JavaScript pure, [petite-vue](https://github.com/vuejs/petite-vue) ou des frameworks qui se spécialise dans leur petite taille d'exécution. Cependant, la taille de base est plus que justifiable si vous expédiez une collection d'éléments personnalisés avec une logique complexe, car Vue permettra à chaque composant d'être créé avec beaucoup moins de code. Plus vous expédiez d'éléments ensemble, meilleur est le compromis.
+Lors de la création d'éléments personnalisés avec Vue, les éléments s'appuieront sur l'environnement d'exécution de Vue. Il y a un coût de taille de base d'environ 16 Ko en fonction du nombre de fonctionnalités utilisées. Cela signifie qu'il n'est pas idéal d'utiliser Vue si vous expédiez un seul élément personnalisé - vous pouvez utiliser du JavaScript pur, [petite-vue](https://github.com/vuejs/petite-vue) ou des frameworks qui se spécialisent dans leur petite taille d'exécution. Cependant, la taille de base est plus que rentable si vous expédiez une collection d'éléments personnalisés avec une logique complexe, car Vue permettra à chaque composant d'être créé avec beaucoup moins de code. Plus vous expédiez d'éléments ensemble, meilleur est le compromis.
 
 Si les éléments personnalisés seront utilisés dans une application qui utilise également Vue, vous pouvez choisir d'externaliser Vue à partir du bundle construit afin que les éléments utilisent la même copie de Vue à partir de l'application hôte.
 
@@ -228,7 +228,7 @@ Si vous avez de nombreux composants, vous pouvez également tirer parti des fonc
 
 Certains développeurs pensent que les modèles de composants propriétaires du framework doivent être évités et que l'utilisation exclusive d'éléments personnalisés rend une application "à l'épreuve du temps". Ici, nous allons essayer d'expliquer pourquoi nous pensons qu'il s'agit d'une approche trop simpliste du problème.
 
-Il existe en effet un certain niveau de chevauchement de fonctionnalités entre les éléments personnalisés et les composants Vue : ils nous permettent tous deux de définir des composants réutilisables avec transmission de données, émission d'événements et gestion du cycle de vie. Cependant, les API des composants Web sont de niveau relativement bas et rudimentaires. Pour créer une application réelle, nous avons besoin de quelques fonctionnalités supplémentaires que la plate-forme ne couvre pas :
+Il existe en effet un certain niveau de chevauchement de fonctionnalités entre les éléments personnalisés et les composants Vue : ils nous permettent tous deux de définir des composants réutilisables avec transmission de données, émission d'événements et gestion du cycle de vie. Cependant, les API des Web Components sont de niveau relativement bas et rudimentaires. Pour créer une application réelle, nous avons besoin de quelques fonctionnalités supplémentaires que la plate-forme ne couvre pas :
 
 - Un système de template déclaratif et efficace ;
 
@@ -238,14 +238,14 @@ Il existe en effet un certain niveau de chevauchement de fonctionnalités entre 
 
 Le modèle de composants de Vue est conçu avec ces besoins à l'esprit en tant que système cohérent.
 
-Avec une équipe d'ingénieurs compétente, vous pourriez probablement créer l'équivalent au-dessus des éléments personnalisés natifs - mais cela signifie également que vous assumez le fardeau de la maintenance à long terme d'un framework interne, tout en perdant les avantages écosystémiques et communautaires de un framework mature comme Vue.
+Avec une équipe d'ingénieurs compétente, vous pourriez probablement créer l'équivalent au-dessus des éléments personnalisés natifs - mais cela signifie également que vous assumez le fardeau de la maintenance à long terme d'un framework interne, tout en perdant les avantages écosystémiques et communautaires d'un framework mature comme Vue.
 
 Il existe également des frameworks construits à l'aide d'éléments personnalisés comme base de leur modèle de composants, mais ils doivent tous inévitablement introduire leurs solutions propriétaires aux problèmes répertoriés ci-dessus. L'utilisation de ces frameworks implique d'accepter leurs décisions techniques sur la façon de résoudre ces problèmes - ce qui, malgré ce qui peut être annoncé, ne vous isole pas automatiquement des futures évolutions potentielles.
 
 Il existe également des domaines dans lesquels nous trouvons que les éléments personnalisés sont limités :
 
-- L'évaluation en avance des slots entrave la composition des composants. Les [scoped slots](/guide/components/slots.html#scoped-slots) de Vue sont un mécanisme puissant pour la composition de composants, qui ne peut pas être pris en charge par des éléments personnalisés en raison de la déclaration en avance des slots natifs. Les slots en avance signifient également que le composant récepteur ne peut pas contrôler quand ou s'il faut rendre un élément du contenu du slot.
+- L'évaluation en avance des slots entrave la composition des composants. Les [scoped slots](/guide/components/slots.html#scoped-slots) de Vue sont un mécanisme puissant pour la composition de composants, qui ne peut pas être prise en charge par des éléments personnalisés en raison de la déclaration en avance des slots natifs. Les slots en avance signifient également que le composant récepteur ne peut pas contrôler quand ou s'il faut rendre un élément du contenu du slot.
 
-- Aujourd'hui, distribuer des éléments personnalisés avec du CSS à portée limitée étendus au shadow DOM nécessite l'intégration du CSS dans JavaScript afin qu'ils puissent être injectés dans les shadowRoot lors de l'exécution. Ils entraînent également des styles dupliqués dans le balisage des scénarios SSR. Il y a des [fonctionnalités de la plate-forme](https://github.com/whatwg/html/pull/4898/) en cours d'élaboration dans ce domaine - mais pour l'instant, elles ne sont pas encore universellement prises en charge, et il existe encore des performances de production /SSR préoccupations à traiter. En attendant, les SFC Vue fournissent des [mécanismes de limitation de la portée du CSS](/api/sfc-css-features.html) qui prennent en charge l'extraction des styles dans des fichiers CSS simples.
+- Aujourd'hui, distribuer des éléments personnalisés avec du CSS à portée limitée étendus au shadow DOM nécessite l'intégration du CSS dans JavaScript afin qu'ils puissent être injectés dans les shadowRoot lors de l'exécution. Ils entraînent également des styles dupliqués dans le balisage des scénarios SSR. Il y a des [fonctionnalités de la plate-forme](https://github.com/whatwg/html/pull/4898/) en cours d'élaboration dans ce domaine - mais pour l'instant, elles ne sont pas encore universellement prises en charge, et il existe encore des performances de production / préoccupations SSR à traiter. En attendant, les SFC Vue fournissent des [mécanismes de limitation de la portée du CSS](/api/sfc-css-features.html) qui prennent en charge l'extraction des styles dans des fichiers CSS simples.
 
 Vue restera toujours à jour avec les dernières normes de la plate-forme Web, et nous nous ferons un plaisir de tirer parti de tout ce que la plate-forme fournit si cela facilite notre travail. Cependant, notre objectif est de fournir des solutions qui fonctionnent bien et qui fonctionnent aujourd'hui. Cela signifie que nous devons intégrer de nouvelles fonctionnalités de plate-forme avec un état d'esprit critique - et cela implique de combler les lacunes là où les normes sont insuffisantes aussi longtemps que ce sera nécessaire.

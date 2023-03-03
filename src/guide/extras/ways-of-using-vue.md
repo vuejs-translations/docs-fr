@@ -10,7 +10,7 @@ Vue fournit également une distribution alternative appelée [petite-vue](https:
 
 ## Intégration des Web Components {#embedded-web-components}
 
-Vous pouvez utiliser Vue pour [construire des composants personnalisés standards](/guide/extras/web-components) qui peuvent être intégrés dans n'importe quelle page HTML, quelle que soit la manière dont ils sont rendus. Cette option vous permet de tirer parti de Vue de manière complètement agnostique pour le consommateur: les composants web résultants peuvent être intégrés dans des applications legacy, dans du HTML statique, ou même dans des applications construites avec d'autres frameworks.
+Vous pouvez utiliser Vue pour [construire des composants personnalisés standards](/guide/extras/web-components) qui peuvent être intégrés dans n'importe quelle page HTML, quelle que soit la manière dont ils sont rendus. Cette option vous permet de tirer parti de Vue de manière complètement agnostique pour le consommateur: les web components résultants peuvent être intégrés dans des applications legacy, dans du HTML statique, ou même dans des applications construites avec d'autres frameworks.
 
 ## Application monopage (SPA) {#single-page-application-spa}
 
