@@ -426,7 +426,7 @@ Spécifie une méthode de vérification pour reconnaître les éléments personn
   }
   ```
 
-- **Voir aussi :** [Vue et Web Components](/guide/extras/web-components.html)
+- **Voir aussi :** [Vue et les Web Components](/guide/extras/web-components.html)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 

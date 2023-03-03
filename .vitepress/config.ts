@@ -325,13 +325,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/guide/extras/render-function'
         },
         {
-          text: 'Vue and Web Components',
+          text: 'Vue et les Web Components',
           link: '/guide/extras/web-components'
         },
         {
           text: "Techniques d'animation",
           link: '/guide/extras/animation'
-        },
+        }
         // {
         //   text: 'Building a Library for Vue',
         //   link: '/guide/extras/building-a-library'
