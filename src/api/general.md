@@ -206,6 +206,6 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
 - **Voir aussi :**
 
-  - [Guide - Building Custom Elements with Vue](/guide/extras/web-components.html#building-custom-elements-with-vue)
+  - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components.html#building-custom-elements-with-vue)
 
   - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components.html#sfc-as-custom-element) lorsqu'elle est utilisée avec des composants monofichiers.

@@ -75,7 +75,7 @@ Cependant, il peut y avoir de rares cas où les données doivent être transmise
 <my-element .user="{ name: 'jack' }"></my-element>
 ```
 
-## Construire des éléments personnalisés avec Vue {#building-custom-elements-with-vue}
+## Créer des éléments personnalisés avec Vue {#building-custom-elements-with-vue}
 
 Le principal avantage des éléments personnalisés est qu'ils peuvent être utilisés avec n'importe quel framework, ou même sans framework. Cela les rend parfaits pour distribuer des composants là où le consommateur final n'utilise peut-être pas la même pile frontale, ou lorsque vous souhaitez isoler l'application finale des détails d'implémentation des composants qu'elle utilise.
 
