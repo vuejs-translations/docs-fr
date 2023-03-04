@@ -6,7 +6,7 @@ Les composants nous permettent de fractionner l'UI en morceaux indépendants et 
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les composants Web natifs. Pour en savoir plus sur la relation entre les composants Vue et les composants Web natifs, [lisez ceci](/guide/extras/web-components.html).
+Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les Web Components natifs. Pour en savoir plus sur la relation entre les composants Vue et les Web Components natifs, [lisez ceci](/guide/extras/web-components.html).
 
 ## Définir un composant {#defining-a-component}
 

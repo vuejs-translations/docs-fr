@@ -381,7 +381,7 @@ PascalCase a quelques avantages par rapport au kebab-case :
 
 - Les éditeurs peuvent compléter automatiquement les noms de composants dans les templates, car le PascalCase est également utilisé en JavaScript.
 - `<MyComponent>` est visuellement plus distinct d'un élément HTML que `<my-component>`, car il y a deux différences de caractères (les deux majuscules), plutôt qu'une seule (un trait d'union).
-- Si vous utilisez des éléments personnalisés non-Vue dans vos templates, tels qu'un composant Web, le PascalCase garantit que vos composants Vue restent clairement visibles.
+- Si vous utilisez des éléments personnalisés non-Vue dans vos templates, tels qu'un Web Component, le PascalCase garantit que vos composants Vue restent clairement visibles.
 
 Malheureusement, en raison de l'insensibilité à la casse de HTML, les templates du DOM doivent toujours utiliser le kebab-case.
 

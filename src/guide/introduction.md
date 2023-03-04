@@ -80,7 +80,7 @@ La suite de la documentation présuppose que vous soyez familier avec le HTML, l
 Vue est un framework et un écosystème qui couvre la plupart des fonctionnalités courantes nécessaires au développement front-end. Le Web est très diversifié; les choses que nous y construisons peuvent varier radicalement. C'est pourquoi Vue a été conçu pour être flexible et adoptable de manière incrémentale. En fonction de votre cas d'utilisation, Vue peut être utilisé de différentes manières :
 
 - Extension du HTML statique sans étape de construction
-- Intégration de composants web (custom element) sur n'importe quelle page
+- Intégration de Web Components (éléments personnalisés) sur n'importe quelle page
 - Application mono-page (SPA)
 - Fullstack / Rendu côté serveur (SSR)
 - JAMStack / Génération de sites statiques (SSG)
