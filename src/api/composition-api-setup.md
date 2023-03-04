@@ -42,7 +42,7 @@ Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiq
 
 `setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Option API, mais pas l'inverse.
 
-`setup()` devrait renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
+`setup()` doit renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
 
 ## Accéder aux props {#accessing-props}
 
