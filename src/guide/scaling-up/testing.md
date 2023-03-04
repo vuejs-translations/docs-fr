@@ -4,7 +4,7 @@ import TestingApiSwitcher from './TestingApiSwitcher.vue'
 
 # Tester {#testing}
 
-## Pourquoi tester? {#why-test}
+## Pourquoi tester ? {#why-test}
 
 Les tests automatisés vous aident ainsi que votre équipe à construire des applications Vue complexes rapidement et avec confiance en prévenant les régressions et en vous encourageant à décomposer votre application en fonctions, modules, classes et composants testables. Comme toute autre application, votre nouvelle application Vue peut dysfonctionner de différentes manières, et il est important que vous puissiez détecter ces problèmes avant de livrer.
 
@@ -12,9 +12,9 @@ Dans ce guide, nous allons couvrir la terminologie basique et donner des recomma
 
 Une section dédiée à Vue couvre les composables. Voir [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
-## Quand tester {#when-to-test}
+## Quand tester ? {#when-to-test}
 
-Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que vous le pouvez. Plus vous attendrez avant d'ajouter des tests à votre application, plus votre application aura des dépendances, et il sera plus difficile de commencer.
+Commencez tôt ! Nous recommandons de commencer à écrire des tests dès que vous le pouvez. Plus vous attendrez avant d'ajouter des tests à votre application, plus votre application aura des dépendances, et il sera plus difficile de commencer.
 
 ## Types de tests {#testing-types}
 
@@ -24,19 +24,19 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 - **Composant** : Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
 - **End-to-end** : Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
-Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protègera de problèmes différents.
+Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protégera de problèmes différents.
 
 ## Aperçu {#overview}
 
-Nous allons brièvement discuter ce que chacun de ces tests sont, comment ils peuvent être implémentés pour des applications Vue et donner quelques recommendations générales.
+Nous allons brièvement discuter de ce que chacun de ces tests sont, de comment ils peuvent être implémentés pour des applications Vue et donner quelques recommendations générales.
 
-## Tester Unitairement {#unit-testing}
+## Tester unitairement {#unit-testing}
 
 Les tests unitaires sont écrits pour vérifier que des petites unités de code isolées fonctionnent comme prévu. Un test unitaire couvre généralement une seule fonction, classe, composable ou module. Les tests unitaires se concentrent sur l'exactitude logique et ne concernent qu'une petite partie des fonctionnalités globales de l'application. Ils peuvent simuler de grandes parties de l'environnement de votre application (par exemple, l'état initial, les classes complexes, les modules tierce partie et les requêtes réseau).
 
 En général, les tests unitaires vont détecter des problèmes concernant la logique métier d'une fonction et son exactitude logique.
 
-Prenons par exemple cette fonction `increment`:
+Prenons par exemple cette fonction `increment` :
 
 ```js
 // helpers.js
@@ -71,7 +71,7 @@ describe('increment', () => {
 })
 ```
 
-Comme mentionné précédemment, les tests unitaires sont généralement exercés sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
+Comme mentionné précédemment, les tests unitaires sont généralement exercés sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent pas de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
 
 Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
@@ -89,7 +89,7 @@ Voir la section [Tester les composables](#testing-composables) ci-dessous pour p
 
 Un composant peut être testé de deux façons :
 
-1. Boîte blanche: Test unitaire
+1. Boîte blanche : Test unitaire
 
    Les tests "Boîte blanche" ont "conscience" des détails d'implémentation et des dépendances d'un composant. Ils se concentrent sur l'**isolation** du composant testé. Ces tests impliquent en général de simuler certains sinon tous les enfants de votre composant ainsi que d'initialiser l'état de plugins et dépendances (ex. Pinia).
 
@@ -113,7 +113,7 @@ Un composant peut être testé de deux façons :
 
 Dans les applications Vue, les composants sont les principaux blocs de construction de l'interface utilisateur. Les composants sont donc l'unité naturelle d'isolement lorsqu'il s'agit de valider le comportement de votre application. Du point de vue de la granularité, les tests de composants se situent quelque part au-dessus des tests unitaires et peuvent être considérés comme une forme de test d'intégration. Une grande partie de votre application Vue doit être couverte par un test de composant et nous vous recommandons que chaque composant Vue ait son propre fichier de spécifications.
 
-Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'il fournit, aux styles, aux classes, aux hooks de cycle de vie de votre composant, etc.
+Les tests de composant doivent détecter les problèmes liés aux props, aux événements, aux slots qu'un composant fournit, aux styles, aux classes, aux hooks de cycle de vie de votre composant, etc.
 
 Les tests de composant ne doivent pas simuler des composants enfants, mais plutôt tester les interactions entre votre composant et ses enfants en interagissant avec les composants comme le ferait un utilisateur. Par exemple, un test de composant doit cliquer sur un élément comme le ferait un utilisateur au lieu d'interagir programmatiquement avec le composant.
 
@@ -289,7 +289,7 @@ Dans un projet Vue basé sur Vite, lancez :
 > npm install -D vitest happy-dom @testing-library/vue
 ```
 
-Ensuite, modifiez la configuration Vite pour ajouter le bloc d'option `test`:
+Ensuite, modifiez la configuration Vite pour ajouter le bloc d'option `test` :
 
 ```js{6-12}
 // vite.config.js
