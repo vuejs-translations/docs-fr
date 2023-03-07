@@ -78,14 +78,14 @@ const nav: ThemeConfig['nav'] = [
         text: 'Aide',
         items: [
           {
-            text: 'Discord Chat',
+            text: 'Serveur Discord',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
             text: 'Discussions GitHub',
             link: 'https://github.com/vuejs/core/discussions'
           },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+          { text: 'Communauté DEV', link: 'https://dev.to/t/vue' }
         ]
       },
       {
