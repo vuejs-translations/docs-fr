@@ -523,7 +523,7 @@ Un objet qui peut être utilisé pour enregistrer des propriétés globales acce
   }
   ```
 
-- **See also:** [Guide - Augmenting Global Properties](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 
@@ -574,4 +574,4 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
  // logue 'Hello Vue'
   ```
 
-- **See also:** [Component Instance - `$options`](/api/component-instance.html#options)
+- **See also:** [Component Instance - `$options`](/api/component-instance#options)

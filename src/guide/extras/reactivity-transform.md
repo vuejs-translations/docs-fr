@@ -50,11 +50,11 @@ function increment() {
 
 Chaque API de réactivité qui renvoie des refs aura un équivalent en macro préfixé `$`. Ces APIs incluent :
 
-- [`ref`](/api/reactivity-core.html#ref) -> `$ref`
-- [`computed`](/api/reactivity-core.html#computed) -> `$computed`
-- [`shallowRef`](/api/reactivity-advanced.html#shallowref) -> `$shallowRef`
-- [`customRef`](/api/reactivity-advanced.html#customref) -> `$customRef`
-- [`toRef`](/api/reactivity-utilities.html#toref) -> `$toRef`
+- [`ref`](/api/reactivity-core#ref) -> `$ref`
+- [`computed`](/api/reactivity-core#computed) -> `$computed`
+- [`shallowRef`](/api/reactivity-advanced#shallowref) -> `$shallowRef`
+- [`customRef`](/api/reactivity-advanced#customref) -> `$customRef`
+- [`toRef`](/api/reactivity-utilities#toref) -> `$toRef`
 
 Ces macros sont disponibles globalement et n'ont pas besoin d'être importées lorsque Reactivity Transform est activée, mais vous pouvez éventuellement les importer depuis `vue/macros` si vous voulez être plus explicite :
 

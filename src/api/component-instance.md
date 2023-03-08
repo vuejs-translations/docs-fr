@@ -8,7 +8,7 @@ All properties listed on this page are readonly (except nested properties in `$d
 
 ## $data {#data}
 
-The object returned from the [`data`](./options-state.html#data) option, made reactive by the component. The component instance proxies access to the properties on its data object.
+The object returned from the [`data`](./options-state#data) option, made reactive by the component. The component instance proxies access to the properties on its data object.
 
 - **Type**
 
@@ -32,7 +32,7 @@ An object representing the component's current, resolved props.
 
 - **Details**
 
-  Only props declared via the [`props`](./options-state.html#props) option will be included. The component instance proxies access to the properties on its props object.
+  Only props declared via the [`props`](./options-state#props) option will be included. The component instance proxies access to the properties on its props object.
 
 ## $el {#el}
 
@@ -117,7 +117,7 @@ The root component instance of the current component tree. If the current instan
 
 ## $slots {#slots}
 
-An object representing the [slots](/guide/components/slots.html) passed by the parent component.
+An object representing the [slots](/guide/components/slots) passed by the parent component.
 
 - **Type**
 
@@ -131,17 +131,17 @@ An object representing the [slots](/guide/components/slots.html) passed by the p
 
 - **Details**
 
-  Typically used when manually authoring [render functions](/guide/extras/render-function.html), but can also be used to detect whether a slot is present.
+  Typically used when manually authoring [render functions](/guide/extras/render-function), but can also be used to detect whether a slot is present.
 
   Each slot is exposed on `this.$slots` as a function that returns an array of vnodes under the key corresponding to that slot's name. The default slot is exposed as `this.$slots.default`.
 
-  If a slot is a [scoped slot](/guide/components/slots.html#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
+  If a slot is a [scoped slot](/guide/components/slots#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
 
 - **See also:** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function.html#rendering-slots)
 
 ## $refs {#refs}
 
-An object of DOM elements and component instances, registered via [template refs](/guide/essentials/template-refs.html).
+An object of DOM elements and component instances, registered via [template refs](/guide/essentials/template-refs).
 
 - **Type**
 
@@ -172,7 +172,7 @@ An object that contains the component's fallthrough attributes.
 
   [Attributs implicitement déclarés](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
 
-  By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc.html#inheritattrs) option.
+  By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc#inheritattrs) option.
 
 - **See also:**
 
@@ -309,7 +309,7 @@ Force the component instance to re-render.
 
 ## $nextTick() {#nexttick}
 
-Instance-bound version of the global [`nextTick()`](./general.html#nexttick).
+Instance-bound version of the global [`nextTick()`](./general#nexttick).
 
 - **Type**
 
@@ -323,4 +323,4 @@ Instance-bound version of the global [`nextTick()`](./general.html#nexttick).
 
   The only difference from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
 
-- **See also:** [`nextTick()`](./general.html#nexttick)
+- **See also:** [`nextTick()`](./general#nexttick)

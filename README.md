@@ -35,6 +35,7 @@ This project requires Node.js to be `v14.0.0` or higher, because we use new Java
 
 - Consultez le [Guide d'Écriture](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) pour nos règles et recommandations sur la rédaction et la maintenance du contenu de la documentation.
 
+
 ## Travail sur le le thème
 
 Si des modifications doivent être apportées au thème, consultez les [instructions pour développer le thème parallèlement à la documentation](https://github.com/vuejs/vue-theme#developing-with-real-content).

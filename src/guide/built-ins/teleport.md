@@ -116,7 +116,8 @@ La cible `to` de `<Teleport>` attend une chaîne de sélecteur CSS ou un nœud d
 Vous pouvez cliquer sur le bouton ci-dessous et inspecter la balise `body` via la console de votre navigateur :
 
 <script setup>
-let open = $ref(false)
+import { ref } from 'vue'
+const open = ref(false)
 </script>
 
 <div class="demo">

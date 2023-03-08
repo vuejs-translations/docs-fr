@@ -95,7 +95,7 @@ Crée une ref personnalisée avec un contrôle explicite sur son suivi des dépe
 
   ```js
   import { customRef } from 'vue'
-  
+
   export function useDebouncedRef(value, delay = 200) {
     let timeout
     return customRef((track, trigger) => {

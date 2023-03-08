@@ -42,7 +42,7 @@ components/
 
 ## La casse des noms de composants {#single-file-component-filename-casing}
 
-**Le nom des composants monofichiers doit toujours être soit en PascalCase soit en kebab-case.**
+**Le nom des [composants monofichiers](/guide/scaling-up/sfc.html) doit toujours être soit en PascalCase soit en kebab-case.**
 
 PascalCase fonctionne mieux avec l'auto-complétion dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peut parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
 
