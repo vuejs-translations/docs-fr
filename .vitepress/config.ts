@@ -523,7 +523,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#flight-booker'
         },
         {
-          text: 'Timer',
+          text: 'Chronomètre',
           link: '/examples/#timer'
         },
         {
