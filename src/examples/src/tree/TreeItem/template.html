@@ -8,8 +8,8 @@
   </div>
   <ul v-show="isOpen" v-if="isFolder">
     <!--
-      Un composant peut s'auto-rendre de manière récursive en utilisant son
-       option "name" (déduite du nom de fichier si l'on utilise un SFC)
+      Un composant peut se rendre lui-même de manière récursive en utilisant son
+      option "name" (déduite du nom de fichier si l'on utilise un SFC)
     -->
     <TreeItem
       class="item"
