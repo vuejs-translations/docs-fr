@@ -52,7 +52,7 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
 
   Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject.html#working-with-reactivity) pour plus de détails.
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject.html)
+- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
 
 ## inject {#inject}
 
@@ -167,7 +167,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject.html)
+- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
 
 ## mixins {#mixins}
 
@@ -188,7 +188,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   Les hooks des mixins sont appelés dans l'ordre où ils sont fournis, et sont appelés avant les propres hooks du composant.
 
   :::warning N'est plus recommandé
-  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables.html) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
+  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
 - **Exemple :**

@@ -55,7 +55,7 @@ The root DOM node that the component instance is managing.
   - For components with multiple root nodes, `$el` will be the placeholder DOM node that Vue uses to keep track of the component's position in the DOM (a text node, or a comment node in SSR hydration mode).
 
   :::tip
-  For consistency, it is recommended to use [les refs du template](/guide/essentials/template-refs.html) for direct access to elements instead of relying on `$el`.
+  For consistency, it is recommended to use [les refs du template](/guide/essentials/template-refs) for direct access to elements instead of relying on `$el`.
   :::
 
 ## $options {#options}
@@ -153,7 +153,7 @@ An object of DOM elements and component instances, registered via [template refs
 
 - **See also:**
 
-  - [Les refs du template](/guide/essentials/template-refs.html)
+  - [Les refs du template](/guide/essentials/template-refs)
   - [Attributs spéciaux - ref](./built-in-special-attributes.md#ref)
 
 ## $attrs {#attrs}
@@ -170,13 +170,13 @@ An object that contains the component's fallthrough attributes.
 
 - **Details**
 
-  [Attributs implicitement déclarés](/guide/components/attrs.html) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
+  [Attributs implicitement déclarés](/guide/components/attrs) are attributes and event handlers passed by the parent component, but not declared as a prop or an emitted event by the child.
 
   By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc#inheritattrs) option.
 
 - **See also:**
 
-  - [Attributs implicitement déclarés](/guide/components/attrs.html)
+  - [Attributs implicitement déclarés](/guide/components/attrs)
 
 ## $watch() {#watch}
 
@@ -259,7 +259,7 @@ Imperative API for creating watchers.
 
 - **See also:**
   - [Options - `watch`](/api/options-state.html#watch)
-  - [Guide - Observateurs](/guide/essentials/watchers.html)
+  - [Guide - Observateurs](/guide/essentials/watchers)
 
 ## $emit() {#emit}
 
@@ -288,7 +288,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
 
 - **See also:**
 
-  - [Composant - Gestion des évènements](/guide/components/events.html)
+  - [Composant - Gestion des évènements](/guide/components/events)
   - [L'option `emits`](./options-state.html#emits)
 
 ## $forceUpdate() {#forceupdate}

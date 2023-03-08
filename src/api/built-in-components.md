@@ -7,7 +7,7 @@ pageClass: api
 :::info Enregistrement et utilisation
 Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
 
-Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function.html), il faut les importer explicitement. Par exemple :
+Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function), il faut les importer explicitement. Par exemple :
 
 ```js
 import { h, Transition } from 'vue'
@@ -118,7 +118,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   </Transition>
   ```
 
-- **Voir aussi :** [Guide sur `<Transition>`](/guide/built-ins/transition.html)
+- **Voir aussi :** [Guide sur `<Transition>`](/guide/built-ins/transition)
 
 ## `<TransitionGroup>` {#transitiongroup}
 
@@ -164,7 +164,7 @@ Fournit des effets de transition pour de **multiples** éléments ou composants 
   </TransitionGroup>
   ```
 
-- **Voir aussi :** [Guide - TransitionGroup](/guide/built-ins/transition-group.html)
+- **Voir aussi :** [Guide - TransitionGroup](/guide/built-ins/transition-group)
 
 ## `<KeepAlive>` {#keepalive}
 
@@ -257,7 +257,7 @@ Lorsqu'un composant est activé/désactivé à l'intérieur de `<KeepAlive>`, se
   </KeepAlive>
   ```
 
-- **Voir aussi :** [Guide - KeepAlive](/guide/built-ins/keep-alive.html)
+- **Voir aussi :** [Guide - KeepAlive](/guide/built-ins/keep-alive)
 
 ## `<Teleport>` {#teleport}
 
@@ -299,7 +299,7 @@ Rend le contenu de son slot à une autre partie du DOM.
   </teleport>
   ```
 
-- **Voir aussi :** [Guide - Teleport](/guide/built-ins/teleport.html)
+- **Voir aussi :** [Guide - Teleport](/guide/built-ins/teleport)
 
 ## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
@@ -323,6 +323,6 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
 
   `<Suspense>` accepte deux slots : le slot `#default` et le slot `#fallback`. Il affichera le contenu du slot de secours tout en rendant le slot par défaut en mémoire.
 
-  S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async.html) et des composants avec [`async setup()`](/guide/built-ins/suspense.html#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
+  S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async) et des composants avec [`async setup()`](/guide/built-ins/suspense.html#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
 
-- **Voir aussi :** [Guide - Suspense](/guide/built-ins/suspense.html)
+- **Voir aussi :** [Guide - Suspense](/guide/built-ins/suspense)

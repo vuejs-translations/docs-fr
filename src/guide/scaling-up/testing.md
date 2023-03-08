@@ -82,7 +82,7 @@ Il existe deux cas où vous testez unitairement des fonctionnalités spécifique
 
 ### Composables {#composables}
 
-[Les composables](/guide/reusability/composables.html) sont une catégorie de fonctions spécifiques aux applications Vue qui peut nécessiter un traitement spécial pendant les tests.
+[Les composables](/guide/reusability/composables) sont une catégorie de fonctions spécifiques aux applications Vue qui peut nécessiter un traitement spécial pendant les tests.
 Voir la section [Tester les composables](#testing-composables) ci-dessous pour plus de détails.
 
 ### Tester unitairement des composants {#unit-testing-components}
@@ -358,7 +358,7 @@ Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le
 
 ### Tester les Composables {#testing-composables}
 
-> Cette section suppose que vous avez lu la section [Composables](/guide/reusability/composables.html).
+> Cette section suppose que vous avez lu la section [Composables](/guide/reusability/composables).
 
 Lorsqu'il est question de tester des composables, nous pouvons diviser en deux catégories : les composables qui ne dépendent pas d'une instance de composant hôte et ceux qui en dépendent.
 

@@ -16,7 +16,7 @@ Tout d'abord, discutons des deux principaux aspects de la performance web :
 
 L'idéal serait de maximiser les deux, mais les différentes architectures frontend ont tendance à rendre compliqué d'atteindre les performances souhaitées. En outre, le type d'application que vous construisez influence grandement ce à quoi vous devez donner la priorité en termes de performances. Par conséquent, la première étape pour garantir des performances optimales consiste à choisir la bonne architecture pour votre application :
 
-- Consulter les [Manières d'utiliser Vue](/guide/extras/ways-of-using-vue.html) pour voir comment vous pouvez tirer parti de Vue de différentes manières.
+- Consulter les [Manières d'utiliser Vue](/guide/extras/ways-of-using-vue) pour voir comment vous pouvez tirer parti de Vue de différentes manières.
 
 - Jason Miller examine les types d'applications web et leur mise en œuvre idéale dans [les holotypes des applications](https://jasonformat.com/application-holotypes/).
 
@@ -41,7 +41,7 @@ Il existe de nombreux aspects indépendants du framework pour optimiser les perf
 
 ### Choisir la bonne architecture {#choosing-the-right-architecture}
 
-Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté purement client souffre d'un temps d'accès au contenu plus lent. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr.html) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et le rendre interactif avec Vue côté client.
+Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté purement client souffre d'un temps d'accès au contenu plus lent. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et le rendre interactif avec Vue côté client.
 
 Si votre application doit être une SPA, mais qu'elle comporte des pages marketing (accueil, à propos, blog), envoyez-les séparément ! Vos pages marketing devraient idéalement être déployées en HTML statique avec un minimum de JS, en utilisant la SSG.
 
@@ -77,7 +77,7 @@ function loadLazy() {
 }
 ```
 
-Le chargement à la volée est optimal pour les fonctionnalités qui ne sont pas immédiatement nécessaires après le chargement initial de la page. Dans les applications Vue, il peut être utilisé en combinaison avec la fonctionnalité [composants asynchrones](/guide/components/async.html) de Vue pour créer des morceaux fractionnés pour les arbres de composants :
+Le chargement à la volée est optimal pour les fonctionnalités qui ne sont pas immédiatement nécessaires après le chargement initial de la page. Dans les applications Vue, il peut être utilisé en combinaison avec la fonctionnalité [composants asynchrones](/guide/components/async) de Vue pour créer des morceaux fractionnés pour les arbres de composants :
 
 ```js
 import { defineAsyncComponent } from 'vue'

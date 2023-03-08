@@ -97,7 +97,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
-De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform.html) qui est toujours expérimentale :
+De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform) qui est toujours expérimentale :
 
 ```vue
 <script setup lang="ts">

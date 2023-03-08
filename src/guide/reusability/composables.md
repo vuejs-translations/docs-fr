@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Principes fondamentaux des composants](/guide/essentials/reactivity-fundamentals.html) et [Les hooks du cycle de vie](/guide/essentials/lifecycle.html).
+Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Principes fondamentaux des composants](/guide/essentials/reactivity-fundamentals.html) et [Les hooks du cycle de vie](/guide/essentials/lifecycle).
 :::
 
 ## Qu'est-ce qu'un "Composable"? {#what-is-a-composable}
@@ -125,7 +125,7 @@ export function useMouse() {
 ```
 
 :::tip
-Chaque instance de composant appelant `useMouse()` créera ses propres copies de l'état `x` et `y` afin qu'elles n'interfèrent pas l'une avec l'autre. Si vous souhaitez gérer l'état partagé entre les composants, lisez le chapitre [Gestion d'état](/guide/scaling-up/state-management.html).
+Chaque instance de composant appelant `useMouse()` créera ses propres copies de l'état `x` et `y` afin qu'elles n'interfèrent pas l'une avec l'autre. Si vous souhaitez gérer l'état partagé entre les composants, lisez le chapitre [Gestion d'état](/guide/scaling-up/state-management).
 :::
 
 ## Example d'état asynchrone {#async-state-example}
@@ -273,7 +273,7 @@ Position de la souris est à : {{ mouse.x }}, {{ mouse.y }}
 
 C'est OK d'effectuer des effets de bord (par exemple, ajouter des écouteurs d'événements DOM ou récupérer des données) dans les composables, mais faites attention aux règles suivantes :
 
-- Si vous travaillez sur une application qui utilise du [Rendu côté serveur](/guide/scaling-up/ssr.html) (SSR), assurez-vous d'effectuer des effets de bord spécifiques au DOM dans les hooks de cycle de vie post-montage, par ex. `onMounted()`. Ces hooks ne sont appelés que dans le navigateur, vous pouvez donc être sûr que le code qu'ils contiennent a bien accès au DOM.
+- Si vous travaillez sur une application qui utilise du [Rendu côté serveur](/guide/scaling-up/ssr) (SSR), assurez-vous d'effectuer des effets de bord spécifiques au DOM dans les hooks de cycle de vie post-montage, par ex. `onMounted()`. Ces hooks ne sont appelés que dans le navigateur, vous pouvez donc être sûr que le code qu'ils contiennent a bien accès au DOM.
 
 - N'oubliez pas de nettoyer les effets de bord dans `onUnmount()`. Par exemple, si un composable configure un écouteur d'événement DOM, il doit supprimer cet écouteur dans `onUnmount()` comme nous l'avons vu dans l'exemple `useMouse()`. Ça peut être une bonne idée d'utiliser un composable qui le fait automatiquement pour vous, comme l'exemple `useEventListener()`.
 
@@ -359,7 +359,7 @@ Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela r
 
 ## Lecture complémentaire {#further-reading}
 
-- [La réactivité en détails](/guide/extras/reactivity-in-depth.html) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
-- [Gestion d'état](/guide/scaling-up/state-management.html) : pour les patterns de gestion d'état partagés par plusieurs composants.
+- [La réactivité en détails](/guide/extras/reactivity-in-depth) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
+- [Gestion d'état](/guide/scaling-up/state-management) : pour les patterns de gestion d'état partagés par plusieurs composants.
 - [Tester les composables](/guide/scaling-up/testing.html#testing-composables) : conseils sur les tests de composables.
 - [VueUse](https://vueuse.org/): une collection de composables Vue. Le code source est également une excellente ressource d'apprentissage.

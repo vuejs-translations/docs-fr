@@ -32,7 +32,7 @@ Il existe deux types de dépendances asynchrones pour lesquelles `<Suspense>` pe
 
 1. Les composants avec un hook `setup()` asynchrone. Cela inclut les composants utilisant `<script setup>` avec des expressions `await` de haut niveau.
 
-2. [Les composants asynchrones](/guide/components/async.html).
+2. [Les composants asynchrones](/guide/components/async).
 
 ### `async setup()` {#async-setup}
 

@@ -244,7 +244,7 @@ La prise en charge de la combinaison de `<script setup>` et de `<script>` dans l
 - N'utilisez **PAS** une section `<script>` distincte pour les options qui peuvent déjà être définies à l'aide de `<script setup>`, comme `props` et `emits`.
 - Les variables créées à l'intérieur de `<script setup>` ne sont pas ajoutées comme propriétés à l'instance du composant, ce qui les rend inaccessibles depuis l'Options API. Il est fortement déconseillé de mélanger les API de cette manière.
 
-Si vous vous trouvez dans un scénario non pris en charge, vous devriez envisager d'utiliser une fonction explicite [`setup()`](/api/composition-api-setup.html), au lieu d'utiliser `<script setup>`.
+Si vous vous trouvez dans un scénario non pris en charge, vous devriez envisager d'utiliser une fonction explicite [`setup()`](/api/composition-api-setup), au lieu d'utiliser `<script setup>`.
 
 ## `await` de haut niveau {#top-level-await}
 

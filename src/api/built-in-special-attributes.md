@@ -39,7 +39,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
 
 ## ref {#ref}
 
-Désigne une [ref du template](/guide/essentials/template-refs.html).
+Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Attendu :** `string | Function`
 
@@ -81,7 +81,7 @@ Désigne une [ref du template](/guide/essentials/template-refs.html).
   `this.$refs` est également non réactive, vous ne devez donc pas l'utiliser dans les templates pour la liaison de données.
 
 - **Voir aussi :**
-  - [Guide - Template Refs](/guide/essentials/template-refs.html)
+  - [Guide - Template Refs](/guide/essentials/template-refs)
   - [Guide - Typer les refs du template](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
   - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
 

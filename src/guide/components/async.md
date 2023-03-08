@@ -111,4 +111,4 @@ Si un composant d'erreur est fourni, il sera affiché lorsque la promesse renvoy
 
 ## Utilisation avec Suspense {#using-with-suspense}
 
-Les composants asynchrones peuvent être utilisés avec le composant fourni `<Suspense>`. L'interaction entre `<Suspense>` et les composants asynchrones est documentée dans le [chapitre dédié à `<Suspense>`](/guide/built-ins/suspense.html).
+Les composants asynchrones peuvent être utilisés avec le composant fourni `<Suspense>`. L'interaction entre `<Suspense>` et les composants asynchrones est documentée dans le [chapitre dédié à `<Suspense>`](/guide/built-ins/suspense).

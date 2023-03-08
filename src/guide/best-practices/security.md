@@ -180,4 +180,4 @@ Les vulnérabilités de sécurité HTTP, telles que la falsification des requêt
 
 ## Rendu côté serveur (SSR) {#server-side-rendering-ssr}
 
-L'utilisation de SSR pose quelques problèmes de sécurité supplémentaires. Veillez donc à suivre les meilleures pratiques décrites dans [notre documentation SSR](/guide/scaling-up/ssr.html) pour éviter les vulnérabilités.
+L'utilisation de SSR pose quelques problèmes de sécurité supplémentaires. Veillez donc à suivre les meilleures pratiques décrites dans [notre documentation SSR](/guide/scaling-up/ssr) pour éviter les vulnérabilités.

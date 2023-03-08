@@ -374,7 +374,7 @@ function MyComponent(slots) {
 }
 ```
 
-En fait, c'est très proche de la façon dont les "scoped slots" sont compilés et de la façon dont vous utiliseriez les "scoped slots" dans les [fonctions de rendu](/guide/extras/render-function.html) manuelles.
+En fait, c'est très proche de la façon dont les "scoped slots" sont compilés et de la façon dont vous utiliseriez les "scoped slots" dans les [fonctions de rendu](/guide/extras/render-function) manuelles.
 
 Remarquez comment `v-slot="slotProps"` correspond à la signature de la fonction slot. Tout comme avec les arguments de fonction, nous pouvons utiliser la déstructuration dans `v-slot` :
 
@@ -505,6 +505,6 @@ Un exemple de composant sans affichage pourrait être un composant qui encapsule
 
 </div>
 
-Bien qu'il s'agisse d'un pattern intéressant, la plupart de ce qui peut être réalisé avec les composants sans affichage peut être réalisé de manière plus efficace avec la Composition API, sans subir les coûts liés à l'imbrication de composants supplémentaires. Plus tard, nous verrons comment nous pouvons implémenter la même fonctionnalité de suivi de la souris mais avec un [Composable](/guide/reusability/composables.html).
+Bien qu'il s'agisse d'un pattern intéressant, la plupart de ce qui peut être réalisé avec les composants sans affichage peut être réalisé de manière plus efficace avec la Composition API, sans subir les coûts liés à l'imbrication de composants supplémentaires. Plus tard, nous verrons comment nous pouvons implémenter la même fonctionnalité de suivi de la souris mais avec un [Composable](/guide/reusability/composables).
 
 Cela dit, les scoped slots sont toujours utiles dans les cas où nous devons à la fois encapsuler la logique **et** composer un affichage, comme dans l'exemple `<FancyList>`.

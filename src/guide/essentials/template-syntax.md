@@ -4,7 +4,7 @@ Vue utilise une syntaxe de template basée sur HTML pour permettre de lier de ma
 
 Sous le capot, Vue compile les templates en code JavaScript hautement optimisé. Combiné avec le système de réactivité, Vue est capable de déterminer intelligemment le nombre minimal de composants à restituer et d'appliquer la quantité minimale de manipulations DOM lorsque l'état de l'application change.
 
-Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [écrire directement des fonctions de rendu](/guide/extras/render-function.html) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'elles ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
+Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [écrire directement des fonctions de rendu](/guide/extras/render-function) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'elles ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
 
 ## Interpolation de texte {#text-interpolation}
 
@@ -18,7 +18,7 @@ La balise moustache sera remplacée par la valeur de la propriété `msg` de l'i
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives.html#v-html):
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives.html#v):
 
 ```vue-html
 <p>Utilisation de l'interpolation de texte : {{ htmlBrut }}</p>
@@ -168,7 +168,7 @@ Les variables globales non explicitement incluses dans la liste, par exemple les
 
 ## Directives {#directives}
 
-Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives.html), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
+Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
 
 Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives.html#v-if) comme exemple :
 

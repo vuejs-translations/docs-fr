@@ -6,11 +6,11 @@ Les composants nous permettent de fractionner l'UI en morceaux indépendants et 
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les Web Components natifs. Pour en savoir plus sur la relation entre les composants Vue et les Web Components natifs, [lisez ceci](/guide/extras/web-components.html).
+Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les Web Components natifs. Pour en savoir plus sur la relation entre les composants Vue et les Web Components natifs, [lisez ceci](/guide/extras/web-components).
 
 ## Définir un composant {#defining-a-component}
 
-Lorsqu'on utilise des outils de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais, abrégé SFC) :
+Lorsqu'on utilise des outils de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc) (ou Single-File Components en anglais, abrégé SFC) :
 
 <div class="options-api">
 
@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration.html) via l'option `components`. Le composant sera alors utilisable grâce à une balise portant la clé utilisée lors de l'enregistrement.
+Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration) via l'option `components`. Le composant sera alors utilisable grâce à une balise portant la clé utilisée lors de l'enregistrement.
 
 </div>
 
@@ -138,7 +138,7 @@ Avec `<script setup>`, les composants importés sont directement rendus accessib
 
 </div>
 
-Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une application sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration.html) dédiée.
+Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une application sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration) dédiée.
 
 Vous pouvez réutiliser les composants autant de fois que vous voulez :
 
@@ -299,7 +299,7 @@ Puis vous voudriez rendre un composant pour chacun d'entre eux, grâce à `v-for
 
 Remarquez comment `v-bind` est utilisé pour passer des valeurs de props dynamiques. Cela est particulièrement utile lorsque vous ne connaissez pas le contenu exact que vous allez rendre au fur et à mesure du temps.
 
-Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props.html).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props).
 
 ## Écouter des événements {#listening-to-events}
 
@@ -538,7 +538,7 @@ Dans l'exemple ci-dessus, la valeur passée à `:is` peut contenir au choix :
 
 Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML classiques.
 
-Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul celui sélectionné par `:is` reste monté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
+Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul celui sélectionné par `:is` reste monté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive).
 
 ## Mises en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
 

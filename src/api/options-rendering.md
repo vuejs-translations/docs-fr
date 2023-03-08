@@ -58,8 +58,8 @@ Une fonction qui retourne automatiquement l'arbre du DOM virtuel du composant.
   Les templates pré-compilés, par exemple ceux des composants monofichiers, sont compilés dans l'option `render` au moment du build. Si les deux options `render` et `template` sont présentes dans un composant, `render` aura la priorité.
 
 - **Voir aussi :**
-  - [Mécanismes de rendu](/guide/extras/rendering-mechanism.html)
-  - [Fonctions de rendu](/guide/extras/render-function.html)
+  - [Mécanismes de rendu](/guide/extras/rendering-mechanism)
+  - [Fonctions de rendu](/guide/extras/render-function)
 
 ## compilerOptions {#compileroptions}
 

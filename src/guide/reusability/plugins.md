@@ -14,7 +14,7 @@ app.use(myPlugin, {
 })
 ```
 
-Un plugin est défini comme étant soit un objet qui expose la méthode `install()`, ou simplement comme une fonction qui agit comme la fonction d'installation elle-même. La fonction d'installation reçoit l'[instance de l'application](/api/application.html) ainsi que les options additionnelles passées à `app.use()`, s'il y en a :
+Un plugin est défini comme étant soit un objet qui expose la méthode `install()`, ou simplement comme une fonction qui agit comme la fonction d'installation elle-même. La fonction d'installation reçoit l'[instance de l'application](/api/application) ainsi que les options additionnelles passées à `app.use()`, s'il y en a :
 
 ```js
 const myPlugin = {
@@ -28,7 +28,7 @@ Il n'y a pas de champ d'application strictement défini pour un plugin, mais les
 
 1. Enregistrer un ou plusieurs composants globaux ou directives personnalisées avec [`app.component()`](/api/application.html#app-component) et [`app.directive()`](/api/application.html#app-directive).
 
-2. Rendre une ressource [injectable](/guide/components/provide-inject.html) dans toute l'application en appelant [`app.provide()`](/api/application.html#app-provide).
+2. Rendre une ressource [injectable](/guide/components/provide-inject) dans toute l'application en appelant [`app.provide()`](/api/application.html#app-provide).
 
 3. Ajouter quelques propriétés ou méthodes d'instance globale en les attachant à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 

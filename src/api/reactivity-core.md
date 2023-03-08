@@ -3,8 +3,8 @@
 :::info Voir aussi
 Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
 
-- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
-- [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals) (with the API preference set to Composition API)
+- [La réactivité en détails](/guide/extras/reactivity-in-depth)
   :::
 
 ## ref() {#ref}
@@ -109,7 +109,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   ```
 
 - **Voir aussi :**
-  - [Guide - Propriétés calculées](/guide/essentials/computed.html)
+  - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth.html#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
 
@@ -187,7 +187,7 @@ Retourne un proxy réactif de l'objet.
   ```
 
 - **Voir aussi :**
-  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
+  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals)
   - [Guide - Typer `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
 ## readonly() {#readonly}
@@ -483,5 +483,5 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
 - **Voir aussi **:
 
-  - [Guide - Observateurs](/guide/essentials/watchers.html)
+  - [Guide - Observateurs](/guide/essentials/watchers)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging)

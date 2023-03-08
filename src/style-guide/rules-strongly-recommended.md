@@ -42,7 +42,7 @@ components/
 
 ## La casse des noms de composants {#single-file-component-filename-casing}
 
-**Le nom des [composants monofichiers](/guide/scaling-up/sfc.html) doit toujours être soit en PascalCase soit en kebab-case.**
+**Le nom des [composants monofichiers](/guide/scaling-up/sfc) doit toujours être soit en PascalCase soit en kebab-case.**
 
 PascalCase fonctionne mieux avec l'auto-complétion dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peut parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
 
@@ -337,7 +337,7 @@ components/
 
 ## Composants auto-fermants {#self-closing-components}
 
-**Les composants sans contenu doivent être auto-fermants dans les [composants monofichiers](/guide/scaling-up/sfc.html), dans les templates, et dans [JSX](/guide/extras/render-function.html#jsx-tsx) - mais jamais dans les templates du DOM.**
+**Les composants sans contenu doivent être auto-fermants dans les [composants monofichiers](/guide/scaling-up/sfc), dans les templates, et dans [JSX](/guide/extras/render-function.html#jsx-tsx) - mais jamais dans les templates du DOM.**
 
 Les composants auto-fermants n'indiquent pas seulement qu'ils n'ont pas de contenu, mais aussi qu'ils ne sont pas censés en avoir. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
 
@@ -375,7 +375,7 @@ Malheureusement, HTML n'autorise pas que les éléments personnalisés soient au
 
 ## La casse des noms de composants dans les templates {#component-name-casing-in-templates}
 
-**Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc.html) et dans les string templates - mais en kebab-case dans les templates du DOM.**
+**Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc) et dans les string templates - mais en kebab-case dans les templates du DOM.**
 
 PascalCase a quelques avantages par rapport au kebab-case :
 

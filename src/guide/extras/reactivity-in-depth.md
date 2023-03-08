@@ -212,7 +212,7 @@ Le système de réactivité de Vue est principalement basé sur l'exécution : l
 
 Certains frameworks, tels que [Svelte](https://svelte.dev/), choisissent de surmonter ces limitations en implémentant la réactivité lors de la compilation. Svelte analyse et transforme le code afin de simuler la réactivité. La compilation permet au framework de modifier la sémantique de JavaScript lui-même - par exemple, en injectant implicitement du code qui effectue une analyse de dépendance et un déclenchement d'effet autour de l'accès à des variables définies localement. L'inconvénient est que de telles transformations nécessitent un outil de build, et la modification de la sémantique JavaScript crée essentiellement un langage qui ressemble à JavaScript mais se compile en quelque chose d'autre.
 
-L'équipe Vue a exploré cette piste via une fonctionnalité expérimentale appelée [Reactivity Transform](/guide/extras/reactivity-transform.html), mais en fin de compte, nous avons décidé que cela ne conviendrait pas au projet pour [les raisons énoncées ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+L'équipe Vue a exploré cette piste via une fonctionnalité expérimentale appelée [Reactivity Transform](/guide/extras/reactivity-transform), mais en fin de compte, nous avons décidé que cela ne conviendrait pas au projet pour [les raisons énoncées ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
 Le résultat de la compilation de cet extrait de code sera le même que celui résultant de ce que nous aurions écrit sans la transformation, via l'ajout automatique de `.value` après les références aux variables. Avec Reactivity Transform, le système de réactivité de Vue devient un système hybride.
 

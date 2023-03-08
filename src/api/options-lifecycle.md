@@ -1,7 +1,7 @@
 # Options : Cycle de vie {#options-lifecycle}
 
 :::info Voir aussi
-Pour en savoir plus sur l'utilisation partagée des hooks du cycle de vie, consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
+Pour en savoir plus sur l'utilisation partagée des hooks du cycle de vie, consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle)
 :::
 
 ## beforeCreate {#beforecreate}
@@ -76,7 +76,7 @@ Appelé après que le composant ait été monté.
 
   - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
-  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr.html).
+  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -230,7 +230,7 @@ Appelé lorsqu'une dépendance réactive a été traquée par l'effet de rendu d
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
@@ -256,7 +256,7 @@ Appelé lorsqu'une dépendance réactive déclenche la ré-exécution de l'effet
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## activated {#activated}
 
@@ -333,4 +333,4 @@ Fonction asynchrone qui doit être résolue avant que l'instance du composant ne
   }
   ```
 
-- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr)

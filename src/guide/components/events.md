@@ -65,7 +65,7 @@ Le modificateur `.once` est également pris en charge sur les écouteurs d'évè
 Comme les composants et les props, les noms d'évènements fournissent une transformation de casse automatique. Notez que nous avons émis un évènement `camelCase`, mais que nous pouvons l'écouter à l'aide d'un écouteur `kebab-case` dans le parent. Comme pour la [casse des props](/guide/components/props.html#prop-name-casing), nous vous recommandons d'utiliser des noms d'écouteurs d'évènement au format `kebab-case` dans les templates.
 
 :::tip
-Contrairement aux évènements DOM natifs, les évènements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les évènements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'évènements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management.html).
+Contrairement aux évènements DOM natifs, les évènements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les évènements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'évènements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management).
 :::
 
 ## Arguments d'évènement {#event-arguments}

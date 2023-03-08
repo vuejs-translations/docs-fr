@@ -42,7 +42,7 @@ Met à jour [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/in
   <div v-html="html"></div>
   ```
 
-- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax.html#raw-html)
+- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax.html#raw)
 
 ## v-show {#v-show}
 
@@ -165,7 +165,7 @@ Rend l'élément ou le bloc d'un template plusieurs fois en fonction des donnée
   `v-for` peut également fonctionner sur les valeurs qui implémentent le [protocole d'itération](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol), y compris les `Map` et `Set` natifs.
 
 - **Voir aussi :**
-  - [Rendu de liste](/guide/essentials/list.html)
+  - [Rendu de liste](/guide/essentials/list)
 
 ## v-on {#v-on}
 
@@ -250,7 +250,7 @@ Attache un écouteur d'événements à l'élément.
   ```
 
 - **Voir aussi :**
-  - [Gestion d'événement](/guide/essentials/event-handling.html)
+  - [Gestion d'événement](/guide/essentials/event-handling)
   - [Composants - Événements personnalisés](/guide/essentials/component-basics.html#listening-to-events)
 
 ## v-bind {#v-bind}
@@ -337,7 +337,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
   `.camel` n'est pas nécessaire si vous utilisez des templates en chaînes de caractères, ou si vous pré-compilez le template avec un outil de build.
 
 - **Voir aussi :**
-  - [Liaison de classes et de styles](/guide/essentials/class-and-style.html)
+  - [Liaison de classes et de styles](/guide/essentials/class-and-style)
   - [Composant - Détails sur le passage de props](/guide/components/props.html#prop-passing-details)
 
 ## v-model {#v-model}
@@ -361,8 +361,8 @@ Crée une liaison bidirectionnelle sur un élément de saisie de formulaire ou u
 
 - **Voir aussi :**
 
-  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms.html)
-  - [Événements du composant - Utilisation avec `v-model`](/guide/components/v-model.html)
+  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms)
+  - [Événements du composant - Utilisation avec `v-model`](/guide/components/v-model)
 
 ## v-slot {#v-slot}
 
@@ -413,7 +413,7 @@ Désigne les slots nommés ou les slots scopés qui s'attendent à recevoir des 
   ```
 
 - **Voir aussi :**
-  - [Composants - Slots](/guide/components/slots.html)
+  - [Composants - Slots](/guide/components/slots)
 
 ## v-pre {#v-pre}
 

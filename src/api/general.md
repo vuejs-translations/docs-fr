@@ -165,7 +165,7 @@ Définit un composant asynchrone qui est chargé de manière paresseuse uniqueme
   }
   ```
 
-- **Voir aussi :** [Guide - Composants asynchrones](/guide/components/async.html)
+- **Voir aussi :** [Guide - Composants asynchrones](/guide/components/async)
 
 ## defineCustomElement() {#definecustomelement}
 

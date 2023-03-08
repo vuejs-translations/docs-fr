@@ -138,7 +138,7 @@ Indique l'emplacement du contenu d'un slot dans les templates.
 
   Les éléments `<slot>` dans les templates Vue sont compilés en JavaScript, ils ne doivent donc pas être confondus avec les [éléments `<slot>` natifs](https://developer.mozilla.org/fr/docs/Web/HTML/Element/slot).
 
-- **Voir aussi :** [Composant - Slots](/guide/components/slots.html)
+- **Voir aussi :** [Composant - Slots](/guide/components/slots)
 
 ## `<template>` {#template}
 

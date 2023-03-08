@@ -26,7 +26,7 @@ Déclare explicitement un nom d'affichage pour le composant.
 
   L'option `name` vous permet de remplacer le nom déduit, ou de fournir explicitement un nom quand aucun nom ne peut être déduit (par exemple quand on n'utilise pas d'outil de build, ou lors de l'utilisation d'un composant en ligne divisé en plusieurs fichiers).
 
-  Il y a un cas où `name` est nécessaire : lors de la recherche d'un composant pouvant être mis en cache dans [`<KeepAlive>`](/guide/built-ins/keep-alive.html) via ses props `include / exclude`.
+  Il y a un cas où `name` est nécessaire : lors de la recherche d'un composant pouvant être mis en cache dans [`<KeepAlive>`](/guide/built-ins/keep-alive) via ses props `include / exclude`.
 
   :::tip
   Depuis la version 3.2.34, un composant monofichier utilisant `<script setup>` déduira automatiquement son option `name` en fonction du nom du fichier, supprimant ainsi la nécessité de déclarer manuellement le nom, même lorsqu'il est utilisé avec `<KeepAlive>`.
@@ -104,7 +104,7 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
 
   </div>
 
-- **Voir aussi :** [Attributs implicitement déclarés](/guide/components/attrs.html)
+- **Voir aussi :** [Attributs implicitement déclarés](/guide/components/attrs)
 
 ## components {#components}
 
@@ -134,7 +134,7 @@ Un objet qui enregistre les composants devant être accessibles par l'instance a
   }
   ```
 
-- **Voir aussi :** [Enregistrement de composants](/guide/components/registration.html)
+- **Voir aussi :** [Enregistrement de composants](/guide/components/registration)
 
 ## directives {#directives}
 
@@ -169,4 +169,4 @@ Un objet qui enregistre les directives devant être accessibles par l'instance a
 
   Une liste des directives devant être accessibles par l'instance actuelle du composant.
 
-- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives.html)
+- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives)

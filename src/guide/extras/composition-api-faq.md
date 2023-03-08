@@ -14,13 +14,13 @@ Cette FAQ part du principe que avez déjà une expérience avec Vue - en particu
 
 La Composition API est un ensemble d'API qui nous permet de créer des composants Vue en utilisant des fonctions importées au lieu de déclarer des options. Il s'agit d'un terme générique rassemblant les API suivantes :
 
-- [API de la réactivité](/api/reactivity-core.html), par exemple `ref()` et `reactive()`, qui nous permettent de créer directement un état réactif, un état calculé et des observateurs.
+- [API de la réactivité](/api/reactivity-core), par exemple `ref()` et `reactive()`, qui nous permettent de créer directement un état réactif, un état calculé et des observateurs.
 
-- [Les hooks du cycle de vie ](/api/composition-api-lifecycle.html), par exemple `onMounted()` et `onUnmounted()`, qui nous permettent de nous implanter dans le cycle de vie du composant.
+- [Les hooks du cycle de vie ](/api/composition-api-lifecycle), par exemple `onMounted()` et `onUnmounted()`, qui nous permettent de nous implanter dans le cycle de vie du composant.
 
-- [Injection de dépendances](/api/composition-api-dependency-injection.html), c'est-à-dire `provide()` et `inject()`, qui nous permettent de tirer parti du système d'injection de dépendances de Vue tout en utilisant les API de la Réactivité.
+- [Injection de dépendances](/api/composition-api-dependency-injection), c'est-à-dire `provide()` et `inject()`, qui nous permettent de tirer parti du système d'injection de dépendances de Vue tout en utilisant les API de la Réactivité.
 
-La Composition API est une fonctionnalité intégrée de Vue 3 et [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html). Pour les anciennes versions de Vue 2, utilisez le plugin [`@vue/composition-api`](https://github.com/vuejs/composition-api) maintenu par l'équipe officielle. Dans Vue 3, elle est principalement utilisée avec la syntaxe [`<script setup>`](/api/sfc-script-setup.html) dans les composants monofichiers. Voici un exemple de base d'un composant utilisant la Composition API :
+La Composition API est une fonctionnalité intégrée de Vue 3 et [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html). Pour les anciennes versions de Vue 2, utilisez le plugin [`@vue/composition-api`](https://github.com/vuejs/composition-api) maintenu par l'équipe officielle. Dans Vue 3, elle est principalement utilisée avec la syntaxe [`<script setup>`](/api/sfc-script-setup) dans les composants monofichiers. Voici un exemple de base d'un composant utilisant la Composition API :
 
 ```vue
 <script setup>
@@ -53,7 +53,7 @@ Si vous souhaitez apprendre à utiliser Vue avec la Composition API, vous pouvez
 
 ### Une meilleure réutilisation de la logique {#better-logic-reuse}
 
-Le principal avantage de la Composition API est qu'elle permet une réutilisation de la logique propre et efficace via des [fonctions composables](/guide/reusability/composables.html). Elle résout [tous les inconvénients des mixins](/guide/reusability/composables.html#vs-mixins), le principal mécanisme de réutilisation de la logique pour l'Options API.
+Le principal avantage de la Composition API est qu'elle permet une réutilisation de la logique propre et efficace via des [fonctions composables](/guide/reusability/composables). Elle résout [tous les inconvénients des mixins](/guide/reusability/composables.html#vs-mixins), le principal mécanisme de réutilisation de la logique pour l'Options API.
 
 La capacité de réutilisation de la logique de la Composition API a donné naissance à d'impressionnants projets communautaires tels que [VueUse](https://vueuse.org/), une collection toujours plus grande d'utilitaires composables. Elle sert également de mécanisme propre pour intégrer facilement des services ou des bibliothèques tiers possédant un état dans le système de réactivité de Vue, par exemple des [données persistantes](/guide/extras/reactivity-in-depth.html#immutable-data), [des machines d'état](/guide/extras/reactivity-in-depth.html#state-machines) et [RxJS](https://vueuse.org/rxjs/readme.html#vueuse-rxjs).
 
@@ -112,7 +112,7 @@ Si vous avez l'intention d'utiliser exclusivement la Composition API (ainsi que 
 
 ### Puis-je utiliser les deux API simultanément ? {#can-i-use-both-apis-together}
 
-Oui. Vous pouvez utiliser la Composition API via l'option [`setup()`](/api/composition-api-setup.html) dans un composant en Options API.
+Oui. Vous pouvez utiliser la Composition API via l'option [`setup()`](/api/composition-api-setup) dans un composant en Options API.
 
 Toutefois, nous vous recommandons de le faire que si vous disposez d'une base de code existante en Options API qui doit s'intégrer à de nouvelles fonctionnalités / bibliothèques externes écrites avec la Composition API.
 

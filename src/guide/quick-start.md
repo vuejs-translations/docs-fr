@@ -51,7 +51,7 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction.html#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction.html#options-api). Voici quelques conseils supplémentaires :
 
 - L'environnement de développement recommandé est [Visual Studio Code](https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). Si vous utilisez d'autres éditeurs, lisez la [section sur le support des environnements de développement](/guide/scaling-up/tooling.html#ide-support).
-- [Guide - Outils](/guide/scaling-up/tooling.html) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
+- [Guide - Outils](/guide/scaling-up/tooling) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
 - Si vous avez choisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
 
@@ -60,7 +60,7 @@ Dès que vous êtes prêts à livrer votre application en production, exécutez 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
 
-Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment.html) pour en savoir plus sur l'envoi de votre application en production.
+Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment) pour en savoir plus sur l'envoi de votre application en production.
 
 [Étapes suivantes >](#etapes-suivantes)
 
@@ -208,7 +208,7 @@ Vous avez peut-être remarqué que le template du composant importé est soulign
 
 ### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
 
-De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup.html).
+De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup).
 
 ## Étapes suivantes {#next-steps}
 

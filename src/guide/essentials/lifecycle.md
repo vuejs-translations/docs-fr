@@ -63,4 +63,4 @@ Ce-dessous figure le diagramme du cycle de vie d'une instance. Vous n'avez pas b
 
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
-Consultez la <span class="composition-api">[référence de l'API des hooks du cycle de vie](/api/composition-api-lifecycle.html)</span><span class="options-api">[référence de l'API des hooks du cycle de vie](/api/options-lifecycle.html)</span> pour plus de détails sur tous les hooks du cycle de vie et leurs utilisations respectives.
+Consultez la <span class="composition-api">[référence de l'API des hooks du cycle de vie](/api/composition-api-lifecycle.html)</span><span class="options-api">[référence de l'API des hooks du cycle de vie](/api/options-lifecycle)</span> pour plus de détails sur tous les hooks du cycle de vie et leurs utilisations respectives.

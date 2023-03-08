@@ -1,7 +1,7 @@
 # Composition API: Les hooks du cycle de vie {#composition-api-lifecycle-hooks}
 
 :::info Note d'utilisation
-Toutes les APIs listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html) pour plus de détails.
+Toutes les APIs listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle) pour plus de détails.
 :::
 
 ## onMounted() {#onmounted}
@@ -22,7 +22,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 
   - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
-  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr.html).
+  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -241,7 +241,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,7 +267,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
@@ -338,4 +338,4 @@ Enregistre une fonction asynchrone à résoudre avant que l'instance du composan
   </script>
   ```
 
-- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr)

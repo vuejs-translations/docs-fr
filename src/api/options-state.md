@@ -45,7 +45,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## props {#props}
 
@@ -126,7 +126,7 @@ Déclare les props d'un composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Props](/guide/components/props.html)
+  - [Guide - Props](/guide/components/props)
   - [Guide - Typer les props des composants](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
 
 ## computed {#computed}
@@ -208,7 +208,7 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Propriétés calculées](/guide/essentials/computed.html)
+  - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Typer les propriétés calculées](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
 
 ## methods {#methods}
@@ -250,7 +250,7 @@ Déclarer les méthodes à rendre accessibles dans l'instance du composant.
   }
   ```
 
-- **Voir aussi :** [Gestion d'événement](/guide/essentials/event-handling.html)
+- **Voir aussi :** [Gestion d'événement](/guide/essentials/event-handling)
 
 ## watch {#watch}
 
@@ -368,7 +368,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
   }
   ```
 
-- **Voir aussi :** [Observateurs](/guide/essentials/watchers.html)
+- **Voir aussi :** [Observateurs](/guide/essentials/watchers)
 
 ## emits {#emits}
 
@@ -397,7 +397,7 @@ Déclare les événements personnalisés émis par le composant.
 
   La fonction de validation recevra les arguments additionnels passés à l'appel `$emit` du composant. Par exemple, si `this.$emit('foo', 1)` est appelé, le validateur correspondant à `foo` recevra l'argument `1`. La fonction de validation doit retourner un booléen pour indiquer si les arguments de l'événement sont valides.
 
-  Notez que l'option `emits` affecte les écouteurs d'événements considérés comme appartenant au composant, plutôt que des écouteurs d'événements natifs du DOM. Les écouteurs d'événements déclarés seront supprimés de l'objet `$attrs` du composant, et ne seront donc pas transmis à son élément racine. Voir [Attributs implicitement déclarés](/guide/components/attrs.html) pour plus de détails.
+  Notez que l'option `emits` affecte les écouteurs d'événements considérés comme appartenant au composant, plutôt que des écouteurs d'événements natifs du DOM. Les écouteurs d'événements déclarés seront supprimés de l'objet `$attrs` du composant, et ne seront donc pas transmis à son élément racine. Voir [Attributs implicitement déclarés](/guide/components/attrs) pour plus de détails.
 
 - **Exemple :**
 
@@ -434,7 +434,7 @@ Déclare les événements personnalisés émis par le composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Attributs implicitement déclarés](/guide/components/attrs.html)
+  - [Guide - Attributs implicitement déclarés](/guide/components/attrs)
   - [Guide - Typer les événements émis par un composant](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
 
 ## expose {#expose}

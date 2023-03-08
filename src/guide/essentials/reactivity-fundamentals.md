@@ -75,7 +75,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [La réactivité en détails](/guide/extras/reactivity-in-depth.html) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
+Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [La réactivité en détails](/guide/extras/reactivity-in-depth) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
 
 Voir aussi : [Typer les variables réactives](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
 
@@ -425,7 +425,7 @@ callSomeFunction(obj.foo)
 const { foo, bar } = obj
 ```
 
-En d'autres termes, `ref()` nous permet de créer une "référence" à n'importe quelle valeur et de la faire circuler sans perdre la réactivité. Cette capacité est très importante car elle est fréquemment utilisée pour extraire la logique dans les [fonctions composables](/guide/reusability/composables.html).
+En d'autres termes, `ref()` nous permet de créer une "référence" à n'importe quelle valeur et de la faire circuler sans perdre la réactivité. Cette capacité est très importante car elle est fréquemment utilisée pour extraire la logique dans les [fonctions composables](/guide/reusability/composables).
 
 ### Déballage d'une ref dans les templates \*\* {#ref-unwrapping-in-templates}
 
@@ -595,6 +595,6 @@ function increment() {
 </template>
 ```
 
-Vous pouvez en savoir plus sur [Reactivity Transform](/guide/extras/reactivity-transform.html) dans la section qui lui est consacrée. Notez qu'elle est actuellement encore expérimentale et peut être modifiée avant d'être finalisée.
+Vous pouvez en savoir plus sur [Reactivity Transform](/guide/extras/reactivity-transform) dans la section qui lui est consacrée. Notez qu'elle est actuellement encore expérimentale et peut être modifiée avant d'être finalisée.
 
 </div>

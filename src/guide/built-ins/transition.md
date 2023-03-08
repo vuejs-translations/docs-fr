@@ -14,9 +14,9 @@ Vue propose deux composants natifs qui peuvent aider à travailler avec des tran
 
 - `<Transition>`pour appliquer des animations lorsqu'un élément ou un composant entre et sort du DOM. Ceci est couvert sur cette page.
 
-- `<TransitionGroup>` pour appliquer des animations lorsqu'un élément ou un composant est inséré, supprimé ou déplacé dans une liste `v-for`. Ceci est couvert dans [le chapitre suivant](/guide/built-ins/transition-group.html).
+- `<TransitionGroup>` pour appliquer des animations lorsqu'un élément ou un composant est inséré, supprimé ou déplacé dans une liste `v-for`. Ceci est couvert dans [le chapitre suivant](/guide/built-ins/transition-group).
 
-Outre ces deux composants, nous pouvons également appliquer des animations dans Vue en utilisant d'autres techniques telles que le basculement des classes CSS ou des animations basées sur l'état via des liaisons de style. Ces techniques supplémentaires sont traitées dans le chapitre [Techniques d'animation](/guide/extras/animation.html).
+Outre ces deux composants, nous pouvons également appliquer des animations dans Vue en utilisant d'autres techniques telles que le basculement des classes CSS ou des animations basées sur l'état via des liaisons de style. Ces techniques supplémentaires sont traitées dans le chapitre [Techniques d'animation](/guide/extras/animation).
 
 ## Le composant `<Transition>` {#the-transition-component}
 

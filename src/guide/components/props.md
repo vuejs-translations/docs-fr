@@ -367,7 +367,7 @@ Il y a généralement deux cas où il est tentant de muter une prop :
 
 Lorsque des objets et des tableaux sont passés en tant que props, bien que le composant enfant ne puisse pas muter la liaison de la prop, il **pourra** muter les propriétés imbriquées de l'objet ou du tableau. En effet, en JavaScript, les objets et les tableaux sont passés par référence, et il est déraisonnablement coûteux pour Vue d'empêcher de telles mutations.
 
-Le principal inconvénient de ces mutations est qu'elles permettent au composant enfant de modifier l'état parent d'une manière qui n'est pas évidente vis-à-vis du composant parent, ce qui rend potentiellement plus difficile la compréhension du flux de données et sa maintenabilité dans le futur. En tant que bonne pratique, vous devez éviter de telles mutations à moins que le parent et l'enfant ne soient étroitement couplés par conception. Dans la plupart des cas, l'enfant doit [émettre un événement](/guide/components/events.html) pour laisser le parent effectuer la mutation.
+Le principal inconvénient de ces mutations est qu'elles permettent au composant enfant de modifier l'état parent d'une manière qui n'est pas évidente vis-à-vis du composant parent, ce qui rend potentiellement plus difficile la compréhension du flux de données et sa maintenabilité dans le futur. En tant que bonne pratique, vous devez éviter de telles mutations à moins que le parent et l'enfant ne soient étroitement couplés par conception. Dans la plupart des cas, l'enfant doit [émettre un événement](/guide/components/events) pour laisser le parent effectuer la mutation.
 
 ## Validation de prop {#prop-validation}
 

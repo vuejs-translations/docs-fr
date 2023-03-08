@@ -200,7 +200,7 @@ export const store = reactive({
 Notez que le gestionnaire de clic utilise `store.increment()` avec des parenthèses - cela est nécessaire pour appeler la méthode avec le contexte `this` adapté puisqu'il ne s'agit pas d'une méthode de composant.
 :::
 
-Bien que nous utilisions ici un seul objet réactif en guise de store, vous pouvez également partager un état réactif créé à l'aide d'autres [API de réactivité](/api/reactivity-core.html) telles que `ref()` ou `computed()`, ou même renvoyer un état global à partir d'un [Composable](/guide/reusability/composables.html) :
+Bien que nous utilisions ici un seul objet réactif en guise de store, vous pouvez également partager un état réactif créé à l'aide d'autres [API de réactivité](/api/reactivity-core.html) telles que `ref()` ou `computed()`, ou même renvoyer un état global à partir d'un [Composable](/guide/reusability/composables) :
 
 ```js
 import { ref } from 'vue'

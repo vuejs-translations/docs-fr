@@ -6,7 +6,7 @@ outline: deep
 
 Vue recommande d'utiliser des templates pour construire des applications dans la plupart des cas. Cependant, il existe des situations où nous avons besoin de toute la puissance programmatique de JavaScript. C'est alors que nous pouvons utiliser la fonction **render**.
 
-> Si les concepts de DOM virtuel et de fonctions de rendu vous sont inconnus, lisez d'abord le chapitre [Mécanismes de rendu](/guide/extras/rendering-mechanism.html).
+> Si les concepts de DOM virtuel et de fonctions de rendu vous sont inconnus, lisez d'abord le chapitre [Mécanismes de rendu](/guide/extras/rendering-mechanism).
 
 ## Utilisation basique {#basic-usage}
 
@@ -559,7 +559,7 @@ Passer des slots en tant que fonctions leur permet d'être invoqués à la volé
 
 ### Composants natifs {#built-in-components}
 
-[Les composants natifs](/api/built-in-components.html) tels que `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` et `<Suspense>` doivent être importés pour être utilisés dans les fonctions de rendu :
+[Les composants natifs](/api/built-in-components) tels que `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` et `<Suspense>` doivent être importés pour être utilisés dans les fonctions de rendu :
 
 <div class="composition-api">
 
@@ -687,7 +687,7 @@ MyComponent.emits = ['click']
 
 Si l'option `props` n'est pas spécifiée, alors l'objet `props` passé à la fonction contiendra tous les attributs, de la même manière que `attrs`. Les noms de prop ne seront pas formatés en camelCase, sauf si l'option `props` est spécifiée.
 
-Pour les composants fonctionnels avec des `props` explicites, [la traversée des attributs](/guide/components/attrs.html) fonctionne à peu près comme pour les composants normaux. Cependant, pour les composants fonctionnels qui ne spécifient pas explicitement leurs `props`, seuls les écouteurs d'événements `class`, `style`, et `onXxx` seront hérités des `attrs` par défaut. Dans les deux cas, `inheritAttrs` peut être mis à `false` pour désactiver l'héritage des attributs :
+Pour les composants fonctionnels avec des `props` explicites, [la traversée des attributs](/guide/components/attrs) fonctionne à peu près comme pour les composants normaux. Cependant, pour les composants fonctionnels qui ne spécifient pas explicitement leurs `props`, seuls les écouteurs d'événements `class`, `style`, et `onXxx` seront hérités des `attrs` par défaut. Dans les deux cas, `inheritAttrs` peut être mis à `false` pour désactiver l'héritage des attributs :
 
 ```js
 MyComponent.inheritAttrs = false

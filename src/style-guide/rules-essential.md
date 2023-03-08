@@ -294,7 +294,7 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 
 Pour les applications, les styles du composant `App` et des composants de mise en page peuvent être globaux, mais tous les autres styles des composants devraient avoir une portée limitée.
 
-Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules.html), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
+Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
 
 **Toutefois, pour les librairies de composants, il est préférable d'utiliser une stratégie basée sur les classes au lieu d'utiliser l'attribut `scoped`.**
 
