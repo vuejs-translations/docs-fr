@@ -275,7 +275,7 @@ export default {
 
 ## Gestion des modificateurs de `v-model` {#handling-v-model-modifiers}
 
-Lorsque nous avons appris les liaisons d'entrée de formulaire, nous avons vu que `v-model` avait des [modificateurs natifs](/guide/essentials/forms.html#modifiers) - `.trim`, `.number` et `.lazy`. Dans certains cas, vous pouvez également souhaiter que le `v-model` de votre composant d'entrée personnalisé prenne en charge les modificateurs personnalisés.
+Lorsque nous avons appris les liaisons d'entrée de formulaire, nous avons vu que `v-model` avait des [modificateurs natifs](/guide/essentials/forms#modifiers) - `.trim`, `.number` et `.lazy`. Dans certains cas, vous pouvez également souhaiter que le `v-model` de votre composant d'entrée personnalisé prenne en charge les modificateurs personnalisés.
 
 Créons un exemple de modificateur personnalisé, `capitalize`, qui met en majuscule la première lettre de la chaîne de caractères fournie par la liaison `v-model` :
 

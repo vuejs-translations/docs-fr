@@ -32,8 +32,8 @@ Pour l'analyse des performances de chargement des déploiements de production :
 Pour l'analyse des performances durant le développement local :
 
 - [Panneau de performances des Chrome DevTools](https://developer.chrome.com/docs/devtools/evaluate-performance/)
-  - [`app.config.performance`](/api/application.html#app-config-performance) active les marqueurs de performance spécifiques à Vue dans la timeline des performances de Chrome DevTools.
-- [L'extension Vue DevTools](/guide/scaling-up/tooling.html#browser-devtools) fournit également une fonctionnalité d'analyse des performances.
+  - [`app.config.performance`](/api/application#app-config-performance) active les marqueurs de performance spécifiques à Vue dans la timeline des performances de Chrome DevTools.
+- [L'extension Vue DevTools](/guide/scaling-up/tooling#browser-devtools) fournit également une fonctionnalité d'analyse des performances.
 
 ## Optimisation du chargement des pages {#page-load-optimizations}
 
@@ -41,7 +41,7 @@ Il existe de nombreux aspects indépendants du framework pour optimiser les perf
 
 ### Choisir la bonne architecture {#choosing-the-right-architecture}
 
-Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté purement client souffre d'un temps d'accès au contenu plus lent. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et le rendre interactif avec Vue côté client.
+Si votre application est sensible aux performances de chargement des pages, évitez de la rendre en tant que SPA entièrement côté client. Vous voulez que votre serveur envoie directement le HTML contenant le contenu que les utilisateurs veulent voir. Le rendu côté purement client souffre d'un temps d'accès au contenu plus lent. Ceci peut être atténué avec [le rendu côté serveur (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) ou [la génération de site statique (SSG)](/guide/extras/ways-of-using-vue#jamstack-ssg). Consultez le [Guide SSR](/guide/scaling-up/ssr) pour en savoir plus sur l'exécution SSR avec Vue. Si votre application n'a pas besoin d'une grande interactivité, vous pouvez également utiliser un serveur backend traditionnel pour rendre le HTML et le rendre interactif avec Vue côté client.
 
 Si votre application doit être une SPA, mais qu'elle comporte des pages marketing (accueil, à propos, blog), envoyez-les séparément ! Vos pages marketing devraient idéalement être déployées en HTML statique avec un minimum de JS, en utilisant la SSG.
 
@@ -118,11 +118,11 @@ Désormais, pour la plupart des composants, la prop `active` restera la même lo
 
 ### `v-once` {#v-once}
 
-`v-once` est une directive intégrée qui peut être utilisée pour rendre un contenu qui repose sur des données d'exécution mais qui n'a jamais besoin d'être mis à jour. Toute la sous-arborescence sur laquelle elle est utilisée sera ignorée pour toutes les mises à jour à venir. Consultez la [référence de son API](/api/built-in-directives.html#v-once) pour plus de détails.
+`v-once` est une directive intégrée qui peut être utilisée pour rendre un contenu qui repose sur des données d'exécution mais qui n'a jamais besoin d'être mis à jour. Toute la sous-arborescence sur laquelle elle est utilisée sera ignorée pour toutes les mises à jour à venir. Consultez la [référence de son API](/api/built-in-directives#v-once) pour plus de détails.
 
 ### `v-memo` {#v-memo}
 
-`v-memo` est une directive intégrée qui peut être utilisée pour éviter conditionnellement la mise à jour de grands sous-arbres ou de listes `v-for`. Consultez la [référence de son API](/api/built-in-directives.html#v-memo) pour plus de détails.
+`v-memo` est une directive intégrée qui peut être utilisée pour éviter conditionnellement la mise à jour de grands sous-arbres ou de listes `v-for`. Consultez la [référence de son API](/api/built-in-directives#v-memo) pour plus de détails.
 
 ## Optimisations générales {#general-optimizations}
 
@@ -144,7 +144,7 @@ La mise en œuvre de la virtualisation des listes n'est pas facile, heureusement
 
 Le système de réactivité de Vue est profond par défaut. Bien que cela rende la gestion de l'état intuitive, cela crée un certain niveau de surcharge lorsque la taille des données est importante, car chaque accès à une propriété déclenche un mécanisme des proxys qui effectuent un suivi des dépendances. Ce problème est généralement perceptible lorsque l'on traite de grands tableaux d'objets profondément imbriqués, où un seul rendu doit accéder à plus de 100 000 propriétés, et ne devrait donc affecter que des cas d'utilisation très spécifiques.
 
-Vue fournit une échappatoire pour contourner la réactivité profonde en utilisant [`shallowRef()`](/api/reactivity-advanced.html#shallowref) et [`shallowReactive()`](/api/reactivity-advanced.html#shallowreactive). Les API partiellement réactives créent un état qui n'est réactif qu'au niveau de la racine, et exposent tous les objets imbriqués sans les modifier. L'accès aux propriétés imbriquées reste ainsi rapide, mais la contrepartie est que nous devons désormais traiter tous les objets imbriqués comme des objets immuables et que les mises à jour ne peuvent être déclenchées qu'en remplaçant l'état racine :
+Vue fournit une échappatoire pour contourner la réactivité profonde en utilisant [`shallowRef()`](/api/reactivity-advanced.html#shallowref) et [`shallowReactive()`](/api/reactivity-advanced#shallowreactive). Les API partiellement réactives créent un état qui n'est réactif qu'au niveau de la racine, et exposent tous les objets imbriqués sans les modifier. L'accès aux propriétés imbriquées reste ainsi rapide, mais la contrepartie est que nous devons désormais traiter tous les objets imbriqués comme des objets immuables et que les mises à jour ne peuvent être déclenchées qu'en remplaçant l'état racine :
 
 ```js
 const shallowArray = shallowRef([
@@ -170,6 +170,6 @@ shallowArray.value = [
 
 ### Éviter les abstractions de composants inutiles {#avoid-unnecessary-component-abstractions}
 
-Parfois, nous pouvons créer des [composants sans rendu](/guide/components/slots.html#renderless-components) ou des composants d'ordre supérieur (c'est-à-dire des composants qui rendent d'autres composants avec des props supplémentaires) pour une meilleure abstraction ou organisation du code. Bien qu'il n'y ait rien de mal à cela, gardez à l'esprit que les instances de composants sont beaucoup plus gourmandes d'un point de vue des performances que les simples nœuds du DOM, et que la création d'un trop grand nombre d'entre eux en raison des modèles d'abstraction entraînera des performances réduites.
+Parfois, nous pouvons créer des [composants sans rendu](/guide/components/slots#renderless-components) ou des composants d'ordre supérieur (c'est-à-dire des composants qui rendent d'autres composants avec des props supplémentaires) pour une meilleure abstraction ou organisation du code. Bien qu'il n'y ait rien de mal à cela, gardez à l'esprit que les instances de composants sont beaucoup plus gourmandes d'un point de vue des performances que les simples nœuds du DOM, et que la création d'un trop grand nombre d'entre eux en raison des modèles d'abstraction entraînera des performances réduites.
 
 Notez que la réduction de quelques instances seulement n'aura pas d'effet notable, donc ne vous inquiétez pas si le composant n'est rendu que quelques fois dans l'application. Le meilleur scénario pour envisager cette optimisation concerne à nouveau les grandes listes. Imaginez une liste de 100 éléments où chaque composant d'élément contient de nombreux composants enfants. La suppression d'une abstraction de composant inutile pourrait entraîner une réduction de centaines d'instances de composants.

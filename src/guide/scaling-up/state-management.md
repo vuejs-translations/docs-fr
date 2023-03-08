@@ -67,7 +67,7 @@ Toutefois, la simplicité commence à disparaître lorsque nous avons **plusieur
 1. Plusieurs vues peuvent dépendre de la même partie d'un état.
 2. Les actions de différentes vues peuvent avoir besoin de muter la même partie d'un état.
 
-Dans le premier cas, une solution possible consiste à "élever" l'état partagé jusqu'à un composant ancêtre commun, puis à le transmettre en tant que props. Cependant, cela devient rapidement fastidieux dans les arbres de composants avec des hiérarchies profondes, conduisant à un autre problème connu sous le nom de [Prop Drilling](/guide/components/provide-inject.html#prop-drilling).
+Dans le premier cas, une solution possible consiste à "élever" l'état partagé jusqu'à un composant ancêtre commun, puis à le transmettre en tant que props. Cependant, cela devient rapidement fastidieux dans les arbres de composants avec des hiérarchies profondes, conduisant à un autre problème connu sous le nom de [Prop Drilling](/guide/components/provide-inject#prop-drilling).
 
 Dans le deuxième cas, nous nous retrouvons souvent à utiliser des solutions telles que l'atteinte d'instances directes parent/enfant par le biais des refs de template, ou à essayer de modifier et de synchroniser plusieurs copies de l'état par le biais d'événements émis. Ces deux modèles sont fragiles et conduisent rapidement à un code non maintenable.
 
@@ -77,7 +77,7 @@ Une solution plus simple et plus directe consiste à extraire l'état partagé d
 
 <div class="options-api">
 
-Dans l'Options API, les données réactives sont déclarées via l'option `data()`. En interne, l'objet renvoyé par `data()` est rendu réactif via la fonction [`reactive()`](/api/reactivity-core.html#reactive), qui est également disponible en tant qu'API publique.
+Dans l'Options API, les données réactives sont déclarées via l'option `data()`. En interne, l'objet renvoyé par `data()` est rendu réactif via la fonction [`reactive()`](/api/reactivity-core#reactive), qui est également disponible en tant qu'API publique.
 
 </div>
 
@@ -200,7 +200,7 @@ export const store = reactive({
 Notez que le gestionnaire de clic utilise `store.increment()` avec des parenthèses - cela est nécessaire pour appeler la méthode avec le contexte `this` adapté puisqu'il ne s'agit pas d'une méthode de composant.
 :::
 
-Bien que nous utilisions ici un seul objet réactif en guise de store, vous pouvez également partager un état réactif créé à l'aide d'autres [API de réactivité](/api/reactivity-core.html) telles que `ref()` ou `computed()`, ou même renvoyer un état global à partir d'un [Composable](/guide/reusability/composables) :
+Bien que nous utilisions ici un seul objet réactif en guise de store, vous pouvez également partager un état réactif créé à l'aide d'autres [API de réactivité](/api/reactivity-core) telles que `ref()` ou `computed()`, ou même renvoyer un état global à partir d'un [Composable](/guide/reusability/composables) :
 
 ```js
 import { ref } from 'vue'

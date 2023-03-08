@@ -48,7 +48,7 @@ Dans les scénarios de test de stress, Vue surpasse React et Angular avec une ma
 
 Notez que les benchmarks synthétiques comme ceux présentés ci-dessus se concentrent sur les performances de rendu brutes avec des optimisations dédiées et peuvent ne pas être totalement représentatifs des résultats de performance du monde réel. Si vous vous intéressez davantage aux performances de chargement des pages, vous pouvez vérifier ce qui est avancé sur ce site à l'aide de [WebPageTest](https://www.webpagetest.org/lighthouse) ou de [PageSpeed Insights](https://pagespeed.web.dev/). Ce site est propulsé par Vue lui-même, avec un pré-rendu SSG, une hydratation complète de la page et une navigation côté client SPA. Il obtient un score de 100 en termes de performances sur un Moto G4 émulé avec une accélération du processeur de 4x sur des réseaux 4G lents.
 
-Vous pouvez en savoir plus sur la façon dont Vue optimise automatiquement les performances d'exécution dans la section [Mécanismes de rendu](/guide/extras/rendering-mechanism.html), et sur la façon d'optimiser une application Vue dans des cas particulièrement exigeants dans le [Guide sur l'optimisation des performances](/guide/best-practices/performance).
+Vous pouvez en savoir plus sur la façon dont Vue optimise automatiquement les performances d'exécution dans la section [Mécanismes de rendu](/guide/extras/rendering-mechanism), et sur la façon d'optimiser une application Vue dans des cas particulièrement exigeants dans le [Guide sur l'optimisation des performances](/guide/best-practices/performance).
 
 ## Est-ce que Vue est léger ? {#is-vue-lightweight}
 
@@ -78,7 +78,7 @@ Merci pour votre intérêt ! Veuillez consulter notre [Guide de la communauté](
 
 ## Devrais-je plutôt utiliser l'Options API ou la Composition API ? {#should-i-use-options-api-or-composition-api}
 
-Si vous ne connaissez pas Vue, nous vous proposons une comparaison de haut niveau entre les deux styles [ici](/guide/introduction.html#which-to-choose).
+Si vous ne connaissez pas Vue, nous vous proposons une comparaison de haut niveau entre les deux styles [ici](/guide/introduction#which-to-choose).
 
 Si vous avez déjà utilisé l'Options API et que vous envisagez actuellement d'utiliser la Composition API, consultez [cette FAQ](/guide/extras/composition-api-faq).
 

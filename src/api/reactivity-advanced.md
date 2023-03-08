@@ -33,8 +33,8 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
   ```
 
 - **Voir aussi :**
-  - [Guide - Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance.html#reduce-reactivity-overhead-for-large-immutable-structures)
-  - [Guide - Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth.html#integration-with-external-state-systems)
+  - [Guide - Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+  - [Guide - Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
 ## triggerRef() {#triggerref}
 

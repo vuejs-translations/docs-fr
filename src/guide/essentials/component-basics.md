@@ -179,7 +179,7 @@ Voir les [mises en garde concernant l'analyse du template DOM](#dom-template-par
 
 Si nous construisons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
 
-Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state.html#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span> :
+Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state.html#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-defineemits)une macro</span> :
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passée à `setup()` en premier argument :
 
@@ -366,7 +366,7 @@ Pour le moment le bouton ne fait rien - nous voulons que le clique communique au
  />
 ```
 
-Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance.html#emit), et en lui passant le nom de l'événement :
+Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance#emit), et en lui passant le nom de l'événement :
 
 ```vue{5}
 <!-- BlogPost.vue, en omettant <script> -->
@@ -391,7 +391,7 @@ Grâce à l'écouteur `@enlarge-text="postFontSize += 0.1"`, le parent va recevo
 
 </div>
 
-Nous pouvons, de manière facultative, déclarer les événements émis en utilisant <span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span> :
+Nous pouvons, de manière facultative, déclarer les événements émis en utilisant <span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-defineemits)une macro</span> :
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Cela documente tous les événements qu'un composant émet et peut éventuellement les [valider](/guide/components/events.html#events-validation). Cela permet également à Vue d'éviter de les appliquer implicitement en tant qu'écouteurs natifs à l'élément racine du composant enfant.
+Cela documente tous les événements qu'un composant émet et peut éventuellement les [valider](/guide/components/events#events-validation). Cela permet également à Vue d'éviter de les appliquer implicitement en tant qu'écouteurs natifs à l'élément racine du composant enfant.
 
 <div class="composition-api">
 
@@ -432,7 +432,7 @@ emit('enlarge-text')
 </script>
 ```
 
-Voir aussi : [Typer les emits d'un composant](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir aussi : [Typer les emits d'un composant](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits`. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument) :
 
@@ -615,7 +615,7 @@ Cela va entraîner des problèmes lorsque nous allons utiliser des composants av
 </table>
 ```
 
-Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide, ce qui peut causer des erreurs dans le résultat rendu final. Nous pouvons utiliser [l'attribut spécial `is`](/api/built-in-special-attributes.html#is) comme solution :
+Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide, ce qui peut causer des erreurs dans le résultat rendu final. Nous pouvons utiliser [l'attribut spécial `is`](/api/built-in-special-attributes#is) comme solution :
 
 ```vue-html
 <table>

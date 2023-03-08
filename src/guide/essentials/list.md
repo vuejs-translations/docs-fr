@@ -224,7 +224,7 @@ Comme le modèle `v-if`, vous pouvez aussi utiliser une balise `<template>` avec
 ## `v-for` avec `v-if` {#v-for-with-v-if}
 
 :::warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous aux [bonnes pratiques](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous aux [bonnes pratiques](/style-guide/rules-essential#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
 Lorsqu'ils existent sur le même nœud, `v-if` a une priorité plus importante que `v-for`. Cela signifie que la condition du `v-if` n'aura pas accès aux variables de la portée du `v-for` :
@@ -274,9 +274,9 @@ Lorsque vous utilisez `<template v-for>`, la `key` doit être placée sur le con
 Ici, `key` est un attribut spécial qui est lié avec `v-bind`. Il ne doit pas être confondu avec la variable de clé de propriété utilisée dans le cas d'un [`v-for` avec un objet](#v-for-with-an-object).
 :::
 
-[Il est recommandé](/style-guide/rules-essential.html#use-keyed-v-for) de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
+[Il est recommandé](/style-guide/rules-essential#use-keyed-v-for) de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
 
-La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez vous à la [documentation de l'API `key`](/api/built-in-special-attributes.html#key).
+La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez vous à la [documentation de l'API `key`](/api/built-in-special-attributes#key).
 
 ## `v-for` avec un composant {#v-for-with-a-component}
 

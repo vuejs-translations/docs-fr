@@ -7,7 +7,7 @@ import AnimateWatcher from './demos/AnimateWatcher.vue'
 
 # Techniques d'animation {#animation-techniques}
 
-Vue fournit les composants [`<Transition>`](/guide/built-ins/transition.html) et [`<TransitionGroup>`](/guide/built-ins/transition-group) pour gérer les transitions d'entrée / sortie et de liste. Cependant, il existe de nombreuses autres manières d'utiliser des animations sur le web, même dans une application Vue. Ici, nous allons discuter de quelques techniques supplémentaires. 
+Vue fournit les composants [`<Transition>`](/guide/built-ins/transition) et [`<TransitionGroup>`](/guide/built-ins/transition-group) pour gérer les transitions d'entrée / sortie et de liste. Cependant, il existe de nombreuses autres manières d'utiliser des animations sur le web, même dans une application Vue. Ici, nous allons discuter de quelques techniques supplémentaires. 
 
 ## Animations basées sur des classes {#class-based-animations}
 

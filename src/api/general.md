@@ -92,7 +92,7 @@ Un outil pour attendre la prochaine mise à jour du DOM.
 
   </div>
 
-- **Voir aussi :** [`this.$nextTick()`](/api/component-instance.html#nexttick)
+- **Voir aussi :** [`this.$nextTick()`](/api/component-instance#nexttick)
 
 ## defineComponent() {#definecomponent}
 
@@ -134,7 +134,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
   Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
 
-- **Voir aussi :** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview.html#general-usage-notes)
+- **Voir aussi :** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview#general-usage-notes)
 
 ## defineAsyncComponent() {#defineasynccomponent}
 
@@ -206,6 +206,6 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
 - **Voir aussi :**
 
-  - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components.html#building-custom-elements-with-vue)
+  - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components#building-custom-elements-with-vue)
 
-  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components.html#sfc-as-custom-element) lorsqu'elle est utilisée avec des composants monofichiers.
+  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components#sfc-as-custom-element) lorsqu'elle est utilisée avec des composants monofichiers.

@@ -67,7 +67,7 @@ Lorsque vous accédez à `this.someObject` après lui avoir assigné une valeur,
 
 <div class="composition-api">
 
-Nous pouvons créer un objet ou un tableau réactif avec la fonction [`reactive()`](/api/reactivity-core.html#reactive) :
+Nous pouvons créer un objet ou un tableau réactif avec la fonction [`reactive()`](/api/reactivity-core#reactive) :
 
 ```js
 import { reactive } from 'vue'
@@ -77,7 +77,7 @@ const state = reactive({ count: 0 })
 
 Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif. Si vous êtes curieux de connaître les détails, nous expliquons comment fonctionne le système de réactivité de Vue dans [La réactivité en détails](/guide/extras/reactivity-in-depth) - mais nous vous recommandons de le lire après avoir terminé le guide principal.
 
-Voir aussi : [Typer les variables réactives](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
+Voir aussi : [Typer les variables réactives](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 Pour utiliser un état réactif dans le template d'un composant, déclarez et renvoyez-le depuis la fonction `setup()` du composant :
 
@@ -216,7 +216,7 @@ Dans l'exemple ci-dessus, la méthode `increment` sera appelée lorsque l'on cli
 
 Lorsque vous modifiez un état réactif, le DOM est automatiquement mis à jour. Toutefois, il convient de noter que les mises à jour du DOM ne sont pas appliquées de manière synchrone. En effet, Vue les met en mémoire tampon jusqu'au prochain "tick" du cycle de mises à jour pour s'assurer que chaque composant ne soit mis à jour qu'une seule fois, quel que soit le nombre de modifications d'état que vous avez effectuées.
 
-Pour attendre que la mise à jour du DOM soit terminée après un changement d'état, vous pouvez utiliser l'API globale [nextTick()](/api/general.html#nexttick) :
+Pour attendre que la mise à jour du DOM soit terminée après un changement d'état, vous pouvez utiliser l'API globale [nextTick()](/api/general#nexttick) :
 
 <div class="composition-api">
 
@@ -298,7 +298,7 @@ function mutateDeeply() {
 
 </div>
 
-Il est également possible de créer de manière explicite des [objets partiellement réactifs](/api/reactivity-advanced.html#shallowreactive) où la réactivité n'est traquée qu'au niveau de la racine, mais ces objets ne sont généralement nécessaires que dans des cas d'utilisation avancée.
+Il est également possible de créer de manière explicite des [objets partiellement réactifs](/api/reactivity-advanced#shallowreactive) où la réactivité n'est traquée qu'au niveau de la racine, mais ces objets ne sont généralement nécessaires que dans des cas d'utilisation avancée.
 
 <div class="composition-api">
 
@@ -375,7 +375,7 @@ L'API `reactive()` a deux limitations :
 
 ## Variables réactives avec `ref()` \*\* {#reactive-variables-with-ref}
 
-Pour pallier aux limites de `reactive()`, Vue fournit également une fonction [`ref()`](/api/reactivity-core.html#ref) qui nous permet de créer des **"refs"** réactives pouvant contenir n'importe quel type de valeur :
+Pour pallier aux limites de `reactive()`, Vue fournit également une fonction [`ref()`](/api/reactivity-core#ref) qui nous permet de créer des **"refs"** réactives pouvant contenir n'importe quel type de valeur :
 
 ```js
 import { ref } from 'vue'
@@ -395,7 +395,7 @@ count.value++
 console.log(count.value) // 1
 ```
 
-Voir aussi : [Typer les refs](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
+Voir aussi : [Typer les refs](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
 De la même manière que pour les propriétés d'un objet réactif, la propriété `.value` d'une ref est réactive. De plus, lorsqu'elle contient des types d'objets, la ref convertit automatiquement sa `.value` avec `reactive()`.
 
@@ -512,7 +512,7 @@ console.log(state.count) // 2
 console.log(count.value) // 1
 ```
 
-Le déballage des refs ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet partiellement réactif](/api/reactivity-advanced.html#shallowreactive).
+Le déballage des refs ne se produit que lorsqu'elles sont imbriquées dans un objet réactif profond. Il ne s'applique pas lorsqu'on y accède en tant que propriété d'un [objet partiellement réactif](/api/reactivity-advanced#shallowreactive).
 
 ### Déballage d'une ref dans les tableaux et les collections {#ref-unwrapping-in-arrays-and-collections}
 

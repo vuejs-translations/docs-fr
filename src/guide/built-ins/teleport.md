@@ -199,5 +199,5 @@ Le résultat rendu serait :
 
 **Connexe**
 
-- [Référence de l'API `<Teleport>`](/api/built-in-components.html#teleport)
-- [Gérer les Teleports en SSR](/guide/scaling-up/ssr.html#teleports)
+- [Référence de l'API `<Teleport>`](/api/built-in-components#teleport)
+- [Gérer les Teleports en SSR](/guide/scaling-up/ssr#teleports)

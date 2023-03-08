@@ -22,7 +22,7 @@ Déclare explicitement un nom d'affichage pour le composant.
 
   Lorsque vous utilisez des composants monofichiers, le composant déduit déjà son propre nom à partir du nom du fichier. Par exemple, un fichier nommé `MyComponent.vue` aura le nom d'affichage déduit "MyComponent".
 
-  Par ailleurs, lorsqu'un composant est enregistré de manière globale via [`app.component`](/api/application.html#app-component), l'ID global est automatiquement défini comme son nom.
+  Par ailleurs, lorsqu'un composant est enregistré de manière globale via [`app.component`](/api/application#app-component), l'ID global est automatiquement défini comme son nom.
 
   L'option `name` vous permet de remplacer le nom déduit, ou de fournir explicitement un nom quand aucun nom ne peut être déduit (par exemple quand on n'utilise pas d'outil de build, ou lors de l'utilisation d'un composant en ligne divisé en plusieurs fichiers).
 

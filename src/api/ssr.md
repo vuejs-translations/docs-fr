@@ -32,7 +32,7 @@
 
   ### Contexte SSR {#ssr-context}
 
-  Vous pouvez passer un objet facultatif représentant le contexte, et pouvant être utilisé pour enregistrer des données supplémentaires pendant le rendu, par exemple pour [accéder au contenu des Teleports](/guide/scaling-up/ssr.html#teleports) :
+  Vous pouvez passer un objet facultatif représentant le contexte, et pouvant être utilisé pour enregistrer des données supplémentaires pendant le rendu, par exemple pour [accéder au contenu des Teleports](/guide/scaling-up/ssr#teleports) :
 
   ```js
   const ctx = {}

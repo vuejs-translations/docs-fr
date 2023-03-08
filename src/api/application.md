@@ -39,7 +39,7 @@ Crée une instance d'application.
 
 ## createSSRApp() {#createssrapp}
 
-Crée une instance d'application en mode [Hydratation SSR](/guide/scaling-up/ssr.html#client-hydration). L'utilisation est exactement la même que `createApp()`.
+Crée une instance d'application en mode [Hydratation SSR](/guide/scaling-up/ssr#client-hydration). L'utilisation est exactement la même que `createApp()`.
 
 ## app.mount() {#app-mount}
 
@@ -59,7 +59,7 @@ Monte l'instance d'application dans un élément conteneur.
 
   Si le composant a un template ou une fonction de rendu défini, il remplacera tous les nœuds du DOM existants à l'intérieur du conteneur. Sinon, si le compilateur est disponible, le `innerHTML` du conteneur sera utilisé comme template.
 
-  En mode hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr.html#hydration-mismatch), les nœuds du DOM existants seront transformés pour correspondre à la sortie attendue.
+  En mode hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr#hydration-mismatch), les nœuds du DOM existants seront transformés pour correspondre à la sortie attendue.
 
   Pour chaque instance d'application, `mount()` ne peut être appelée qu'une seule fois.
 
@@ -146,7 +146,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
 - **Voir aussi :**
   - [Provide / Inject](/guide/components/provide-inject)
-  - [App-level Provide](/guide/components/provide-inject.html#app-level-provide)
+  - [App-level Provide](/guide/components/provide-inject#app-level-provide)
 
 ## app.component() {#app-component}
 
@@ -297,7 +297,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Voir aussi :** [API générale - version](/api/general.html#version)
+- **Voir aussi :** [API générale - version](/api/general#version)
 
 ## app.config {#app-config}
 
@@ -395,7 +395,7 @@ Définissez-le sur `true` pour activer le suivi des performances d'initialisatio
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configure des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering.html#compileroptions).
+Configure des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering#compileroptions).
 
 ::: warning Important
 Cette option de configuration n'est respectée que lors de l'utilisation de la version complète (c'est-à-dire `vue.js` qui peut compiler des templates dans le navigateur). Si vous utilisez le build uniquement à l'exécution avec une configuration de build, les options du compilateur doivent être transmises plutôt à `@vue/compiler-dom` via les configurations de l'outil de build.
@@ -523,7 +523,7 @@ Un objet qui peut être utilisé pour enregistrer des propriétés globales acce
   }
   ```
 
-- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 

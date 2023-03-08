@@ -50,7 +50,7 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
   }
   ```
 
-  Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject.html#working-with-reactivity) pour plus de détails.
+  Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
 - **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
 
@@ -88,7 +88,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
 
   Une propriété injectée sera `undefined` si aucune propriété correspondante ou valeur par défaut n'a été fournie.
 
-  Notez que les liaisons injectées ne sont PAS réactives. Ceci est intentionnel. Cependant, si la valeur injectée est un objet réactif, les propriétés de cet objet restent réactives. Consultez [travailler avec la réactivité](/guide/components/provide-inject.html#working-with-reactivity) pour plus de détails.
+  Notez que les liaisons injectées ne sont PAS réactives. Ceci est intentionnel. Cependant, si la valeur injectée est un objet réactif, les propriétés de cet objet restent réactives. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
 - **Exemple**
 

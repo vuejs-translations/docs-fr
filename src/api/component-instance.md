@@ -89,7 +89,7 @@ The resolved component options used for instantiating the current component inst
   })
   ```
 
-- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
+- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 
@@ -137,7 +137,7 @@ An object representing the [slots](/guide/components/slots) passed by the parent
 
   If a slot is a [scoped slot](/guide/components/slots#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
 
-- **See also:** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function.html#rendering-slots)
+- **See also:** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
@@ -217,9 +217,9 @@ Imperative API for creating watchers.
   The second argument is the callback function. The callback receives the new value and the old value of the watched source.
 
   - **`immediate`**: trigger the callback immediately on watcher creation. Old value will be `undefined` on the first call.
-  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Example**
 
@@ -258,7 +258,7 @@ Imperative API for creating watchers.
   ```
 
 - **See also:**
-  - [Options - `watch`](/api/options-state.html#watch)
+  - [Options - `watch`](/api/options-state#watch)
   - [Guide - Observateurs](/guide/essentials/watchers)
 
 ## $emit() {#emit}

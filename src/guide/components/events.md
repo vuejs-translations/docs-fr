@@ -62,7 +62,7 @@ Le modificateur `.once` est également pris en charge sur les écouteurs d'évè
 <MyComponent @some-event.once="callback" />
 ```
 
-Comme les composants et les props, les noms d'évènements fournissent une transformation de casse automatique. Notez que nous avons émis un évènement `camelCase`, mais que nous pouvons l'écouter à l'aide d'un écouteur `kebab-case` dans le parent. Comme pour la [casse des props](/guide/components/props.html#prop-name-casing), nous vous recommandons d'utiliser des noms d'écouteurs d'évènement au format `kebab-case` dans les templates.
+Comme les composants et les props, les noms d'évènements fournissent une transformation de casse automatique. Notez que nous avons émis un évènement `camelCase`, mais que nous pouvons l'écouter à l'aide d'un écouteur `kebab-case` dans le parent. Comme pour la [casse des props](/guide/components/props#prop-name-casing), nous vous recommandons d'utiliser des noms d'écouteurs d'évènement au format `kebab-case` dans les templates.
 
 :::tip
 Contrairement aux évènements DOM natifs, les évènements émis par les composants **ne se propagent pas** au delà de leur parent direct. Vous ne pouvez écouter que les évènements émis par un composant enfant direct. S'il est nécessaire de communiquer entre des composants frères ou profondément imbriqués, utilisez un bus d'évènements externe ou une [solution de gestion d'état global](/guide/scaling-up/state-management).
@@ -119,7 +119,7 @@ Tous les arguments supplémentaires passés à `$emit()` après le nom de l'év�
 
 ## Déclaration des évènements émis {#declaring-emitted-events}
 
-Les évènements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span> :
+Les évènements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state#emits)</span> :
 
 <div class="composition-api">
 
@@ -143,7 +143,7 @@ function buttonClick() {
 
 La macro `defineEmits()` **ne peut pas** être utilisée dans une fonction, elle doit être placée directement dans `<script setup>`, comme dans l'exemple ci-dessus.
 
-Si vous utilisez une fonction `setup` explicite au lieu de `<script setup>`, les évènements doivent être déclarés à l'aide de l'option [`emits`](/api/options-state.html#emits), et la fonction `emit` est exposée dans le contexte de `setup()` :
+Si vous utilisez une fonction `setup` explicite au lieu de `<script setup>`, les évènements doivent être déclarés à l'aide de l'option [`emits`](/api/options-state#emits), et la fonction `emit` est exposée dans le contexte de `setup()` :
 
 ```js
 export default {
@@ -202,7 +202,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-Plus de détails : [Typer les données émises par les composants](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Plus de détails : [Typer les données émises par les composants](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -218,11 +218,11 @@ export default {
 }
 ```
 
-Voir également : [Typer les données émises par les composants](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir également : [Typer les données émises par les composants](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 
-Bien que facultatif, il est recommandé de définir tous les évènements émis afin de mieux documenter le fonctionnement d'un composant. Cela permet également à Vue d'exclure les écouteurs connus des [attributs implicitement déclarés (fallthrough attributes)](/guide/components/attrs.html#v-on-listener-inheritance), évitant ainsi les problèmes liés aux cas à la marge causés par des évènements DOM envoyés manuellement par du code tiers.
+Bien que facultatif, il est recommandé de définir tous les évènements émis afin de mieux documenter le fonctionnement d'un composant. Cela permet également à Vue d'exclure les écouteurs connus des [attributs implicitement déclarés (fallthrough attributes)](/guide/components/attrs#v-on-listener-inheritance), évitant ainsi les problèmes liés aux cas à la marge causés par des évènements DOM envoyés manuellement par du code tiers.
 
 :::tip
 Si un évènement natif (par exemple, `click`) est défini dans l'option `emits`, l'écouteur n'écoutera alors que les évènements `click` émis par le composant et ne réagira plus aux évènements `click` natifs.

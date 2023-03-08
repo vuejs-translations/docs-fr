@@ -389,7 +389,7 @@ h('input', {
 />
 ```
 
-Pour les autres modificateurs d'événements et de clés, l'utilitaire [`withModifiers`](/api/render-function.html#withmodifiers) peut être utilisé :
+Pour les autres modificateurs d'événements et de clés, l'utilitaire [`withModifiers`](/api/render-function#withmodifiers) peut être utilisé :
 
 ```js
 import { withModifiers } from 'vue'
@@ -446,7 +446,7 @@ function render() {
 }
 ```
 
-Si un composant est enregistré via son nom et ne peut pas être importé directement (par exemple, s'il est enregistré globalement par une bibliothèque), il peut être l'être en utilisant l'utilitaire [`resolveComponent()`](/api/render-function.html#resolvecomponent).
+Si un composant est enregistré via son nom et ne peut pas être importé directement (par exemple, s'il est enregistré globalement par une bibliothèque), il peut être l'être en utilisant l'utilitaire [`resolveComponent()`](/api/render-function#resolvecomponent).
 
 ### Rendu de slots {#rendering-slots}
 
@@ -489,7 +489,7 @@ export default {
 </div>
 <div class="options-api">
 
-Dans les fonctions de rendu, les slots sont accessibles via [`this.$slots`](/api/component-instance.html#slots) :
+Dans les fonctions de rendu, les slots sont accessibles via [`this.$slots`](/api/component-instance#slots) :
 
 ```js
 export default {
@@ -628,7 +628,7 @@ export default {
 
 ### Directives personnalisées {#custom-directives}
 
-Les directives personnalisées peuvent être appliquées à un vnode en utilisant [`withDirectives`](/api/render-function.html#withdirectives) :
+Les directives personnalisées peuvent être appliquées à un vnode en utilisant [`withDirectives`](/api/render-function#withdirectives) :
 
 ```js
 import { h, withDirectives } from 'vue'
@@ -645,7 +645,7 @@ const vnode = withDirectives(h('div'), [
 ])
 ```
 
-Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function.html#resolvedirective).
+Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function#resolvedirective).
 
 ## Composants fonctionnels {#functional-components}
 
@@ -674,11 +674,11 @@ function MyComponent(props, context) {
 }
 ```
 
-Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), et [`$slots`](/api/component-instance.html#slots) respectivement.
+Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), et [`$slots`](/api/component-instance#slots) respectivement.
 
 </div>
 
-La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state.html#props) et [`emits`](/api/options-state.html#emits) en les ajoutant comme propriétés :
+La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state.html#props) et [`emits`](/api/options-state#emits) en les ajoutant comme propriétés :
 
 ```js
 MyComponent.props = ['value']

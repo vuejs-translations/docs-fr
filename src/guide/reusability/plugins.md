@@ -26,11 +26,11 @@ const myPlugin = {
 
 Il n'y a pas de champ d'application strictement défini pour un plugin, mais les scénarios courants où les plugins sont utiles incluent :
 
-1. Enregistrer un ou plusieurs composants globaux ou directives personnalisées avec [`app.component()`](/api/application.html#app-component) et [`app.directive()`](/api/application.html#app-directive).
+1. Enregistrer un ou plusieurs composants globaux ou directives personnalisées avec [`app.component()`](/api/application.html#app-component) et [`app.directive()`](/api/application#app-directive).
 
-2. Rendre une ressource [injectable](/guide/components/provide-inject) dans toute l'application en appelant [`app.provide()`](/api/application.html#app-provide).
+2. Rendre une ressource [injectable](/guide/components/provide-inject) dans toute l'application en appelant [`app.provide()`](/api/application#app-provide).
 
-3. Ajouter quelques propriétés ou méthodes d'instance globale en les attachant à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+3. Ajouter quelques propriétés ou méthodes d'instance globale en les attachant à [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 4. Une librairie qui doit effectuer une combinaison des éléments ci-dessus (par exemple, [vue-router](https://github.com/vuejs/vue-router-next)).
 
@@ -89,7 +89,7 @@ app.use(i18nPlugin, {
 
 Maintenant, notre expression initiale `$translate('greetings.hello')` sera remplacée par `Bonjour!` au moment de l'exécution.
 
-Voir aussi : [Augmenting Global Properties](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+Voir aussi : [Augmenting Global Properties](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 :::tip
 N'utilisez que rarement les propriétés globales, car cela peut rapidement devenir confus si trop de propriétés globales injectées par différents plugins sont utilisées dans une application.

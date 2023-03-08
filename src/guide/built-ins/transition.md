@@ -543,7 +543,7 @@ Voici la démo précédente avec `mode="out-in"` :
 
 ## Transition entre composants {#transition-between-components}
 
-`<Transition>` peut également être utilisé autour des [composants dynamiques](/guide/essentials/component-basics.html#dynamic-components) :
+`<Transition>` peut également être utilisé autour des [composants dynamiques](/guide/essentials/component-basics#dynamic-components) :
 
 ```vue-html
 <Transition name="fade" mode="out-in">
@@ -582,4 +582,4 @@ Vous pouvez également appliquer un comportement différent avec les hooks de tr
 
 **Référence**
 
-- [`<Transition>` API](/api/built-in-components.html#transition)
+- [`<Transition>` API](/api/built-in-components#transition)

@@ -102,7 +102,7 @@ function ref(value) {
 Ces extraits de code et ceux situés ci-dessous ont pour but d'expliquer les concepts de base de la manière la plus simple possible, c'est pourquoi de nombreux détails sont omis et les cas limites ignorés.
 :::
 
-Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux :
+Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux :
 
 - Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, la réactivité est "déconnectée" car l'accès à la variable locale ne déclenche plus les mécanismes d'accès / de mutation du proxy.
 
@@ -151,7 +151,7 @@ Elle enveloppe la fonction brute `update` dans un effet étant l'effet actif act
 
 À ce stade, nous avons créé un effet qui traque automatiquement ses dépendances et qui s'exécute à nouveau dès qu'une d'elles change. Nous appelons cela un **effet réactif**.
 
-Vue fournit une API qui vous permet de créer des effets réactifs : [`watchEffect()`](/api/reactivity-core.html#watcheffect). En fait, vous avez peut-être remarqué qu'elle fonctionne de manière assez similaire à la fonction magique `whenDepsChange()` de l'exemple. Nous pouvons maintenant retravailler l'exemple original en utilisant les API de Vue :
+Vue fournit une API qui vous permet de créer des effets réactifs : [`watchEffect()`](/api/reactivity-core#watcheffect). En fait, vous avez peut-être remarqué qu'elle fonctionne de manière assez similaire à la fonction magique `whenDepsChange()` de l'exemple. Nous pouvons maintenant retravailler l'exemple original en utilisant les API de Vue :
 
 ```js
 import { ref, watchEffect } from 'vue'
@@ -346,7 +346,7 @@ Les options d'observation `onTrack` et `onTrigger` ne fonctionnent qu'en mode d�
 
 Le système de réactivité de Vue fonctionne en convertissant en profondeur les objets JavaScript simples en proxys réactifs. Cette conversion profonde peut s'avérer inutile ou parfois indésirable lors de l'intégration avec des systèmes externes de gestion d'état (par exemple, si une solution externe utilise également des proxys).
 
-L'idée générale derrière l'intégration du système de réactivité de Vue avec une solution externe de gestion d'état est de conserver l'état externe dans un [`shallowRef`](/api/reactivity-advanced.html#shallowref). Une ref partiellement réactive n'est réactive que lorsqu'on accède à sa propriété `.value` - la valeur interne reste intacte. Lorsque l'état externe change, remplacez la valeur de la ref pour déclencher les mises à jour.
+L'idée générale derrière l'intégration du système de réactivité de Vue avec une solution externe de gestion d'état est de conserver l'état externe dans un [`shallowRef`](/api/reactivity-advanced#shallowref). Une ref partiellement réactive n'est réactive que lorsqu'on accède à sa propriété `.value` - la valeur interne reste intacte. Lorsque l'état externe change, remplacez la valeur de la ref pour déclencher les mises à jour.
 
 ### Données persistantes {#immutable-data}
 
@@ -415,7 +415,7 @@ Bien qu'il ne s'agisse pas d'un trait nécessaire pour que quelque chose soit qu
 
 ### Compromis du design d'API {#api-design-trade-offs}
 
-La conception des _Signals_ de Preact et de Qwik est très similaire à [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue : tous les trois fournissent une interface mutable via la propriété `.value`. Nous concentrerons la discussion sur les _Signals_ de Solid et d'Angular.
+La conception des _Signals_ de Preact et de Qwik est très similaire à [shallowRef](/api/reactivity-advanced#shallowref) de Vue : tous les trois fournissent une interface mutable via la propriété `.value`. Nous concentrerons la discussion sur les _Signals_ de Solid et d'Angular.
 
 ### Signals de Solid {#solid-signals}
 

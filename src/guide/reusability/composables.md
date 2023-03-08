@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Principes fondamentaux des composants](/guide/essentials/reactivity-fundamentals.html) et [Les hooks du cycle de vie](/guide/essentials/lifecycle).
+Cette section suppose une connaissance de base de la Composition API. Si vous avez appris Vue avec l'API Options uniquement, vous pouvez définir la préférence de l'API sur la Composition API (à l'aide de l'interrupteur en haut de la barre latérale gauche) et relire les [Principes fondamentaux des composants](/guide/essentials/reactivity-fundamentals) et [Les hooks du cycle de vie](/guide/essentials/lifecycle).
 :::
 
 ## Qu'est-ce qu'un "Composable"? {#what-is-a-composable}
@@ -220,7 +220,7 @@ export function useFetch(url) {
 }
 ```
 
-Cette version de `useFetch()` accepte désormais à la fois les chaînes d'URL statiques et les références de chaînes d'URL. Lorsqu'il détecte que l'URL est une référence dynamique à l'aide de [`isRef()`](/api/reactivity-utilities.html#isref), il configure un effet réactif à l'aide de [`watchEffect()`](/api/reactivity-core.html#watcheffect). L'effet s'exécutera immédiatement et suivra également la référence d'URL en tant que dépendance. Chaque fois que la référence d'URL change, les données sont réinitialisées et récupérées à nouveau.
+Cette version de `useFetch()` accepte désormais à la fois les chaînes d'URL statiques et les références de chaînes d'URL. Lorsqu'il détecte que l'URL est une référence dynamique à l'aide de [`isRef()`](/api/reactivity-utilities.html#isref), il configure un effet réactif à l'aide de [`watchEffect()`](/api/reactivity-core#watcheffect). L'effet s'exécutera immédiatement et suivra également la référence d'URL en tant que dépendance. Chaque fois que la référence d'URL change, les données sont réinitialisées et récupérées à nouveau.
 
 Voici [la version mise à jour de `useFetch()`](https://sfc.vuejs.org/#eNp1Vc1u4zYQfpWpLlZQR9pi0YvhGC3a7WmLFkHTky6MRMVMJVLlj9LA8PvUfQ2/WL8hJUfJZi+SSM588803M9Qh+3EYijHIbJNtXW3V4MlJH4ZdpVU/GOvpQFa2a6pNPwQvGzpSa01PKzitFkbByV+kr/eX86Kct4pHB8tK10Y7T/fCyTvb0Q2t9t4PblOWj87ooRO13Juukbbwz4OqTSMLBC29aYwrAZDcVQNPMMpX362u5s0Q8WaKeX5FN7tLoG/hU4yiCxL2s8eBGuHFmqS1xq4B6O0zqN9c8siBCfttmVSBHlh42YOnl1gRfTaiocFEThve2N4H742m8bo19qbKFClN31cZ/VB3qv6Ld5i8qrLd4UCKjsdtmVwieuW3jRrhrVqYRmKwZGBAD7vfwuC+oTstmbMMliQiu2BHqYOkDQEy+hS9dE48yAjPdYz+E7ULk5gw4G/PJzZ/lnbBBfYlqKSvxEl2TiZirBscfzZasy/Ve2Ef4tcGNK3k3Ngmxcf6XazdT+wme6l9URSzyba8KJyts9Rb170Y0EFGo0UPjAIZ44GrMmSd8qsytCOvq2xuKtfW3NiPrjD2ocRXYYP2qpeFdP31vTVPDq32CJT1AqPE5ijttZUanShRga9jvjH9Apdhj5U+IpXFKCCN15Ol3C2/go6rJwGzT20ra/9m1Cot/4l+bdC1V6jmq15NUqTujvqnMdGh4z6eT2KLvD7iQ+Gedf0C3JiEO4ESlSXZ80lp5ZXoFBKkbnU+eeFJjEIjoOTzOgznEytRJC+mkSYPETla2k5t+uX+MpQzoUEMHmxg90Kr879WEtPcW4MhGAxGAI/RKEvn/zwfBjUqvgV6eYEKMG3Op4FrpGu4CbuUOI/SzOIg2p8Tq1iN6Q544caXxKRIRAdyJxQJ61WraiU7KufpFN35JDzIRS6Vh8ZPQnniDjRhCszbkSQHu6IR5DCYyEyzwgIbHWNBASxgQ06RW0kdZx+p8aUxUXFKo3AvPqgRu0QwTCd52XWS/g6r+Ib/lJdPqVvM781EsZ17KorBHRKDvKpmsoRXHM1ZxiPVrC3l8tI5b8s9lQZzER/8Ui3lcQii3sueA7dWPQTUlvOfG0zEHsVSoFtH1F2hU+5uP1MDaTz2Y36x9NAsgS1rPnV35Hwkvo0WIaOO+CG8dDOLxlhOBijXGuWm7p6HZJEKBIfe7/5dNrNDvBPY/L0GqvRlCC+dkthN0Fo+0e+4FTCEeQ79TTdKjvCIzOJvb0oFf/E/JoD0O7zUg+X+Vfh9YYVuTI/THX0oPi4qxsEi8FzXtzolEw6ZM59PnGa+uo14abW6enGdKr6mjx8+JLHwPGbH/wFWsuhk), avec un délai artificiel et une erreur aléatoire à des fins de démonstration.
 
@@ -232,7 +232,7 @@ C'est une convention de nommer les fonctions composables avec des noms camelCase
 
 ### Arguments d'entrée {#input-arguments}
 
-Un composable peut accepter des arguments ref même s'il ne s'appuie pas sur eux pour la réactivité. Si vous écrivez un composable qui peut être utilisé par d'autres développeurs, c'est une bonne idée de gérer le cas où les arguments d'entrée sont des refs au lieu de valeurs brutes. La fonction utilitaire [`unref()`](/api/reactivity-utilities.html#unref) sera utile à cette fin :
+Un composable peut accepter des arguments ref même s'il ne s'appuie pas sur eux pour la réactivité. Si vous écrivez un composable qui peut être utilisé par d'autres développeurs, c'est une bonne idée de gérer le cas où les arguments d'entrée sont des refs au lieu de valeurs brutes. La fonction utilitaire [`unref()`](/api/reactivity-utilities#unref) sera utile à cette fin :
 
 ```js
 import { unref } from 'vue'
@@ -335,7 +335,7 @@ export default {
 
 ### vs. les mixins {#vs-mixins}
 
-Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/options-composition.html#mixins), qui permet d'extraire la logique des composants dans des unités réutilisables. Les mixins présentent trois principaux inconvénients :
+Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/options-composition#mixins), qui permet d'extraire la logique des composants dans des unités réutilisables. Les mixins présentent trois principaux inconvénients :
 
 1. **Source de propriétés peu claire** : lors de l'utilisation de nombreux mixins, il devient difficile de savoir quelle propriété d'instance est injectée par quel mixin, ce qui rend difficile le suivi de l'implémentation et la compréhension du comportement du composant. C'est aussi pourquoi nous recommandons d'utiliser le modèle refs + destructure pour les composables : il rend la source de la propriété claire lors de la consommation de composants.
 
@@ -347,7 +347,7 @@ Pour les raisons ci-dessus, nous ne recommandons plus d'utiliser des mixins dans
 
 ### vs. Composants Renderless {#vs-renderless-components}
 
-Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant Renderless](/guide/components/slots.html#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants renderless.
+Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant Renderless](/guide/components/slots#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants renderless.
 
 Le principal avantage des composables par rapport aux composants renderless est que les composables n'encourent pas de surcharge d'instance de composant supplémentaire. Lorsqu'il est utilisé dans une application entière, la quantité d'instances de composants supplémentaires créées par le modèle de Composant Renderless peut devenir une surcharge de performances notable.
 
@@ -361,5 +361,5 @@ Si vous avez de l'expérience avec React, vous remarquerez peut-être que cela r
 
 - [La réactivité en détails](/guide/extras/reactivity-in-depth) : pour une compréhension de bas niveau du fonctionnement du système de réactivité de Vue.
 - [Gestion d'état](/guide/scaling-up/state-management) : pour les patterns de gestion d'état partagés par plusieurs composants.
-- [Tester les composables](/guide/scaling-up/testing.html#testing-composables) : conseils sur les tests de composables.
+- [Tester les composables](/guide/scaling-up/testing#testing-composables) : conseils sur les tests de composables.
 - [VueUse](https://vueuse.org/): une collection de composables Vue. Le code source est également une excellente ressource d'apprentissage.

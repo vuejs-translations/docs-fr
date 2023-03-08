@@ -57,7 +57,7 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
           {
             text: 'Guide des outils',
-            link: '/guide/scaling-up/tooling.html'
+            link: '/guide/scaling-up/tooling'
           }
         ]
       },

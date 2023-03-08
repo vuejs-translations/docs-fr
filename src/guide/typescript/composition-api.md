@@ -112,7 +112,7 @@ const { name, count = 100 } = defineProps<Props>()
 </script>
 ```
 
-Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform.html#explicit-opt-in).
+Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform#explicit-opt-in).
 
 ### Sans `<script setup>` {#without-script-setup}
 
@@ -172,7 +172,7 @@ export default defineComponent({
 })
 ```
 
-L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api.html#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations à l'exécution utilisant `defineProps()`.
+L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations à l'exécution utilisant `defineProps()`.
 
 ## Typer les événements d'un composant {#typing-component-emits}
 

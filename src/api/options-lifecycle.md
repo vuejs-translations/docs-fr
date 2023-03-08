@@ -114,7 +114,7 @@ Appelé après que le composant ait mis à jour son arbre du DOM suite à un cha
 
   Le hook _updated_ d'un composant parent est appelé après celui de ses composants enfants.
 
-  Ce hook est appelé après toute mise à jour du DOM du composant, laquelle peut être causée par différents changements d'état. Si vous devez accéder au DOM mis à jour après un changement d'état spécifique, utilisez plutôt [nextTick()](/api/general.html#nexttick).
+  Ce hook est appelé après toute mise à jour du DOM du composant, laquelle peut être causée par différents changements d'état. Si vous devez accéder au DOM mis à jour après un changement d'état spécifique, utilisez plutôt [nextTick()](/api/general#nexttick).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -201,7 +201,7 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
   **Règles concernant la propagation des erreurs**
 
-  - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
+  - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
 
   - Si plusieurs hooks `errorCaptured` existent sur la chaîne descendante ou la chaîne ascendante d'un composant, ils seront tous invoqués sur la même erreur, suivant un ordre allant de bas en haut. Cela est comparable au mécanisme de _bubbling_ des événements natifs du DOM.
 
@@ -260,7 +260,7 @@ Appelé lorsqu'une dépendance réactive déclenche la ré-exécution de l'effet
 
 ## activated {#activated}
 
-Appelé après l'insertion de l'instance du composant dans le DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Appelé après l'insertion de l'instance du composant dans le DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -272,11 +272,11 @@ Appelé après l'insertion de l'instance du composant dans le DOM en tant que pa
   }
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
-Appelé après que l'instance du composant ait été retirée du DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Appelé après que l'instance du composant ait été retirée du DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -288,7 +288,7 @@ Appelé après que l'instance du composant ait été retirée du DOM en tant que
   }
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 

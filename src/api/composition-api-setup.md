@@ -115,7 +115,7 @@ export default {
 
 ### Exposing Public Properties {#exposing-public-properties}
 
-`expose` is a function that can be used to explicitly limit the properties exposed when the component instance is accessed by a parent component via [les refs du template](/guide/essentials/template-refs.html#ref-on-component):
+`expose` is a function that can be used to explicitly limit the properties exposed when the component instance is accessed by a parent component via [les refs du template](/guide/essentials/template-refs#ref-on-component):
 
 ```js{5,10}
 export default {

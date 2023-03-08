@@ -35,7 +35,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
 
   Quand `text` change, le `<span>` sera toujours remplacé au lieu d'être corrigé, donc une transition sera déclenchée.
 
-- **Voir aussi :** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list.html#maintaining-state-with-key)
+- **Voir aussi :** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list#maintaining-state-with-key)
 
 ## ref {#ref}
 
@@ -82,12 +82,12 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Voir aussi :**
   - [Guide - Template Refs](/guide/essentials/template-refs)
-  - [Guide - Typer les refs du template](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
-  - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+  - [Guide - Typer les refs du template](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
+  - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 ## is {#is}
 
-  Utilisé pour lier les [composants dynamiques](/guide/essentials/component-basics.html#dynamic-components).
+  Utilisé pour lier les [composants dynamiques](/guide/essentials/component-basics#dynamic-components).
 
 - **Attendu :** `string | Component`
 
@@ -95,7 +95,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
   Lorsque l'attribut "is" est utilisé sur un élément HTML natif, il sera interprété comme un [élément natif personnalisé](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), qui est une fonctionnalité native de la plate-forme Web.
 
-  Il existe cependant un cas d'utilisation où vous pouvez avoir besoin que Vue remplace un élément natif par un composant Vue, comme expliqué dans [Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats). Vous pouvez préfixer la valeur de l'attribut `is` avec `vue:` pour que Vue rende l'élément comme un composant Vue :
+  Il existe cependant un cas d'utilisation où vous pouvez avoir besoin que Vue remplace un élément natif par un composant Vue, comme expliqué dans [Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics#dom-template-parsing-caveats). Vous pouvez préfixer la valeur de l'attribut `is` avec `vue:` pour que Vue rende l'élément comme un composant Vue :
 
   ```vue-html
   <table>
@@ -105,5 +105,5 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Voir aussi :**
 
-  - [Éléments spéciaux natifs - `<component>`](/api/built-in-special-elements.html#component)
-  - [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
+  - [Éléments spéciaux natifs - `<component>`](/api/built-in-special-elements#component)
+  - [Composants dynamiques](/guide/essentials/component-basics#dynamic-components)

@@ -111,7 +111,7 @@ De manière générale, `v-if` a des coûts de basculement plus élevés tandis 
 ## `v-if` avec `v-for` {#v-if-with-v-for}
 
 ::: warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [guide de style](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [guide de style](/style-guide/rules-essential#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
 Lorsque `v-if` et `v-for` sont tous les deux utilisés sur le même élément, `v-if` sera évalué en premier. Voir le [guide de rendu de liste](list#v-for-with-v-if) pour plus de détails.

@@ -23,7 +23,7 @@ Un modèle de chaîne de caractères pour le composant.
   Si le composant racine de votre application n'a pas d'option `template` ou `render` de spécifiée, Vue essaiera à la place d'utiliser le `innerHTML` de l'élément monté comme template.
 
   :::warning Remarque sur la sécurité
-  N'utilisez que des sources de templates auxquelles vous pouvez faire confiance. N'utilisez pas de contenu fourni par l'utilisateur en guise de template. Voir le [guide sur la sécurité](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) pour plus de détails.
+  N'utilisez que des sources de templates auxquelles vous pouvez faire confiance. N'utilisez pas de contenu fourni par l'utilisateur en guise de template. Voir le [guide sur la sécurité](/guide/best-practices/security#rule-no-1-never-use-non-trusted-templates) pour plus de détails.
   :::
 
 ## render {#render}
@@ -80,6 +80,6 @@ Configure les options du compilateur d'exécution pour le template du composant.
 
 - **Détails :**
 
-  Cette option de configuration n'est respectée que lors de l'utilisation du build complet (c'est-à-dire le build `vue.js` autonome qui peut compiler des templates dans le navigateur). Elle prend en charge les mêmes options que [app.config.compilerOptions](/api/application.html#app-config-compileroptions) au niveau de l'application, et a la plus haute priorité pour le composant actuel.
+  Cette option de configuration n'est respectée que lors de l'utilisation du build complet (c'est-à-dire le build `vue.js` autonome qui peut compiler des templates dans le navigateur). Elle prend en charge les mêmes options que [app.config.compilerOptions](/api/application#app-config-compileroptions) au niveau de l'application, et a la plus haute priorité pour le composant actuel.
 
-- **Voir aussi :** [app.config.compilerOptions](/api/application.html#app-config-compileroptions)
+- **Voir aussi :** [app.config.compilerOptions](/api/application#app-config-compileroptions)

@@ -37,7 +37,7 @@ Les noms de composants créés par l'utilisateur devraient toujours être compos
 Dans le code source, les définitions de prop devraient toujours être le plus détaillées possible, en spécifiant au moins le ou les types.
 
 ::: details Explications détaillées
-[Les définitions de prop](/guide/components/props.html#prop-validation) détaillées présentent deux avantages :
+[Les définitions de prop](/guide/components/props#prop-validation) détaillées présentent deux avantages :
 
 - Elles documentent l'API du composant, de manière à ce qu'il soit facile de voir comment le composant doit être utilisé.
 - Pendant le développement, Vue vous avertira si jamais un composant se voit fournir des props au mauvais format, ce qui vous aidera à régler les potentielles sources d'erreurs.
@@ -294,7 +294,7 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 
 Pour les applications, les styles du composant `App` et des composants de mise en page peuvent être globaux, mais tous les autres styles des composants devraient avoir une portée limitée.
 
-Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
+Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc.html). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
 
 **Toutefois, pour les librairies de composants, il est préférable d'utiliser une stratégie basée sur les classes au lieu d'utiliser l'attribut `scoped`.**
 

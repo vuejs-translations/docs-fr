@@ -128,7 +128,7 @@ Nous voulons que tous les attributs implicitement déclarés tels que `class` et
 </div>
 ```
 
-Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
+Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
 
 ## Héritage d'attributs sur plusieurs nœuds racine {#attribute-inheritance-on-multiple-root-nodes}
 

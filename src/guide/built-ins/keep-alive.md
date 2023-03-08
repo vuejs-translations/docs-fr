@@ -8,7 +8,7 @@ import SwitchComponent from './keep-alive-demos/SwitchComponent.vue'
 
 ## Utilisation basique {#basic-usage}
 
-Dans le chapitre sur les principes fondamentaux des composants, nous avons présenté la syntaxe pour les [Composants Dynamiques](/guide/essentials/component-basics.html#dynamic-components), en utilisant l'élément spécial `<component>` :
+Dans le chapitre sur les principes fondamentaux des composants, nous avons présenté la syntaxe pour les [Composants Dynamiques](/guide/essentials/component-basics#dynamic-components), en utilisant l'élément spécial `<component>` :
 
 ```vue-html
 <component :is="activeComponent" />
@@ -47,7 +47,7 @@ Maintenant, l'état sera persistant à travers les changements de composants :
 </div>
 
 :::tip
-Lorsqu'il est utilisé dans les [templates du DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), il doit être référencé comme `<keep-alive>`.
+Lorsqu'il est utilisé dans les [templates du DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), il doit être référencé comme `<keep-alive>`.
 :::
 
 ## Include / Exclude {#include-exclude}
@@ -71,7 +71,7 @@ Par défaut, `<KeepAlive>` va mettre en cache toute instance de composant qu'il 
 </KeepAlive>
 ```
 
-La correspondance se fait par rapport à l'option [`name`](/api/options-misc.html#name) du composant, de sorte que les composants qui doivent être mis en cache de manière conditionnelle par `KeepAlive` doivent déclarer explicitement une option `name`.
+La correspondance se fait par rapport à l'option [`name`](/api/options-misc#name) du composant, de sorte que les composants qui doivent être mis en cache de manière conditionnelle par `KeepAlive` doivent déclarer explicitement une option `name`.
 
 :::tip
 Depuis la version 3.2.34, un composant monofichier utilisant `<script setup>` déduira automatiquement son option `name` en fonction du nom du fichier, supprimant ainsi le besoin de déclarer manuellement le nom.
@@ -93,7 +93,7 @@ Lorsqu'une instance de composant est supprimée du DOM mais fait partie d'un arb
 
 <div class="composition-api">
 
-Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant [`onActivated()`](/api/composition-api-lifecycle.html#onactivated) et [`onDeactivated()`](/api/composition-api-lifecycle.html#ondeactivated) :
+Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant [`onActivated()`](/api/composition-api-lifecycle.html#onactivated) et [`onDeactivated()`](/api/composition-api-lifecycle#ondeactivated) :
 
 ```vue
 <script setup>
@@ -114,7 +114,7 @@ onDeactivated(() => {
 </div>
 <div class="options-api">
 
-Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant les hooks [`activated`](/api/options-lifecycle.html#activated) et [`deactivated`](/api/options-lifecycle.html#deactivated) :
+Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant les hooks [`activated`](/api/options-lifecycle.html#activated) et [`deactivated`](/api/options-lifecycle#deactivated) :
 
 ```js
 export default {
@@ -141,4 +141,4 @@ Notez que :
 
 **Référence**
 
-- [Référence de l'API `<KeepAlive>`](/api/built-in-components.html#keepalive)
+- [Référence de l'API `<KeepAlive>`](/api/built-in-components#keepalive)

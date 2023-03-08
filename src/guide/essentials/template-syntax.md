@@ -18,7 +18,7 @@ La balise moustache sera remplacée par la valeur de la propriété `msg` de l'i
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives.html#v):
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v):
 
 ```vue-html
 <p>Utilisation de l'interpolation de texte : {{ htmlBrut }}</p>
@@ -44,7 +44,7 @@ L'affichage dynamique de code HTML arbitraire sur votre site Web peut être trè
 
 ## Liaisons d'attributs {#attribute-bindings}
 
-Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [`v-bind`](/api/built-in-directives.html#v-bind) :
+Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [`v-bind`](/api/built-in-directives#v-bind) :
 
 ```vue-html
 <div v-bind:id="idDynamique"></div>
@@ -164,13 +164,13 @@ Les fonctions appelées à l'intérieur des expressions de liaison seront appel�
 
 Les expressions de template sont en bac à sable et n'ont accès qu'à une [liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
 
-Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 ## Directives {#directives}
 
 Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
 
-Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives.html#v-if) comme exemple :
+Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives#v-if) comme exemple :
 
 ```vue-html
 <p v-if="vu">Maintenant, tu me vois</p>
