@@ -485,7 +485,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#grid'
         },
         {
-          text: 'Tree View',
+          text: 'Arborescence',
           link: '/examples/#tree'
         },
         {
