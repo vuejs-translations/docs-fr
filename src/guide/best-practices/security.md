@@ -133,7 +133,7 @@ Vous pouvez peut-être imaginer comment le fait d'autoriser le contenu fourni pa
 <style>{{ userProvidedStyles }}</style>
 ```
 
-Pour que vos utilisateurs soient totalement à l'abri du détournement de clic, nous vous recommandons de n'autoriser le contrôle total du CSS qu'à l'intérieur d'une iframe enveloppée dans une sandbox. Par ailleurs, lorsque vous offrez un contrôle à l'utilisateur via une liaison de style, nous vous recommandons d'utiliser sa [syntaxe objet] (/guide/essentials/class-and-style.html#binding-to-objects-1) et de n'autoriser les utilisateurs à fournir des valeurs que pour des propriétés spécifiques qu'ils peuvent contrôler en toute sécurité, comme ceci :
+Pour que vos utilisateurs soient totalement à l'abri du détournement de clic, nous vous recommandons de n'autoriser le contrôle total du CSS qu'à l'intérieur d'une iframe enveloppée dans une sandbox. Par ailleurs, lorsque vous offrez un contrôle à l'utilisateur via une liaison de style, nous vous recommandons d'utiliser sa [syntaxe objet] (/guide/essentials/class-and-style#binding-to-objects-1) et de n'autoriser les utilisateurs à fournir des valeurs que pour des propriétés spécifiques qu'ils peuvent contrôler en toute sécurité, comme ceci :
 
 ```vue-html
 <a
@@ -180,4 +180,4 @@ Les vulnérabilités de sécurité HTTP, telles que la falsification des requêt
 
 ## Rendu côté serveur (SSR) {#server-side-rendering-ssr}
 
-L'utilisation de SSR pose quelques problèmes de sécurité supplémentaires. Veillez donc à suivre les meilleures pratiques décrites dans [notre documentation SSR](/guide/scaling-up/ssr.html) pour éviter les vulnérabilités.
+L'utilisation de SSR pose quelques problèmes de sécurité supplémentaires. Veillez donc à suivre les meilleures pratiques décrites dans [notre documentation SSR](/guide/scaling-up/ssr) pour éviter les vulnérabilités.

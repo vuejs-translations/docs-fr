@@ -87,7 +87,7 @@ Si vous utilisez actuellement Vue 3 + TypeScript via Vue CLI, nous vous recomman
 
 ### `defineComponent()` {#definecomponent}
 
-Pour permettre à TypeScript de déduire correctement les types dans les options de composant, nous devons définir les composants avec [`defineComponent()`](/api/general.html#definecomponent) :
+Pour permettre à TypeScript de déduire correctement les types dans les options de composant, nous devons définir les composants avec [`defineComponent()`](/api/general#definecomponent) :
 
 ```ts
 import { defineComponent } from 'vue'
@@ -129,7 +129,7 @@ export default defineComponent({
 
 Voir aussi :
 
-- [Note sur le Treeshaking de Webpack](/api/general.html#note-on-webpack-treeshaking)
+- [Note sur le Treeshaking de Webpack](/api/general#note-on-webpack-treeshaking)
 - [Tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/packages/dts-test/defineComponent.test-d.tsx)
 
 :::tip

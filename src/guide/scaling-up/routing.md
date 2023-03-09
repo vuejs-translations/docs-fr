@@ -21,7 +21,7 @@ Vue est bien adapté à la création de SPA. Pour la plupart des SPA, il est rec
 
 ## Routage simple à partir de zéro {#simple-routing-from-scratch}
 
-Si vous n'avez besoin que d'un routage très simple et que vous ne souhaitez pas utiliser une bibliothèque de routeurs complète, vous pouvez utiliser des [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components) et mettre à jour l'état actuel du composant en écoutant les [événements `hashchange`](https://developer.mozilla.org/fr/docs/Web/API/Window/hashchange_event) du navigateur ou en utilisant l'[API History](https://developer.mozilla.org/fr/docs/Web/API/History).
+Si vous n'avez besoin que d'un routage très simple et que vous ne souhaitez pas utiliser une bibliothèque de routeurs complète, vous pouvez utiliser des [Composants dynamiques](/guide/essentials/component-basics#dynamic-components) et mettre à jour l'état actuel du composant en écoutant les [événements `hashchange`](https://developer.mozilla.org/fr/docs/Web/API/Window/hashchange_event) du navigateur ou en utilisant l'[API History](https://developer.mozilla.org/fr/docs/Web/API/History).
 
 Voici un exemple concret :
 

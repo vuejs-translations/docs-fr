@@ -8,7 +8,7 @@ Met à jour le contenu texte d'un élément.
 
 - **Détails**
 
-  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, de sorte qu'elle écrasera tout contenu existant dans l'élément. Si vous devez mettre à jour `textContent`, vous devez utiliser les [interpolations moustaches](/guide/essentials/template-syntax.html#text-interpolation) à la place.
+  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, de sorte qu'elle écrasera tout contenu existant dans l'élément. Si vous devez mettre à jour `textContent`, vous devez utiliser les [interpolations moustaches](/guide/essentials/template-syntax#text-interpolation) à la place.
 
 - **Exemple**
 
@@ -18,7 +18,7 @@ Met à jour le contenu texte d'un élément.
   <span>{{msg}}</span>
   ```
 
-- **Voir aussi :** [Syntaxe de template - Interpolation de texte](/guide/essentials/template-syntax.html#text-interpolation)
+- **Voir aussi :** [Syntaxe de template - Interpolation de texte](/guide/essentials/template-syntax#text-interpolation)
 
 ## v-html {#v-html}
 
@@ -34,7 +34,7 @@ Met à jour [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/in
   Rendre dynamiquement du HTML arbitraire sur votre site web peut être très dangereux car cela peut facilement conduire à des [attaques XSS](https://fr.wikipedia.org/wiki/Cross-site_scripting). N'utilisez `v-html` que sur du contenu de confiance et **jamais** sur du contenu fourni par l'utilisateur.
   :::
 
-  Dans les [composants monofichiers](/guide/scaling-up/sfc), les styles `scoped` ne s'appliqueront pas au contenu de `v-html`, car ce HTML n'est pas traité par le compilateur de templates de Vue. Si vous souhaitez cibler le contenu de `v-html` avec un CSS scopé, vous pouvez utiliser des [modules CSS](./sfc-css-features.html#css-modules) ou un élément `<style>` global supplémentaire avec une stratégie de scoping manuelle telle que BEM.
+  Dans les [composants monofichiers](/guide/scaling-up/sfc), les styles `scoped` ne s'appliqueront pas au contenu de `v-html`, car ce HTML n'est pas traité par le compilateur de templates de Vue. Si vous souhaitez cibler le contenu de `v-html` avec un CSS scopé, vous pouvez utiliser des [modules CSS](./sfc-css-features#css-modules) ou un élément `<style>` global supplémentaire avec une stratégie de scoping manuelle telle que BEM.
 
 - **Exemple**
 
@@ -42,7 +42,7 @@ Met à jour [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/in
   <div v-html="html"></div>
   ```
 
-- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax.html#raw-html)
+- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax#raw)
 
 ## v-show {#v-show}
 
@@ -54,7 +54,7 @@ Fait basculer la visibilité de l'élément en fonction de la valeur évaluée �
 
   `v-show` fonctionne en fixant la propriété CSS `display` via des styles littéraux, et essaiera de respecter la valeur initiale `display` lorsque l'élément est visible. Elle déclenche également des transitions lorsque sa condition change.
 
-- **Voir aussi :** [Rendu conditionnel - v-show](/guide/essentials/conditional.html#v-show)
+- **Voir aussi :** [Rendu conditionnel - v-show](/guide/essentials/conditional#v-show)
 
 ## v-if {#v-if}
 
@@ -70,9 +70,9 @@ Rend conditionnellement un élément ou un fragment de template en fonction de l
 
   Cette directive déclenche des transitions lorsque sa condition change.
 
-  Lorsqu'elles sont utilisées ensemble, `v-if' a une priorité plus élevée que `v-for'. Il est déconseillé d'utiliser ces deux directives ensemble sur un même élément - voir le [guide du rendu de liste](/guide/essentials/list.html#v-for-with-v-if) pour plus de détails.
+  Lorsqu'elles sont utilisées ensemble, `v-if' a une priorité plus élevée que `v-for'. Il est déconseillé d'utiliser ces deux directives ensemble sur un même élément - voir le [guide du rendu de liste](/guide/essentials/list#v-for-with-v-if) pour plus de détails.
 
-- **Voir aussi :** [Rendu conditionnel - v-if](/guide/essentials/conditional.html#v-if)
+- **Voir aussi :** [Rendu conditionnel - v-if](/guide/essentials/conditional#v-if)
 
 ## v-else {#v-else}
 
@@ -97,7 +97,7 @@ Représente le bloc "else" pour `v-if` ou une chaîne `v-if` / `v-else-if`.
   </div>
   ```
 
-- **Voir aussi :** [Rendu conditionnel - v-else](/guide/essentials/conditional.html#v-else)
+- **Voir aussi :** [Rendu conditionnel - v-else](/guide/essentials/conditional#v-else)
 
 ## v-else-if {#v-else-if}
 
@@ -128,7 +128,7 @@ Désigne le bloc "else if" pour `v-if`. Peut être chaîné.
   </div>
   ```
 
-- **Voir aussi :** [Rendu conditionnel - v-else-if](/guide/essentials/conditional.html#v-else-if)
+- **Voir aussi :** [Rendu conditionnel - v-else-if](/guide/essentials/conditional#v-else-if)
 
 ## v-for {#v-for}
 
@@ -165,7 +165,7 @@ Rend l'élément ou le bloc d'un template plusieurs fois en fonction des donnée
   `v-for` peut également fonctionner sur les valeurs qui implémentent le [protocole d'itération](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol), y compris les `Map` et `Set` natifs.
 
 - **Voir aussi :**
-  - [Rendu de liste](/guide/essentials/list.html)
+  - [Rendu de liste](/guide/essentials/list)
 
 ## v-on {#v-on}
 
@@ -250,8 +250,8 @@ Attache un écouteur d'événements à l'élément.
   ```
 
 - **Voir aussi :**
-  - [Gestion d'événement](/guide/essentials/event-handling.html)
-  - [Composants - Événements personnalisés](/guide/essentials/component-basics.html#listening-to-events)
+  - [Gestion d'événement](/guide/essentials/event-handling)
+  - [Composants - Événements personnalisés](/guide/essentials/component-basics#listening-to-events)
 
 ## v-bind {#v-bind}
 
@@ -273,7 +273,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
   Lorsqu'elle est utilisée pour lier l'attribut `class` ou `style`, `v-bind` supporte des types de valeurs supplémentaires comme Array ou Objects. Voir la section du guide lié ci-dessous pour plus de détails.
 
-  Lors de la mise en place d'une liaison sur un élément, Vue va vérifier par défaut si l'élément a la clé définie comme une propriété en faisant une vérification de l'opérateur `in`. Si la propriété est définie, Vue définira la valeur comme une propriété du DOM au lieu d'un attribut. Cela devrait fonctionner dans la plupart des cas, mais vous pouvez outrepasser ce comportement en utilisant explicitement les modificateurs `.prop` ou `.attr`. Cela est parfois nécessaire, notamment lorsque vous [travaillez avec des éléments personnalisés](/guide/extras/web-components.html#passing-dom-properties).
+  Lors de la mise en place d'une liaison sur un élément, Vue va vérifier par défaut si l'élément a la clé définie comme une propriété en faisant une vérification de l'opérateur `in`. Si la propriété est définie, Vue définira la valeur comme une propriété du DOM au lieu d'un attribut. Cela devrait fonctionner dans la plupart des cas, mais vous pouvez outrepasser ce comportement en utilisant explicitement les modificateurs `.prop` ou `.attr`. Cela est parfois nécessaire, notamment lorsque vous [travaillez avec des éléments personnalisés](/guide/extras/web-components#passing-dom-properties).
 
   Lorsqu'elle est utilisée pour lier les props du composant, la prop doit être correctement déclarée dans le composant enfant.
 
@@ -337,8 +337,8 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
   `.camel` n'est pas nécessaire si vous utilisez des templates en chaînes de caractères, ou si vous pré-compilez le template avec un outil de build.
 
 - **Voir aussi :**
-  - [Liaison de classes et de styles](/guide/essentials/class-and-style.html)
-  - [Composant - Détails sur le passage de props](/guide/components/props.html#prop-passing-details)
+  - [Liaison de classes et de styles](/guide/essentials/class-and-style)
+  - [Composant - Détails sur le passage de props](/guide/components/props#prop-passing-details)
 
 ## v-model {#v-model}
 
@@ -355,14 +355,14 @@ Crée une liaison bidirectionnelle sur un élément de saisie de formulaire ou u
 
 - **Modificateurs :**
 
-  - [`.lazy`](/guide/essentials/forms.html#lazy) - écoute les événements `change` au lieu de `input`.
-  - [`.number`](/guide/essentials/forms.html#number) - convertit une entrée valide en chaînes de caractères en nombres
-  - [`.trim`](/guide/essentials/forms.html#trim) - élague l'entrée
+  - [`.lazy`](/guide/essentials/forms#lazy) - écoute les événements `change` au lieu de `input`.
+  - [`.number`](/guide/essentials/forms#number) - convertit une entrée valide en chaînes de caractères en nombres
+  - [`.trim`](/guide/essentials/forms#trim) - élague l'entrée
 
 - **Voir aussi :**
 
-  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms.html)
-  - [Événements du composant - Utilisation avec `v-model`](/guide/components/v-model.html)
+  - [Liaisons des entrées d'un formulaire](/guide/essentials/forms)
+  - [Événements du composant - Utilisation avec `v-model`](/guide/components/v-model)
 
 ## v-slot {#v-slot}
 
@@ -377,7 +377,7 @@ Désigne les slots nommés ou les slots scopés qui s'attendent à recevoir des 
 - **Limitée à :**
 
   - `<template>`
-  - [composants](/guide/components/slots.html#scoped-slots) (pour un seul slot par défaut avec des props)
+  - [composants](/guide/components/slots#scoped-slots) (pour un seul slot par défaut avec des props)
 
 - **Exemple**
 
@@ -413,7 +413,7 @@ Désigne les slots nommés ou les slots scopés qui s'attendent à recevoir des 
   ```
 
 - **Voir aussi :**
-  - [Composants - Slots](/guide/components/slots.html)
+  - [Composants - Slots](/guide/components/slots)
 
 ## v-pre {#v-pre}
 
@@ -460,7 +460,7 @@ Rend l'élément et le composant une seule fois, et ignore les mises à jour fut
   Depuis la version 3.2, vous pouvez également mémoriser une partie du template avec des conditions d'invalidation en utilisant [`v-memo`](#v-memo).
 
 - **Voir aussi :**
-  - [Syntaxe de la liaison bidirectionnelle - interpolations](/guide/essentials/template-syntax.html#text-interpolation)
+  - [Syntaxe de la liaison bidirectionnelle - interpolations](/guide/essentials/template-syntax#text-interpolation)
   - [v-memo](#v-memo)
 
 ## v-memo <sup class="vt-badge" data-text="3.2+" /> {#v-memo}

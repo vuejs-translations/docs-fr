@@ -8,7 +8,7 @@ Un composant Vue doit être "enregistré" afin que Vue sache où localiser son i
 
 ## Enregistrement global {#global-registration}
 
-Nous pouvons rendre les composants disponibles globalement dans l'[application Vue](/guide/essentials/application.html) actuelle en utilisant la méthode `app.component()` :
+Nous pouvons rendre les composants disponibles globalement dans l'[application Vue](/guide/essentials/application) actuelle en utilisant la méthode `app.component()` :
 
 ```js
 import { createApp } from 'vue'
@@ -136,6 +136,6 @@ Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) l
 
 2. `<PascalCase />` rend plus évident qu'il s'agit d'un composant Vue au lieu d'un élément HTML natif dans les templates. Il différencie également les composants Vue des custom elements (web components).
 
-Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caratères. Cependant, comme indiqué dans [les mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats), les balises déclarées en casse Pascal ne sont pas utilisables dans les templates DOM.
+Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caratères. Cependant, comme indiqué dans [les mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), les balises déclarées en casse Pascal ne sont pas utilisables dans les templates DOM.
 
 Heureusement, Vue prend en charge la résolution des balises au format kebab-case en leur équivalent composants enregistrés à la condition qu'ils utilisent la casse Pascal. Cela signifie qu'un composant enregistré en tant que `MyComponent` peut être référencé dans le template via à la fois `<MyComponent>` et `<my-component>`. Cela nous permet d'utiliser le même code d'enregistrement de composant JavaScript quelle que soit la source du template.

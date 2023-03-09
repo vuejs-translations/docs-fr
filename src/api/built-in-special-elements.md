@@ -67,7 +67,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
   <component :is="href ? 'a' : 'span'"></component>
   ```
 
-  Les [composants natifs](./built-in-components.html) peuvent tous être passés à `is`, mais vous devez les enregistrer si vous voulez les passer par leur nom. Par exemple :
+  Les [composants natifs](./built-in-components) peuvent tous être passés à `is`, mais vous devez les enregistrer si vous voulez les passer par leur nom. Par exemple :
 
   ```vue
   <script>
@@ -95,7 +95,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
   ```vue
   <script setup>
   import { ref } from 'vue'
-  
+
   const tag = ref('input')
   const username = ref('')
   </script>
@@ -108,7 +108,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
   En pratique, ce cas de figure n'est pas courant car les champs de formulaire natifs sont généralement enveloppés dans des composants dans les applications réelles. Si vous avez besoin d'utiliser directement un élément natif, vous pouvez diviser manuellement le "v-model" en un attribut et un événement.
 
-- **Voir aussi :** [Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
+- **Voir aussi :** [Composants dynamiques](/guide/essentials/component-basics#dynamic-components)
 
 ## `<slot>` {#slot}
 
@@ -138,7 +138,7 @@ Indique l'emplacement du contenu d'un slot dans les templates.
 
   Les éléments `<slot>` dans les templates Vue sont compilés en JavaScript, ils ne doivent donc pas être confondus avec les [éléments `<slot>` natifs](https://developer.mozilla.org/fr/docs/Web/HTML/Element/slot).
 
-- **Voir aussi :** [Composant - Slots](/guide/components/slots.html)
+- **Voir aussi :** [Composant - Slots](/guide/components/slots)
 
 ## `<template>` {#template}
 
@@ -154,11 +154,11 @@ La balise `<template>` est utilisée comme placeholder lorsque nous voulons util
   
   Si aucune de ces directives n'est présente, il sera rendu comme un [élément natif `<template>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/template) à la place.
 
-  Un `<template>` avec un `v-for` peut aussi avoir un attribut [`key`](/api/built-in-special-attributes.html#key). Tous les autres attributs et directives seront rejetés, car ils n'ont pas de sens sans l'élément correspondant.
+  Un `<template>` avec un `v-for` peut aussi avoir un attribut [`key`](/api/built-in-special-attributes#key). Tous les autres attributs et directives seront rejetés, car ils n'ont pas de sens sans l'élément correspondant.
 
-  Les composants monofichiers utilisent une [top-level `<template>` tag](/api/sfc-spec.html#language-blocks) pour envelopper l'ensemble du template. Cette utilisation est distincte de l'utilisation de `<template>` décrite ci-dessus. Cette balise de haut niveau ne fait pas partie du modèle lui-même et ne supporte pas la syntaxe template, comme les directives.
+  Les composants monofichiers utilisent une [top-level `<template>` tag](/api/sfc-spec#language-blocks) pour envelopper l'ensemble du template. Cette utilisation est distincte de l'utilisation de `<template>` décrite ci-dessus. Cette balise de haut niveau ne fait pas partie du modèle lui-même et ne supporte pas la syntaxe template, comme les directives.
 
 - **Voir aussi :**
-  - [Guide - `v-if` avec `<template>`](/guide/essentials/conditional.html#v-if-on-template) 
-  - [Guide - `v-for` avec `<template>`](/guide/essentials/list.html#v-for-on-template) 
-  - [Guide - Slots nommés](/guide/components/slots.html#named-slots) 
+  - [Guide - `v-if` avec `<template>`](/guide/essentials/conditional#v-if-on-template) 
+  - [Guide - `v-for` avec `<template>`](/guide/essentials/list#v-for-on-template) 
+  - [Guide - Slots nommés](/guide/components/slots#named-slots) 

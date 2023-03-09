@@ -57,7 +57,7 @@ const nav: ThemeConfig['nav'] = [
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
           {
             text: 'Guide des outils',
-            link: '/guide/scaling-up/tooling.html'
+            link: '/guide/scaling-up/tooling'
           }
         ]
       },
@@ -650,6 +650,13 @@ export default defineConfigWithTheme<ThemeConfig>({
         'data-spa': 'auto',
         defer: ''
       }
+    ],
+    [
+      'script',
+      {
+        src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
+        async: true
+      }
     ]
   ],
 
@@ -739,9 +746,5 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true
     }
-  },
-
-  vue: {
-    reactivityTransform: true
   }
 })

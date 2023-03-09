@@ -20,7 +20,7 @@ footer: false
 - Avoir installé [Node.js](https://nodejs.org/) version 15.0 ou plus
   :::
 
-Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue.html#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
+Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
 
 Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée, ensuite exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
 
@@ -48,10 +48,10 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 <span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
 <span class="line"></span></code></pre></div>
 
-Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction.html#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction.html#options-api). Voici quelques conseils supplémentaires :
+Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction#options-api). Voici quelques conseils supplémentaires :
 
-- L'environnement de développement recommandé est [Visual Studio Code](https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). Si vous utilisez d'autres éditeurs, lisez la [section sur le support des environnements de développement](/guide/scaling-up/tooling.html#ide-support).
-- [Guide - Outils](/guide/scaling-up/tooling.html) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
+- L'environnement de développement recommandé est [Visual Studio Code](https://code.visualstudio.com/) + [Volar extension](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar). Si vous utilisez d'autres éditeurs, lisez la [section sur le support des environnements de développement](/guide/scaling-up/tooling#ide-support).
+- [Guide - Outils](/guide/scaling-up/tooling) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
 - Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://fr.vitejs.dev).
 - Si vous avez choisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview.html).
 
@@ -60,7 +60,7 @@ Dès que vous êtes prêts à livrer votre application en production, exécutez 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
 
-Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment.html) pour en savoir plus sur l'envoi de votre application en production.
+Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment) pour en savoir plus sur l'envoi de votre application en production.
 
 [Étapes suivantes >](#etapes-suivantes)
 
@@ -171,7 +171,7 @@ Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vo
 :::
 
 :::warning À éviter en production
-L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment.html#without-build-tools).
+L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment#without-build-tools).
 :::
 
 ### Séparation des modules {#splitting-up-the-modules}
@@ -208,7 +208,7 @@ Vous avez peut-être remarqué que le template du composant importé est soulign
 
 ### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
 
-De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup.html).
+De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup).
 
 ## Étapes suivantes {#next-steps}
 

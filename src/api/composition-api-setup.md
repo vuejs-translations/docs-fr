@@ -2,7 +2,7 @@
 
 ## Utilisation basique {#basic-usage}
 :::info Note
-Cette page documente l'usage de `setup`. Si vous utilisez la Composition API avec les composants monofichiers, [`<script setup>`](/api/sfc-script-setup.html) est recommandé pour une syntaxe plus succincte et ergonomique.
+Cette page documente l'usage de `setup`. Si vous utilisez la Composition API avec les composants monofichiers, [`<script setup>`](/api/sfc-script-setup) est recommandé pour une syntaxe plus succincte et ergonomique.
 :::
 
 Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants :
@@ -10,7 +10,7 @@ Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composi
 1. Si vous souhaitez utiliser la Composition API sans outil de build;
 2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Options API.
 
-On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée) :
+On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée) :
 
 ```vue
 <script>
@@ -38,11 +38,11 @@ export default {
 </template>
 ```
 
-Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le template, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également déballées de la même façon lorsqu'elles sont invoquées sur `this`.
+Les [refs](/api/reactivity-core#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals#deep-reactivity) lorsqu'elles sont invoquées dans le template, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également déballées de la même façon lorsqu'elles sont invoquées sur `this`.
 
 `setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Options, mais pas l'inverse.
 
-`setup()` doit renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
+`setup()` doit renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense).
 
 ## Accéder aux props {#accessing-props}
 
@@ -61,7 +61,7 @@ export default {
 
 Notez que si vous déstructurez l'objet `props`, les variables déstructurées perdront leur réactivité. Il est donc recommandé d'accéder aux props sous la forme de `props.xxx`.
 
-Si vous avez vraiment besoin de déstructurer les props, ou si vous devez passer une prop dans une fonction externe tout en conservant la réactivité, vous pouvez le faire avec les utilitaires de l'API de Réactivité [toRefs()](./reactivity-utilities.html#torefs) et [toRef()](/api/reactivity-utilities.html#toref).
+Si vous avez vraiment besoin de déstructurer les props, ou si vous devez passer une prop dans une fonction externe tout en conservant la réactivité, vous pouvez le faire avec les utilitaires de l'API de Réactivité [toRefs()](./reactivity-utilities#torefs) et [toRef()](/api/reactivity-utilities#toref).
 
 ```js
 import { toRefs, toRef } from 'vue'
@@ -116,7 +116,7 @@ export default {
 
 ### Exposer des propriétés publiques {#exposing-public-properties}
 
-`expose` est une fonction qui peut être utilisée pour limiter explicitement les propriétés exposées lorsque l'instance de composant est accédée par un composant parent via [les refs du template](/guide/essentials/template-refs.html#ref-on-component) :
+`expose` est une fonction qui peut être utilisée pour limiter explicitement les propriétés exposées lorsque l'instance de composant est accédée par un composant parent via [les refs du template](/guide/essentials/template-refs#ref-on-component) :
 
 ```js{5,10}
 export default {
@@ -135,7 +135,7 @@ export default {
 
 ## Utilisation avec les fonctions de rendu {#usage-with-render-functions}
 
-`setup` peut également retourner [une fonction de rendu](/guide/extras/render-function.html) qui peut directement utiliser l'état réactif déclaré dans le scope partagé :
+`setup` peut également retourner [une fonction de rendu](/guide/extras/render-function) qui peut directement utiliser l'état réactif déclaré dans le scope partagé :
 
 ```js{6}
 import { h, ref } from 'vue'

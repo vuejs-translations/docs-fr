@@ -42,7 +42,7 @@ components/
 
 ## La casse des noms de composants {#single-file-component-filename-casing}
 
-**Le nom des composants monofichiers doit toujours être soit en PascalCase soit en kebab-case.**
+**Le nom des [composants monofichiers](/guide/scaling-up/sfc) doit toujours être soit en PascalCase soit en kebab-case.**
 
 PascalCase fonctionne mieux avec l'auto-complétion dans les éditeurs de code, car elle est cohérente avec la façon dont nous référençons les composants en JS(X) et les templates, dans la mesure du possible. Cependant, le nom des fichiers à casse mixte peut parfois créer des problèmes sur les systèmes de fichiers insensibles à la casse, c'est pourquoi kebab-case est également parfaitement acceptable.
 
@@ -337,7 +337,7 @@ components/
 
 ## Composants auto-fermants {#self-closing-components}
 
-**Les composants sans contenu doivent être auto-fermants dans les [composants monofichiers](/guide/scaling-up/sfc.html), dans les templates, et dans [JSX](/guide/extras/render-function.html#jsx-tsx) - mais jamais dans les templates du DOM.**
+**Les composants sans contenu doivent être auto-fermants dans les [composants monofichiers](/guide/scaling-up/sfc), dans les templates, et dans [JSX](/guide/extras/render-function#jsx-tsx) - mais jamais dans les templates du DOM.**
 
 Les composants auto-fermants n'indiquent pas seulement qu'ils n'ont pas de contenu, mais aussi qu'ils ne sont pas censés en avoir. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
 
@@ -375,7 +375,7 @@ Malheureusement, HTML n'autorise pas que les éléments personnalisés soient au
 
 ## La casse des noms de composants dans les templates {#component-name-casing-in-templates}
 
-**Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc.html) et dans les string templates - mais en kebab-case dans les templates du DOM.**
+**Dans la plupart des projets, les noms de composants doivent toujours être en PascalCase dans les [composants monofichiers](/guide/scaling-up/sfc) et dans les string templates - mais en kebab-case dans les templates du DOM.**
 
 PascalCase a quelques avantages par rapport au kebab-case :
 
@@ -431,7 +431,7 @@ OU
 
 ## La casse des noms de composants en JS/JSX {#component-name-casing-in-js-jsx}
 
-**Les noms de composants en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) devraient toujours être en PascalCase, quoiqu'ils puissent être en kebab-case dans des strings pour des applications plus simples qui n'utilisent que l'enregistrement global des composants via `app.component`.**
+**Les noms de composants en JS/[JSX](/guide/extras/render-function#jsx-tsx) devraient toujours être en PascalCase, quoiqu'ils puissent être en kebab-case dans des strings pour des applications plus simples qui n'utilisent que l'enregistrement global des composants via `app.component`.**
 
 ::: details Explications détaillées
 En JavaScript, le PascalCase est la convention pour les classes et les constructeurs de prototypes - essentiellement, tout ce qui peut avoir des instances distinctes. Les composants Vue ont également des instances, il est donc logique d'utiliser également PascalCase. Comme avantage supplémentaire, l'utilisation de PascalCase dans JSX (et les templates) permet aux gens qui lisent le code de distinguer plus facilement les composants et les éléments HTML.
@@ -529,7 +529,7 @@ components/
 
 ## La casse des noms de prop {#prop-name-casing}
 
-**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être écrites en kebab-case. Les templates des composants monofichiers et [JSX](/guide/extras/render-function.html#jsx-tsx) peuvent utiliser des props en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez d'utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
+**Les noms de prop doivent toujours utiliser camelCase lors des déclarations. Lorsqu'elles sont utilisées dans des template du DOM, les props doivent être écrites en kebab-case. Les templates des composants monofichiers et [JSX](/guide/extras/render-function#jsx-tsx) peuvent utiliser des props en kebab-case ou en camelCase. La casse doit être cohérente - si vous choisissez d'utiliser des props en camelCase, assurez-vous de ne pas utiliser la casse kebab-case ailleurs dans votre application.**
 
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
@@ -603,7 +603,7 @@ const props = defineProps({
 
 **Les éléments avec plusieurs attributs doivent s'étendre sur plusieurs lignes, avec un attribut par ligne.**
 
-En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car ils sont beaucoup plus faciles à lire. Les templates et [JSX](/guide/extras/render-function.html#jsx-tsx) méritent la même considération.
+En JavaScript, étendre des objets avec plusieurs propriétés sur plusieurs lignes est largement considéré comme une bonne convention, car ils sont beaucoup plus faciles à lire. Les templates et [JSX](/guide/extras/render-function#jsx-tsx) méritent la même considération.
 
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>

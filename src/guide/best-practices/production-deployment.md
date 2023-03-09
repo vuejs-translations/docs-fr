@@ -6,7 +6,7 @@ Durant le développement, Vue fournit un certain nombre de fonctionnalités pour
 
 - Avertissement pour les erreurs et les pièges
 - Validation des props et des événements
-- [Déboguer la réactivité](/guide/extras/reactivity-in-depth.html#reactivity-debugging)
+- [Déboguer la réactivité](/guide/extras/reactivity-in-depth#reactivity-debugging)
 - Intégration des Devtools
 
 Cependant, ces fonctionnalités deviennent inutiles en production. Certains warnings peuvent également entraîner une petite baisse de performances générales. Lors du déploiement en production, nous devrions supprimer toutes les branches de code de développement inutilisées pour profiter d'une charge moins élevée et de meilleures performances.
@@ -38,7 +38,7 @@ Références supplémentaires :
 
 ## Suivi des erreurs d'exécution {#tracking-runtime-errors}
 
-Le [gestionnaire d'erreur au niveau applicatif](/api/application.html#app-config-errorhandler) peut être utilisé pour signaler les erreurs aux services tiers de suivi :
+Le [gestionnaire d'erreur au niveau applicatif](/api/application#app-config-errorhandler) peut être utilisé pour signaler les erreurs aux services tiers de suivi :
 
 ```js
 import { createApp } from 'vue'

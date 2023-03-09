@@ -4,7 +4,7 @@ Vue utilise une syntaxe de template basée sur HTML pour permettre de lier de ma
 
 Sous le capot, Vue compile les templates en code JavaScript hautement optimisé. Combiné avec le système de réactivité, Vue est capable de déterminer intelligemment le nombre minimal de composants à restituer et d'appliquer la quantité minimale de manipulations DOM lorsque l'état de l'application change.
 
-Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [écrire directement des fonctions de rendu](/guide/extras/render-function.html) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'elles ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
+Si vous connaissez les concepts de DOM virtuel et préférez la puissance brute de JavaScript, vous pouvez également [écrire directement des fonctions de rendu](/guide/extras/render-function) au lieu des templates, avec en option la prise en charge de JSX. Cependant, notez qu'elles ne bénéficient pas du même niveau d'optimisation au moment de la compilation que les templates.
 
 ## Interpolation de texte {#text-interpolation}
 
@@ -18,7 +18,7 @@ La balise moustache sera remplacée par la valeur de la propriété `msg` de l'i
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives.html#v-html):
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v):
 
 ```vue-html
 <p>Utilisation de l'interpolation de texte : {{ htmlBrut }}</p>
@@ -44,7 +44,7 @@ L'affichage dynamique de code HTML arbitraire sur votre site Web peut être trè
 
 ## Liaisons d'attributs {#attribute-bindings}
 
-Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [`v-bind`](/api/built-in-directives.html#v-bind) :
+Les moustaches ne peuvent pas être utilisées dans les attributs HTML. À la place, utilisez une directive [`v-bind`](/api/built-in-directives#v-bind) :
 
 ```vue-html
 <div v-bind:id="idDynamique"></div>
@@ -164,13 +164,13 @@ Les fonctions appelées à l'intérieur des expressions de liaison seront appel�
 
 Les expressions de template sont en bac à sable et n'ont accès qu'à une [liste restreinte de variables globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La liste expose les variables globales intégrées couramment utilisées telles que "Math" et "Date".
 
-Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+Les variables globales non explicitement incluses dans la liste, par exemple les propriétés jointes par l'utilisateur sur `window`, ne seront pas accessibles dans les expressions du template. Vous pouvez cependant définir explicitement des variables globales supplémentaires pour toutes les expressions Vue en les ajoutant à [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 ## Directives {#directives}
 
-Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives.html), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
+Les directives sont des attributes spéciaux avec pour préfixe `v-`. Vue propose un certain nombre de [directives natives](/api/built-in-directives), dont `v-html` et `v-bind` que nous venons d'introduire précédement.
 
-Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives.html#v-if) comme exemple :
+Les valeurs attendues dans les directives sont une seule expression JavaScript (à l'exception de `v-for`, `v-on` et `v-slot`, que l'on présentera dans leur section respective). Le travail d'une directive est d'appliquer les changements au DOM en réaction des changements de la valeur de son expression. Prenez [`v-if`](/api/built-in-directives#v-if) comme exemple :
 
 ```vue-html
 <p v-if="vu">Maintenant, tu me vois</p>
@@ -243,7 +243,7 @@ Les expressions d'argument dynamique ont quelques contraintes syntaxique à caus
 <a :['foo' + bar]="value"> ... </a>
 ```
 
-Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [propriété calculée](./computed.html), que nous aborderons sous peu.
+Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [propriété calculée](./computed), que nous aborderons sous peu.
 
 Lorsque vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devez également éviter de nommer les clés avec des caractères majuscules, car les navigateurs contraindront les noms d'attributs en minuscules :
 
@@ -261,7 +261,7 @@ Les modificateurs sont des suffixes spéciaux désignés par un point, qui indiq
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-handling.html#event-modifiers) et [pour `v-model`](./forms.html#modifiers), lorsque nous explorons ces fonctionnalités.
+Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-handling#event-modifiers) et [pour `v-model`](./forms#modifiers), lorsque nous explorons ces fonctionnalités.
 
 Et enfin, voici la syntaxe complète de la directive visualisée :
 

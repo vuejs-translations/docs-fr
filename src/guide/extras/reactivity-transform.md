@@ -50,11 +50,11 @@ function increment() {
 
 Chaque API de réactivité qui renvoie des refs aura un équivalent en macro préfixé `$`. Ces APIs incluent :
 
-- [`ref`](/api/reactivity-core.html#ref) -> `$ref`
-- [`computed`](/api/reactivity-core.html#computed) -> `$computed`
-- [`shallowRef`](/api/reactivity-advanced.html#shallowref) -> `$shallowRef`
-- [`customRef`](/api/reactivity-advanced.html#customref) -> `$customRef`
-- [`toRef`](/api/reactivity-utilities.html#toref) -> `$toRef`
+- [`ref`](/api/reactivity-core#ref) -> `$ref`
+- [`computed`](/api/reactivity-core#computed) -> `$computed`
+- [`shallowRef`](/api/reactivity-advanced#shallowref) -> `$shallowRef`
+- [`customRef`](/api/reactivity-advanced#customref) -> `$customRef`
+- [`toRef`](/api/reactivity-utilities#toref) -> `$toRef`
 
 Ces macros sont disponibles globalement et n'ont pas besoin d'être importées lorsque Reactivity Transform est activée, mais vous pouvez éventuellement les importer depuis `vue/macros` si vous voulez être plus explicite :
 
@@ -111,7 +111,7 @@ Il y a deux problèmes avec l'utilisation actuelle de `defineProps()` dans `<scr
 
 1. Comme pour `.value`, vous devez toujours accéder aux props via `props.x` afin de conserver la réactivité. Cela signifie que vous ne pouvez pas déstructurer `defineProps` car les variables déstructurées résultantes ne sont pas réactives et ne seront pas mises à jour.
 
-2. Lorsque l'on utilise la [déclaration de type pour les props](/api/sfc-script-setup.html#typescript-only-features), il n'y a pas de moyen facile de déclarer des valeurs par défaut pour les props. Nous avons introduit l'API `withDefaults()` dans ce but précis, mais elle reste toujours difficile à utiliser.
+2. Lorsque l'on utilise la [déclaration de type pour les props](/api/sfc-script-setup#typescript-only-features), il n'y a pas de moyen facile de déclarer des valeurs par défaut pour les props. Nous avons introduit l'API `withDefaults()` dans ce but précis, mais elle reste toujours difficile à utiliser.
 
 Nous pouvons résoudre ces problèmes en appliquant une transformation au moment de la compilation lorsque `defineProps` est utilisée avec la déstructuration, de la même manière que ce que nous avons vu précédemment avec `$()` :
 

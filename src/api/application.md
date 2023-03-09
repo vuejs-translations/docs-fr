@@ -35,11 +35,11 @@ Crée une instance d'application.
   const app = createApp(App)
   ```
 
-- **Voir aussi :** [Guide - Créer une application Vue](/guide/essentials/application.html)
+- **Voir aussi :** [Guide - Créer une application Vue](/guide/essentials/application)
 
 ## createSSRApp() {#createssrapp}
 
-Crée une instance d'application en mode [Hydratation SSR](/guide/scaling-up/ssr.html#client-hydration). L'utilisation est exactement la même que `createApp()`.
+Crée une instance d'application en mode [Hydratation SSR](/guide/scaling-up/ssr#client-hydration). L'utilisation est exactement la même que `createApp()`.
 
 ## app.mount() {#app-mount}
 
@@ -59,7 +59,7 @@ Monte l'instance d'application dans un élément conteneur.
 
   Si le composant a un template ou une fonction de rendu défini, il remplacera tous les nœuds du DOM existants à l'intérieur du conteneur. Sinon, si le compilateur est disponible, le `innerHTML` du conteneur sera utilisé comme template.
 
-  En mode hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr.html#hydration-mismatch), les nœuds du DOM existants seront transformés pour correspondre à la sortie attendue.
+  En mode hydratation SSR, il hydratera les nœuds DOM existants à l'intérieur du conteneur. S'il y a [des incohérences](/guide/scaling-up/ssr#hydration-mismatch), les nœuds du DOM existants seront transformés pour correspondre à la sortie attendue.
 
   Pour chaque instance d'application, `mount()` ne peut être appelée qu'une seule fois.
 
@@ -145,8 +145,8 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
   </div>
 
 - **Voir aussi :**
-  - [Provide / Inject](/guide/components/provide-inject.html)
-  - [App-level Provide](/guide/components/provide-inject.html#app-level-provide)
+  - [Provide / Inject](/guide/components/provide-inject)
+  - [App-level Provide](/guide/components/provide-inject#app-level-provide)
 
 ## app.component() {#app-component}
 
@@ -177,7 +177,7 @@ Enregistre un composant global si un nom et une définition de composant sont pa
   const MyComponent = app.component('my-component')
   ```
 
-- **Voir aussi :** [Enregistrement des composants](/guide/components/registration.html)
+- **Voir aussi :** [Enregistrement des composants](/guide/components/registration)
 
 ## app.directive() {#app-directive}
 
@@ -215,11 +215,11 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
   const myDirective = app.directive('my-directive')
   ```
 
-- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives.html)
+- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives)
 
 ## app.use() {#app-use}
 
-Installe un [plugin](/guide/reusability/plugins.html).
+Installe un [plugin](/guide/reusability/plugins).
 
 - **Type**
 
@@ -250,7 +250,7 @@ Installe un [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **Voir aussi :** [Plugins](/guide/reusability/plugins.html)
+- **Voir aussi :** [Plugins](/guide/reusability/plugins)
 
 ## app.mixin() {#app-mixin}
 
@@ -259,7 +259,7 @@ Applique un mixin global (limité à l'application). Un mixin global applique se
 :::warning Non recommandé
 Les mixins sont pris en charge dans Vue 3 principalement pour la rétrocompatibilité, en raison de leur utilisation répandue dans les bibliothèques de l'écosystème. L'utilisation de mixins, en particulier de mixins globaux, doit être évitée dans le code de l'application.
 
-Pour une réutilisation logique, préférez plutôt les [Composables](/guide/reusability/composables.html).
+Pour une réutilisation logique, préférez plutôt les [Composables](/guide/reusability/composables).
 :::
 
 - **Type**
@@ -272,7 +272,7 @@ Pour une réutilisation logique, préférez plutôt les [Composables](/guide/reu
 
 ## app.version {#app-version}
 
-Fournit la version de Vue avec laquelle l'application a été créée. Ceci est utile pour les [plugins](/guide/reusability/plugins.html), où vous pourriez avoir besoin d'une logique conditionnelle basée sur différentes versions de Vue.
+Fournit la version de Vue avec laquelle l'application a été créée. Ceci est utile pour les [plugins](/guide/reusability/plugins), où vous pourriez avoir besoin d'une logique conditionnelle basée sur différentes versions de Vue.
 
 - **Type**
 
@@ -297,7 +297,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Voir aussi :** [API générale - version](/api/general.html#version)
+- **Voir aussi :** [API générale - version](/api/general#version)
 
 ## app.config {#app-config}
 
@@ -391,11 +391,11 @@ Définissez-le sur `true` pour activer le suivi des performances d'initialisatio
 
 - **Type** : `boolean`
 
-- **Voir aussi :** [Guide - Performance](/guide/best-practices/performance.html)
+- **Voir aussi :** [Guide - Performance](/guide/best-practices/performance)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configure des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering.html#compileroptions).
+Configure des options du compilateur fonctionnant à l'exécution. Les valeurs définies sur cet objet seront transmises au compilateur de template dans le navigateur et affecteront chaque composant de l'application configurée. Notez que vous pouvez également remplacer ces options par composant à l'aide de l'[option `compilerOptions`](/api/options-rendering#compileroptions).
 
 ::: warning Important
 Cette option de configuration n'est respectée que lors de l'utilisation de la version complète (c'est-à-dire `vue.js` qui peut compiler des templates dans le navigateur). Si vous utilisez le build uniquement à l'exécution avec une configuration de build, les options du compilateur doivent être transmises plutôt à `@vue/compiler-dom` via les configurations de l'outil de build.
@@ -426,7 +426,7 @@ Spécifie une méthode de vérification pour reconnaître les éléments personn
   }
   ```
 
-- **Voir aussi :** [Vue et les Web Components](/guide/extras/web-components.html)
+- **Voir aussi :** [Vue et les Web Components](/guide/extras/web-components)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
@@ -523,7 +523,7 @@ Un objet qui peut être utilisé pour enregistrer des propriétés globales acce
   }
   ```
 
-- **See also:** [Guide - Augmenting Global Properties](/guide/typescript/options-api.html#augmenting-global-properties) <sup class="vt-badge ts" />
+- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 
@@ -574,4 +574,4 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
  // logue 'Hello Vue'
   ```
 
-- **See also:** [Component Instance - `$options`](/api/component-instance.html#options)
+- **See also:** [Component Instance - `$options`](/api/component-instance#options)

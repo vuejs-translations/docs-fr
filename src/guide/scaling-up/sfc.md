@@ -65,7 +65,7 @@ Si les SFC nécessitent une étape de compilation, les avantages sont nombreux e
 - [CSS à portée limitée au composant](/api/sfc-css-features)
 - [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
 - Meilleures optimisations à la compilation grâce à l'analyse croisée du template et des scripts.
-- [Support des environnements de développement](/guide/scaling-up/tooling.html#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
+- [Support des environnements de développement](/guide/scaling-up/tooling#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
 - Prise en charge nativement du remplacement de modules à chaud (HMR).
 
 SFC est une caractéristique déterminante de Vue en tant que framework, et c'est l'approche recommandée pour utiliser Vue dans les scénarios suivants :
@@ -105,5 +105,5 @@ Pour répondre à cette question, il est important d'être d'accord sur le fait 
 Dans le développement d'interfaces utilisateur modernes, nous avons constaté qu'au lieu de diviser la base de code en trois énormes couches qui s'entrecroisent, il est beaucoup plus logique de les diviser en composants faiblement couplés et de les composer. À l'intérieur d'un composant, son template, sa logique et ses styles sont intrinsèquement couplés, et leur regroupement rend le composant plus cohérent et plus facile à maintenir.
 
 :::info Remarque
-Même si vous n'aimez pas l'idée des composants monofichiers, vous pouvez toujours tirer parti des fonctions de rechargement à chaud (HMR) et de précompilation en séparant votre JavaScript et votre CSS dans des fichiers distincts à l'aide de [Imports Src](/api/sfc-spec.html#src-imports).
+Même si vous n'aimez pas l'idée des composants monofichiers, vous pouvez toujours tirer parti des fonctions de rechargement à chaud (HMR) et de précompilation en séparant votre JavaScript et votre CSS dans des fichiers distincts à l'aide de [Imports Src](/api/sfc-spec#src-imports).
 :::

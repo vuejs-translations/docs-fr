@@ -1,7 +1,7 @@
 # Composition API: Les hooks du cycle de vie {#composition-api-lifecycle-hooks}
 
 :::info Note d'utilisation
-Toutes les APIs listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html) pour plus de détails.
+Toutes les APIs listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle) pour plus de détails.
 :::
 
 ## onMounted() {#onmounted}
@@ -22,7 +22,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 
   - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
-  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr.html).
+  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -60,7 +60,7 @@ Enregistre une fonction de rappel à appeler après que le composant ait mis à 
 
   Le hook de mise à jour d'un composant parent est appelé après celui de ses composants enfants.
 
-  Ce hook est appelé après toute mise à jour du DOM du composant, qui peut être causée par différents changements d'état. Si vous devez accéder au DOM mis à jour après un changement d'état spécifique, utilisez plutôt [nextTick()](/api/general.html#nexttick).
+  Ce hook est appelé après toute mise à jour du DOM du composant, qui peut être causée par différents changements d'état. Si vous devez accéder au DOM mis à jour après un changement d'état spécifique, utilisez plutôt [nextTick()](/api/general#nexttick).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -212,7 +212,7 @@ Enregistre un hook qui sera appelé lorsqu'une erreur venant d'un composant desc
 
   **Règles concernant la propagation des erreurs**
 
-  - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
+  - Par défaut, toutes les erreurs sont envoyées à [`app.config.errorHandler`](/api/application#app-config-errorhandler) au niveau de l'application si elle est définie, afin qu'elles puissent être signalées et analysées par un seul service à un seul endroit.
 
   - Si plusieurs hooks `errorCaptured` existent sur la chaîne descendante ou la chaîne ascendante d'un composant, ils seront tous invoqués sur la même erreur, suivant un ordre allant de bas en haut. Cela est comparable au mécanisme de _bubbling_ des événements natifs du DOM.
 
@@ -241,7 +241,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,11 +267,11 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
-Enregistre une fonction de rappel qui sera appelée après que l'instance du composant ait été insérée dans le DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Enregistre une fonction de rappel qui sera appelée après que l'instance du composant ait été insérée dans le DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -281,11 +281,11 @@ Enregistre une fonction de rappel qui sera appelée après que l'instance du com
   function onActivated(callback: () => void): void
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onDeactivated() {#ondeactivated}
 
-Enregistre une fonction de rappel à appeler après que l'instance du composant ait été retirée du DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Enregistre une fonction de rappel à appeler après que l'instance du composant ait été retirée du DOM en tant que partie d'un arbre mis en cache par [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -295,7 +295,7 @@ Enregistre une fonction de rappel à appeler après que l'instance du composant 
   function onDeactivated(callback: () => void): void
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
@@ -338,4 +338,4 @@ Enregistre une fonction asynchrone à résoudre avant que l'instance du composan
   </script>
   ```
 
-- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr.html)
+- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr)

@@ -3,8 +3,8 @@
 :::info Voir aussi
 Pour mieux comprendre les API de réactivité, il est recommandé de lire les chapitres suivants du guide :
 
-- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html) (with the API preference set to Composition API)
-- [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- [Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals) (with the API preference set to Composition API)
+- [La réactivité en détails](/guide/extras/reactivity-in-depth)
   :::
 
 ## ref() {#ref}
@@ -27,7 +27,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
 
   Si un objet est assigné comme valeur d'une ref, l'objet est rendu profondément réactif via [reactive()](#reactive). Cela signifie également que si l'objet contient des refs imbriquées, elles seront déballées en profondeur.
 
-  Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced.html#shallowref).
+  Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced#shallowref).
 
 - **Exemple :**
 
@@ -40,8 +40,8 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
   ```
 
 - **Voir aussi :**
-  - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals.html#reactive-variables-with-ref)
-  - [Guide - Typer `ref()`](/guide/typescript/composition-api.html#typing-ref) <sup class="vt-badge ts" />
+  - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
+  - [Guide - Typer `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
 ## computed() {#computed}
 
@@ -109,9 +109,9 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   ```
 
 - **Voir aussi :**
-  - [Guide - Propriétés calculées](/guide/essentials/computed.html)
-  - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth.html#computed-debugging)
-  - [Guide - Typer `computed()`](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
+  - [Guide - Propriétés calculées](/guide/essentials/computed)
+  - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth#computed-debugging)
+  - [Guide - Typer `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
 
 ## reactive() {#reactive}
 
@@ -129,7 +129,7 @@ Retourne un proxy réactif de l'objet.
 
   Il faut également noter qu'il n'y a pas de déballage de refs lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map`.
 
-  Pour éviter la conversion profonde et ne conserver la réactivité qu'au niveau de la racine, utilisez plutôt [shallowReactive()](./reactivity-advanced.html#shallowreactive).
+  Pour éviter la conversion profonde et ne conserver la réactivité qu'au niveau de la racine, utilisez plutôt [shallowReactive()](./reactivity-advanced#shallowreactive).
 
   L'objet retourné et ses objets imbriqués sont enveloppés par un [proxy ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et **non** égaux aux objets originaux. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de se fier à l'objet original.
 
@@ -187,8 +187,8 @@ Retourne un proxy réactif de l'objet.
   ```
 
 - **Voir aussi :**
-  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
-  - [Guide - Typer `reactive()`](/guide/typescript/composition-api.html#typing-reactive) <sup class="vt-badge ts" />
+  - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals)
+  - [Guide - Typer `reactive()`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 ## readonly() {#readonly}
 
@@ -206,7 +206,7 @@ Prend un objet (réactif ou simple) ou une [ref](#ref) et renvoie un proxy en le
 
   Un proxy en lecture seule est profond : toute propriété imbriquée à laquelle on accède sera également en lecture seule. Il a également le même comportement en termes de déballage que `reactive()`, sauf que les valeurs déballées seront aussi en lecture seule.
 
-  Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced.html#shallowreadonly).
+  Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced#shallowreadonly).
 
 - **Exemple :**
 
@@ -256,7 +256,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
   Le second argument est un objet optionnel d'options qui peut être utilisé pour ajuster le timing du nettoyage de l'effet ou pour déboguer ses dépendances.
 
-  Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush: 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush: 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
+  Par défaut, les observateurs seront exécutés juste avant le rendu du composant. Définir `flush: 'post'` reportera l'exécution du watcher après le rendu du composant. Voir le paragraphe sur [le timing du nettoyage des fonctions de rappel](/guide/essentials/watchers#callback-flush-timing) pour plus d'informations. Dans de rares cas, il peut être nécessaire de déclencher un observateur immédiatement lorsqu'une dépendance réactive change, par exemple pour invalider un cache. Ceci peut être réalisé en utilisant `flush: 'sync'`. Cependant, ce paramètre doit être utilisé avec prudence, car il peut entraîner des problèmes de performance et de cohérence des données si plusieurs propriétés sont mises à jour en même temps.
 
   La valeur de retour est une fonction de gestion qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
 
@@ -309,8 +309,8 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   ```
 
 - **Voir aussi **:
-  - [Guide - Observateurs](/guide/essentials/watchers.html#watcheffect)
-  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging)
+  - [Guide - Observateurs](/guide/essentials/watchers#watcheffect)
+  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)
 
 ## watchPostEffect() {#watchposteffect}
 
@@ -383,9 +383,9 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   Le troisième argument optionnel est un objet d'options qui prend en charge les options suivantes :
 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
+  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
   Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 
@@ -483,5 +483,5 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
 - **Voir aussi **:
 
-  - [Guide - Observateurs](/guide/essentials/watchers.html)
-  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth.html#watcher-debugging)
+  - [Guide - Observateurs](/guide/essentials/watchers)
+  - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)

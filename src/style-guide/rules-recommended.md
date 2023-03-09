@@ -186,7 +186,7 @@ computed: {
 
 ## Ordre des éléments de premier niveau des composants monofichiers {#single-file-component-top-level-element-order}
 
-**[Les composants monofichiers](/guide/scaling-up/sfc.html) devraient toujours ordonner les balises `<script>`, `<template>`, et `<style>` de manière constante, avec `<style>` en dernier, car au moins l'un des deux autres est toujours nécessaire.**
+**[Les composants monofichiers](/guide/scaling-up/sfc) devraient toujours ordonner les balises `<script>`, `<template>`, et `<style>` de manière constante, avec `<style>` en dernier, car au moins l'un des deux autres est toujours nécessaire.**
 
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>

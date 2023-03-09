@@ -93,7 +93,7 @@ Créé des nœuds virtuels du DOM (vnodes).
   })
   ```
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function.html#creating-vnodes)
+- **Voir aussi :** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function#creating-vnodes)
 
 ## mergeProps() {#mergeprops}
 
@@ -228,7 +228,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
 
   </div>
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function.html#components)
+- **Voir aussi :** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function#components)
 
 ## resolveDirective() {#resolvedirective}
 
@@ -248,7 +248,7 @@ Utilisée pour résoudre manuellement une directive enregistrée via son nom.
 
   Si la directive n'est pas trouvée, un avertissement sera émis lors de l'exécution et la fonction retournera `undefined`.
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
+- **Voir aussi :** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
@@ -296,11 +296,11 @@ Utilisée pour ajouter des directives personnalisées aux vnodes.
   ])
   ```
 
-- **Voir aussi :** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function.html#custom-directives)
+- **Voir aussi :** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
-Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event-handling.html#event-modifiers) à une fonction de gestion d'événements.
+Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event-handling#event-modifiers) à une fonction de gestion d'événements.
 
 - **Type :**
 
@@ -321,4 +321,4 @@ Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event
   })
   ```
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function.html#event-modifiers)
+- **Voir aussi :** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function#event-modifiers)

@@ -6,7 +6,7 @@ outline: deep
 
 Vue recommande d'utiliser des templates pour construire des applications dans la plupart des cas. Cependant, il existe des situations où nous avons besoin de toute la puissance programmatique de JavaScript. C'est alors que nous pouvons utiliser la fonction **render**.
 
-> Si les concepts de DOM virtuel et de fonctions de rendu vous sont inconnus, lisez d'abord le chapitre [Mécanismes de rendu](/guide/extras/rendering-mechanism.html).
+> Si les concepts de DOM virtuel et de fonctions de rendu vous sont inconnus, lisez d'abord le chapitre [Mécanismes de rendu](/guide/extras/rendering-mechanism).
 
 ## Utilisation basique {#basic-usage}
 
@@ -389,7 +389,7 @@ h('input', {
 />
 ```
 
-Pour les autres modificateurs d'événements et de clés, l'utilitaire [`withModifiers`](/api/render-function.html#withmodifiers) peut être utilisé :
+Pour les autres modificateurs d'événements et de clés, l'utilitaire [`withModifiers`](/api/render-function#withmodifiers) peut être utilisé :
 
 ```js
 import { withModifiers } from 'vue'
@@ -446,7 +446,7 @@ function render() {
 }
 ```
 
-Si un composant est enregistré via son nom et ne peut pas être importé directement (par exemple, s'il est enregistré globalement par une bibliothèque), il peut être l'être en utilisant l'utilitaire [`resolveComponent()`](/api/render-function.html#resolvecomponent).
+Si un composant est enregistré via son nom et ne peut pas être importé directement (par exemple, s'il est enregistré globalement par une bibliothèque), il peut être l'être en utilisant l'utilitaire [`resolveComponent()`](/api/render-function#resolvecomponent).
 
 ### Rendu de slots {#rendering-slots}
 
@@ -489,7 +489,7 @@ export default {
 </div>
 <div class="options-api">
 
-Dans les fonctions de rendu, les slots sont accessibles via [`this.$slots`](/api/component-instance.html#slots) :
+Dans les fonctions de rendu, les slots sont accessibles via [`this.$slots`](/api/component-instance#slots) :
 
 ```js
 export default {
@@ -559,7 +559,7 @@ Passer des slots en tant que fonctions leur permet d'être invoqués à la volé
 
 ### Composants natifs {#built-in-components}
 
-[Les composants natifs](/api/built-in-components.html) tels que `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` et `<Suspense>` doivent être importés pour être utilisés dans les fonctions de rendu :
+[Les composants natifs](/api/built-in-components) tels que `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` et `<Suspense>` doivent être importés pour être utilisés dans les fonctions de rendu :
 
 <div class="composition-api">
 
@@ -628,7 +628,7 @@ export default {
 
 ### Directives personnalisées {#custom-directives}
 
-Les directives personnalisées peuvent être appliquées à un vnode en utilisant [`withDirectives`](/api/render-function.html#withdirectives) :
+Les directives personnalisées peuvent être appliquées à un vnode en utilisant [`withDirectives`](/api/render-function#withdirectives) :
 
 ```js
 import { h, withDirectives } from 'vue'
@@ -645,7 +645,7 @@ const vnode = withDirectives(h('div'), [
 ])
 ```
 
-Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function.html#resolvedirective).
+Si la directive est enregistrée par son nom et ne peut être importée directement, elle peut l'être en utilisant l'utilitaire [`resolveDirective`](/api/render-function#resolvedirective).
 
 ## Composants fonctionnels {#functional-components}
 
@@ -674,11 +674,11 @@ function MyComponent(props, context) {
 }
 ```
 
-Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), et [`$slots`](/api/component-instance.html#slots) respectivement.
+Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance#attrs), [`$emit`](/api/component-instance#emit), et [`$slots`](/api/component-instance#slots) respectivement.
 
 </div>
 
-La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state.html#props) et [`emits`](/api/options-state.html#emits) en les ajoutant comme propriétés :
+La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state#props) et [`emits`](/api/options-state#emits) en les ajoutant comme propriétés :
 
 ```js
 MyComponent.props = ['value']
@@ -687,7 +687,7 @@ MyComponent.emits = ['click']
 
 Si l'option `props` n'est pas spécifiée, alors l'objet `props` passé à la fonction contiendra tous les attributs, de la même manière que `attrs`. Les noms de prop ne seront pas formatés en camelCase, sauf si l'option `props` est spécifiée.
 
-Pour les composants fonctionnels avec des `props` explicites, [la traversée des attributs](/guide/components/attrs.html) fonctionne à peu près comme pour les composants normaux. Cependant, pour les composants fonctionnels qui ne spécifient pas explicitement leurs `props`, seuls les écouteurs d'événements `class`, `style`, et `onXxx` seront hérités des `attrs` par défaut. Dans les deux cas, `inheritAttrs` peut être mis à `false` pour désactiver l'héritage des attributs :
+Pour les composants fonctionnels avec des `props` explicites, [la traversée des attributs](/guide/components/attrs) fonctionne à peu près comme pour les composants normaux. Cependant, pour les composants fonctionnels qui ne spécifient pas explicitement leurs `props`, seuls les écouteurs d'événements `class`, `style`, et `onXxx` seront hérités des `attrs` par défaut. Dans les deux cas, `inheritAttrs` peut être mis à `false` pour désactiver l'héritage des attributs :
 
 ```js
 MyComponent.inheritAttrs = false

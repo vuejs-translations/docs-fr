@@ -6,7 +6,7 @@ Les propriétés calculées nous permettent de calculer des valeurs dérivées d
 
 <div class="options-api">
 
-Avec l'Options API, on peut utiliser l'[option `watch`](/api/options-state.html#watch) pour déclencher une fonction chaque fois qu'une propriété réactive change :
+Avec l'Options API, on peut utiliser l'[option `watch`](/api/options-state#watch) pour déclencher une fonction chaque fois qu'une propriété réactive change :
 
 ```js
 export default {
@@ -65,7 +65,7 @@ export default {
 
 <div class="composition-api">
 
-Avec la Composition API, nous pouvons utiliser la [fonction `watch`](/api/reactivity-core.html#watch) pour déclencher une fonction de rappel chaque fois qu'une partie d'un état réactif change :
+Avec la Composition API, nous pouvons utiliser la [fonction `watch`](/api/reactivity-core#watch) pour déclencher une fonction de rappel chaque fois qu'une partie d'un état réactif change :
 
 ```vue
 <script setup>
@@ -280,9 +280,9 @@ watch(todoId, async () => {
 
 En particulier, remarquez comment l'observateur utilise doublement `todoId`, une fois comme source, ensuite à nouveau à l'intérieur de la fonction.
 
-This can be simplified with [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` allows us to track the callback's reactive dependencies automatically. The watcher above can be rewritten as:
+This can be simplified with [`watchEffect()`](/api/reactivity-core#watcheffect). `watchEffect()` allows us to track the callback's reactive dependencies automatically. The watcher above can be rewritten as:
 
-Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` nous permet d'effectuer des effets de bord immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
+Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core#watcheffect). `watchEffect()` nous permet d'effectuer des effets de bord immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
 
 ```js
 watchEffect(async () => {
@@ -365,7 +365,7 @@ watchPostEffect(() => {
 
 ## `this.$watch()` \* {#this-watch}
 
-Il est également possible de créer des observateurs de manière impérative en utilisant [la méthode d'instance `$watch()`](/api/component-instance.html#watch):
+Il est également possible de créer des observateurs de manière impérative en utilisant [la méthode d'instance `$watch()`](/api/component-instance#watch):
 
 ```js
 export default {

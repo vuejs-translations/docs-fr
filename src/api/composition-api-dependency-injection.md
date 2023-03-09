@@ -38,8 +38,8 @@ Fournit une valeur qui peut être injectée par les composants descendants.
   ```
 
 - **Voir aussi **:
-  - [Guide - Provide / Inject](/guide/components/provide-inject.html)
-  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api.html#typing-provide-inject) <sup class="vt-badge ts" />
+  - [Guide - Provide / Inject](/guide/components/provide-inject)
+  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
 ## inject() {#inject}
 
@@ -102,5 +102,5 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   ```
 
 - **Voir aussi **:
-  - [Guide - Provide / Inject](/guide/components/provide-inject.html)
-  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api.html#typing-provide-inject) <sup class="vt-badge ts" />
+  - [Guide - Provide / Inject](/guide/components/provide-inject)
+  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />

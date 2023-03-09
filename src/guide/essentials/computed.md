@@ -97,7 +97,7 @@ Essayez de changer la valeur du tableau `books` dans l'application `data` et vou
 
 Vous pouvez lier des données à des propriétés calculées dans les templates comme pour une propriété normale. Vue sait que `this.publishedBooksMessage` dépend de `this.author.books`, donc il va mettre à jour les liaisons dépendantes de `this.publishedBooksMessage` lorsque `this.author.books` change.
 
-Voir aussi : [Typing Computed Properties](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
+Voir aussi : [Typing Computed Properties](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
 </div>
 
@@ -134,7 +134,7 @@ Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La f
 
 Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendantes de `publishedBooksMessage` lorsque `author.books` change.
 
-Voir aussi : [Typer les propriétés calculées](/guide/typescript/composition-api.html#typing-computed) <sup class="vt-badge ts" />
+Voir aussi : [Typer les propriétés calculées](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
 
 </div>
 

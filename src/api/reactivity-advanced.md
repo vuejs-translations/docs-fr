@@ -2,7 +2,7 @@
 
 ## shallowRef() {#shallowref}
 
-Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
+Version partiellement réactive de [`ref()`](./reactivity-core#ref).
 
 - **Type :**
 
@@ -33,8 +33,8 @@ Version partiellement réactive de [`ref()`](./reactivity-core.html#ref).
   ```
 
 - **Voir aussi :**
-  - [Guide - Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance.html#reduce-reactivity-overhead-for-large-immutable-structures)
-  - [Guide - Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth.html#integration-with-external-state-systems)
+  - [Guide - Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+  - [Guide - Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
 ## triggerRef() {#triggerref}
 
@@ -95,7 +95,7 @@ Crée une ref personnalisée avec un contrôle explicite sur son suivi des dépe
 
   ```js
   import { customRef } from 'vue'
-  
+
   export function useDebouncedRef(value, delay = 200) {
     let timeout
     return customRef((track, trigger) => {
@@ -133,7 +133,7 @@ Crée une ref personnalisée avec un contrôle explicite sur son suivi des dépe
 
 ## shallowReactive() {#shallowreactive}
 
-Version partiellement réactive de [`reactive()`](./reactivity-core.html#reactive).
+Version partiellement réactive de [`reactive()`](./reactivity-core#reactive).
 
 - **Type :**
 
@@ -171,7 +171,7 @@ Version partiellement réactive de [`reactive()`](./reactivity-core.html#reactiv
 
 ## shallowReadonly() {#shallowreadonly}
 
-Version partiellement réactive de [`readonly()`](./reactivity-core.html#readonly).
+Version partiellement réactive de [`readonly()`](./reactivity-core#readonly).
 
 - **Type :**
 
@@ -219,7 +219,7 @@ Renvoie l'objet brut d'origine d'un proxy créé par Vue.
 
 - **Détails :**
 
-  `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
+  `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
 
   Il s'agit d'une solution d'échappement qui peut être utilisée pour lire temporairement sans encourir d'accès au proxy / de surcharge de suivi ou pour écrire sans déclencher de modifications. Il n'est **pas** recommandé de conserver une ref persistante à l'objet d'origine. À utiliser avec précaution.
 

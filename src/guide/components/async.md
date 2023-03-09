@@ -2,7 +2,7 @@
 
 ## Utilisation de base {#basic-usage}
 
-Dans des applications de taille importante, il est parfois judicieux de diviser l'application en plus petits morceaux et ne charger un composant depuis le serveur que lorsque cela est nécessaire. Pour rendre cela possible, Vue a une fonction [`defineAsyncComponent`](/api/general.html#defineasynccomponent) :
+Dans des applications de taille importante, il est parfois judicieux de diviser l'application en plus petits morceaux et ne charger un composant depuis le serveur que lorsque cela est nécessaire. Pour rendre cela possible, Vue a une fonction [`defineAsyncComponent`](/api/general#defineasynccomponent) :
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -30,7 +30,7 @@ const AsyncComp = defineAsyncComponent(() =>
 
 L'`AsyncComp` résultant est un composant wrapper qui n'appelle la fonction de chargement que lorsque le composant est réellement rendu sur la page. De plus, il transmettra tous les props et slots au composant sous-jacent, de sorte que vous pouvez utiliser le wrapper asynchrone pour remplacer de manière transparente le composant d'origine tout en réalisant un lazy loading.
 
-Comme pour les composants normaux, les composants asynchrones peuvent être [enregistrés globalement](/guide/components/registration.html#global-registration) à l'aide de `app.component()` :
+Comme pour les composants normaux, les composants asynchrones peuvent être [enregistrés globalement](/guide/components/registration#global-registration) à l'aide de `app.component()` :
 
 ```js
 app.component(
@@ -41,7 +41,7 @@ app.component(
 
 <div class="options-api">
 
-Vous pouvez également utiliser `defineAsyncComponent` lors de l'[enregistrement local d'un composant](/guide/components/registration.html#local-registration) :
+Vous pouvez également utiliser `defineAsyncComponent` lors de l'[enregistrement local d'un composant](/guide/components/registration#local-registration) :
 
 ```vue
 <script>
@@ -111,4 +111,4 @@ Si un composant d'erreur est fourni, il sera affiché lorsque la promesse renvoy
 
 ## Utilisation avec Suspense {#using-with-suspense}
 
-Les composants asynchrones peuvent être utilisés avec le composant fourni `<Suspense>`. L'interaction entre `<Suspense>` et les composants asynchrones est documentée dans le [chapitre dédié à `<Suspense>`](/guide/built-ins/suspense.html).
+Les composants asynchrones peuvent être utilisés avec le composant fourni `<Suspense>`. L'interaction entre `<Suspense>` et les composants asynchrones est documentée dans le [chapitre dédié à `<Suspense>`](/guide/built-ins/suspense).
