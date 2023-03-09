@@ -515,7 +515,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#counter'
         },
         {
-          text: 'Temperature Converter',
+          text: 'Convertisseur de température',
           link: '/examples/#temperature-converter'
         },
         {
