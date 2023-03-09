@@ -1,4 +1,4 @@
-# Composition API: setup() {#composition-api-setup}
+# Composition API : setup() {#composition-api-setup}
 
 ## Utilisation basique {#basic-usage}
 :::info Note
@@ -7,8 +7,8 @@ Cette page documente l'usage de `setup`. Si vous utilisez la Composition API ave
 
 Dans les cas suivants, le hook `setup()` sert de point d'entrée pour la Composition API dans les composants :
 
-1. Si vous souhaitez utiliser la Composition API sans étape de build;
-2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Option API.
+1. Si vous souhaitez utiliser la Composition API sans outil de build;
+2. Si vous intégrez du code avec la Composition API dans un composant utilisant l'Options API.
 
 On peut déclarer un état réactif en utilisant [l'API de réactivité](./reactivity-core.html) et l'exposer dans le template en retournant l'objet depuis `setup()`. Les propriétés retournées par l'objet seront aussi disponibles dans l'instance du composant (si aucune autre option n'est utilisée) :
 
@@ -21,7 +21,7 @@ export default {
     const count = ref(0)
 
     // expose la variable count dans le template
-    // et dans tous les autres hooks de l'Option API
+    // et dans tous les autres hooks de l'Options API
     return {
       count
     }
@@ -40,7 +40,7 @@ export default {
 
 Les [refs](/api/reactivity-core.html#ref) renvoyées par `setup` sont [automatiquement distribuées](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) lorsqu'elles sont invoquées dans le template, vous n'avez donc pas besoin d'utiliser `.value` lorsque vous souhaitez y accéder. Elles sont également déballées de la même façon lorsqu'elles sont invoquées sur `this`.
 
-`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Option API, mais pas l'inverse.
+`setup()` n'a pas accès à l'instance du composant - `this` aura une valeur `undefined` à l'intérieur de `setup()`. Vous pouvez accéder aux valeurs exposées par la Composition API depuis l'Options, mais pas l'inverse.
 
 `setup()` doit renvoyer un objet _synchrone_. Le seul cas où `async setup()` peut être utilisé est lorsque le composant est un descendant d'un composant [Suspense](../guide/built-ins/suspense.html).
 
@@ -79,7 +79,7 @@ export default {
 }
 ```
 
-## Contexte de la fonction Setup {#setup-context}
+## Contexte de la fonction setup {#setup-context}
 
 Le deuxième argument passé à la fonction `setup` est un objet **Setup Context**. Cet objet expose d'autres valeurs qui peuvent être utiles à l'intérieur de `setup` :
 
