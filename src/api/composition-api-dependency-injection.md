@@ -37,7 +37,7 @@ Fournit une valeur qui peut être injectée par les composants descendants.
   </script>
   ```
 
-- **Voir aussi **:
+- **Voir aussi :**
   - [Guide - Provide / Inject](/guide/components/provide-inject)
   - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
@@ -101,6 +101,6 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   </script>
   ```
 
-- **Voir aussi **:
+- **Voir aussi :**
   - [Guide - Provide / Inject](/guide/components/provide-inject)
   - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />

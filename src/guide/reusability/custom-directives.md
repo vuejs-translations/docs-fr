@@ -84,16 +84,16 @@ export default {
 
 <div class="options-api">
 
-Similar to components, custom directives must be registered so that they can be used in templates. In the example above, we are using local registration via the `directives` option.
+Comme pour les composants, les directives personnalisées doivent être enregistrées afin de pouvoir être utilisées dans les modèles. Dans l'exemple ci-dessus, nous utilisons l'enregistrement local via l'option `directives`.
 
 </div>
 
-It is also common to globally register custom directives at the app level:
+Il est également courant d'enregistrer globalement des directives personnalisées au niveau de l'application :
 
 ```js
 const app = createApp({})
 
-// make v-focus usable in all components
+// rendre v-focus utilisable dans tous les composants
 app.directive('focus', {
   /* ... */
 })

@@ -412,7 +412,7 @@ Passer des props à un slot nommé :
 
 Notez que l'attribut `name` d'un slot ne sera pas inclus dans les props car il est réservé - donc le `headerProps` résultant serait `{ message: 'hello' }`.
 
-Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous devez utiliser une balise `<template>` explicite pour le slot par défaut. Tenter de placer la directive `v-slot` directement sur le composant entraînera une erreur de compilation. Ceci afin d'éviter toute ambiguïté sur la portée des props du slot par défaut. Par exemple:
+Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous devez utiliser une balise `<template>` explicite pour le slot par défaut. Tenter de placer la directive `v-slot` directement sur le composant entraînera une erreur de compilation. Ceci afin d'éviter toute ambiguïté sur la portée des props du slot par défaut. Par exemple :
 
 ```vue-html
 <!-- Ce template ne compilera pas -->

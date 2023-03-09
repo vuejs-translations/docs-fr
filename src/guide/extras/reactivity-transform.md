@@ -190,7 +190,7 @@ let count = $ref(0)
 + trackChange($$(count))
 ```
 
-Ce qui précède se compile comme suit :
+Se compile comme suit :
 
 ```js
 import { ref } from 'vue'
@@ -220,7 +220,7 @@ function useMouse() {
 }
 ```
 
-L'instruction de retour ci-dessus se compile en :
+L'instruction de retour ci-dessus se compile comme suit :
 
 ```ts
 return {
@@ -258,7 +258,7 @@ const { count } = defineProps<{ count: number }>()
 passAsRef($$(count))
 ```
 
-compiles to:
+Se compile comme suit :
 
 ```js
 setup(props) {

@@ -24,7 +24,7 @@ Consultez le [guide des fichiers dist](https://github.com/vuejs/core/tree/main/p
 
 Les projets crées par `create-vue` (basé sur Vite) ou Vue CLI (basé sur webpack) sont préconfigurés pour les builds de production.
 
-Si vous utilisez une configuration personnalisée, assurez-vous que:
+Si vous utilisez une configuration personnalisée, assurez-vous que :
 
 1. `vue` soit résolu par `vue.runtime.esm-bundler.js`.
 2. Les [flags de temps de compilation](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) sont configurés correctement.

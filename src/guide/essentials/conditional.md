@@ -53,7 +53,7 @@ Un élément `v-else` doit immédiatement suivre un élément `v-if` ou un élé
 
 ## `v-else-if` {#v-else-if}
 
-Le `v-else-if`, comme son nom l'indique, sert de bloc "else if" lié à un `v-if`. Il peut également être enchaîné plusieurs fois:
+Le `v-else-if`, comme son nom l'indique, sert de bloc "else if" lié à un `v-if`. Il peut également être enchaîné plusieurs fois :
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -88,7 +88,7 @@ Puisque `v-if` est une directive, elle doit être attachée à un seul élément
 
 ## `v-show` {#v-show}
 
-Une autre option pour afficher conditionnellement un élément est la directive `v-show`. L'utilisation est sensiblement la même:
+Une autre option pour afficher conditionnellement un élément est la directive `v-show`. L'utilisation est sensiblement la même :
 
 ```vue-html
 <h1 v-show="ok">Bonjour!</h1>

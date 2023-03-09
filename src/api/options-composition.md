@@ -215,7 +215,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
 
 Un composant de la "classe de base" à partir duquel on peut étendre un composant.
 
-- **Type:**
+- **Type :**
 
   ```ts
   interface ComponentOptions {

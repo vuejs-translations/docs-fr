@@ -92,7 +92,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   - `@leave-cancelled` (`v-show` only)
   - `@appear-cancelled`
 
-- **Example**
+- **Exemple**
 
   Élément simple :
 

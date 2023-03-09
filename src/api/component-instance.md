@@ -137,7 +137,7 @@ An object representing the [slots](/guide/components/slots) passed by the parent
 
   If a slot is a [scoped slot](/guide/components/slots#scoped-slots), arguments passed to the slot functions are available to the slot as its slot props.
 
-- **See also:** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
+- **Voir aussi :** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
@@ -151,7 +151,7 @@ An object of DOM elements and component instances, registered via [template refs
   }
   ```
 
-- **See also:**
+- **Voir aussi :**
 
   - [Les refs du template](/guide/essentials/template-refs)
   - [Attributs spéciaux - ref](./built-in-special-attributes.md#ref)
@@ -174,7 +174,7 @@ An object that contains the component's fallthrough attributes.
 
   By default, everything in `$attrs` will be automatically inherited on the component's root element if there is only a single root element. This behavior is disabled if the component has multiple root nodes, and can be explicitly disabled with the [`inheritAttrs`](./options-misc#inheritattrs) option.
 
-- **See also:**
+- **Voir aussi :**
 
   - [Attributs implicitement déclarés](/guide/components/attrs)
 
@@ -257,7 +257,7 @@ Imperative API for creating watchers.
   unwatch()
   ```
 
-- **See also:**
+- **Voir aussi :**
   - [Options - `watch`](/api/options-state#watch)
   - [Guide - Observateurs](/guide/essentials/watchers)
 
@@ -286,7 +286,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
   }
   ```
 
-- **See also:**
+- **Voir aussi :**
 
   - [Composant - Gestion des évènements](/guide/components/events)
   - [L'option `emits`](./options-state#emits)
@@ -323,4 +323,4 @@ Instance-bound version of the global [`nextTick()`](./general#nexttick).
 
   The only difference from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
 
-- **See also:** [`nextTick()`](./general#nexttick)
+- **Voir aussi :** [`nextTick()`](./general#nexttick)

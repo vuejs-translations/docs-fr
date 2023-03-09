@@ -527,7 +527,7 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
 
 L'Organisation Mondiale de la Santé estime que 15% de la population mondiale est atteinte d'une forme de handicap, 2-4% d'entre elle de handicaps sévères. Ceci est estimé à 1 milliard de personnes dans le monde ; faisant des personnes avec un handicap la plus grande minorité au monde.
 
-Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quatre catégories:
+Il y a un large spectre de handicaps, qui peut être divisé grosso-modo en quatre catégories :
 
 - _[Visuel](https://webaim.org/articles/visual/)_ - Ces utilisateurs peuvent bénéficier de l'utilisation de liseurs d'écran, d'outils d'agrandissement, du contrôle du contraste ou de plage braille.
 - _[Auditif](https://webaim.org/articles/auditory/)_ - Ces utilisateurs peuvent bénéficier de sous-titres, de transcriptions ou de vidéos en langages des signes.

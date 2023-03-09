@@ -130,7 +130,7 @@ Notez que **les composants enregistrés localement _ne_ sont _pas_ également di
 
 ## Casse des noms des composants {#component-name-casing}
 
-Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) lors de l'enregistrement des composants. Ceci est dû au fait:
+Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) lors de l'enregistrement des composants. Ceci est dû au fait :
 
 1. Les noms en casse Pascal sont des identifiants JavaScript valides. Cela facilite l'import et l'enregistrement des composants en JavaScript. Il aide également les IDE avec l'auto-complétion.
 

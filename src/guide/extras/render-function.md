@@ -245,7 +245,7 @@ Nous vous proposons ci-dessous quelques exemples courants pour mettre en œuvre 
 
 ### `v-if` {#v-if}
 
-Template:
+Template :
 
 ```vue-html
 <div>
@@ -281,7 +281,7 @@ h('div', [this.ok ? h('div', 'yes') : h('span', 'no')])
 
 ### `v-for` {#v-for}
 
-Template:
+Template :
 
 ```vue-html
 <ul>
@@ -476,7 +476,7 @@ export default {
 }
 ```
 
-Équivalent en JSX:
+Équivalent en JSX :
 
 ```jsx
 // par défaut

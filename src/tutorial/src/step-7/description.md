@@ -16,7 +16,7 @@ Remarquez comment nous fournissons à chaque objet todo un unique `id`, et le li
 
 Il y a deux façons de mettre à jour la liste :
 
-1. Appeler des [méthodes de mutation](https://stackoverflow.com/questions/9009879/which-javascript-array-functions-are-mutating) sur le tableau source:
+1. Appeler des [méthodes de mutation](https://stackoverflow.com/questions/9009879/which-javascript-array-functions-are-mutating) sur le tableau source :
 
    <div class="composition-api">
 
@@ -33,7 +33,7 @@ Il y a deux façons de mettre à jour la liste :
 
    </div>
 
-2. Remplacer le tableau par un nouveau:
+2. Remplacer le tableau par un nouveau :
 
    <div class="composition-api">
 

@@ -308,7 +308,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   })
   ```
 
-- **Voir aussi **:
+- **Voir aussi :**
   - [Guide - Observateurs](/guide/essentials/watchers#watcheffect)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)
 
@@ -481,7 +481,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   })
   ```
 
-- **Voir aussi **:
+- **Voir aussi :**
 
   - [Guide - Observateurs](/guide/essentials/watchers)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)

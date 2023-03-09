@@ -14,9 +14,9 @@ Nous pouvons utiliser la directive `v-on`, que nous raccourcissons généralemen
 
 La valeur du gestionnaire peut alors prendre l'une des formes suivantes :
 
-1. **Gestionnaires en ligne:** Du JavaScript inline qui sera exécuté lorsque l'événement sera déclenché (similaire à l'attribut natif `onclick`).
+1. **Gestionnaires en ligne :** Du JavaScript inline qui sera exécuté lorsque l'événement sera déclenché (similaire à l'attribut natif `onclick`).
 
-2. **Méthodes gestionnaires:** Un nom ou un chemin de propriété qui pointe vers une méthode définie sur le composant.
+2. **Méthodes gestionnaires :** Un nom ou un chemin de propriété qui pointe vers une méthode définie sur le composant.
 
 ## Gestionnaires en ligne {#inline-handlers}
 

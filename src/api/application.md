@@ -574,4 +574,4 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
  // logue 'Hello Vue'
   ```
 
-- **See also:** [Component Instance - `$options`](/api/component-instance#options)
+- **Voir aussi :** [Component Instance - `$options`](/api/component-instance#options)

@@ -352,7 +352,7 @@ On pourrait penser que cela va pousser Vue à se débarrasser du DOM actuel et �
 
 Il arrive parfois que nous voulions afficher une version filtrée ou triée d'un tableau sans muter ou remettre à zéro les données originales. Dans ce cas, on peut créer une propriété calculée qui retourne le tableau filtré ou trié.
 
-Par exemple:
+Par exemple :
 
 <div class="composition-api">
 

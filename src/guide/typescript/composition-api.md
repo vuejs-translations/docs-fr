@@ -54,13 +54,13 @@ const props = defineProps<Props>()
 
 Afin de générer le code exécuté correct, l'argument générique pour `defineProps()` doit être l'un des suivants :
 
-- Un type d'objet littéral:
+- Un type d'objet littéral :
 
   ```ts
   defineProps<{ /*... */ }>()
   ```
 
-- Une référence à une interface ou type d'objet littéral **dans le même fichier**:
+- Une référence à une interface ou type d'objet littéral **dans le même fichier** :
 
   ```ts
   interface Props {/* ... */}

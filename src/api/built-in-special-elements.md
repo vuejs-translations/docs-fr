@@ -144,7 +144,7 @@ Indique l'emplacement du contenu d'un slot dans les templates.
 
 La balise `<template>` est utilisée comme placeholder lorsque nous voulons utiliser une directive native sans rendre un élément dans le DOM.
 
-- **Détails:**
+- **Détails :**
 
   Le traitement spécial de `<template>` n'est déclenché que s'il est utilisé avec l'une de ces directives :
 

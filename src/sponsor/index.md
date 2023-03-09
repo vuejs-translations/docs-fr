@@ -36,24 +36,24 @@ Vous pouvez également essayer de convaincre votre employeur de sponsoriser Vue 
 
 ## Avantages par niveau {#tier-benefits}
 
-- **Spécial Mondial**:
+- **Spécial Mondial** :
   - Limité à un sponsor mondial (actuellement pourvu).
   - Emplacement exclusif du logo sur la première page de [vuejs.org](/).
   - Emplacement du logo le plus visible parmi tous les emplacements des sponsors.
-- **Platine (USD$2,000/mois)**:
+- **Platine (USD$2,000/mois)** :
   - Emplacement imposant pour votre logo sur la première page de [vuejs.org](/).
   - Emplacement imposant pour votre logo dans la barre latérale de chacunes des pages.
   - Emplacement imposant pour votre logo dans le fichier README de [`vuejs/core`](https://github.com/vuejs/core) et [`vuejs/vue`](https://github.com/vuejs/core).
-- **Or (USD$500/mois)**:
+- **Or (USD$500/mois)** :
   - Grand emplacement pour votre logo sur la première page de [vuejs.org](/).
   - Grand emplacement pour votre logo dans le fichier README de `vuejs/core` et `vuejs/vue`.
-- **Argent (USD$250/mois)**:
+- **Argent (USD$250/mois)** :
   - Emplacement moyen pour votre logo dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`.
-- **Bronze (USD$100/mois)**:
+- **Bronze (USD$100/mois)** :
   - Petit emplacement pour votre logo dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`.
-- **Soutien généreux (USD$50/mois)**:
+- **Soutien généreux (USD$50/mois)** :
   - Votre nom listé dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`, au-dessus des autres soutiens de particuliers.
-- **Soutien en tant que particulier (USD$5/mois)**:
+- **Soutien en tant que particulier (USD$5/mois)** :
   - Votre nom listé dans le fichier `BACKERS.md` de `vuejs/core` et `vuejs/vue`.
 
 ## Sponsors actuels {#current-sponsors}

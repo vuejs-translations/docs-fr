@@ -236,7 +236,7 @@ Les arguments dynamiques sont prévus pour être évalués en une chaîne de car
 
 #### Contraintes de syntaxe des arguments dynamiques {#dynamic-argument-syntax-constraints}
 
-Les expressions d'argument dynamique ont quelques contraintes syntaxique à cause de certains caractères, comme les espaces et les guillemets, qui sont invalides pour des noms d'attributs HTML:
+Les expressions d'argument dynamique ont quelques contraintes syntaxique à cause de certains caractères, comme les espaces et les guillemets, qui sont invalides pour des noms d'attributs HTML :
 
 ```vue-html
 <!-- Ceci va déclencher un warning du compilateur. -->
