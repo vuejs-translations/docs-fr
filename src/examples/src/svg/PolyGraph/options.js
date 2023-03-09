@@ -9,7 +9,7 @@ export default {
     stats: Array
   },
   computed: {
-    // a computed property for the polygon's points
+    // une propriété calculée pour les points du polygone
     points() {
       const total = this.stats.length
       return this.stats

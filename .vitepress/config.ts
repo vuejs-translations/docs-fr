@@ -489,7 +489,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#tree'
         },
         {
-          text: 'SVG Graph',
+          text: 'Graphique SVG',
           link: '/examples/#svg'
         },
         {
