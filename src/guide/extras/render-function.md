@@ -674,11 +674,11 @@ function MyComponent(props, context) {
 }
 ```
 
-Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), et [`$slots`](/api/component-instance#slots) respectivement.
+Le deuxième argument, `context`, contient trois propriétés : `attrs`, `emit`, et `slots`. Elles sont équivalentes aux propriétés d'instance [`$attrs`](/api/component-instance#attrs), [`$emit`](/api/component-instance#emit), et [`$slots`](/api/component-instance#slots) respectivement.
 
 </div>
 
-La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state.html#props) et [`emits`](/api/options-state#emits) en les ajoutant comme propriétés :
+La plupart des options de configuration habituelles des composants ne sont pas disponibles pour les composants fonctionnels. Cependant, il est possible de définir [`props`](/api/options-state#props) et [`emits`](/api/options-state#emits) en les ajoutant comme propriétés :
 
 ```js
 MyComponent.props = ['value']

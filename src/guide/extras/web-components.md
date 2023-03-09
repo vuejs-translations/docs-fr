@@ -81,7 +81,7 @@ Le principal avantage des éléments personnalisés est qu'ils peuvent être uti
 
 ### defineCustomElement {#definecustomelement}
 
-Vue prend en charge la création d'éléments personnalisés en utilisant exactement les mêmes API de composants Vue via la méthode [`defineCustomElement`](/api/general.html#definecustomelement). La méthode accepte le même argument que [`defineComponent`](/api/general#definecomponent), mais renvoie à la place un constructeur d'élément personnalisé qui étend `HTMLElement` :
+Vue prend en charge la création d'éléments personnalisés en utilisant exactement les mêmes API de composants Vue via la méthode [`defineCustomElement`](/api/general#definecustomelement). La méthode accepte le même argument que [`defineComponent`](/api/general#definecomponent), mais renvoie à la place un constructeur d'élément personnalisé qui étend `HTMLElement` :
 
 ```vue-html
 <my-vue-element></my-vue-element>
@@ -169,7 +169,7 @@ Les événements émis via `this.$emit` ou la configuration `emit` sont distribu
 
 #### Provide / Inject {#provide-inject}
 
-L'[API Provide /Inject](/guide/components/provide-inject.html#provide-inject) et son [équivalent pour la Composition API](/api/composition-api-dependency-injection#provide) fonctionnent également entre les éléments personnalisés définis par Vue. Cependant, notez que cela fonctionne **uniquement entre les éléments personnalisés**. C'est-à-dire qu'un élément personnalisé défini par Vue ne pourra pas injecter les propriétés fournies par un composant Vue non personnalisé.
+L'[API Provide /Inject](/guide/components/provide-inject#provide-inject) et son [équivalent pour la Composition API](/api/composition-api-dependency-injection#provide) fonctionnent également entre les éléments personnalisés définis par Vue. Cependant, notez que cela fonctionne **uniquement entre les éléments personnalisés**. C'est-à-dire qu'un élément personnalisé défini par Vue ne pourra pas injecter les propriétés fournies par un composant Vue non personnalisé.
 
 ### SFC comme élément personnalisé {#sfc-as-custom-element}
 

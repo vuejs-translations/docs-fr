@@ -93,7 +93,7 @@ Lorsqu'une instance de composant est supprimée du DOM mais fait partie d'un arb
 
 <div class="composition-api">
 
-Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant [`onActivated()`](/api/composition-api-lifecycle.html#onactivated) et [`onDeactivated()`](/api/composition-api-lifecycle#ondeactivated) :
+Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant [`onActivated()`](/api/composition-api-lifecycle#onactivated) et [`onDeactivated()`](/api/composition-api-lifecycle#ondeactivated) :
 
 ```vue
 <script setup>
@@ -114,7 +114,7 @@ onDeactivated(() => {
 </div>
 <div class="options-api">
 
-Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant les hooks [`activated`](/api/options-lifecycle.html#activated) et [`deactivated`](/api/options-lifecycle#deactivated) :
+Un composant maintenu en vie peut enregistrer des hooks de cycle de vie pour ces deux états en utilisant les hooks [`activated`](/api/options-lifecycle#activated) et [`deactivated`](/api/options-lifecycle#deactivated) :
 
 ```js
 export default {

@@ -53,7 +53,7 @@ import { capitalize } from './helpers'
 
 ## Réactivité {#reactivity}
 
-L'état réactif doit être créé explicitement à l'aide des [API de réactivité](./reactivity-core.html). Comme les valeurs retournées par une fonction `setup()`, les refs sont automatiquement déballées lorsqu'elles sont référencées dans les templates :
+L'état réactif doit être créé explicitement à l'aide des [API de réactivité](./reactivity-core). Comme les valeurs retournées par une fonction `setup()`, les refs sont automatiquement déballées lorsqu'elles sont référencées dans les templates :
 
 ```vue
 <script setup>

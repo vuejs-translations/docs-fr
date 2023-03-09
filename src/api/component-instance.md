@@ -218,7 +218,7 @@ Imperative API for creating watchers.
 
   - **`immediate`**: trigger the callback immediately on watcher creation. Old value will be `undefined` on the first call.
   - **`deep`**: force deep traversal of the source if it is an object, so that the callback fires on deep mutations. See [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
-  - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers.html#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`flush`**: adjust the callback's flush timing. See [Callback Flush Timing](/guide/essentials/watchers#callback-flush-timing) and [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`**: debug the watcher's dependencies. See [Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Example**
@@ -289,7 +289,7 @@ Trigger a custom event on the current instance. Any additional arguments will be
 - **See also:**
 
   - [Composant - Gestion des évènements](/guide/components/events)
-  - [L'option `emits`](./options-state.html#emits)
+  - [L'option `emits`](./options-state#emits)
 
 ## $forceUpdate() {#forceupdate}
 

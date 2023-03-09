@@ -27,7 +27,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
 
   Si un objet est assigné comme valeur d'une ref, l'objet est rendu profondément réactif via [reactive()](#reactive). Cela signifie également que si l'objet contient des refs imbriquées, elles seront déballées en profondeur.
 
-  Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced.html#shallowref).
+  Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced#shallowref).
 
 - **Exemple :**
 
@@ -129,7 +129,7 @@ Retourne un proxy réactif de l'objet.
 
   Il faut également noter qu'il n'y a pas de déballage de refs lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map`.
 
-  Pour éviter la conversion profonde et ne conserver la réactivité qu'au niveau de la racine, utilisez plutôt [shallowReactive()](./reactivity-advanced.html#shallowreactive).
+  Pour éviter la conversion profonde et ne conserver la réactivité qu'au niveau de la racine, utilisez plutôt [shallowReactive()](./reactivity-advanced#shallowreactive).
 
   L'objet retourné et ses objets imbriqués sont enveloppés par un [proxy ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et **non** égaux aux objets originaux. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de se fier à l'objet original.
 
@@ -206,7 +206,7 @@ Prend un objet (réactif ou simple) ou une [ref](#ref) et renvoie un proxy en le
 
   Un proxy en lecture seule est profond : toute propriété imbriquée à laquelle on accède sera également en lecture seule. Il a également le même comportement en termes de déballage que `reactive()`, sauf que les valeurs déballées seront aussi en lecture seule.
 
-  Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced.html#shallowreadonly).
+  Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced#shallowreadonly).
 
 - **Exemple :**
 
@@ -384,7 +384,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
   - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
-  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
   Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :

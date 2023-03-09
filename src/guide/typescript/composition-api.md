@@ -416,4 +416,4 @@ const openModal = () => {
 </script>
 ```
 
-Notez que si vous souhaitez utiliser cette technique dans des fichiers TypeScript au lieu des composants monofichiers de Vue, vous devez activer le [mode prise de contrôle](./overview.html#volar-takeover-mode) de Volar.
+Notez que si vous souhaitez utiliser cette technique dans des fichiers TypeScript au lieu des composants monofichiers de Vue, vous devez activer le [mode prise de contrôle](./overview#volar-takeover-mode) de Volar.

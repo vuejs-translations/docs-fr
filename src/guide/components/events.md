@@ -119,7 +119,7 @@ Tous les arguments supplémentaires passés à `$emit()` après le nom de l'év�
 
 ## Déclaration des évènements émis {#declaring-emitted-events}
 
-Les évènements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state#emits)</span> :
+Les évènements émis peuvent être explicitement déclarés sur le composant via <span class="composition-api">la macro [`defineEmits()`](/api/sfc-script-setup#defineprops-defineemits)</span><span class="options-api">l'option [`emits`](/api/options-state#emits)</span> :
 
 <div class="composition-api">
 

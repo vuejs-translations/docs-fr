@@ -26,7 +26,7 @@ const myPlugin = {
 
 Il n'y a pas de champ d'application strictement défini pour un plugin, mais les scénarios courants où les plugins sont utiles incluent :
 
-1. Enregistrer un ou plusieurs composants globaux ou directives personnalisées avec [`app.component()`](/api/application.html#app-component) et [`app.directive()`](/api/application#app-directive).
+1. Enregistrer un ou plusieurs composants globaux ou directives personnalisées avec [`app.component()`](/api/application#app-component) et [`app.directive()`](/api/application#app-directive).
 
 2. Rendre une ressource [injectable](/guide/components/provide-inject) dans toute l'application en appelant [`app.provide()`](/api/application#app-provide).
 

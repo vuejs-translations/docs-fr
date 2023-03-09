@@ -243,7 +243,7 @@ Les expressions d'argument dynamique ont quelques contraintes syntaxique à caus
 <a :['foo' + bar]="value"> ... </a>
 ```
 
-Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [propriété calculée](./computed.html), que nous aborderons sous peu.
+Si vous devez passer un argument dynamique complexe, il est probablement préférable d'utiliser une [propriété calculée](./computed), que nous aborderons sous peu.
 
 Lorsque vous utilisez des templates dans le DOM (templates directement écrits dans un fichier HTML), vous devez également éviter de nommer les clés avec des caractères majuscules, car les navigateurs contraindront les noms d'attributs en minuscules :
 
@@ -261,7 +261,7 @@ Les modificateurs sont des suffixes spéciaux désignés par un point, qui indiq
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-handling.html#event-modifiers) et [pour `v-model`](./forms.html#modifiers), lorsque nous explorons ces fonctionnalités.
+Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-handling#event-modifiers) et [pour `v-model`](./forms#modifiers), lorsque nous explorons ces fonctionnalités.
 
 Et enfin, voici la syntaxe complète de la directive visualisée :
 

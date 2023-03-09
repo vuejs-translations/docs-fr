@@ -14,7 +14,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 - Par défaut, il ne rend pas d'élément en contenant d'autres. Mais vous pouvez spécifier un élément à rendre avec la prop `tag`.
 
-- [Les modes de transition](./transition.html#transition-modes) ne sont pas disponibles, car nous n'alternons plus entre des éléments qui s'excluent mutuellement.
+- [Les modes de transition](./transition#transition-modes) ne sont pas disponibles, car nous n'alternons plus entre des éléments qui s'excluent mutuellement.
 
 - Les éléments à l'intérieur sont **contraints de toujours** avoir un attribut unique `key`.
 

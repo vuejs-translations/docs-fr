@@ -67,7 +67,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
   <component :is="href ? 'a' : 'span'"></component>
   ```
 
-  Les [composants natifs](./built-in-components.html) peuvent tous être passés à `is`, mais vous devez les enregistrer si vous voulez les passer par leur nom. Par exemple :
+  Les [composants natifs](./built-in-components) peuvent tous être passés à `is`, mais vous devez les enregistrer si vous voulez les passer par leur nom. Par exemple :
 
   ```vue
   <script>
