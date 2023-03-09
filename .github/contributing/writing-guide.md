@@ -87,7 +87,7 @@ La Rédaction d'une documentation est un exercice d'empathie. Nous ne décrivons
 
 ### Conseils, Légendes, Alertes et Mises en Surbrillance des lignes
 
-Nous avons des styles dédiés pour désigner quelque chose qui mérite d'être souligné d'une manière particulière. Celles-ci sont enregistrées [sur cette page](https://vuejs.org/guide/doc-style-guide.html#alerts). **Ils sont à utiliser avec parcimonie.**
+Nous avons des styles dédiés pour désigner quelque chose qui mérite d'être souligné d'une manière particulière. Celles-ci sont enregistrées [sur cette page](https://vitepress.vuejs.org/guide/markdown.html#custom-containers). **Ils sont à utiliser avec parcimonie.**
 
 Il y a une certaine tentation d'abuser de ces styles, car on peut simplement ajouter un changement à l'intérieur d'une légende. Cependant, cela interrompt le flux de lecture pour l'utilisateur et ne doit donc être utilisé que dans des circonstances particulières. Dans la mesure du possible, nous devrions essayer de créer un récit et un flux dans la page pour respecter la charge cognitive des lecteurs.
 
