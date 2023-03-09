@@ -10,7 +10,7 @@ All properties listed on this page are readonly (except nested properties in `$d
 
 The object returned from the [`data`](./options-state#data) option, made reactive by the component. The component instance proxies access to the properties on its data object.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -22,7 +22,7 @@ The object returned from the [`data`](./options-state#data) option, made reactiv
 
 An object representing the component's current, resolved props.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -38,7 +38,7 @@ An object representing the component's current, resolved props.
 
 The root DOM node that the component instance is managing.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -62,7 +62,7 @@ The root DOM node that the component instance is managing.
 
 The resolved component options used for instantiating the current component instance.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -95,7 +95,7 @@ The resolved component options used for instantiating the current component inst
 
 The parent instance, if the current instance has one. It will be `null` for the root instance itself.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -107,7 +107,7 @@ The parent instance, if the current instance has one. It will be `null` for the 
 
 The root component instance of the current component tree. If the current instance has no parents this value will be itself.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -119,7 +119,7 @@ The root component instance of the current component tree. If the current instan
 
 An object representing the [slots](/guide/components/slots) passed by the parent component.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -143,7 +143,7 @@ An object representing the [slots](/guide/components/slots) passed by the parent
 
 An object of DOM elements and component instances, registered via [template refs](/guide/essentials/template-refs).
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -160,7 +160,7 @@ An object of DOM elements and component instances, registered via [template refs
 
 An object that contains the component's fallthrough attributes.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -182,7 +182,7 @@ An object that contains the component's fallthrough attributes.
 
 Imperative API for creating watchers.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -265,7 +265,7 @@ Imperative API for creating watchers.
 
 Trigger a custom event on the current instance. Any additional arguments will be passed into the listener's callback function.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -286,16 +286,16 @@ Trigger a custom event on the current instance. Any additional arguments will be
   }
   ```
 
-- **Voir aussi :**
+- **See also:**
 
-  - [Composant - Gestion des évènements](/guide/components/events)
+  - [Composant - Gestion des événements](/guide/components/events)
   - [L'option `emits`](./options-state#emits)
 
 ## $forceUpdate() {#forceupdate}
 
 Force the component instance to re-render.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -311,7 +311,7 @@ Force the component instance to re-render.
 
 Instance-bound version of the global [`nextTick()`](./general#nexttick).
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -323,4 +323,4 @@ Instance-bound version of the global [`nextTick()`](./general#nexttick).
 
   The only difference from the global version of `nextTick()` is that the callback passed to `this.$nextTick()` will have its `this` context bound to the current component instance.
 
-- **Voir aussi :** [`nextTick()`](./general#nexttick)
+- **See also:** [`nextTick()`](./general#nexttick)

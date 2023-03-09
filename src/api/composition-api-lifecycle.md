@@ -28,7 +28,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 
 - **Exemple :**
 
-  Accès à un élément via une ref de template:
+  Accès à un élément via une ref de template :
 
   ```vue
   <script setup>

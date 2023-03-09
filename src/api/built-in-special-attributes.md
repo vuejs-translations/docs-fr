@@ -6,7 +6,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
 
 - **Attendu :** `number | string | symbol`
 
-- **Détails**
+- **Détails :**
 
   Sans clés, Vue utilise un algorithme qui minimise le mouvement des éléments et essaie de remplacer/réutiliser les éléments du même type déjà en place autant que possible. Avec des clés, il réorganisera les éléments en fonction du changement d'ordre des clés, et les éléments dont les clés ne sont plus présentes seront toujours supprimés / détruits.
 
@@ -43,7 +43,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Attendu :** `string | Function`
 
-- **Détails**
+- **Détails :**
 
   `ref` est utilisée pour enregistrer une référence à un élément ou à un composant enfant.
 

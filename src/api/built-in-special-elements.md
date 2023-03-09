@@ -8,7 +8,7 @@
 
 Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface DynamicComponentProps {
@@ -16,7 +16,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
   }
   ```
 
-- **Détails**
+- **Détails :**
 
   Le composant à rendre est déterminé par la propriété "is".
 
@@ -24,7 +24,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
   - De manière alternative, `is` peut également être directement lié à la définition d'un composant.
 
-- **Exemple**
+- **Exemple :**
 
   Rendu des composants par nom d'enregistrement (Options API) :
 
@@ -114,7 +114,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
 Indique l'emplacement du contenu d'un slot dans les templates.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface SlotProps {
@@ -130,7 +130,7 @@ Indique l'emplacement du contenu d'un slot dans les templates.
   }
   ```
 
-- **Détails**
+- **Détails :**
 
   L'élément `<slot>` peut utiliser l'attribut `name` pour spécifier un nom de slot. Si aucun `name` n'est spécifié, l'élément rendra le slot par défaut. Les attributs supplémentaires passés à l'élément slot seront passés comme des props de slot au slot scopé défini dans le parent.
 
