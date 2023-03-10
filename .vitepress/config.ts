@@ -493,7 +493,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#svg'
         },
         {
-          text: 'Modal with Transitions',
+          text: 'Modale avec transitions',
           link: '/examples/#modal'
         },
         {
