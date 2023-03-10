@@ -464,7 +464,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#form-bindings'
         },
         {
-          text: 'Simple Component',
+          text: 'Composant basique',
           link: '/examples/#simple-component'
         }
       ]
