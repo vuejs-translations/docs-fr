@@ -2,7 +2,7 @@
   <PolyGraph :stats="stats"></PolyGraph>
 </svg>
 
-<!-- controls -->
+<!-- contrôles -->
 <div v-for="stat in stats">
   <label>{{stat.label}}</label>
   <input type="range" v-model="stat.value" min="0" max="100">
