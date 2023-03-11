@@ -473,7 +473,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Practical',
       items: [
         {
-          text: 'Markdown Editor',
+          text: 'Éditeur markdown',
           link: '/examples/#markdown'
         },
         {
