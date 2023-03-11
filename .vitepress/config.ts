@@ -497,7 +497,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#modal'
         },
         {
-          text: 'List with Transitions',
+          text: 'Liste avec des transitions',
           link: '/examples/#list-transition'
         },
         {
