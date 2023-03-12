@@ -477,7 +477,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#markdown'
         },
         {
-          text: 'Fetching Data',
+          text: 'Récupération de données',
           link: '/examples/#fetching-data'
         },
         {
