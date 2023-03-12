@@ -11,7 +11,7 @@ export default {
     }
 
     function notify() {
-      alert('navigation was prevented.')
+      alert('la navigation a été empêchée.')
     }
 
     return {
