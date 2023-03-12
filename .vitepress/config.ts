@@ -481,7 +481,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#fetching-data'
         },
         {
-          text: 'Grid with Sort and Filter',
+          text: 'Grille avec tri et filtres',
           link: '/examples/#grid'
         },
         {
