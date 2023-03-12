@@ -519,7 +519,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#temperature-converter'
         },
         {
-          text: 'Flight Booker',
+          text: 'Réservation de vols',
           link: '/examples/#flight-booker'
         },
         {
