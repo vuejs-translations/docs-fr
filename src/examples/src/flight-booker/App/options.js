@@ -1,15 +1,15 @@
 function stringToDate(str) {
   const [y, m, d] = str.split('-')
-  return new Date(+y, m - 1, +d)
+  return new Date(+d, m - 1, +y)
 }
 
 function dateToString(date) {
   return (
-    date.getFullYear() +
+    pad(date.getDate()) +
     '-' +
     pad(date.getMonth() + 1) +
     '-' +
-    pad(date.getDate())
+    date.getFullYear()
   )
 }
 
