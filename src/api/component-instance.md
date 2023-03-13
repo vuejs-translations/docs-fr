@@ -8,9 +8,9 @@ Toutes les propriétés sur cette page sont en lecture seule (excepté les propr
 
 ## $data {#data}
 
-L'objet retourné par l'option [`data`](./options-state.html#data), rendu réactif par le composant. L'instance de composant donne accès aux propriétés de son objet `data` via un proxy.
+L'objet retourné par l'option [`data`](./options-state#data), rendu réactif par le composant. L'instance de composant donne accès aux propriétés de son objet `data` via un proxy.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -23,7 +23,7 @@ L'objet retourné par l'option [`data`](./options-state.html#data), rendu réact
 // TODO: améliorer
 Un objet représentant les `props` courantes et résolues du composant.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -33,13 +33,13 @@ Un objet représentant les `props` courantes et résolues du composant.
 
 - **Details**
 
-  Seules les props déclarées via l'option [`props`](./options-state.html#props) seront incluses. L'instance du composant donne accès aux propriétés de son objet props via un proxy. 
+  Seules les props déclarées via l'option [`props`](./options-state#props) seront incluses. L'instance du composant donne accès aux propriétés de son objet props via un proxy. 
 
 ## $el {#el}
 
 Le nœud du DOM racine que l'instance du composant gère.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -57,7 +57,7 @@ Le nœud du DOM racine que l'instance du composant gère.
   // TODO : voir comment traduire `in SSR hydratation mode`
 
   :::tip
-  Par cohérence, il est recommandé d'utiliser [les refs du template](/guide/essentials/template-refs.html) pour accéder directement aux éléments du DOM plutôt que `$el`.
+  Par cohérence, il est recommandé d'utiliser [les refs du template](/guide/essentials/template-refs) pour accéder directement aux éléments du DOM plutôt que `$el`.
   :::
 
 ## $options {#options}
@@ -65,7 +65,7 @@ Le nœud du DOM racine que l'instance du composant gère.
 // TODO : voir comment traduire `resolved`, j'ai utilisé `résolu`
 Les options du composant résolues utilisées pour instancier l'instance courante du composant.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -93,13 +93,13 @@ Les options du composant résolues utilisées pour instancier l'instance courant
   })
   ```
 
-- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
+- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 
 L'instance du composant parent, si l'instance courante en a une. Cette propriété vaudra `null` dans le cas du composant racine.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -111,7 +111,7 @@ L'instance du composant parent, si l'instance courante en a une. Cette propriét
 
 L'instance du composant à la racine de l'arbre de composants courant. Si l'instance de composant courante n'a pas de composants parents, cette propriété vaudra l'instance du composant elle-même.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -121,9 +121,9 @@ L'instance du composant à la racine de l'arbre de composants courant. Si l'inst
 
 ## $slots {#slots}
 
-Un objet représentant les [slots](/guide/components/slots.html) passés par le composant parent.
+Un objet représentant les [slots](/guide/components/slots) passés par le composant parent.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -135,19 +135,19 @@ Un objet représentant les [slots](/guide/components/slots.html) passés par le 
 
 - **Details**
 
-  Cette option est typiquement utilisée quand on créé manuellement des [render functions](/guide/extras/render-function.html), mais elle peut aussi être utilisée pour détecter si un slot est présent.
+  Cette option est typiquement utilisée quand on créé manuellement des [render functions](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
 
   Chaque slot est exposé par `this.$slots` comme une fonction qui retourne un tableau de `vnode` sous la clé correspondant au nom de ce slot. Le slot par défaut est exposé comme `this.$slots.default`.
 
-  Si un slot est un [scoped slot](/guide/components/slots.html#scoped-slots), les arguments passés à la fonction de slot sont rendus disponibles au slot en tant que props du slot.
+  Si un slot est un [scoped slot](/guide/components/slots#scoped-slots), les arguments passés à la fonction de slot sont rendus disponibles au slot en tant que props du slot.
 
-- **Voir aussi :** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function.html#rendering-slots)
+- **Voir aussi :** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
-Un objet constitué d'éléments du DOM et d'instances de composants, enregistré via les [template refs](/guide/essentials/template-refs.html).
+Un objet constitué d'éléments du DOM et d'instances de composants, enregistré via les [template refs](/guide/essentials/template-refs).
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -157,14 +157,14 @@ Un objet constitué d'éléments du DOM et d'instances de composants, enregistr�
 
 - **Voir aussi :**
 
-  - [Les refs du template](/guide/essentials/template-refs.html)
+  - [Les refs du template](/guide/essentials/template-refs)
   - [Attributs spéciaux - ref](./built-in-special-attributes.md#ref)
 
 ## $attrs {#attrs}
 
 Un objet qui contient les attributs implicitement déclarés (fallthrough attributes) du composant.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -174,19 +174,19 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
 
 - **Details**
 
-  [Attributs implicitement déclarés](/guide/components/attrs.html) sont des attributs ou écouteurs d'événement `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
+  [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événement `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
-  Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc.html#inheritattrs).
+  Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc.#inheritattrs).
 
 - **Voir aussi :**
 
-  - [Attributs implicitement déclarés](/guide/components/attrs.html)
+  - [Attributs implicitement déclarés](/guide/components/attrs)
 
 ## $watch() {#watch}
 
 API impérative pour créer des observateurs (watchers).
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -221,9 +221,9 @@ API impérative pour créer des observateurs (watchers).
   Le second argument est la fonction de rappel. La fonction de rappel reçoit en paramètres la nouvelle et l'ancienne valeur de la source observée.
 
   - **`immediate`**: déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`**: force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`**: ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`deep`**: force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Example**
 
@@ -262,14 +262,14 @@ API impérative pour créer des observateurs (watchers).
   ```
 
 - **Voir aussi :**
-  - [Options - `watch`](/api/options-state.html#watch)
-  - [Guide - Observateurs](/guide/essentials/watchers.html)
+  - [Options - `watch`](/api/options-state#watch)
+  - [Guide - Observateurs](/guide/essentials/watchers)
 
 ## $emit() {#emit}
 
 Emmet un événement personnalisé depuis l'instance courante. Tout argument additionnel sera passé à la fonction de rappel.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -292,14 +292,14 @@ Emmet un événement personnalisé depuis l'instance courante. Tout argument add
 
 - **Voir aussi :**
 
-  - [Composant - Gestion des évènements](/guide/components/events.html)
-  - [L'option `emits`](./options-state.html#emits)
+  - [Composant - Gestion des événements](/guide/components/events)
+  - [L'option `emits`](./options-state#emits)
 
 ## $forceUpdate() {#forceupdate}
 
 Force l'instance du composant à effectuer un nouveau rendu.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -313,9 +313,9 @@ Force l'instance du composant à effectuer un nouveau rendu.
 
 ## $nextTick() {#nexttick}
 
-Version propre à l'instance de l'utilité globale [`nextTick()`](./general.html#nexttick).
+Version propre à l'instance de l'utilité globale [`nextTick()`](./general#nexttick).
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentPublicInstance {
@@ -327,4 +327,4 @@ Version propre à l'instance de l'utilité globale [`nextTick()`](./general.html
 
   La seule différence avec la version globale de `nextTick()` est que la fonction de rendu passée à `this.$nextTick()` aura son contexte `this` lié à l'instance courante du composant.
 
-- **Voir aussi :** [`nextTick()`](./general.html#nexttick)
+- **Voir aussi :** [`nextTick()`](./general#nexttick)

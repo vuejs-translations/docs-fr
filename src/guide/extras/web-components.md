@@ -10,7 +10,7 @@ Vue [obtient un score parfait de 100 % dans les tests Custom Elements Everywher
 
 ### Ignorer la résolution des composants {#skipping-component-resolution}
 
-Par défaut, Vue tentera de résoudre une balise HTML non native en tant que composant Vue enregistré avant de revenir à son rendu en tant qu'élément personnalisé. Cela entraînera l'émission par Vue d'un avertissement "Échec de la résolution du composant" pendant le développement. Pour faire savoir à Vue que certains éléments doivent être traités comme des éléments personnalisés et ignorer la résolution des composants, nous pouvons spécifier l'option [`compilerOptions.isCustomElement`](/api/application.html#app-config-compileroptions).
+Par défaut, Vue tentera de résoudre une balise HTML non native en tant que composant Vue enregistré avant de revenir à son rendu en tant qu'élément personnalisé. Cela entraînera l'émission par Vue d'un avertissement "Échec de la résolution du composant" pendant le développement. Pour faire savoir à Vue que certains éléments doivent être traités comme des éléments personnalisés et ignorer la résolution des composants, nous pouvons spécifier l'option [`compilerOptions.isCustomElement`](/api/application#app-config-compileroptions).
 
 Si vous utilisez Vue avec une configuration de build, l'option doit être transmise via les configurations de build car il s'agit d'une option de compilation.
 
@@ -81,7 +81,7 @@ Le principal avantage des éléments personnalisés est qu'ils peuvent être uti
 
 ### defineCustomElement {#definecustomelement}
 
-Vue prend en charge la création d'éléments personnalisés en utilisant exactement les mêmes API de composants Vue via la méthode [`defineCustomElement`](/api/general.html#definecustomelement). La méthode accepte le même argument que [`defineComponent`](/api/general.html#definecomponent), mais renvoie à la place un constructeur d'élément personnalisé qui étend `HTMLElement` :
+Vue prend en charge la création d'éléments personnalisés en utilisant exactement les mêmes API de composants Vue via la méthode [`defineCustomElement`](/api/general#definecustomelement). La méthode accepte le même argument que [`defineComponent`](/api/general#definecomponent), mais renvoie à la place un constructeur d'élément personnalisé qui étend `HTMLElement` :
 
 ```vue-html
 <my-vue-element></my-vue-element>
@@ -157,7 +157,7 @@ Les événements émis via `this.$emit` ou la configuration `emit` sont distribu
 
 À l'intérieur du composant, les slots peuvent être rendus en utilisant l'élément `<slot/>` comme d'habitude. Cependant, lors de la consommation de l'élément résultant, il n'accepte que la [syntaxe native des slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) :
 
-- Les [scoped slots](/guide/components/slots.html#scoped-slots) ne sont pas supportés.
+- Les [scoped slots](/guide/components/slots#scoped-slots) ne sont pas supportés.
 
 - Lorsque vous passez des slots nommés, utilisez l'attribut `slot` au lieu de la directive `v-slot` :
 
@@ -169,7 +169,7 @@ Les événements émis via `this.$emit` ou la configuration `emit` sont distribu
 
 #### Provide / Inject {#provide-inject}
 
-L'[API Provide /Inject](/guide/components/provide-inject.html#provide-inject) et son [équivalent pour la Composition API](/api/composition-api-dependency-injection.html#provide) fonctionnent également entre les éléments personnalisés définis par Vue. Cependant, notez que cela fonctionne **uniquement entre les éléments personnalisés**. C'est-à-dire qu'un élément personnalisé défini par Vue ne pourra pas injecter les propriétés fournies par un composant Vue non personnalisé.
+L'[API Provide /Inject](/guide/components/provide-inject#provide-inject) et son [équivalent pour la Composition API](/api/composition-api-dependency-injection#provide) fonctionnent également entre les éléments personnalisés définis par Vue. Cependant, notez que cela fonctionne **uniquement entre les éléments personnalisés**. C'est-à-dire qu'un élément personnalisé défini par Vue ne pourra pas injecter les propriétés fournies par un composant Vue non personnalisé.
 
 ### SFC comme élément personnalisé {#sfc-as-custom-element}
 
@@ -244,8 +244,8 @@ Il existe également des frameworks construits à l'aide d'éléments personnali
 
 Il existe également des domaines dans lesquels nous trouvons que les éléments personnalisés sont limités :
 
-- L'évaluation en avance des slots entrave la composition des composants. Les [scoped slots](/guide/components/slots.html#scoped-slots) de Vue sont un mécanisme puissant pour la composition de composants, qui ne peut pas être prise en charge par des éléments personnalisés en raison de la déclaration en avance des slots natifs. Les slots en avance signifient également que le composant récepteur ne peut pas contrôler quand ou s'il faut rendre un élément du contenu du slot.
+- L'évaluation en avance des slots entrave la composition des composants. Les [scoped slots](/guide/components/slots#scoped-slots) de Vue sont un mécanisme puissant pour la composition de composants, qui ne peut pas être prise en charge par des éléments personnalisés en raison de la déclaration en avance des slots natifs. Les slots en avance signifient également que le composant récepteur ne peut pas contrôler quand ou s'il faut rendre un élément du contenu du slot.
 
-- Aujourd'hui, distribuer des éléments personnalisés avec du CSS à portée limitée étendus au shadow DOM nécessite l'intégration du CSS dans JavaScript afin qu'ils puissent être injectés dans les shadowRoot lors de l'exécution. Ils entraînent également des styles dupliqués dans le balisage des scénarios SSR. Il y a des [fonctionnalités de la plate-forme](https://github.com/whatwg/html/pull/4898/) en cours d'élaboration dans ce domaine - mais pour l'instant, elles ne sont pas encore universellement prises en charge, et il existe encore des performances de production / préoccupations SSR à traiter. En attendant, les SFC Vue fournissent des [mécanismes de limitation de la portée du CSS](/api/sfc-css-features.html) qui prennent en charge l'extraction des styles dans des fichiers CSS simples.
+- Aujourd'hui, distribuer des éléments personnalisés avec du CSS à portée limitée étendus au shadow DOM nécessite l'intégration du CSS dans JavaScript afin qu'ils puissent être injectés dans les shadowRoot lors de l'exécution. Ils entraînent également des styles dupliqués dans le balisage des scénarios SSR. Il y a des [fonctionnalités de la plate-forme](https://github.com/whatwg/html/pull/4898/) en cours d'élaboration dans ce domaine - mais pour l'instant, elles ne sont pas encore universellement prises en charge, et il existe encore des performances de production / préoccupations SSR à traiter. En attendant, les SFC Vue fournissent des [mécanismes de limitation de la portée du CSS](/api/sfc-css-features) qui prennent en charge l'extraction des styles dans des fichiers CSS simples.
 
 Vue restera toujours à jour avec les dernières normes de la plate-forme Web, et nous nous ferons un plaisir de tirer parti de tout ce que la plate-forme fournit si cela facilite notre travail. Cependant, notre objectif est de fournir des solutions qui fonctionnent bien et qui fonctionnent aujourd'hui. Cela signifie que nous devons intégrer de nouvelles fonctionnalités de plate-forme avec un état d'esprit critique - et cela implique de combler les lacunes là où les normes sont insuffisantes aussi longtemps que ce sera nécessaire.

@@ -51,13 +51,13 @@ const nav: ThemeConfig['nav'] = [
         ]
       },
       {
-        text: 'Libraries Officielles',
+        text: 'Librairies Officielles',
         items: [
           { text: 'Vue Router', link: 'https://router.vuejs.org/' },
           { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
           {
             text: 'Guide des outils',
-            link: '/guide/scaling-up/tooling.html'
+            link: '/guide/scaling-up/tooling'
           }
         ]
       },
@@ -78,14 +78,14 @@ const nav: ThemeConfig['nav'] = [
         text: 'Aide',
         items: [
           {
-            text: 'Discord Chat',
+            text: 'Serveur Discord',
             link: 'https://discord.com/invite/HBherRA'
           },
           {
             text: 'Discussions GitHub',
             link: 'https://github.com/vuejs/core/discussions'
           },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+          { text: 'Communauté DEV', link: 'https://dev.to/t/vue' }
         ]
       },
       {
@@ -427,7 +427,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Advanced APIs',
+      text: 'API avancées',
       items: [
         { text: 'Fonctions de rendu', link: '/api/render-function' },
         { text: 'Rendu côté serveur', link: '/api/ssr' },
@@ -464,7 +464,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#form-bindings'
         },
         {
-          text: 'Simple Component',
+          text: 'Composant basique',
           link: '/examples/#simple-component'
         }
       ]
@@ -473,7 +473,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Practical',
       items: [
         {
-          text: 'Markdown Editor',
+          text: 'Éditeur markdown',
           link: '/examples/#markdown'
         },
         {
@@ -481,23 +481,23 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#fetching-data'
         },
         {
-          text: 'Grid with Sort and Filter',
+          text: 'Grille avec tri et filtres',
           link: '/examples/#grid'
         },
         {
-          text: 'Tree View',
+          text: 'Arborescence',
           link: '/examples/#tree'
         },
         {
-          text: 'SVG Graph',
+          text: 'Graphique SVG',
           link: '/examples/#svg'
         },
         {
-          text: 'Modal with Transitions',
+          text: 'Modale avec transitions',
           link: '/examples/#modal'
         },
         {
-          text: 'List with Transitions',
+          text: 'Liste avec des transitions',
           link: '/examples/#list-transition'
         },
         {
@@ -515,7 +515,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#counter'
         },
         {
-          text: 'Temperature Converter',
+          text: 'Convertisseur de température',
           link: '/examples/#temperature-converter'
         },
         {
@@ -523,7 +523,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#flight-booker'
         },
         {
-          text: 'Timer',
+          text: 'Chronomètre',
           link: '/examples/#timer'
         },
         {
@@ -650,6 +650,13 @@ export default defineConfigWithTheme<ThemeConfig>({
         'data-spa': 'auto',
         defer: ''
       }
+    ],
+    [
+      'script',
+      {
+        src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
+        async: true
+      }
     ]
   ],
 
@@ -739,9 +746,5 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true
     }
-  },
-
-  vue: {
-    reactivityTransform: true
   }
 })

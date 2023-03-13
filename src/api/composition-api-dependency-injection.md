@@ -4,13 +4,13 @@
 
 Fournit une valeur qui peut être injectée par les composants descendants.
 
-- **Type**
+- **Type :**
 
   ```ts
   function provide<T>(key: InjectionKey<T> | string, value: T): void
   ```
 
-- **Détails**
+- **Détails :**
 
   `provide()` prend deux arguments : la clé, qui peut être une chaîne de caractères ou un symbole, et la valeur à injecter.
 
@@ -18,7 +18,7 @@ Fournit une valeur qui peut être injectée par les composants descendants.
 
   Comme pour les API d'enregistrement des hooks de cycle de vie, `provide()` doit être appelée de manière synchrone pendant la phase `setup()` d'un composant.
 
-- **Exemple**
+- **Exemple :**
 
   ```vue
   <script setup>
@@ -37,15 +37,15 @@ Fournit une valeur qui peut être injectée par les composants descendants.
   </script>
   ```
 
-- **Voir aussi **:
-  - [Guide - Provide / Inject](/guide/components/provide-inject.html)
-  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api.html#typing-provide-inject) <sup class="vt-badge ts" />
+- **Voir aussi :**
+  - [Guide - Provide / Inject](/guide/components/provide-inject)
+  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
 ## inject() {#inject}
 
 Injecte une valeur fournie par un composant ancêtre ou par l'application (via `app.provide()`).
 
-- **Type**
+- **Type :**
 
   ```ts
   // sans valeur par défaut
@@ -62,7 +62,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   ): T
   ```
 
-- **Détails**
+- **Détails :**
 
   Le premier argument est la clé d'injection. Vue remontera la chaîne des parents pour localiser une valeur fournie avec une clé correspondante. Si plusieurs composants de la chaîne des parents fournissent la même clé, celui qui est le plus proche du composant qui injecte la valeur l'emportera sur ceux qui sont plus haut dans la chaîne. Si aucune valeur avec la clé correspondante n'a été trouvée, `inject()` renvoie `undefined` sauf si une valeur par défaut est fournie.
 
@@ -72,7 +72,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
 
   En utilisant TypeScript, la clé peut être de type `InjectionKey` - un type utilitaire fourni par Vue qui étend `Symbol`, qui peut être utilisé pour synchroniser le type de valeur entre `provide()` et `inject()`.
 
-- **Exemple**
+- **Exemple :**
 
   En supposant qu'un composant parent a fourni des valeurs comme indiqué dans l'exemple précédent concernant `provide()` :
 
@@ -101,6 +101,6 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   </script>
   ```
 
-- **Voir aussi **:
-  - [Guide - Provide / Inject](/guide/components/provide-inject.html)
-  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api.html#typing-provide-inject) <sup class="vt-badge ts" />
+- **Voir aussi :**
+  - [Guide - Provide / Inject](/guide/components/provide-inject)
+  - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />

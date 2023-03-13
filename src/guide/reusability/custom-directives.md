@@ -12,7 +12,7 @@ const vFocus = {
 
 En plus du jeu de directives par défaut fourni par Vue (comme `v-model` ou `v-show`), Vue permet également d'enregistrer vos propres directives personnalisées.
 
-Nous avons introduit deux formes de code réutilisable dans Vue : [les composants](/guide/essentials/component-basics.html) et [les composables](./composables). Les composants sont les principaux éléments de construction, alors que les composables sont axés sur la réutilisation de la logique d'état. Les directives personnalisées, quant à elles, sont principalement destinées à réutiliser la logique qui implique un accès de bas niveau au DOM sur des éléments simples.
+Nous avons introduit deux formes de code réutilisable dans Vue : [les composants](/guide/essentials/component-basics) et [les composables](./composables). Les composants sont les principaux éléments de construction, alors que les composables sont axés sur la réutilisation de la logique d'état. Les directives personnalisées, quant à elles, sont principalement destinées à réutiliser la logique qui implique un accès de bas niveau au DOM sur des éléments simples.
 
 Une directive personnalisée se définit comme un objet contenant des hooks du cycle de vie, similaires à ceux d'un composant. Les hooks reçoivent l'élément auquel la directive est liée. Voici un exemple d'une directive qui met le focus sur un champ de saisie lorsque l'élément est inséré dans le DOM par Vue :
 
@@ -84,16 +84,16 @@ export default {
 
 <div class="options-api">
 
-Similar to components, custom directives must be registered so that they can be used in templates. In the example above, we are using local registration via the `directives` option.
+Comme pour les composants, les directives personnalisées doivent être enregistrées afin de pouvoir être utilisées dans les modèles. Dans l'exemple ci-dessus, nous utilisons l'enregistrement local via l'option `directives`.
 
 </div>
 
-It is also common to globally register custom directives at the app level:
+Il est également courant d'enregistrer globalement des directives personnalisées au niveau de l'application :
 
 ```js
 const app = createApp({})
 
-// make v-focus usable in all components
+// rendre v-focus utilisable dans tous les composants
 app.directive('focus', {
   /* ... */
 })
@@ -210,7 +210,7 @@ app.directive('demo', (el, binding) => {
 
 ## Utilisation sur les composants {#usage-on-components}
 
-Lorsqu'elles sont utilisées sur des composants, les directives personnalisées s'appliquent toujours au nœud racine du composant, comme dans les [attributs implicitement déclarés](/guide/components/attrs.html).
+Lorsqu'elles sont utilisées sur des composants, les directives personnalisées s'appliquent toujours au nœud racine du composant, comme dans les [attributs implicitement déclarés](/guide/components/attrs).
 
 ```vue-html
 <MyComponent v-demo="test" />

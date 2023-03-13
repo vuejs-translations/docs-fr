@@ -458,4 +458,4 @@ Si vous voulez que les espaces blancs des entrées utilisateur soient automatiqu
 
 > Si vous n'êtes pas encore familiarisé avec les composants de Vue, vous pouvez sauter cette étape pour le moment.
 
-Les types de saisie natifs dans HTML ne répondent pas toujours à vos besoins. Heureusement, les composants Vue vous permettent de construire des entrées réutilisables avec un comportement complètement personnalisé. Ces entrées fonctionnent même avec `v-model` ! Pour en savoir plus, lisez à propos de l'[utilisation avec `v-model`](/guide/components/v-model.html) dans le guide des composants.
+Les types de saisie natifs dans HTML ne répondent pas toujours à vos besoins. Heureusement, les composants Vue vous permettent de construire des entrées réutilisables avec un comportement complètement personnalisé. Ces entrées fonctionnent même avec `v-model` ! Pour en savoir plus, lisez à propos de l'[utilisation avec `v-model`](/guide/components/v-model) dans le guide des composants.

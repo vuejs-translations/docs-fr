@@ -45,7 +45,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth.html)
+- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## props {#props}
 
@@ -85,9 +85,9 @@ Déclare les props d'un composant.
 
   Avec la syntaxe basée sur les objets, chaque prop peut ensuite définir les options suivantes :
 
-  - **`type`** : Peut être l'un des constructeurs natifs suivants : `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction constructeur personnalisée ou un tableau de ces dernières. En mode développement, Vue vérifiera si la valeur d'une prop correspond au type déclaré, et enverra un avertissement si ce n'est pas le cas. Voir la [validation de prop](/guide/components/props.html#prop-validation) pour plus de détails.
+  - **`type`** : Peut être l'un des constructeurs natifs suivants : `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, toute fonction constructeur personnalisée ou un tableau de ces dernières. En mode développement, Vue vérifiera si la valeur d'une prop correspond au type déclaré, et enverra un avertissement si ce n'est pas le cas. Voir la [validation de prop](/guide/components/props#prop-validation) pour plus de détails.
 
-    Notez également qu'une prop de type `Boolean` modifie le comportement de la conversion de sa valeur, tant en mode développement qu'en production. Voir la [conversion en booléen](/guide/components/props.html#boolean-casting) pour plus de détails.
+    Notez également qu'une prop de type `Boolean` modifie le comportement de la conversion de sa valeur, tant en mode développement qu'en production. Voir la [conversion en booléen](/guide/components/props#boolean-casting) pour plus de détails.
 
   - **`default`** : Spécifie une valeur par défaut pour la prop quand elle n'est pas passée par le parent ou a une valeur valant `undefined`. Les valeurs par défaut des objets ou des tableaux doivent être retournées en utilisant une fonction _factory_. La fonction _factory_ reçoit également l'objet props brut comme argument.
 
@@ -126,8 +126,8 @@ Déclare les props d'un composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Props](/guide/components/props.html)
-  - [Guide - Typer les props des composants](/guide/typescript/options-api.html#typing-component-props) <sup class="vt-badge ts" />
+  - [Guide - Props](/guide/components/props)
+  - [Guide - Typer les props des composants](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
 
 ## computed {#computed}
 
@@ -208,8 +208,8 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Propriétés calculées](/guide/essentials/computed.html)
-  - [Guide - Typer les propriétés calculées](/guide/typescript/options-api.html#typing-computed-properties) <sup class="vt-badge ts" />
+  - [Guide - Propriétés calculées](/guide/essentials/computed)
+  - [Guide - Typer les propriétés calculées](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
 ## methods {#methods}
 
@@ -250,7 +250,7 @@ Déclarer les méthodes à rendre accessibles dans l'instance du composant.
   }
   ```
 
-- **Voir aussi :** [Gestion d'événement](/guide/essentials/event-handling.html)
+- **Voir aussi :** [Gestion d'événement](/guide/essentials/event-handling)
 
 ## watch {#watch}
 
@@ -289,14 +289,14 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
 
   L'option `watch` attend un objet où les clés sont les propriétés de l'instance du composant réactif à surveiller (par exemple les propriétés déclarées via `data` ou `computed`) - et les valeurs sont les fonctions de rappel correspondantes. La fonction de rappel reçoit à la fois la nouvelle valeur et l'ancienne valeur de la source surveillée.
 
-  La clé peut être une propriété racine, mais également un simple chemin délimité par des points, par exemple `a.b.c`. Notez que cette utilisation ne prend **pas** en charge les expressions complexes - seuls les chemins délimités par des points sont acceptés. Si vous devez surveiller des sources de données complexes, utilisez plutôt l'API impérative [`$watch()`](/api/component-instance.html#watch).
+  La clé peut être une propriété racine, mais également un simple chemin délimité par des points, par exemple `a.b.c`. Notez que cette utilisation ne prend **pas** en charge les expressions complexes - seuls les chemins délimités par des points sont acceptés. Si vous devez surveiller des sources de données complexes, utilisez plutôt l'API impérative [`$watch()`](/api/component-instance#watch).
 
   La valeur peut également être une chaîne de caractères d'un nom de méthode (déclarée via `methods`), ou un objet qui contient des options supplémentaires. Lorsque vous utilisez la syntaxe objet, la fonction de rappel doit être déclarée via le champ `handler`. Les options supplémentaires incluent :
 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`** : force la traversée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers.html#deep-watchers).
-  - **`flush`** : ajuste le timing du nettoyage de la fonction de rappel. Voir [Timing de nettoyage des fonctions de rappel](/guide/essentials/watchers.html#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth.html#watcher-debugging).
+  - **`deep`** : force la traversée profonde de la source si c'est un objet ou un tableau, de sorte que la fonction de rappel se déclenche lors des mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
+  - **`flush`** : ajuste le timing du nettoyage de la fonction de rappel. Voir [Timing de nettoyage des fonctions de rappel](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
   Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des fonctions de rappel d'un observateur car elles n'auront pas accès à l'instance du composant via `this`.
 
@@ -368,7 +368,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
   }
   ```
 
-- **Voir aussi :** [Observateurs](/guide/essentials/watchers.html)
+- **Voir aussi :** [Observateurs](/guide/essentials/watchers)
 
 ## emits {#emits}
 
@@ -397,7 +397,7 @@ Déclare les événements personnalisés émis par le composant.
 
   La fonction de validation recevra les arguments additionnels passés à l'appel `$emit` du composant. Par exemple, si `this.$emit('foo', 1)` est appelé, le validateur correspondant à `foo` recevra l'argument `1`. La fonction de validation doit retourner un booléen pour indiquer si les arguments de l'événement sont valides.
 
-  Notez que l'option `emits` affecte les écouteurs d'événements considérés comme appartenant au composant, plutôt que des écouteurs d'événements natifs du DOM. Les écouteurs d'événements déclarés seront supprimés de l'objet `$attrs` du composant, et ne seront donc pas transmis à son élément racine. Voir [Attributs implicitement déclarés](/guide/components/attrs.html) pour plus de détails.
+  Notez que l'option `emits` affecte les écouteurs d'événements considérés comme appartenant au composant, plutôt que des écouteurs d'événements natifs du DOM. Les écouteurs d'événements déclarés seront supprimés de l'objet `$attrs` du composant, et ne seront donc pas transmis à son élément racine. Voir [Attributs implicitement déclarés](/guide/components/attrs) pour plus de détails.
 
 - **Exemple :**
 
@@ -434,8 +434,8 @@ Déclare les événements personnalisés émis par le composant.
   ```
 
 - **Voir aussi :**
-  - [Guide - Attributs implicitement déclarés](/guide/components/attrs.html)
-  - [Guide - Typer les événements émis par un composant](/guide/typescript/options-api.html#typing-component-emits) <sup class="vt-badge ts" />
+  - [Guide - Attributs implicitement déclarés](/guide/components/attrs)
+  - [Guide - Typer les événements émis par un composant](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
 ## expose {#expose}
 

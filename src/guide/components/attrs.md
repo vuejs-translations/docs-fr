@@ -8,7 +8,7 @@ outline: deep
 
 ## Héritage d'attribut {#attribute-inheritance}
 
-Un attribut implicitement déclaré (ou "fallthrough attribute") est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events.html#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
+Un attribut implicitement déclaré (ou "fallthrough attribute") est un attribut ou un écouteur d'événement `v-on` qui est passé à un composant, mais qui n'est pas explicitement déclaré dans les [props](./props) ou les [émissions](./events#declaring-emitted-events) du composant récepteur. Des exemples courants de ceci incluent les attributs `class`, `style` et `id`.
 
 Lorsqu'un composant affiche un seul élément racine, les attributs implicitement déclarés sont automatiquement ajoutés aux attributs de l'élément racine. Par exemple, le composant `<MyButton>` avec le template suivant :
 
@@ -128,7 +128,7 @@ Nous voulons que tous les attributs implicitement déclarés tels que `class` et
 </div>
 ```
 
-Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
+Rappelez-vous que [`v-bind` sans argument](/guide/essentials/template-syntax#dynamically-binding-multiple-attributes) lie toutes les propriétés d'un objet en tant qu'attributs de l'élément cible.
 
 ## Héritage d'attributs sur plusieurs nœuds racine {#attribute-inheritance-on-multiple-root-nodes}
 

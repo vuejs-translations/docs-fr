@@ -4,7 +4,7 @@
 
 Fournit des valeurs qui peuvent être injectées par les composants descendants.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -18,7 +18,7 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
 
   L'option `provide` doit être soit un objet, soit une fonction qui renvoie un objet. Cet objet contient les propriétés qui sont disponibles pour l'injection dans ses descendants. Vous pouvez utiliser des symboles comme clés dans cet objet.
 
-- **Exemple**
+- **Exemple :**
 
   Utilisation basique :
 
@@ -50,15 +50,15 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
   }
   ```
 
-  Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject.html#working-with-reactivity) pour plus de détails.
+  Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject.html)
+- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
 
 ## inject {#inject}
 
 Déclare les propriétés à injecter dans le composant actuel en les localisant à partir des fournisseurs ancêtres.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -88,9 +88,9 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
 
   Une propriété injectée sera `undefined` si aucune propriété correspondante ou valeur par défaut n'a été fournie.
 
-  Notez que les liaisons injectées ne sont PAS réactives. Ceci est intentionnel. Cependant, si la valeur injectée est un objet réactif, les propriétés de cet objet restent réactives. Consultez [travailler avec la réactivité](/guide/components/provide-inject.html#working-with-reactivity) pour plus de détails.
+  Notez que les liaisons injectées ne sont PAS réactives. Ceci est intentionnel. Cependant, si la valeur injectée est un objet réactif, les propriétés de cet objet restent réactives. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
-- **Exemple**
+- **Exemple :**
 
   Utilisation basique :
 
@@ -167,13 +167,13 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject.html)
+- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
 
 ## mixins {#mixins}
 
 Un tableau d'objets d'options à introduire dans le composant actuel.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface ComponentOptions {
@@ -188,7 +188,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   Les hooks des mixins sont appelés dans l'ordre où ils sont fournis, et sont appelés avant les propres hooks du composant.
 
   :::warning N'est plus recommandé
-  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables.html) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
+  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
 - **Exemple :**
@@ -215,7 +215,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
 
 Un composant de la "classe de base" à partir duquel on peut étendre un composant.
 
-- **Type:**
+- **Type :**
 
   ```ts
   interface ComponentOptions {

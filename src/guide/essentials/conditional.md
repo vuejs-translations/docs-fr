@@ -53,7 +53,7 @@ Un élément `v-else` doit immédiatement suivre un élément `v-if` ou un élé
 
 ## `v-else-if` {#v-else-if}
 
-Le `v-else-if`, comme son nom l'indique, sert de bloc "else if" lié à un `v-if`. Il peut également être enchaîné plusieurs fois:
+Le `v-else-if`, comme son nom l'indique, sert de bloc "else if" lié à un `v-if`. Il peut également être enchaîné plusieurs fois :
 
 ```vue-html
 <div v-if="type === 'A'">
@@ -88,7 +88,7 @@ Puisque `v-if` est une directive, elle doit être attachée à un seul élément
 
 ## `v-show` {#v-show}
 
-Une autre option pour afficher conditionnellement un élément est la directive `v-show`. L'utilisation est sensiblement la même:
+Une autre option pour afficher conditionnellement un élément est la directive `v-show`. L'utilisation est sensiblement la même :
 
 ```vue-html
 <h1 v-show="ok">Bonjour!</h1>
@@ -111,7 +111,7 @@ De manière générale, `v-if` a des coûts de basculement plus élevés tandis 
 ## `v-if` avec `v-for` {#v-if-with-v-for}
 
 ::: warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [guide de style](/style-guide/rules-essential.html#avoid-v-if-with-v-for) pour plus de détails.
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément en raison de la priorité implicite. Reportez-vous au [guide de style](/style-guide/rules-essential#avoid-v-if-with-v-for) pour plus de détails.
 :::
 
 Lorsque `v-if` et `v-for` sont tous les deux utilisés sur le même élément, `v-if` sera évalué en premier. Voir le [guide de rendu de liste](list#v-for-with-v-if) pour plus de détails.

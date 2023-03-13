@@ -83,7 +83,7 @@ watchEffect(() => {
 })
 ```
 
-Voir aussi: [Typer les refs du template](/guide/typescript/composition-api.html#typing-template-refs) <sup class="vt-badge ts" />
+Voir aussi : [Typer les refs du template](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
 
 </div>
 
@@ -218,7 +218,7 @@ export default {
 
 <div class="composition-api">
 
-Une exception ici est que les composants utilisant `<script setup>` sont **privés par défaut**: un composant parent faisant référence à un composant enfant en utilisant `<script setup>` n'aura accès à rien, à moins que le composant enfant choisisse d'exposer une interface publique via la macro `defineExpose` :
+Une exception ici est que les composants utilisant `<script setup>` sont **privés par défaut** : un composant parent faisant référence à un composant enfant en utilisant `<script setup>` n'aura accès à rien, à moins que le composant enfant choisisse d'exposer une interface publique via la macro `defineExpose` :
 
 ```vue
 <script setup>
@@ -237,7 +237,7 @@ defineExpose({
 
 Lorsqu'un parent accède à une instance de ce composant via les refs du template, l'instance récupérée aura la forme suivante : `{ a: number, b: number }` (les refs sont automatiquement désenveloppées comme sur les instances classiques).
 
-Voir aussi : [Typer les refs du template d'un composant](/guide/typescript/composition-api.html#typing-component-template-refs) <sup class="vt-badge ts" />
+Voir aussi : [Typer les refs du template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">

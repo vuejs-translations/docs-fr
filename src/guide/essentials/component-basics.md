@@ -6,11 +6,11 @@ Les composants nous permettent de fractionner l'UI en morceaux indépendants et 
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les Web Components natifs. Pour en savoir plus sur la relation entre les composants Vue et les Web Components natifs, [lisez ceci](/guide/extras/web-components.html).
+Cette approche est très similaire à celle d'imbriquer des éléments HTML natifs, mais Vue implémente son propre modèle de composant, nous permettant d'encapsuler du contenu et de la logique au sein de chaque composant. Vue fonctionne également bien avec les Web Components natifs. Pour en savoir plus sur la relation entre les composants Vue et les Web Components natifs, [lisez ceci](/guide/extras/web-components).
 
 ## Définir un composant {#defining-a-component}
 
-Lorsqu'on utilise des outils de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc.html) (ou Single-File Components en anglais, abrégé SFC) :
+Lorsqu'on utilise des outils de build, on définit généralement chaque composant Vue dans un fichier dédié en utilisant l'extension `.vue` - aussi appelé [Composant monofichier](/guide/scaling-up/sfc) (ou Single-File Components en anglais, abrégé SFC) :
 
 <div class="options-api">
 
@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration.html) via l'option `components`. Le composant sera alors utilisable grâce à une balise portant la clé utilisée lors de l'enregistrement.
+Pour exposer le composant importé à notre template, nous devons l'[enregistrer](/guide/components/registration) via l'option `components`. Le composant sera alors utilisable grâce à une balise portant la clé utilisée lors de l'enregistrement.
 
 </div>
 
@@ -138,7 +138,7 @@ Avec `<script setup>`, les composants importés sont directement rendus accessib
 
 </div>
 
-Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une application sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration.html) dédiée.
+Il est également possible d'enregistrer globalement un composant, le rendant alors accessible à tous les composants d'une application sans avoir à l'importer. Les pour et contre d'un enregistrement global vs. local sont abordés dans la section [Enregistrement des Composants](/guide/components/registration) dédiée.
 
 Vous pouvez réutiliser les composants autant de fois que vous voulez :
 
@@ -179,7 +179,7 @@ Voir les [mises en garde concernant l'analyse du template DOM](#dom-template-par
 
 Si nous construisons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
 
-Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state.html#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span> :
+Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-defineemits)une macro</span> :
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api.html#typing-component-props) <sup class="vt-badge ts" />
+Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passée à `setup()` en premier argument :
 
@@ -299,7 +299,7 @@ Puis vous voudriez rendre un composant pour chacun d'entre eux, grâce à `v-for
 
 Remarquez comment `v-bind` est utilisé pour passer des valeurs de props dynamiques. Cela est particulièrement utile lorsque vous ne connaissez pas le contenu exact que vous allez rendre au fur et à mesure du temps.
 
-Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props.html).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props).
 
 ## Écouter des événements {#listening-to-events}
 
@@ -366,7 +366,7 @@ Pour le moment le bouton ne fait rien - nous voulons que le clique communique au
  />
 ```
 
-Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance.html#emit), et en lui passant le nom de l'événement :
+Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance#emit), et en lui passant le nom de l'événement :
 
 ```vue{5}
 <!-- BlogPost.vue, en omettant <script> -->
@@ -391,7 +391,7 @@ Grâce à l'écouteur `@enlarge-text="postFontSize += 0.1"`, le parent va recevo
 
 </div>
 
-Nous pouvons, de manière facultative, déclarer les événements émis en utilisant <span class="options-api">l'option [`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-defineemits)une macro</span> :
+Nous pouvons, de manière facultative, déclarer les événements émis en utilisant <span class="options-api">l'option [`emits`](/api/options-state#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-defineemits)une macro</span> :
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Cela documente tous les événements qu'un composant émet et peut éventuellement les [valider](/guide/components/events.html#events-validation). Cela permet également à Vue d'éviter de les appliquer implicitement en tant qu'écouteurs natifs à l'élément racine du composant enfant.
+Cela documente tous les événements qu'un composant émet et peut éventuellement les [valider](/guide/components/events#events-validation). Cela permet également à Vue d'éviter de les appliquer implicitement en tant qu'écouteurs natifs à l'élément racine du composant enfant.
 
 <div class="composition-api">
 
@@ -432,7 +432,7 @@ emit('enlarge-text')
 </script>
 ```
 
-Voir aussi : [Typer les emits d'un composant](/guide/typescript/composition-api.html#typing-component-emits) <sup class="vt-badge ts" />
+Voir aussi : [Typer les emits d'un composant](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 Dans le cas où vous n'utilisez pas `<script setup>`, vous pouvez déclarer les événements émis en utilisant l'option `emits`. Vous pouvez accéder à la fonction `emit` via une propriété du contexte du setup (passé à `setup()` en deuxième argument) :
 
@@ -538,7 +538,7 @@ Dans l'exemple ci-dessus, la valeur passée à `:is` peut contenir au choix :
 
 Vous pouvez également utiliser l'attribut `is` pour créer des éléments HTML classiques.
 
-Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul celui sélectionné par `:is` reste monté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive.html).
+Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul celui sélectionné par `:is` reste monté. On peut forcer les composants inactifs à rester "en vie" grâce au [composant intégré `<KeepAlive>`](/guide/built-ins/keep-alive).
 
 ## Mises en garde concernant l'analyse du template DOM {#dom-template-parsing-caveats}
 
@@ -615,7 +615,7 @@ Cela va entraîner des problèmes lorsque nous allons utiliser des composants av
 </table>
 ```
 
-Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide, ce qui peut causer des erreurs dans le résultat rendu final. Nous pouvons utiliser [l'attribut spécial `is`](/api/built-in-special-attributes.html#is) comme solution :
+Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide, ce qui peut causer des erreurs dans le résultat rendu final. Nous pouvons utiliser [l'attribut spécial `is`](/api/built-in-special-attributes#is) comme solution :
 
 ```vue-html
 <table>

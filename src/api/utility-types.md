@@ -30,7 +30,7 @@ Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisatio
   }
   ```
 
-- **Voir aussi :** [Guide - Typer les props des composants](/guide/typescript/options-api.html#typing-component-props)
+- **Voir aussi :** [Guide - Typer les props des composants](/guide/typescript/options-api#typing-component-props)
 
 ## ComponentCustomProperties {#componentcustomproperties}
 
@@ -50,10 +50,10 @@ Utilisé pour augmenter le type de l'instance du composant afin de prendre en ch
   ```
 
   :::tip
-  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
 
-- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api.html#augmenting-global-properties)
+- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties)
 
 ## ComponentCustomOptions {#componentcustomoptions}
 
@@ -72,10 +72,10 @@ Utilisé pour augmenter le type des options du composant afin de prendre en char
   ```
 
   :::tip
-  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
 
-- **Voir aussi :** [Guide - Augmenter les options personnalisées](/guide/typescript/options-api.html#augmenting-custom-options)
+- **Voir aussi :** [Guide - Augmenter les options personnalisées](/guide/typescript/options-api#augmenting-custom-options)
 
 ## ComponentCustomProps {#componentcustomprops}
 
@@ -99,7 +99,7 @@ Utilisé pour augmenter les props TSX autorisées afin d'utiliser des props non 
   ```
 
   :::tip
-  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
 
 ## CSSProperties {#cssproperties}
@@ -126,11 +126,11 @@ Utilisé pour augmenter les valeurs autorisées dans les liaisons de propriété
   ```
 
  :::tip
-  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api.html#augmenting-global-properties) pour plus de détails.
+  Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
   
   :::info Voir aussi
 Les balises `<style>` des composants monofichiers permettent de lier les valeurs CSS à l'état dynamique des composants via la fonction CSS `v-bind`. Cela permet d'obtenir des propriétés personnalisées sans augmentation de type.
 
-- [v-bind() dans du CSS](/api/sfc-css-features.html#v-bind-in-css)
+- [v-bind() dans du CSS](/api/sfc-css-features#v-bind-in-css)
   :::

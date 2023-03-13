@@ -54,13 +54,13 @@ const props = defineProps<Props>()
 
 Afin de générer le code exécuté correct, l'argument générique pour `defineProps()` doit être l'un des suivants :
 
-- Un type d'objet littéral:
+- Un type d'objet littéral :
 
   ```ts
   defineProps<{ /*... */ }>()
   ```
 
-- Une référence à une interface ou type d'objet littéral **dans le même fichier**:
+- Une référence à une interface ou type d'objet littéral **dans le même fichier** :
 
   ```ts
   interface Props {/* ... */}
@@ -97,7 +97,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
-De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform.html) qui est toujours expérimentale :
+De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform) qui est toujours expérimentale :
 
 ```vue
 <script setup lang="ts">
@@ -112,7 +112,7 @@ const { name, count = 100 } = defineProps<Props>()
 </script>
 ```
 
-Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform.html#explicit-opt-in).
+Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform#explicit-opt-in).
 
 ### Sans `<script setup>` {#without-script-setup}
 
@@ -172,7 +172,7 @@ export default defineComponent({
 })
 ```
 
-L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api.html#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations à l'exécution utilisant `defineProps()`.
+L'option `props` est plus couramment utilisée avec l'Options API, vous trouverez donc des exemples plus détaillés dans le guide de [TypeScript avec l'Options API](/guide/typescript/options-api#typing-component-props). Les techniques présentées dans ces exemples s'appliquent également aux déclarations à l'exécution utilisant `defineProps()`.
 
 ## Typer les événements d'un composant {#typing-component-emits}
 
@@ -416,4 +416,4 @@ const openModal = () => {
 </script>
 ```
 
-Notez que si vous souhaitez utiliser cette technique dans des fichiers TypeScript au lieu des composants monofichiers de Vue, vous devez activer le [mode prise de contrôle](./overview.html#volar-takeover-mode) de Volar.
+Notez que si vous souhaitez utiliser cette technique dans des fichiers TypeScript au lieu des composants monofichiers de Vue, vous devez activer le [mode prise de contrôle](./overview#volar-takeover-mode) de Volar.

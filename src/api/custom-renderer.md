@@ -4,7 +4,7 @@
 
 Crée un rendu personnalisé. En fournissant des API de création et de manipulation de nœuds spécifiques à la plate-forme, vous pouvez tirer parti du noyau d'exécution de Vue pour cibler les environnements non DOM.
 
-- **Type**
+- **Type :**
 
   ```ts
   function createRenderer<HostNode, HostElement>(
@@ -61,7 +61,7 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
   }
   ```
 
-- **Exemple**
+- **Exemple :**
 
   ```js
   import { createRenderer } from '@vue/runtime-core'

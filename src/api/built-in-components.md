@@ -7,7 +7,7 @@ pageClass: api
 :::info Enregistrement et utilisation
 Les composants natifs peuvent être utilisés directement dans les templates sans avoir besoin d'être enregistrés. Ils ne sont inclus dans le build que lorsqu'ils sont utilisés.
 
-Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function.html), il faut les importer explicitement. Par exemple :
+Lorsqu'on les utilise dans les [fonctions de rendu](/guide/extras/render-function), il faut les importer explicitement. Par exemple :
 
 ```js
 import { h, Transition } from 'vue'
@@ -23,7 +23,7 @@ h(Transition, {
 
 Fournit des effets de transition animés à **un seul** élément ou composant.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface TransitionProps {
@@ -78,7 +78,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   }
   ```
 
-- **Événements**
+- **Événements :**
 
   - `@before-enter`
   - `@before-leave`
@@ -92,7 +92,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   - `@leave-cancelled` (`v-show` only)
   - `@appear-cancelled`
 
-- **Example**
+- **Exemple :**
 
   Élément simple :
 
@@ -118,13 +118,13 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   </Transition>
   ```
 
-- **Voir aussi :** [Guide sur `<Transition>`](/guide/built-ins/transition.html)
+- **Voir aussi :** [Guide sur `<Transition>`](/guide/built-ins/transition)
 
 ## `<TransitionGroup>` {#transitiongroup}
 
 Fournit des effets de transition pour de **multiples** éléments ou composants dans une liste.
 
-- **Props**
+- **Props :**
 
   `<TransitionGroup>` accepte les mêmes props que `<Transition>` à l'exception de `mode`, plus deux props additionnelles :
 
@@ -142,19 +142,19 @@ Fournit des effets de transition pour de **multiples** éléments ou composants 
   }
   ```
 
-- **Événements**
+- **Événements :**
 
   `<TransitionGroup>` émet les mêmes événements que `<Transition>`.
 
-- **Détails**
+- **Détails :**
 
   Par défaut, `<TransitionGroup>` ne rend pas d'élément du DOM en enveloppant d'autres, mais on peut en définir un via la prop `tag`.
 
-  Notez que chaque enfant d'un `<transition-group>` doit avoir une [**clé unique**](/guide/essentials/list.html#maintaining-state-with-key) pour que les animations fonctionnent correctement.
+  Notez que chaque enfant d'un `<transition-group>` doit avoir une [**clé unique**](/guide/essentials/list#maintaining-state-with-key) pour que les animations fonctionnent correctement.
 
   `<TransitionGroup>` prend en charge les transitions de mouvement via une transformation CSS. Lorsque la position d'un enfant à l'écran a changé après une mise à jour, il se verra appliquer une classe CSS de mouvement (générée automatiquement à partir de l'attribut `name` ou configurée avec la prop `move-class`). Si la propriété CSS `transform` est "transition-able" lorsque la classe de mouvement est appliquée, l'élément sera animé en douceur vers sa destination en utilisant la [technique FLIP](https://aerotwist.com/blog/flip-your-animations/).
 
-- **Exemple**
+- **Exemple :**
 
   ```vue-html
   <TransitionGroup tag="ul" name="slide">
@@ -164,13 +164,13 @@ Fournit des effets de transition pour de **multiples** éléments ou composants 
   </TransitionGroup>
   ```
 
-- **Voir aussi :** [Guide - TransitionGroup](/guide/built-ins/transition-group.html)
+- **Voir aussi :** [Guide - TransitionGroup](/guide/built-ins/transition-group)
 
 ## `<KeepAlive>` {#keepalive}
 
 Met en cache les composants activés dynamiquement qui y sont imbriqués.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface KeepAliveProps {
@@ -193,7 +193,7 @@ Met en cache les composants activés dynamiquement qui y sont imbriqués.
   type MatchPattern = string | RegExp | (string | RegExp)[]
   ```
 
-- **Détails**
+- **Détails :**
 
   Lorsqu'il enveloppe un composant dynamique, `<KeepAlive>` met en cache les instances inactives du composant sans les détruire.
 
@@ -201,7 +201,7 @@ Met en cache les composants activés dynamiquement qui y sont imbriqués.
 
 Lorsqu'un composant est activé/désactivé à l'intérieur de `<KeepAlive>`, ses hooks de cycle de vie `activated` et `deactivated` seront invoqués en conséquence, fournissant une alternative à `mounted` et `unmounted`, qui ne sont pas appelés. Ceci s'applique à l'enfant direct de `<KeepAlive>` ainsi qu'à tous ses descendants.
 
-- **Exemple**
+- **Exemple :**
 
   Utilisation basique :
 
@@ -257,13 +257,13 @@ Lorsqu'un composant est activé/désactivé à l'intérieur de `<KeepAlive>`, se
   </KeepAlive>
   ```
 
-- **Voir aussi :** [Guide - KeepAlive](/guide/built-ins/keep-alive.html)
+- **Voir aussi :** [Guide - KeepAlive](/guide/built-ins/keep-alive)
 
 ## `<Teleport>` {#teleport}
 
 Rend le contenu de son slot à une autre partie du DOM.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface TeleportProps {
@@ -281,7 +281,7 @@ Rend le contenu de son slot à une autre partie du DOM.
   }
   ```
 
-- **Exemple**
+- **Exemple :**
 
   En spécifiant le conteneur cible :
 
@@ -299,13 +299,13 @@ Rend le contenu de son slot à une autre partie du DOM.
   </teleport>
   ```
 
-- **Voir aussi :** [Guide - Teleport](/guide/built-ins/teleport.html)
+- **Voir aussi :** [Guide - Teleport](/guide/built-ins/teleport)
 
 ## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
 Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre de composants.
 
-- **Props**
+- **Props :**
 
   ```ts
   interface SuspenseProps {
@@ -313,16 +313,16 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
   }
   ```
 
-- **Événements**
+- **Événements :**
 
   - `@resolve`
   - `@pending`
   - `@fallback`
 
-- **Détails**
+- **Détails :**
 
   `<Suspense>` accepte deux slots : le slot `#default` et le slot `#fallback`. Il affichera le contenu du slot de secours tout en rendant le slot par défaut en mémoire.
 
-  S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async.html) et des composants avec [`async setup()`](/guide/built-ins/suspense.html#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
+  S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async) et des composants avec [`async setup()`](/guide/built-ins/suspense#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
 
-- **Voir aussi :** [Guide - Suspense](/guide/built-ins/suspense.html)
+- **Voir aussi :** [Guide - Suspense](/guide/built-ins/suspense)

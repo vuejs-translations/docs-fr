@@ -185,7 +185,7 @@ Un bloc enfant est traqué à l'intérieur du tableau des descendants dynamiques
 
 ### Conséquences sur l'hydratation SSR {#impact-on-ssr-hydration}
 
-Les marques de correction et la réduction des arbres améliorent également considérablement les performances de Vue en matière d'[hydratation SSR](/guide/scaling-up/ssr.html#client-hydration) :
+Les marques de correction et la réduction des arbres améliorent également considérablement les performances de Vue en matière d'[hydratation SSR](/guide/scaling-up/ssr#client-hydration) :
 
 - L'hydratation d'un seul élément peut utiliser des chemins rapides basés sur les marques de correction du vnode correspondant.
 

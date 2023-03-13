@@ -3,7 +3,7 @@ import { Partner } from './type'
 import { normalizeName, getHero, getLogo, track } from './utils'
 import Location from './PartnerLocation.vue'
 
-const { data, hero, page } = defineProps<{
+const props = defineProps<{
   data: Partner
   hero?: boolean
   page?: boolean
@@ -18,7 +18,7 @@ const {
   proficiencies,
   flipLogo,
   website
-} = data
+} = props.data
 </script>
 
 <template>
@@ -43,7 +43,7 @@ const {
 
       <p>{{ intro }}</p>
 
-      <h4 v-if="hero">Proficiencies</h4>
+      <h4 v-if="hero">Compétences</h4>
       <p v-if="hero">
         <span class="proficiency" v-for="p in proficiencies">{{ p }}</span>
       </p>
