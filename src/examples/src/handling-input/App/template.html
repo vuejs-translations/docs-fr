@@ -1,22 +1,22 @@
 <!--
-  Note we don't need .value inside templates because
-  refs are automatically "unwrapped" in templates.
+  Notez que nous n'avons pas besoin de .value à l'intérieur des templates parce que
+  les refs y sont automatiquement "déballées".
 -->
 <h1>{{ message }}</h1>
 
 <!--
-  Bind to a method/function.
-  The @click syntax is short for v-on:click.
+  Liaison à une méthode/fonction.
+  La syntaxe @click est le raccourci de v-on:click.
 -->
-<button @click="reverseMessage">Reverse Message</button>
+<button @click="reverseMessage">Inverser le message</button>
 
-<!-- Can also be an inline expression statement -->
-<button @click="message += '!'">Append "!"</button>
+<!-- Peut également être une expression en ligne -->
+<button @click="message += '!'">Ajouter "!"</button>
 
 <!--
-  Vue also provides modifiers for common tasks
-  such as e.preventDefault() and e.stopPropagation()
+  Vue fournit également des modificateurs pour les tâches courantes
+  comme e.preventDefault() et e.stopPropagation()
 -->
 <a href="https://vuejs.org" @click.prevent="notify">
-  A link with e.preventDefault()
+  Un lien avec e.preventDefault()
 </a>
