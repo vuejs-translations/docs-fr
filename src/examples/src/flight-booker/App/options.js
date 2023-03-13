@@ -1,15 +1,15 @@
 function stringToDate(str) {
   const [y, m, d] = str.split('-')
-  return new Date(+y, m - 1, +d)
+  return new Date(+d, m - 1, +y)
 }
 
 function dateToString(date) {
   return (
-    date.getFullYear() +
+    pad(date.getDate()) +
     '-' +
     pad(date.getMonth() + 1) +
     '-' +
-    pad(date.getDate())
+    date.getFullYear()
   )
 }
 
@@ -40,8 +40,8 @@ export default {
     book() {
       alert(
         this.isReturn
-          ? `You have booked a return flight leaving on ${this.departureDate} and returning on ${this.returnDate}.`
-        	: `You have booked a one-way flight leaving on ${this.departureDate}.`
+          ? `Vous avez réservé un vol aller-retour, avec un départ le ${this.departureDate} et un retour le ${this.returnDate}.`
+        	: `Vous avez réservé un vol simple partant le ${this.departureDate}.`
       )
     }
   }
