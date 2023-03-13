@@ -176,7 +176,7 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
 
   [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événement `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
-  Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc.#inheritattrs).
+  Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc#inheritattrs).
 
 - **Voir aussi :**
 
