@@ -448,7 +448,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#hello-world'
         },
         {
-          text: 'Gestion des entrées des utilisateurs',
+          text: 'Gestion des entrées utilisateur',
           link: '/examples/#handling-input'
         },
         {

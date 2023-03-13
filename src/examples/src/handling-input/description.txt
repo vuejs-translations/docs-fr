@@ -1,1 +1,1 @@
-Cet exemple illuste la gestion des entrées de l'utilisateur avec la directive v-on.
+Cet exemple illustre la gestion des entrées de l'utilisateur avec la directive v-on.
