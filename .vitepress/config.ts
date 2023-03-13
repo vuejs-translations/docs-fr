@@ -511,7 +511,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '7 GUIs',
       items: [
         {
-          text: 'Counter',
+          text: 'Compteur',
           link: '/examples/#counter'
         },
         {
