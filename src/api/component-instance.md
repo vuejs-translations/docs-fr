@@ -31,7 +31,7 @@ Un objet représentant les `props` courantes et résolues du composant.
   }
   ```
 
-- **Details**
+- **Details :**
 
   Seules les props déclarées via l'option [`props`](./options-state#props) seront incluses. L'instance du composant donne accès aux propriétés de son objet props via un proxy. 
 
@@ -47,7 +47,7 @@ Le nœud du DOM racine que l'instance du composant gère.
   }
   ```
 
-- **Details**
+- **Details :**
 
   `$el` sera `undefined` jusqu'à ce que le composant soit [monté](./options-lifecycle#mounted).
 
@@ -73,10 +73,9 @@ Les options du composant résolues utilisées pour instancier l'instance courant
   }
   ```
 
-- **Details**
+- **Details :**
 
-  // TODO: traduire `merge` ?
-  L'objet `$options` expose les options résolues pour l'instance courante du composant et est le résultat du merge de trois sources possibles :
+  L'objet `$options` expose les options résolues pour l'instance courante du composant et est le résultat de la fusion de trois sources possibles :
 
   - Mixins globaux
   - La base `extends` du composant
@@ -133,7 +132,7 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
   type Slot = (...args: any[]) => VNode[]
   ```
 
-- **Details**
+- **Details :**
 
   Cette option est typiquement utilisée quand on créé manuellement des [render functions](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
 
@@ -172,7 +171,7 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
   }
   ```
 
-- **Details**
+- **Details :**
 
   [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événement `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
@@ -214,7 +213,7 @@ API impérative pour créer des observateurs (watchers).
   type StopHandle = () => void
   ```
 
-- **Details**
+- **Details :**
 
   Le premier argument est la source observée. Cela peut être une string correspondant au nom d'une propriété du composant, ou une fonction accesseur.
 
@@ -225,7 +224,7 @@ API impérative pour créer des observateurs (watchers).
   - **`flush`**: ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`**: débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
-- **Example**
+- **Example :**
 
   Observer via le nom d'une propriété :
 
@@ -277,7 +276,7 @@ Emmet un événement personnalisé depuis l'instance courante. Tout argument add
   }
   ```
 
-- **Example**
+- **Example :**
 
   ```js
   export default {
@@ -307,7 +306,7 @@ Force l'instance du composant à effectuer un nouveau rendu.
   }
   ```
 
-- **Details**
+- **Details :**
 
   Ceci devrait être rarement nécessaire grâce au système de réactivité entièrement automatique de Vue. Le seul cas où vous devriez en avoir besoin est celui où vous auriez créé un composant à l'état explicitement non-réactif en utilisant des APIs de réactivité avancées.
 
@@ -323,7 +322,7 @@ Version propre à l'instance de l'utilité globale [`nextTick()`](./general#next
   }
   ```
 
-- **Details**
+- **Details :**
 
   La seule différence avec la version globale de `nextTick()` est que la fonction de rendu passée à `this.$nextTick()` aura son contexte `this` lié à l'instance courante du composant.
 
