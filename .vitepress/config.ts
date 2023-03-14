@@ -456,7 +456,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#attribute-bindings'
         },
         {
-          text: 'Conditionals and Loops',
+          text: 'Conditions et boucles',
           link: '/examples/#conditionals-and-loops'
         },
         {
