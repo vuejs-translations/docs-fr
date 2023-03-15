@@ -535,7 +535,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#circle-drawer'
         },
         {
-          text: 'Cells',
+          text: 'Cellules',
           link: '/examples/#cells'
         }
       ]
