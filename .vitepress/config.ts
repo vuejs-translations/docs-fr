@@ -546,7 +546,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Bonnes pratiques',
       items: [
         {
-          text: 'Overview',
+          text: "Vue d'ensemble",
           link: '/style-guide/'
         },
         {
