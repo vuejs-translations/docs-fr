@@ -531,7 +531,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#crud'
         },
         {
-          text: 'Circle Drawer',
+          text: 'Dessinateur de cercles',
           link: '/examples/#circle-drawer'
         },
         {
