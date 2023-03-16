@@ -200,9 +200,9 @@ API impérative pour créer des observateurs (watchers).
   ) => void
 
   interface WatchOptions {
-    immediate?: boolean // défaut: false
-    deep?: boolean // défaut: false
-    flush?: 'pre' | 'post' | 'sync' // défaut: 'pre'
+    immediate?: boolean // par défaut: false
+    deep?: boolean // par défaut: false
+    flush?: 'pre' | 'post' | 'sync' // par défaut: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
   }
