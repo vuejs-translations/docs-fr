@@ -20,7 +20,6 @@ L'objet retourné par l'option [`data`](./options-state#data), rendu réactif pa
 
 ## $props {#props}
 
-// TODO: améliorer
 Un objet représentant les `props` courantes et résolues du composant.
 
 - **Type :**
@@ -53,8 +52,7 @@ Le nœud du DOM racine que l'instance du composant gère.
 
   - Pour les composants avec un unique élément racine, `$el` pointera sur cet élément.
   - Pour les composants avec un élément racine `Text`, `$el` pointera sur ce nœud `Text`.
-  - Pour les composants avec des nœuds racines multiples, `$el` sera un nœud du DOM fictif que Vue utilise pour suivre la position du composant dans le DOM (un nœud `Text`, ou un nœud `Comment` en mode hydratation SSR).
-  // TODO : voir comment traduire `in SSR hydratation mode`
+  - Pour les composants avec des nœuds racines multiples, `$el` sera un nœud du DOM fictif que Vue utilise pour suivre la position du composant dans le DOM (un nœud `Text`, ou un nœud `Comment` en mode hydratation avec rendu côté serveur).
 
   :::tip
   Par cohérence, il est recommandé d'utiliser [les refs du template](/guide/essentials/template-refs) pour accéder directement aux éléments du DOM plutôt que `$el`.
@@ -62,7 +60,6 @@ Le nœud du DOM racine que l'instance du composant gère.
 
 ## $options {#options}
 
-// TODO : voir comment traduire `resolved`, j'ai utilisé `résolu`
 Les options du composant résolues utilisées pour instancier l'instance courante du composant.
 
 - **Type :**
@@ -219,12 +216,12 @@ API impérative pour créer des observateurs (watchers).
 
   Le second argument est la fonction de rappel. La fonction de rappel reçoit en paramètres la nouvelle et l'ancienne valeur de la source observée.
 
-  - **`immediate`**: déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
-  - **`deep`**: force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
-  - **`flush`**: ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
-  - **`onTrack / onTrigger`**: débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
+  - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
+  - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
+  - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
-- **Example :**
+- **Exemple :**
 
   Observer via le nom d'une propriété :
 
@@ -242,10 +239,10 @@ API impérative pour créer des observateurs (watchers).
 
   ```js
   this.$watch(
-    // every time the expression `this.a + this.b` yields
-    // a different result, the handler will be called.
-    // It's as if we were watching a computed property
-    // without defining the computed property itself.
+    // à chaque fois qu'une expression `this.a + this.b` retourne
+    // un résultat différent, la fonction de rappel sera appelée.
+    // C'est comme si on observait une propriété calculée
+    // sans définir la propriété calculée en question.
     () => this.a + this.b,
     (newVal, oldVal) => {}
   )
@@ -276,14 +273,14 @@ Emmet un événement personnalisé depuis l'instance courante. Tout argument add
   }
   ```
 
-- **Example :**
+- **Exemple :**
 
   ```js
   export default {
     created() {
-      // only event
+      // événement seul
       this.$emit('foo')
-      // with additional arguments
+      // avec des arguments additionnels
       this.$emit('bar', 1, 2, 3)
     }
   }
