@@ -22,6 +22,6 @@
 </div>
 
 <div class="dialog" v-if="adjusting" @click.stop>
-  <p>Ajusté le rayon du cercle situé en ({{ selected.cx }}, {{ selected.cy }})</p>
+  <p>Ajuster le rayon du cercle situé en ({{ selected.cx }}, {{ selected.cy }})</p>
   <input type="range" v-model="selected.r" min="1" max="300">
 </div>
