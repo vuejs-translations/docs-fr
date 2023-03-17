@@ -133,7 +133,7 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
 
   Cette option est typiquement utilisée quand on créé manuellement des [render functions](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
 
-  Chaque slot est exposé par `this.$slots` comme une fonction qui retourne un tableau de `vnode` sous la clé correspondant au nom de ce slot. Le slot par défaut est exposé comme `this.$slots.default`.
+  Chaque slot est exposé par `this.$slots` comme une fonction qui retourne un tableau de `VNode` sous la clé correspondant au nom de ce slot. Le slot par défaut est exposé comme `this.$slots.default`.
 
   Si un slot est un [scoped slot](/guide/components/slots#scoped-slots), les arguments passés à la fonction de slot sont rendus disponibles au slot en tant que props du slot.
 
@@ -170,7 +170,7 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
 
 - **Details :**
 
-  [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événement `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
+  [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événements `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
   Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc#inheritattrs).
 
@@ -263,7 +263,7 @@ API impérative pour créer des observateurs (watchers).
 
 ## $emit() {#emit}
 
-Emmet un événement personnalisé depuis l'instance courante. Tout argument additionnel sera passé à la fonction de rappel.
+Emet un événement personnalisé depuis l'instance courante. Tout argument additionnel sera passé à la fonction de rappel.
 
 - **Type :**
 
