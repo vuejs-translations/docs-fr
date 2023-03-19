@@ -395,7 +395,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Options : Divers', link: '/api/options-misc' },
         {
-          text: 'Component Instance',
+          text: "L'instance de composant",
           link: '/api/component-instance'
         }
       ]
