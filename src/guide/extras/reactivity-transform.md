@@ -48,7 +48,7 @@ function increment() {
 }
 ```
 
-Chaque API de réactivité qui renvoie des refs aura un équivalent en macro préfixé `$`. Ces APIs incluent :
+Chaque API de réactivité qui renvoie des refs aura un équivalent en macro préfixé `$`. Ces API incluent :
 
 - [`ref`](/api/reactivity-core#ref) -> `$ref`
 - [`computed`](/api/reactivity-core#computed) -> `$computed`

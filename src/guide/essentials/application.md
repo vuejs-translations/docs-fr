@@ -99,7 +99,7 @@ L'instance d'application fournit également quelques méthodes pour enregistrer 
 app.component('TodoDeleteButton', TodoDeleteButton)
 ```
 
-Cela rend `TodoDeleteButton` disponible pour une utilisation n'importe où dans notre application. Nous discuterons de l'enregistrement des composants et d'autres types de ressources dans les sections ultérieures du guide. Vous pouvez également parcourir la liste complète des APIs concernant l'instance d'application dans sa [référence API](/api/application).
+Cela rend `TodoDeleteButton` disponible pour une utilisation n'importe où dans notre application. Nous discuterons de l'enregistrement des composants et d'autres types de ressources dans les sections ultérieures du guide. Vous pouvez également parcourir la liste complète des API concernant l'instance d'application dans sa [référence API](/api/application).
 
 Assurez-vous d'appliquer toutes les configurations d'application avant de monter l'application !
 

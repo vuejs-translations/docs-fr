@@ -298,7 +298,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // ...
   test: {
-    // active les APIs compatibles avec jest globalement
+    // active les API compatibles avec jest globalement
     globals: true,
     // simule le DOM avec happy-dom
     // (requiert l'installation de happy-dom en dépendance additionnelle)
@@ -362,12 +362,12 @@ Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le
 
 Lorsqu'il est question de tester des composables, nous pouvons diviser en deux catégories : les composables qui ne dépendent pas d'une instance de composant hôte et ceux qui en dépendent.
 
-Un composable dépend d'une instance de composant hôte quand il utilise une des APIs suivantes :
+Un composable dépend d'une instance de composant hôte quand il utilise une des API suivantes :
 
 - Hooks du cycle de vie
 - Provide / Inject
 
-Si un composable utilise uniquement les APIs de réactivité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne :
+Si un composable utilise uniquement les API de réactivité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne :
 
 ```js
 // counter.js

@@ -208,7 +208,7 @@ let x: string | number = 1
 Si vous utilisez Vue CLI ou une configuration basée sur Webpack, TypeScript dans les expressions de modèle nécessite `vue-loader@^16.8.0`.
 :::
 
-## Recettes spéciques aux APIs {#api-specific-recipes}
+## Recettes spéciques aux API {#api-specific-recipes}
 
 - [TS avec la Composition API](./composition-api)
 - [TS avec l'Options API](./options-api)
