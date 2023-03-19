@@ -452,7 +452,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#handling-input'
         },
         {
-          text: 'Attribute Bindings',
+          text: "Liaisons d'attributs",
           link: '/examples/#attribute-bindings'
         },
         {
