@@ -55,7 +55,7 @@ Le nœud du DOM racine que l'instance du composant gère.
   - Pour les composants avec des nœuds racines multiples, `$el` sera un nœud du DOM fictif que Vue utilise pour suivre la position du composant dans le DOM (un nœud `Text`, ou un nœud `Comment` en mode hydratation avec rendu côté serveur).
 
   :::tip
-  Par cohérence, il est recommandé d'utiliser [les refs du template](/guide/essentials/template-refs) pour accéder directement aux éléments du DOM plutôt que `$el`.
+  Par cohérence, il est recommandé d'utiliser [les refs de template](/guide/essentials/template-refs) pour accéder directement aux éléments du DOM plutôt que `$el`.
   :::
 
 ## $options {#options}
