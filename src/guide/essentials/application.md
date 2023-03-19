@@ -29,7 +29,7 @@ const app = createApp(App)
 Bien que de nombreux exemples de ce guide ne nécessitent qu'un seul composant, la plupart des applications réelles sont organisées en une arborescence de composants imbriqués et réutilisables. Par exemple, l'arborescence des composants d'une application Todo pourrait ressembler à ceci :
 
 ```
-App (root component)
+App (composant racine)
 ├─ TodoList
 │  └─ TodoItem
 │     ├─ TodoDeleteButton
@@ -43,7 +43,7 @@ Nous discuterons de la façon de définir et de composer plusieurs composants en
 
 ## Montage de l'application {#mounting-the-app}
 
-Une instance d'application n'affichera rien tant que sa méthode `.mount()` ne sera pas appelée. Il attend un argument "container", qui peut être soit un élément DOM réel, soit une chaîne de sélection :
+Une instance d'application n'affichera rien tant que sa méthode `.mount()` ne sera pas appelée. Elle attend un argument "conteneur", qui peut être soit un élément du DOM réel, soit une chaîne de sélection :
 
 ```html
 <div id="app"></div>
@@ -53,17 +53,17 @@ Une instance d'application n'affichera rien tant que sa méthode `.mount()` ne s
 app.mount('#app')
 ```
 
-Le contenu du composant racine de l'application sera rendu à l'intérieur de l'élément de montage. L'élément de montage lui-même n'est pas considéré comme faisant partie de l'application.
+Le contenu du composant racine de l'application sera rendu à l'intérieur de l'élément conteneur. Ce dernier n'est pas considéré comme faisant partie de l'application.
 
 La méthode `.mount()` doit toujours être appelée après les différentes configurations (de l'application et des ressources). Notez également que sa valeur de retour, contrairement aux méthodes d'enregistrement des ressources, est l'instance du composant racine au lieu de l'instance de l'application.
 
 ### Template de composant racine depuis le DOM {#in-dom-root-component-template}
 
-Lorsque vous utilisez Vue sans outils de construction, nous pouvons écrire le modèle de notre composant racine directement dans l'élément de montage :
+Lorsque vous utilisez Vue sans outils de build, nous pouvons écrire le template de notre composant racine directement dans l'élément conteneur :
 
 ```html
 <div id="app">
-  <button @click="compteur++">{{ compteur }}</button>
+  <button @click="count++">{{ count }}</button>
 </div>
 ```
 
@@ -73,7 +73,7 @@ import { createApp } from 'vue'
 const app = createApp({
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   }
 })
@@ -81,7 +81,7 @@ const app = createApp({
 app.mount('#app')
 ```
 
-Vue utilisera automatiquement le contenu HTML du conteneur comme modèle si le composant racine n'a pas déjà une option `template`.
+Vue utilisera automatiquement le contenu HTML du conteneur comme template si le composant racine n'a pas déjà une option `template`.
 
 ## Configuration d'application {#app-configurations}
 
@@ -105,18 +105,18 @@ Assurez-vous d'appliquer toutes les configurations d'application avant de monter
 
 ## Instances multiples d'une application {#multiple-application-instances}
 
-Rien ne vous limite à n'avoir qu'une seule instance d'application sur la même page. L'API `createApp` permet à plusieurs applications Vue de coexister sur la même page, chacune avec sa propre portée pour la configuration et les ressources globales :
+Rien ne vous limite à n'avoir qu'une seule instance d'application sur la même page. L'API `createApp` permet à plusieurs applications Vue de coexister sur la même page, chacune avec son propre scope pour la configuration et les ressources globales :
 
 ```js
 const app1 = createApp({
   /* ... */
 })
-app1.mount('#conteneur-1')
+app1.mount('#container-1')
 
 const app2 = createApp({
   /* ... */
 })
-app2.mount('#conteneur-2')
+app2.mount('#container-2')
 ```
 
 Si vous utilisez Vue pour améliorer l'HTML rendu par le serveur et que vous n'avez besoin de Vue que pour contrôler des parties spécifiques d'une grande page, évitez de monter une seule instance d'application Vue sur la page entière. Au lieu de cela, créez plusieurs petites instances d'application et montez-les sur les éléments dont elles sont responsables.
