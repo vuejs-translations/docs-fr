@@ -30,7 +30,7 @@ Un objet représentant les `props` courantes et résolues du composant.
   }
   ```
 
-- **Details :**
+- **Détails :**
 
   Seules les props déclarées via l'option [`props`](./options-state#props) seront incluses. L'instance du composant donne accès aux propriétés de son objet props via un proxy. 
 
@@ -46,7 +46,7 @@ Le nœud du DOM racine que l'instance du composant gère.
   }
   ```
 
-- **Details :**
+- **Détails :**
 
   `$el` sera `undefined` jusqu'à ce que le composant soit [monté](./options-lifecycle#mounted).
 
@@ -70,7 +70,7 @@ Les options du composant résolues utilisées pour instancier l'instance courant
   }
   ```
 
-- **Details :**
+- **Détails :**
 
   L'objet `$options` expose les options résolues pour l'instance courante du composant et est le résultat de la fusion de trois sources possibles :
 
@@ -129,9 +129,9 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
   type Slot = (...args: any[]) => VNode[]
   ```
 
-- **Details :**
+- **Détails :**
 
-  Cette option est typiquement utilisée quand on créé manuellement des [render functions](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
+  Cette option est typiquement utilisée quand on créé manuellement des [fonctions de rendu](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
 
   Chaque slot est exposé par `this.$slots` comme une fonction qui retourne un tableau de `VNode` sous la clé correspondant au nom de ce slot. Le slot par défaut est exposé comme `this.$slots.default`.
 
@@ -141,7 +141,7 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
 
 ## $refs {#refs}
 
-Un objet constitué d'éléments du DOM et d'instances de composants, enregistré via les [template refs](/guide/essentials/template-refs).
+Un objet constitué d'éléments du DOM et d'instances de composants, enregistré via les [refs du template](/guide/essentials/template-refs).
 
 - **Type :**
 
@@ -158,7 +158,7 @@ Un objet constitué d'éléments du DOM et d'instances de composants, enregistr�
 
 ## $attrs {#attrs}
 
-Un objet qui contient les attributs implicitement déclarés (fallthrough attributes) du composant.
+Un objet qui contient les attributs implicitement déclarés (_fallthrough attributes_) du composant.
 
 - **Type :**
 
@@ -168,9 +168,9 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
   }
   ```
 
-- **Details :**
+- **Détails :**
 
-  [Attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événements `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
+  Les [attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événements `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
   Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc#inheritattrs).
 
@@ -180,7 +180,7 @@ Un objet qui contient les attributs implicitement déclarés (fallthrough attrib
 
 ## $watch() {#watch}
 
-API impérative pour créer des observateurs (watchers).
+API impérative pour créer des observateurs.
 
 - **Type :**
 
@@ -210,16 +210,16 @@ API impérative pour créer des observateurs (watchers).
   type StopHandle = () => void
   ```
 
-- **Details :**
+- **Détails :**
 
-  Le premier argument est la source observée. Cela peut être une string correspondant au nom d'une propriété du composant, ou une fonction accesseur.
+  Le premier argument est la source observée. Cela peut être une chaîne de caractères correspondant au nom d'une propriété du composant, ou une fonction accesseur.
 
   Le second argument est la fonction de rappel. La fonction de rappel reçoit en paramètres la nouvelle et l'ancienne valeur de la source observée.
 
   - **`immediate`** : déclenche la fonction de rappel immédiatement à la création de l'observateur. L'ancienne valeur vaudra `undefined` lors du premier appel.
   - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
-  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
+  - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Exemple :**
 
@@ -229,7 +229,7 @@ API impérative pour créer des observateurs (watchers).
   this.$watch('a', (newVal, oldVal) => {})
   ```
 
-  Observer via un path (délimité par des points) :
+  Observer via un chemin (délimité par des points) :
 
   ```js
   this.$watch('a.b', (newVal, oldVal) => {})
@@ -263,7 +263,7 @@ API impérative pour créer des observateurs (watchers).
 
 ## $emit() {#emit}
 
-Emet un événement personnalisé depuis l'instance courante. Tout argument additionnel sera passé à la fonction de rappel.
+Émet un événement personnalisé depuis l'instance courante. Tout argument additionnel sera passé à la fonction de rappel.
 
 - **Type :**
 
@@ -303,9 +303,9 @@ Force l'instance du composant à effectuer un nouveau rendu.
   }
   ```
 
-- **Details :**
+- **Détails :**
 
-  Ceci devrait être rarement nécessaire grâce au système de réactivité entièrement automatique de Vue. Le seul cas où vous devriez en avoir besoin est celui où vous auriez créé un composant à l'état explicitement non-réactif en utilisant des APIs de réactivité avancées.
+  Ceci devrait être rarement nécessaire grâce au système de réactivité entièrement automatique de Vue. Le seul cas où vous devriez en avoir besoin est celui où vous auriez créé un composant à l'état explicitement non-réactif en utilisant des API de réactivité avancées.
 
 ## $nextTick() {#nexttick}
 
@@ -319,7 +319,7 @@ Version propre à l'instance de l'utilité globale [`nextTick()`](./general#next
   }
   ```
 
-- **Details :**
+- **Détails :**
 
   La seule différence avec la version globale de `nextTick()` est que la fonction de rendu passée à `this.$nextTick()` aura son contexte `this` lié à l'instance courante du composant.
 
