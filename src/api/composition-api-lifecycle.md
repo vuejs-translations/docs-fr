@@ -1,7 +1,7 @@
 # Composition API: Les hooks du cycle de vie {#composition-api-lifecycle-hooks}
 
 :::info Note d'utilisation
-Toutes les APIs listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle) pour plus de détails.
+Toutes les API listées sur cette page doivent être appelées de manière synchrone pendant la phase `setup()` d'un composant. Consultez [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle) pour plus de détails.
 :::
 
 ## onMounted() {#onmounted}
