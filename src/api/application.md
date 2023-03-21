@@ -571,7 +571,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
   }
 
   app.mount('#app')
- // logue 'Hello Vue'
+  // logue 'Hello Vue'
   ```
 
 - **Voir aussi :** [L'instance de composant - `$options`](/api/component-instance#options)

@@ -134,7 +134,7 @@ Si vous cliquez sur le bouton, vous verrez que le nombre ne change pas. L'HTML e
 
 Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, il crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
 
-Pour monter une application en mode hydratation, nous devons utiliser [`createSSRApp()`](/api/application#createssrapp) au lieu de `createApp()`:
+Pour monter une application en mode hydratation, nous devons utiliser [`createSSRApp()`](/api/application#createssrapp) au lieu de `createApp()` :
 
 ```js{2}
 // cela fonctionne dans le navigateur.
@@ -265,7 +265,7 @@ Cependant, dans un contexte SSR, les modules d'application sont généralement i
 
 Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaque demande, tout comme nous le faisons dans les navigateurs. Cependant, l'initialisation des modules JavaScript peut être coûteuse, ce qui affecterait significativement les performances du serveur.
 
-La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [Provide au niveau de l'application](/guide/components/provide-inject#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
+La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [provide au niveau de l'application](/guide/components/provide-inject#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
 
 ```js
 // app.js (partagé entre le serveur et le client)

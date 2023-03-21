@@ -102,6 +102,14 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   </Transition>
   ```
 
+  Transition forcée en modifiant l'attribut `key` :
+  
+  ```vue-html
+  <Transition>
+    <div :key="text">{{ text }}</div>
+  </Transition>
+  ```
+
   Composant dynamique, avec mode de transition + animation à l'apparition :
 
   ```vue-html

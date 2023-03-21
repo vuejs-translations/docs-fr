@@ -25,6 +25,7 @@ Outre ces deux composants, nous pouvons également appliquer des animations dans
 - Rendu conditionnel via `v-if`
 - Affichage conditionnel via `v-show`
 - Basculement des composants dynamiques via l'élément spécial `<component>`
+- Changer l'attribut spécial `key`
 
 Voici un exemple de l'utilisation la plus basique :
 

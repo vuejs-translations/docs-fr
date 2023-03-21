@@ -97,24 +97,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
-De manière alternative, vous pouvez utiliser la [Reactivity Transform](/guide/extras/reactivity-transform) qui est toujours expérimentale :
-
-```vue
-<script setup lang="ts">
-interface Props {
-  name: string
-  count?: number
-}
-
-// destructuration réactive pour defineProps()
-// la valeur par défaut est compilée en option à l'exécution équivalente
-const { name, count = 100 } = defineProps<Props>()
-</script>
-```
-
-Actuellement ce comportement nécessite [une activation explicite](/guide/extras/reactivity-transform#explicit-opt-in).
-
-### Sans `<script setup>` {#without-script-setup}
+### Without `<script setup>` {#without-script-setup}
 
 Si vous n'utilisez pas `<script setup>`, il est nécessaire d'utiliser `defineComponent()` pour activer l'inférence de type des props. Le type de l'objet props passé à `setup()` est déduit de l'option `props`.
 

@@ -50,7 +50,7 @@ function shuffle(array: Array<any>) {
     <ClientOnly>
       <PartnerCard v-for="p in filtered" :key="p.name" :data="p" />
     </ClientOnly>
-    <a 
+    <a
       class="browse-all"
       href="./all.html"
       v-if="showLinkToAll && filtered.length % 2"

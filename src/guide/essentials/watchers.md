@@ -280,8 +280,6 @@ watch(todoId, async () => {
 
 En particulier, remarquez comment l'observateur utilise doublement `todoId`, une fois comme source, ensuite à nouveau à l'intérieur de la fonction.
 
-This can be simplified with [`watchEffect()`](/api/reactivity-core#watcheffect). `watchEffect()` allows us to track the callback's reactive dependencies automatically. The watcher above can be rewritten as:
-
 Cela peut être simplifié par [`watchEffect()`](/api/reactivity-core#watcheffect). `watchEffect()` nous permet d'effectuer des effets de bord immédiatement tout en traquant automatiquement les dépendances réactives de cet effet. L'exemple précédent peut être réécrit de la sorte : 
 
 ```js

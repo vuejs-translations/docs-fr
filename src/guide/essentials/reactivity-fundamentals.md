@@ -573,28 +573,3 @@ export default {
 ```
 
 </div>
-
-<div class="composition-api">
-
-## Reactivity Transform <sup class="vt-badge experimental" /> \*\* {#reactivity-transform}
-
-Devoir utiliser `.value` avec les refs est un inconvénient imposé par les contraintes du langage JavaScript. Cependant, grâce aux transformations à la compilation nous pouvons améliorer l'ergonomie en ajoutant automatiquement `.value` aux endroits appropriés. Vue fournit une transformation compilatoire qui nous permet d'écrire l'exemple précédent du "compteur" comme ceci :
-
-```vue
-<script setup>
-let count = $ref(0)
-
-function increment() {
-  // pas besoin de .value
-  count++
-}
-</script>
-
-<template>
-  <button @click="increment">{{ count }}</button>
-</template>
-```
-
-Vous pouvez en savoir plus sur [Reactivity Transform](/guide/extras/reactivity-transform) dans la section qui lui est consacrée. Notez qu'elle est actuellement encore expérimentale et peut être modifiée avant d'être finalisée.
-
-</div>
