@@ -137,7 +137,7 @@ Case à cocher unique, valeur booléenne :
 
 </div>
 
-Nous pouvons également lier plusieurs cases à cocher au même tableau ou à la même valeur [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) :
+Nous pouvons également lier plusieurs cases à cocher au même tableau ou à la même valeur [Set](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Set) :
 
 <div class="composition-api">
 

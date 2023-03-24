@@ -254,7 +254,7 @@ Pour résoudre ce problème, Vue fournit des **modificateurs d'événements** po
 L'ordre est important lorsqu'on utilise des modificateurs car le code correspondant est généré dans le même ordre. De ce fait, utiliser `@click.prevent.self` empêchera **l'action par défaut du clic sur l'élément lui-même et ses enfants**, alors que `@click.self.prevent` empêchera seulement l'action par défaut de click sur l'élément lui-même.
 :::
 
-Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la méthode native `addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#options):
+Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la méthode native `addEventListener`](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener#options):
 
 ```vue-html
 <!-- utiliser le mode capture lorsque vous ajoutez l'écouteur d'événements -->
@@ -270,7 +270,7 @@ Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la 
 <div @scroll.passive="onScroll">...</div>
 ```
 
-Le modificateur `.passive` est généralement utilisé avec les écouteurs d'événements de touche pour [améliorer les performances sur les périphériques mobiles](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
+Le modificateur `.passive` est généralement utilisé avec les écouteurs d'événements de touche pour [améliorer les performances sur les périphériques mobiles](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
 
 ::: tip
 N'utilisez pas `.passive` et `.prevent` ensemble, car `.passive` indique déjà au navigateur que vous n'avez _pas_ l'intention d'empêcher le comportement par défaut de l'événement, et vous aurez probablement un avertissement du navigateur si vous le faites.
@@ -285,7 +285,7 @@ Lorsque nous écoutons des événements du clavier, nous avons souvent besoin de
 <input @keyup.enter="submit" />
 ```
 
-Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) comme des modificateurs en les convertissant en kebab-case.
+Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values) comme des modificateurs en les convertissant en kebab-case.
 
 ```vue-html
 <input @keyup.page-down="onPageDown" />
