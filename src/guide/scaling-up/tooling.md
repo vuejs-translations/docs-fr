@@ -128,7 +128,7 @@ Les blocs personnalisés sont compilés en importations en provenance du même f
 
 - Si vous utilisez Vue CLI ou entièrement webpack, un loader webpack doit être configuré pour transformer les blocs correspondants. [Exemple](https://vue-loader.vuejs.org/guide/custom-blocks.html)
 
-## Lower-Level Packages {#lower-level-packages}
+## Packages de plus bas niveau {#lower-level-packages}
 
 ### `@vue/compiler-sfc` {#vue-compiler-sfc}
 
@@ -154,7 +154,7 @@ Plugin officiel qui permet le support des composants monofichiers de Vue dans Vi
 
 Le loader officiel qui assure le support des composants monofichiers de Vue dans webpack. Si vous utilisez Vue CLI, consultez également la [documentation sur la modification des options `vue-loader` dans Vue CLI](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
 
-## Other Online Playgrounds {#other-online-playgrounds}
+## Autres terrains de jeu en ligne {#other-online-playgrounds}
 
 - [Terrain de jeu VueUse](https://play.vueuse.org)
 - [Vue + Vite sur Repl.it](https://replit.com/@templates/VueJS-with-Vite)
