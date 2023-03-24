@@ -20,7 +20,7 @@ Outre ces deux composants, nous pouvons également appliquer des animations dans
 
 ## Le composant `<Transition>` {#the-transition-component}
 
-`<Transition>` est un composant intégré : cela signifie qu'il est disponible dans n'importe quel modèle de composant sans avoir à l'enregistrer. Il peut être utilisé pour appliquer des animations d'entrée et de sortie sur des éléments ou des composants qui lui sont transmis via son slot par défaut. L'entrée ou la sortie peut être déclenchée par l'une des actions suivantes :
+`<Transition>` est un composant intégré : cela signifie qu'il est disponible dans n'importe quel template de composant sans avoir à l'enregistrer. Il peut être utilisé pour appliquer des animations d'entrée et de sortie sur des éléments ou des composants qui lui sont transmis via son slot par défaut. L'entrée ou la sortie peut être déclenchée par l'une des actions suivantes :
 
 - Rendu conditionnel via `v-if`
 - Affichage conditionnel via `v-show`
@@ -68,17 +68,17 @@ Voici un exemple de l'utilisation la plus basique :
 
 Lorsqu'un élément d'un composant `<Transition>` est inséré ou supprimé, voici ce qui se passe :
 
-1. Vue détectera automatiquement si l'élément cible a des transitions CSS ou des animations appliquées. Si c'est le cas, un certain nombre de [classes de transition CSS](#transition-classes) seront ajoutées/supprimées aux moments appropriés.
+1. Vue détectera automatiquement si l'élément cible a des transitions CSS ou des animations appliquées. Si c'est le cas, un certain nombre de [classes de transition CSS](#transition-classes) seront ajoutées / supprimées aux moments appropriés.
 
 2. S'il existe des écouteurs pour les [hooks JavaScript](#javascript-hooks), ces hooks seront appelés aux moments appropriés.
 
-3. Si aucune transition/animation CSS n'est détectée et qu'aucun hook JavaScript n'est fourni, les opérations DOM d'insertion et/ou de suppression seront exécutées lors du prochain rafraîchissement d'animation du navigateur.
+3. Si aucune transition / animation CSS n'est détectée et qu'aucun hook JavaScript n'est fourni, les opérations DOM d'insertion et / ou de suppression seront exécutées lors du prochain rafraîchissement d'animation du navigateur.
 
 ## Transitions basées sur le CSS {#css-based-transitions}
 
 ### Classes de transition {#transition-classes}
 
-Six classes sont appliquées pour les transitions entrée/sortie.
+Six classes sont appliquées pour les transitions entrée / sortie.
 
 ![Diagramme de transition](./images/transition-classes.png)
 
@@ -86,9 +86,9 @@ Six classes sont appliquées pour les transitions entrée/sortie.
 
 1. `v-enter-from` : état de départ pour l'entrée. Ajoutée avant l'insertion de l'élément, supprimée une frame après l'insertion de l'élément.
 
-2. `v-enter-active` : état actif pour l'entrée. Appliquée pendant toute la phase d'entrée. Ajoutée avant l'insertion de l'élément, supprimée à la fin de la transition/animation. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d'accélération de la transition entrante.
+2. `v-enter-active` : état actif pour l'entrée. Appliquée pendant toute la phase d'entrée. Ajoutée avant l'insertion de l'élément, supprimée à la fin de la transition / animation. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d'accélération de la transition entrante.
 
-3. `v-enter-to` : état de fin pour l'entrée. Ajoutée une frame après l'insertion de l'élément (en même temps `v-enter-from` est supprimée), supprimée lorsque la transition/animation se termine.
+3. `v-enter-to` : état de fin pour l'entrée. Ajoutée une frame après l'insertion de l'élément (en même temps `v-enter-from` est supprimée), supprimée lorsque la transition / animation se termine.
 
 4. `v-leave-from` : état de départ pour la sortie. Ajoutée immédiatement lorsqu'une transition de sortie est déclenchée, supprimée après une frame.
 
