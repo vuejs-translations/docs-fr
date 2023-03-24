@@ -42,7 +42,7 @@ Met à jour [innerHTML](https://developer.mozilla.org/fr/docs/Web/API/Element/in
   <div v-html="html"></div>
   ```
 
-- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax#raw)
+- **Voir aussi :** [Syntaxe de template - HTML brut](/guide/essentials/template-syntax#raw-html)
 
 ## v-show {#v-show}
 
