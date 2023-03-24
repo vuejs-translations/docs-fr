@@ -62,7 +62,7 @@ Dès que vous êtes prêts à livrer votre application en production, exécutez 
 
 Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment) pour en savoir plus sur l'envoi de votre application en production.
 
-[Étapes suivantes >](#etapes-suivantes)
+[Étapes suivantes >](#next-steps)
 
 ## Utiliser Vue depuis un CDN {#using-vue-from-cdn}
 

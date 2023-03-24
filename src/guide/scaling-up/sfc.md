@@ -60,7 +60,7 @@ Comme nous pouvons le voir, les SFC de Vue sont une extension naturelle du trio 
 Si les SFC nécessitent une étape de compilation, les avantages sont nombreux en contrepartie :
 
 - Créer des composants modulaires en utilisant une syntaxe HTML, CSS et JavaScript familière.
-- [Collocation de responsabilités couplées](#qu-en-est-il-de-la-separation-des-responsabilites)
+- [Collocation de responsabilités couplées](#what-about-separation-of-concerns)
 - Templates précompilés sans coût de compilation au runtime
 - [CSS à portée limitée au composant](/api/sfc-css-features)
 - [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)

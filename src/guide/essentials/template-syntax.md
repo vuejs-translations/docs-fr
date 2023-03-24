@@ -18,7 +18,7 @@ La balise moustache sera remplacée par la valeur de la propriété `msg` de l'i
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v):
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v)-html:
 
 ```vue-html
 <p>Using text interpolation: {{ rawHtml }}</p>

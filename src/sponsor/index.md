@@ -16,7 +16,7 @@ L'énorme quantité d'efforts nécessaires pour maintenir un écosystème aussi 
 
 ## Comment devenir un sponsor {#how-to-sponsor}
 
-Les soutiens financiers peuvent être effectués via les [Sponsors GitHub](https://github.com/sponsors/yyx990803) ou [OpenCollective](https://opencollective.com/vuejs). Les factures peuvent être obtenues via le système de paiement de GitHub. Les dons mensuels récurrents et les dons ponctuels sont acceptés. Les dons récurrents ont droit à des emplacements de logo comme spécifié dans les [avantages par niveau](#avantages-par-niveau).
+Les soutiens financiers peuvent être effectués via les [Sponsors GitHub](https://github.com/sponsors/yyx990803) ou [OpenCollective](https://opencollective.com/vuejs). Les factures peuvent être obtenues via le système de paiement de GitHub. Les dons mensuels récurrents et les dons ponctuels sont acceptés. Les dons récurrents ont droit à des emplacements de logo comme spécifié dans les [avantages par niveau](#tier-benefits).
 
 If you have questions regarding tiers, payment logistics, or sponsor exposure data, please reach out to [sponsor@vuejs.org](mailto:sponsor@vuejs.org).
 
