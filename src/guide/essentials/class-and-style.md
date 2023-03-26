@@ -20,7 +20,7 @@ Nous pouvons passer un objet à `:class` (abréviation de `v-bind:class`) pour b
 <div :class="{ active: isActive }"></div>
 ```
 
-La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la donnée "isActive".
+La syntaxe ci-dessus signifie que la présence de la classe "active" sera déterminée par la [valeur évaluée à vrai](https://developer.mozilla.org/fr/docs/Glossary/Truthy) de la donnée "isActive".
 
 Vous pouvez basculer plusieurs classes en ayant plus de clés dans l'objet. De plus, la directive `:class` peut également coexister avec l'attribut simple `class`. Admettons la chose suivante :
 

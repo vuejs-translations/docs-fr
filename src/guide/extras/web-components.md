@@ -1,6 +1,6 @@
 # Vue et les Web Components {#vue-and-web-components}
 
-Les [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) est un terme générique pour l'ensemble des API web natives qui permettent aux développeurs de créer des éléments personnalisés réutilisables.
+Les [Web Components](https://developer.mozilla.org/fr/docs/Web/Web_Components) est un terme générique pour l'ensemble des API web natives qui permettent aux développeurs de créer des éléments personnalisés réutilisables.
 
 Nous considérons que Vue et les Web Components sont avant tout des technologies complémentaires. Vue offre un excellent support pour la consommation et la création d'éléments personnalisés. Que vous intégriez des éléments personnalisés dans une application Vue existante ou que vous utilisiez Vue pour créer et distribuer des éléments personnalisés, vous êtes au bon endroit.
 
@@ -116,7 +116,7 @@ document.body.appendChild(
 
 #### Cycle de vie {#lifecycle}
 
-- Un élément personnalisé Vue montera une instance de composant Vue interne à l'intérieur du shadowRoot lorsque la fonction [`connectedCallback`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks) de l'élément est appelée pour la première fois.
+- Un élément personnalisé Vue montera une instance de composant Vue interne à l'intérieur du shadowRoot lorsque la fonction [`connectedCallback`](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements#utilisation_des_rappels_de_cycle_de_vie) de l'élément est appelée pour la première fois.
 
 - Lorsque la fonction `disconnectedCallback` de l'élément est invoquée, Vue vérifiera si l'élément est détaché du document après un tic de micro-tâche.
 
@@ -155,7 +155,7 @@ Les événements émis via `this.$emit` ou la configuration `emit` sont distribu
 
 #### Slots {#slots}
 
-À l'intérieur du composant, les slots peuvent être rendus en utilisant l'élément `<slot/>` comme d'habitude. Cependant, lors de la consommation de l'élément résultant, il n'accepte que la [syntaxe native des slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) :
+À l'intérieur du composant, les slots peuvent être rendus en utilisant l'élément `<slot/>` comme d'habitude. Cependant, lors de la consommation de l'élément résultant, il n'accepte que la [syntaxe native des slots](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_templates_and_slots) :
 
 - Les [scoped slots](/guide/components/slots#scoped-slots) ne sont pas supportés.
 
