@@ -20,7 +20,7 @@ Outre ces deux composants, nous pouvons également appliquer des animations dans
 
 ## Le composant `<Transition>` {#the-transition-component}
 
-`<Transition>` est un composant intégré : cela signifie qu'il est disponible dans n'importe quel modèle de composant sans avoir à l'enregistrer. Il peut être utilisé pour appliquer des animations d'entrée et de sortie sur des éléments ou des composants qui lui sont transmis via son slot par défaut. L'entrée ou la sortie peut être déclenchée par l'une des actions suivantes :
+`<Transition>` est un composant intégré : cela signifie qu'il est disponible dans n'importe quel template de composant sans avoir à l'enregistrer. Il peut être utilisé pour appliquer des animations d'entrée et de sortie sur des éléments ou des composants qui lui sont transmis via son slot par défaut. L'entrée ou la sortie peut être déclenchée par l'une des actions suivantes :
 
 - Rendu conditionnel via `v-if`
 - Affichage conditionnel via `v-show`
@@ -68,17 +68,17 @@ Voici un exemple de l'utilisation la plus basique :
 
 Lorsqu'un élément d'un composant `<Transition>` est inséré ou supprimé, voici ce qui se passe :
 
-1. Vue détectera automatiquement si l'élément cible a des transitions CSS ou des animations appliquées. Si c'est le cas, un certain nombre de [classes de transition CSS](#transition-classes) seront ajoutées/supprimées aux moments appropriés.
+1. Vue détectera automatiquement si l'élément cible a des transitions CSS ou des animations appliquées. Si c'est le cas, un certain nombre de [classes de transition CSS](#transition-classes) seront ajoutées / supprimées aux moments appropriés.
 
 2. S'il existe des écouteurs pour les [hooks JavaScript](#javascript-hooks), ces hooks seront appelés aux moments appropriés.
 
-3. Si aucune transition/animation CSS n'est détectée et qu'aucun hook JavaScript n'est fourni, les opérations DOM d'insertion et/ou de suppression seront exécutées lors du prochain rafraîchissement d'animation du navigateur.
+3. Si aucune transition / animation CSS n'est détectée et qu'aucun hook JavaScript n'est fourni, les opérations DOM d'insertion et / ou de suppression seront exécutées lors du prochain rafraîchissement d'animation du navigateur.
 
 ## Transitions basées sur le CSS {#css-based-transitions}
 
 ### Classes de transition {#transition-classes}
 
-Six classes sont appliquées pour les transitions entrée/sortie.
+Six classes sont appliquées pour les transitions entrée / sortie.
 
 ![Diagramme de transition](./images/transition-classes.png)
 
@@ -86,9 +86,9 @@ Six classes sont appliquées pour les transitions entrée/sortie.
 
 1. `v-enter-from` : état de départ pour l'entrée. Ajoutée avant l'insertion de l'élément, supprimée une frame après l'insertion de l'élément.
 
-2. `v-enter-active` : état actif pour l'entrée. Appliquée pendant toute la phase d'entrée. Ajoutée avant l'insertion de l'élément, supprimée à la fin de la transition/animation. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d'accélération de la transition entrante.
+2. `v-enter-active` : état actif pour l'entrée. Appliquée pendant toute la phase d'entrée. Ajoutée avant l'insertion de l'élément, supprimée à la fin de la transition / animation. Cette classe peut être utilisée pour définir la durée, le retard et la courbe d'accélération de la transition entrante.
 
-3. `v-enter-to` : état de fin pour l'entrée. Ajoutée une frame après l'insertion de l'élément (en même temps `v-enter-from` est supprimée), supprimée lorsque la transition/animation se termine.
+3. `v-enter-to` : état de fin pour l'entrée. Ajoutée une frame après l'insertion de l'élément (en même temps `v-enter-from` est supprimée), supprimée lorsque la transition / animation se termine.
 
 4. `v-leave-from` : état de départ pour la sortie. Ajoutée immédiatement lorsqu'une transition de sortie est déclenchée, supprimée après une frame.
 
@@ -225,7 +225,7 @@ Vous pouvez également spécifier des classes de transition personnalisées en t
 - `leave-active-class`
 - `leave-to-class`
 
-Ceux-ci remplaceront les noms de classes conventionnels. Ceci est particulièrement utile lorsque vous souhaitez combiner le système de transition de Vue avec une bibliothèque d'animation CSS existante, telle que [Animate.css](https://daneden.github.io/animate.css/) :
+Celles-ci remplaceront les noms de classes conventionnels. Ceci est particulièrement utile lorsque vous souhaitez combiner le système de transition de Vue avec une bibliothèque d'animation CSS existante, telle que [Animate.css](https://daneden.github.io/animate.css/) :
 
 ```vue-html
 <!-- en supposant que Animate.css est inclus sur la page -->
@@ -355,8 +355,8 @@ function onBeforeEnter(el) {}
 // appelée une frame après l'insertion de l'élément.
 // utilisez ceci pour démarrer l'animation d'entrée.
 function onEnter(el, done) {
-  // appelée le fonction de rappel done pour indiquer la fin de la transition.
-  // facultatif si utilisée en combinaison avec CSS
+  // appelle la fonction de rappel done pour indiquer la fin de la transition
+  // facultative si utilisée en combinaison avec CSS
   done()
 }
 
@@ -371,8 +371,8 @@ function onBeforeLeave(el) {}
 // appelée lorsque la transition de sortie démarre.
 // utilisez ceci pour démarrer l'animation de sortie.
 function onLeave(el, done) {
-  // appelle le callback done pour indiquer la fin de la transition
-  // facultatif si utilisée en combinaison avec CSS
+  // appelle la fonction de rappel done pour indiquer la fin de la transition
+  // facultative si utilisée en combinaison avec CSS
   done()
 }
 
@@ -398,8 +398,8 @@ export default {
     // appelée une frame après l'insertion de l'élément.
     // utilisez ceci pour démarrer l'animation d'entrée.
     onEnter(el, done) {
-      // appelle le callback done pour indiquer la fin de la transition.
-      // facultatif si utilisée en combinaison avec CSS
+      // appelle la fonction de rappel done pour indiquer la fin de la transition.
+      // facultative si utilisée en combinaison avec CSS
       done()
     },
 
@@ -414,8 +414,8 @@ export default {
     // appelée lorsque la transition de sortie démarre.
     // utilisez ceci pour démarrer l'animation de sortie.
     onLeave(el, done) {
-      // appelle le callback done pour indiquer la fin de la transition
-      // facultatif si utilisé en combinaison avec CSS
+      // appelle la fonction de rappel done pour indiquer la fin de la transition
+      // facultative si utilisée en combinaison avec CSS
       done()
     },
 
@@ -431,7 +431,7 @@ export default {
 
 </div>
 
-Ces hooks peuvent être utilisés en combinaison avec des transitions/animations CSS ou seuls.
+Ces hooks peuvent être utilisés en combinaison avec des transitions / animations CSS ou seuls.
 
 Lors de l'utilisation de transitions JavaScript uniquement, il est généralement judicieux d'ajouter la prop `:css="false"`. Cela indique explicitement à Vue d'ignorer la détection automatique des transitions CSS. En plus d'être légèrement plus performant, cela empêche également les règles CSS d'interférer accidentellement avec la transition :
 
@@ -524,7 +524,7 @@ En plus de basculer un élément avec `v-if` /`v-show`, nous pouvons également 
 
 [Essayer en ligne](https://sfc.vuejs.org/#eNqdlNtu1DAQhl9llJttpSYpRdyE7IoK8QRwg5QbbzLZunVs45kslGofqM/RF2Ps7KlsQYXcxIff3+8Zj/2QXXtfrEfMqqymNmjPQMijXzRWD94FhgcI2MMG+uAGmIl01tjGts4SQ+faz6wYYR5FZzNSa+xm542tywkmGOkwDt6ILPa4Jq8sEN8bnDfZoMJK2zzo1Q1XcHXpfzTZ4qPR30b8Cd6NAbwKrfx1AIMEne77p8eAlgmeHsWboBIzQQocoO70GlqjiIS9ZJvLPllpi0Gw0V38vwRlSbN2Fqwa4ibI6A7z0ScNpK9ejsyiWOe6F8Uh0PkctmE22U68+z60Rrd3z+Qww05zUi8+xVaoywn9ghUawpf89ohXG2q7So424EoTh/+2nUCv8t1lZXFt7WhOHOvykPjprEo5LGnV5XF92DqVhjSLZ+cHD3FNp0mU9xVoa2Q0XxrX3r2PM95N6EoqUVh6jWn4BqfKeoOD9DfRYBt34h1WqSU5M3JclVTFrihyqTUMuWoj8+J4wqBEvJ2YcLyPUIDGwGVx9Y4AleTXjfwndLpZab3zqtUs4V2mzSdc78JQTc2Yo69nb+WSnJ+ypt2w+wdSfoSSS5Tynl1k08XPB+WLW3JWnoaEbLYT1GTVZBLH5EGI/Sa7YfZUlSX1bXxQbqlwYVVKqwijZT1ggTTky+C+EwYBN5kkc88oZXAtuZCb3aGU69+Yv0lPuBErEW2yzS9gmqtS)
 
-## Modes des transition {#transition-modes}
+## Modes des transitions {#transition-modes}
 
 Dans l'exemple précédent, les éléments d'entrée et de sortie sont animés en même temps, et nous avons dû les appliquer `position: absolute` pour éviter le problème de mise en page lorsque les deux éléments sont présents dans le DOM.
 
