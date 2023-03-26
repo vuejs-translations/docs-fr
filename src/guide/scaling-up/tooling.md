@@ -128,7 +128,7 @@ Les blocs personnalisés sont compilés en importations en provenance du même f
 
 - Si vous utilisez Vue CLI ou entièrement webpack, un loader webpack doit être configuré pour transformer les blocs correspondants. [Exemple](https://vue-loader.vuejs.org/guide/custom-blocks.html)
 
-## Packages de plus bas niveau {#lower-level-packages}
+## Packages de bas niveau {#lower-level-packages}
 
 ### `@vue/compiler-sfc` {#vue-compiler-sfc}
 
