@@ -400,3 +400,12 @@ const openModal = () => {
 ```
 
 Notez que si vous souhaitez utiliser cette technique dans des fichiers TypeScript au lieu des composants monofichiers de Vue, vous devez activer le [mode prise de contrôle](./overview#volar-takeover-mode) de Volar.
+
+Dans les cas où le type exact du composant n'est pas disponible ou n'est pas important, le type `ComponentPublicInstance` peut être utilisé à la place. Cela n'inclura que les propriétés partagées par tous les composants, telles que `$el` :
+
+```ts
+import { ref } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
+
+const child = ref<ComponentPublicInstance | null>(null)
+```

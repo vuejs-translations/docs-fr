@@ -102,25 +102,6 @@
     "platinum": true
   },
   {
-    "name": "DevSquad",
-    "logo": "devsquad.png",
-    "flipLogo": true,
-    "intro": "Vous pouvez considérer DevSquad comme les Navy SEALs du développement logiciel. Les membres de notre équipe possèdent des compétences uniques et diverses, et cette transversalité nous permet de mener à bien n'importe quelle mission.",
-    "description": [
-      "Tous nos clients ont leur propre équipe dédiée. Même si vous avez besoin de 30 développeurs, tous ceux qui travaillent sur votre projet sont répartis en petites équipes agiles de 2 à 6 personnes. Une petite équipe éprouvée au combat peut agir plus rapidement et avec plus de précision que les grandes équipes, tout comme les Navy SEALs.",
-      "Au lieu d'un code avec plein de bugs que vous avez peut-être reçu dans le passé, nous écrivons des logiciels robustes et les testons à fond. Mais au lieu de nous contenter de tester manuellement, nous écrivons du code supplémentaire pour tester votre code. Ainsi, les bugs sont repérés rapidement et automatiquement avant que vos employés ou vos clients ne touchent au logiciel. Et cela permet d'éviter des problèmes plus importants lorsque vous essayez de développer votre produit ou d'ajouter de nouvelles fonctionnalités.",
-      "DevSquad vous offre des méthodes éprouvées et toute l'expérience dont vous avez besoin pour créer vos logiciels mieux, plus rapidement et correctement dès la première fois."
-    ],
-    "region": ["Amérique du Nord"],
-    "proficiencies": ["Vue.js", "Laravel", "Node.js"],
-    "website": {
-      "text": "devsquad.com",
-      "url": "https://devsquad.com/vuejs-developers/"
-    },
-    "contact": "phil@devsquad.com",
-    "platinum": true
-  },
-  {
     "name": "Tighten",
     "logo": "tighten.svg",
     "flipLogo": true,

@@ -22,7 +22,7 @@ onMounted(async () => {
       Un framework <strong>accessible, performant et polyvalent</strong><br/> pour construire des interfaces utilisateur.
     </p>
     <p class="actions">
-      <vue-mastery-modal />
+      <VueMasteryModal />
       <a class="get-started" href="/guide/introduction.html">
         Commencer
         <svg
@@ -54,8 +54,8 @@ onMounted(async () => {
             <img :src="`${base}/images/${img}`" :alt="name" />
           </picture>
           <img
-            width="168px"
-            height="42px"
+            width="168"
+            height="42"
             v-else
             :src="`${base}/images/${img}`"
             :alt="name"
@@ -275,7 +275,7 @@ html:not(.dark) .accent,
 
 @media (max-width: 576px) {
   #hero {
-    padding: 64px 32px;
+    padding: 56px 32px;
   }
   .description {
     font-size: 16px;
@@ -298,7 +298,7 @@ html:not(.dark) .accent,
     padding: 20px 36px;
   }
   .actions a {
-    margin: 0.5em 0;
+    margin: 18px 0;
   }
 }
 
