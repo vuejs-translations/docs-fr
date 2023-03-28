@@ -441,7 +441,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ],
   '/examples/': [
     {
-      text: 'Basic',
+      text: 'Basiques',
       items: [
         {
           text: 'Hello World',
@@ -470,7 +470,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Practical',
+      text: 'Pratiques',
       items: [
         {
           text: 'Éditeur markdown',
@@ -580,7 +580,7 @@ const i18n: ThemeConfig['i18n'] = {
   next: 'Suivant',
   pageNotFound: 'Page non trouvée',
   deadLink: {
-    before: 'Vous avez trouvé un lien mort: ',
+    before: 'Vous avez trouvé un lien mort : ',
     after: ''
   },
   deadLinkReport: {
@@ -711,7 +711,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     footer: {
       license: {
-        text: 'MIT License',
+        text: 'Licence MIT',
         link: 'https://opensource.org/licenses/MIT'
       },
       copyright: `Copyright © 2014-${new Date().getFullYear()} Evan You`
