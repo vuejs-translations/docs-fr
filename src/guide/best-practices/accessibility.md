@@ -40,7 +40,7 @@ Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style su
 }
 ```
 
-Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref template du lien d'évitement (en supposant l'utilisation de `vue-router`) :
+Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref de template du lien d'évitement (en supposant l'utilisation de `vue-router`) :
 
 <div class="options-api">
 
@@ -114,15 +114,15 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 
 ### Landmarks {#landmarks}
 
-[Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role)permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
+[Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
 
-| HTML            | ARIA Role            | But du landmark                                                                                                                |
+| HTML            | Rôle ARIA            | But du landmark                                                                                                                |
 |-----------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| header          | role="banner"        | Entête principales : titre de la page\*                                                                                        |
+| header          | role="banner"        | Entête principal : titre de la page\*                                                                                        |
 | nav             | role="navigation"    | Collection de liens utilisables lors de la navigation dans le document ou vers des documents associés                          |
 | main            | role="main"          | Le contenu central ou principal du document.                                                                                   |
 | footer          | role="contentinfo"   | Information à propos du document parent : notes de pied de page/copyrights/liens vers la déclaration de confidentialité        |
-| aside           | role="complementary" | Supporte le contenu principale, malgré tout est séparé et a du sens par lui-même                                               |
+| aside           | role="complementary" | Supporte le contenu principal, malgré tout est séparé et a du sens par lui-même                                               |
 | _Not available_ | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
 | section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
@@ -169,12 +169,12 @@ Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; e
 
 <!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Si vous inspectez cet élément dans vos outils de développeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Elements, vous verrez comment le champ prends son nom du label :
+Si vous inspectez cet élément dans vos outils de développeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Éléments, vous verrez comment le champ prend son nom du label :
 
-![Outils de développement Chrom montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
+![Outils de développement Chrome montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
 
 :::warning Attention :
-Vous pourriez avoir vu cette façon d'envelopper un champ de saisie par un label de la façon suivante :
+Vous pourriez avoir vu cette façon d'envelopper un champ de saisie par un label :
 
 ```vue-html
 <label>
@@ -356,7 +356,7 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 
 ### Cacher du contenu {#hiding-content}
 
-En règle générale, il n'est pas recommandé de cacher visuellement des labels, même si le champ un nom accessible. Cependant, si la fonctionnalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
+En règle générale, il n'est pas recommandé de cacher visuellement des labels, même si le champ est un nom accessible. Cependant, si la fonctionnalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
 
 Regardons ce champ de recherche :
 
@@ -390,16 +390,16 @@ Nous pouvons utiliser du CSS pour cacher visuellement des éléments, mais les l
 
 #### `aria-hidden="true"` {#aria-hidden-true}
 
-Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance, mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments "focusables", uniquement sur des éléments décoratifs ou du contenu hors écran.
+Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance, mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments sur lesquels il est possible de faire le focus, uniquement sur des éléments décoratifs ou du contenu hors écran.
 
 ```vue-html
-<p>Ceci n'est pas caché au liseurs d'écran.</p>
+<p>Ceci n'est pas caché aux liseurs d'écran.</p>
 <p aria-hidden="true">Ceci est caché aux liseurs d'écran.</p>
 ```
 
 ### Boutons {#buttons}
 
-Lorsque vous utilisez des boutons à l'intérieur d'un formulaire, vous devez indiquer en indiquer le type éviter la soumission du formulaire.
+Lorsque vous utilisez des boutons à l'intérieur d'un formulaire, vous devez en indiquer le type afin d'éviter la soumission du formulaire.
 Vous pouvez aussi utiliser un input pour créer des boutons :
 
 ```vue-html
@@ -416,7 +416,7 @@ Vous pouvez aussi utiliser un input pour créer des boutons :
 
 <!-- <common-codepen-snippet title="Form Buttons" slug="JjEyrYZ" :height="467" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Functional Images {#functional-images}
+### Images fonctionnelles {#functional-images}
 
 Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
