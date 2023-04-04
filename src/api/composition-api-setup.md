@@ -169,4 +169,4 @@ export default {
 }
 ```
 
-La méthode `increment` serait dès lors disponible dans le composant parent via une référence.
+La méthode `increment` sera dès lors disponible dans le composant parent via une référence.
