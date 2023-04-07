@@ -176,7 +176,7 @@ Pour la plupart des animations CSS, nous pouvons simplement les déclarer sous l
 ```vue-html
 <Transition name="bounce">
   <p v-if="show" style="text-align: center;">
-    Bonjour voici un texte plein d'entrain !
+    Hello here is some bouncy text!
   </p>
 </Transition>
 ```
@@ -514,9 +514,9 @@ En plus de basculer un élément avec `v-if` /`v-show`, nous pouvons également 
 
 ```vue-html
 <Transition>
-  <button v-if="docState === 'saved'">Editer</button>
-  <button v-else-if="docState === 'edited'">Enregistrer</button>
-  <button v-else-if="docState === 'editing'">Annuler</button>
+  <button v-if="docState === 'saved'">Edit</button>
+  <button v-else-if="docState === 'edited'">Save</button>
+  <button v-else-if="docState === 'editing'">Cancel</button>
 </Transition>
 ```
 

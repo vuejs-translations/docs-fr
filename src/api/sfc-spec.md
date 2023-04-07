@@ -28,7 +28,7 @@ export default {
 </style>
 
 <custom1>
-  Il peut s'agir, par exemple, de la documentation relative au composant.
+  This could be e.g. documentation for the component.
 </custom1>
 ```
 

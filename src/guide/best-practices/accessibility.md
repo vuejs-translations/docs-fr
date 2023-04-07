@@ -15,7 +15,7 @@ Typiquement, cela se fait en haut de `App.vue`  car ce sera le premier élément
 ```vue-html
 <ul class="skip-links">
   <li>
-    <a href="#main" ref="skipLink" class="skip-link">Aller au contenu principal</a>
+    <a href="#main" ref="skipLink" class="skip-link">Skip to main content</a>
   </li>
 </ul>
 ```
@@ -95,18 +95,18 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 [En lire plus à propos des titres](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
 
 ```vue-html
-<main role="main" aria-labelledby="titre-principal">
-  <h1 id="main-title">Titre principal</h1>
-  <section aria-labelledby="titre-de-section-1">
-    <h2 id="section-title-1"> Titre de section </h2>
-    <h3>Sous-titre de section</h3>
+<main role="main" aria-labelledby="main-title">
+  <h1 id="main-title">Main title</h1>
+  <section aria-labelledby="section-title-1">
+    <h2 id="section-title-1"> Section Title </h2>
+    <h3>Section Subtitle</h3>
     <!-- Contenu -->
   </section>
-  <section aria-labelledby="titre-de-section-2">
-    <h2 id="titre-de-section-2"> Titre de section </h2>
-    <h3>Sous-titre de section</h3>
+  <section aria-labelledby="section-title-2">
+    <h2 id="section-title-2"> Section Title </h2>
+    <h3>Section Subtitle</h3>
     <!-- Contenu -->
-    <h3>Sous-titre de section</h3>
+    <h3>Section Subtitle</h3>
     <!-- contenu -->
   </section>
 </main>
@@ -163,7 +163,7 @@ Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de for
 Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; en liant `for` et `id`.
 
 ```vue-html
-<label for="name">Nom</label>
+<label for="name">Name</label>
 <input type="text" name="name" id="name" v-model="name" />
 ```
 
@@ -178,7 +178,7 @@ Vous pourriez avoir vu cette façon d'envelopper un champ de saisie par un label
 
 ```vue-html
 <label>
-  Nom :
+  Name:
   <input type="text" name="name" id="name" v-model="name" />
 </label>
 ```
@@ -191,7 +191,7 @@ Associer les labels avec un id correspondant est mieux supporté par les technol
 Vous pouvez aussi donner un nom accessible au champ avec [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
 
 ```vue-html
-<label for="name">Nom</label>
+<label for="name">Name</label>
 <input
   type="text"
   name="name"
@@ -218,18 +218,18 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
   method="post"
   autocomplete="on"
 >
-  <h1 id="billing">Facturation</h1>
+  <h1 id="billing">Billing</h1>
   <div class="form-item">
-    <label for="name">Nom :</label>
+    <label for="name">Name:</label>
     <input
       type="text"
       name="name"
       id="name"
       v-model="name"
-      aria-labelledby="nom de facturation"
+      aria-labelledby="billing name"
     />
   </div>
-  <button type="submit">Envoyer</button>
+  <button type="submit">Submit</button>
 </form>
 ```
 
@@ -248,20 +248,20 @@ L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Acces
   method="post"
   autocomplete="on"
 >
-  <h1 id="billing">Facturation</h1>
+  <h1 id="billing">Billing</h1>
   <div class="form-item">
-    <label for="name">Nom complet :</label>
+    <label for="name">Full Name:</label>
     <input
       type="text"
       name="name"
       id="name"
       v-model="name"
-      aria-labelledby="nom de facturation"
+      aria-labelledby="billing name"
       aria-describedby="nameDescription"
     />
-    <p id="nameDescription">Veuillez renseigner le prénom puis prénom.</p>
+    <p id="nameDescription">Please provide first and last name.</p>
   </div>
-  <button type="submit">Envoyer</button>
+  <button type="submit">Submit</button>
 </form>
 ```
 
@@ -296,7 +296,7 @@ Un des problèmes avec les placeholders est qu'ils ne remplissent pas les [crit�
       :placeholder="item.placeholder"
     />
   </div>
-  <button type="submit">Envoyer</button>
+  <button type="submit">Submit</button>
 </form>
 ```
 
@@ -330,7 +330,7 @@ Vous pouvez fournir des instructions complémentaires et associer plusieurs ids 
 ```vue-html
 <fieldset>
   <legend>Using aria-labelledby</legend>
-  <label id="date-label" for="date">Date actuelle :</label>
+  <label id="date-label" for="date">Current Date:</label>
   <input
     type="date"
     name="date"
@@ -346,7 +346,7 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 ```vue-html
 <fieldset>
   <legend>En utilisant aria-describedby</legend>
-  <label id="dob" for="dob">Date de naissance :</label>
+  <label id="dob" for="dob">Date of Birth:</label>
   <input type="date" name="dob" id="dob" aria-describedby="dob-instructions" />
   <p id="dob-instructions">MM/DD/YYYY</p>
 </fieldset>
@@ -362,9 +362,9 @@ Regardons ce champ de recherche :
 
 ```vue-html
 <form role="search">
-  <label for="search" class="hidden-visually">Recherche : </label>
+  <label for="search" class="hidden-visually">Search: </label>
   <input type="text" name="search" id="search" v-model="search" />
-  <button type="submit">Recherche</button>
+  <button type="submit">Search</button>
 </form>
 ```
 
@@ -393,8 +393,8 @@ Nous pouvons utiliser du CSS pour cacher visuellement des éléments, mais les l
 Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance, mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments sur lesquels il est possible de faire le focus, uniquement sur des éléments décoratifs ou du contenu hors écran.
 
 ```vue-html
-<p>Ceci n'est pas caché aux liseurs d'écran.</p>
-<p aria-hidden="true">Ceci est caché aux liseurs d'écran.</p>
+<p>This is not hidden from screen readers.</p>
+<p aria-hidden="true">This is hidden from screen readers.</p>
 ```
 
 ### Boutons {#buttons}
@@ -405,12 +405,12 @@ Vous pouvez aussi utiliser un input pour créer des boutons :
 ```vue-html
 <form action="/dataCollectionLocation" method="post" autocomplete="on">
   <!-- Boutons -->
-  <button type="button">Annuler</button>
-  <button type="submit">Soumettre</button>
+  <button type="button">Cancel</button>
+  <button type="submit">Submit</button>
 
   <!-- Input buttons -->
-  <input type="button" value="Annuler" />
-  <input type="submit" value="Soumettre" />
+  <input type="button" value="Cancel" />
+  <input type="submit" value="Submit" />
 </form>
 ```
 
@@ -426,13 +426,13 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
   ```vue-html
   <form role="search">
-    <label for="search" class="hidden-visually">Recherche : </label>
+    <label for="search" class="hidden-visually">Search: </label>
     <input type="text" name="search" id="search" v-model="search" />
     <input
       type="image"
       class="btnImg"
       src="https://img.icons8.com/search"
-      alt="Recherche"
+      alt="Search"
     />
   </form>
   ```
@@ -441,11 +441,11 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
 
 ```vue-html
 <form role="search">
-  <label for="searchIcon" class="hidden-visually">Recherche : </label>
+  <label for="searchIcon" class="hidden-visually">Search: </label>
   <input type="text" name="searchIcon" id="searchIcon" v-model="searchIcon" />
   <button type="submit">
     <i class="fas fa-search" aria-hidden="true"></i>
-    <span class="hidden-visually">Recherche</span>
+    <span class="hidden-visually">Search</span>
   </button>
 </form>
 ```
