@@ -11,18 +11,18 @@ Les composants monofichiers (aussi appelés Single-File Components, abrégés en
 export default {
   data() {
     return {
-      salutations: 'Bonjour tout le monde!'
+      greeting: 'Hello World!'
     }
   }
 }
 </script>
 
 <template>
-  <p class="bonjour">{{ salutations }}</p>
+  <p class="greeting">{{ greeting }}</p>
 </template>
 
 <style>
-.bonjour {
+.greeting {
   color: red;
   font-weight: bold;
 }
@@ -81,11 +81,11 @@ Cela dit, nous sommes conscients qu'il y a des scénarios où les SFC peuvent se
 Vue SFC est un format de fichier spécifique au framework et doit être précompilé par [@vue/compiler-sfc](https://github.com/vuejs/core/tree/main/packages/compiler-sfc) en JavaScript et CSS standard. Un SFC compilé est un module JavaScript (ES) standard, ce qui signifie qu'avec une configuration de compilation appropriée, vous pouvez importer un SFC comme un module :
 
 ```js
-import MonComposant from './MonComposant.vue'
+import MyComponent from './MyComponent.vue'
 
 export default {
   components: {
-    MonComposant
+    MyComponent
   }
 }
 ```

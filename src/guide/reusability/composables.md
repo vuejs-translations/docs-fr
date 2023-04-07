@@ -37,7 +37,7 @@ onMounted(() => window.addEventListener('mousemove', update))
 onUnmounted(() => window.removeEventListener('mousemove', update))
 </script>
 
-<template>La position de la souris est à : {{ x }}, {{ y }}</template>
+<template>Mouse position is at: {{ x }}, {{ y }}</template>
 ```
 
 Mais que se passe-t-il si nous voulons réutiliser la même logique dans plusieurs composants ? Nous pouvons extraire la logique dans un fichier externe, en tant que fonction composable :
@@ -77,7 +77,7 @@ import { useMouse } from './mouse.js'
 const { x, y } = useMouse()
 </script>
 
-<template>La position de la souris est à : {{ x }}, {{ y }}</template>
+<template>Mouse position is at: {{ x }}, {{ y }}</template>
 ```
 
 <div class="demo">
@@ -146,14 +146,12 @@ fetch('...')
 </script>
 
 <template>
-  <div v-if="error">
-    Oups! Une erreur est survenue : {{ error.message }}
-  </div>
+  <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
   <div v-else-if="data">
-    Données chargées :
+    Data loaded:
     <pre>{{ data }}</pre>
   </div>
-  <div v-else>Chargement...</div>
+  <div v-else>Loading...</div>
 </template>
 ```
 
@@ -266,7 +264,7 @@ console.log(mouse.x)
 ```
 
 ```vue-html
-Position de la souris est à : {{ mouse.x }}, {{ mouse.y }}
+Mouse position is at: {{ mouse.x }}, {{ mouse.y }}
 ```
 
 ### Effets de bord {#side-effects}

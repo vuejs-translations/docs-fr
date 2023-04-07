@@ -169,7 +169,7 @@ data() {
 Ceci sera rendu :
 
 ```vue-html
-<div class="active text-danger"></div>
+<div class="text-danger active"></div>
 ```
 
 Si vous souhaitez également basculer une classe dans la liste de manière conditionnelle, vous pouvez le faire avec une expression ternaire :
@@ -229,7 +229,7 @@ Si votre composant a plusieurs éléments racine, vous devrez définir quel él�
 ```vue-html
 <!-- Template de MyComponent utilisant $attrs -->
 <p :class="$attrs.class">Hello !</p>
-<span>Ceci est un composant enfant</span>
+<span>This is a child component</span>
 ```
 
 ```vue-html
@@ -240,7 +240,7 @@ Sera rendu :
 
 ```html
 <p class="baz">Hello !</p>
-<span>Ceci est un composant enfant</span>
+<span>This is a child component</span>
 ```
 
 Vous pouvez en savoir plus sur l'héritage des attributs de composant dans la section [Attributs implicitement déclarés](/guide/components/attrs).

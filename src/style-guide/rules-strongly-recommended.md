@@ -889,21 +889,21 @@ Bien que les valeurs d'attribut sans espace ne soient pas obligées d'avoir des 
 
 ```vue-html
 <template v-slot:header>
-  <h1>Ceci est le titre de la page</h1>
+  <h1>Here might be a page title</h1>
 </template>
 
 <template v-slot:footer>
-  <p>Ici quelques infos contacts</p>
+  <p>Here's some contact info</p>
 </template>
 ```
 
 ```vue-html
 <template #header>
-  <h1>Ceci est le titre de la page</h1>
+  <h1>Here might be a page title</h1>
 </template>
 
 <template #footer>
-  <p>Ici quelques infos contacts</p>
+  <p>Here's some contact info</p>
 </template>
 ```
 
