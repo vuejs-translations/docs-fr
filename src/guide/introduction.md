@@ -131,37 +131,33 @@ Avec l'API Options, nous définissons la logique d'un composant en utilisant un 
 ```vue
 <script>
 export default {
-  // Les propriétés retournées par data() deviennent des états réactifs
-  // et seront exposées sur `this`.
+  // état réactif
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   },
 
-  // Les méthodes sont des fonctions qui modifient l'état et déclenchent des mises à jour.
-  // Elles peuvent être liées en tant qu'écouteurs d'événements dans les modèles.
+  // fonctions qui modifient l'état et déclenchent des mises à jour
   methods: {
-    incrementer() {
-      this.compteur++
+    increment() {
+      this.count++
     }
   },
 
-  // Les hooks de cycle de vie sont appelés à différentes étapes
-  // du cycle de vie d'un composant.
-  // Cette fonction sera appelée lorsque le composant sera monté.
+  // hooks de cycle de vie
   mounted() {
-    console.log(`Le valeur initiale du compteur est ${this.compteur}.`)
+    console.log(`Le valeur initiale de count est ${this.count}.`)
   }
 }
 </script>
 
 <template>
-  <button @click="incrementer">Le compteur est à {{ compteur }}</button>
+  <button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
 
-[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gTGVzIHByb3ByacOpdMOpcyByZXRvdXJuw6llcyBwYXIgZGF0YSgpIGRldmllbm5lbnQgZGVzIMOpdGF0cyByw6lhY3RpZnNcbiAgLy8gZXQgc2Vyb250IGV4cG9zw6llcyBzdXIgYHRoaXNgLlxuICBkYXRhKCkge1xuICAgIHJldHVybiB7XG4gICAgICBjb21wdGV1cjogMFxuICAgIH1cbiAgfSxcblxuICAvLyBMZXMgbcOpdGhvZGVzIHNvbnQgZGVzIGZvbmN0aW9ucyBxdWkgbW9kaWZpZW50IGwnw6l0YXQgZXQgZMOpY2xlbmNoZW50IGRlcyBtaXNlcyDDoCBqb3VyLlxuICAvLyBFbGxlcyBwZXV2ZW50IMOqdHJlIGxpw6llcyBlbiB0YW50IHF1J8OpY291dGV1cnMgZCfDqXbDqW5lbWVudHMgZGFucyBsZXMgbW9kw6hsZXMuXG4gIG1ldGhvZHM6IHtcbiAgICBpbmNyZW1lbnRlcigpIHtcbiAgICAgIHRoaXMuY29tcHRldXIrK1xuICAgIH1cbiAgfSxcblxuICAvLyBMZXMgaG9va3MgZGUgY3ljbGUgZGUgdmllIHNvbnQgYXBwZWzDqXMgw6AgZGlmZsOpcmVudGVzIMOpdGFwZXNcbiAgLy8gZHUgY3ljbGUgZGUgdmllIGQndW4gY29tcG9zYW50LlxuICAvLyBDZXR0ZSBmb25jdGlvbiBzZXJhIGFwcGVsw6llIGxvcnNxdWUgbGUgY29tcG9zYW50IHNlcmEgbW9udMOpLlxuICBtb3VudGVkKCkge1xuICAgIGNvbnNvbGUubG9nKGBMZSB2YWxldXIgaW5pdGlhbGUgZHUgY29tcHRldXIgZXN0ICR7dGhpcy5jb21wdGV1cn0uYClcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJpbmNyZW1lbnRlclwiPkxlIGNvbXB0ZXVyIGVzdCDDoCB7eyBjb21wdGV1ciB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+[Essayer en ligne](https://play.vuejs.org/#eNptUEtOwzAQvcooQqJVUcK6ChWILUfIosaZkKGOHexxBYpyF7Y9Ry7GOOlng2TZ80bzPuMhe+n7/Bgx22Zl0J563lUWv3vnGWpsVDQMQ2UBigKmEysGP52UZmpSs1asVutlAMAjR28vCEC7aHkLjwse0zM+VPas1jgrMs4G+IoEnaupIbQM5n7xQQkwnbRBq9vUrzFAR0Hu6Rc+XfRJp0NuXR22F1Oy2mMn47dUANxSyOcwm83/WVrnDkEcQP+IYSqOhLN+YmF9U9MS2BnMjftY7d9kThmMXnyJScpZI3EAA8PdcLMe8/16dq2snLK4frYAxq43ilEQQPkemZ2FZ21IH56q7LpTle1eZ21KCw9no3Esi4Ui9LK4amXjH+vhpTQ=)
 
 ### API de Composition {#composition-api}
 
@@ -173,26 +169,26 @@ Voici le même composant, avec exactement le même modèle, mais en utilisant l'
 <script setup>
 import { ref, onMounted } from 'vue'
 
-// reactive state
-const compteur = ref(0)
+// état réactif
+const count = ref(0)
 
-// functions that mutate state and trigger updates
-function incrementer() {
-  compteur.value++
+// fonctions qui modifient l'état et déclenchent des mises à jour
+function increment() {
+  count.value++
 }
 
-// lifecycle hooks
+// hooks de cycle de vie
 onMounted(() => {
-  console.log(`Le valeur initiale du compteur est ${this.compteur}.`)
+  console.log(`Le valeur initiale de count est ${this.count}.`)
 })
 </script>
 
 <template>
-  <button @click="incrementer">Le compteur est à {{ compteur }}</button>
+  <button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
 
-[Essayer en ligne](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiXG48c2NyaXB0IHNldHVwPlxuaW1wb3J0IHsgcmVmLCBvbk1vdW50ZWQgfSBmcm9tICd2dWUnXG5cbi8vIHJlYWN0aXZlIHN0YXRlXG5jb25zdCBjb21wdGV1ciA9IHJlZigwKVxuXG4vLyBmdW5jdGlvbnMgdGhhdCBtdXRhdGUgc3RhdGUgYW5kIHRyaWdnZXIgdXBkYXRlc1xuZnVuY3Rpb24gaW5jcmVtZW50ZXIoKSB7XG4gIGNvbXB0ZXVyLnZhbHVlKytcbn1cblxuLy8gbGlmZWN5Y2xlIGhvb2tzXG5vbk1vdW50ZWQoKCkgPT4ge1xuICBjb25zb2xlLmxvZyhgTGUgdmFsZXVyIGluaXRpYWxlIGR1IGNvbXB0ZXVyIGVzdCAke3RoaXMuY29tcHRldXJ9LmApXG59KVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGJ1dHRvbiBAY2xpY2s9XCJpbmNyZW1lbnRlclwiPkxlIGNvbXB0ZXVyIGVzdCDDoCB7eyBjb21wdGV1ciB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
+[Essayer en ligne](https://play.vuejs.org/#eNo9UF1OwzAMvopVIa3TUMvz1E0gXuEGeVhJXRaWOiVxJqEqd+F15+jFcNvRh0S28/3k85C99H1xjZjtsypob3qGgBz7oyLT9c4zDOCxfQRH7y4SYwMJWu862Ahro0hRWcJ445rBj7das2kVaUeBQU8EOEz8/Gl7h7aOBCPv8B0NdK4xrUGB2c0iggzNeNMWSZ+neYMBOhPkHn/hy0WvqI2LBBjSHjtB5VsYFMHiWFxrG3G3U5TunmfnLiIE+kd0p+JqUNGaKBf64fivQMFZLKz7zE9vgqwtRi9Oho2Us8ocCyXgw8BnE4p5kIqTRExyqnJZpKxQGsautzWjdADVR2SWjz9ra/TloLI1gcqOr7OuCXsYhrtJSlW5UIRelatWlv4ArcWg0Q==)
 
 ### Laquelle choisir ? {#which-to-choose}
 

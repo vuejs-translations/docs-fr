@@ -1,1 +1,1 @@
-Dites Hello World avec Vue!
+Un graphe SVG

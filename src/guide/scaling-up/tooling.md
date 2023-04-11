@@ -4,7 +4,7 @@
 
 Vous n'avez pas besoin d'installer quoi que ce soit sur votre machine pour essayer les composants monofichiers de Vue - il existe des terrains de jeu en ligne qui vous permettent de le faire directement dans le navigateur :
 
-- [Terrain de jeu des composants monofichiers de Vue](https://sfc.vuejs.org)
+- [Terrain de jeu des composants monofichiers de Vue](https://play.vuejs.org)
   - Toujours déployé à partir du dernier commit
   - Conçu pour inspecter les résultats de la compilation d'un composant
 - [Vue + Vite sur StackBlitz](https://vite.new/vue)

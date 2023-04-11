@@ -14,7 +14,7 @@ La forme la plus élémentaire de liaison de données est l'interpolation de tex
 <span>Message : {{ msg }}</span>
 ```
 
-La balise moustache sera remplacée par la valeur de la propriété `msg` de l'instance du composant correspondant. Elle sera également mise à jour chaque fois que la propriété `msg` changera.
+La balise moustache sera remplacée par la valeur de la propriété `msg` de [l'instance du composant correspondant](/guide/essentials/reactivity-fundamentals#declaring-reactive-state). Elle sera également mise à jour chaque fois que la propriété `msg` changera.
 
 ## HTML brut {#raw-html}
 
