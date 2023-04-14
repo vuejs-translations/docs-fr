@@ -1,4 +1,4 @@
-<h2>Entrée Texte</h2>
+<h2>Champ Texte</h2>
 <input v-model="text"> {{ text }}
 
 <h2>Case à cocher</h2>
@@ -11,19 +11,19 @@
 -->
 <h2>Cases à cocher multiple</h2>
 <input type="checkbox" id="jacques" value="Jacques" v-model="checkedNames">
-<label for="jack">Jacques</label>
+<label for="jacques">Jacques</label>
 <input type="checkbox" id="jean" value="Jean" v-model="checkedNames">
-<label for="john">Jean</label>
+<label for="jean">Jean</label>
 <input type="checkbox" id="michel" value="Michel" v-model="checkedNames">
-<label for="mike">Michel</label>
+<label for="michel">Michel</label>
 <p>Noms cochés : <pre>{{ checkedNames }}</pre></p>
 
 <h2>Radio</h2>
-<input type="radio" id="one" value="One" v-model="picked">
-<label for="one">Un</label>
+<input type="radio" id="un" value="Un" v-model="picked">
+<label for="un">Un</label>
 <br>
-<input type="radio" id="two" value="Two" v-model="picked">
-<label for="two">Deux</label>
+<input type="radio" id="deux" value="Deux" v-model="picked">
+<label for="deux">Deux</label>
 <br>
 <span>Choisi : {{ picked }}</span>
 
