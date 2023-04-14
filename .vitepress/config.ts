@@ -460,7 +460,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/examples/#conditionals-and-loops'
         },
         {
-          text: 'Form Bindings',
+          text: 'Liaisons dans les formulaires',
           link: '/examples/#form-bindings'
         },
         {

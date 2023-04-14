@@ -1,45 +1,45 @@
-<h2>Text Input</h2>
+<h2>Entrée Texte</h2>
 <input v-model="text"> {{ text }}
 
-<h2>Checkbox</h2>
+<h2>Case à cocher</h2>
 <input type="checkbox" id="checkbox" v-model="checked">
-<label for="checkbox">Checked: {{ checked }}</label>
+<label for="checkbox">Cochée : {{ checked }}</label>
 
 <!--
-  multiple checkboxes can bind to the same
-  array v-model value
+  plusieurs cases à cocher peuvent être liées
+  au même v-model
 -->
-<h2>Multi Checkbox</h2>
-<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-<label for="jack">Jack</label>
-<input type="checkbox" id="john" value="John" v-model="checkedNames">
-<label for="john">John</label>
-<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-<label for="mike">Mike</label>
-<p>Checked names: <pre>{{ checkedNames }}</pre></p>
+<h2>Cases à cocher multiple</h2>
+<input type="checkbox" id="jacques" value="Jacques" v-model="checkedNames">
+<label for="jack">Jacques</label>
+<input type="checkbox" id="jean" value="Jean" v-model="checkedNames">
+<label for="john">Jean</label>
+<input type="checkbox" id="michel" value="Michel" v-model="checkedNames">
+<label for="mike">Michel</label>
+<p>Noms cochés : <pre>{{ checkedNames }}</pre></p>
 
 <h2>Radio</h2>
 <input type="radio" id="one" value="One" v-model="picked">
-<label for="one">One</label>
+<label for="one">Un</label>
 <br>
 <input type="radio" id="two" value="Two" v-model="picked">
-<label for="two">Two</label>
+<label for="two">Deux</label>
 <br>
-<span>Picked: {{ picked }}</span>
+<span>Choisi : {{ picked }}</span>
 
-<h2>Select</h2>
+<h2>Sélection</h2>
 <select v-model="selected">
-  <option disabled value="">Please select one</option>
+  <option disabled value="">Sélectionnez en un</option>
   <option>A</option>
   <option>B</option>
   <option>C</option>
 </select>
-<span>Selected: {{ selected }}</span>
+<span>Sélectionné : {{ selected }}</span>
 
-<h2>Multi Select</h2>
+<h2>Sélection multiple</h2>
 <select v-model="multiSelected" multiple style="width:100px">
   <option>A</option>
   <option>B</option>
   <option>C</option>
 </select>
-<span>Selected: {{ multiSelected }}</span>
+<span>Sélectionné : {{ multiSelected }}</span>
