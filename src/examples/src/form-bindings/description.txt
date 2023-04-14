@@ -1,1 +1,1 @@
-Nous pouvons créer des liaisons bidirectionnelles entre l'état et les entrées de formulaire à l'aide de la directive v-model.
+Nous pouvons créer des liaisons bidirectionnelles entre l'état et les champs de formulaire à l'aide de la directive v-model.
