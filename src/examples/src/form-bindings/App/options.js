@@ -1,10 +1,10 @@
 export default {
   data() {
     return {
-      text: 'Edit me',
+      text: 'Édite-moi',
       checked: true,
-      checkedNames: ['Jack'],
-      picked: 'One',
+      checkedNames: ['Jacques'],
+      picked: 'Un',
       selected: 'A',
       multiSelected: ['A']
     }
