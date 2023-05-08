@@ -59,7 +59,7 @@ La méthode `.mount()` doit toujours être appelée après les différentes conf
 
 ### Template de composant racine depuis le DOM {#in-dom-root-component-template}
 
-Lorsque vous utilisez Vue sans outils de build, nous pouvons écrire le template de notre composant racine directement dans l'élément conteneur :
+Le template du composant racine fait généralement partie du composant lui-même, mais il est également possible de fournir le template séparément en l'écrivant directement dans le conteneur monté :
 
 ```html
 <div id="app">
@@ -83,7 +83,9 @@ app.mount('#app')
 
 Vue utilisera automatiquement le contenu HTML du conteneur comme template si le composant racine n'a pas déjà une option `template`.
 
-## Configuration d'application {#app-configurations}
+Les templates dans le DOM sont souvent utilisés dans les applications qui [utilisent Vue sans outils de build](/guide/quick-start.html#using-vue-from-cdn). Ils peuvent également être utilisés conjointement avec des frameworks côté serveur, où le template racine peut être généré dynamiquement par le serveur.
+
+## Configurations d'application {#app-configurations}
 
 L'instance d'application expose un objet `.config` qui nous permet de configurer quelques options au niveau de l'application, par exemple en définissant un gestionnaire d'erreurs au niveau de l'application qui capture les erreurs de tous les composants descendants :
 

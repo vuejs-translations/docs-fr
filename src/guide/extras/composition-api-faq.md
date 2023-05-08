@@ -55,7 +55,7 @@ Si vous souhaitez apprendre à utiliser Vue avec la Composition API, vous pouvez
 
 Le principal avantage de la Composition API est qu'elle permet une réutilisation de la logique propre et efficace via des [fonctions composables](/guide/reusability/composables). Elle résout [tous les inconvénients des mixins](/guide/reusability/composables#vs-mixins), le principal mécanisme de réutilisation de la logique pour l'Options API.
 
-La capacité de réutilisation de la logique de la Composition API a donné naissance à d'impressionnants projets communautaires tels que [VueUse](https://vueuse.org/), une collection toujours plus grande d'utilitaires composables. Elle sert également de mécanisme propre pour intégrer facilement des services ou des bibliothèques tiers possédant un état dans le système de réactivité de Vue, par exemple des [données persistantes](/guide/extras/reactivity-in-depth#immutable-data), [des machines d'état](/guide/extras/reactivity-in-depth#state-machines) et [RxJS](https://vueuse.org/rxjs/readme#vueuse-rxjs).
+La capacité de réutilisation de la logique de la Composition API a donné naissance à d'impressionnants projets communautaires tels que [VueUse](https://vueuse.org/), une collection toujours plus grande d'utilitaires composables. Elle sert également de mécanisme propre pour intégrer facilement des services ou des bibliothèques tiers possédant un état dans le système de réactivité de Vue, par exemple des [données persistantes](/guide/extras/reactivity-in-depth#immutable-data), [des machines d'état](/guide/extras/reactivity-in-depth#state-machines) et [RxJS](/guide/extras/reactivity-in-depth#rxjs).
 
 ### Une organisation du code plus flexible {#more-flexible-code-organization}
 

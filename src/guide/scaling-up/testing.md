@@ -211,21 +211,22 @@ cy.get(valueSelector)
 
 ### Recommendation {#recommandation}
 
-- [Vitest](https://vitest.dev/) pour les composants ou composables qui ont un rendu headless (ex. la fonction [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) dans VueUse). Les composants et le DOM peuvent être testés à l'aide de [`@testing-library/vue`](https://testing-library.com/docs/vue-testing-library/intro).
+- [Vitest](https://vitest.dev/) pour les composants ou composables qui ont un rendu headless (ex. la fonction [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) dans VueUse). Les composants et le DOM peuvent être testés à l'aide de [`@vue/test-utils`](https://github.com/vuejs/test-utils).
 
 - [Les tests de composants Cypress](https://on.cypress.io/component) pour les composants dont le comportement attendu dépend du rendu correct des styles ou du déclenchement d'événements DOM natifs. Peut être utilisé avec Testing Library via [`@testing-library/cypress`](https://testing-library.com/docs/cypress-testing-library/intro).
 
-Les principales différences entre Vitest et les runners basés sur un navigateur sont la rapidité et le contexte d'exécution. En bref, les runners basés sur un navigateur, comme Cypress, peuvent détecter des problèmes que les runners basés sur node, comme Vitest, ne peuvent pas détecter (par exemple, les problèmes de style, les événements DOM natifs réels, les cookies, le local storage et les défaillances réseau), mais les runners basés sur un navigateur sont _plusieurs ordres de grandeur plus lents que Vitest_ parce qu'ils ouvrent un navigateur, compilent vos feuilles de style, etc. Cypress est un runner basé sur un navigateur qui prend en charge les tests de composants. Veuillez lire [la page de comparaison de Vitest](https://vitest.dev/guide/comparisons.html#cypress) pour obtenir les dernières informations comparant Vitest et Cypress.
+Les principales différences entre Vitest et les runners basés sur un navigateur sont la rapidité et le contexte d'exécution. En bref, les runners basés sur un navigateur, comme Cypress, peuvent détecter des problèmes que les runners basés sur node, comme Vitest, ne peuvent pas détecter (par exemple, les problèmes de style, les événements DOM natifs réels, les cookies, le local storage et les défaillances réseau), mais les runners basés sur un navigateur sont _bien plus lents que Vitest_ parce qu'ils ouvrent un navigateur, compilent vos feuilles de style, etc. Cypress est un runner basé sur un navigateur qui prend en charge les tests de composants. Veuillez lire [la page de comparaison de Vitest](https://vitest.dev/guide/comparisons.html#cypress) pour obtenir les dernières informations comparant Vitest et Cypress.
 
 ### Bibliothèques de montage {#mounting-libraries}
 
 Le test de composant implique souvent le montage du composant testé isolément, le déclenchement d'événements d'entrée utilisateur simulés et la vérification du rendu DOM en sortie. Il existe des bibliothèques d'utilitaires dédiées qui simplifient ces tâches.
 
-- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) est une bibliothèque de test Vue axée sur le test de composants sans s'appuyer sur les détails de l'implémentation. Construit avec l'accessibilité à l'esprit, son approche rend également la refactorisation un jeu d'enfant. Son principe directeur est que plus les tests ressemblent à la façon dont les logiciels sont utilisés, plus on peut leur faire confiance.
-
 - [`@vue/test-utils`](https://github.com/vuejs/test-utils) est la bibliothèque officielle de test de composants de bas niveau qui a été écrite pour permettre aux utilisateurs d'accéder à des API spécifiques à Vue. C'est aussi la bibliothèque de bas niveau sur laquelle `@testing-library/vue` est construite.
 
-Nous vous recommandons d'utiliser `@testing-library/vue` pour tester les composants dans les applications, car son objectif correspond mieux aux priorités de test des applications. Utilisez `@vue/test-utils` uniquement si vous créez des composants avancés qui nécessitent de tester détails internes spécifiques à Vue.
+- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) est une bibliothèque de test Vue axée sur le test de composants sans s'appuyer sur les détails de l'implémentation. Construit avec l'accessibilité à l'esprit, son approche rend également la refactorisation un jeu d'enfant. Son principe directeur est que plus les tests ressemblent à la façon dont les logiciels sont utilisés, plus on peut leur faire confiance.
+
+
+Nous vous recommandons d'utiliser `@vue/test-utils` pour tester les composants dans les applications. `@testing-library/vue` a des problèmes avec le test du composant asynchrone avec Suspense, il doit donc être utilisé avec prudence.
 
 ### Autres options {#other-options-1}
 

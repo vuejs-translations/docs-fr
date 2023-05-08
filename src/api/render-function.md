@@ -314,7 +314,7 @@ Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event
   import { h, withModifiers } from 'vue'
 
   const vnode = h('button', {
-    // équivalent à v-on.stop.prevent
+    // équivalent à v-on:click.stop.prevent
     onClick: withModifiers(() => {
       // ...
     }, ['stop', 'prevent'])

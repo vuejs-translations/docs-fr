@@ -12,7 +12,7 @@ Cette page et de nombreux autres chapitres plus loin dans le guide contiennent u
 
 <div class="options-api">
 
-Avec l'Options API, nous utilisons l'option `data` pour déclarer l'état réactif d'un composant. La valeur de l'option doit être une fonction qui renvoie un objet. Vue appellera la fonction lors de la création d'une nouvelle instance de composant, et enveloppera l'objet retourné dans son système de réactivité. Toutes les propriétés de premier niveau de cet objet sont transmises à l'instance du composant (`this` dans les méthodes et dans les hooks du cycle de vie).:
+Avec l'Options API, nous utilisons l'option `data` pour déclarer l'état réactif d'un composant. La valeur de l'option doit être une fonction qui renvoie un objet. Vue appellera la fonction lors de la création d'une nouvelle instance de composant, et enveloppera l'objet retourné dans son système de réactivité. Toutes les propriétés de premier niveau de cet objet sont transmises à l'instance du composant (`this` dans les méthodes et dans les hooks du cycle de vie) :
 
 ```js{2-6}
 export default {
@@ -85,7 +85,7 @@ Pour utiliser un état réactif dans le template d'un composant, déclarez et re
 import { reactive } from 'vue'
 
 export default {
-  // `setup` est un hook spécial conçu pour la Composition API.
+  // `setup` est un hook spécial dédié à la Composition API.
   setup() {
     const state = reactive({ count: 0 })
 
