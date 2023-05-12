@@ -82,4 +82,31 @@ Configure les options du compilateur d'exécution pour le template du composant.
 
   Cette option de configuration n'est respectée que lors de l'utilisation du build complet (c'est-à-dire le build `vue.js` autonome qui peut compiler des templates dans le navigateur). Elle prend en charge les mêmes options que [app.config.compilerOptions](/api/application#app-config-compileroptions) au niveau de l'application, et a la plus haute priorité pour le composant actuel.
 
-- **Voir aussi :** [app.config.compilerOptions](/api/application#app-config-compileroptions)
+- **See also:** [app.config.compilerOptions](/api/application#app-config-compileroptions)
+
+## slots<sup class="vt-badge ts"/> {#slots}
+
+An option to assist with type inference when using slots programmatically in render functions. Only supported in 3.3+.
+
+- **Details**
+
+  This option's runtime value is not used. The actual types should be declared via type casting using the `SlotsType` type helper:
+
+  ```ts
+  import { SlotsType } from 'vue'
+
+  defineComponent({
+    slots: Object as SlotsType<{
+      default: { foo: string; bar: number }
+      item: { data: number }
+    }>,
+    setup(props, { slots }) {
+      expectType<
+        undefined | ((scope: { foo: string; bar: number }) => any)
+      >(slots.default)
+      expectType<undefined | ((scope: { data: number }) => any)>(
+        slots.item
+      )
+    }
+  })
+  ```

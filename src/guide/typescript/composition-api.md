@@ -52,32 +52,9 @@ const props = defineProps<Props>()
 
 #### Limitations de syntaxe {#syntax-limitations}
 
-Afin de générer le code exécuté correct, l'argument générique pour `defineProps()` doit être l'un des suivants :
+In version 3.2 and below, the generic type parameter for `defineProps()` were limited to a type literal or a reference to a local interface.
 
-- Un type d'objet littéral :
-
-  ```ts
-  defineProps<{ /*... */ }>()
-  ```
-
-- Une référence à une interface ou type d'objet littéral **dans le même fichier** :
-
-  ```ts
-  interface Props {/* ... */}
-
-  defineProps<Props>()
-  ```
-
-L'interface ou le type d'objet littéral peuvent comporter des références à des types importés d'autres fichiers, toutefois, l'argument générique lui-même passé à `defineProps` **ne peut pas** être un type importé :
-
-```ts
-import { Props } from './other-file'
-
-// PAS supporté
-defineProps<Props>()
-```
-
-Cela est dû au fait que les composants Vue sont compilés de manière isolée et que le compilateur ne parcourt pas les fichiers importés afin d'analyser le type source. Cette limitation pourrait être supprimée dans une prochaine version.
+This limitation has been resolved in 3.3. The latest version of Vue supports referencing imported and a limited set of complex types in the type parameter position. However, because the type to runtime conversion is still AST-based, some complex types that require actual type analysis, e.g. conditional types, are not supported. You can use conditional types for the type of a single prop, but not the entire props object.
 
 ### Valeurs par défaut des props {#props-default-values}
 

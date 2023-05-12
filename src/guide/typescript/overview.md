@@ -175,6 +175,10 @@ const count = ref(1)
 </template>
 ```
 
+See also:
+
+- [TypeScript-only Features in `<script setup>`](/api/sfc-script-setup.html#typescript-only-features)
+
 ### TypeScript dans les templates {#typescript-in-templates}
 
 Le `<template>` prend également en charge TypeScript dans les expressions de liaison lorsque `<script lang="ts">` ou `<script setup lang="ts">` est utilisé. Ceci est utile dans les cas où vous devez effectuer un casting de type dans les expressions du template.
@@ -207,6 +211,17 @@ let x: string | number = 1
 :::tip
 Si vous utilisez Vue CLI ou une configuration basée sur Webpack, TypeScript dans les expressions de modèle nécessite `vue-loader@^16.8.0`.
 :::
+
+### Usage with TSX
+
+Vue also supports authoring components with JSX / TSX. Details are covered in the [Render Function & JSX](/guide/extras/render-function.html#jsx-tsx) guide.
+
+## Generic Components {#generic-components}
+
+Generic components are supported in two cases:
+
+- In SFCs: [`<script setup>` with the `generic` attribute](/api/sfc-script-setup.html#generics)
+- Render function / JSX components: [`defineComponent()`'s function signature](/api/general.html#function-signature)
 
 ## Recettes spécifiques aux API {#api-specific-recipes}
 

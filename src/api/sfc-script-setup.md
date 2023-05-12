@@ -175,7 +175,57 @@ const emit = defineEmits(['change', 'delete'])
 
 - Les options passées à `defineProps` et `defineEmits` seront placées en dehors de setup dans la portée du module. Par conséquent, les options ne peuvent pas faire référence à des variables locales déclarées dans la portée de setup. Cela entraînerait une erreur de compilation. Cependant, elles _peuvent_ faire référence à des liaisons importées puisqu'elles sont également dans la portée du module.
 
-Si vous utilisez TypeScript, il est également possible de [déclarer les props et les emits à l'aide d'annotations de type pur](#typescript-only-features).
+### Type-only props/emit declarations<sup class="vt-badge ts" /> {#type-only-props-emit-declarations}
+
+Props and emits can also be declared using pure-type syntax by passing a literal type argument to `defineProps` or `defineEmits`:
+
+```ts
+const props = defineProps<{
+  foo: string
+  bar?: number
+}>()
+
+const emit = defineEmits<{
+  (e: 'change', id: number): void
+  (e: 'update', value: string): void
+}>()
+
+// 3.3+: alternative, more succinct syntax
+const emit = defineEmits<{
+  change: [id: number] // named tuple syntax
+  update: [value: string]
+}>()
+```
+
+- `defineProps` or `defineEmits` can only use either runtime declaration OR type declaration. Using both at the same time will result in a compile error.
+
+- When using type declaration, the equivalent runtime declaration is automatically generated from static analysis to remove the need for double declaration and still ensure correct runtime behavior.
+
+  - In dev mode, the compiler will try to infer corresponding runtime validation from the types. For example here `foo: String` is inferred from the `foo: string` type. If the type is a reference to an imported type, the inferred result will be `foo: null` (equal to `any` type) since the compiler does not have information of external files.
+
+  - In prod mode, the compiler will generate the array format declaration to reduce bundle size (the props here will be compiled into `['foo', 'bar']`)
+
+- In version 3.2 and below, the generic type parameter for `defineProps()` were limited to a type literal or a reference to a local interface.
+
+  This limitation has been resolved in 3.3. The latest version of Vue supports referencing imported and a limited set of complex types in the type parameter position. However, because the type to runtime conversion is still AST-based, some complex types that require actual type analysis, e.g. conditional types, are not supported. You can use conditional types for the type of a single prop, but not the entire props object.
+
+### Default props values when using type declaration {#default-props-values-when-using-type-declaration}
+
+One drawback of the type-only `defineProps` declaration is that it doesn't have a way to provide default values for the props. To resolve this problem, a `withDefaults` compiler macro is also provided:
+
+```ts
+export interface Props {
+  msg?: string
+  labels?: string[]
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  msg: 'hello',
+  labels: () => ['one', 'two']
+})
+```
+
+This will be compiled to equivalent runtime props `default` options. In addition, the `withDefaults` helper provides type checks for the default values, and ensures the returned `props` type has the optional flags removed for properties that do have default values declared.
 
 ## defineExpose() {#defineexpose}
 
@@ -198,6 +248,42 @@ defineExpose({
 ```
 
 Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a: number, b: number }` (les refs sont automatiquement déballés comme pour les instances normales).
+
+## defineOptions() {#defineoptions}
+
+This macro can be used to declare component options directly inside `<script setup>` without having to use a separate `<script>` block:
+
+```vue
+<script setup>
+defineOptions({
+  inheritAttrs: false,
+  customOptions: {
+    /* ... */
+  }
+})
+</script>
+```
+
+- Only supported in 3.3+.
+- This is a macro. The options will be hoisted to module scope and cannot access local variables in `<script setup>` that are not literal constants.
+
+## defineSlots()<sup class="vt-badge ts"/> {#defineslots}
+
+This macro can be used to provide type hints to IDEs for slot name and props type checking.
+
+`defineSlots()` only accepts a type parameter and no runtime arguments. The type parameter should be a type literal where the property key is the slot name, and the value type is the slot function. The first argument of the function is the props the slot expects to receive, and its type will be used for slot props in the template. The return type is currently ignored and can be `any`, but we may leverage it for slot content checking in the future.
+
+It also returns the `slots` object, which is equivalent to the `slots` object exposed on the setup context or returned by `useSlots()`.
+
+```vue
+<script setup lang="ts">
+const slots = defineSlots<{
+  default(props: { msg: string }): any
+}>()
+</script>
+```
+
+- Only supported in 3.3+.
 
 ## `useSlots()` et `useAttrs()` {#useslots-useattrs}
 
@@ -262,58 +348,34 @@ De plus, l'expression attendue sera automatiquement compilée dans un format qui
 `async setup()` doit être utilisée en combinaison avec `Suspense`, qui est actuellement encore une fonctionnalité expérimentale. Nous prévoyons de la finaliser et de la documenter dans une prochaine version - mais si vous êtes curieux, vous pouvez vous référer à ses [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) pour voir comment elle fonctionne.
 :::
 
-## Fonctionnalités propres à TypeScript <sup class="vt-badge ts" /> {#typescript-only-features}
+## Generics <sup class="vt-badge ts" /> {#generics}
 
-### Déclarations de types pour props / emit {#type-only-props-emit-declarations}
+Generic type parameters can be declared using the `generic` attribute on the `<script>` tag:
 
-Les props et les emits peuvent également être déclarés en utilisant une syntaxe de type pur en passant un argument de type littéral à `defineProps` ou `defineEmits` :
-
-```ts
-const props = defineProps<{
-  foo: string
-  bar?: number
+```vue
+<script setup lang="ts" generic="T">
+defineProps<{
+  items: T[]
+  selected: T
 }>()
-
-const emit = defineEmits<{
-  (e: 'change', id: number): void
-  (e: 'update', value: string): void
-}>()
+</script>
 ```
 
-- `defineProps` ou `defineEmits` ne peuvent utiliser que la déclaration à l'exécution OU la déclaration de type. L'utilisation des deux en même temps entraînera une erreur de compilation.
+The value of `generic` works exactly the same as the parameter list between `<...>` in TypeScript. For example, you can use multiple parameters, `extends` constraints, default types, and reference imported types:
 
-- Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique afin de supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
-
-  - En mode développement, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple, ici, `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal au type `any`) puisque le compilateur n'a pas d'information sur les fichiers externes.
-
-  - En mode production, le compilateur va générer la déclaration au format tableau pour réduire la taille du paquet (les props ici seront compilées en `['foo', 'bar']`).
-
-  - Le code émis est toujours du TypeScript avec un typage valide, qui peut être traité par d'autres outils.
-
-- À partir de là, l'argument de la déclaration de type doit être l'un des suivants pour garantir une analyse statique correcte :
-
-  - Un littéral de type
-  - Une référence à une interface ou à un littéral de type dans le même fichier.
-
-  Actuellement, les types complexes et les importations de types à partir d'autres fichiers ne sont pas pris en charge. Il est possible que les importations de types soient prises en charge à l'avenir.
-
-### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
-
-Un inconvénient de la déclaration de type `defineProps` est qu'elle ne permet pas de fournir des valeurs par défaut pour les props. Pour résoudre ce problème, une macro de compilation `withDefaults` est également fournie :
-
-```ts
-export interface Props {
-  msg?: string
-  labels?: string[]
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  msg: 'hello',
-  labels: () => ['one', 'two']
-})
+```vue
+<script
+  setup
+  lang="ts"
+  generic="T extends string | number, U extends Item"
+>
+import type { Item } from './types'
+defineProps<{
+  id: T
+  list: U[]
+}>()
+</script>
 ```
-
-Ceci sera compilé en props avec la valeur `default`. De plus, l'utilitaire `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type de `props` retourné n'a pas les flags optionnels pour les propriétés qui ont des valeurs par défaut de déclarées.
 
 ## Restrictions {#restrictions}
 
