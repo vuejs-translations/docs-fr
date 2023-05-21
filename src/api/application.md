@@ -214,9 +214,9 @@ Pour une réutilisation logique, préférez plutôt les [Composables](/guide/reu
 
 ## app.provide() {#app-provide}
 
-Provide a value that can be injected in all descendant components within the application.
+Fournit une valeur pouvant être injectée dans tous les composants descendants de l'application.
 
-- **Type**
+- **Type :**
 
   ```ts
   interface App {
@@ -224,11 +224,11 @@ Provide a value that can be injected in all descendant components within the app
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  Expects the injection key as the first argument, and the provided value as the second. Returns the application instance itself.
+  Attend la clé d'injection comme premier argument et la valeur fournie comme second. Renvoie l'instance d'application elle-même.
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { createApp } from 'vue'
@@ -238,7 +238,7 @@ Provide a value that can be injected in all descendant components within the app
   app.provide('message', 'hello')
   ```
 
-  Inside a component in the application:
+  Dans un composant de l'application :
 
   <div class="composition-api">
 
@@ -266,14 +266,14 @@ Provide a value that can be injected in all descendant components within the app
 
   </div>
 
-- **See also:**
+- **Voir aussi :**
   - [Provide / Inject](/guide/components/provide-inject)
   - [App-level Provide](/guide/components/provide-inject#app-level-provide)
   - [app.runWithContext()](#app-runwithcontext)
 
 ## app.runWithContext()<sup class="vt-badge" data-text="3.3+" /> {#app-runwithcontext}
 
-Execute a callback with the current app as injection context.
+Exécute une fonction de rappel avec l'application courante comme contexte injecté.
 
 - **Type**
 
@@ -283,11 +283,11 @@ Execute a callback with the current app as injection context.
   }
   ```
 
-- **Details**
+- **Détails :**
 
-  Expects a callback function and runs the callback immediately. During the synchronous call of the callback,  `inject()` calls are able to look up injections from the values provided by the current app, even when there is no current active component instance. The return value of the callback will also be returned.
+  Attend une fonction de rappel et l'exécute immédiatement. Lors de l'appel synchrone du rappel, les appels `inject()` sont capables de rechercher des injections à partir des valeurs fournies par l'application actuelle, même lorsqu'il n'y a pas d'instance de composant active actuelle. La valeur de retour du rappel sera également retournée.
 
-- **Example**
+- **Exemple :**
 
   ```js
   import { inject } from 'vue'
