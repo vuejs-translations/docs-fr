@@ -82,7 +82,7 @@ Configure les options du compilateur d'exécution pour le template du composant.
 
   Cette option de configuration n'est respectée que lors de l'utilisation du build complet (c'est-à-dire le build `vue.js` autonome qui peut compiler des templates dans le navigateur). Elle prend en charge les mêmes options que [app.config.compilerOptions](/api/application#app-config-compileroptions) au niveau de l'application, et a la plus haute priorité pour le composant actuel.
 
-- **See also:** [app.config.compilerOptions](/api/application#app-config-compileroptions)
+- **Voir aussi :** [app.config.compilerOptions](/api/application#app-config-compileroptions)
 
 ## slots<sup class="vt-badge ts"/> {#slots}
 
