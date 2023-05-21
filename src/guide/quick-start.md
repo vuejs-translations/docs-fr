@@ -22,7 +22,7 @@ footer: false
 
 Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
 
-Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée, ensuite exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
+Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée et que votre répertoire de travail courant est bien celui où vous souhaitez créer un projet. Exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
 
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
 

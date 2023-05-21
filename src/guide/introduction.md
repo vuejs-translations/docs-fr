@@ -138,7 +138,8 @@ export default {
     }
   },
 
-  // fonctions qui modifient l'état et déclenchent des mises à jour
+  // Les méthodes sont des fonctions qui modifient l'état et déclenchent des mises à jour
+  // Elles peuvent être utilisées par des gestionnaires d'événements dans le template.
   methods: {
     increment() {
       this.count++

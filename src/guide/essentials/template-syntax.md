@@ -151,9 +151,9 @@ Par conséquent, ce qui suit ne fonctionnera **PAS** :
 Il est possible d'appeler une méthode exposée au composant dans une expression de liaison :
 
 ```vue-html
-<span :title="toTitleDate(date)">
+<time :title="toTitleDate(date)" :datetime="date">
   {{ formatDate(date) }}
-</span>
+</time>
 ```
 
 :::tip
