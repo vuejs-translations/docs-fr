@@ -264,7 +264,7 @@ watch(source, (newValue, oldValue) => {
 
 ## `watchEffect()` \*\* {#watcheffect}
 
-Il est commun pour la fonction de l'observateur d'utiliser exactement le même état réactif comme source. Par exemple, considérez le code suivant, qui utiliser un observateur pour charger une ressource distante à chaque changement de la ref `todoId` :
+Il est commun pour la fonction de l'observateur d'utiliser exactement le même état réactif comme source. Par exemple, considérez le code suivant, qui utilise un observateur pour charger une ressource distante à chaque changement de la ref `todoId` :
 
 ```js
 const todoId = ref(1)
