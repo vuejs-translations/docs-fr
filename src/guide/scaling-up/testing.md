@@ -22,7 +22,7 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 
 - **Unitaire** : Vérifie que les entrées d'une fonction, classe, ou composable donné produisent les sorties ou effets de bord attendus.
 - **Composant** : Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
-- **End-to-end** : Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
+- **End-to-end** : Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application Vue construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
 Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protégera de problèmes différents.
 

@@ -111,7 +111,7 @@ Il y a deux problèmes avec l'utilisation actuelle de `defineProps()` dans `<scr
 
 1. Comme pour `.value`, vous devez toujours accéder aux props via `props.x` afin de conserver la réactivité. Cela signifie que vous ne pouvez pas déstructurer `defineProps` car les variables déstructurées résultantes ne sont pas réactives et ne seront pas mises à jour.
 
-2. Lorsque l'on utilise la [déclaration de type pour les props](/api/sfc-script-setup#typescript-only-features), il n'y a pas de moyen facile de déclarer des valeurs par défaut pour les props. Nous avons introduit l'API `withDefaults()` dans ce but précis, mais elle reste toujours difficile à utiliser.
+2. Lorsque l'on utilise la [déclaration de type pour les props](/api/sfc-script-setup#type-only-props-emit-declarations), il n'y a pas de moyen facile de déclarer des valeurs par défaut pour les props. Nous avons introduit l'API `withDefaults()` dans ce but précis, mais elle reste toujours difficile à utiliser.
 
 Nous pouvons résoudre ces problèmes en appliquant une transformation au moment de la compilation lorsque `defineProps` est utilisée avec la déstructuration, de la même manière que ce que nous avons vu précédemment avec `$()` :
 

@@ -175,10 +175,6 @@ const count = ref(1)
 </template>
 ```
 
-See also:
-
-- [TypeScript-only Features in `<script setup>`](/api/sfc-script-setup.html#typescript-only-features)
-
 ### TypeScript dans les templates {#typescript-in-templates}
 
 Le `<template>` prend également en charge TypeScript dans les expressions de liaison lorsque `<script lang="ts">` ou `<script setup lang="ts">` est utilisé. Ceci est utile dans les cas où vous devez effectuer un casting de type dans les expressions du template.

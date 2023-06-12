@@ -98,7 +98,7 @@ Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-nivea
 </script>
 ```
 
-[JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
+[Codepen demo](https://codepen.io/vuejs-examples/pen/QWJwJLp)
 
 ### Utiliser le build des modules ES {#using-the-es-module-build}
 
@@ -122,7 +122,7 @@ Bien que le build global fonctionne, nous utiliserons principalement la syntaxe 
 
 Notez que nous utilisons `<script type="module">`, et que l'url CDN importée pointe vers le **build des modules ES** de Vue.
 
-[JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
+[Codepen demo](https://codepen.io/vuejs-examples/pen/VwVYVZO)
 
 ### Activer l'Import maps {#enabling-import-maps}
 
