@@ -254,8 +254,8 @@ import { toValue } from 'vue'
 
 function useFeature(maybeRefOrGetter) {
   // Si maybeRefOrGetter est une ref ou un accesseur,
-  // sa valeur normalisée sera returnée.
-  // Sinon, elle sera renvoyée telle qu'elle.
+  // sa valeur normalisée sera retournée.
+  // Sinon, elle sera renvoyée telle quelle.
   const value = toValue(maybeRefOrGetter)
 }
 ```
