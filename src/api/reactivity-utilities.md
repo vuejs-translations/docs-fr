@@ -75,7 +75,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
   // retourne la ref existante telle quelle
   toRef(existingRef)
 
-  // crée une ref en lecture seule qui appelle l'accesseur lor de l'accès à .value
+  // crée une ref en lecture seule qui appelle l'accesseur lors de l'accès à .value
   toRef(() => props.foo)
 
   // crée des refs classiques à partir de valeurs n'étant pas des fonctions
@@ -138,7 +138,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
 
 Normalise les valeurs / refs / accesseurs en valeurs. Cela est similaire à [unref()](#unref), sauf que cela normalise aussi les accesseurs. Si l'argument est un accesseur, il sera invoqué et sa valeur de retour sera renvoyée.
 
-Cette fonction peut être utilisée dans les [Composables] (/guide/reusability/composables.html) pour normaliser un argument qui peut être soit une valeur, soit une ref, soit un accesseur.
+Cette fonction peut être utilisée dans les [Composables](/guide/reusability/composables.html) pour normaliser un argument qui peut être soit une valeur, soit une ref, soit un accesseur.
 
 - **Type :**
 
