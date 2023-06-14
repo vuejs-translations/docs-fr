@@ -190,24 +190,24 @@ const emit = defineEmits<{
   (e: 'update', value: string): void
 }>()
 
-// 3.3+: alternative, syntaxe plus succincte
+// 3.3+ : alternative, syntaxe plus succincte
 const emit = defineEmits<{
   change: [id: number] // syntaxe avec tuple nommé
   update: [value: string]
 }>()
 ```
 
-- `defineProps` ou `defineEmits` ne peut utiliser que la déclaration à l'exécution OU la déclaration de type. L'utilisation des deux en même temps entraînera une erreur de compilation.
+- `defineProps` ou `defineEmits` ne peuvent utiliser que la déclaration à l'exécution OU la déclaration de type. L'utilisation des deux en même temps entraînera une erreur de compilation.
 
 - Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique pour supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
 
-  - En mode dev, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple ici `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal à `any` type) car le compilateur ne dispose pas d'informations sur les fichiers externes.
+  - En mode dev, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple ici `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal au type `any`) car le compilateur ne dispose pas d'informations sur les fichiers externes.
 
-  - En mode prod, le compilateur générera la déclaration au format tableau pour réduire la taille du bundle (les accessoires ici seront compilés dans `['foo', 'bar']`)
+  - En mode prod, le compilateur générera la déclaration au format tableau pour réduire la taille du bundle (les props ici seront compilées dans `['foo', 'bar']`)
 
 - Dans la version 3.2 et les versions antérieures, le paramètre de type générique pour `defineProps()` était limité à un littéral de type ou à une référence à une interface locale.
 
-  Cette limitation a été résolue en 3.3. La dernière version de Vue prend en charge le référencement importé et un ensemble limité de types complexes dans le paramètre de type. Cependant, étant donné que la conversion de type à l'exécution est toujours basée sur AST, certains types complexes qui nécessitent une analyse de type réelle, par ex. les types conditionnels ne sont pas pris en charge. Vous pouvez utiliser des types conditionnels pour le type d'une prop, mais pas pour l'ensemble de l'objet props.
+  Cette limitation a été résolue en 3.3. La dernière version de Vue prend en charge le référencement importé et un ensemble limité de types complexes dans le paramètre de type. Cependant, étant donné que la conversion de type à l'exécution est toujours basée sur AST, certains types complexes qui nécessitent une analyse de type réelle, par exemple les types conditionnels ne sont pas pris en charge. Vous pouvez utiliser des types conditionnels pour le type d'une prop, mais pas pour l'ensemble de l'objet props.
 
 ### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
 
