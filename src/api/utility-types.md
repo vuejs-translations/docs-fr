@@ -34,23 +34,23 @@ Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisatio
 
 ## MaybeRef\<T> {#mayberef}
 
-Alias for `T | Ref<T>`. Useful for annotating arguments of [Composables](/guide/reusability/composables.html).
+Alias pour `T | Ref<T>`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
 
-- Only supported in 3.3+.
+- Pris en charge uniquement dans la version 3.3+.
 
 ## MaybeRefOrGetter\<T> {#maybereforgetter}
 
-Alias for `T | Ref<T> | (() => T)`. Useful for annotating arguments of [Composables](/guide/reusability/composables.html).
+Alias pour `T | Ref<T> | (() => T)`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
 
-- Only supported in 3.3+.
+- Pris en charge uniquement dans la version 3.3+.
 
 ## ExtractPropTypes\<T> {#extractproptypes}
 
-Extract prop types from a runtime props options object. The extracted types are internal facing - i.e. the resolved props received by the component. This means boolean props and props with default values are always defined, even if they are not required.
+Extrait les types de props à partir d'un objet d'options de props au moment de l'exécution. Les types extraits sont destinés à un usage interne, c'est-à-dire les props résolues reçues par le composant. Cela signifie que les props booléennes et les props avec des valeurs par défaut sont toujours définies, même si elles ne sont pas obligatoires.
 
-To extract public facing props, i.e. props that the parent is allowed to pass, use [`ExtractPublicPropTypes`](#extractpublicproptypes).
+Pour extraire les props destinées à être utilisées publiquement, c'est-à-dire les props que le composant parent est autorisé à transmettre, utilisez [`ExtractPublicPropTypes`](#extractpublicproptypes).
 
-- **Example**
+- **Exemple :**
 
   ```ts
   const propsOptions = {
@@ -77,9 +77,9 @@ To extract public facing props, i.e. props that the parent is allowed to pass, u
 
 ## ExtractPublicPropTypes\<T> {#extractpublicproptypes}
 
-Extract prop types from a runtime props options object. The extracted types are public facing - i.e. the props that the parent is allowed to pass.
+Extrait les types de props à partir d'un objet d'options de props. Les types extraits sont destinés à un usage public, c'est-à-dire les props que le parent est autorisé à transmettre.
 
-- **Example**
+- **Exemple :**
 
   ```ts
   const propsOptions = {
