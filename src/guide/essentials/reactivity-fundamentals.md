@@ -79,7 +79,7 @@ import { ref } from 'vue'
 const count = ref(0)
 ```
 
- `ref()` prend l'argument et le renvoie enveloppé dans un objet ref avec une propriété `.value` :
+`ref()` prend l'argument et le renvoie enveloppé dans un objet ref avec une propriété `.value` :
 
 ```js
 const count = ref(0)
