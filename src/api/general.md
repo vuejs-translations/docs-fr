@@ -129,26 +129,26 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
   type FooInstance = InstanceType<typeof Foo>
   ```
 
-  ### Function Signature <sup class="vt-badge" data-text="3.3+" /> {#function-signature}
+  ### Signature de fonction <sup class="vt-badge" data-text="3.3+" /> {#function-signature}
 
-  `defineComponent()` also has an alternative signature that is meant to be used with Composition API and [render functions or JSX](/guide/extras/render-function.html).
+  `defineComponent()` possède également une signature alternative destinée à être utilisée avec la Composition API et les [fonctions de rendu ou du JSX](/guide/extras/render-function.html).
 
-  Instead of passing in an options object, a function is expected instead. This function works the same as the Composition API [`setup()`](/api/composition-api-setup.html#composition-api-setup) function: it receives the props and the setup context. The return value should be a render function - both `h()` and JSX are supported:
+  Au lieu de passer un objet d'options, une fonction est attendue à la place. Cette fonction fonctionne de la même manière que la fonction [`setup()`](/api/composition-api-setup.html#composition-api-setup) de la Composition API : elle reçoit les props et le contexte général. La valeur de retour doit être une fonction de rendu - `h()` et JSX sont supportés :
 
   ```js
   import { ref, h } from 'vue'
 
   const Comp = defineComponent(
     (props) => {
-      // use Composition API here like in <script setup>
+      // utilisez ici la Composition API comme dans <script setup>
       const count = ref(0)
 
       return () => {
-        // render function or JSX
+        // fonction de rendu ou JSX
         return h('div', count.value)
       }
     },
-    // extra options, e.g. declare props and emits
+    // options supplémentaires, comme la déclaration des props ou l'émission d'événements
     {
       props: {
         /* ... */
@@ -157,27 +157,27 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
   )
   ```
 
-  The main use case for this signature is with TypeScript (and in particular with TSX), as it supports generics:
+  Le cas principal d'utilisation de cette signature est lors de l'utilisation de TypeScript (et en particulier avec TSX), car elle prend en charge les génériques :
 
   ```tsx
   const Comp = defineComponent(
     <T extends string | number>(props: { msg: T; list: T[] }) => {
-      // use Composition API here like in <script setup>
+      // utilisez ici la Composition API comme dans <script setup>
       const count = ref(0)
 
       return () => {
-        // render function or JSX
+        // fonction de rendu ou JSX
         return <div>{count.value}</div>
       }
     },
-    // manual runtime props declaration is currently still needed.
+    // la déclaration manuelle des props au moment de l'exécution est encore toutefois nécessaire.
     {
       props: ['msg', 'list']
     }
   )
   ```
 
-  In the future, we plan to provide a Babel plugin that automatically infers and injects the runtime props (like for `defineProps` in SFCs) so that the runtime props declaration can be omitted.
+  Dans le futur, nous prévoyons de fournir un plugin Babel qui infère et injecte automatiquement les props d'exécution (comme pour `defineProps` dans les SFCs) afin que la déclaration des props d'exécution puisse être omise.
 
   ### Note sur le treeshaking de webpack {#note-on-webpack-treeshaking}
 

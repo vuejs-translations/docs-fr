@@ -41,14 +41,14 @@ Retourne la valeur interne si l'argument est une ref, sinon retourne l'argument 
 
 ## toRef() {#toref}
 
-Can be used to normalize values / refs / getters into refs (3.3+).
+Peut être utilisée pour normaliser les valeurs / refs / accesseurs en refs (3.3+).
 
 Peut être utilisée pour créer une ref pour une propriété sur un objet source réactif. La ref créée est synchronisée avec sa propriété source : la mutation de la propriété source mettra à jour la ref, et vice-versa.
 
 - **Type :**
 
   ```ts
-  // normalization signature (3.3+)
+  // signature de normalisation (3.3+)
   function toRef<T>(
     value: T
   ): T extends () => infer R
@@ -57,7 +57,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
     ? T
     : Ref<UnwrapRef<T>>
 
-  // object property signature
+  // signature des propriétés de l'objet
   function toRef<T extends object, K extends keyof T>(
     object: T,
     key: K,
@@ -69,21 +69,21 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
 
 - **Exemple :**
 
-  Normalization signature (3.3+):
+  Signature de normalisation (3.3+) :
 
   ```js
-  // returns existing refs as-is
+  // retourne la ref existante telle quelle
   toRef(existingRef)
 
-  // creates a readonly ref that calls the getter on .value access
+  // crée une ref en lecture seule qui appelle l'accesseur lors de l'accès à .value
   toRef(() => props.foo)
 
-  // creates normal refs from non-function values
-  // equivalent to ref(1)
+  // crée des refs classiques à partir de valeurs n'étant pas des fonctions
+  // équivalent à ref(1)
   toRef(1)
   ```
 
-  Object property signature:
+  Signature de la propriété de l'objet :
 
   ```js
   const state = reactive({
@@ -91,7 +91,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
     bar: 2
   })
 
-  // a two-way ref that syncs with the original property
+  // une ref bidirectionnelle qui se synchronise avec la propriété d'origine
   const fooRef = toRef(state, 'foo')
 
   // muter la ref met à jour l'original
@@ -123,7 +123,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
   // à un composable
   useSomeFeature(toRef(props, 'foo'))
 
-  // getter syntax - recommended in 3.3+
+  // syntaxe accesseur - recommandée en 3.3+
   useSomeFeature(toRef(() => props.foo))
   </script>
   ```
@@ -132,21 +132,21 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
 
   
 
-  When using the object property signature, `toRef()` retournera une ref utilisable même si la propriété source n'existe pas actuellement. Cela permet de travailler avec des propriétés optionnelles, qui ne seraient pas prises en compte par [`toRefs`](#torefs).
+  En utilisant la signature des propriétés d'objets, `toRef()` retournera une ref utilisable même si la propriété source n'existe pas actuellement. Cela permet de travailler avec des propriétés optionnelles qui ne seraient pas prises en compte par [`toRefs`](#torefs).
 
 ## toValue() <sup class="vt-badge" data-text="3.3+" /> {#tovalue}
 
-Normalizes values / refs / getters to values. This is similar to [unref()](#unref), except that it also normalizes getters. If the argument is a getter, it will be invoked and its return value will be returned.
+Normalise les valeurs / refs / accesseurs en valeurs. Cela est similaire à [unref()](#unref), sauf que cela normalise aussi les accesseurs. Si l'argument est un accesseur, il sera invoqué et sa valeur de retour sera renvoyée.
 
-This can be used in [Composables](/guide/reusability/composables.html) to normalize an argument that can be either a value, a ref, or a getter.
+Cette fonction peut être utilisée dans les [Composables](/guide/reusability/composables.html) pour normaliser un argument qui peut être soit une valeur, soit une ref, soit un accesseur.
 
-- **Type**
+- **Type :**
 
   ```ts
   function toValue<T>(source: T | Ref<T> | (() => T)): T
   ```
 
-- **Example**
+- **Exemple :**
 
   ```js
   toValue(1) //       --> 1
@@ -154,18 +154,18 @@ This can be used in [Composables](/guide/reusability/composables.html) to normal
   toValue(() => 1) // --> 1
   ```
 
-  Normalizing arguments in composables:
+  Normalisation des arguments dans les composables :
 
   ```ts
   import type { MaybeRefOrGetter } from 'vue'
 
   function useFeature(id: MaybeRefOrGetter<number>) {
     watch(() => toValue(id), id => {
-      // react to id changes
+      // réagit aux changements d'id
     })
   }
 
-  // this composable supports any of the following:
+  // ce composable supporte ces fonctions :
   useFeature(1)
   useFeature(ref(1))
   useFeature(() => 1)

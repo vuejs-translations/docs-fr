@@ -86,11 +86,11 @@ Configure les options du compilateur d'exécution pour le template du composant.
 
 ## slots<sup class="vt-badge ts"/> {#slots}
 
-An option to assist with type inference when using slots programmatically in render functions. Only supported in 3.3+.
+Une option pour aider à l'inférence de type lors de l'utilisation de slots dans les fonctions de rendu. Prise en charge uniquement dans la version 3.3+.
 
-- **Details**
+- **Détails :**
 
-  This option's runtime value is not used. The actual types should be declared via type casting using the `SlotsType` type helper:
+  La valeur de cette option lors de l'exécution n'est pas utilisée. Les types réels doivent être déclarés via un casting de type grâce à l'utilitaire de type `SlotsType` :
 
   ```ts
   import { SlotsType } from 'vue'
