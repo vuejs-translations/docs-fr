@@ -80,6 +80,7 @@ L'extension du navigateur Vue devtools vous permet d'explorer l'arborescence des
 - [Documentation](https://devtools.vuejs.org/)
 - [Extension Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - [Addon Firefox](https://addons.mozilla.org/fr/firefox/addon/vue-js-devtools/)
+- [Extension Edge](https://microsoftedge.microsoft.com/addons/detail/vuejs-devtools/olofadcdnkkjdfgjcmjaadnlehnnihnl)
 - [Application autonome Electron](https://devtools.vuejs.org/guide/installation.html#standalone)
 
 ## TypeScript {#typescript}

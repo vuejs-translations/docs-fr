@@ -224,6 +224,29 @@ export function register() {
 
 Si vous avez de nombreux composants, vous pouvez également tirer parti des fonctionnalités de l'outil de build telles que le [glob import](https://vitejs.dev/guide/features.html#glob-import) de Vite ou [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) pour charger tous les composants à partir d'un répertoire.
 
+### Web Components and Typescript {#web-components-and-typescript}
+
+If you are developing an application or a library, you may want to [type check](/guide/scaling-up/tooling.html#typescript) your Vue components, including those that are defined as custom elements.
+
+Custom elements are registered globally using native APIs, so by default they won't have type inference when used in Vue templates. To provide type support for Vue components registered as custom elements, we can register global component typings using the the [`GlobalComponents` interface](https://github.com/vuejs/language-tools/blob/master/packages/vscode-vue/README.md#usage) in Vue templates and/or in [JSX](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements):
+
+```typescript
+import { defineCustomElement } from 'vue'
+
+// vue SFC
+import CounterSFC from './src/components/counter.ce.vue'
+
+// turn component into web components
+export const Counter = defineCustomElement(CounterSFC)
+
+// register global typings
+declare module 'vue' {
+  export interface GlobalComponents {
+    'Counter': typeof Counter,
+  }
+}
+```
+
 ## Web Components vs. les composants Vue {#web-components-vs-vue-components}
 
 Certains développeurs pensent que les modèles de composants propriétaires du framework doivent être évités et que l'utilisation exclusive d'éléments personnalisés rend une application "à l'épreuve du temps". Ici, nous allons essayer d'expliquer pourquoi nous pensons qu'il s'agit d'une approche trop simpliste du problème.

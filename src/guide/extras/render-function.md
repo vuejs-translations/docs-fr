@@ -739,3 +739,78 @@ MyComponent.inheritAttrs = false
 ```
 
 Les composants fonctionnels peuvent être enregistrés et consommés tout comme les composants normaux. Si vous passez une fonction comme premier argument à `h()`, elle sera traitée comme un composant fonctionnel.
+
+### Typer des composants fonctionnels<sup class="vt-badge ts" /> {#typing-functional-components}
+
+Les composants fonctionnels peuvent être typés selon qu'ils sont nommés ou anonymes. Volar prend également en charge la vérification de type des composants fonctionnels correctement typés lors de leur utilisation dans des templates SFC.
+
+**Composants fonctionnels nommés**
+
+```tsx
+import type { SetupContext } from 'vue'
+type FComponentProps = {
+  message: string
+}
+
+type Events = {
+  sendMessage(message: string): void
+}
+
+function FComponent(
+  props: FComponentProps,
+  context: SetupContext<Events>
+) {
+  return (
+    <button onClick={() => context.emit('sendMessage', props.message)}>
+        {props.message} {' '}
+    </button>
+  )
+}
+
+FComponent.props = {
+  message: {
+    type: String,
+    required: true
+  }
+}
+
+FComponent.emits = {
+  sendMessage: (value: unknown) => typeof value === 'string'
+}
+```
+
+**Composants fonctionnels anonymes**
+
+```tsx
+import type { FunctionalComponent } from 'vue'
+
+type FComponentProps = {
+  message: string
+}
+
+type Events = {
+  sendMessage(message: string): void
+}
+
+const FComponent: FunctionalComponent<FComponentProps, Events> = (
+  props,
+  context
+) => {
+  return (
+    <button onClick={() => context.emit('sendMessage', props.message)}>
+        {props.message} {' '}
+    </button>
+  )
+}
+
+FComponent.props = {
+  message: {
+    type: String,
+    required: true
+  }
+}
+
+FComponent.emits = {
+  sendMessage: (value) => typeof value === 'string'
+}
+```

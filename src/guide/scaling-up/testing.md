@@ -228,9 +228,9 @@ Le test de composant implique souvent le montage du composant testé isolément,
 
 Nous vous recommandons d'utiliser `@vue/test-utils` pour tester les composants dans les applications. `@testing-library/vue` a des problèmes avec le test du composant asynchrone avec Suspense, il doit donc être utilisé avec prudence.
 
-### Autres options {#other-options-1}
+- [Nightwatch](https://nightwatchjs.org/) est un testeur E2E avec prise en charge de Vue Component Testing. ([Projet d'exemple](https://github.com/nightwatchjs-community/todo-vue))
 
-- [Nightwatch](https://v2.nightwatchjs.org/) est un runner de tests E2E (End-to-end) supportant le test de composants Vue. ([Projet d'exemple](https://github.com/nightwatchjs-community/todo-vue) avec Nightwatch v2)
+- [WebdriverIO](https://webdriver.io/docs/component-testing/vue) pour les tests de composants inter-navigateurs qui reposent sur une interaction utilisateur native basée sur une automatisation standardisée. Peut également être utilisé avec la bibliothèque de tests. 
 
 ## Tests E2E {#e2e-testing}
 
@@ -278,7 +278,9 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [Playwright](https://playwright.dev/) est également une excellente solution de test E2E avec une gamme plus large de support de navigateur (principalement WebKit). Voir [Pourquoi dramaturge](https://playwright.dev/docs/why-dramaturge) pour plus de détails.
 
-- [Nightwatch v2](https://v2.nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui donne la plus large gamme de support de navigateur.
+- [Nightwatch](https://nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui donne la gamme de support de navigateur la plus large.
+
+- [WebdriverIO](https://webdriver.io/) est un framework d'automatisation des tests pour les tests Web et mobiles basé sur le protocole WebDriver.
 
 ## Recipes {#recipes}
 

@@ -76,18 +76,15 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
   </div>
   <div class="composition-api">
 
-  Lorsque vous déclarez cette option dans un composant qui utilise `<script setup>`, un bloc `<script>` à part est nécessaire :
+  Lorsque vous déclarez cette option dans un composant qui utilise `<script setup>`, vous pouvez utiliser la macro [`defineOptions`](/api/sfc-script-setup#defineoptions) :
 
   ```vue
-  <script>
-  export default {
-    inheritAttrs: false
-  }
-  </script>
-
   <script setup>
   defineProps(['label', 'value'])
   defineEmits(['input'])
+  defineOptions({
+    inheritAttrs: false
+  })
   </script>
 
   <template>

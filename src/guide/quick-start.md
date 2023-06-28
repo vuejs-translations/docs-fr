@@ -80,6 +80,8 @@ Lorsque Vue est utilisé depuis un CDN, aucun outil de build n'est nécessaire. 
 
 Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-niveau sont exposées comme des propriétés sur l'objet global `Vue`. Ci-dessous, un exemple utilisant le build global :
 
+<div class="options-api">
+
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -100,9 +102,42 @@ Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-nivea
 
 [Codepen demo](https://codepen.io/vuejs-examples/pen/QWJwJLp)
 
+</div>
+
+<div class="composition-api">
+
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">{{ message }}</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const message = ref('Hello Vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+[Codepen demo](https://codepen.io/vuejs-examples/pen/eYQpQEG)
+
+:::tip
+De nombreux exemples de la Composition API tout au long du guide utiliseront la syntaxe `<script setup>`, qui nécessite des outils de génération. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup).
+:::
+
+</div>
+
 ### Utiliser le build des modules ES {#using-the-es-module-build}
 
 Bien que le build global fonctionne, nous utiliserons principalement la syntaxe des [modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules) dans le reste de la documentation par souci de cohérence. La plupart des navigateurs supportant désormais les modules ES nativement, nous pouvons utiliser Vue depuis un CDN via les modules ES natifs :
+
+<div class="options-api">
 
 ```html{3,4}
 <div id="app">{{ message }}</div>
@@ -120,9 +155,41 @@ Bien que le build global fonctionne, nous utiliserons principalement la syntaxe 
 </script>
 ```
 
+</div>
+
+<div class="composition-api">
+
+```html{3,4}
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  createApp({
+    setup() {
+      const message = ref('Hello Vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+</div>
+
 Notez que nous utilisons `<script type="module">`, et que l'url CDN importée pointe vers le **build des modules ES** de Vue.
 
+<div class="options-api">
+
 [Codepen demo](https://codepen.io/vuejs-examples/pen/VwVYVZO)
+
+</div>
+<div class="composition-api">
+
+[Codepen demo](https://codepen.io/vuejs-examples/pen/MWzazEv)
+
+</div>
 
 ### Activer l'Import maps {#enabling-import-maps}
 
@@ -134,7 +201,9 @@ const { createApp, ref } = Vue
 
 Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Import Maps](https://caniuse.com/import-maps) :
 
-```html
+<div class="options-api">
+
+```html{1-7,12}
 <script type="importmap">
   {
     "imports": {
@@ -158,7 +227,41 @@ Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Imp
 </script>
 ```
 
-[JSFiddle demo](https://jsfiddle.net/yyx990803/2ke1ab0z/)
+[Codepen demo](https://codepen.io/vuejs-examples/pen/wvQKQyM)
+
+
+</div>
+
+<div class="composition-api">
+
+```html{1-7,12}
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<div id="app">{{ message }}</div>
+
+<script type="module">
+  import { createApp, ref } from 'vue'
+
+  createApp({
+    setup() {
+      const message = ref('Hello Vue!')
+      return {
+        message
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+[Codepen demo](https://codepen.io/vuejs-examples/pen/YzRyRYM)
+
+</div>
 
 Vous pouvez ajouter des entrées pour d'autres dépendances à l'Import Map, assurez-vous simplement qu'elles pointent vers la version des modules ES de la bibliothèque que vous avez l'intention d'utiliser.
 
@@ -168,7 +271,6 @@ Pour le moment, les Import Maps ne sont disponibles que dans les navigateurs bas
 Si vous utilisez Firefox, c'est supporté par défaut à partir de la version 108+ sinon vous devez l'activer via la config `dom.importMaps.enabled` dans `about:config` pour les versions 102 et supérieures.
 
 Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vous pouvez ajouter le support (polyfill) avec [es-module-shims](https://github.com/guybedford/es-module-shims).
-:::
 
 :::warning À éviter en production
 L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment#without-build-tools).
@@ -190,6 +292,8 @@ Au fur et à mesure que nous progressons dans le guide, il se peut que nous devi
 </script>
 ```
 
+<div class="options-api">
+
 ```js
 // my-composant.js
 export default {
@@ -200,15 +304,30 @@ export default {
 }
 ```
 
-Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevées parce que les modules ES ne peuvent fonctionner via le protocol `file://`. Pour qu'ils fonctionnent, vous devez servir votre `index.html` sur le protocole `http://`, avec un serveur HTTP local.
+</div>
+<div class="composition-api">
+
+```js
+// my-component.js
+import { ref } from 'vue'
+export default {
+  setup() {
+    const count = ref(0)
+    return { count }
+  },
+  template: `<div>count is {{ count }}</div>`
+}
+```
+
+</div>
+
+Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevées parce que les modules ES ne peuvent fonctionner via le protocol `file://`, qui est le protocole utilisé par le navigateur lorsque vous ouvrez un fichier local. 
+
+Pour des raisons de sécurité, les modules ES ne peuvent fonctionner que sur le protocole `http://`, qui est celui que les navigateurs utilisent lors de l'ouverture de pages sur le Web. Pour que les modules ES fonctionnent sur notre machine locale, nous devons servir le `index.html` sur le protocole `http://`, avec un serveur HTTP local.
 
 Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs.org/en/), puis exécutez `npx serve` depuis la ligne de commande dans le même répertoire que votre fichier HTML. Vous pouvez également utiliser n'importe quel autre serveur HTTP qui peut servir des fichiers statiques avec les types MIME corrects.
 
 Vous avez peut-être remarqué que le template du composant importé est souligné comme une chaîne JavaScript. Si vous utilisez VSCode, vous pouvez installer l'extension [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) et préfixer les chaînes avec un commentaire `/*html*/` pour obtenir la coloration syntaxique.
-
-### Utiliser la Composition API sans outil de build {#using-composition-api-without-a-build-step}
-
-De nombreux exemples pour la Composition API utiliseront la syntaxe `<script setup>`. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup).
 
 ## Étapes suivantes {#next-steps}
 

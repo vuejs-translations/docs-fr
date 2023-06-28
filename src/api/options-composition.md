@@ -188,7 +188,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   Les hooks des mixins sont appelés dans l'ordre où ils sont fournis, et sont appelés avant les propres hooks du composant.
 
   :::warning N'est plus recommandé
-  Dans Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge dans Vue 3, la [Composition API](/guide/reusability/composables) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
+  Avec Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge avec Vue 3, la [Composition API](/guide/reusability/composables) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
 - **Exemple :**
@@ -231,7 +231,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
 
   Cependant, `extends` et `mixins` expriment des intentions différentes. L'option `mixins` est principalement utilisée pour composer des morceaux de fonctionnalité, alors que `extends` est principalement concerné par l'héritage.
 
-  Comme avec `mixins`, toutes les options seront fusionnées en utilisant la stratégie de fusion appropriée.
+  Comme avec `mixins`, toutes les options (excepté pour `setup()`) seront fusionnées en utilisant la stratégie de fusion appropriée.
 
 - **Exemple :**
 
@@ -243,3 +243,24 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
     ...
   }
   ```
+
+  :::warning Not Recommended for Composition API
+  `extends` is designed for Options API and does not handle the merging of the `setup()` hook.
+
+  In Composition API, the preferred mental model for logic reuse is "compose" over "inheritance". If you have logic from a component that needs to be reused in another one, consider extracting the relevant logic into a [Composable](/guide/reusability/composables#composables).
+
+  If you still intend to "extend" a component using Composition API, you can call the base component's `setup()` in the extending component's `setup()`:
+
+  ```js
+  import Base from './Base.js'
+  export default {
+    extends: Base,
+    setup(props, ctx) {
+      return {
+        ...Base.setup(props, ctx),
+        // local bindings
+      }
+    }
+  }
+  ```
+  :::

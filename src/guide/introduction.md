@@ -30,6 +30,8 @@ Vue (/vjuː/ à prononcer comme en anglais: **view**) est un framework JavaScrip
 
 Voici un exemple simple :
 
+<div class="options-api">
+
 ```js
 import { createApp } from 'vue'
 
@@ -41,6 +43,23 @@ createApp({
   }
 }).mount('#app')
 ```
+
+</div>
+<div class="composition-api">
+
+```js
+import { createApp, ref } from 'vue'
+
+createApp({
+  setup() {
+    return {
+      count: ref(0)
+    }
+  }
+}).mount('#app')
+```
+
+</div>
 
 ```vue-html
 <div id="app">
@@ -96,6 +115,8 @@ Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue 
 
 Dans la plupart des projets Vue dotés d'outils de construction, nous créons des composants Vue en utilisant un format de fichier semblable à HTML appelé **Composant monofichier**, ou **Single-File Component** en anglais (également connu sous le nom de fichiers `*.vue`, abrégé en **SFC**). Un SFC Vue, comme son nom l'indique, encapsule la logique (JavaScript), le modèle (HTML) et les styles (CSS) du composant dans un seul fichier. Voici l'exemple précédent, écrit au format SFC :
 
+<div class="options-api">
+
 ```vue
 <script>
 export default {
@@ -117,6 +138,28 @@ button {
 }
 </style>
 ```
+
+</div>
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const compteur = ref(0)
+</script>
+
+<template>
+  <button @click="compteur++">Le compteur est à {{ compteur }}</button>
+</template>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+```
+
+</div>
 
 Les SFC sont une fonctionnalité essentielle de Vue, et c'est la manière recommandée de créer des composants Vue **si** votre usage justifie une configuration avancée (usant d'outils de construction). Vous pouvez en savoir plus sur le [comment et pourquoi faire des SFC](/guide/scaling-up/sfc) dans la section qui lui est consacrée - mais pour l'instant, sachez que Vue se chargera de la configuration des outils de construction pour vous.
 

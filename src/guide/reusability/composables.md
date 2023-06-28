@@ -94,13 +94,13 @@ Par exemple, nous pouvons extraire la logique d'ajout et de suppression d'un éc
 
 ```js
 // event.js
-import { onMounted, onBeforeUnmount } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 
 export function useEventListener(target, event, callback) {
   // au lieu d'utiliser target, vous pouvez aussi
   // utiliser un sélecteur CSS pour trouver l'élément cible
   onMounted(() => target.addEventListener(event, callback))
-  onBeforeUnmount(() => target.removeEventListener(event, callback))
+  onUnmounted(() => target.removeEventListener(event, callback))
 }
 ```
 
@@ -297,9 +297,9 @@ C'est OK d'effectuer des effets de bord (par exemple, ajouter des écouteurs d'�
 
 ### Restriction d'usage {#usage-restrictions}
 
-Les composables ne peuvent être appelés que de manière **synchrone** dans `<script setup>` ou dans le hook `setup()`. Dans certains cas, vous pouvez également les appeler dans des hooks de cycle de vie comme `onMounted()`.
+Les composables ne peuvent être appelés dans `<script setup>` ou dans le hook `setup()`. Ils ne doivent être appelés que de manière **synchrone** dans ces contextes. Dans certains cas, vous pouvez également les appeler dans des hooks de cycle de vie comme `onMounted()`.
 
-Ce sont les contextes dans lesquels Vue est capable de déterminer l'instance de composant active actuelle. L'accès à une instance de composant actif est nécessaire pour que :
+Ces restrictions sont importantes car ce sont ces contextes où Vue est capable de déterminer l'instance de composant active actuelle. L'accès à une instance de composant actif est nécessaire pour que :
 
 1. Les hooks de cycle de vie peuvent y être enregistrés.
 

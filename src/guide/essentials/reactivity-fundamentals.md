@@ -199,7 +199,7 @@ When you use a ref in the template, and changes the ref's value later, Vue autom
 
 In standard JavaScript, there is no way to detect the access or mutation of plain variables. But we can intercept a property's get and set operations.
 
-The `.value` property gives Vue the opportunity to detect when a ref has been accessed or mutated. Under the hood, Vue perform the tracking in its getter, and performs triggering in its setter. Conceptually, you can think of a ref as an object that looks like this:
+The `.value` property gives Vue the opportunity to detect when a ref has been accessed or mutated. Under the hood, Vue performs the tracking in its getter, and performs triggering in its setter. Conceptually, you can think of a ref as an object that looks like this:
 
 ```js
 // pseudo code, not actual implementation
@@ -343,11 +343,10 @@ Pour attendre que la mise à jour du DOM soit terminée après un changement d'�
 ```js
 import { nextTick } from 'vue'
 
-function increment() {
+async function increment() {
   count.value++
-  nextTick(() => {
-    // accès au DOM mis à jour
-  })
+  await nextTick()
+  // Maintenant le DOM est mis à jour
 }
 ```
 
@@ -359,11 +358,10 @@ import { nextTick } from 'vue'
 
 export default {
   methods: {
-    increment() {
+    async increment() {
       this.count++
-      nextTick(() => {
-        // accès au DOM mis à jour
-      })
+      await nextTick()
+      // Maintenant le DOM est mis à jour
     }
   }
 }
@@ -496,7 +494,7 @@ console.log(count.value) // 1
 
 Ref unwrapping only happens when nested inside a deep reactive object. It does not apply when it is accessed as a property of a [shallow reactive object](/api/reactivity-advanced#shallowreactive).
 
-### Pièges lors de déballage dans les templates \*\* {#caveat-in-arrays-and-collections}
+### Pièges lors de déballage de tableaux et collections \*\* {#caveat-in-arrays-and-collections}
 
 Unlike reactive objects, there is **no** unwrapping performed when the ref is accessed as an element of a reactive array or a native collection type like `Map`:
 
@@ -512,7 +510,7 @@ console.log(map.get('count').value)
 
 Ref unwrapping in templates only applies if the ref is a top-level property in the template render context.
 
-In the example below, `count` and `object` are top-level properties, but `object.count` is not:
+In the example below, `count` and `object` are top-level properties, but `object.id` is not:
 
 ```js
 const count = ref(0)

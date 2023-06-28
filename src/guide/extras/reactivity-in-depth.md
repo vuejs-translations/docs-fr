@@ -104,7 +104,7 @@ Ces extraits de code et ceux situés ci-dessous ont pour but d'expliquer les con
 
 Cela explique certaines [limitations des objets réactifs](/guide/essentials/reactivity-fundamentals#limitations-of-reactive) que nous avons abordées dans la section sur les principes fondamentaux :
 
-- Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, la réactivité est "déconnectée" car l'accès à la variable locale ne déclenche plus les mécanismes d'accès / de mutation du proxy.
+- Lorsque vous assignez ou déstructurez la propriété d'un objet réactif à une variable locale, l'accès ou l'affectation à cette variable est non réactif car il ne déclenche plus les interruptions de proxy get/set sur l'objet source. Notez que cette "déconnexion" n'affecte que la liaison de variable - si la variable pointe vers une valeur non primitive telle qu'un objet, la mutation de l'objet serait toujours réactive.
 
 - Le proxy retourné par `reactive()`, bien que se comportant comme l'original, n'a pas la même identité lorsqu'on le compare à ce dernier en utilisant l'opérateur `===`.
 

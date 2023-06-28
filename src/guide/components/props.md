@@ -589,13 +589,29 @@ Le composant peut être utilisé comme ceci :
 <MyComponent />
 ```
 
-Lorsqu'une prop est déclarée pour autoriser plusieurs types, par ex.
+Lorsqu'un accessoire est déclaré pour autoriser plusieurs types, les règles de conversion pour `Boolean` seront également appliquées. Cependant, il y a un avantage lorsque `String` et `Boolean` sont autorisés - la règle de casting sur Boolean ne s'applique que si Boolean apparaît avant String :
 
 <div class="composition-api">
 
 ```js
+// disabled will be casted to true
 defineProps({
   disabled: [Boolean, Number]
+})
+  
+// disabled will be casted to true
+defineProps({
+  disabled: [Boolean, String]
+})
+  
+// disabled will be casted to true
+defineProps({
+  disabled: [Number, Boolean]
+})
+  
+// disabled will be parsed as an empty string (disabled="")
+defineProps({
+  disabled: [String, Boolean]
 })
 ```
 
@@ -603,13 +619,33 @@ defineProps({
 <div class="options-api">
 
 ```js
+// disabled will be casted to true
 export default {
   props: {
     disabled: [Boolean, Number]
   }
 }
+  
+// disabled will be casted to true
+export default {
+  props: {
+    disabled: [Boolean, String]
+  }
+}
+  
+// disabled will be casted to true
+export default {
+  props: {
+    disabled: [Number, Boolean]
+  }
+}
+  
+// disabled will be parsed as an empty string (disabled="")
+export default {
+  props: {
+    disabled: [String, Boolean]
+  }
+}
 ```
 
 </div>
-
-Les règles de conversion pour `Boolean` s'appliqueront quel que soit l'ordre d'apparition des types.

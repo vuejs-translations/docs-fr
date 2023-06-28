@@ -106,7 +106,7 @@ L'Options API vous permet de "moins réfléchir" lorsque vous écrivez du code d
 
 ### Est-ce que la Composition API couvre tous les cas d'utilisation ? {#does-composition-api-cover-all-use-cases}
 
-Oui, en termes de logique avec état. Lorsque vous utilisez la Composition API, seules quelques options peuvent encore être nécessaires : `props`, `emits`, `name`, et `inheritAttrs`. Si vous utilisez `<script setup>`, alors `inheritAttrs` est typiquement la seule option qui peut nécessiter un bloc `<script>` séparé.
+Oui, en termes de logique avec état. Lorsque vous utilisez la Composition API, seules quelques options peuvent encore être nécessaires : `props`, `emits`, `name`, et `inheritAttrs`.
 
 :::tip
 

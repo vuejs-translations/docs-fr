@@ -403,6 +403,8 @@ export default {
 
 </div>
 
+### Modificateurs pour `v-model` avec arguments {#modifiers-for-v-model-with-arguments}
+
 Pour les liaisons `v-model` avec à la fois des arguments et des modificateurs, le nom de la prop générée sera `arg + "Modifiers"`. Par exemple :
 
 ```vue-html
@@ -431,6 +433,59 @@ export default {
     console.log(this.titleModifiers) // { capitalize: true }
   }
 }
+```
+
+</div>
+
+Here's another example of using modifiers with multiple `v-model` with different arguments:
+
+```vue-html
+<UserName
+  v-model:first-name.capitalize="first"
+  v-model:last-name.uppercase="last"
+/>
+```
+
+<div class="composition-api">
+
+```vue{5,6,10,11}
+<script setup>
+const props = defineProps({
+  firstName: String,
+  lastName: String,
+  firstNameModifiers: { default: () => ({}) },
+  lastNameModifiers: { default: () => ({}) }
+})
+defineEmits(['update:firstName', 'update:lastName'])
+
+console.log(props.firstNameModifiers) // { capitalize: true }
+console.log(props.lastNameModifiers) // { uppercase: true}
+</script>
+```
+
+</div>
+<div class="options-api">
+
+```vue{15,16}
+<script>
+export default {
+  props: {
+    firstName: String,
+    lastName: String,
+    firstNameModifiers: {
+      default: () => ({})
+    },
+    lastNameModifiers: {
+      default: () => ({})
+    }
+  },
+  emits: ['update:firstName', 'update:lastName'],
+  created() {
+    console.log(this.firstNameModifiers) // { capitalize: true }
+    console.log(this.lastNameModifiers) // { uppercase: true}
+  }
+}
+</script>
 ```
 
 </div>
