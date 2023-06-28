@@ -12,13 +12,13 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   `provide` et [`inject`](#inject) sont utilisées ensemble pour permettre à un composant ancêtre de servir d'injecteur de dépendances pour tous ses descendants, peu importe la profondeur de la hiérarchie des composants, tant qu'ils sont de la même lignée.
 
   L'option `provide` doit être soit un objet, soit une fonction qui renvoie un objet. Cet objet contient les propriétés qui sont disponibles pour l'injection dans ses descendants. Vous pouvez utiliser des symboles comme clés dans cet objet.
 
-- **Exemple :**
+- **Exemple**
 
   Utilisation basique :
 
@@ -52,7 +52,7 @@ Fournit des valeurs qui peuvent être injectées par les composants descendants.
 
   Notez que dans l'exemple ci-dessus, le `msg` fourni ne sera PAS réactif. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
+- **Voir aussi** [Provide / Inject](/guide/components/provide-inject)
 
 ## inject {#inject}
 
@@ -75,7 +75,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'option `inject` doit être soit :
 
@@ -90,7 +90,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
 
   Notez que les liaisons injectées ne sont PAS réactives. Ceci est intentionnel. Cependant, si la valeur injectée est un objet réactif, les propriétés de cet objet restent réactives. Consultez [travailler avec la réactivité](/guide/components/provide-inject#working-with-reactivity) pour plus de détails.
 
-- **Exemple :**
+- **Exemple**
 
   Utilisation basique :
 
@@ -167,7 +167,7 @@ Déclare les propriétés à injecter dans le composant actuel en les localisant
   }
   ```
 
-- **Voir aussi :** [Provide / Inject](/guide/components/provide-inject)
+- **Voir aussi** [Provide / Inject](/guide/components/provide-inject)
 
 ## mixins {#mixins}
 
@@ -181,7 +181,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'option `mixins` accepte un tableau d'objets mixins. Ces objets mixins peuvent contenir des options d'instance comme des objets d'instance normaux, et ils seront fusionnés avec les options éventuelles en utilisant la logique de fusion des options. Par exemple, si votre mixin contient un hook `created` et que le composant lui-même en possède un, les deux fonctions seront appelées.
 
@@ -191,7 +191,7 @@ Un tableau d'objets d'options à introduire dans le composant actuel.
   Avec Vue 2, les mixins étaient le principal mécanisme pour créer des morceaux réutilisables des logiques de composants. Bien que les mixins continuent d'être pris en charge avec Vue 3, la [Composition API](/guide/reusability/composables) est désormais l'approche privilégiée pour la réutilisation du code entre les composants.
   :::
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const mixin = {
@@ -223,7 +223,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Permet à un composant d'en étendre un autre, en héritant de ses options de composant.
 
@@ -233,7 +233,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
 
   Comme avec `mixins`, toutes les options (excepté pour `setup()`) seront fusionnées en utilisant la stratégie de fusion appropriée.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const CompA = { ... }

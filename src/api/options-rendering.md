@@ -12,7 +12,7 @@ Un modèle de chaîne de caractères pour le composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Un template fourni via l'option `template` sera compilé à la volée lors de l'exécution. Cette option n'est prise en charge que si vous utilisez une version de Vue qui inclut le compilateur de templates. Ce dernier n'est **PAS** inclus dans les builds de Vue qui ont le mot `runtime` dans leur nom, comme par exemple `vue.runtime.esm-bundler.js`. Consultez le [guide sur le fichier dist](https://github.com/vuejs/core/tree/main/packages/vue#which-dist-file-to-use) pour plus de détails sur les différents builds.
 
@@ -51,13 +51,13 @@ Une fonction qui retourne automatiquement l'arbre du DOM virtuel du composant.
   type VNodeArrayChildren = (VNodeArrayChildren | VNodeChildAtom)[]
   ```
 
-- **Détails :**
+- **Détails**
 
   `render` est une alternative aux templates qui vous permet de tirer parti de toute la puissance de JavaScript pour déclarer le rendu du composant.
 
   Les templates pré-compilés, par exemple ceux des composants monofichiers, sont compilés dans l'option `render` au moment du build. Si les deux options `render` et `template` sont présentes dans un composant, `render` aura la priorité.
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Mécanismes de rendu](/guide/extras/rendering-mechanism)
   - [Fonctions de rendu](/guide/extras/render-function)
 
@@ -78,17 +78,17 @@ Configure les options du compilateur d'exécution pour le template du composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Cette option de configuration n'est respectée que lors de l'utilisation du build complet (c'est-à-dire le build `vue.js` autonome qui peut compiler des templates dans le navigateur). Elle prend en charge les mêmes options que [app.config.compilerOptions](/api/application#app-config-compileroptions) au niveau de l'application, et a la plus haute priorité pour le composant actuel.
 
-- **Voir aussi :** [app.config.compilerOptions](/api/application#app-config-compileroptions)
+- **Voir aussi** [app.config.compilerOptions](/api/application#app-config-compileroptions)
 
 ## slots<sup class="vt-badge ts"/> {#slots}
 
 Une option pour aider à l'inférence de type lors de l'utilisation de slots dans les fonctions de rendu. Prise en charge uniquement dans la version 3.3+.
 
-- **Détails :**
+- **Détails**
 
   La valeur de cette option lors de l'exécution n'est pas utilisée. Les types réels doivent être déclarés via un casting de type grâce à l'utilitaire de type `SlotsType` :
 

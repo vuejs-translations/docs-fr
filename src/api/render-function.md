@@ -26,7 +26,7 @@ Créé des nœuds virtuels du DOM (vnodes).
 
   > Les types sont simplifiés dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   Le premier argument peut être une chaîne de caractères (pour les éléments natifs) ou une définition de composant Vue. Le deuxième argument est les props à passer, et le troisième argument représente les enfants.
 
@@ -34,7 +34,7 @@ Créé des nœuds virtuels du DOM (vnodes).
 
   Pour des raisons pratiques, l'argument props peut être omis lorsque les enfants ne sont pas un objet slots.
 
-- **Exemple :**
+- **Exemple**
 
   Création d'éléments natifs :
 
@@ -93,7 +93,7 @@ Créé des nœuds virtuels du DOM (vnodes).
   })
   ```
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function#creating-vnodes)
+- **Voir aussi** [Guide - Fonctions de rendu - Créer des Vnodes](/guide/extras/render-function#creating-vnodes)
 
 ## mergeProps() {#mergeprops}
 
@@ -105,7 +105,7 @@ Fusionne plusieurs objets de props avec une gestion spéciale pour certaines pro
   function mergeProps(...args: object[]): object
   ```
 
-- **Détails :**
+- **Détails**
 
   `mergeProps()` permet de fusionner plusieurs objets de props avec une gestion spéciale pour les props suivantes :
 
@@ -115,7 +115,7 @@ Fusionne plusieurs objets de props avec une gestion spéciale pour certaines pro
 
   Si vous n'avez pas besoin de la fusion et que vous voulez simplement écraser, la propagation d'objet natif peut être utilisée à la place.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { mergeProps } from 'vue'
@@ -149,7 +149,7 @@ Clone un vnode.
   function cloneVNode(vnode: VNode, extraProps?: object): VNode
   ```
 
-- **Détails :**
+- **Détails**
 
   Renvoie un vnode cloné, avec éventuellement des props supplémentaires à fusionner avec l'original.
 
@@ -157,7 +157,7 @@ Clone un vnode.
 
   Les vnodes ont des propriétés internes spéciales, donc les cloner n'est pas aussi simple qu'une copie d'objet. `cloneVNode()` gère la plupart de la logique interne.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { h, cloneVNode } from 'vue'
@@ -186,7 +186,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
   function resolveComponent(name: string): Component | string
   ```
 
-- **Détails :**
+- **Détails**
 
   **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
 
@@ -194,7 +194,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
 
   Si le composant n'est pas trouvé, un avertissement exécution est émis lors de l'exécution et le nom est retourné sous forme de chaîne de caractères. 
 
-- **Exemple :**
+- **Exemple**
 
   <div class="composition-api">
 
@@ -228,7 +228,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
 
   </div>
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function#components)
+- **Voir aussi** [Guide - Fonctions de rendu - Composants](/guide/extras/render-function#components)
 
 ## resolveDirective() {#resolvedirective}
 
@@ -240,7 +240,7 @@ Utilisée pour résoudre manuellement une directive enregistrée via son nom.
   function resolveDirective(name: string): Directive | undefined
   ```
 
-- **Détails :**
+- **Détails**
 
   **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
 
@@ -248,7 +248,7 @@ Utilisée pour résoudre manuellement une directive enregistrée via son nom.
 
   Si la directive n'est pas trouvée, un avertissement sera émis lors de l'exécution et la fonction retournera `undefined`.
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
+- **Voir aussi** [Guide - Fonctions de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
@@ -271,11 +271,11 @@ Utilisée pour ajouter des directives personnalisées aux vnodes.
   >
   ```
 
-- **Détails :**
+- **Détails**
 
   Enveloppe un vnode existant avec des directives personnalisées. Le second argument est un tableau de directives personnalisées. Chaque directive personnalisée est également représentée par un tableau sous la forme `[Directive, valeur, argument, modificateurs]`. Les éléments finaux du tableau peuvent être omis s'ils ne sont pas nécessaires.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { h, withDirectives } from 'vue'
@@ -296,7 +296,7 @@ Utilisée pour ajouter des directives personnalisées aux vnodes.
   ])
   ```
 
-- **Voir aussi :** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
+- **Voir aussi** [Guide - Fonction de rendu - Directives personnalisées](/guide/extras/render-function#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
@@ -308,7 +308,7 @@ Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event
   function withModifiers(fn: Function, modifiers: string[]): Function
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { h, withModifiers } from 'vue'
@@ -321,4 +321,4 @@ Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event
   })
   ```
 
-- **Voir aussi :** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function#event-modifiers)
+- **Voir aussi** [Guide - Fonctions de rendu - Modificateurs d'événement](/guide/extras/render-function#event-modifiers)

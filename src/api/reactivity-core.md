@@ -21,7 +21,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'objet ref est mutable - c'est-à-dire que vous pouvez attribuer de nouvelles valeurs à `.value`. Il est également réactif - c'est-à-dire que toute lecture de `.value` est traquée, et que les opérations d'écriture déclenchent les effets associés.
 
@@ -29,7 +29,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
 
   Pour éviter la conversion profonde, utilisez plutôt [`shallowRef()`](./reactivity-advanced#shallowref).
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const count = ref(0)
@@ -39,7 +39,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
   console.log(count.value) // 1
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
   - [Guide - Typer `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
@@ -67,7 +67,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   ): Ref<T>
   ```
 
-- **Exemple :**
+- **Exemple**
 
   Création d'une ref d'une propriété calculée en lecture seule :
 
@@ -108,7 +108,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   })
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
@@ -123,7 +123,7 @@ Retourne un proxy réactif de l'objet.
   function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
   ```
 
-- **Détails :**
+- **Détails**
 
   La conversion réactive est "profonde" : elle affecte toutes les propriétés imbriquées. Un objet réactif déballe également en profondeur toutes les propriétés qui sont des [refs](#ref) tout en maintenant la réactivité.
 
@@ -133,7 +133,7 @@ Retourne un proxy réactif de l'objet.
 
   L'objet retourné et ses objets imbriqués sont enveloppés par un [proxy ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et **non** égaux aux objets originaux. Il est recommandé de travailler exclusivement avec le proxy réactif et d'éviter de se fier à l'objet original.
 
-- **Exemple :**
+- **Exemple**
 
   Création d'un objet réactif :
 
@@ -186,7 +186,7 @@ Retourne un proxy réactif de l'objet.
   console.log(obj.count === count.value) // true
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals)
   - [Guide - Typer `reactive()`](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
@@ -202,13 +202,13 @@ Prend un objet (réactif ou simple) ou une [ref](#ref) et renvoie un proxy en le
   ): DeepReadonly<UnwrapNestedRefs<T>>
   ```
 
-- **Détails :**
+- **Détails**
 
   Un proxy en lecture seule est profond : toute propriété imbriquée à laquelle on accède sera également en lecture seule. Il a également le même comportement en termes de déballage que `reactive()`, sauf que les valeurs déballées seront aussi en lecture seule.
 
   Pour éviter la conversion profonde, utilisez plutôt [shallowReadonly()](./reactivity-advanced#shallowreadonly).
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const original = reactive({ count: 0 })
@@ -250,7 +250,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   type StopHandle = () => void
   ```
 
-- **Détails :**
+- **Détails**
 
   Le premier argument est la fonction à exécuter qui reçoit elle-même en argument une fonction qui peut être utilisée pour enregistrer une fonction de nettoyage. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
 
@@ -260,7 +260,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
   La valeur de retour est une fonction de gestion qui peut être appelée pour empêcher l'effet de s'exécuter à nouveau.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const count = ref(0)
@@ -308,7 +308,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   })
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Observateurs](/guide/essentials/watchers#watcheffect)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)
 
@@ -365,7 +365,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
   > Le type est simplifié dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   `watch()` fonctionne à la volée par défaut - c'est-à-dire que la fonction de rappel n'est appelée que lorsque la source surveillée a changé.
 
@@ -393,7 +393,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - Être plus spécifique quant à l'état qui doit déclencher la ré-exécution de l'observateur ;
   - Accéder à la fois à la valeur précédente et à la valeur actuelle de l'état surveillé.
 
-- **Exemple :**
+- **Exemple**
 
   Observation d'un accesseur :
 
@@ -481,7 +481,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   })
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Guide - Observateurs](/guide/essentials/watchers)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)

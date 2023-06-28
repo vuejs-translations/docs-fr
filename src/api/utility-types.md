@@ -8,7 +8,7 @@ Cette page ne liste que quelques types d'utilitaires couramment utilisés et don
 
 Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisation de déclarations de props à l'exécution.
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   import type { PropType } from 'vue'
@@ -30,7 +30,7 @@ Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisatio
   }
   ```
 
-- **Voir aussi :** [Guide - Typer les props des composants](/guide/typescript/options-api#typing-component-props)
+- **Voir aussi** [Guide - Typer les props des composants](/guide/typescript/options-api#typing-component-props)
 
 ## MaybeRef\<T> {#mayberef}
 
@@ -50,7 +50,7 @@ Extrait les types de props à partir d'un objet d'options de props au moment de 
 
 Pour extraire les props destinées à être utilisées publiquement, c'est-à-dire les props que le composant parent est autorisé à transmettre, utilisez [`ExtractPublicPropTypes`](#extractpublicproptypes).
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   const propsOptions = {
@@ -79,7 +79,7 @@ Pour extraire les props destinées à être utilisées publiquement, c'est-à-di
 
 Extrait les types de props à partir d'un objet d'options de props. Les types extraits sont destinés à un usage public, c'est-à-dire les props que le parent est autorisé à transmettre.
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   const propsOptions = {
@@ -108,7 +108,7 @@ Extrait les types de props à partir d'un objet d'options de props. Les types ex
 
 Utilisé pour augmenter le type de l'instance du composant afin de prendre en charge les propriétés globales personnalisées.
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   import axios from 'axios'
@@ -125,13 +125,13 @@ Utilisé pour augmenter le type de l'instance du composant afin de prendre en ch
   Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
 
-- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties)
+- **Voir aussi** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties)
 
 ## ComponentCustomOptions {#componentcustomoptions}
 
 Utilisé pour augmenter le type des options du composant afin de prendre en charge les options personnalisées.
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   import { Route } from 'vue-router'
@@ -147,13 +147,13 @@ Utilisé pour augmenter le type des options du composant afin de prendre en char
   Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
   :::
 
-- **Voir aussi :** [Guide - Augmenter les options personnalisées](/guide/typescript/options-api#augmenting-custom-options)
+- **Voir aussi** [Guide - Augmenter les options personnalisées](/guide/typescript/options-api#augmenting-custom-options)
 
 ## ComponentCustomProps {#componentcustomprops}
 
 Utilisé pour augmenter les props TSX autorisées afin d'utiliser des props non déclarées sur des éléments TSX.
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   declare module 'vue' {
@@ -178,7 +178,7 @@ Utilisé pour augmenter les props TSX autorisées afin d'utiliser des props non 
 
 Utilisé pour augmenter les valeurs autorisées dans les liaisons de propriétés de style.
 
-- **Exemple :**
+- **Exemple**
 
   Permet l'utilisation de n'importe quelle propriété CSS personnalisée
 

@@ -30,7 +30,7 @@ Retourne la valeur interne si l'argument est une ref, sinon retourne l'argument 
   function unref<T>(ref: T | Ref<T>): T
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```ts
   function useFoo(x: number | Ref<number>) {
@@ -67,7 +67,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
   type ToRef<T> = T extends Ref ? T : Ref<T>
   ```
 
-- **Exemple :**
+- **Exemple**
 
   Signature de normalisation (3.3+) :
 
@@ -146,7 +146,7 @@ Cette fonction peut être utilisée dans les [Composables](/guide/reusability/co
   function toValue<T>(source: T | Ref<T> | (() => T)): T
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   toValue(1) //       --> 1
@@ -187,7 +187,7 @@ Convertit un objet réactif en un objet simple où chaque propriété de l'objet
   type ToRef = T extends Ref ? T : Ref<T>
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const state = reactive({

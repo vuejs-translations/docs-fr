@@ -15,7 +15,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   La fonction doit retourner un objet JavaScript simple, qui sera rendu réactif par Vue. Après la création de l'instance, l'objet de données réactif est accessible via `this.$data`. L'instance du composant proxifie également toutes les propriétés de l'objet de données, ainsi `this.a` sera équivalent à `this.$data.a`.
 
@@ -25,7 +25,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
 
   Il n'est **pas** recommandé de retourner des objets ayant leur propre comportement d'état comme les objets de l'API du navigateur et les propriétés prototypes. L'objet retourné doit idéalement être un objet simple représentant seulement l'état du composant.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -45,7 +45,7 @@ Une fonction qui retourne l'état réactif initial de l'instance du composant.
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
+- **Voir aussi** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## props {#props}
 
@@ -76,7 +76,7 @@ Déclare les props d'un composant.
 
   > Les types sont simplifiés dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   Dans Vue, toutes les props d'un composant doivent être déclarées de manière explicite. Les props peuvent être déclarées de deux manières :
 
@@ -95,7 +95,7 @@ Déclare les props d'un composant.
 
   - **`validator`** : Fonction de validation personnalisée qui prend la valeur de la prop comme seul argument. En mode développement, un message d'avertissement sera envoyé à la console si cette fonction renvoie une valeur fausse (c'est-à-dire si la validation échoue).
 
-- **Exemple :**
+- **Exemple**
 
   Simple déclaration :
 
@@ -125,7 +125,7 @@ Déclare les props d'un composant.
   }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Props](/guide/components/props)
   - [Guide - Typer les props des composants](/guide/typescript/options-api#typing-component-props) <sup class="vt-badge ts" />
 
@@ -158,7 +158,7 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'option accepte un objet où la clé est le nom de la propriété calculée, et la valeur est soit un accesseur calculé, soit un objet avec des méthodes `get` et `set` (pour les propriétés calculées modifiables).
 
@@ -174,7 +174,7 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -207,7 +207,7 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
   }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Typer les propriétés calculées](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
@@ -225,13 +225,13 @@ Déclarer les méthodes à rendre accessibles dans l'instance du composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Les méthodes déclarées peuvent être accédées directement sur l'instance du composant, ou utilisées dans des expressions de template. Toutes les méthodes ont leur contexte `this` automatiquement lié à l'instance du composant, même lorsqu'elles sont passées d'un composant à l'autre.
 
   Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des méthodes, car elles n'auront pas accès à l'instance du composant via `this`.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -250,7 +250,7 @@ Déclarer les méthodes à rendre accessibles dans l'instance du composant.
   }
   ```
 
-- **Voir aussi :** [Gestion d'événement](/guide/essentials/event-handling)
+- **Voir aussi** [Gestion d'événement](/guide/essentials/event-handling)
 
 ## watch {#watch}
 
@@ -285,7 +285,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
 
   > Les types sont simplifiés dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   L'option `watch` attend un objet où les clés sont les propriétés de l'instance du composant réactif à surveiller (par exemple les propriétés déclarées via `data` ou `computed`) - et les valeurs sont les fonctions de rappel correspondantes. La fonction de rappel reçoit à la fois la nouvelle valeur et l'ancienne valeur de la source surveillée.
 
@@ -300,7 +300,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
 
   Évitez d'utiliser les fonctions fléchées lorsque vous déclarez des fonctions de rappel d'un observateur car elles n'auront pas accès à l'instance du composant via `this`.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -368,7 +368,7 @@ Déclare les fonctions d'observation à invoquer lors d'un changement de donnée
   }
   ```
 
-- **Voir aussi :** [Observateurs](/guide/essentials/watchers)
+- **Voir aussi** [Observateurs](/guide/essentials/watchers)
 
 ## emits {#emits}
 
@@ -388,7 +388,7 @@ Déclare les événements personnalisés émis par le composant.
   type EmitValidator = (...args: unknown[]) => boolean
   ```
 
-- **Détails :**
+- **Détails**
 
   Les événements émis peuvent être déclarés de deux manières :
 
@@ -399,7 +399,7 @@ Déclare les événements personnalisés émis par le composant.
 
   Notez que l'option `emits` affecte les écouteurs d'événements considérés comme appartenant au composant, plutôt que des écouteurs d'événements natifs du DOM. Les écouteurs d'événements déclarés seront supprimés de l'objet `$attrs` du composant, et ne seront donc pas transmis à son élément racine. Voir [Attributs implicitement déclarés](/guide/components/attrs) pour plus de détails.
 
-- **Exemple :**
+- **Exemple**
 
   Syntaxe avec un tableau :
 
@@ -433,7 +433,7 @@ Déclare les événements personnalisés émis par le composant.
   }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Attributs implicitement déclarés](/guide/components/attrs)
   - [Guide - Typer les événements émis par un composant](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
@@ -449,7 +449,7 @@ Déclare les propriétés publiques exposées lorsque l'instance du composant es
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Par défaut, une instance de composant expose toutes les propriétés de l'instance au parent lorsqu'on y accède via `$parent`, `$root`, ou les refs de template. Cela peut être indésirable, car un composant a très probablement un état interne ou des méthodes qui doivent rester privées pour éviter des conflits.
 
@@ -457,7 +457,7 @@ Déclare les propriétés publiques exposées lorsque l'instance du composant es
 
   `expose` n'affecte que les propriétés définies par l'utilisateur - elle ne filtre pas les propriétés natives de l'instance du composant.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {

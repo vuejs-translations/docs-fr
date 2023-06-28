@@ -14,7 +14,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
   function onMounted(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Un composant est considéré comme monté après que :
 
@@ -26,7 +26,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
-- **Exemple :**
+- **Exemple**
 
   Accès à un élément via une ref de template :
 
@@ -56,7 +56,7 @@ Enregistre une fonction de rappel à appeler après que le composant ait mis à 
   function onUpdated(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Le hook de mise à jour d'un composant parent est appelé après celui de ses composants enfants.
 
@@ -68,7 +68,7 @@ Enregistre une fonction de rappel à appeler après que le composant ait mis à 
   Ne modifiez pas l'état du composant dans le hook _updated_ - cela conduirait à une boucle de mises à jour infinie !
   :::
 
-- **Exemple :**
+- **Exemple**
 
   Accès au DOM mis à jour :
 
@@ -99,7 +99,7 @@ Enregistre une fonction de rappel qui sera appelée après le démontage du comp
   function onUnmounted(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Un composant est considéré comme démonté après que :
 
@@ -111,7 +111,7 @@ Enregistre une fonction de rappel qui sera appelée après le démontage du comp
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
-- **Exemple :**
+- **Exemple**
 
   ```vue
   <script setup>
@@ -138,7 +138,7 @@ Enregistre un hook qui sera appelé juste avant le montage du composant.
   function onBeforeMount(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque ce hook est appelé, le composant a fini de configurer son état réactif, mais aucun noeud du DOM n'a encore été créé. Il est sur le point d'exécuter son effet de rendu du DOM pour la première fois.
 
@@ -154,7 +154,7 @@ Enregistre un hook qui sera appelé juste avant que le composant ne soit sur le 
   function onBeforeUpdate(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Ce hook peut être utilisé pour accéder à l'état du DOM avant que Vue ne le mette à jour. Il est également possible de modifier l'état d'un composant à l'intérieur de ce hook.
 
@@ -170,7 +170,7 @@ Enregistre un hook à appeler juste avant le démontage d'une instance de compos
   function onBeforeUnmount(callback: () => void): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque ce hook est appelé, l'instance du composant est toujours totalement fonctionnelle.
 
@@ -192,7 +192,7 @@ Enregistre un hook qui sera appelé lorsqu'une erreur venant d'un composant desc
   ) => boolean | void
   ```
 
-- **Détails :**
+- **Détails**
 
   Les erreurs peuvent être capturées à partir des sources suivantes :
 
@@ -241,7 +241,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
+- **Voir aussi** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,7 +267,7 @@ Enregistre un hook de débogage qui sera appelé lorsqu'une dépendance réactiv
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
+- **Voir aussi** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
@@ -281,7 +281,7 @@ Enregistre une fonction de rappel qui sera appelée après que l'instance du com
   function onActivated(callback: () => void): void
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onDeactivated() {#ondeactivated}
 
@@ -295,7 +295,7 @@ Enregistre une fonction de rappel à appeler après que l'instance du composant 
   function onDeactivated(callback: () => void): void
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
@@ -307,13 +307,13 @@ Enregistre une fonction asynchrone à résoudre avant que l'instance du composan
   function onServerPrefetch(callback: () => Promise<any>): void
   ```
 
-- **Détails :**
+- **Détails**
 
   Si la fonction de rappel renvoie une promesse, le moteur de rendu du serveur attendra qu'elle soit résolue avant de rendre le composant.
 
   Ce hook n'est appelé que pendant le rendu côté serveur et peut être utilisé pour effectuer une récupération de données sur le serveur uniquement.
 
-- **Exemple :**
+- **Exemple**
 
   ```vue
   <script setup>
@@ -338,4 +338,4 @@ Enregistre une fonction asynchrone à résoudre avant que l'instance du composan
   </script>
   ```
 
-- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr)
+- **Voir aussi** [Rendu côté serveur](/guide/scaling-up/ssr)

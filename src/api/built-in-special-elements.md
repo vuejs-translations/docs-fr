@@ -16,7 +16,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Le composant à rendre est déterminé par la propriété "is".
 
@@ -24,7 +24,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
   - De manière alternative, `is` peut également être directement lié à la définition d'un composant.
 
-- **Exemple :**
+- **Exemple**
 
   Rendu des composants par nom d'enregistrement (Options API) :
 
@@ -108,7 +108,7 @@ Un "méta-composant" pour rendre des composants ou éléments dynamiques.
 
   En pratique, ce cas de figure n'est pas courant car les champs de formulaire natifs sont généralement enveloppés dans des composants dans les applications réelles. Si vous avez besoin d'utiliser directement un élément natif, vous pouvez diviser manuellement le "v-model" en un attribut et un événement.
 
-- **Voir aussi :** [Composants dynamiques](/guide/essentials/component-basics#dynamic-components)
+- **Voir aussi** [Composants dynamiques](/guide/essentials/component-basics#dynamic-components)
 
 ## `<slot>` {#slot}
 
@@ -130,7 +130,7 @@ Indique l'emplacement du contenu d'un slot dans les templates.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'élément `<slot>` peut utiliser l'attribut `name` pour spécifier un nom de slot. Si aucun `name` n'est spécifié, l'élément rendra le slot par défaut. Les attributs supplémentaires passés à l'élément slot seront passés comme des props de slot au slot scopé défini dans le parent.
 
@@ -138,13 +138,13 @@ Indique l'emplacement du contenu d'un slot dans les templates.
 
   Les éléments `<slot>` dans les templates Vue sont compilés en JavaScript, ils ne doivent donc pas être confondus avec les [éléments `<slot>` natifs](https://developer.mozilla.org/fr/docs/Web/HTML/Element/slot).
 
-- **Voir aussi :** [Composant - Slots](/guide/components/slots)
+- **Voir aussi** [Composant - Slots](/guide/components/slots)
 
 ## `<template>` {#template}
 
 La balise `<template>` est utilisée comme placeholder lorsque nous voulons utiliser une directive native sans rendre un élément dans le DOM.
 
-- **Détails :**
+- **Détails**
 
   Le traitement spécial de `<template>` n'est déclenché que s'il est utilisé avec l'une de ces directives :
 
@@ -158,7 +158,7 @@ La balise `<template>` est utilisée comme placeholder lorsque nous voulons util
 
   Les composants monofichiers utilisent une [top-level `<template>` tag](/api/sfc-spec#language-blocks) pour envelopper l'ensemble du template. Cette utilisation est distincte de l'utilisation de `<template>` décrite ci-dessus. Cette balise de haut niveau ne fait pas partie du modèle lui-même et ne supporte pas la syntaxe template, comme les directives.
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - `v-if` avec `<template>`](/guide/essentials/conditional#v-if-on-template) 
   - [Guide - `v-for` avec `<template>`](/guide/essentials/list#v-for-on-template) 
   - [Guide - Slots nommés](/guide/components/slots#named-slots) 

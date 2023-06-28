@@ -30,7 +30,7 @@ Un objet représentant les `props` courantes et résolues du composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Seules les props déclarées via l'option [`props`](./options-state#props) seront incluses. L'instance du composant donne accès aux propriétés de son objet props via un proxy. 
 
@@ -46,7 +46,7 @@ Le nœud du DOM racine que l'instance du composant gère.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   `$el` sera `undefined` jusqu'à ce que le composant soit [monté](./options-lifecycle#mounted).
 
@@ -70,7 +70,7 @@ Les options du composant résolues utilisées pour instancier l'instance courant
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'objet `$options` expose les options résolues pour l'instance courante du composant et est le résultat de la fusion de trois sources possibles :
 
@@ -89,7 +89,7 @@ Les options du composant résolues utilisées pour instancier l'instance courant
   })
   ```
 
-- **Voir aussi :** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
+- **Voir aussi** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 
@@ -129,7 +129,7 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
   type Slot = (...args: any[]) => VNode[]
   ```
 
-- **Détails :**
+- **Détails**
 
   Cette option est typiquement utilisée quand on créé manuellement des [fonctions de rendu](/guide/extras/render-function), mais elle peut aussi être utilisée pour détecter si un slot est présent.
 
@@ -137,7 +137,7 @@ Un objet représentant les [slots](/guide/components/slots) passés par le compo
 
   Si un slot est un [scoped slot](/guide/components/slots#scoped-slots), les arguments passés à la fonction de slot sont rendus disponibles au slot en tant que props du slot.
 
-- **Voir aussi :** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
+- **Voir aussi** [Fonctions de rendu - Rendu des slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
@@ -151,7 +151,7 @@ Un objet constitué d'éléments du DOM et d'instances de composants, enregistr�
   }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Les refs du template](/guide/essentials/template-refs)
   - [Attributs spéciaux - ref](./built-in-special-attributes.md#ref)
@@ -168,13 +168,13 @@ Un objet qui contient les attributs implicitement déclarés (_fallthrough attri
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Les [attributs implicitement déclarés](/guide/components/attrs) sont des attributs ou écouteurs d'événements `v-on` passés par le composant parent mais non déclarés comme prop ou émission par le composant enfant.
 
   Par défaut, si le composant a un unique nœud racine, tout ce qui se trouve dans `$attrs` sera automatiquement passé à ce nœud racine. Ce comportement est désactivé si le composant a des nœuds racines multiples, et peut être explicitement désactivé avec l'option [`inheritAttrs`](./options-misc#inheritattrs).
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Attributs implicitement déclarés](/guide/components/attrs)
 
@@ -210,7 +210,7 @@ API impérative pour créer des observateurs.
   type StopHandle = () => void
   ```
 
-- **Détails :**
+- **Détails**
 
   Le premier argument est la source observée. Cela peut être une chaîne de caractères correspondant au nom d'une propriété du composant, ou une fonction accesseur.
 
@@ -221,7 +221,7 @@ API impérative pour créer des observateurs.
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
 
-- **Exemple :**
+- **Exemple**
 
   Observer via le nom d'une propriété :
 
@@ -257,7 +257,7 @@ API impérative pour créer des observateurs.
   unwatch()
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Options - `watch`](/api/options-state#watch)
   - [Guide - Observateurs](/guide/essentials/watchers)
 
@@ -273,7 +273,7 @@ API impérative pour créer des observateurs.
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -286,7 +286,7 @@ API impérative pour créer des observateurs.
   }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Composant - Gestion des événements](/guide/components/events)
   - [L'option `emits`](./options-state#emits)
@@ -303,7 +303,7 @@ Force l'instance du composant à effectuer un nouveau rendu.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Ceci devrait être rarement nécessaire grâce au système de réactivité entièrement automatique de Vue. Le seul cas où vous devriez en avoir besoin est celui où vous auriez créé un composant à l'état explicitement non-réactif en utilisant des API de réactivité avancées.
 
@@ -319,8 +319,8 @@ Version propre à l'instance de l'utilité globale [`nextTick()`](./general#next
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   La seule différence avec la version globale de `nextTick()` est que la fonction de rendu passée à `this.$nextTick()` aura son contexte `this` lié à l'instance courante du composant.
 
-- **Voir aussi :** [`nextTick()`](./general#nexttick)
+- **Voir aussi** [`nextTick()`](./general#nexttick)

@@ -6,7 +6,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
 
 - **Attendu :** `number | string | symbol`
 
-- **Détails :**
+- **Détails**
 
   Sans clés, Vue utilise un algorithme qui minimise le mouvement des éléments et essaie de remplacer/réutiliser les éléments du même type déjà en place autant que possible. Avec des clés, il réorganisera les éléments en fonction du changement d'ordre des clés, et les éléments dont les clés ne sont plus présentes seront toujours supprimés / détruits.
 
@@ -35,7 +35,7 @@ L'attribut spécial `key` est principalement utilisé comme une indication aidan
 
   Quand `text` change, le `<span>` sera toujours remplacé au lieu d'être corrigé, donc une transition sera déclenchée.
 
-- **Voir aussi :** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list#maintaining-state-with-key)
+- **Voir aussi** [Guide - Rendu de liste - Maintenir l'état avec `key`](/guide/essentials/list#maintaining-state-with-key)
 
 ## ref {#ref}
 
@@ -43,7 +43,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Attendu :** `string | Function`
 
-- **Détails :**
+- **Détails**
 
   `ref` est utilisée pour enregistrer une référence à un élément ou à un composant enfant.
 
@@ -80,7 +80,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
   `this.$refs` est également non réactive, vous ne devez donc pas l'utiliser dans les templates pour la liaison de données.
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Template Refs](/guide/essentials/template-refs)
   - [Guide - Typer les refs du template](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
   - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
@@ -103,7 +103,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
   </table>
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Éléments spéciaux natifs - `<component>`](/api/built-in-special-elements#component)
   - [Composants dynamiques](/guide/essentials/component-basics#dynamic-components)

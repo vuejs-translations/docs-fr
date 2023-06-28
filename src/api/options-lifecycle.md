@@ -16,7 +16,7 @@ Appelé lors de l'initialisation de l'instance.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Appelé immédiatement lorsque l'instance est initialisée, après la résolution des props, et avant le traitement d'autres options telles que `data()` ou `computed`.
 
@@ -34,7 +34,7 @@ Appelé après que l'instance ait terminé de traiter toutes les options liées 
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque ce hook est appelé, les éléments suivants ont déjà été mis en place : données réactives, propriétés calculées, méthodes et observateurs. Cependant, la phase de montage n'a pas été lancée, et la propriété `$el` n'est encore disponible.
 
@@ -50,7 +50,7 @@ Appelé juste avant que le composant soit monté.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque ce hook est appelé, le composant a fini de configurer son état réactif, mais aucun noeud du DOM n'a encore été créé. Il est sur le point d'exécuter son effet de rendu du DOM pour la première fois.
 
@@ -68,7 +68,7 @@ Appelé après que le composant ait été monté.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Un composant est considéré comme monté après que :
 
@@ -92,7 +92,7 @@ Appelé juste avant que le composant ne soit sur le point de mettre à jour son 
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Ce hook peut être utilisé pour accéder à l'état du DOM avant que Vue ne le mette à jour. Il est également possible de modifier l'état d'un composant à l'intérieur de ce hook.
 
@@ -110,7 +110,7 @@ Appelé après que le composant ait mis à jour son arbre du DOM suite à un cha
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Le hook _updated_ d'un composant parent est appelé après celui de ses composants enfants.
 
@@ -134,7 +134,7 @@ Appelé juste avant que l'instance d'un composant ne soit démontée.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque ce hook est appelé, l'instance du composant est toujours totalement fonctionnelle.
 
@@ -152,7 +152,7 @@ Appelé après que le composant ait été démonté.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Un composant est considéré comme démonté après que :
 
@@ -181,7 +181,7 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Les erreurs peuvent être capturées à partir des sources suivantes :
 
@@ -230,7 +230,7 @@ Appelé lorsqu'une dépendance réactive a été traquée par l'effet de rendu d
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
+- **Voir aussi** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
@@ -256,7 +256,7 @@ Appelé lorsqu'une dépendance réactive déclenche la ré-exécution de l'effet
   }
   ```
 
-- **Voir aussi :** [La réactivité en détails](/guide/extras/reactivity-in-depth)
+- **Voir aussi** [La réactivité en détails](/guide/extras/reactivity-in-depth)
 
 ## activated {#activated}
 
@@ -272,7 +272,7 @@ Appelé après l'insertion de l'instance du composant dans le DOM en tant que pa
   }
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
@@ -288,7 +288,7 @@ Appelé après que l'instance du composant ait été retirée du DOM en tant que
   }
   ```
 
-- **Voir aussi :** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
+- **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
@@ -302,13 +302,13 @@ Fonction asynchrone qui doit être résolue avant que l'instance du composant ne
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Si le hook renvoie une promesse, le moteur de rendu du serveur attendra qu'elle soit résolue avant d'effectuer le rendu du composant.
 
   Ce hook n'est appelé que pendant le rendu côté serveur et peut être utilisé pour effectuer une récupération de données sur le serveur uniquement.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -333,4 +333,4 @@ Fonction asynchrone qui doit être résolue avant que l'instance du composant ne
   }
   ```
 
-- **Voir aussi :** [Rendu côté serveur](/guide/scaling-up/ssr)
+- **Voir aussi** [Rendu côté serveur](/guide/scaling-up/ssr)

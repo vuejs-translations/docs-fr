@@ -61,7 +61,7 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createRenderer } from '@vue/runtime-core'

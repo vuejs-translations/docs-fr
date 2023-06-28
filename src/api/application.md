@@ -10,11 +10,11 @@ Crée une instance d'application.
   function createApp(rootComponent: Component, rootProps?: object): App
   ```
 
-- **Détails :**
+- **Détails**
 
   Le premier argument est le composant racine. Le deuxième argument facultatif est les props à transmettre au composant racine.
 
-- **Exemple :**
+- **Exemple**
 
   Avec un composant racine littéral :
 
@@ -35,7 +35,7 @@ Crée une instance d'application.
   const app = createApp(App)
   ```
 
-- **Voir aussi :** [Guide - Créer une application Vue](/guide/essentials/application)
+- **Voir aussi** [Guide - Créer une application Vue](/guide/essentials/application)
 
 ## createSSRApp() {#createssrapp}
 
@@ -53,7 +53,7 @@ Monte l'instance d'application dans un élément conteneur.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   L'argument peut être soit un élément réel du DOM, soit un sélecteur CSS (le premier élément correspondant sera utilisé). Renvoie l'instance du composant racine.
 
@@ -63,7 +63,7 @@ Monte l'instance d'application dans un élément conteneur.
 
   Pour chaque instance d'application, `mount()` ne peut être appelée qu'une seule fois.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createApp } from 'vue'
@@ -103,7 +103,7 @@ Enregistre un composant global si un nom et une définition de composant sont pa
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createApp } from 'vue'
@@ -119,7 +119,7 @@ Enregistre un composant global si un nom et une définition de composant sont pa
   const MyComponent = app.component('my-component')
   ```
 
-- **Voir aussi :** [Enregistrement des composants](/guide/components/registration)
+- **Voir aussi** [Enregistrement des composants](/guide/components/registration)
 
 ## app.directive() {#app-directive}
 
@@ -134,7 +134,7 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createApp } from 'vue'
@@ -157,7 +157,7 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
   const myDirective = app.directive('my-directive')
   ```
 
-- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives)
+- **Voir aussi** [Directives personnalisées](/guide/reusability/custom-directives)
 
 ## app.use() {#app-use}
 
@@ -171,7 +171,7 @@ Installe un [plugin](/guide/reusability/plugins).
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Attend le plugin comme premier argument et les options facultatives du plugin comme deuxième argument.
 
@@ -179,7 +179,7 @@ Installe un [plugin](/guide/reusability/plugins).
 
   Lorsque `app.use()` est appelé plusieurs fois sur le même plugin, le plugin ne sera installé qu'une seule fois.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createApp } from 'vue'
@@ -192,7 +192,7 @@ Installe un [plugin](/guide/reusability/plugins).
   app.use(MyPlugin)
   ```
 
-- **Voir aussi :** [Plugins](/guide/reusability/plugins)
+- **Voir aussi** [Plugins](/guide/reusability/plugins)
 
 ## app.mixin() {#app-mixin}
 
@@ -224,11 +224,11 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Attend la clé d'injection comme premier argument et la valeur fournie comme second. Renvoie l'instance d'application elle-même.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createApp } from 'vue'
@@ -266,7 +266,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
   </div>
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Provide / Inject](/guide/components/provide-inject)
   - [App-level Provide](/guide/components/provide-inject#app-level-provide)
   - [app.runWithContext()](#app-runwithcontext)
@@ -283,11 +283,11 @@ Exécute une fonction de rappel avec l'application courante comme contexte injec
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Attend une fonction de rappel et l'exécute immédiatement. Lors de l'appel synchrone du rappel, les appels `inject()` sont capables de rechercher des injections à partir des valeurs fournies par l'application actuelle, même lorsqu'il n'y a pas d'instance de composant active actuelle. La valeur de retour du rappel sera également retournée.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { inject } from 'vue'
@@ -313,7 +313,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   Effectuer une vérification de version à l'intérieur d'un plugin :
 
@@ -328,7 +328,7 @@ Fournit la version de Vue avec laquelle l'application a été créée. Ceci est 
   }
   ```
 
-- **Voir aussi :** [API générale - version](/api/general#version)
+- **Voir aussi** [API générale - version](/api/general#version)
 
 ## app.config {#app-config}
 
@@ -360,7 +360,7 @@ Installe un gestionnaire global pour les erreurs non détectées se propageant d
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Le gestionnaire d'erreurs attend trois arguments : l'erreur, l'instance de composant qui a déclenché l'erreur et une chaîne d'informations spécifiant le type de source d'erreur.
 
@@ -374,7 +374,7 @@ Installe un gestionnaire global pour les erreurs non détectées se propageant d
   - Hooks de directives personnalisés
   - Hooks de transition
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   app.config.errorHandler = (err, instance, info) => {
@@ -398,7 +398,7 @@ Ajoute un gestionnaire personnalisé pour les avertissements d'exécution de Vue
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Le gestionnaire d'avertissement attend le message d'avertissement comme premier argument, l'instance du composant source comme deuxième argument et les traces du composant comme troisième.
 
@@ -408,7 +408,7 @@ Ajoute un gestionnaire personnalisé pour les avertissements d'exécution de Vue
   Les avertissements ne fonctionnent que pendant le développement, donc cette configuration est ignorée en mode production.
   :::
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   app.config.warnHandler = (msg, instance, trace) => {
@@ -422,7 +422,7 @@ Définissez-le sur `true` pour activer le suivi des performances d'initialisatio
 
 - **Type :** : `boolean`
 
-- **Voir aussi :** [Guide - Performance](/guide/best-practices/performance)
+- **Voir aussi** [Guide - Performance](/guide/best-practices/performance)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
@@ -442,13 +442,13 @@ Spécifie une méthode de vérification pour reconnaître les éléments personn
 
 - **Type :** `(tag: string) => boolean`
 
-- **Détails :**
+- **Détails**
 
   Doit renvoyer `true` si la balise doit être traitée comme un élément personnalisé. Pour une balise qui correspond, Vue la restituera en tant qu'élément natif au lieu d'essayer de la résoudre en tant que composant Vue.
 
   Les éléments natifs HTML et SVG n'ont pas besoin d'être mis en correspondance dans cette fonction - l'analyseur de Vue les reconnaît automatiquement.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   // traite toutes les balises commençant par 'ion-' comme des éléments personnalisés
@@ -457,7 +457,7 @@ Spécifie une méthode de vérification pour reconnaître les éléments personn
   }
   ```
 
-- **Voir aussi :** [Vue et les Web Components](/guide/extras/web-components)
+- **Voir aussi** [Vue et les Web Components](/guide/extras/web-components)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
@@ -467,7 +467,7 @@ Ajuste le comportement des espaces blancs des templates.
 
 - **Par défaut :** `'condense'`
 
-- **Détails :**
+- **Détails**
 
   Vue supprime/condense les caractères d'espacement dans les templates pour produire une sortie compilée plus efficace. La stratégie par défaut est "condense", avec le comportement suivant :
 
@@ -477,7 +477,7 @@ Ajuste le comportement des espaces blancs des templates.
 
   Régler cette option sur `'preserve'` désactivera (2) et (3).
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   app.config.compilerOptions.whitespace = 'preserve'
@@ -491,11 +491,11 @@ Ajuste les délimiteurs utilisés pour l'interpolation de texte dans le template
 
 - **Par défaut :** `{{ "['\u007b\u007b', '\u007d\u007d']" }}`
 
-- **Détails :**
+- **Détails**
 
   Ceci est généralement utilisé pour éviter les conflits avec les frameworks côté serveur qui utilisent également la syntaxe des moustaches.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   // Délimiteurs changés en style de chaîne de template ES6
@@ -510,11 +510,11 @@ Ajuste le traitement des commentaires HTML dans les modèles.
 
 - **Par défaut :** `false`
 
-- **Détails :**
+- **Détails**
 
   Par défaut, Vue supprimera les commentaires en production. Définir cette option sur `true` forcera Vue à conserver les commentaires même en production. Les commentaires sont toujours conservés pendant le développement. Cette option est généralement utilisée lorsque Vue est utilisé avec d'autres bibliothèques qui reposent sur des commentaires HTML.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   app.config.compilerOptions.comments = true
@@ -532,7 +532,7 @@ Un objet qui peut être utilisé pour enregistrer des propriétés globales acce
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Il s'agit du remplaçant de `Vue.prototype` de Vue 2 qui n'est plus présent dans Vue 3. Comme pour tout ce qui est global, cela doit être utilisé avec attention.
 
@@ -554,7 +554,7 @@ Un objet qui peut être utilisé pour enregistrer des propriétés globales acce
   }
   ```
 
-- **Voir aussi :** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
+- **Voir aussi** [Guide - Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 ## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 
@@ -570,7 +570,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
   type OptionMergeFunction = (to: unknown, from: unknown) => any
   ```
 
-- **Détails :**
+- **Détails**
 
   Certains plugins/bibliothèques ajoutent la prise en charge des options de composants personnalisés (en injectant des mixins globaux). Ces options peuvent nécessiter une logique de fusion spéciale lorsque la même option doit être "fusionnée" à partir de plusieurs sources (par exemple, mixins ou héritage de composants).
 
@@ -578,7 +578,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
 
   La fonction de stratégie de fusion reçoit la valeur de cette option définie sur les instances parent et enfant comme premier et deuxième arguments, respectivement.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const app = createApp({
@@ -605,4 +605,4 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
   // logue 'Hello Vue'
   ```
 
-- **Voir aussi :** [L'instance de composant - `$options`](/api/component-instance#options)
+- **Voir aussi** [L'instance de composant - `$options`](/api/component-instance#options)

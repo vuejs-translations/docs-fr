@@ -6,7 +6,7 @@ Expose la version actuelle de Vue.
 
 - **Type :** `string`
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { version } from 'vue'
@@ -24,13 +24,13 @@ Un outil pour attendre la prochaine mise à jour du DOM.
   function nextTick(callback?: () => void): Promise<void>
   ```
 
-- **Détails :**
+- **Détails**
 
   Lorsque vous modifiez un état réactif dans Vue, les mises à jour du DOM qui en résultent ne sont pas appliquées de manière synchrone. Au lieu de cela, Vue les met en mémoire tampon jusqu'au "next tick" afin de garantir que chaque composant ne soit mis à jour qu'une seule fois, quel que soit le nombre de modifications d'état que vous avez effectuées.
 
   `nextTick()` peut être utilisé immédiatement après un changement d'état pour attendre que les mises à jour du DOM soient terminées. Vous pouvez soit passer une fonction de rappel comme argument, soit attendre la promesse retournée.
 
-- **Exemple :**
+- **Exemple**
 
   <div class="composition-api">
 
@@ -92,7 +92,7 @@ Un outil pour attendre la prochaine mise à jour du DOM.
 
   </div>
 
-- **Voir aussi :** [`this.$nextTick()`](/api/component-instance#nexttick)
+- **Voir aussi** [`this.$nextTick()`](/api/component-instance#nexttick)
 
 ## defineComponent() {#definecomponent}
 
@@ -115,7 +115,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
   > Le type est simplifié dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   Le premier argument attend un objet d'options de composant. La valeur retournée sera le même objet d'options, puisque la fonction est essentiellement sans opération à l'exécution pour seulement apporter l'inférence de type.
 
@@ -191,7 +191,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
 
   Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
 
-- **Voir aussi :** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview#general-usage-notes)
+- **Voir aussi** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview#general-usage-notes)
 
 ## defineAsyncComponent() {#defineasynccomponent}
 
@@ -222,7 +222,7 @@ Définit un composant asynchrone qui est chargé de manière paresseuse uniqueme
   }
   ```
 
-- **Voir aussi :** [Guide - Composants asynchrones](/guide/components/async)
+- **Voir aussi** [Guide - Composants asynchrones](/guide/components/async)
 
 ## defineCustomElement() {#definecustomelement}
 
@@ -242,13 +242,13 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   > Le type est simplifié dans un souci de lisibilité.
 
-- **Détails :**
+- **Détails**
 
   En plus des options classiques du composant, `defineCustomElement()` supporte également une option spéciale `styles`, qui doit être un tableau de chaînes de caractères CSS en ligne, pour fournir le CSS qui doit être injecté dans la racine du shadow DOM de l'élément.
 
   La valeur retournée est un constructeur d'élément personnalisé qui peut être enregistré en utilisant [`customElements.define()`](https://developer.mozilla.org/fr/docs/Web/API/CustomElementRegistry/define).
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { defineCustomElement } from 'vue'
@@ -261,7 +261,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
   customElements.define('my-vue-element', MyVueElement)
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
 
   - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components#building-custom-elements-with-vue)
 

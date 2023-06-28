@@ -14,13 +14,13 @@ Version partiellement réactive de [`ref()`](./reactivity-core#ref).
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Contrairement à `ref()`, la valeur interne d'une ref partiellement réactive est stockée et exposée telle quelle, et ne sera pas rendue profondément réactive. Seul l'accès `.value` est réactif.
 
   `shallowRef()` est généralement utilisée pour l'optimisation des performances de grandes structures de données ou l'intégration avec des systèmes de gestion d'état externes.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const state = shallowRef({ count: 1 })
@@ -32,7 +32,7 @@ Version partiellement réactive de [`ref()`](./reactivity-core#ref).
   state.value = { count: 2 }
   ```
 
-- **Voir aussi :**
+- **Voir aussi**
   - [Guide - Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
   - [Guide - Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
@@ -46,7 +46,7 @@ Force le déclenchement d'effets qui dépendent d'une [ref partiellement réacti
   function triggerRef(ref: ShallowRef): void
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const shallow = shallowRef({
@@ -83,13 +83,13 @@ Crée une ref personnalisée avec un contrôle explicite sur son suivi des dépe
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   `customRef()` attend une fonction _factory_, qui reçoit les fonctions `track` et `trigger` comme arguments et doit renvoyer un objet avec les méthodes `get` et `set`.
 
   En général, `track()` doit être appelée à l'intérieur de `get()`, et `trigger()` doit être appelée à l'intérieur de `set()`. Cependant, vous avez un contrôle total sur le moment où elles doivent être appelées.
 
-- **Exemple :**
+- **Exemple**
 
   Création d'une ref _debounced_ qui ne met à jour la valeur qu'après un certain délai après le dernier appel défini :
 
@@ -141,7 +141,7 @@ Version partiellement réactive de [`reactive()`](./reactivity-core#reactive).
   function shallowReactive<T extends object>(target: T): T
   ```
 
-- **Détails :**
+- **Détails**
 
   Contrairement à `reactive()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont réactives pour un objet partiellement réactif. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de ref ne seront **pas** automatiquement déballées.
 
@@ -149,7 +149,7 @@ Version partiellement réactive de [`reactive()`](./reactivity-core#reactive).
   Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
   :::
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const state = shallowReactive({
@@ -179,7 +179,7 @@ Version partiellement réactive de [`readonly()`](./reactivity-core#readonly).
   function shallowReadonly<T extends object>(target: T): Readonly<T>
   ```
 
-- **Détails :**
+- **Détails**
 
   Contrairement à `readonly()`, il n'y a pas de conversion profonde : seules les propriétés de niveau racine sont en lecture seule. Les valeurs de propriété sont stockées et exposées telles quelles - cela signifie également que les propriétés avec des valeurs de ref ne seront **pas** automatiquement déballées.
 
@@ -187,7 +187,7 @@ Version partiellement réactive de [`readonly()`](./reactivity-core#readonly).
   Les structures de données partiellement réactives ne doivent être utilisées que pour l'état de niveau racine dans un composant. Évitez de l'imbriquer dans un objet réactif profond car cela crée un arbre avec un comportement de réactivité incohérent qui peut être difficile à comprendre et à déboguer.
   :::
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const state = shallowReadonly({
@@ -217,13 +217,13 @@ Renvoie l'objet brut d'origine d'un proxy créé par Vue.
   function toRaw<T>(proxy: T): T
   ```
 
-- **Détails :**
+- **Détails**
 
   `toRaw()` peut renvoyer l'objet d'origine à partir de proxys créés par [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](#shallowreactive) ou [`shallowReadonly()`](#shallowreadonly).
 
   Il s'agit d'une solution d'échappement qui peut être utilisée pour lire temporairement sans encourir d'accès au proxy / de surcharge de suivi ou pour écrire sans déclencher de modifications. Il n'est **pas** recommandé de conserver une ref persistante à l'objet d'origine. À utiliser avec précaution.
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const foo = {}
@@ -242,7 +242,7 @@ Marque un objet afin qu'il ne soit jamais converti en proxy. Renvoie l'objet lui
   function markRaw<T extends object>(value: T): T
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const foo = markRaw({})
@@ -294,7 +294,7 @@ Crée un objet de portée d'effet qui peut capturer les effets réactifs (c'est-
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   const scope = effectScope()

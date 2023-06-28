@@ -13,7 +13,7 @@
   ): Promise<string>
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import { createSSRApp } from 'vue'
@@ -43,7 +43,7 @@
 
   La plupart des autres API de SSR présentées sur cette page acceptent également de manière facultative un objet de contexte. L'objet de contexte est accessible dans le code du composant via l'utilitaire [useSSRContext](#usessrcontext).
 
-- **Voir aussi :** [Guide - Rendu côté serveur](/guide/scaling-up/ssr)
+- **Voir aussi** [Guide - Rendu côté serveur](/guide/scaling-up/ssr)
 
 ## renderToNodeStream() {#rendertonodestream}
 
@@ -60,7 +60,7 @@ Effectue le rendu de l'entrée comme un [_Readable Stream_ de Node.js](https://n
   ): Readable
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   // à l'intérieur d'un gestionnaire http Node.js
@@ -87,7 +87,7 @@ Effectue le rendu et le transfert vers une instance existante d'un [_Writable St
   ): void
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   // à l'intérieur d'un gestionnaire http Node.js
@@ -109,7 +109,7 @@ Effectue le rendu de l'entrée sous forme d'un [_Readable Stream_ web](https://d
   ): ReadableStream
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   // dans un environnement prenant en charge _ReadableStream_
@@ -136,7 +136,7 @@ Effectue le rendu et le transfert à une instance existante d'un [_Writable Stre
   ): void
   ```
 
-- **Exemple :**
+- **Exemple**
 
   Cette fonction est généralement utilisée en combinaison avec [`TransformStream`](https://developer.mozilla.org/fr/docs/Web/API/TransformStream) :
 
@@ -170,7 +170,7 @@ Effectue le rendu de l'entrée en mode streaming en utilisant une simple interfa
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   let res = ''
@@ -204,7 +204,7 @@ Une API d'exécution utilisée pour récupérer l'objet de contexte transmis à 
   function useSSRContext<T = Record<string, any>>(): T | undefined
   ```
 
-- **Exemple :**
+- **Exemple**
 
   Le contexte récupéré peut être utilisé pour joindre les informations nécessaires au rendu du HTML final (par exemple, les métadonnées de l'en-tête).
 

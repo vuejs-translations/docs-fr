@@ -12,7 +12,7 @@ Déclare explicitement un nom d'affichage pour le composant.
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Le nom d'un composant est utilisé dans les cas suivants :
 
@@ -44,11 +44,11 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
   }
   ```
 
-- **Détails :**
+- **Détails**
 
   Par défaut, les liaisons d'attributs qui sont situées dans la portée du composant parent et qui ne sont pas reconnues comme des props seront "répercutées". Cela signifie que lorsque nous avons un composant racine unique, ces liaisons seront appliquées à l'élément racine du composant enfant comme des attributs HTML normaux. Lorsque vous créez un composant qui enveloppe un élément cible ou un autre composant, ce n'est pas toujours le comportement souhaité. En donnant à `inheritAttrs` la valeur `false`, ce comportement par défaut peut être désactivé. Les attributs sont disponibles via la propriété d'instance `$attrs` et peuvent être explicitement liés à un élément non racine en utilisant `v-bind`.
 
-- **Exemple :**
+- **Exemple**
 
   <div class="options-api">
 
@@ -122,7 +122,7 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
 
   </div>
 
-- **Voir aussi :** [Attributs implicitement déclarés](/guide/components/attrs)
+- **Voir aussi** [Attributs implicitement déclarés](/guide/components/attrs)
 
 ## components {#components}
 
@@ -136,7 +136,7 @@ Un objet qui enregistre les composants devant être accessibles par l'instance a
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   import Foo from './Foo.vue'
@@ -152,7 +152,7 @@ Un objet qui enregistre les composants devant être accessibles par l'instance a
   }
   ```
 
-- **Voir aussi :** [Enregistrement de composants](/guide/components/registration)
+- **Voir aussi** [Enregistrement de composants](/guide/components/registration)
 
 ## directives {#directives}
 
@@ -166,7 +166,7 @@ Un objet qui enregistre les directives devant être accessibles par l'instance a
   }
   ```
 
-- **Exemple :**
+- **Exemple**
 
   ```js
   export default {
@@ -187,4 +187,4 @@ Un objet qui enregistre les directives devant être accessibles par l'instance a
 
   Une liste des directives devant être accessibles par l'instance actuelle du composant.
 
-- **Voir aussi :** [Directives personnalisées](/guide/reusability/custom-directives)
+- **Voir aussi** [Directives personnalisées](/guide/reusability/custom-directives)
