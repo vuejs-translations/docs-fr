@@ -3,7 +3,10 @@
 :::danger Fonctionnalité expérimentale dépréciée
 Reactivity Transform était une fonctionnalité expérimentale, et a été dépréciée. Consultez [le raisonnement ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
-Elle sera probablement supprimée du noyau de Vue dans une version mineure à venir. Si vous voulez continuer de l'utiliser, cela est désormais possible en utilisant le plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
+Elle sera probablement supprimée du noyau de Vue dans une version mineure à venir. 
+
+- Pour vous en éloigner, consultez cet [outil de ligne de commande](https://github.com/edison1105/drop-reactivity-transform) qui peut automatiser le processus.
+- Si vous voulez continuer de l'utiliser, cela est désormais possible en utilisant le plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
 :::
 
 :::tip Spécifique à la Composition API
