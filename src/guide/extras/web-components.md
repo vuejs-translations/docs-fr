@@ -226,20 +226,20 @@ Si vous avez de nombreux composants, vous pouvez également tirer parti des fonc
 
 ### Web Components and Typescript {#web-components-and-typescript}
 
-If you are developing an application or a library, you may want to [type check](/guide/scaling-up/tooling.html#typescript) your Vue components, including those that are defined as custom elements.
+Si vous développez une application ou une bibliothèque, vous souhaiterez peut-être [vérifier le type](/guide/scaling-up/tooling.html#typescript) de vos composants Vue, y compris ceux qui sont définis comme éléments personnalisés.
 
-Custom elements are registered globally using native APIs, so by default they won't have type inference when used in Vue templates. To provide type support for Vue components registered as custom elements, we can register global component typings using the the [`GlobalComponents` interface](https://github.com/vuejs/language-tools/blob/master/packages/vscode-vue/README.md#usage) in Vue templates and/or in [JSX](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements):
+Les éléments personnalisés sont enregistrés globalement à l'aide d'API natives, donc par défaut, ils n'auront pas d'inférence de type lorsqu'ils sont utilisés dans des templates Vue. Pour fournir un support de type pour les composants Vue enregistrés en tant qu'éléments personnalisés, nous pouvons enregistrer les typages de composants globaux à l'aide de l'[interface "GlobalComponents"](https://github.com/vuejs/language-tools/blob/master/packages/vscode-vue/README.md#usage) dans les template Vue et/ou dans le [JSX](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements) :
 
 ```typescript
 import { defineCustomElement } from 'vue'
 
-// vue SFC
+// Vue SFC
 import CounterSFC from './src/components/counter.ce.vue'
 
-// turn component into web components
+// converti le composant en élément personnalisé
 export const Counter = defineCustomElement(CounterSFC)
 
-// register global typings
+// enregistre les typages globaux
 declare module 'vue' {
   export interface GlobalComponents {
     'Counter': typeof Counter,
