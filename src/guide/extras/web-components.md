@@ -233,7 +233,7 @@ Les éléments personnalisés sont enregistrés globalement à l'aide d'API nati
 ```typescript
 import { defineCustomElement } from 'vue'
 
-// Vue SFC
+// SFC Vue
 import CounterSFC from './src/components/counter.ce.vue'
 
 // converti le composant en élément personnalisé
