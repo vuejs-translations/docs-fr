@@ -19,6 +19,6 @@ jobs:
           upstream-repo-branch: main
           head-repo: https://github.com/vuejs/docs
           head-repo-branch: main
-          track-from: 72b203380bda37f83cbcf31805f969d67b7b0214
+          track-from: ca5f159ab3ab80fb5b2122a98bc0f428eec4cb8d
           #path-starts-with: docs/
           workflow-name: ryu-cho
