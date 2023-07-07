@@ -195,7 +195,7 @@ Si vous n'utilisez pas SFC, vous pouvez toujours utiliser la Composition API ave
 
 Vous vous demandez peut-être pourquoi nous avons besoin de refs avec le `.value` au lieu de simples variables. Pour l'expliquer, nous allons devoir discuter brièvement du fonctionnement du système de réactivité de Vue.
 
-Lorsque vous utilisez une ref dans le modèle et que vous modifiez la valeur de la ref ultérieurement, Vue détecte automatiquement le changement et met à jour le DOM en conséquence. Ceci est possible grâce à un système de réactivité basé sur le suivi des dépendances. Lorsqu'un composant est rendu pour la première fois, Vue **trace** toutes les refs utilisées pendant le rendu. Plus tard, lorsqu'une ref est modifiée, elle **déclenche** un nouveau rendu pour les composants qui la suivent.
+Lorsque vous utilisez une ref dans le template et que vous modifiez la valeur de la ref ultérieurement, Vue détecte automatiquement le changement et met à jour le DOM en conséquence. Ceci est possible grâce à un système de réactivité basé sur le suivi des dépendances. Lorsqu'un composant est rendu pour la première fois, Vue **trace** toutes les refs utilisées pendant le rendu. Plus tard, lorsqu'une ref est modifiée, elle **déclenche** un nouveau rendu pour les composants qui la suivent.
 
 En JavaScript standard, il n'existe aucun moyen de détecter l'accès ou la mutation de variables simples. Mais il est possible d'intercepter les opérations get et set d'une propriété.
 
