@@ -465,9 +465,9 @@ L'API `reactive()` a deux limitations :
 
 À cause de ces limites, nous recommandons l'usage de `ref()` en tant qu'API principale pour déclarer un état réactif.
 
-### As Reactive Object Property \*\* {#ref-unwrapping-as-reactive-object-property}
+### En tant que propriété d'un objet réactif \*\* {#ref-unwrapping-as-reactive-object-property}
 
-A ref is automatically unwrapped when accessed or mutated as a property of a reactive object. In other words, it behaves like a normal property :
+Une ref est automatiquement déballée lorsqu'elle est accédée ou mutée en tant que propriété d'un objet réactif. En d'autres termes, elle se comporte comme une propriété normale:
 
 ```js
 const count = ref(0)
@@ -481,18 +481,18 @@ state.count = 1
 console.log(count.value) // 1
 ```
 
-If a new ref is assigned to a property linked to an existing ref, it will replace the old ref:
+Si une nouvelle ref est attribuée à une propriété liée à une ref existante, elle remplacera l'ancienne ref:
 
 ```js
 const otherCount = ref(2)
 
 state.count = otherCount
 console.log(state.count) // 2
-// original ref is now disconnected from state.count
+// la ref originale est maintenant déconnectée de state.count
 console.log(count.value) // 1
 ```
 
-Ref unwrapping only happens when nested inside a deep reactive object. It does not apply when it is accessed as a property of a [shallow reactive object](/api/reactivity-advanced#shallowreactive).
+Le déballage de ref ne se produit que lorsqu'elle est imbriquée dans un objet réactif profond. Il ne s'applique pas lorsqu'elle est accédée en tant que propriété d'une [shallowReactive](/api/reactivity-advanced#shallowreactive).
 
 ### Pièges lors de déballage de tableaux et collections \*\* {#caveat-in-arrays-and-collections}
 
