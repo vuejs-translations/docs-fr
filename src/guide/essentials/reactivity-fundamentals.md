@@ -191,18 +191,18 @@ Si vous n'utilisez pas SFC, vous pouvez toujours utiliser la Composition API ave
 :::
 
 
-### Why Refs? \*\* {#why-refs}
+### Pourquoi Refs ? \*\* {#why-refs}
 
-You might be wondering why we need refs with the `.value` instead of plain variables. To explain that, we will need to briefly discuss how Vue's reactivity system works.
+Vous vous demandez peut-être pourquoi nous avons besoin de refs avec le `.value` au lieu de simples variables. Pour l'expliquer, nous allons devoir discuter brièvement du fonctionnement du système de réactivité de Vue.
 
-When you use a ref in the template, and changes the ref's value later, Vue automatically detects the change and updates the DOM accordingly. This is made possible with a dependency-tracking based reactivity system. When a component is rendered for the first time, Vue **tracks** every ref that was used during the render. Later on, when a ref is mutated, it will **trigger** re-render for components that are tracking it.
+Lorsque vous utilisez une ref dans le modèle et que vous modifiez la valeur de la ref ultérieurement, Vue détecte automatiquement le changement et met à jour le DOM en conséquence. Ceci est possible grâce à un système de réactivité basé sur le suivi des dépendances. Lorsqu'un composant est rendu pour la première fois, Vue **trace** toutes les refs utilisées pendant le rendu. Plus tard, lorsqu'une ref est modifiée, elle **déclenche** un nouveau rendu pour les composants qui la suivent.
 
-In standard JavaScript, there is no way to detect the access or mutation of plain variables. But we can intercept a property's get and set operations.
+En JavaScript standard, il n'existe aucun moyen de détecter l'accès ou la mutation de variables simples. Mais il est possible d'intercepter les opérations get et set d'une propriété.
 
-The `.value` property gives Vue the opportunity to detect when a ref has been accessed or mutated. Under the hood, Vue performs the tracking in its getter, and performs triggering in its setter. Conceptually, you can think of a ref as an object that looks like this:
+La propriété `.value` donne à Vue la possibilité de détecter quand une ref a été consultée ou mutée. Sous le capot, Vue effectue le suivi dans son getter, et effectue le déclenchement dans son setter. Conceptuellement, vous pouvez considérer une ref comme un objet qui ressemble à ceci :
 
 ```js
-// pseudo code, not actual implementation
+// pseudo-code, pas la mise en œuvre effective
 const myRef = {
   _value: 0,
   get value() {
@@ -216,9 +216,9 @@ const myRef = {
 }
 ```
 
-Another nice trait of refs is that unlike plain variables, you can pass refs into functions while retaining access to the latest value and the reactivity connection. This is particularly useful when refactoring complex logic into reusable code.
+Une autre caractéristique intéressante des refs est que, contrairement aux variables ordinaires, vous pouvez passer des refs dans des fonctions tout en conservant l'accès à la dernière valeur et à la connexion de la réactivité. Cela s'avère particulièrement utile lors de la refonte d'une logique complexe en un code réutilisable.
 
-The reactivity system is discussed in more details in the [Reactivity in Depth](/guide/extras/reactivity-in-depth) section.
+Le système de réactivité est décrit plus en détail dans la section [La réactivité en détails](/guide/extras/reactivity-in-depth).
 </div>
 
 <div class="options-api">
@@ -441,7 +441,7 @@ L'API `reactive()` a deux limitations :
    ```js
    let state = reactive({ count: 0 })
 
-   // la référence précédente ({ count: 0 }) n'est plus suivie 
+   // la référence précédente ({ count: 0 }) n'est plus suivie
    // (la connexion de réactivité est perdue !)
    state = reactive({ count: 1 })
    ```
