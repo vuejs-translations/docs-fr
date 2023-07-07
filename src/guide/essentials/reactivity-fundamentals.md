@@ -10,7 +10,7 @@ Cette page et de nombreux autres chapitres plus loin dans le guide contiennent u
 
 <div class="options-api">
 
-## Déclarer un état réactif {#declaring-reactive-state}
+## Déclarer un état réactif \* {#declaring-reactive-state}
 
 Avec l'Options API, nous utilisons l'option `data` pour déclarer l'état réactif d'un composant. La valeur de l'option doit être une fonction qui renvoie un objet. Vue appellera la fonction lors de la création d'une nouvelle instance de composant, et enveloppera l'objet retourné dans son système de réactivité. Toutes les propriétés de premier niveau de cet objet sont transmises à l'instance du composant (`this` dans les méthodes et dans les hooks du cycle de vie) :
 
