@@ -541,7 +541,7 @@ const { id } = object
 
 Désormais le résultat rendu sera `2`.
 
-Une autre chose à noter est qu'une ref est déballée s'il s'agit de la valeur finale évaluée d'une interpolation de texte (c'est-à-dire une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1`:
+Une autre chose à noter est qu'une ref est déballée s'il s'agit de la valeur finale évaluée d'une interpolation de texte (c'est-à-dire une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1` :
 
 ```vue-html
 {{ object.id }}
