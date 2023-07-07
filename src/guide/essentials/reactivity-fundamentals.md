@@ -373,7 +373,7 @@ export default {
 
 ## `reactive()` \*\* {#reactive}
 
-There is another way to declare reactive state, with the `reactive()` API. Unlike a ref which wraps the inner value in a special object, `reactive()` makes an object itself reactive:
+Il existe une autre façon de déclarer un état réactif, avec l'API `reactive()`. Contrairement à une ref qui enveloppe la valeur interne dans un objet spécial, `reactive()` rend un objet lui-même réactif:
 
 ```js
 import { reactive } from 'vue'
@@ -381,9 +381,9 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-> See also: [Typing Reactive](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
+> Voir aussi: [Typer reactive()](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
-Usage in template:
+Utilisation dans template:
 
 ```vue-html
 <button @click="state.count++">
@@ -393,7 +393,7 @@ Usage in template:
 
 Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif.
 
-`reactive()` converts the object deeply: nested objects are also wrapped with `reactive()` when accessed. It is also called by `ref()` internally when the ref value is an object. Similar to shallow refs, there is also the [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) API for opting-out of deep reactivity.
+`reactive()` convertit l'objet en profondeur: les objets imbriqués sont également enveloppés par `reactive()` lorsqu'on y accède. Il est également appelé par `ref()` en interne lorsque la valeur de ref est un objet. Comme pour les refs peu profondes, il existe aussi l'API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) pour choisir de ne pas utiliser la réactivité profonde.
 
 ### Proxy réactif vs. original \*\* {#reactive-proxy-vs-original-1}
 
