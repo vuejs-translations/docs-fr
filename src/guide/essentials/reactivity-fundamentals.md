@@ -517,7 +517,7 @@ const count = ref(0)
 const object = { id: ref(0) }
 ```
 
-Cette expression fonctionne donc comme prévu:
+Cette expression fonctionne donc comme prévu :
 
 ```vue-html
 {{ count + 1 }}
