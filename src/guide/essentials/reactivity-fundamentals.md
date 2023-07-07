@@ -383,7 +383,7 @@ const state = reactive({ count: 0 })
 
 > Voir aussi : [Typer reactive()](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
-Utilisation dans template:
+Utilisation dans le template :
 
 ```vue-html
 <button @click="state.count++">
