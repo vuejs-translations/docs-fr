@@ -496,40 +496,40 @@ Le déballage de ref ne se produit que lorsqu'elle est imbriquée dans un objet 
 
 ### Pièges lors de déballage de tableaux et collections \*\* {#caveat-in-arrays-and-collections}
 
-Unlike reactive objects, there is **no** unwrapping performed when the ref is accessed as an element of a reactive array or a native collection type like `Map`:
+Contrairement aux objets réactifs, il n'y a **pas** de déballage effectué lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map`:
 
 ```js
 const books = reactive([ref('Vue 3 Guide')])
-// need .value here
+// il faut ici .value
 console.log(books[0].value)
 
 const map = reactive(new Map([['count', ref(0)]]))
-// need .value here
+// il faut ici .value
 console.log(map.get('count').value)
 ```
 
-Ref unwrapping in templates only applies if the ref is a top-level property in the template render context.
+Le déballage de ref dans les templates ne s'applique que si la ref est une propriété de premier niveau dans le contexte de rendu du template.
 
-In the example below, `count` and `object` are top-level properties, but `object.id` is not:
+Dans l'exemple ci-dessous, `count` et `object` sont des propriétés de premier niveau, mais `object.id` ne l'est pas:
 
 ```js
 const count = ref(0)
 const object = { id: ref(0) }
 ```
 
-Therefore, this expression works as expected:
+Cette expression fonctionne donc comme prévu:
 
 ```vue-html
 {{ count + 1 }}
 ```
 
-...while this one does **NOT**:
+...alors que celui-ci ne le fait **PAS**:
 
 ```vue-html
 {{ object.id + 1 }}
 ```
 
-The rendered result will be `[object Object]1` because `object.id` is not unwrapped when evaluating the expression and remains a ref object. To fix this, we can destructure `id` into a top-level property:
+Le résultat rendu sera `[object Object]1` car `object.id` n'est pas décompressé lors de l'évaluation de l'expression et reste un objet ref. Pour résoudre ce problème, nous pouvons déstructurer `id` en une propriété de premier niveau:
 
 ```js
 const { id } = object
@@ -541,13 +541,13 @@ const { id } = object
 
 Désormais le résultat rendu sera `2`.
 
-Another thing to note is that a ref does get unwrapped if it is the final evaluated value of a text interpolation (i.e. a <code v-pre>{{ }}</code> tag), so the following will render `1`:
+Une autre chose à noter est qu'une ref est déballée s'il s'agit de la valeur finale évaluée d'une interpolation de texte (c'est-à-dire une balise <code v-pre>{{ }}</code>), donc ce qui suit rendra `1`:
 
 ```vue-html
 {{ object.id }}
 ```
 
-This is just a convenience feature of text interpolation and is equivalent to <code v-pre>{{ object.id.value }}</code>.
+Il s'agit d'une fonctionnalité de commodité de l'interpolation de texte et est équivalent à <code v-pre>{{ object.id.value }}</code>.
 
 </div>
 
