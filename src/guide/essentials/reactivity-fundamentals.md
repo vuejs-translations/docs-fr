@@ -523,7 +523,7 @@ Cette expression fonctionne donc comme prévu :
 {{ count + 1 }}
 ```
 
-...alors que celui-ci ne le fait **PAS**:
+...alors que celui-ci ne le fait **PAS** :
 
 ```vue-html
 {{ object.id + 1 }}
