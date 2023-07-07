@@ -373,7 +373,7 @@ export default {
 
 ## `reactive()` \*\* {#reactive}
 
-Il existe une autre façon de déclarer un état réactif, avec l'API `reactive()`. Contrairement à une ref qui enveloppe la valeur interne dans un objet spécial, `reactive()` rend un objet lui-même réactif:
+Il existe une autre façon de déclarer un état réactif, avec l'API `reactive()`. Contrairement à une ref qui enveloppe la valeur interne dans un objet spécial, `reactive()` rend un objet lui-même réactif :
 
 ```js
 import { reactive } from 'vue'
