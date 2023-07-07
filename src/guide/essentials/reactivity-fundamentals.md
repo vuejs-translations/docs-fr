@@ -529,7 +529,7 @@ Cette expression fonctionne donc comme prévu :
 {{ object.id + 1 }}
 ```
 
-Le résultat rendu sera `[object Object]1` car `object.id` n'est pas décompressé lors de l'évaluation de l'expression et reste un objet ref. Pour résoudre ce problème, nous pouvons déstructurer `id` en une propriété de premier niveau:
+Le résultat rendu sera `[object Object]1` car `object.id` n'est pas déballé lors de l'évaluation de l'expression et reste un objet ref. Pour résoudre ce problème, nous pouvons déstructurer `id` en une propriété de premier niveau :
 
 ```js
 const { id } = object
