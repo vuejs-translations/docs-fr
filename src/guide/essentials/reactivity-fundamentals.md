@@ -302,9 +302,9 @@ export default {
 
 <div class="composition-api">
 
-Refs can hold any value type, including deeply nested objects, arrays, or JavaScript built-in data structures like `Map`.
+Les refs peuvent contenir n'importe quel type de valeur, y compris des objets profondément imbriqués, des tableaux ou des structures de données JavaScript intégrées comme `Map`.
 
-A ref will make its value deeply reactive. This means you can expect changes to be detected even when you mutate nested objects or arrays:
+Une ref rendra sa valeur profondément réactive. Cela signifie que vous pouvez vous attendre à ce que les changements soient détectés même lorsque vous mutez des objets imbriqués ou des tableaux:
 
 ```js
 import { ref } from 'vue'
@@ -321,14 +321,14 @@ function mutateDeeply() {
 }
 ```
 
-Non-primitive values are turned into reactive proxies via [`reactive()`](#reactive), which is discussed below.
+Les valeurs non primitives sont transformées en proxies réactifs via [`reactive()`](#reactive), ce qui est expliqué ci-dessous.
 
-It is also possible to opt-out of deep reactivity with [shallow refs](/api/reactivity-advanced#shallowref). For shallow refs, only `.value` access is tracked for reactivity. Shallow refs can be used for optimizing performance by avoiding the observation cost of large objects, or in cases where the inner state is managed by an external library.
+Il est également possible de renoncer à la réactivité profonde avec [shallow refs](/api/reactivity-advanced#shallowref). Pour les refs peu profondes, seul l'accès à `.value` est suivi pour la réactivité. Les refs peu profondes peuvent être utilisées pour optimiser les performances en évitant le coût d'observation des gros objets, ou dans les cas où l'état interne est géré par une bibliothèque externe.
 
-Further reading:
+Pour en savoir plus:
 
-- [Reduce Reactivity Overhead for Large Immutable Structures](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
-- [Integration with External State Systems](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
+- [Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+- [Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
 </div>
 
