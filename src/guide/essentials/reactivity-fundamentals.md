@@ -381,7 +381,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-> Voir aussi: [Typer reactive()](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
+> Voir aussi : [Typer reactive()](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 Utilisation dans template:
 
