@@ -302,7 +302,7 @@ export default {
 
 <div class="composition-api">
 
-Les refs peuvent contenir n'importe quel type de valeur, y compris des objets profondément imbriqués, des tableaux ou des structures de données JavaScript intégrées comme `Map`.
+Les refs peuvent contenir n'importe quel type de valeur, y compris des objets profondément imbriqués, des tableaux ou des structures de données JavaScript natives comme `Map`.
 
 Une ref rendra sa valeur profondément réactive. Cela signifie que vous pouvez vous attendre à ce que les changements soient détectés même lorsque vous mutez des objets imbriqués ou des tableaux :
 
