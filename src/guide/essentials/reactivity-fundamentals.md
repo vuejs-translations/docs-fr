@@ -467,7 +467,7 @@ L'API `reactive()` a deux limitations :
 
 ### En tant que propriété d'un objet réactif \*\* {#ref-unwrapping-as-reactive-object-property}
 
-Une ref est automatiquement déballée lorsqu'elle est accédée ou mutée en tant que propriété d'un objet réactif. En d'autres termes, elle se comporte comme une propriété normale:
+Une ref est automatiquement déballée lorsqu'elle est accédée ou mutée en tant que propriété d'un objet réactif. En d'autres termes, elle se comporte comme une propriété normale :
 
 ```js
 const count = ref(0)
