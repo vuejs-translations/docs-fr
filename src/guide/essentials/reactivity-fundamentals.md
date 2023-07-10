@@ -496,7 +496,7 @@ Le déballage de ref ne se produit que lorsqu'elle est imbriquée dans un objet 
 
 ### Pièges lors de déballage de tableaux et collections \*\* {#caveat-in-arrays-and-collections}
 
-Contrairement aux objets réactifs, il n'y a **pas** de déballage effectué lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map`:
+Contrairement aux objets réactifs, il n'y a **pas** de déballage effectué lorsque la ref est accédée en tant qu'élément d'un tableau réactif ou d'un type de collection natif comme `Map` :
 
 ```js
 const books = reactive([ref('Vue 3 Guide')])
