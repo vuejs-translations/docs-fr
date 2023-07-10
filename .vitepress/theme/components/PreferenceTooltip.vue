@@ -101,8 +101,8 @@ function dismiss() {
       <template v-if="source === 'default'">
         <p>Le style d'API est par défaut la Composition API.</p>
         <p>
-          Certaines pages contiennent différent contenu basé sur 
-          le style d'API choisi. Utilisez ce bouton pour changer le style d'API.
+          Certaines pages contiennent différents contenus en fonction 
+          du style d'API choisi. Utilisez ce bouton pour changer le style d'API.
         </p>
       </template>
       <template v-if="source && source.startsWith('url')">
@@ -122,7 +122,7 @@ function dismiss() {
       </template>
       <p class="actions">
         <a href="/guide/introduction#api-styles">En savoir plus</a>
-        <button @click="dismiss">OK</button>
+        <button @click="dismiss">Ok</button>
       </p>
       <div class="arrow-top"></div>
       <div class="arrow-top inner"></div>
