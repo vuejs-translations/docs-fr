@@ -481,7 +481,7 @@ state.count = 1
 console.log(count.value) // 1
 ```
 
-Si une nouvelle ref est attribuée à une propriété liée à une ref existante, elle remplacera l'ancienne ref:
+Si une nouvelle ref est attribuée à une propriété liée à une ref existante, elle remplacera l'ancienne ref :
 
 ```js
 const otherCount = ref(2)
