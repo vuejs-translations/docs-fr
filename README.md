@@ -27,7 +27,7 @@ pnpm i
 pnpm run dev
 ```
 
-Ce projet nécessite Node.js la version `v14.0.0` ou plus récent, car nous utilisons de nouvelles fonctionnalités JavaScript dans notre code, telles que le chaînage optionnel..
+Ce projet nécessite la version `v14.0.0` ou plus récente de Node.js, car nous utilisons de nouvelles fonctionnalités JavaScript dans notre code, telles que le chaînage optionnel..
 
 ## Travail sur le contenu
 
