@@ -325,7 +325,7 @@ Les valeurs non primitives sont transformées en proxies réactifs via [`reactiv
 
 Il est également possible de renoncer à la réactivité profonde avec [shallow refs](/api/reactivity-advanced#shallowref). Pour les refs peu profondes, seul l'accès à `.value` est suivi pour la réactivité. Les refs peu profondes peuvent être utilisées pour optimiser les performances en évitant le coût d'observation des gros objets, ou dans les cas où l'état interne est géré par une bibliothèque externe.
 
-Pour en savoir plus:
+Pour en savoir plus :
 
 - [Réduire la surcharge de réactivité pour les grandes structures immuables](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
 - [Intégration avec des systèmes externes de gestion d'état](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
