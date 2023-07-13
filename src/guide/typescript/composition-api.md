@@ -149,7 +149,7 @@ const emit = defineEmits<{
   (e: 'update', value: string): void
 }>()
 
-// 3.3+: syntaxe alternative, plus succincte
+// 3.3+ : syntaxe alternative, plus succincte
 const emit = defineEmits<{
   change: [id: number]
   update: [value: string]
