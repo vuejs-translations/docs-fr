@@ -393,7 +393,7 @@ Utilisation dans le template :
 
 Les objets réactifs sont des [proxys JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy) et se comportent comme des objets classiques. La différence est que Vue est capable de traquer l'accès aux propriétés et les mutations d'un objet réactif.
 
-`reactive()` convertit l'objet en profondeur: les objets imbriqués sont également enveloppés par `reactive()` lorsqu'on y accède. Il est également appelé par `ref()` en interne lorsque la valeur de ref est un objet. Comme pour les refs peu profondes, il existe aussi l'API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) pour choisir de ne pas utiliser la réactivité profonde.
+`reactive()` convertit l'objet en profondeur : les objets imbriqués sont également enveloppés par `reactive()` lorsqu'on y accède. Il est également appelé par `ref()` en interne lorsque la valeur de ref est un objet. Comme pour les refs peu profondes, il existe aussi l'API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) pour choisir de ne pas utiliser la réactivité profonde.
 
 ### Proxy réactif vs. original \*\* {#reactive-proxy-vs-original-1}
 
