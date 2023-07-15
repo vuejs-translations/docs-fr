@@ -157,12 +157,12 @@ const emit = defineEmits<{
 </script>
 ```
 
-The type argument can be one of the following:
+L'argument du type peut être l'un des suivants :
 
-1. A callable function type, but written as a type literal with [Call Signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures). It will be used as the type of the returned `emit` function.
-2. A type literal where the keys are the event names, and values are array / tuple types representing the additional accepted parameters for the event. The example above is using named tuples so each argument can have an explicit name.
+1. Un type de fonction, mais écrit comme un littéral de type avec les [Call Signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures). Il sera utilisé comme type de la fonction `emit` renvoyée.
+2. Un littéral de type où les clés sont les noms d'événement et les valeurs sont des types tableau/tuple représentant les paramètres supplémentaires acceptés pour l'événement. L'exemple ci-dessus utilise des tuples nommés afin que chaque argument puisse avoir un nom explicite.
 
-As we can see, the type declaration gives us much finer-grained control over the type constraints of emitted events.
+Comme nous pouvons le voir, la déclaration de type nous donne un contrôle beaucoup plus fin sur les contraintes de type des événements émis.
 
 Lorsque l'on n'utilise pas `<script setup>`, `defineComponent()` est capable de déduire les événements autorisés pour la fonction `emit` exposée sur le contexte setup :
 
