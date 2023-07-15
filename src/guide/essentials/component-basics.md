@@ -456,14 +456,14 @@ Comme pour les éléments HTML, il est souvent utile de pouvoir passer du conten
 
 ```vue-html
 <AlertBox>
-  Something bad happened.
+  Quelque chose de grave s'est produit.
 </AlertBox>
 ```
 
 Ce qui devrait rendre :
 
-:::danger This is an Error for Demo Purposes
-Something bad happened.
+:::danger Il s'agit d'une Erreur à des Fins de Démonstration
+Quelque chose de grave s'est produit.
 :::
 
 Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>` :
@@ -471,7 +471,7 @@ Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>`
 ```vue{4}
 <template>
   <div class="alert-box">
-    <strong>This is an Error for Demo Purposes</strong>
+    <strong>Il s'agit d'une Erreur à des Fins de Démonstration</strong>
     <slot />
   </div>
 </template>
