@@ -448,7 +448,7 @@ export default {
 
 </div>
 
-That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Custom Events](/guide/components/events).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les évènements personnalisés de composants, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur la [Gestion des évènements](/guide/components/events).
 
 ## Distribution de contenu avec les slots {#content-distribution-with-slots}
 
@@ -456,14 +456,14 @@ Comme pour les éléments HTML, il est souvent utile de pouvoir passer du conten
 
 ```vue-html
 <AlertBox>
-  Something bad happened.
+  Quelque chose de grave s'est produit.
 </AlertBox>
 ```
 
 Ce qui devrait rendre :
 
-:::danger This is an Error for Demo Purposes
-Something bad happened.
+:::danger Il s'agit d'une Erreur à des Fins de Démonstration
+Quelque chose de grave s'est produit.
 :::
 
 Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>` :
@@ -471,7 +471,7 @@ Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>`
 ```vue{4}
 <template>
   <div class="alert-box">
-    <strong>This is an Error for Demo Purposes</strong>
+    <strong>Il s'agit d'une Erreur à des Fins de Démonstration</strong>
     <slot />
   </div>
 </template>
@@ -496,7 +496,7 @@ Comme vous le verrez, nous utilisons `<slot>` comme un espace réservé où nous
 
 </div>
 
-C'est tout ce dont vous avez besoin concernant les slots pour le moment, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les slots, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
 
 ## Composants dynamiques {#dynamic-components}
 
