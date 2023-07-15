@@ -20,7 +20,7 @@ props.bar // number | undefined
 </script>
 ```
 
-Ceci est appelé "déclaration à l'exécution" de fait que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lord de l'exécution.
+Ceci est appelé "déclaration à l'exécution" de fait que l'argument passé à `defineProps()` sera utilisé comme l'option `props` lors de l'exécution.
 
 Cependant, il est généralement plus simple de définir des props avec des types purs via un argument de type générique :
 
@@ -74,7 +74,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
-### Without `<script setup>` {#without-script-setup}
+### Sans `<script setup>` {#without-script-setup}
 
 Si vous n'utilisez pas `<script setup>`, il est nécessaire d'utiliser `defineComponent()` pour activer l'inférence de type des props. Le type de l'objet props passé à `setup()` est déduit de l'option `props`.
 
@@ -149,7 +149,7 @@ const emit = defineEmits<{
   (e: 'update', value: string): void
 }>()
 
-// 3.3+: alternative, more succinct syntax
+// 3.3+ : syntaxe alternative, plus succincte
 const emit = defineEmits<{
   change: [id: number]
   update: [value: string]
@@ -160,9 +160,9 @@ const emit = defineEmits<{
 L'argument du type peut être l'un des suivants :
 
 1. Un type de fonction, mais écrit comme un littéral de type avec les [Call Signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#call-signatures). Il sera utilisé comme type de la fonction `emit` renvoyée.
-2. Un littéral de type où les clés sont les noms d'événement et les valeurs sont des types tableau/tuple représentant les paramètres supplémentaires acceptés pour l'événement. L'exemple ci-dessus utilise des tuples nommés afin que chaque argument puisse avoir un nom explicite.
+2. Un littéral de type où les clés sont les noms d'événement et les valeurs sont des tableaux ou des tuples représentant les paramètres supplémentaires acceptés pour l'événement. L'exemple ci-dessus utilise des tuples nommés afin que chaque argument puisse avoir un nom explicite.
 
-Comme nous pouvons le voir, la déclaration de type nous donne un contrôle beaucoup plus fin sur les contraintes de type des événements émis.
+Comme nous pouvons le constater, la déclaration de type nous permet d'exercer un contrôle beaucoup plus fin sur les contraintes de type des événements émis.
 
 Lorsque l'on n'utilise pas `<script setup>`, `defineComponent()` est capable de déduire les événements autorisés pour la fonction `emit` exposée sur le contexte setup :
 
@@ -305,7 +305,7 @@ import type { InjectionKey } from 'vue'
 
 const key = Symbol() as InjectionKey<string>
 
-provide(key, 'foo') // fournir une valeur qui n'est pas une chaîne de caractères va entraîner une erreur 
+provide(key, 'foo') // fournir une valeur qui n'est pas une chaîne de caractères va entraîner une erreur
 
 const foo = inject(key) // type de foo : string | undefined
 ```
