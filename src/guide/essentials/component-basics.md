@@ -448,7 +448,7 @@ export default {
 
 </div>
 
-That's all you need to know about custom component events for now, but once you've finished reading this page and feel comfortable with its content, we recommend coming back later to read the full guide on [Custom Events](/guide/components/events).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les évènements personnalisés de composants, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur la [Gestion des évènements](/guide/components/events).
 
 ## Distribution de contenu avec les slots {#content-distribution-with-slots}
 
