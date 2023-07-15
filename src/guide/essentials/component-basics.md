@@ -496,7 +496,7 @@ Comme vous le verrez, nous utilisons `<slot>` comme un espace réservé où nous
 
 </div>
 
-C'est tout ce dont vous avez besoin concernant les slots pour le moment, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
+Pour le moment, c'est tout ce dont vous avez besoin concernant les slots, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Slots](/guide/components/slots).
 
 ## Composants dynamiques {#dynamic-components}
 
