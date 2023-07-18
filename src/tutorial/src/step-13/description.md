@@ -7,7 +7,7 @@ En plus de recevoir des props, un composant enfant peut également émettre des 
 
 ```vue
 <script setup>
-// déclare les évènements émis
+// déclare les événements émis
 const emit = defineEmits(['response'])
 
 // emit avec un argument
@@ -21,7 +21,7 @@ emit('response', "hello à partir de l'enfant")
 
 ```js
 export default {
-  // déclare les évènements émis
+  // déclare les événements émis
   emits: ['response'],
   setup(props, { emit }) {
     // emit avec un argument
@@ -38,7 +38,7 @@ export default {
 
 ```js
 export default {
-  // déclare les évènements émis
+  // déclare les événements émis
   emits: ['response'],
   created() {
     // emit avec un argument
