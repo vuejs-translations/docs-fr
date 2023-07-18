@@ -17,7 +17,6 @@ if (typeof window !== 'undefined') {
   }
 }
 </script>
-
 # Les évènements de composant {#component-events}
 
 > Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
