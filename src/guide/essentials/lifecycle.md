@@ -57,7 +57,7 @@ Notez que cela ne signifie pas que l'appel doit être placé littéralement dans
 
 ## Diagramme du cycle de vie {#lifecycle-diagram}
 
-Ce-dessous figure le diagramme du cycle de vie d'une instance. Vous n'avez pas besoin de le comprendre entièrement pour le moment, mais au fur et à mesure que vous apprendrez et construirez, il sera une référence utile.
+Ci-dessous figure le diagramme du cycle de vie d'une instance. Vous n'avez pas besoin de le comprendre entièrement pour le moment, mais au fur et à mesure que vous apprendrez et construirez, il sera une référence utile.
 
 ![Diagramme du cycle de vie d'un composant](./images/lifecycle.png)
 
