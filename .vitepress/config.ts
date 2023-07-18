@@ -206,7 +206,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         },
         { text: 'Props', link: '/guide/components/props' },
         {
-          text: 'Gestion des évènements',
+          text: 'Les événements de composant',
           link: '/guide/components/events'
         },
         {
