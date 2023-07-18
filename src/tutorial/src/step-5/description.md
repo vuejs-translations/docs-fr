@@ -11,7 +11,7 @@ En utilisant `v-bind` et `v-on` ensemble, nous pouvons créer des liaisons bidir
 ```js
 methods: {
   onInput(e) {
-    // une directive v-on recoit un évènement natif du DOM
+    // une directive v-on recoit un événement natif du DOM
     // comme argument.
     this.text = e.target.value
   }
@@ -24,7 +24,7 @@ methods: {
 
 ```js
 function onInput(e) {
-  // une directive v-on recoit un évènement natif du DOM
+  // une directive v-on recoit un événement natif du DOM
   // comme argument.
   text.value = e.target.value
 }
