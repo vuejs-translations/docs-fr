@@ -54,7 +54,7 @@ For more details see:
 
 The word 'component' also features in several other terms:
 - [async component](#async-component)
-- [dynamic component](#dynamic-component)
+- [composant dynamique](#dynamic-component)
 - [functional component](#functional-component)
 - [Web Component](#web-component)
 
