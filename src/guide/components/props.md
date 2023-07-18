@@ -380,7 +380,7 @@ Pour spécifier les validations de props, vous pouvez fournir un objet avec des 
 ```js
 defineProps({
   // Contrôle de type de base
-  //  (les valeurs`null` et `undefined` values autoriseront tous les types)
+  //  (les valeurs`null` et `undefined` autoriseront tous les types)
   propA: Number,
   // Plusieurs types possibles
   propB: [String, Number],
@@ -414,7 +414,7 @@ defineProps({
   // Fonction avec une valeur par défaut
   propG: {
     type: Function,
-    // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction 
+    // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction
     // factory - il s'agit d'une fonction servant de valeur par défaut
     default() {
       return 'Default function'
@@ -434,7 +434,7 @@ Le code à l'intérieur de l'argument `defineProps()` **ne peut pas accéder aux
 export default {
   props: {
     // Contrôle de type de base
-    //  (les valeurs`null` et `undefined` values autoriseront tous les types)
+    //  (les valeurs`null` et `undefined` autoriseront tous les types)
     propA: Number,
     // Plusieurs types possibles
     propB: [String, Number],
@@ -468,7 +468,7 @@ export default {
     // Fonction avec une valeur par défaut
     propG: {
       type: Function,
-      // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction 
+      // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction
       // factory - il s'agit d'une fonction servant de valeur par défaut
       default() {
         return 'Default function'
@@ -594,22 +594,22 @@ Lorsqu'un accessoire est déclaré pour autoriser plusieurs types, les règles d
 <div class="composition-api">
 
 ```js
-// disabled will be casted to true
+// disabled sera transformé en true
 defineProps({
   disabled: [Boolean, Number]
 })
-  
-// disabled will be casted to true
+
+// disabled sera transformé en true
 defineProps({
   disabled: [Boolean, String]
 })
-  
-// disabled will be casted to true
+
+// disabled sera transformé en true
 defineProps({
   disabled: [Number, Boolean]
 })
-  
-// disabled will be parsed as an empty string (disabled="")
+
+// disabled sera analysé comme une chaîne vide (disabled="")
 defineProps({
   disabled: [String, Boolean]
 })
@@ -619,28 +619,28 @@ defineProps({
 <div class="options-api">
 
 ```js
-// disabled will be casted to true
+// disabled sera transformé en true
 export default {
   props: {
     disabled: [Boolean, Number]
   }
 }
-  
-// disabled will be casted to true
+
+// disabled sera transformé en true
 export default {
   props: {
     disabled: [Boolean, String]
   }
 }
-  
-// disabled will be casted to true
+
+// disabled sera transformé en true
 export default {
   props: {
     disabled: [Number, Boolean]
   }
 }
-  
-// disabled will be parsed as an empty string (disabled="")
+
+// disabled sera analysé comme une chaîne vide (disabled="")
 export default {
   props: {
     disabled: [String, Boolean]
