@@ -4,14 +4,14 @@ This glossary is intended to provide some guidance about the meanings of technic
 
 [[TOC]]
 
-## async component {#async-component}
+## composant asynchrone {#async-component}
 
-An *async component* is a wrapper around another component that allows for the wrapped component to be lazy loaded. This is typically used as a way to reduce the size of the built `.js` files, allowing them to be split into smaller chunks that are loaded only when required.
+Un *composant asynchrone* est une enveloppe autour d'un autre composant qui permet au composant enveloppé d'être chargé de manière paresseuse. Il est généralement utilisé pour réduire la taille des fichiers .js construits, en leur permettant d'être divisés en morceaux plus petits qui ne sont chargés qu'en cas de besoin.
 
-Vue Router has a similar feature for the [lazy loading of route components](https://router.vuejs.org/guide/advanced/lazy-loading.html), though this does not use Vue's async components feature.
+Vue Router dispose d'une fonctionnalité similaire pour la fonction [chargement paresseux du composant route](https://router.vuejs.org/guide/advanced/lazy-loading.html), bien que cela n'utilise pas la fonction de composants asynchrones de Vue.
 
-For more details see:
-- [Guide - Async Components](/guide/components/async.html)
+Pour plus de détails, voir :
+- [Guide - Composants asynchrones](/guide/components/async.html)
 
 ## compiler macro {#compiler-macro}
 
