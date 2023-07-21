@@ -72,13 +72,13 @@ As with many patterns, there can be some disagreement about whether specific cod
 
 See [Guide - Composables](/guide/reusability/composables.html) for more details about writing composables.
 
-## Composition API {#composition-api}
+## API de Composition {#composition-api}
 
-The *Composition API* is a collection of functions used to write components and composables in Vue.
+L'*API de Composition* est une collection de fonctions utilisées pour écrire des composants et des composables dans Vue.
 
-The term is also used to describe one of the two main styles used to write components, the other being the [Options API](#options-api). Components written using the Composition API use either `<script setup>` or an explicit `setup()` function.
+Le terme est également utilisé pour décrire l'un des deux styles principaux utilisés pour écrire des composants, l'autre étant l'[API Options](#options-api). Les composants écrits à l'aide de l'API Composition utilisent soit `<script setup>`, soit une fonction explicite `setup()`.
 
-See the [Composition API FAQ](/guide/extras/composition-api-faq) for more details.
+Voir la [FAQ de l'API de Composition](/guide/extras/composition-api-faq) pour plus de détails.
 
 ## custom element {#custom-element}
 
