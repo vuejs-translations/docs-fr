@@ -84,7 +84,7 @@ Cela devrait retourner :
 <button>1</button>
 ```
 
-La fonction [`renderToString()`](/api/ssr#rendertostring) rend une application Vue en HTML et renvoie une Promise avec le rendu. Il peut également être rendu en continu avec l'API de stream [Node.js Stream API](https://nodejs.org/api/stream) ou [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Voir la [référence de l'API SSR](/api/ssr) pour plus d'informations.
+La fonction [`renderToString()`](/api/ssr#rendertostring) rend une application Vue en HTML et renvoie une Promise avec le rendu. Il peut également être rendu en continu avec l'API de stream [Node.js Stream API](https://nodejs.org/api/stream.html) ou [Web Streams API](https://developer.mozilla.org/fr/docs/Web/API/Streams_API). Voir la [référence de l'API SSR](/api/ssr) pour plus d'informations.
 
 Nous utilisons [`express`](https://expressjs.com/) pour inclure le code Vue SSR dans une page HTML complète sur le serveur :
 
@@ -168,7 +168,7 @@ export function createApp() {
 }
 ```
 
-Ce fichier et ses dépendances sont partagés entre le serveur et le client - nous les appelons **code universel**. Il y a un certain nombre de choses à prendre en compte lors de la rédaction du code universel,  nous allons le [voir ci-dessous](#writing-ssr-friendly-code).
+Ce fichier et ses dépendances sont partagés entre le serveur et le client - nous les appelons **code universel**. Il y a un certain nombre de choses à prendre en compte lors de la rédaction du code universel, nous allons le [voir ci-dessous](#writing-ssr-friendly-code).
 
 Notre entrée client importe le code universel, crée l'application et effectue le montage :
 
