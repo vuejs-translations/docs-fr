@@ -1,17 +1,17 @@
-# Glossary {#glossary}
+# Glossaire {#glossary}
 
 This glossary is intended to provide some guidance about the meanings of technical terms that are in common usage when talking about Vue. It is intended to be *descriptive* of how terms are commonly used, not a *prescriptive* specification of how they must be used. Some terms may have slightly different meanings or nuances depending on the surrounding context.
 
 [[TOC]]
 
-## async component {#async-component}
+## composant asynchrone {#async-component}
 
-An *async component* is a wrapper around another component that allows for the wrapped component to be lazy loaded. This is typically used as a way to reduce the size of the built `.js` files, allowing them to be split into smaller chunks that are loaded only when required.
+Un *composant asynchrone* est une enveloppe autour d'un autre composant qui permet au composant enveloppé d'être chargé de manière paresseuse. Il est généralement utilisé pour réduire la taille des fichiers .js construits, en leur permettant d'être divisés en morceaux plus petits qui ne sont chargés qu'en cas de besoin.
 
-Vue Router has a similar feature for the [lazy loading of route components](https://router.vuejs.org/guide/advanced/lazy-loading.html), though this does not use Vue's async components feature.
+Vue Router dispose d'une fonctionnalité similaire pour la fonction [chargement paresseux du composant route](https://router.vuejs.org/guide/advanced/lazy-loading.html), bien que cela n'utilise pas la fonction de composants asynchrones de Vue.
 
-For more details see:
-- [Guide - Async Components](/guide/components/async.html)
+Pour plus de détails, voir :
+- [Guide - Composants asynchrones](/guide/components/async.html)
 
 ## compiler macro {#compiler-macro}
 
@@ -54,7 +54,7 @@ For more details see:
 
 The word 'component' also features in several other terms:
 - [async component](#async-component)
-- [dynamic component](#dynamic-component)
+- [composant dynamique](#dynamic-component)
 - [functional component](#functional-component)
 - [Web Component](#web-component)
 
@@ -103,26 +103,26 @@ For more details see:
 - [Guide - Template Syntax - Directives](/guide/essentials/template-syntax.html#directives)
 - [Guide - Custom Directives](/guide/reusability/custom-directives.html)
 
-## dynamic component {#dynamic-component}
+## composant dynamique {#dynamic-component}
 
-The term *dynamic component* is used to describe cases where the choice of which child component to render needs to be made dynamically. Typically, this is achieved using `<component :is="type">`.
+Le terme *composant dynamique* est utilisé pour décrire les cas où le choix du composant enfant à rendre doit être fait dynamiquement. Typiquement, ceci est réalisé en utilisant `<component :is="type">`.
 
-A dynamic component is not a special type of component. Any component can be used as a dynamic component. It is the choice of component that is dynamic, rather than the component itself.
+Un composant dynamique n'est pas un type particulier de composant. N'importe quel composant peut être utilisé comme composant dynamique. C'est le choix du composant qui est dynamique, plutôt que le composant lui-même.
 
-For more details see:
-- [Guide - Components Basics - Dynamic Components](/guide/essentials/component-basics.html#dynamic-components)
+Pour plus de détails, voir :
+- [Guide - Principes fondamentaux des composants - Composants dynamiques](/guide/essentials/component-basics.html#dynamic-components)
 
 ## effect {#effect}
 
-See [reactive effect](#reactive-effect) and [side effect](#side-effect).
+Voir [reactive effect](#reactive-effect) et [side effect](#side-effect).
 
 ## event {#event}
 
-The use of events for communicating between different parts of a program is common to many different areas of programming. Within Vue, the term is commonly applied to both native HTML element events and Vue component events. The `v-on` directive is used in templates to listen for both types of event.
+L'utilisation des événements pour communiquer entre différentes parties d'un programme est commune à de nombreux domaines de programmation différents. Dans Vue, le terme est généralement appliqué à la fois aux événements d'éléments HTML natifs et aux événements de composants Vue. La directive `v-on` est utilisée dans les templates pour écouter les deux types d'événements.
 
-For more details see:
-- [Guide - Event Handling](/guide/essentials/event-handling.html)
-- [Guide - Component Events](/guide/components/events.html)
+Pour plus de détails, voir :
+- [Guide - Gestion d'événement](/guide/essentials/event-handling.html)
+- [Guide - Gestion des évènements](/guide/components/events.html)
 
 ## fragment {#fragment}
 
