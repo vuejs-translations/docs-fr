@@ -29,7 +29,7 @@ Lorsqu'il est utilisé sur un composant, `v-model` est alors équivalent à :
 Toutefois, pour que cela fonctionne, le composant `<CustomInput>` doit faire deux choses :
 
 1. Lier l'attribut value d'un élément natif `<input>` à la prop modelValue
-2. Lorsqu'un évènement natif `input` est déclenché, émettre un évènement personnalisé `update:modelValue` avec la nouvelle valeur
+2. Lorsqu'un événement natif `input` est déclenché, émettre un événement personnalisé `update:modelValue` avec la nouvelle valeur
 
 Voici cela en action :
 
@@ -89,7 +89,7 @@ Maintenant `v-model` devrait fonctionner parfaitement avec ce composant :
 
 </div>
 
-Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée`  en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'évènement correspondant :
+Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée`  en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
 
 <div class="options-api">
 
@@ -147,13 +147,13 @@ const value = computed({
 
 ## Les arguments de `v-model` {#v-model-arguments}
 
-Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme évènement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
+Par défaut, `v-model` sur un composant utilise `modelValue` comme prop et `update:modelValue` comme événement. Nous pouvons modifier ces noms en passant un argument à `v-model` :
 
 ```vue-html
 <MyComponent v-model:title="bookTitle" />
 ```
 
-Dans ce cas, le composant enfant doit attendre une prop `title` et émettre un évènement `update:title` pour mettre à jour la valeur du composant parent :
+Dans ce cas, le composant enfant doit attendre une prop `title` et émettre un événement `update:title` pour mettre à jour la valeur du composant parent :
 
 <div class="composition-api">
 
@@ -202,7 +202,7 @@ export default {
 
 ## Liaisons multiple avec `v-model` {#multiple-v-model-bindings}
 
-En tirant parti de la possibilité de cibler une prop et un évènement en particulier, comme nous l'avons appris précédemment avec les [arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
+En tirant parti de la possibilité de cibler une prop et un événement en particulier, comme nous l'avons appris précédemment avec les [arguments de `v-model`](#v-model-arguments), nous pouvons désormais créer plusieurs liaisons v-model sur une seule instance de composant.
 
 Chaque v-model se synchronisera avec une prop différente, sans avoir besoin d'options supplémentaires dans le composant :
 
@@ -340,7 +340,7 @@ export default {
 
 Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - car elle est définie sur la liaison `v-model` `v-model.capitalize="myText"`.
 
-Maintenant que notre prop est configurée, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour modifier la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne de caractères en majuscule chaque fois que l'élément `<input />` déclenche un évènement `input`.
+Maintenant que notre prop est configurée, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour modifier la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne de caractères en majuscule chaque fois que l'élément `<input />` déclenche un événement `input`.
 
 <div class="composition-api">
 

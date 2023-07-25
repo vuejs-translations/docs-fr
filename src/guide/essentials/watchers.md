@@ -18,7 +18,7 @@ export default {
   },
   watch: {
     // à chaque fois que question change, cette fonction sera exécutée
-    question(newQuestion, oldQuestion) {
+    question(newQuestion) {
       if (newQuestion.includes('?')) {
         this.getAnswer()
       }
@@ -75,7 +75,7 @@ const question = ref('')
 const answer = ref('Questions usually contain a question mark. ;-)')
 
 // watch agit directement sur une ref
-watch(question, async (newQuestion, oldQuestion) => {
+watch(question, async (newQuestion) => {
   if (newQuestion.indexOf('?') > -1) {
     answer.value = 'Thinking...'
     try {
@@ -317,7 +317,7 @@ Lorsque vous mutez un état réactif, cela peut déclencher à la fois la mise �
 
 Par défaut, les rappels des observateurs créés par les utilisateurs sont appelés **avant** la mise à jour des composants Vue. Cela signifie que si vous essayez d'accéder au DOM pendant le rappel d'un observateur, le DOM sera dans l'état d'avant la mise à jour de Vue.
 
-Si vous voulez accéder au DOM **après** après que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
+Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
 <div class="options-api">
 
