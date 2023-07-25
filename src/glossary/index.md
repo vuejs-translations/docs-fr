@@ -8,7 +8,7 @@ This glossary is intended to provide some guidance about the meanings of technic
 
 Un *composant asynchrone* est une enveloppe autour d'un autre composant qui permet au composant enveloppé d'être chargé de manière paresseuse. Il est généralement utilisé pour réduire la taille des fichiers .js construits, en leur permettant d'être divisés en morceaux plus petits qui ne sont chargés qu'en cas de besoin.
 
-Vue Router dispose d'une fonctionnalité similaire pour la fonction [chargement paresseux du composant route](https://router.vuejs.org/guide/advanced/lazy-loading.html), bien que cela n'utilise pas la fonction de composants asynchrones de Vue.
+Vue Router dispose d'une fonctionnalité similaire pour le [chargement paresseux du composant route](https://router.vuejs.org/guide/advanced/lazy-loading.html), bien que cela n'utilise pas la fonctionnalité de composants asynchrones de Vue.
 
 Pour plus de détails, voir :
 - [Guide - Composants asynchrones](/guide/components/async.html)
