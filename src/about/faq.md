@@ -16,8 +16,6 @@ En général, Vue 3 offre des paquets plus petits, de meilleures performances, u
 
 - Vous devez prendre en charge IE11. Vue 3 exploite les fonctionnalités JavaScript modernes et ne prend pas en charge IE11.
 
-- Vous attendez toujours que les principaux projets de l'écosystème, comme Nuxt ou Vuetify, publient des versions stables pour Vue 3. Cela est raisonnable si vous ne souhaitez pas utiliser des bibliothèques en phase bêta. Toutefois, notez qu'il existe d'autres bibliothèques de composants Vue 3 déjà stables, telles que [Quasar](https://quasar.dev/), [Naive UI](https://www.naiveui.com/) et [Element Plus](https://element-plus.org/).
-
 Si vous avez l'intention de migrer une application Vue 2 existante vers Vue 3, consultez le [guide de migration](https://v3-migration.vuejs.org/).
 
 ## Est-ce que Vue 2 est toujours maintenu ? {#is-vue-2-still-supported}
