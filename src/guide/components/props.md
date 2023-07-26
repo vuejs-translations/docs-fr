@@ -380,7 +380,7 @@ Pour spécifier les validations de props, vous pouvez fournir un objet avec des 
 ```js
 defineProps({
   // Contrôle de type de base
-  //  (les valeurs`null` et `undefined` autoriseront tous les types)
+  //  (les valeurs `null` et `undefined` autoriseront tous les types)
   propA: Number,
   // Plusieurs types possibles
   propB: [String, Number],
