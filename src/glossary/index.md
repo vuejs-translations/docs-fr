@@ -72,7 +72,7 @@ As with many patterns, there can be some disagreement about whether specific cod
 
 See [Guide - Composables](/guide/reusability/composables.html) for more details about writing composables.
 
-## API de Composition {#composition-api}
+## Composition API {#composition-api}
 
 La '*Composition API* est une collection de fonctions utilisées pour écrire des composants et des composables dans Vue.
 
