@@ -74,7 +74,7 @@ See [Guide - Composables](/guide/reusability/composables.html) for more details 
 
 ## API de Composition {#composition-api}
 
-L'*API de Composition* est une collection de fonctions utilisées pour écrire des composants et des composables dans Vue.
+La '*Composition API* est une collection de fonctions utilisées pour écrire des composants et des composables dans Vue.
 
 Le terme est également utilisé pour décrire l'un des deux styles principaux utilisés pour écrire des composants, l'autre étant l'[API Options](#options-api). Les composants écrits à l'aide de l'API Composition utilisent soit `<script setup>`, soit une fonction explicite `setup()`.
 
