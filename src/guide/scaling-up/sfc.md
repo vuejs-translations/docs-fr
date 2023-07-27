@@ -63,7 +63,7 @@ Si les SFC nécessitent une étape de compilation, les avantages sont nombreux e
 - [Collocation de responsabilités couplées](#what-about-separation-of-concerns)
 - Templates précompilés sans coût de compilation au runtime
 - [CSS à portée limitée au composant](/api/sfc-css-features)
-- [Syntaxe plus confortable avec l'API de Composition](/api/sfc-script-setup)
+- [Syntaxe plus confortable avec la Composition API](/api/sfc-script-setup)
 - Meilleures optimisations à la compilation grâce à l'analyse croisée du template et des scripts.
 - [Support des environnements de développement](/guide/scaling-up/tooling#ide-support) avec autocomplétion et vérification des types pour les expressions dans le template.
 - Prise en charge nativement du remplacement de modules à chaud (HMR).
