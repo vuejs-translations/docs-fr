@@ -13,13 +13,13 @@ Vue Router dispose d'une fonctionnalité similaire pour le [chargement paresseux
 Pour plus de détails, voir :
 - [Guide - Composants asynchrones](/guide/components/async.html)
 
-## compiler macro {#compiler-macro}
+## macro de compilateur {#compiler-macro}
 
-A *compiler macro* is special code that is processed by a compiler and converted into something else. They are effectively a clever form of string replacement.
+Une *macro de compilateur* est un code spécial qui est traité par un compilateur et converti en quelque chose d'autre. Ils sont en fait une forme astucieuse de remplacement de chaînes de caractères.
 
-Vue's [SFC](#single-file-component) compiler supports various macros, such as `defineProps()`, `defineEmits()` and `defineExpose()`. These macros are intentionally designed to look like normal JavaScript functions so that they can leverage the same parser and type inference tooling around JavaScript / TypeScript. However, they are not actual functions that are run in the browser. These are special strings that the compiler detects and replaces with the real JavaScript code that will actually be run.
+Le compilateur [SFC](#single-file-component) de Vue prend en charge diverses macros, telles que `defineProps()`, `defineEmits()` et `defineExpose()`. Ces macros sont intentionnellement conçues pour ressembler à des fonctions JavaScript normales afin qu'elles puissent tirer parti du même analyseur et des mêmes outils d'inférence de type autour de JavaScript / TypeScript. Cependant, elles ne sont pas des fonctions réelles exécutées dans le navigateur. Ce sont des chaînes de caractères spéciales que le compilateur détecte et remplace par le vrai code JavaScript qui sera réellement exécuté.
 
-Macros have limitations on their use that don't apply to normal JavaScript code. For example, you might think that `const dp = defineProps` would allow you to create an alias for `defineProps`, but it'll actually result in an error. There are also limitations on what values can be passed to `defineProps()`, as the 'arguments' have to be processed by the compiler and not at runtime.
+Les macros ont des limites d'utilisation qui ne s'appliquent pas au code JavaScript normal. Par exemple, vous pourriez penser que `const dp = defineProps` vous permettrait de créer un alias pour `defineProps`, mais cela entraînera en fait une erreur. Il existe également des limitations sur les valeurs pouvant être transmises à `defineProps()`, car les 'arguments' doivent être traités par le compilateur et non au moment de l'exécution.
 
 For more details see:
 - [`<script setup>` - `defineProps()` & `defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)
