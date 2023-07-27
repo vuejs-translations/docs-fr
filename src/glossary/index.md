@@ -188,7 +188,7 @@ Pour plus de détails, voir :
 
 ## macro {#macro}
 
-See [compiler macro](#compiler-macro).
+Voir [macro de compilateur](#compiler-macro).
 
 ## named slot {#named-slot}
 
