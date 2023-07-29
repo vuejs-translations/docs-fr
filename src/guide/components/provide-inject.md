@@ -211,7 +211,7 @@ Dans certains cas, la valeur par défaut peut devoir être créée en appelant u
 const value = inject('key', () => new ExpensiveClass(), true)
 ```
 
-Le troisième paramètre indique la valeur par défaut à traiter comme une fonction d'usine.
+Le troisième paramètre indique la valeur par défaut à traiter comme une fonction _factory_.
 
 </div>
 
