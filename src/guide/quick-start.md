@@ -24,7 +24,7 @@ Dans cette section, nous allons vous présenter comment créer une [Single Page 
 
 Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée et que votre répertoire de travail courant est bien celui où vous souhaitez créer un projet. Exécutez la commande suivante dans votre invite de commandes (sans le symbole `>`) :
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
+<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt;</span> <span style="color:#A6ACCD;">npm create vue@latest</span></span></code></pre></div>
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel de création de projets Vue. Des questions (en anglais) vous seront posées pour un certain nombre de fonctionnalités optionnelles telles que la prise en charge de TypeScript et des tests :
 

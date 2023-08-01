@@ -21,7 +21,7 @@ Il est également recommandé d'utiliser ces terrains de jeu en ligne pour fourn
 
 Pour commencer avec Vite + Vue, exécutez simplement :
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">$</span> <span style="color:#A6ACCD;">npm init vue@latest</span></span></code></pre></div>
+<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">$</span> <span style="color:#A6ACCD;">npm create vue@latest</span></span></code></pre></div>
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel d'élaboration d'un projet Vue.
 
