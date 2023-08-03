@@ -84,7 +84,7 @@ Voir la [FAQ de la Composition API](/guide/extras/composition-api-faq) pour plus
 
 Un élément personnalisé est une fonctionnalité de la norme des [Web Components](#web-component), qui est mise en œuvre dans les navigateurs web modernes. Il s'agit de la possibilité d'utiliser un élément HTML personnalisé dans votre balisage HTML pour inclure un composant Web à cet endroit de la page.
 
-Vue dispose d'un support intégré pour le rendu des éléments personnalisés et permet de les utiliser directement dans les templates de composants Vue.
+Vue prend en charge nativement le rendu des éléments personnalisés et permet de les utiliser directement dans les templates de composants Vue.
 
 Les éléments personnalisés ne doivent pas être confondus avec la possibilité d'inclure des composants Vue en tant que balises dans le template d'un autre composant Vue. Les éléments personnalisés sont utilisés pour créer des composants Web, et non des composants Vue.
 
