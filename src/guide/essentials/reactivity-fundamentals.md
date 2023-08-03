@@ -446,7 +446,7 @@ L'API `reactive()` a deux limitations :
    state = reactive({ count: 1 })
    ```
 
-3. **Ne fonctionne pas avec la destructuration :** lorsque nous déstructurons la propriété d'un objet réactif en variables locales, ou lorsque nous passons cette propriété dans une fonction, nous perdons la connexion à la réactivité :
+3. **Ne fonctionne pas avec la destructuration :** lorsque nous déstructurons la propriété de type primitif d'un objet réactif en variables locales, ou lorsque nous passons cette propriété dans une fonction, nous perdons la connexion à la réactivité :
 
    ```js
    const state = reactive({ count: 0 })
