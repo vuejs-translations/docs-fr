@@ -86,7 +86,7 @@ Un *élément personnalisé* est une fonctionnalité de la norme des [Web Compon
 
 Vue prend en charge nativement le rendu des éléments personnalisés et permet de les utiliser directement dans les templates de composants Vue.
 
-Les éléments personnalisés ne doivent pas être confondus avec la possibilité d'inclure des composants Vue en tant que balises dans le template d'un autre composant Vue. Les éléments personnalisés sont utilisés pour créer des composants Web, et non des composants Vue.
+Les éléments personnalisés ne doivent pas être confondus avec la possibilité d'inclure des composants Vue en tant que balises dans le template d'un autre composant Vue. Les éléments personnalisés sont utilisés pour créer des Web Components, et non des composants Vue.
 
 Pour plus de détails, voir :
 - [Vue et les Web Components](/guide/extras/web-components.html)
