@@ -80,16 +80,16 @@ Le terme est également utilisé pour décrire l'un des deux styles principaux u
 
 Voir la [FAQ de la Composition API](/guide/extras/composition-api-faq) pour plus de détails.
 
-## custom element {#custom-element}
+## élément personnalisé {#custom-element}
 
-A *custom element* is a feature of the [Web Components](#web-component) standard, which is implemented in modern web browsers. It refers to the ability to use a custom HTML element in your HTML markup to include a Web Component at that point in the page.
+Un *élément personnalisé* est une fonctionnalité de la norme des [Web Components](#web-component), qui est mise en œuvre dans les navigateurs web modernes. Il s'agit de la possibilité d'utiliser un élément HTML personnalisé dans votre balisage HTML pour inclure un Web Component à cet endroit de la page.
 
-Vue has built-in support for rendering custom elements and allows them to be used directly in Vue component templates.
+Vue prend en charge nativement le rendu des éléments personnalisés et permet de les utiliser directement dans les templates de composants Vue.
 
-Custom elements should not be confused with the ability to include Vue components as tags within another Vue component's template. Custom elements are used to create Web Components, not Vue components.
+Les éléments personnalisés ne doivent pas être confondus avec la possibilité d'inclure des composants Vue en tant que balises dans le template d'un autre composant Vue. Les éléments personnalisés sont utilisés pour créer des Web Components, et non des composants Vue.
 
 Pour plus de détails, voir :
-- [Guide - Vue and Web Components](/guide/extras/web-components.html)
+- [Vue et les Web Components](/guide/extras/web-components.html)
 
 ## directive {#directive}
 
