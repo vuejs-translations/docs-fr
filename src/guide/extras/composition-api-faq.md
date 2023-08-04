@@ -47,7 +47,7 @@ onMounted(() => {
 
 Malgré un style d'API basé sur la composition de fonctions, **la Composition API n'est PAS de la programmation fonctionnelle**. La Composition API est basée sur le paradigme de réactivité mutable et à grain fin de Vue, alors que la programmation fonctionnelle met l'accent sur l'immuabilité.
 
-Si vous souhaitez apprendre à utiliser Vue avec la Composition API, vous pouvez définir la préférence API pour l'ensemble du site sur l'API de composition à l'aide du bouton situé en haut de la barre latérale gauche, puis parcourir le guide depuis le début.
+Si vous souhaitez apprendre à utiliser Vue avec la Composition API, vous pouvez définir la préférence API pour l'ensemble du site sur la Composition API à l'aide du bouton situé en haut de la barre latérale gauche, puis parcourir le guide depuis le début.
 
 ## Pourquoi la Composition API? {#why-composition-api}
 

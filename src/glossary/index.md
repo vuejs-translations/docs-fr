@@ -93,15 +93,15 @@ Pour plus de détails, voir :
 
 ## directive {#directive}
 
-The term *directive* refers to template attributes beginning with the `v-` prefix, or their equivalent shorthands.
+Le terme *directive* fait référence aux attributs de template commençant par le préfixe `v-`, ou à leurs abréviations équivalentes.
 
-Built-in directives include `v-if`, `v-for`, `v-bind`, `v-on` and `v-slot`.
+Les directives intégrées comprennent `v-if`, `v-for`, `v-bind`, `v-on` et `v-slot`.
 
-Vue also supports creating custom directives, though they are typically only used as an 'escape hatch' for manipulating DOM nodes directly. Custom directives generally can't be used to recreate the functionality of the built-in directives.
+Vue permet également de créer des directives personnalisées, bien qu'elles ne soient généralement utilisées comme une 'trappe d'accès' pour manipuler directement les nœuds du DOM. Les directives personnalisées ne peuvent généralement pas être utilisées pour recréer la fonctionnalité des directives intégrées.
 
 Pour plus de détails, voir :
-- [Guide - Template Syntax - Directives](/guide/essentials/template-syntax.html#directives)
-- [Guide - Custom Directives](/guide/reusability/custom-directives.html)
+- [Guide - Syntaxe de template - Directives](/guide/essentials/template-syntax.html#directives)
+- [Guide - Directives personnalisées](/guide/reusability/custom-directives.html)
 
 ## composant dynamique {#dynamic-component}
 

@@ -165,11 +165,11 @@ Les SFC sont une fonctionnalité essentielle de Vue, et c'est la manière recomm
 
 ## Styles d'API {#api-styles}
 
-Les composants Vue peuvent être créés dans deux styles d'API différents : l'**API Options** et l'**API de Composition**.
+Les composants Vue peuvent être créés dans deux styles d'API différents : l'**Options API** et la **Composition API**.
 
-### API Options {#options-api}
+### Options API {#options-api}
 
-Avec l'API Options, nous définissons la logique d'un composant en utilisant un objet d'options telles que `data`, `methods`, et `mounted`. Les propriétés définies par les options sont exposées sur `this` dans les fonctions, qui pointe sur l'instance du composant :
+Avec l'Options API, nous définissons la logique d'un composant en utilisant un objet d'options telles que `data`, `methods`, et `mounted`. Les propriétés définies par les options sont exposées sur `this` dans les fonctions, qui pointe sur l'instance du composant :
 
 ```vue
 <script>
@@ -203,11 +203,11 @@ export default {
 
 [Essayer en ligne](https://play.vuejs.org/#eNptUEtOwzAQvcooQqJVUcK6ChWILUfIosaZkKGOHexxBYpyF7Y9Ry7GOOlng2TZ80bzPuMhe+n7/Bgx22Zl0J563lUWv3vnGWpsVDQMQ2UBigKmEysGP52UZmpSs1asVutlAMAjR28vCEC7aHkLjwse0zM+VPas1jgrMs4G+IoEnaupIbQM5n7xQQkwnbRBq9vUrzFAR0Hu6Rc+XfRJp0NuXR22F1Oy2mMn47dUANxSyOcwm83/WVrnDkEcQP+IYSqOhLN+YmF9U9MS2BnMjftY7d9kThmMXnyJScpZI3EAA8PdcLMe8/16dq2snLK4frYAxq43ilEQQPkemZ2FZ21IH56q7LpTle1eZ21KCw9no3Esi4Ui9LK4amXjH+vhpTQ=)
 
-### API de Composition {#composition-api}
+### Composition API {#composition-api}
 
-Avec l'API de Composition, nous définissons la logique d'un composant à l'aide de fonctions API importées. Dans les SFC, l'API de Composition est généralement utilisée avec [`<script setup>`](/api/sfc-script-setup). L'attribut `setup` est une indication qui permet à Vue d'effectuer des transformations au moment de la compilation, ce qui nous permet d'utiliser l'API de Composition avec moins de code nécessaire aux déclarations. Par exemple, les importations et les variables / fonctions déclarées au niveau racine dans `<script setup>` sont directement utilisables dans le modèle.
+Avec la Composition API, nous définissons la logique d'un composant à l'aide de fonctions API importées. Dans les SFC, la Composition API est généralement utilisée avec [`<script setup>`](/api/sfc-script-setup). L'attribut `setup` est une indication qui permet à Vue d'effectuer des transformations au moment de la compilation, ce qui nous permet d'utiliser la Composition API avec moins de code nécessaire aux déclarations. Par exemple, les importations et les variables / fonctions déclarées au niveau racine dans `<script setup>` sont directement utilisables dans le modèle.
 
-Voici le même composant, avec exactement le même modèle, mais en utilisant l'API de Composition et `<script setup>` à la place :
+Voici le même composant, avec exactement le même modèle, mais en utilisant la Composition API et `<script setup>` à la place :
 
 ```vue
 <script setup>
@@ -236,13 +236,13 @@ onMounted(() => {
 
 ### Laquelle choisir ? {#which-to-choose}
 
-Tout d'abord, les deux styles d'API sont parfaitement capables de couvrir les cas d'utilisation courants. Il s'agit de différentes interfaces alimentées par le même système sous-jacent. En fait, l'API Options est implémentée par dessus l'API de Composition ! Les concepts fondamentaux et les connaissances sur Vue sont partagés entre les deux styles.
+Tout d'abord, les deux styles d'API sont parfaitement capables de couvrir les cas d'utilisation courants. Il s'agit de différentes interfaces alimentées par le même système sous-jacent. En fait, l'Options API est implémentée par dessus la Composition API ! Les concepts fondamentaux et les connaissances sur Vue sont partagés entre les deux styles.
 
-L'API Options est centrée sur le concept d'une "instance de composant" (`this` comme dans l'exemple), qui s'aligne généralement mieux sur un modèle mental basé sur les classes pour les utilisateurs issus de la POO. Elle est également plus adaptée aux débutants, car elle fait abstraction des détails de la réactivité et impose une organisation du code par le biais de groupes d'options.
+L'Options API est centrée sur le concept d'une "instance de composant" (`this` comme dans l'exemple), qui s'aligne généralement mieux sur un modèle mental basé sur les classes pour les utilisateurs issus de la POO. Elle est également plus adaptée aux débutants, car elle fait abstraction des détails de la réactivité et impose une organisation du code par le biais de groupes d'options.
 
-L'API de Composition est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle offre une plus grande liberté d'écriture et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
+La Composition API est centrée sur la déclaration de variables d'état réactives directement dans la portée d'une fonction, et sur la composition de l'état de plusieurs fonctions pour gérer la complexité. Elle offre une plus grande liberté d'écriture et nécessite une compréhension du fonctionnement de la réactivité dans Vue pour être utilisée efficacement. En retour, sa flexibilité permet des modèles plus puissants pour organiser et réutiliser la logique.
 
-Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de l'API de Composition, consultez la [FAQ sur la Composition API](/guide/extras/composition-api-faq).
+Pour en savoir plus sur la comparaison entre les deux styles et les avantages potentiels de la Composition API, consultez la [FAQ sur la Composition API](/guide/extras/composition-api-faq).
 
 Si Vue est nouveau pour vous, voici notre recommandation générale :
 
@@ -250,9 +250,9 @@ Si Vue est nouveau pour vous, voici notre recommandation générale :
 
 - Pour une utilisation en production :
 
-  - Optez pour l'API Options si vous n'utilisez pas d'outils de construction ou si vous prévoyez d'utiliser Vue principalement dans des scénarios peu complexes, par exemple par une amélioration progressive de votre projet.
+  - Optez pour l'Options API si vous n'utilisez pas d'outils de construction ou si vous prévoyez d'utiliser Vue principalement dans des scénarios peu complexes, par exemple par une amélioration progressive de votre projet.
 
-  - Choisissez l'API de Composition + les composants monofichiers (SFC) si vous envisagez de créer des applications complètes avec Vue.
+  - Choisissez la Composition API + les composants monofichiers (SFC) si vous envisagez de créer des applications complètes avec Vue.
 
 Vous n'avez pas à vous engager dans un seul style pendant la phase d'apprentissage. Le reste de la documentation fournira des exemples de code dans les deux styles, et vous pourrez passer de l'un à l'autre à tout moment à l'aide du bouton **Préférence d'API** en haut de la barre latérale gauche.
 

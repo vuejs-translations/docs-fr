@@ -79,7 +79,7 @@ function useToggleFn(
         >
         <VTSwitch
           class="api-switch"
-          aria-label="préférer l'api de composition"
+          aria-label="préférer la Composition API"
           :aria-checked="preferComposition"
           @click="toggleCompositionAPI()"
         />
