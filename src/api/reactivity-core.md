@@ -40,7 +40,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
   ```
 
 - **Voir aussi**
-  - [Guide - Variables réactives avec `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
+  - [Guide - Les fondamentaux de la réactivité avec `ref()`](/guide/essentials/reactivity-fundamentals#ref)
   - [Guide - Typer `ref()`](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
 ## computed() {#computed}
