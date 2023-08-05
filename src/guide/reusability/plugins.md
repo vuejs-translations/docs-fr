@@ -89,7 +89,7 @@ app.use(i18nPlugin, {
 
 Maintenant, notre expression initiale `$translate('greetings.hello')` sera remplacée par `Bonjour!` au moment de l'exécution.
 
-Voir aussi : [Augmenting Global Properties](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
+Voir aussi : [Augmenter les propriétés globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 :::tip
 N'utilisez que rarement les propriétés globales, car cela peut rapidement devenir confus si trop de propriétés globales injectées par différents plugins sont utilisées dans une application.
