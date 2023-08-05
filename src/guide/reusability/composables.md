@@ -128,7 +128,7 @@ export function useMouse() {
 Chaque instance de composant appelant `useMouse()` créera ses propres copies de l'état `x` et `y` afin qu'elles n'interfèrent pas l'une avec l'autre. Si vous souhaitez gérer l'état partagé entre les composants, lisez le chapitre [Gestion d'état](/guide/scaling-up/state-management).
 :::
 
-## Example d'état asynchrone {#async-state-example}
+## Exemple d'état asynchrone {#async-state-example}
 
 Le composable `useMouse()` ne prend aucun argument, alors regardons un autre exemple qui en utilise un. Lors de la récupération de données asynchrone, nous devons souvent gérer différents états : chargement, succès et erreur :
 
@@ -184,7 +184,7 @@ const { data, error } = useFetch('...')
 </script>
 ```
 
-### Accepting Reactive State {#accepting-reactive-state}
+### Acceptation de l'état réactif {#accepting-reactive-state}
 
 `useFetch()` prend une chaîne d'URL statique en entrée, il n'effectue donc la récupération qu'une seule fois. Que se passe-t-il si nous voulons qu'il récupère chaque fois que l'URL change ? Nous pouvons y parvenir en acceptant également une `ref` comme argument :
 
@@ -363,11 +363,11 @@ Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/opti
 
 Pour les raisons ci-dessus, nous ne recommandons plus d'utiliser des mixins dans Vue 3. La fonctionnalité est conservée uniquement pour des raisons de migration et de familiarité.
 
-### vs. Composants Renderless {#vs-renderless-components}
+### vs. Composants sans affichage {#vs-renderless-components}
 
-Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant Renderless](/guide/components/slots#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants renderless.
+Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant sans affichage](/guide/components/slots#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants sans affichage.
 
-Le principal avantage des composables par rapport aux composants renderless est que les composables n'encourent pas de surcharge d'instance de composant supplémentaire. Lorsqu'il est utilisé dans une application entière, la quantité d'instances de composants supplémentaires créées par le modèle de Composant Renderless peut devenir une surcharge de performances notable.
+Le principal avantage des composables par rapport aux composants sans affichage est que les composables n'encourent pas de surcharge d'instance de composant supplémentaire. Lorsqu'il est utilisé dans une application entière, la quantité d'instances de composants supplémentaires créées par le modèle de Composant sans affichage peut devenir une surcharge de performances notable.
 
 La recommandation est d'employer les composables pour centraliser une logique pure, et d'utiliser des composants pour une réutilisation de logique **et** de disposition visuelle.
 
