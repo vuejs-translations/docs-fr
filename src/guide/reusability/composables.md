@@ -363,11 +363,11 @@ Les utilisateurs venant de Vue 2 sont familiers avec l'option [mixins](/api/opti
 
 Pour les raisons ci-dessus, nous ne recommandons plus d'utiliser des mixins dans Vue 3. La fonctionnalité est conservée uniquement pour des raisons de migration et de familiarité.
 
-### vs. Composants Renderless {#vs-renderless-components}
+### vs. Composants sans affichage {#vs-renderless-components}
 
-Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant Renderless](/guide/components/slots#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants renderless.
+Dans le chapitre sur les slots de composants, nous avons discuté du modèle du [Composant sans affichage](/guide/components/slots#renderless-components) basé sur des slots délimités. Nous avons même implémenté la même démo de suivi de la souris en utilisant des composants sans affichage.
 
-Le principal avantage des composables par rapport aux composants renderless est que les composables n'encourent pas de surcharge d'instance de composant supplémentaire. Lorsqu'il est utilisé dans une application entière, la quantité d'instances de composants supplémentaires créées par le modèle de Composant Renderless peut devenir une surcharge de performances notable.
+Le principal avantage des composables par rapport aux composants sans affichage est que les composables n'encourent pas de surcharge d'instance de composant supplémentaire. Lorsqu'il est utilisé dans une application entière, la quantité d'instances de composants supplémentaires créées par le modèle de Composant sans affichage peut devenir une surcharge de performances notable.
 
 La recommandation est d'employer les composables pour centraliser une logique pure, et d'utiliser des composants pour une réutilisation de logique **et** de disposition visuelle.
 
