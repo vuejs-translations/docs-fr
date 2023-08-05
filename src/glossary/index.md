@@ -402,9 +402,9 @@ Pour plus de détails, voir :
 
 ## VNode {#vnode}
 
-A *VNode* is a *virtual DOM node*. They can be created using the [`h()`](/api/render-function.html#h) function.
+Un *VNode* est un *nœud virtuel du DOM*. Ils peuvent être créés à l'aide de la fonction [`h()`](/api/render-function.html#h).
 
-See [virtual DOM](#virtual-dom) for more information.
+Voir [virtual DOM](#virtual-dom) pour plus d'informations.
 
 ## Web Component {#web-component}
 
