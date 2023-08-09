@@ -281,11 +281,11 @@ Pour plus de détails, voir :
 - [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
 - [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
-## API réactivité {#reactivity-api}
+## API de réactivité {#reactivity-api}
 
-L'*API réactivité* est une collection de fonctions de base de Vue liées à la [réactivité](#reactivity). Ils peuvent être utilisés indépendamment des composants. Il comprend des fonctions telles que `ref()`, `reactive()`, `computed()`, `watch()` et `watchEffect()`.
+L'*API de réactivité* est une collection de fonctions de base de Vue liées à la [réactivité](#reactivity). Ils peuvent être utilisés indépendamment des composants. Il comprend des fonctions telles que `ref()`, `reactive()`, `computed()`, `watch()` et `watchEffect()`.
 
-The Reactivity API is a subset of the Composition API.
+L'API de réactivité est un sous-ensemble de la Composition API.
 
 Pour plus de détails, voir :
 - [Reactivity API: Core](/api/reactivity-core.html)
