@@ -288,9 +288,9 @@ L'*API de réactivité* est une collection de fonctions de base de Vue liées à
 L'API de réactivité est un sous-ensemble de la Composition API.
 
 Pour plus de détails, voir :
-- [Reactivity API: Core](/api/reactivity-core.html)
-- [Reactivity API: Utilities](/api/reactivity-utilities.html)
-- [Reactivity API: Advanced](/api/reactivity-advanced.html)
+- [API de la réactivité : Essentiel](/api/reactivity-core.html)
+- [API de la réactivité : Utilitaires](/api/reactivity-utilities.html)
+- [API de la réactivité : Avancé](/api/reactivity-advanced.html)
 
 ## ref {#ref}
 
