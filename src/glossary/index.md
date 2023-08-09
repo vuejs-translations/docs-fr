@@ -306,12 +306,12 @@ Pour plus de détails, voir :
 - [Reactivity API: Utilities](/api/reactivity-utilities.html)
 - [Reactivity API: Advanced](/api/reactivity-advanced.html)
 
-## render function {#render-function}
+## fonction de rendu {#render-function}
 
-A *render function* is the part of a component that generates the VNodes used during rendering. Templates are compiled down into render functions.
+Une *fonction de rendu* est la partie d'un composant qui génère les VNodes utilisés lors du rendu. Les templates sont compilés en fonctions de rendu.
 
 Pour plus de détails, voir :
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 
 ## scheduler {#scheduler}
 
@@ -360,7 +360,7 @@ See also:
 
 ## slot {#slot}
 
-Slots are used to pass content to child components. Whereas props are used to pass data values, slots are used to pass richer content consisting of HTML elements and other Vue components.
+Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alors que les props sont utilisés pour transmettre des données, les slots sont utilisés pour transmettre un contenu plus riche composé d'éléments HTML et d'autres composants Vue.
 
 Pour plus de détails, voir :
 - [Guide - Slots](/guide/components/slots.html)
