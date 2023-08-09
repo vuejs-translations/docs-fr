@@ -360,7 +360,7 @@ See also:
 
 ## slot {#slot}
 
-Slots are used to pass content to child components. Whereas props are used to pass data values, slots are used to pass richer content consisting of HTML elements and other Vue components.
+Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alors que les props sont utilisés pour transmettre des valeurs de données, les slots sont utilisés pour transmettre un contenu plus riche composé d'éléments HTML et d'autres composants Vue.
 
 Pour plus de détails, voir :
 - [Guide - Slots](/guide/components/slots.html)
