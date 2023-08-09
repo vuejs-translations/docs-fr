@@ -360,7 +360,7 @@ See also:
 
 ## slot {#slot}
 
-Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alors que les props sont utilisés pour transmettre des valeurs de données, les slots sont utilisés pour transmettre un contenu plus riche composé d'éléments HTML et d'autres composants Vue.
+Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alors que les props sont utilisés pour transmettre des données, les slots sont utilisés pour transmettre un contenu plus riche composé d'éléments HTML et d'autres composants Vue.
 
 Pour plus de détails, voir :
 - [Guide - Slots](/guide/components/slots.html)
