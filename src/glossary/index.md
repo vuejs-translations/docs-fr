@@ -1,6 +1,10 @@
 # Glossaire {#glossary}
 
-This glossary is intended to provide some guidance about the meanings of technical terms that are in common usage when talking about Vue. It is intended to be *descriptive* of how terms are commonly used, not a *prescriptive* specification of how they must be used. Some terms may have slightly different meanings or nuances depending on the surrounding context.
+:::warning Traduction en cours 
+Notre équipe de traduction travaille sur la traduction du glossaire, vous pouvez rencontrer du contenu non traduit.
+:::
+
+Ce glossaire est destiné à fournir la signification des termes techniques couramment utilisés lorsque l'on parle de Vue. Il est destiné à être *descriptif* sur la façon dont les termes sont couramment utilisés, et non une spécification *prescriptive* de la façon dont ils doivent être utilisés. Certains termes peuvent avoir des significations ou des nuances légèrement différentes selon le contexte environnant.
 
 [[TOC]]
 
