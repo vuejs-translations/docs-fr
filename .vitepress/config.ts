@@ -256,7 +256,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Mise à l\'échelle',
+      text: 'Approfondir',
       items: [
         { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
         { text: 'Outils', link: '/guide/scaling-up/tooling' },
