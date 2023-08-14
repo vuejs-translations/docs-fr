@@ -72,9 +72,9 @@ Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s
 * La fonction est typiquement censée être appelée pendant l'exécution synchrone de la fonction `setup()` d'un composant (ou, de manière équivalente, pendant l'exécution d'un bloc `<script setup>`). Cela lie l'invocation du composable au contexte actuel du composant, par exemple via des appels à `provide()`, `inject()` ou `onMounted()`.
 * Les composables renvoient généralement un objet simple, et non un objet réactif. Cet objet contient généralement des références et des fonctions et est censé être déstructuré dans le code appelant.
 
-As with many patterns, there can be some disagreement about whether specific code qualifies for the label. Not all JavaScript utility functions are composables. If a function doesn't use the Composition API then it probably isn't a composable. If it doesn't expect to be called during the synchronous execution of `setup()` then it probably isn't a composable. Composables are specifically used to encapsulate stateful logic, they are not just a naming convention for functions.
+Comme pour de nombreux modèles, il peut y avoir des désaccords sur la question de savoir si un code spécifique peut prétendre au label. Toutes les fonctions utilitaires JavaScript ne sont pas composables. Si une fonction n'utilise pas la composition API, elle n'est probablement pas composable. Si elle ne s'attend pas à être appelée pendant l'exécution synchrone de `setup()` alors elle n'est probablement pas composable. Les composables sont spécifiquement utilisés pour encapsuler la logique avec état, ils ne sont pas simplement une convention d'appellation pour les fonctions.
 
-See [Guide - Composables](/guide/reusability/composables.html) for more details about writing composables.
+Voir le [Guide - Composables](/guide/reusability/composables.html) pour plus de détails sur l'écriture des composables.
 
 ## Composition API {#composition-api}
 
