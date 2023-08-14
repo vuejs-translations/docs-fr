@@ -256,7 +256,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Scaling Up',
+      text: 'Mise à l\'échelle',
       items: [
         { text: 'Composants monofichiers', link: '/guide/scaling-up/sfc' },
         { text: 'Outils', link: '/guide/scaling-up/tooling' },
@@ -308,7 +308,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: 'Extra Topics',
+      text: 'Sujets additionnels',
       items: [
         {
           text: "Manières d'utiliser Vue",
