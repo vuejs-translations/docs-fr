@@ -66,11 +66,11 @@ The word 'component' also features in several other terms:
 
 Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s'agit pas d'une fonctionnalité distincte de Vue, mais simplement d'un moyen d'utiliser la [composition API](#composition-api) du framework.
 
-* A composable is a function.
-* Composables are used to encapsulate and reuse stateful logic.
-* The function name usually begins with `use`, so that other developers know it's a composable.
-* The function is typically expected to be called during the synchronous execution of a component's `setup()` function (or, equivalently, during the execution of a `<script setup>` block). This ties the invocation of the composable to the current component context, e.g. via calls to `provide()`, `inject()` or `onMounted()`.
-* Composables typically return a plain object, not a reactive object. This object usually contains refs and functions and is expected to be destructured within the calling code.
+* Un composable est une fonction.
+* Les composables sont utilisés pour encapsuler et réutiliser la logique de l'état.
+* Le nom de la fonction commence généralement par `use`, afin que les autres développeurs sachent qu'il s'agit d'une fonction composable.
+* La fonction est typiquement censée être appelée pendant l'exécution synchrone de la fonction `setup()` d'un composant (ou, de manière équivalente, pendant l'exécution d'un bloc `<script setup>`). Cela lie l'invocation du composable au contexte actuel du composant, par exemple via des appels à `provide()`, `inject()` ou `onMounted()`.
+* Les composables renvoient généralement un objet simple, et non un objet réactif. Cet objet contient généralement des références et des fonctions et est censé être déstructuré dans le code appelant.
 
 As with many patterns, there can be some disagreement about whether specific code qualifies for the label. Not all JavaScript utility functions are composables. If a function doesn't use the Composition API then it probably isn't a composable. If it doesn't expect to be called during the synchronous execution of `setup()` then it probably isn't a composable. Composables are specifically used to encapsulate stateful logic, they are not just a naming convention for functions.
 
