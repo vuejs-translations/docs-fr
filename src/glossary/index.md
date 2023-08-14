@@ -1,6 +1,6 @@
 # Glossaire {#glossary}
 
-:::warning Traduction en cours 
+:::warning Traduction en cours
 Notre équipe de traduction travaille sur la traduction du glossaire, vous pouvez rencontrer du contenu non traduit.
 :::
 
@@ -64,7 +64,7 @@ The word 'component' also features in several other terms:
 
 ## composable {#composable}
 
-The term *composable* describes a common usage pattern in Vue. It isn't a separate feature of Vue, it's just a way of using the framework's [Composition API](#composition-api).
+Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s'agit pas d'une fonctionnalité distincte de Vue, mais simplement d'un moyen d'utiliser la [composition API](#composition-api) du framework.
 
 * A composable is a function.
 * Composables are used to encapsulate and reuse stateful logic.
