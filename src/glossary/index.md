@@ -64,7 +64,7 @@ The word 'component' also features in several other terms:
 
 ## composable {#composable}
 
-Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s'agit pas d'une fonctionnalité distincte de Vue, mais simplement d'un moyen d'utiliser la [composition API](#composition-api) du framework.
+Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s'agit pas d'une fonctionnalité distincte de Vue, mais simplement d'un moyen d'utiliser la [Composition API](#composition-api) du framework.
 
 * Un composable est une fonction.
 * Les composables sont utilisés pour encapsuler et réutiliser la logique de l'état.
