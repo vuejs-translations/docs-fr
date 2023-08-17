@@ -67,7 +67,7 @@ The word 'component' also features in several other terms:
 Le terme *composable* décrit un modèle d'utilisation courant dans Vue. Il ne s'agit pas d'une fonctionnalité distincte de Vue, mais simplement d'un moyen d'utiliser la [Composition API](#composition-api) du framework.
 
 * Un composable est une fonction.
-* Les composables sont utilisés pour encapsuler et réutiliser la logique de l'état.
+* Les composables sont utilisés pour encapsuler et réutiliser la logique avec état.
 * Le nom de la fonction commence généralement par `use`, afin que les autres développeurs sachent qu'il s'agit d'une fonction composable.
 * La fonction est typiquement censée être appelée pendant l'exécution synchrone de la fonction `setup()` d'un composant (ou, de manière équivalente, pendant l'exécution d'un bloc `<script setup>`). Cela lie l'invocation du composable au contexte actuel du composant, par exemple via des appels à `provide()`, `inject()` ou `onMounted()`.
 * Les composables renvoient généralement un objet simple, et non un objet réactif. Cet objet contient généralement des références et des fonctions et est censé être déstructuré dans le code appelant.
