@@ -45,7 +45,7 @@ const HelloWorldComponent = {
 }
 ```
 
-En pratique, la plupart des applications Vue sont écrites en utilisant des [composants monofichiers](#single-file-component) (fichiers '.vue'). Bien que ces composants puissent ne pas sembler être des objets à première vue, le compilateur SFC les convertira en un objet, qui sera utilisé comme exportation par défaut pour le fichier. D'un point de vue externe, un fichier `.vue` n'est qu'un module ES qui exporte un objet composant.
+En pratique, la plupart des applications Vue sont écrites en utilisant des [composants monofichiers](#single-file-component) (fichiers `.vue`). Bien que ces composants puissent ne pas sembler être des objets à première vue, le compilateur SFC les convertira en un objet, qui sera utilisé comme exportation par défaut pour le fichier. D'un point de vue externe, un fichier `.vue` n'est qu'un module ES qui exporte un objet composant.
 
 Les propriétés d'un objet composant sont généralement appelées *options*. C'est là que l'[Options API](#options-api) tire son nom.
 
