@@ -29,13 +29,13 @@ Pour plus de détails, voir :
 - [`<script setup>` - `defineProps()` & `defineEmits()`](/api/sfc-script-setup.html#defineprops-defineemits)
 - [`<script setup>` - `defineExpose()`](/api/sfc-script-setup.html#defineexpose)
 
-## component {#component}
+## composant {#component}
 
-The term *component* is not unique to Vue. It is common to many UI frameworks. It describes a chunk of the UI, such as a button or checkbox. Components can also be combined to form larger components.
+Le terme *composant* n'est pas propre à Vue. Il est commun à de nombreux frameworks d'interface utilisateur. Il décrit une partie de l'interface utilisateur, comme un bouton ou une case à cocher. Les composants peuvent également être combinés pour former des composants plus grands.
 
-Components are the primary mechanism provided by Vue to split a UI into smaller pieces, both to improve maintainability and to allow for code reuse.
+Les composants sont le principal mécanisme fourni par Vue pour diviser une interface utilisateur en plus petits éléments, à la fois pour améliorer la maintenabilité et pour permettre la réutilisation du code.
 
-A Vue component is an object. All properties are optional, but either a template or render function is required for the component to render. For example, the following object would be a valid component:
+Un composant Vue est un objet. Toutes les propriétés sont facultatives, mais un template ou une fonction de rendu est requis pour que le composant soit rendu. Par exemple, l'objet suivant serait un composant valide :
 
 ```js
 const HelloWorldComponent = {
@@ -45,21 +45,21 @@ const HelloWorldComponent = {
 }
 ```
 
-In practice, most Vue applications are written using [Single-File Components](#single-file-component) (`.vue` files). While these components may not appear to be objects at first glance, the SFC compiler will convert them into an object, which is used as the default export for the file. From an external perspective, a `.vue` file is just an ES module that exports a component object.
+En pratique, la plupart des applications Vue sont écrites en utilisant des [composants monofichiers](#single-file-component) (fichiers `.vue`). Bien que ces composants puissent ne pas sembler être des objets à première vue, le compilateur SFC les convertira en un objet, qui sera utilisé comme exportation par défaut pour le fichier. D'un point de vue externe, un fichier `.vue` n'est qu'un module ES qui exporte un objet composant.
 
-The properties of a component object are usually referred to as *options*. This is where the [Options API](#options-api) gets its name.
+Les propriétés d'un objet composant sont généralement appelées *options*. C'est là que l'[Options API](#options-api) tire son nom.
 
-The options for a component define how instances of that component should be created. Components are conceptually similar to classes, though Vue doesn't use actual JavaScript classes to define them.
+Les options d'un composant définissent comment les instances de ce composant doivent être créées. Les composants sont conceptuellement similaires aux classes, bien que Vue n'utilise pas de classes JavaScript réelles pour les définir.
 
-The term component can also be used more loosely to refer to component instances.
+Le terme composant peut également être utilisé plus librement pour désigner des instances de composant.
 
 Pour plus de détails, voir :
-- [Guide - Component Basics](/guide/essentials/component-basics.html)
+- [Guide - Principes fondamentaux des composants](/guide/essentials/component-basics.html)
 
-The word 'component' also features in several other terms:
-- [async component](#async-component)
+Le mot « composant » apparaît également dans plusieurs autres termes :
+- [composant async](#async-component)
 - [composant dynamique](#dynamic-component)
-- [functional component](#functional-component)
+- [component fonctionnel](#functional-component)
 - [Web Component](#web-component)
 
 ## composable {#composable}
