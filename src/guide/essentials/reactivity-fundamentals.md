@@ -514,7 +514,7 @@ Dans l'exemple ci-dessous, `count` et `object` sont des propriétés de premier 
 
 ```js
 const count = ref(0)
-const object = { id: ref(0) }
+const object = { id: ref(1) }
 ```
 
 Cette expression fonctionne donc comme prévu :
