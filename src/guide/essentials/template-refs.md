@@ -32,7 +32,7 @@ onMounted(() => {
 </template>
 ```
 
-Si vous n'utilisez pas `<script setup>`, assurez vous d'également retourner la ref depuis `setup()`:
+Si vous n'utilisez pas `<script setup>`, assurez vous également de retourner la ref depuis `setup()`:
 
 ```js{6}
 export default {
@@ -71,7 +71,7 @@ Notez que vous ne pouvez accéder à la ref **qu'après que le composant ait ét
 
 <div class="composition-api">
 
-Si vous essayez d'observer les changements d'une ref du template, assurez vous de prendre en compte le cas où la raf a une valeur `null` :
+Si vous essayez d'observer les changements d'une ref du template, assurez vous de prendre en compte le cas où la ref a une valeur `null` :
 
 ```js
 watchEffect(() => {
