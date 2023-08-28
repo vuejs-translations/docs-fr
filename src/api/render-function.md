@@ -242,7 +242,7 @@ Utilisée pour résoudre manuellement une directive enregistrée via son nom.
 
 - **Détails**
 
-  **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer le composant.**
+  **Remarque : cette fonction n'est pas nécessaire si vous pouvez directement importer la directive.**
 
   `resolveDirective()` doit être appelée à l'intérieur de<span class="composition-api">la fonction `setup()` ou</span> la fonction de rendu afin de résoudre à partir du bon contexte de composant.
 

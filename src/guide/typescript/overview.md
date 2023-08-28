@@ -34,7 +34,7 @@ Avec une configuration basée sur Vite, le serveur de développement et le bundl
 
   - [TypeScript Vue Plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) est également nécessaire pour obtenir la prise en charge du type pour les importations `*.vue` dans les fichiers TS.
 
-- [WebStorm](https://www.jetbrains.com/webstorm/) fournit également une prise en charge prête à l'emploi pour TypeScript et Vue. D'autres IDE JetBrains les prennent également en charge, soit prêts à l'emploi, soit via [un plugin gratuit](https://plugins.jetbrains.com/plugin/9442-vue-js).
+- [WebStorm](https://www.jetbrains.com/webstorm/) fournit également une prise en charge prête à l'emploi pour TypeScript et Vue. D'autres IDE JetBrains les prennent également en charge, soit prêts à l'emploi, soit via [un plugin gratuit](https://plugins.jetbrains.com/plugin/9442-vue-js). À partir de la version 2023.2, WebStorm et le plugin Vue sont livrés avec une prise en charge intégrée de Vue Language Server. Vous pouvez configurer le service Vue pour qu'il utilise l'intégration Volar sur toutes les versions de TypeScript, sous Settings > Languages and frameworks > TypeScript > Vue. Par défaut, Volar sera utilisé pour les versions TypeScript 5.0 et supérieures.
 
 ### Configurer `tsconfig.json` {#configuring-tsconfig-json}
 
