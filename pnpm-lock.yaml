@@ -9,7 +9,7 @@ dependencies:
     specifier: ^1.5.0
     version: 1.5.0(vue@3.3.4)
   '@vue/theme':
-    specifier: ^2.2.3
+    specifier: ^2.2.4
     version: 2.2.4(vitepress@1.0.0-beta.7)(vue@3.3.4)
   dynamics.js:
     specifier: ^1.1.5
@@ -18,7 +18,7 @@ dependencies:
     specifier: ^3.9.0
     version: 3.9.0
   vitepress:
-    specifier: ^1.0.0-beta.1
+    specifier: 1.0.0-beta.7
     version: 1.0.0-beta.7(@types/node@16.10.3)(terser@5.14.2)
   vue:
     specifier: ^3.3.4
