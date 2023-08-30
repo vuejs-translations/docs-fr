@@ -247,7 +247,7 @@ Un composant de la "classe de base" à partir duquel on peut étendre un composa
   :::warning Non recommandé pour la Composition API
   `extends` est conçu pour l'Options API et ne gère pas la fusion du hook `setup()`.
 
-  Avec la Composition API, le modèle mental préféré pour la réutilisation logique est la « composition » plutôt que « l'héritage ». Si vous avez la logique d'un composant qui doit être réutilisée dans un autre, envisagez d'extraire la logique pertinente dans un [Composable](/guide/reusability/composables#composables).
+  Avec la Composition API, le modèle mental préféré pour la réutilisation logique est la « composition » plutôt que « l'héritage ». Si vous avez besoin de réutiliser la logique d'un composant dans un autre, envisagez d'extraire ce qui est pertinent dans un [Composable](/guide/reusability/composables#composables).
 
   Si vous avez toujours l'intention d'« étendre » un composant à l'aide de la Composition API, vous pouvez appeler le `setup()` du composant de base dans le `setup()` du composant d'extension :
 
