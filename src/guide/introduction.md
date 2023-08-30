@@ -191,7 +191,7 @@ export default {
 
   // hooks de cycle de vie
   mounted() {
-    console.log(`Le valeur initiale de count est ${this.count}.`)
+    console.log(`La valeur initiale de count est ${this.count}.`)
   }
 }
 </script>
@@ -223,7 +223,7 @@ function increment() {
 
 // hooks de cycle de vie
 onMounted(() => {
-  console.log(`Le valeur initiale de count est ${this.count}.`)
+  console.log(`La valeur initiale de count est ${this.count}.`)
 })
 </script>
 
