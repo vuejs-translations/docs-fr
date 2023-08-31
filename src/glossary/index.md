@@ -130,15 +130,15 @@ Pour plus de détails, voir :
 
 ## fragment {#fragment}
 
-The term *fragment* refers to a special type of [VNode](#vnode) that is used as a parent for other VNodes, but which doesn't render any elements itself.
+Le terme *fragment* se réfère à un type special de [VNode](#vnode) qui est utilisé comme parent pour les autres VNodes, mais qui ne rend aucun élément lui-même.
 
-The name comes from the similar concept of a [`DocumentFragment`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) in the native DOM API.
+Le nom provient d'un concept similaire au [`DocumentFragment`](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) dans le DOM API natif.
 
-Fragments are used to support components with multiple root nodes. While such components might appear to have multiple roots, behind the scenes they use a fragment node as a single root, as a parent of the 'root' nodes.
+Les fragments sont utilisés pour supporter les composants avec de multiples noeuds parent. Bien que ces composant peuvent donner l'impression d'avoir plusieurs noeuds parent, dans les coulisses ils utilisent un noeud fragment comme unique parent, comme parent des noeuds 'parent'.
 
-Fragments are also used by the template compiler as a way to wrap multiple dynamic nodes, e.g. those created via `v-for` or `v-if`. This allows for extra hints to be passed to the [VDOM](#virtual-dom) patching algorithm. Much of this is handled internally, but one place you may encounter this directly is using a `key` on a `<template>` tag with `v-for`. In that scenario, the `key` is added as a [prop](#prop) to the fragment VNode.
+Les fragments sont aussi utilisées par le compilateur de template comme un moyen d'envelopper plusieurs noeuds dynamiques, par exemple ceux créés avec `v-for` ou `v-if`. Cela permet de passer des informations supplémentaires à l'algorithme de correction du [VDOM](#virtual-dom). La majorité est géré en interne, mais un endroit où vous pourriez rencontrer cela directement est en utilisant `key` sur un élément `<template>` avec `v-for`. Dans ce scénario, `key` est ajouté comme une [prop](#prop) au fragment VNode.
 
-Fragment nodes are currently rendered to the DOM as empty text nodes, though that is an implementation detail. You may encounter those text nodes if you use `$el` or attempt to walk the DOM with built-in browser APIs.
+Les noeuds fragment sont actuellement rendus dans le DOM en tant que noeuds de texte vides, cependant ceci est un détails d'implémentation. Vous pourriez rencontrer ces noeuds texte si vous utilisez `$el` ou essayez de parcourir le DOM avec des API intégrées à votre navigateur.
 
 ## functional component {#functional-component}
 
