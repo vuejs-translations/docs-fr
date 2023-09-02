@@ -144,7 +144,7 @@ Fragment nodes are currently rendered to the DOM as empty text nodes, though tha
 
 Une définition de composant est généralement un objet contenant des options. Cela peut sembler différent si vous utilisez `<script setup>`, mais le composant exporté depuis le fichier `.vue` sera toujours un objet.
 
-A *functional component* is an alternative form of component that is declared using a function instead. That function acts as the [render function](#render-function) for the component.
+Un *composant fonctionnel* est une autre forme de composant déclaré à l'aide d'une fonction. Cette fonction fait office de [fonction de rendu](#render-function) pour le composant.
 
 A functional component cannot have any state of its own. It also doesn't go through the usual component lifecycle, so lifecycle hooks can't be used. This makes them slightly lighter than normal, stateful components.
 
