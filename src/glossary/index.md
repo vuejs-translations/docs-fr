@@ -140,9 +140,9 @@ Fragments are also used by the template compiler as a way to wrap multiple dynam
 
 Fragment nodes are currently rendered to the DOM as empty text nodes, though that is an implementation detail. You may encounter those text nodes if you use `$el` or attempt to walk the DOM with built-in browser APIs.
 
-## functional component {#functional-component}
+## composant fonctionnel {#functional-component}
 
-A component definition is usually an object containing options. It may not appear that way if you're using `<script setup>`, but the component exported from the `.vue` file will still be an object.
+Une définition de composant est généralement un objet contenant des options. Cela peut sembler différent si vous utilisez `<script setup>`, mais le composant exporté depuis le fichier `.vue` sera toujours un objet.
 
 A *functional component* is an alternative form of component that is declared using a function instead. That function acts as the [render function](#render-function) for the component.
 
