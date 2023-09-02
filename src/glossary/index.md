@@ -146,10 +146,10 @@ Une définition de composant est généralement un objet contenant des options. 
 
 Un *composant fonctionnel* est une autre forme de composant déclaré à l'aide d'une fonction. Cette fonction fait office de [fonction de rendu](#render-function) pour le composant.
 
-A functional component cannot have any state of its own. It also doesn't go through the usual component lifecycle, so lifecycle hooks can't be used. This makes them slightly lighter than normal, stateful components.
+Un composant fonctionnel ne peut pas avoir d'état propre. Il ne passe pas non plus par le cycle de vie habituel des composants, de sorte que les hooks de cycle de vie ne peuvent pas être utilisés. Ils sont donc légèrement plus légers que les composants habituels avec état.
 
 Pour plus de détails, voir :
-- [Guide - Render Functions & JSX - Functional Components](/guide/extras/render-function.html#functional-components)
+- [Guide - Fonctions de rendu et JSX - Composants fonctionnels](/guide/extras/render-function.html#functional-components)
 
 ## hoisting {#hoisting}
 
