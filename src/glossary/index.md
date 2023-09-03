@@ -140,16 +140,16 @@ Fragments are also used by the template compiler as a way to wrap multiple dynam
 
 Fragment nodes are currently rendered to the DOM as empty text nodes, though that is an implementation detail. You may encounter those text nodes if you use `$el` or attempt to walk the DOM with built-in browser APIs.
 
-## functional component {#functional-component}
+## composant fonctionnel {#functional-component}
 
-A component definition is usually an object containing options. It may not appear that way if you're using `<script setup>`, but the component exported from the `.vue` file will still be an object.
+Une définition de composant est généralement un objet contenant des options. Cela peut sembler différent si vous utilisez `<script setup>`, mais le composant exporté depuis le fichier `.vue` sera toujours un objet.
 
-A *functional component* is an alternative form of component that is declared using a function instead. That function acts as the [render function](#render-function) for the component.
+Un *composant fonctionnel* est une autre forme de composant déclaré à l'aide d'une fonction. Cette fonction fait office de [fonction de rendu](#render-function) pour le composant.
 
-A functional component cannot have any state of its own. It also doesn't go through the usual component lifecycle, so lifecycle hooks can't be used. This makes them slightly lighter than normal, stateful components.
+Un composant fonctionnel ne peut pas avoir d'état propre. Il ne passe pas non plus par le cycle de vie habituel des composants, de sorte que les hooks de cycle de vie ne peuvent pas être utilisés. Ils sont donc légèrement plus légers que les composants habituels avec état.
 
 Pour plus de détails, voir :
-- [Guide - Render Functions & JSX - Functional Components](/guide/extras/render-function.html#functional-components)
+- [Guide - Fonctions de rendu et JSX - Composants fonctionnels](/guide/extras/render-function.html#functional-components)
 
 ## hoisting {#hoisting}
 
