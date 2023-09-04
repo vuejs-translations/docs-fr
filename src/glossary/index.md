@@ -136,7 +136,7 @@ Le nom provient d'un concept similaire au [`DocumentFragment`](https://developer
 
 Les fragments sont utilisés pour supporter les composants avec de multiples noeuds parent. Bien que ces composant peuvent donner l'impression d'avoir plusieurs noeuds parent, dans les coulisses ils utilisent un noeud fragment comme unique parent, comme parent des noeuds 'racine'.
 
-Les fragments sont aussi utilisées par le compilateur de template comme un moyen d'envelopper plusieurs noeuds dynamiques, par exemple ceux créés avec `v-for` ou `v-if`. Cela permet de passer des informations supplémentaires à l'algorithme de correction du [VDOM](#virtual-dom). La majorité est géré en interne, mais un endroit où vous pourriez rencontrer cela directement est en utilisant `key` sur un élément `<template>` avec `v-for`. Dans ce scénario, `key` est ajouté comme une [prop](#prop) au fragment VNode.
+Les fragments sont aussi utilisées par le compilateur de template comme un moyen d'envelopper plusieurs noeuds dynamiques, par exemple ceux créés avec `v-for` ou `v-if`. Cela permet de passer des informations supplémentaires à l'algorithme de correction du [VDOM](#virtual-dom). La majorité est gérée en interne, mais un endroit où vous pourriez rencontrer cela directement est en utilisant `key` sur un élément `<template>` avec `v-for`. Dans ce scénario, `key` est ajouté comme une [prop](#prop) au fragment VNode.
 
 Les noeuds fragment sont actuellement rendus dans le DOM en tant que noeuds de texte vides, cependant ceci est un détails d'implémentation. Vous pourriez rencontrer ces noeuds texte si vous utilisez `$el` ou essayez de parcourir le DOM avec des API intégrées à votre navigateur.
 
