@@ -151,13 +151,13 @@ A functional component cannot have any state of its own. It also doesn't go thro
 Pour plus de détails, voir :
 - [Guide - Render Functions & JSX - Functional Components](/guide/extras/render-function.html#functional-components)
 
-## hoisting {#hoisting}
+## hissage {#hoisting}
 
-Le terme *hoisting* est utilisé pour décrire l'exécution d'une section de code avant qu'elle ne soit atteinte, avant d'autres codes. L'exécution est 'tirée vers le haut' à un point antérieur.
+Le terme *hissage* est utilisé pour décrire l'exécution d'une section de code avant qu'elle ne soit atteinte, avant d'autres codes. L'exécution est 'tirée vers le haut' à un point antérieur.
 
-JavaScript utilise le hoisting pour certaines constructions, telles que `var`, `import` et les déclarations de fonctions.
+JavaScript utilise le hissage pour certaines constructions, telles que `var`, `import` et les déclarations de fonctions.
 
-Dans le contexte de Vue, le compilateur de template applique le *static hoisting* pour améliorer les performances. Lors de la conversion d'un modèle en fonction de rendu, les VNodes correspondant au contenu statique peuvent être créés une fois et réutilisés. Ces VNodes statiques sont décrits comme hissés parce qu'ils sont créés en dehors de la fonction de rendu, avant qu'elle ne s'exécute. Une forme similaire de hoisting est appliquée aux objets statiques ou aux tableaux générés par le compilateur de template.
+Dans le contexte de Vue, le compilateur de template applique le *hissage statique* pour améliorer les performances. Lors de la conversion d'un modèle en fonction de rendu, les VNodes correspondant au contenu statique peuvent être créés une fois et réutilisés. Ces VNodes statiques sont décrits comme hissés parce qu'ils sont créés en dehors de la fonction de rendu, avant qu'elle ne s'exécute. Une forme similaire de hissage est appliquée aux objets statiques ou aux tableaux générés par le compilateur de template.
 
 Pour plus de détails, voir :
 - [Guide - Mécanismes de rendu - Hissage statique](/guide/extras/rendering-mechanism.html#static-hoisting)
