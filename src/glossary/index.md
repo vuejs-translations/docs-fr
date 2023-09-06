@@ -177,7 +177,7 @@ Pour plus de détails, voir :
 
 ## inject {#inject}
 
-See [provide / inject](#provide-inject).
+Voir [provide / inject](#provide-inject).
 
 ## lifecycle hooks {#lifecycle-hooks}
 
