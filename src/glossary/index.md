@@ -181,7 +181,7 @@ See [provide / inject](#provide-inject).
 
 ## hooks de cycle de vie {#lifecycle-hooks}
 
-A Vue component instance goes through a lifecycle. For example, it is created, mounted, updated, and unmounted.
+Une instance de composant Vue suit un cycle de vie. Par exemple, elle est créée, montée, mise à jour et démontée.
 
 The *lifecycle hooks* are a way to listen for these lifecycle events.
 
