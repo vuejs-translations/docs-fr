@@ -247,9 +247,9 @@ Pour plus de détails, voir :
 
 ## provide / inject {#provide-inject}
 
-`provide` and `inject` are a form of inter-component communication.
+`provide` et `inject` sont une forme de communication inter-composants.
 
-When a component *provides* a value, all descendants of that component can then choose to grab that value, using `inject`. Unlike with props, the providing component doesn't know precisely which component is receiving the value.
+Lorsqu'un composant *fournit* une valeur, tous les descendants de ce composant peuvent alors choisir de récupérer cette valeur, en utilisant `inject`. Contrairement à ce qui se passe avec les props, le composant qui fournit la valeur ne sait pas précisément quel composant la reçoit.
 
 `provide` and `inject` are sometimes used to avoid *prop drilling*. They can also be used as an implicit way for a component to communicate with its slot contents.
 
