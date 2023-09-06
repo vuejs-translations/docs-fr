@@ -179,16 +179,16 @@ Pour plus de détails, voir :
 
 Voir [provide / inject](#provide-inject).
 
-## lifecycle hooks {#lifecycle-hooks}
+## hooks du cycle de vie {#lifecycle-hooks}
 
-A Vue component instance goes through a lifecycle. For example, it is created, mounted, updated, and unmounted.
+Une instance de composant Vue suit un cycle de vie. Par exemple, elle est créée, montée, mise à jour et démontée.
 
-The *lifecycle hooks* are a way to listen for these lifecycle events.
+Les *hooks du cycle de vie* sont un moyen d'écouter ces événements du cycle de vie.
 
-With the Options API, each hook is provided as a separate option, e.g. `mounted`. The Composition API uses functions instead, such as `onMounted()`.
+Avec l'Option API, chaque hook est fourni comme une option séparée, par exemple `mounted`. La Composition API utilise des fonctions à la place, comme `onMounted()`.
 
 Pour plus de détails, voir :
-- [Guide - Lifecycle Hooks](/guide/essentials/lifecycle.html)
+- [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
 
 ## macro {#macro}
 
