@@ -162,9 +162,9 @@ In a Vue context, the template compiler applies *static hoisting* to improve per
 Pour plus de détails, voir :
 - [Guide - Rendering Mechanism - Static Hoisting](/guide/extras/rendering-mechanism.html#static-hoisting)
 
-## in-DOM template {#in-dom-template}
+## template dans le DOM {#in-dom-template}
 
-There are various ways to specify a template for a component. In most cases the template is provided as a string.
+Il existe plusieurs façons de spécifier un template pour un composant. Dans la plupart des cas, le template est fourni sous la forme d'une chaîne de caractères.
 
 The term *in-DOM template* refers to the scenario where the template is provided in the form of DOM nodes, instead of a string. Vue then converts the DOM nodes into a template string using `innerHTML`.
 
