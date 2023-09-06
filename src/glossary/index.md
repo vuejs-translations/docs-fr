@@ -185,7 +185,7 @@ Une instance de composant Vue suit un cycle de vie. Par exemple, elle est créé
 
 Les *hooks de cycle de vie* sont un moyen d'écouter ces événements du cycle de vie.
 
-With the Options API, each hook is provided as a separate option, e.g. `mounted`. The Composition API uses functions instead, such as `onMounted()`.
+Avec l'Option API, chaque hook est fourni comme une option séparée, par exemple `mounted`. La Composition API utilise des fonctions à la place, comme `onMounted()`.
 
 Pour plus de détails, voir :
 - [Guide - Les hooks du cycle de vie](/guide/essentials/lifecycle.html)
