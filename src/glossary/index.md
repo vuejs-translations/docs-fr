@@ -162,18 +162,18 @@ In a Vue context, the template compiler applies *static hoisting* to improve per
 Pour plus de détails, voir :
 - [Guide - Rendering Mechanism - Static Hoisting](/guide/extras/rendering-mechanism.html#static-hoisting)
 
-## in-DOM template {#in-dom-template}
+## template depuis le DOM {#in-dom-template}
 
-There are various ways to specify a template for a component. In most cases the template is provided as a string.
+Il existe plusieurs façons de spécifier un template pour un composant. Dans la plupart des cas, le template est fourni sous la forme d'une chaîne de caractères.
 
-The term *in-DOM template* refers to the scenario where the template is provided in the form of DOM nodes, instead of a string. Vue then converts the DOM nodes into a template string using `innerHTML`.
+Le terme *template depuis le DOM* fait référence au scénario dans lequel le template est fourni sous la forme de nœuds DOM, au lieu d'une chaîne de caractères. Vue convertit ensuite les nœuds du DOM en une chaîne de caractères à l'aide de `innerHTML`.
 
-Typically, an in-DOM template starts off as HTML markup written directly in the HTML of the page. The browser then parses this into DOM nodes, which Vue then uses to read off the `innerHTML`.
+Typiquement, un template depuis le DOM commence par un balisage HTML écrit directement dans le HTML de la page. Le navigateur l'analyse ensuite en nœuds DOM, que Vue utilise ensuite pour lire le `innerHTML`.
 
 Pour plus de détails, voir :
-- [Guide - Creating an Application - In-DOM Root Component Template](/guide/essentials/application.html#in-dom-root-component-template)
-- [Guide - Component Basics - DOM Template Parsing Caveats](/guide/essentials/component-basics.html#dom-template-parsing-caveats)
-- [Options: Rendering - template](/api/options-rendering.html#template)
+- [Guide - Créer une application - Template de composant racine depuis le DOM](/guide/essentials/application.html#in-dom-root-component-template)
+- [Guide - Principes fondamentaux des composants - Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)
+- [Options: Rendu - template](/api/options-rendering.html#template)
 
 ## inject {#inject}
 
