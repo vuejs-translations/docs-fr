@@ -183,7 +183,7 @@ See [provide / inject](#provide-inject).
 
 Une instance de composant Vue suit un cycle de vie. Par exemple, elle est créée, montée, mise à jour et démontée.
 
-The *lifecycle hooks* are a way to listen for these lifecycle events.
+Les *hooks de cycle de vie* sont un moyen d'écouter ces événements du cycle de vie.
 
 With the Options API, each hook is provided as a separate option, e.g. `mounted`. The Composition API uses functions instead, such as `onMounted()`.
 
