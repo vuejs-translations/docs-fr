@@ -171,7 +171,7 @@ Le terme *template depuis le DOM* fait référence au scénario dans lequel le t
 Typiquement, un template depuis le DOM commence par un balisage HTML écrit directement dans le HTML de la page. Le navigateur l'analyse ensuite en nœuds DOM, que Vue utilise ensuite pour lire le `innerHTML`.
 
 Pour plus de détails, voir :
-- [Guide - Créer une application Vue - Template de composant racine depuis le DOM](/guide/essentials/application.html#in-dom-root-component-template)
+- [Guide - Créer une application - Template de composant racine depuis le DOM](/guide/essentials/application.html#in-dom-root-component-template)
 - [Guide - Principes fondamentaux des composants - Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)
 - [Options: Rendu - template](/api/options-rendering.html#template)
 
