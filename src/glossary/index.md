@@ -157,7 +157,7 @@ Le terme *hoisting* est utilisé pour décrire l'exécution d'une section de cod
 
 JavaScript utilise le hoisting pour certaines constructions, telles que `var`, `import` et les déclarations de fonctions.
 
-Dans le contexte de Vue, le compilateur de template applique le *static hoisting* pour améliorer les performances. Lors de la conversion d'un modèle en fonction de rendu, les VNodes correspondant au contenu statique peuvent être créés une fois et réutilisés. Ces VNodes statiques sont décrits comme hissés parce qu'ils sont créés en dehors de la fonction de rendu, avant qu'elle ne s'exécute. Une forme similaire de hoisting est appliquée aux objets statiques ou aux tableaux générés par le compilateur de template.
+Dans le contexte de Vue, le compilateur de template applique le *static hoisting* pour améliorer les performances. Lors de la conversion d'un template en fonction de rendu, les VNodes correspondant au contenu statique peuvent être créés une fois et réutilisés. Ces VNodes statiques sont décrits comme hissés parce qu'ils sont créés en dehors de la fonction de rendu, avant qu'elle ne s'exécute. Une forme similaire de hoisting est appliquée aux objets statiques ou aux tableaux générés par le compilateur de template.
 
 Pour plus de détails, voir :
 - [Guide - Mécanismes de rendu - Hissage statique](/guide/extras/rendering-mechanism.html#static-hoisting)
