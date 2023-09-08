@@ -251,7 +251,7 @@ Pour plus de détails, voir :
 
 Lorsqu'un composant *fournit* une valeur, tous les descendants de ce composant peuvent alors choisir de récupérer cette valeur, en utilisant `inject`. Contrairement à ce qui se passe avec les props, le composant qui fournit la valeur ne sait pas précisément quel composant la reçoit.
 
-`provide` et `inject` sont parfois utilisés pour éviter le *prop drilling*. Ils peuvent également être utilisés comme un moyen implicite pour un composant de communiquer avec le contenu de son slot.
+`provide` et `inject` sont un moyen parfois utilisé pour éviter le *prop drilling* ou également de manière implicite pour un composant de communiquer avec le contenu de son slot.
 
 `provide` peut également être utilisé au niveau de l'application, en rendant une valeur disponible pour tous les composants de cette application.
 
