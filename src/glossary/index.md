@@ -253,7 +253,7 @@ Lorsqu'un composant *fournit* une valeur, tous les descendants de ce composant p
 
 `provide` et `inject` sont un moyen parfois utilisé pour éviter le *prop drilling* ou également de manière implicite pour un composant de communiquer avec le contenu de son slot.
 
-`provide` peut également être utilisé au niveau de l'application, en rendant une valeur disponible pour tous les composants de cette application.
+`provide` peut également être utilisée au niveau de l'application, en rendant une valeur disponible pour tous les composants de cette application.
 
 Pour plus de détails, voir :
 - [Guide - provide / inject](/guide/components/provide-inject.html)
