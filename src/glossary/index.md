@@ -151,7 +151,7 @@ A functional component cannot have any state of its own. It also doesn't go thro
 Pour plus de détails, voir :
 - [Guide - Render Functions & JSX - Functional Components](/guide/extras/render-function.html#functional-components)
 
-## hissage (ou _hoisting)_ {#hoisting}
+## hissage (ou _hoisting_) {#hoisting}
 
 Le terme *hissage* est utilisé pour décrire l'exécution d'une section de code avant qu'elle ne soit atteinte, avant d'autres codes. L'exécution est 'tirée vers le haut' à un point antérieur.
 
