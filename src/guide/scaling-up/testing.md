@@ -430,7 +430,7 @@ test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
   // simule provide pour tester les injections
   app.provide(...)
-  // exécuter les assertions
+  // exécute les assertions
   expect(result.foo.value).toBe(1)
   // déclencher le hook onUnmounted si nécessaire
   app.unmount()
