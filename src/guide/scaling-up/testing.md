@@ -411,13 +411,13 @@ export function withSetup(composable) {
   const app = createApp({
     setup() {
       result = composable()
-      // suppress missing template warning
+      // supprime l'avertissement du template manquant
       return () => {}
     }
   })
   app.mount(document.createElement('div'))
-  // return the result and the app instance
-  // for testing provide / unmount
+  // renvoie le résultat et l'instance de l'application
+  // pour les tests, provide / unmount
   return [result, app]
 }
 ```
@@ -428,11 +428,11 @@ import { useFoo } from './foo'
 
 test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
-  // mock provide for testing injections
+  // simuler provide pour tester les injections
   app.provide(...)
-  // run assertions
+  // exécuter les assertions
   expect(result.foo.value).toBe(1)
-  // trigger onUnmounted hook if needed
+  // déclencher le hook onUnmounted si nécessaire
   app.unmount()
 })
 ```
