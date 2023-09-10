@@ -194,12 +194,12 @@ Pour plus de détails, voir :
 
 Voir [macro de compilateur](#compiler-macro).
 
-## named slot {#named-slot}
+## slot nommé {#named-slot}
 
-A component can have multiple slots, differentiated by name. Slots other than the default slot are referred to as *named slots*.
+Un composant peut avoir plusieurs slots, différenciés par leur nom. Les autres slots que le slot par défaut sont appelés *slots nommés*.
 
 Pour plus de détails, voir :
-- [Guide - Slots - Named Slots](/guide/components/slots.html#named-slots)
+- [Guide - Slots - Slots nommés](/guide/components/slots.html#named-slots)
 
 ## Options API {#options-api}
 
