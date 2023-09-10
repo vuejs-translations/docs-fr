@@ -412,9 +412,9 @@ Voir [virtual DOM](#virtual-dom) pour plus d'informations.
 
 ## Web Component {#web-component}
 
-The *Web Components* standard is a collection of features implemented in modern web browsers.
+La norme *Web Components* est un ensemble de fonctionnalités mises en œuvre dans les navigateurs web modernes.
 
-Vue components are not Web Components, but `defineCustomElement()` can be used to create a [custom element](#custom-element) from a Vue component. Vue also supports the use of custom elements inside Vue components.
+Les composants Vue ne sont pas des Web Components, mais `defineCustomElement()` peut être utilisé pour créer un [élément personnalisé](#custom-element) à partir d'un composant Vue. Vue prend également en charge l'utilisation d'éléments personnalisés à l'intérieur des composants Vue.
 
 Pour plus de détails, voir :
-- [Guide - Vue and Web Components](/guide/extras/web-components.html)
+- [Guide - Vue et les Web Components](/guide/extras/web-components.html)
