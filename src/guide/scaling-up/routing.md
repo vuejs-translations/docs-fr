@@ -1,4 +1,4 @@
-# Routing {#routing}
+# Routage {#routing}
 
 ## Routage côté client vs. côté serveur {#client-side-vs-server-side-routing}
 
