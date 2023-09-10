@@ -282,7 +282,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [WebdriverIO](https://webdriver.io/) est un framework d'automatisation des tests pour les tests Web et mobiles basé sur le protocole WebDriver.
 
-## Recipes {#recipes}
+## Recettes {#recipes}
 
 ### Ajouter Vitest a un projet {#adding-vitest-to-a-project}
 
@@ -411,13 +411,13 @@ export function withSetup(composable) {
   const app = createApp({
     setup() {
       result = composable()
-      // suppress missing template warning
+      // supprime l'avertissement du template manquant
       return () => {}
     }
   })
   app.mount(document.createElement('div'))
-  // return the result and the app instance
-  // for testing provide / unmount
+  // renvoie le résultat et l'instance de l'application
+  // pour les tests, provide / unmount
   return [result, app]
 }
 ```
@@ -428,11 +428,11 @@ import { useFoo } from './foo'
 
 test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
-  // mock provide for testing injections
+  // simule provide pour tester les injections
   app.provide(...)
-  // run assertions
+  // exécute les assertions
   expect(result.foo.value).toBe(1)
-  // trigger onUnmounted hook if needed
+  // déclenche le hook onUnmounted si nécessaire
   app.unmount()
 })
 ```
