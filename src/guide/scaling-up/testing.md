@@ -432,7 +432,7 @@ test('useFoo', () => {
   app.provide(...)
   // exécute les assertions
   expect(result.foo.value).toBe(1)
-  // déclencher le hook onUnmounted si nécessaire
+  // déclenche le hook onUnmounted si nécessaire
   app.unmount()
 })
 ```
