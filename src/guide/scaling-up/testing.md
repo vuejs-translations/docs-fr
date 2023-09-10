@@ -230,7 +230,7 @@ Nous vous recommandons d'utiliser `@vue/test-utils` pour tester les composants d
 
 - [Nightwatch](https://nightwatchjs.org/) est un testeur E2E avec prise en charge de Vue Component Testing. ([Projet d'exemple](https://github.com/nightwatchjs-community/todo-vue))
 
-- [WebdriverIO](https://webdriver.io/docs/component-testing/vue) pour les tests de composants inter-navigateurs qui reposent sur une interaction utilisateur native basée sur une automatisation standardisée. Peut également être utilisé avec la bibliothèque de tests. 
+- [WebdriverIO](https://webdriver.io/docs/component-testing/vue) pour les tests de composants inter-navigateurs qui reposent sur une interaction utilisateur native basée sur une automatisation standardisée. Peut également être utilisé avec la bibliothèque de tests.
 
 ## Tests E2E {#e2e-testing}
 
@@ -282,7 +282,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [WebdriverIO](https://webdriver.io/) est un framework d'automatisation des tests pour les tests Web et mobiles basé sur le protocole WebDriver.
 
-## Recipes {#recipes}
+## Recettes {#recipes}
 
 ### Ajouter Vitest a un projet {#adding-vitest-to-a-project}
 
