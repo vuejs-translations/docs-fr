@@ -93,7 +93,7 @@ Article principal : [Utiliser Vue avec Typescript](/guide/typescript/overview).
 
 ## Testing {#testing}
 
-Article principal : [Testing Guide](/guide/scaling-up/testing).
+Article principal : [Guide de test](/guide/scaling-up/testing).
 
 - [Cypress](https://www.cypress.io/) est recommandé pour les tests E2E. Il peut également être utilisé pour les tests de composants pour les composants monofichiers Vue via le [Cypress Component Test Runner](https://docs.cypress.io/guides/component-testing/introduction).
 
