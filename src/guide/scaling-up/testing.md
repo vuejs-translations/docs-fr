@@ -428,7 +428,7 @@ import { useFoo } from './foo'
 
 test('useFoo', () => {
   const [result, app] = withSetup(() => useFoo(123))
-  // simuler provide pour tester les injections
+  // simule provide pour tester les injections
   app.provide(...)
   // exécuter les assertions
   expect(result.foo.value).toBe(1)
