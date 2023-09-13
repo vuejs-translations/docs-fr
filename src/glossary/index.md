@@ -224,25 +224,25 @@ Pour plus de détails, voir :
 
 ## prop {#prop}
 
-There are three common uses of the term *prop* in Vue:
+Il existe trois utilisations courantes du terme *prop* dans Vue :
 
-* Component props
-* VNode props
-* Slot props
+* Props de composant
+* Props de VNode
+* Props de Slot
 
-*Component props* are what most people think of as props. These are explicitly defined by a component using either `defineProps()` or the `props` option.
+*Les props de composants* sont ce que la plupart des gens considèrent comme des props. Ils sont explicitement définis par un composant en utilisant soit `defineProps()` soit l'option `props`.
 
-The term *VNode props* refers to the properties of the object passed as the second argument to `h()`. These can include component props, but they can also include component events, DOM events, DOM attributes and DOM properties. You'd usually only encounter VNode props if you're working with render functions to manipulate VNodes directly.
+Le terme *props de VNode* fait référence aux propriétés de l'objet transmis en tant que second argument de `h()`. Il peut s'agir de props de composants, mais aussi d'événements de composants, d'événements DOM, d'attributs DOM et de propriétés DOM. Vous ne rencontrerez généralement les props VNode que si vous travaillez avec des fonctions de rendu pour manipuler directement les VNodes.
 
-*Slot props* are the properties passed to a scoped slot.
+Les *props de slot* sont les propriétés transmises à un scoped slot.
 
-In all cases, props are properties that are passed in from elsewhere.
+Dans tous les cas, les props sont des propriétés qui sont transmises depuis l'extérieur.
 
-While the word props is derived from the word *properties*, the term props has a much more specific meaning in the context of Vue. You should avoid using it as an abbreviation of properties.
+Bien que le mot props soit dérivé du mot *propriétés*, le terme props a une signification beaucoup plus spécifique dans le contexte de Vue. Vous devriez éviter de l'utiliser comme abréviation de propriétés.
 
 Pour plus de détails, voir :
 - [Guide - Props](/guide/components/props.html)
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 - [Guide - Slots - Scoped Slots](/guide/components/slots.html#scoped-slots)
 
 ## provide / inject {#provide-inject}
