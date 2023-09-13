@@ -234,9 +234,9 @@ Il existe trois utilisations courantes du terme *prop* dans Vue :
 
 Le terme *props de VNode* fait référence aux propriétés de l'objet transmis en tant que second argument de `h()`. Il peut s'agir de props de composants, mais aussi d'événements de composants, d'événements DOM, d'attributs DOM et de propriétés DOM. Vous ne rencontrerez généralement les props VNode que si vous travaillez avec des fonctions de rendu pour manipuler directement les VNodes.
 
-*Slot props* are the properties passed to a scoped slot.
+Les *props de slot* sont les propriétés transmises à un slot délimité.
 
-In all cases, props are properties that are passed in from elsewhere.
+Dans tous les cas, les props sont des propriétés qui sont transmises depuis l'extérieur.
 
 While the word props is derived from the word *properties*, the term props has a much more specific meaning in the context of Vue. You should avoid using it as an abbreviation of properties.
 
