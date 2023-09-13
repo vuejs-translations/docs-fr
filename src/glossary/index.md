@@ -342,7 +342,7 @@ Pour plus de détails, voir :
 
 ## SFC {#sfc}
 
-See [Single-File Component](#single-file-component).
+Voir [Composant monofichier](#single-file-component).
 
 ## side effect {#side-effect}
 
@@ -354,13 +354,13 @@ When a function is described as having side effects, it means that the function 
 
 The term is often used when describing rendering or computed properties. It is considered best practice for rendering to have no side effects. Likewise, the getter function for a computed property should have no side effects.
 
-## Single-File Component {#single-file-component}
+## Composant monofichier (ou _Single-File Component_) {#single-file-component}
 
-The term *Single-File Component*, or SFC, refers to the `.vue` file format that is commonly used for Vue components.
+Le terme *Single-File Component*, ou SFC, fait référence au format de fichier `.vue` couramment utilisé pour les composants Vue.
 
-See also:
-- [Guide - Single-File Components](/guide/scaling-up/sfc.html)
-- [SFC Syntax Specification](/api/sfc-spec.html)
+Voir aussi :
+- [Guide - Composants monofichiers](/guide/scaling-up/sfc.html)
+- [Spécifications liées à la syntaxe des composants monofichiers](/api/sfc-spec.html)
 
 ## slot {#slot}
 
@@ -384,7 +384,7 @@ Pour plus de détails, voir :
 
 ## VDOM {#vdom}
 
-See [virtual DOM](#virtual-dom).
+Voir [DOM virtuel](#virtual-dom).
 
 ## virtual DOM {#virtual-dom}
 
