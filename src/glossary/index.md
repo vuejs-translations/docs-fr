@@ -271,19 +271,19 @@ The term is derived from 'side effect'. Calling the effect function is a side ef
 Pour plus de détails, voir :
 - [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
-## reactivity {#reactivity}
+## réactivité {#reactivity}
 
-In general, *reactivity* refers to the ability to automatically perform actions in response to data changes. For example, updating the DOM or making a network request when a data value changes.
+En général, la *réactivité* fait référence à la capacité d'effectuer automatiquement des actions en réponse à des changements de données. Par exemple, mettre à jour le DOM ou faire une requête réseau lorsqu'une valeur de données change.
 
-In a Vue context, reactivity is used to describe a collection of features. Those features combine to form a *reactivity system*, which is exposed via the [Reactivity API](#reactivity-api).
+Dans le contexte de Vue, la réactivité est utilisée pour décrire un ensemble de fonctionnalités. Ces fonctionnalités se combinent pour former un *système de réactivité*, qui est exposé via l'[API de réactivité](#reactivity-api).
 
-There are various different ways that a reactivity system could be implemented. For example, it could be done by static analysis of code to determine its dependencies. However, Vue doesn't employ that form of reactivity system.
+Un système de réactivité peut être mis en œuvre de différentes manières. Par exemple, il pourrait être réalisé par une analyse statique du code pour déterminer ses dépendances. Cependant, Vue n'utilise pas cette forme de système de réactivité.
 
-Instead, Vue's reactivity system tracks property access at runtime. It does this using both Proxy wrappers and getter/setter functions for properties.
+Au lieu de cela, le système de réactivité de Vue suit l'accès aux propriétés au moment de l'exécution. Pour ce faire, il utilise à la fois des wrappers Proxy et des fonctions getter/setter pour les propriétés.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
-- [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
+- [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## API de réactivité {#reactivity-api}
 
