@@ -271,7 +271,7 @@ The term is derived from 'side effect'. Calling the effect function is a side ef
 Pour plus de détails, voir :
 - [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
 
-## reactivity {#reactivity}
+## réactivité {#reactivity}
 
 In general, *reactivity* refers to the ability to automatically perform actions in response to data changes. For example, updating the DOM or making a network request when a data value changes.
 
@@ -282,8 +282,8 @@ There are various different ways that a reactivity system could be implemented. 
 Instead, Vue's reactivity system tracks property access at runtime. It does this using both Proxy wrappers and getter/setter functions for properties.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
-- [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
+- [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## API de réactivité {#reactivity-api}
 
