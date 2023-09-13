@@ -342,7 +342,7 @@ Pour plus de détails, voir :
 
 ## SFC {#sfc}
 
-See [Single-File Component](#single-file-component).
+Voir [Composants monofichiers](#single-file-component).
 
 ## side effect {#side-effect}
 
