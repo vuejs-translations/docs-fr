@@ -277,7 +277,7 @@ En général, la *réactivité* fait référence à la capacité d'effectuer aut
 
 Dans le contexte de Vue, la réactivité est utilisée pour décrire un ensemble de fonctionnalités. Ces fonctionnalités se combinent pour former un *système de réactivité*, qui est exposé via l'[API de réactivité](#reactivity-api).
 
-There are various different ways that a reactivity system could be implemented. For example, it could be done by static analysis of code to determine its dependencies. However, Vue doesn't employ that form of reactivity system.
+Un système de réactivité peut être mis en œuvre de différentes manières. Par exemple, il pourrait être réalisé par une analyse statique du code pour déterminer ses dépendances. Cependant, Vue n'utilise pas cette forme de système de réactivité.
 
 Instead, Vue's reactivity system tracks property access at runtime. It does this using both Proxy wrappers and getter/setter functions for properties.
 
