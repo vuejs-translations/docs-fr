@@ -258,7 +258,7 @@ Lorsqu'un composant *fournit* une valeur, tous les descendants de ce composant p
 Pour plus de détails, voir :
 - [Guide - provide / inject](/guide/components/provide-inject.html)
 
-## reactive effect {#reactive-effect}
+## effet réactif {#reactive-effect}
 
 A *reactive effect* is part of Vue's reactivity system. It refers to the process of tracking the dependencies of a function and re-running that function when the values of those dependencies change.
 
@@ -269,7 +269,7 @@ Vue can only track reactive dependencies within a reactive effect. If a property
 The term is derived from 'side effect'. Calling the effect function is a side effect of the property value being changed.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## reactivity {#reactivity}
 
