@@ -384,7 +384,7 @@ Pour plus de détails, voir :
 
 ## VDOM {#vdom}
 
-See [virtual DOM](#virtual-dom).
+Voir [DOM virtuel](#virtual-dom).
 
 ## virtual DOM {#virtual-dom}
 
