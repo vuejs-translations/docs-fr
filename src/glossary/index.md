@@ -279,7 +279,7 @@ Dans le contexte de Vue, la réactivité est utilisée pour décrire un ensemble
 
 Un système de réactivité peut être mis en œuvre de différentes manières. Par exemple, il pourrait être réalisé par une analyse statique du code pour déterminer ses dépendances. Cependant, Vue n'utilise pas cette forme de système de réactivité.
 
-Au lieu de cela, le système de réactivité de Vue suit l'accès aux propriétés au moment de l'exécution. Pour ce faire, il utilise à la fois des wrappers Proxy et des fonctions getter/setter pour les propriétés
+Au lieu de cela, le système de réactivité de Vue suit l'accès aux propriétés au moment de l'exécution. Pour ce faire, il utilise à la fois des wrappers Proxy et des fonctions getter/setter pour les propriétés.
 
 Pour plus de détails, voir :
 - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
