@@ -238,7 +238,7 @@ Les *props de slot* sont les propriétés transmises à un slot délimité.
 
 Dans tous les cas, les props sont des propriétés qui sont transmises depuis l'extérieur.
 
-While the word props is derived from the word *properties*, the term props has a much more specific meaning in the context of Vue. You should avoid using it as an abbreviation of properties.
+Bien que le mot props soit dérivé du mot *propriétés*, le terme props a une signification beaucoup plus spécifique dans le contexte de Vue. Vous devriez éviter de l'utiliser comme abréviation de propriétés.
 
 Pour plus de détails, voir :
 - [Guide - Props](/guide/components/props.html)
