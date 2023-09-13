@@ -264,7 +264,7 @@ Un *effet réactif* fait partie du système de réactivité de Vue. Il fait réf
 
 `watchEffect()` est la façon la plus directe de créer un effet. Plusieurs autres parties de Vue utilisent les effets en interne, par exemple les mises à jour du rendu des composants, `computed()` et `watch()`.
 
-Vue can only track reactive dependencies within a reactive effect. If a property's value is read outside a reactive effect it'll 'lose' reactivity, in the sense that Vue won't know what to do if that property subsequently changes.
+Vue ne peut suivre les dépendances réactives qu'à l'intérieur d'un effet réactif. Si la valeur d'une propriété est lue en dehors d'un effet réactif, elle 'perdra' sa réactivité, dans le sens où Vue ne saura pas quoi faire si cette propriété change par la suite.
 
 The term is derived from 'side effect'. Calling the effect function is a side effect of the property value being changed.
 
