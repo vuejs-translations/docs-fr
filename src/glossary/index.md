@@ -273,7 +273,7 @@ Pour plus de détails, voir :
 
 ## réactivité {#reactivity}
 
-In general, *reactivity* refers to the ability to automatically perform actions in response to data changes. For example, updating the DOM or making a network request when a data value changes.
+En général, la *réactivité* fait référence à la capacité d'effectuer automatiquement des actions en réponse à des changements de données. Par exemple, mettre à jour le DOM ou faire une requête réseau lorsqu'une valeur de données change.
 
 In a Vue context, reactivity is used to describe a collection of features. Those features combine to form a *reactivity system*, which is exposed via the [Reactivity API](#reactivity-api).
 
