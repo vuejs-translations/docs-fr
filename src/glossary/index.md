@@ -224,11 +224,11 @@ Pour plus de détails, voir :
 
 ## prop {#prop}
 
-There are three common uses of the term *prop* in Vue:
+Il existe trois utilisations courantes du terme *prop* dans Vue :
 
-* Component props
-* VNode props
-* Slot props
+* Props de composant
+* Props de VNode
+* Props de Slot
 
 *Component props* are what most people think of as props. These are explicitly defined by a component using either `defineProps()` or the `props` option.
 
@@ -242,7 +242,7 @@ While the word props is derived from the word *properties*, the term props has a
 
 Pour plus de détails, voir :
 - [Guide - Props](/guide/components/props.html)
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 - [Guide - Slots - Scoped Slots](/guide/components/slots.html#scoped-slots)
 
 ## provide / inject {#provide-inject}
