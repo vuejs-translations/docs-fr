@@ -205,7 +205,7 @@ Pour plus de détails, voir :
 
 Les composants Vue sont définis à l'aide d'objets. Les propriétés de ces objets composants sont appelées *options*.
 
-Les composants peuvent être écrits dans deux styles. Un style utilise la [Composition API](#composition-api) en conjonction avec `setup` (soit via une option `setup()` ou `<script setup>`). L'autre style utilise plus ou moins directement la Composition API, utilisant plutôt diverses options de composants pour obtenir un résultat similaire. Les options de composants utilisées de cette manière sont appelées *Options API*.
+Les composants peuvent être écrits dans deux styles. Un style utilise la [Composition API](#composition-api) en conjonction avec `setup` (soit via une option `setup()` ou `<script setup>`). L'autre style utilise plus ou moins directement la Composition API, utilisant plutôt diverses options de composants pour obtenir un résultat similaire. Les options de composants utilisées de cette manière représentent ce qu'on appelle l'*Options API*.
 
 L'Options API inclut des options telles que `data()`, `computed`, `methods` et `created()`.
 
