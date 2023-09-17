@@ -352,7 +352,7 @@ Par exemple, dans le contexte du réglage d'une propriété comme `user.name = n
 
 Lorsqu'une fonction est décrite comme ayant des effets de bord, cela signifie qu'elle effectue une sorte d'action observable en dehors de la fonction, en plus de renvoyer une valeur. Cela peut signifier qu'elle met à jour une valeur dans l'état ou qu'elle déclenche une requête réseau.
 
-The term is often used when describing rendering or computed properties. It is considered best practice for rendering to have no side effects. Likewise, the getter function for a computed property should have no side effects.
+Ce terme est souvent utilisé pour décrire le rendu ou les propriétés calculées. On considère que la meilleure pratique pour le rendu est de ne pas avoir d'effets de bord. De même, la fonction getter d'une propriété calculée ne doit pas avoir d'effets de bord.
 
 ## Composant monofichier (ou _Single-File Component_) {#single-file-component}
 
