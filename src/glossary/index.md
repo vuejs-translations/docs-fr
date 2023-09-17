@@ -203,21 +203,21 @@ Pour plus de détails, voir :
 
 ## Options API {#options-api}
 
-Vue components are defined using objects. The properties of these component objects are known as *options*.
+Les composants Vue sont définis à l'aide d'objets. Les propriétés de ces objets composants sont appelées *options*.
 
-Components can be written in two styles. One style uses the [Composition API](#composition-api) in conjunction with `setup` (either via a `setup()` option or `<script setup>`). The other style makes very little direct use of the Composition API, instead using various component options to achieve a similar result. The component options that are used in this way are referred to as the *Options API*.
+Les composants peuvent être écrits dans deux styles. Un style utilise la [Composition API](#composition-api) en conjonction avec `setup` (soit via une option `setup()` ou `<script setup>`). L'autre style utilise plus ou moins directement la Composition API, utilisant plutôt diverses options de composants pour obtenir un résultat similaire. Les options de composants utilisées de cette manière représentent ce qu'on appelle l'*Options API*.
 
-The Options API includes options such as `data()`, `computed`, `methods` and `created()`.
+L'Options API inclut des options telles que `data()`, `computed`, `methods` et `created()`.
 
-Some options, such as `props`, `emits` and `inheritAttrs`, can be used when authoring components with either API. As they are component options, they could be considered part of the Options API. However, as these options are also used in conjunction with `setup()`, it is usually more useful to think of them as shared between the two component styles.
+Certaines options, telles que `props`, `emits` et `inheritAttrs`, peuvent être utilisées lors de la création de composants avec l'une ou l'autre API. Comme il s’agit d’options de composants, elles pourraient être considérées comme faisant partie de l’Options API. Cependant, comme ces options sont également utilisées conjointement avec `setup()`, il est généralement plus utile de les considérer comme partagées entre les deux styles de composants.
 
-The `setup()` function itself is a component option, so it *could* be described as part of the Options API. However, this is not how the term 'Options API' is normally used. Instead, the `setup()` function is considered to be part of Composition API.
+La fonction `setup()` elle-même est une option de composant, elle *pourrait* donc être décrite comme faisant partie de l'Options API. Cependant, ce n’est pas ainsi que le terme « Options API » est normalement utilisé. Au lieu de cela, la fonction `setup()` est considérée comme faisant partie de la Composition API.
 
 ## plugin {#plugin}
 
-While the term *plugin* can be used in a wide variety of contexts, Vue has a specific concept of a plugin as a way to add functionality to an application.
+Même si le terme *plugin* peut être utilisé dans une grande variété de contextes, Vue a un concept spécifique de plugin comme moyen d'ajouter des fonctionnalités à une application.
 
-Plugins are added to an application by calling `app.use(plugin)`. The plugin itself is either a function or an object with an `install` function. That function will be passed the application instance and can then do whatever it needs to do.
+Les plugins sont ajoutés à une application en appelant `app.use(plugin)`. Le plugin lui-même est soit une fonction, soit un objet avec une fonction `install`. Cette fonction recevra l'instance d'application et pourra alors faire tout ce qu'elle doit faire.
 
 Pour plus de détails, voir :
 - [Guide - Plugins](/guide/reusability/plugins.html)
