@@ -369,9 +369,9 @@ Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alo
 Pour plus de détails, voir :
 - [Guide - Slots](/guide/components/slots.html)
 
-## template ref {#template-ref}
+## ref de template {#template-ref}
 
-The term *template ref* refers to using a `ref` attribute on a tag within a template. After the component renders, this attribute is used to populate a corresponding property with either the HTML element or the component instance that corresponds to the tag in the template.
+Le terme *ref de template* fait référence à l'utilisation d'un attribut `ref` sur un élément à l'intérieur d'un template. Après le rendu du composant, cet attribut est utilisé pour remplir une propriété correspondante avec l'élément HTML ou l'instance de composant qui correspond à l'élément dans le template.
 
 If you are using the Options API then the refs are exposed via properties of the `$refs` object.
 
@@ -380,7 +380,7 @@ With the Composition API, template refs populate a reactive [ref](#ref) with the
 Template refs should not be confused with the reactive refs found in Vue's reactivity system.
 
 Pour plus de détails, voir :
-- [Guide - Template Refs](/guide/essentials/template-refs.html)
+- [Guide - Les refs du template](/guide/essentials/template-refs.html)
 
 ## VDOM {#vdom}
 
