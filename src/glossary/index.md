@@ -373,11 +373,11 @@ Pour plus de détails, voir :
 
 Le terme *ref de template* fait référence à l'utilisation d'un attribut `ref` sur un élément à l'intérieur d'un template. Après le rendu du composant, cet attribut est utilisé pour remplir une propriété correspondante avec l'élément HTML ou l'instance de composant qui correspond à l'élément dans le template.
 
-If you are using the Options API then the refs are exposed via properties of the `$refs` object.
+Si vous utilisez l'Options API, les refs sont exposés via les propriétés de l'objet `$refs`.
 
-With the Composition API, template refs populate a reactive [ref](#ref) with the same name.
+Avec la Composition API, les refs de template alimentent une [ref](#ref) réactive portant le même nom.
 
-Template refs should not be confused with the reactive refs found in Vue's reactivity system.
+Il ne faut pas confondre les refs de templates avec les refs réactives du système de réactivité de Vue.
 
 Pour plus de détails, voir :
 - [Guide - Les refs du template](/guide/essentials/template-refs.html)
