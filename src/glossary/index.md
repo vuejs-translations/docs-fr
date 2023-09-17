@@ -266,7 +266,7 @@ Un *effet réactif* fait partie du système de réactivité de Vue. Il fait réf
 
 Vue ne peut suivre les dépendances réactives qu'à l'intérieur d'un effet réactif. Si la valeur d'une propriété est lue en dehors d'un effet réactif, elle 'perdra' sa réactivité, dans le sens où Vue ne saura pas quoi faire si cette propriété change par la suite.
 
-Le terme est dérivé de 'effet secondaire'. L'appel à la fonction d'effet est un effet secondaire de la modification de la valeur de la propriété.
+Le terme est dérivé de 'effet de bord'. L'appel à la fonction d'effet est un effet de bord de la modification de la valeur de la propriété.
 
 Pour plus de détails, voir :
 - [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
