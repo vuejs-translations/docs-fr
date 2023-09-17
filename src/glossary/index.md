@@ -300,7 +300,7 @@ Pour plus de détails, voir :
 
 > Cette entrée concerne l'utilisation de `ref` pour la réactivité. Pour l'attribut `ref` utilisé dans les templates, voir plutôt [ref de template](#template-ref).
 
-A `ref` is part of Vue's reactivity system. It is an object with a single reactive property, called `value`.
+Un `ref` fait partie du système de réactivité de Vue. C'est un objet avec une seule propriété réactive, appelée `value`.
 
 There are various different types of ref. For example, refs can be created using `ref()`, `shallowRef()`, `computed()`, and `customRef()`. The function `isRef()` can be used to check whether an object is a ref, and `isReadonly()` can be used to check whether the ref allows the direct reassignment of its value.
 
