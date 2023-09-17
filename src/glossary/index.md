@@ -224,25 +224,25 @@ Pour plus de détails, voir :
 
 ## prop {#prop}
 
-There are three common uses of the term *prop* in Vue:
+Il existe trois utilisations courantes du terme *prop* dans Vue :
 
-* Component props
-* VNode props
-* Slot props
+* Props de composant
+* Props de VNode
+* Props de Slot
 
-*Component props* are what most people think of as props. These are explicitly defined by a component using either `defineProps()` or the `props` option.
+*Les props de composants* sont ce que la plupart des gens considèrent comme des props. Ils sont explicitement définis par un composant en utilisant soit `defineProps()` soit l'option `props`.
 
-The term *VNode props* refers to the properties of the object passed as the second argument to `h()`. These can include component props, but they can also include component events, DOM events, DOM attributes and DOM properties. You'd usually only encounter VNode props if you're working with render functions to manipulate VNodes directly.
+Le terme *props de VNode* fait référence aux propriétés de l'objet transmis en tant que second argument de `h()`. Il peut s'agir de props de composants, mais aussi d'événements de composants, d'événements DOM, d'attributs DOM et de propriétés DOM. Vous ne rencontrerez généralement les props VNode que si vous travaillez avec des fonctions de rendu pour manipuler directement les VNodes.
 
-*Slot props* are the properties passed to a scoped slot.
+Les *props de slot* sont les propriétés transmises à un scoped slot.
 
-In all cases, props are properties that are passed in from elsewhere.
+Dans tous les cas, les props sont des propriétés qui sont transmises depuis l'extérieur.
 
-While the word props is derived from the word *properties*, the term props has a much more specific meaning in the context of Vue. You should avoid using it as an abbreviation of properties.
+Bien que le mot props soit dérivé du mot *propriétés*, le terme props a une signification beaucoup plus spécifique dans le contexte de Vue. Vous devriez éviter de l'utiliser comme abréviation de propriétés.
 
 Pour plus de détails, voir :
 - [Guide - Props](/guide/components/props.html)
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 - [Guide - Slots - Scoped Slots](/guide/components/slots.html#scoped-slots)
 
 ## provide / inject {#provide-inject}
@@ -271,19 +271,19 @@ Le terme est dérivé de 'effet de bord'. L'appel à la fonction d'effet est un 
 Pour plus de détails, voir :
 - [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
-## reactivity {#reactivity}
+## réactivité {#reactivity}
 
-In general, *reactivity* refers to the ability to automatically perform actions in response to data changes. For example, updating the DOM or making a network request when a data value changes.
+En général, la *réactivité* fait référence à la capacité d'effectuer automatiquement des actions en réponse à des changements de données. Par exemple, mettre à jour le DOM ou faire une requête réseau lorsqu'une valeur de données change.
 
-In a Vue context, reactivity is used to describe a collection of features. Those features combine to form a *reactivity system*, which is exposed via the [Reactivity API](#reactivity-api).
+Dans le contexte de Vue, la réactivité est utilisée pour décrire un ensemble de fonctionnalités. Ces fonctionnalités se combinent pour former un *système de réactivité*, qui est exposé via l'[API de réactivité](#reactivity-api).
 
-There are various different ways that a reactivity system could be implemented. For example, it could be done by static analysis of code to determine its dependencies. However, Vue doesn't employ that form of reactivity system.
+Un système de réactivité peut être mis en œuvre de différentes manières. Par exemple, il pourrait être réalisé par une analyse statique du code pour déterminer ses dépendances. Cependant, Vue n'utilise pas cette forme de système de réactivité.
 
-Instead, Vue's reactivity system tracks property access at runtime. It does this using both Proxy wrappers and getter/setter functions for properties.
+Au lieu de cela, le système de réactivité de Vue suit l'accès aux propriétés au moment de l'exécution. Pour ce faire, il utilise à la fois des wrappers Proxy et des fonctions getter/setter pour les propriétés.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
-- [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
+- [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## API de réactivité {#reactivity-api}
 
@@ -342,7 +342,7 @@ Pour plus de détails, voir :
 
 ## SFC {#sfc}
 
-See [Single-File Component](#single-file-component).
+Voir [Composant monofichier](#single-file-component).
 
 ## side effect {#side-effect}
 
@@ -354,13 +354,13 @@ When a function is described as having side effects, it means that the function 
 
 The term is often used when describing rendering or computed properties. It is considered best practice for rendering to have no side effects. Likewise, the getter function for a computed property should have no side effects.
 
-## Single-File Component {#single-file-component}
+## Composant monofichier (ou _Single-File Component_) {#single-file-component}
 
-The term *Single-File Component*, or SFC, refers to the `.vue` file format that is commonly used for Vue components.
+Le terme *Single-File Component*, ou SFC, fait référence au format de fichier `.vue` couramment utilisé pour les composants Vue.
 
-See also:
-- [Guide - Single-File Components](/guide/scaling-up/sfc.html)
-- [SFC Syntax Specification](/api/sfc-spec.html)
+Voir aussi :
+- [Guide - Composants monofichiers](/guide/scaling-up/sfc.html)
+- [Spécifications liées à la syntaxe des composants monofichiers](/api/sfc-spec.html)
 
 ## slot {#slot}
 
@@ -384,7 +384,7 @@ Pour plus de détails, voir :
 
 ## VDOM {#vdom}
 
-See [virtual DOM](#virtual-dom).
+Voir [DOM virtuel](#virtual-dom).
 
 ## virtual DOM {#virtual-dom}
 
