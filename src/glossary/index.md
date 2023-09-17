@@ -344,9 +344,9 @@ Pour plus de détails, voir :
 
 Voir [Composant monofichier](#single-file-component).
 
-## side effect {#side-effect}
+## effet de bord {#side-effect}
 
-The term *side effect* is not specific to Vue. It is used to describe operations or functions that do something beyond their local scope.
+Le terme *effet de bord* n'est pas spécifique à Vue. Il est utilisé pour décrire les opérations ou les fonctions qui font quelque chose au-delà de leur portée locale.
 
 For example, in the context of setting a property like `user.name = null`, it is expected that this will change the value of `user.name`. If it also does something else, like triggering Vue's reactivity system, then this would be described as a side effect. This is the origin of the term [reactive effect](#reactive-effect) within Vue.
 
