@@ -298,7 +298,7 @@ Pour plus de détails, voir :
 
 ## ref {#ref}
 
-> Ceci concerne l'utilisation de `ref` pour la réactivité. Pour l'attribut `ref` utilisé dans les templates, voir plutôt [ref de template](#template-ref).
+> Nous parlons ici de l'utilisation de `ref` pour la réactivité. Pour l'attribut `ref` utilisé dans les templates, voir plutôt [ref de template](#template-ref).
 
 Une `ref` fait partie du système de réactivité de Vue. C'est un objet avec une seule propriété réactive, appelée `value`.
 
