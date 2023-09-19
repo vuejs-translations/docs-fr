@@ -302,7 +302,7 @@ Pour plus de détails, voir :
 
 Une `ref` fait partie du système de réactivité de Vue. C'est un objet avec une seule propriété réactive, appelée `value`.
 
-Il existe différents types de ref. Par exemple, les refs peuvent être créés en utilisant `ref()`, `shallowRef()`, `computed()`, et `customRef()`. La fonction `isRef()` peut être utilisée pour vérifier si un objet est une ref, et `isReadonly()` peut être utilisée pour vérifier si la ref permet la réaffectation directe de sa valeur.
+Il existe différents types de ref. Par exemple, les refs peuvent être créées en utilisant `ref()`, `shallowRef()`, `computed()`, et `customRef()`. La fonction `isRef()` peut être utilisée pour vérifier si un objet est une ref, et `isReadonly()` peut être utilisée pour vérifier si la ref permet la réaffectation directe de sa valeur.
 
 Pour plus de détails, voir :
 - [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
