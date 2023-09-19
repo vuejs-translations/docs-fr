@@ -258,18 +258,18 @@ Lorsqu'un composant *fournit* une valeur, tous les descendants de ce composant p
 Pour plus de détails, voir :
 - [Guide - provide / inject](/guide/components/provide-inject.html)
 
-## reactive effect {#reactive-effect}
+## effet réactif {#reactive-effect}
 
-A *reactive effect* is part of Vue's reactivity system. It refers to the process of tracking the dependencies of a function and re-running that function when the values of those dependencies change.
+Un *effet réactif* fait partie du système de réactivité de Vue. Il fait référence au processus de suivi des dépendances d'une fonction et à la ré-exécution de cette fonction lorsque les valeurs de ces dépendances changent.
 
-`watchEffect()` is the most direct way to create an effect. Various other parts of Vue use effects internally. e.g. component rendering updates, `computed()` and `watch()`.
+`watchEffect()` est la façon la plus directe de créer un effet. Plusieurs autres parties de Vue utilisent les effets en interne, par exemple les mises à jour du rendu des composants, `computed()` et `watch()`.
 
-Vue can only track reactive dependencies within a reactive effect. If a property's value is read outside a reactive effect it'll 'lose' reactivity, in the sense that Vue won't know what to do if that property subsequently changes.
+Vue ne peut suivre les dépendances réactives qu'à l'intérieur d'un effet réactif. Si la valeur d'une propriété est lue en dehors d'un effet réactif, elle 'perdra' sa réactivité, dans le sens où Vue ne saura pas quoi faire si cette propriété change par la suite.
 
-The term is derived from 'side effect'. Calling the effect function is a side effect of the property value being changed.
+Le terme est dérivé de 'effet de bord'. L'appel à la fonction d'effet est un effet de bord de la modification de la valeur de la propriété.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity in Depth](/guide/extras/reactivity-in-depth.html)
+- [Guide - La réactivité en détails](/guide/extras/reactivity-in-depth.html)
 
 ## réactivité {#reactivity}
 
@@ -369,18 +369,18 @@ Les slots sont utilisés pour transmettre du contenu aux composants enfants. Alo
 Pour plus de détails, voir :
 - [Guide - Slots](/guide/components/slots.html)
 
-## template ref {#template-ref}
+## ref de template {#template-ref}
 
-The term *template ref* refers to using a `ref` attribute on a tag within a template. After the component renders, this attribute is used to populate a corresponding property with either the HTML element or the component instance that corresponds to the tag in the template.
+Le terme *ref de template* fait référence à l'utilisation d'un attribut `ref` sur un élément à l'intérieur d'un template. Après le rendu du composant, cet attribut est utilisé pour remplir une propriété correspondante avec l'élément HTML ou l'instance de composant qui correspond à l'élément dans le template.
 
-If you are using the Options API then the refs are exposed via properties of the `$refs` object.
+Si vous utilisez l'Options API, les refs sont exposés via les propriétés de l'objet `$refs`.
 
-With the Composition API, template refs populate a reactive [ref](#ref) with the same name.
+Avec la Composition API, les refs de template alimentent une [ref](#ref) réactive portant le même nom.
 
-Template refs should not be confused with the reactive refs found in Vue's reactivity system.
+Il ne faut pas confondre les refs de templates avec les refs réactives du système de réactivité de Vue.
 
 Pour plus de détails, voir :
-- [Guide - Template Refs](/guide/essentials/template-refs.html)
+- [Guide - Les refs du template](/guide/essentials/template-refs.html)
 
 ## VDOM {#vdom}
 
