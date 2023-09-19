@@ -348,7 +348,7 @@ Voir [Composant monofichier](#single-file-component).
 
 Le terme *effet de bord* n'est pas spécifique à Vue. Il est utilisé pour décrire les opérations ou les fonctions qui font quelque chose au-delà de leur portée locale.
 
-Par exemple, dans le contexte du réglage d'une propriété comme `user.name = null`, on s'attend à ce que cela change la valeur de `user.name`. Si cela fait aussi quelque chose d'autre, comme déclencher le système de réactivité de Vue, alors cela sera décrit comme un effet de bord. C'est l'origine du terme [effet réactif](#reactive-effect) dans Vue.
+Par exemple, lors de l'affectation d'une propriété comme `user.name = null`, on s'attend à ce que cela change la valeur de `user.name`. Si cela fait aussi quelque chose d'autre, comme déclencher le système de réactivité de Vue, alors cela sera décrit comme un effet de bord. C'est l'origine du terme [effet réactif](#reactive-effect) dans Vue.
 
 Lorsqu'une fonction est décrite comme ayant des effets de bord, cela signifie qu'elle effectue une sorte d'action observable en dehors de la fonction, en plus de renvoyer une valeur. Cela peut signifier qu'elle met à jour une valeur dans l'état ou qu'elle déclenche une requête réseau.
 
