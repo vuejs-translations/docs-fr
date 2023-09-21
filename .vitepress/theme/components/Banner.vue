@@ -38,7 +38,7 @@ function dismiss() {
     </button>
     <p class="vt-banner-text vt-coupon">
       <span class="vt-text-primary">Utilisez le code</span> VUEJS
-      <span class="vt-text-primary">to get 15% off</span>
+      <span class="vt-text-primary">pour obtenir 15% de réduction</span>
     </p>
   </div>
 </template>
