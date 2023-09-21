@@ -37,7 +37,7 @@ function dismiss() {
       <VTIconPlus class="close" />
     </button>
     <p class="vt-banner-text vt-coupon">
-      <span class="vt-text-primary">Use code</span> VUEJS
+      <span class="vt-text-primary">Utilisez le code</span> VUEJS
       <span class="vt-text-primary">to get 15% off</span>
     </p>
   </div>
