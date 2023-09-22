@@ -199,7 +199,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
   <div class="composition-api">
 
   ```js
-  const { h, resolveComponent } = Vue
+  import { h, resolveComponent } from 'vue'
 
   export default {
     setup() {
@@ -216,7 +216,7 @@ Utilisée pour résoudre manuellement un composant enregistré via son nom.
   <div class="options-api">
 
   ```js
-  const { h, resolveComponent } = Vue
+  import { h, resolveComponent } from 'vue'
 
   export default {
     render() {
