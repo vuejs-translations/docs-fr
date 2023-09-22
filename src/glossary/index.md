@@ -172,7 +172,7 @@ Typiquement, un template depuis le DOM commence par un balisage HTML écrit dire
 
 Pour plus de détails, voir :
 - [Guide - Créer une application - Template de composant racine depuis le DOM](/guide/essentials/application.html#in-dom-root-component-template)
-- [Guide - Principes fondamentaux des composants - Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)
+- [Guide - Principes fondamentaux des composants - Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics.html#in-dom-template-parsing-caveats)
 - [Options: Rendu - template](/api/options-rendering.html#template)
 
 ## inject {#inject}

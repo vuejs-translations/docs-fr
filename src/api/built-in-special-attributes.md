@@ -95,7 +95,7 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
   Lorsque l'attribut "is" est utilisé sur un élément HTML natif, il sera interprété comme un [élément natif personnalisé](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), qui est une fonctionnalité native de la plate-forme Web.
 
-  Il existe cependant un cas d'utilisation où vous pouvez avoir besoin que Vue remplace un élément natif par un composant Vue, comme expliqué dans [Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics#dom-template-parsing-caveats). Vous pouvez préfixer la valeur de l'attribut `is` avec `vue:` pour que Vue rende l'élément comme un composant Vue :
+  Il existe cependant un cas d'utilisation où vous pouvez avoir besoin que Vue remplace un élément natif par un composant Vue, comme expliqué dans [Mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics#in-dom-template-parsing-caveats). Vous pouvez préfixer la valeur de l'attribut `is` avec `vue:` pour que Vue rende l'élément comme un composant Vue :
 
   ```vue-html
   <table>
