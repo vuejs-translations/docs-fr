@@ -298,17 +298,17 @@ Pour plus de détails, voir :
 
 ## ref {#ref}
 
-> This entry is about the use of `ref` for reactivity. For the `ref` attribute used in templates, see [template ref](#template-ref) instead.
+> Nous parlons ici de l'utilisation de `ref` pour la réactivité. Pour l'attribut `ref` utilisé dans les templates, voir plutôt [ref de template](#template-ref).
 
-A `ref` is part of Vue's reactivity system. It is an object with a single reactive property, called `value`.
+Une `ref` fait partie du système de réactivité de Vue. C'est un objet avec une seule propriété réactive, appelée `value`.
 
-There are various different types of ref. For example, refs can be created using `ref()`, `shallowRef()`, `computed()`, and `customRef()`. The function `isRef()` can be used to check whether an object is a ref, and `isReadonly()` can be used to check whether the ref allows the direct reassignment of its value.
+Il existe différents types de ref. Par exemple, les refs peuvent être créées en utilisant `ref()`, `shallowRef()`, `computed()`, et `customRef()`. La fonction `isRef()` peut être utilisée pour vérifier si un objet est une ref, et `isReadonly()` peut être utilisée pour vérifier si la ref permet la réaffectation directe de sa valeur.
 
 Pour plus de détails, voir :
-- [Guide - Reactivity Fundamentals](/guide/essentials/reactivity-fundamentals.html)
-- [Reactivity API: Core](/api/reactivity-core.html)
-- [Reactivity API: Utilities](/api/reactivity-utilities.html)
-- [Reactivity API: Advanced](/api/reactivity-advanced.html)
+- [Guide - Fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals.html)
+- [API de la réactivité : Essentiel](/api/reactivity-core.html)
+- [API de la réactivité : Utilitaires](/api/reactivity-utilities.html)
+- [API de la réactivité : Avancé](/api/reactivity-advanced.html)
 
 ## fonction de rendu {#render-function}
 
