@@ -95,7 +95,13 @@ data() {
 <div :class="classObject"></div>
 ```
 
-Cela rendra le même résultat. Nous pouvons également lier à une [propriété calculée](./computed) qui renvoie un objet. Il s'agit d'un modèle commun et puissant :
+Cela rendra :
+
+```vue-html
+<div class="active"></div>
+```
+
+Nous pouvons également lier à une [propriété calculée](./computed) qui renvoie un objet. Il s'agit d'un modèle commun et puissant :
 
 <div class="composition-api">
 
