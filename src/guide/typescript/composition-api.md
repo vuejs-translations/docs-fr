@@ -352,6 +352,8 @@ onMounted(() => {
 </template>
 ```
 
+Pour obtenir la bonne interface du DOM, vous pouvez consulter les pages comme [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#technical_summary).
+
 Notez que pour une sécurité de type stricte, il est nécessaire d'utiliser un chaînage optionnel ou des gardes de type lors de l'accès à `el.value`. Ceci s'explique par le fait que la valeur initiale d'une ref est `null` jusqu'à ce que le composant soit monté, et elle peut aussi être mise à `null` si l'élément référencé est démonté via un `v-if`.
 
 ## Typer les refs du template d'un composant {#typing-component-template-refs}
