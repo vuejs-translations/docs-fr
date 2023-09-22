@@ -344,15 +344,15 @@ Pour plus de détails, voir :
 
 Voir [Composant monofichier](#single-file-component).
 
-## side effect {#side-effect}
+## effet de bord {#side-effect}
 
-The term *side effect* is not specific to Vue. It is used to describe operations or functions that do something beyond their local scope.
+Le terme *effet de bord* n'est pas spécifique à Vue. Il est utilisé pour décrire les opérations ou les fonctions qui font quelque chose au-delà de leur portée locale.
 
-For example, in the context of setting a property like `user.name = null`, it is expected that this will change the value of `user.name`. If it also does something else, like triggering Vue's reactivity system, then this would be described as a side effect. This is the origin of the term [reactive effect](#reactive-effect) within Vue.
+Par exemple, lors de l'affectation d'une propriété comme `user.name = null`, on s'attend à ce que cela change la valeur de `user.name`. Si cela fait aussi quelque chose d'autre, comme déclencher le système de réactivité de Vue, alors cela sera décrit comme un effet de bord. C'est l'origine du terme [effet réactif](#reactive-effect) dans Vue.
 
-When a function is described as having side effects, it means that the function performs some sort of action that is observable outside the function, aside from just returning a value. This might mean that it updates a value in state, or triggers a network request.
+Lorsqu'une fonction est décrite comme ayant des effets de bord, cela signifie qu'elle effectue une sorte d'action observable en dehors de la fonction, en plus de renvoyer une valeur. Cela peut signifier qu'elle met à jour une valeur dans l'état ou qu'elle déclenche une requête réseau.
 
-The term is often used when describing rendering or computed properties. It is considered best practice for rendering to have no side effects. Likewise, the getter function for a computed property should have no side effects.
+Ce terme est souvent utilisé pour décrire le rendu ou les propriétés calculées. On considère que la meilleure pratique pour le rendu est de ne pas avoir d'effets de bord. De même, la fonction getter d'une propriété calculée ne doit pas avoir d'effets de bord.
 
 ## Composant monofichier (ou _Single-File Component_) {#single-file-component}
 
