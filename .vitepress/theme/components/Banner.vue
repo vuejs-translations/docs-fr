@@ -22,30 +22,16 @@ function dismiss() {
 
 <template>
   <div class="banner" v-if="open">
-    <p class="vt-banner-text">
-      <span class="vt-text-primary">VueConf Toronto</span>
-      <span class="vt-tagline"> - Rejoignez la conférence Vue.js</span>
-      | 9-10 Nov 2023 <span class="vt-place"> - Toronto, Canada</span>
-      <a
-        target="_blank"
-        class="vt-primary-action"
-        href="https://vuetoronto.com?utm_source=vuejs&utm_content=top_banner"
-        >S'inscrire <span class="vt-time-now">Maintenant</span></a
-      >
-    </p>
+    <a target="_blank"></a>
     <button @click="dismiss">
       <VTIconPlus class="close" />
     </button>
-    <p class="vt-banner-text vt-coupon">
-      <span class="vt-text-primary">Utilisez le code</span> VUEJS
-      <span class="vt-text-primary">pour obtenir 15% de réduction</span>
-    </p>
   </div>
 </template>
 
 <style>
 html:not(.banner-dismissed) {
-  --vt-banner-height: 60px;
+  --vt-banner-height: 30px;
 }
 </style>
 
