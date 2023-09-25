@@ -270,7 +270,7 @@ Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la 
 <div @scroll.passive="onScroll">...</div>
 ```
 
-Le modificateur `.passive` est généralement utilisé avec les écouteurs d'événements de touche pour [améliorer les performances sur les périphériques mobiles](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners).
+Le modificateur `.passive` est généralement utilisé avec les écouteurs d'événements de touche pour [améliorer les performances sur les périphériques mobiles](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scroll_performance_using_passive_listeners).
 
 ::: tip
 N'utilisez pas `.passive` et `.prevent` ensemble, car `.passive` indique déjà au navigateur que vous n'avez _pas_ l'intention d'empêcher le comportement par défaut de l'événement, et vous aurez probablement un avertissement du navigateur si vous le faites.
