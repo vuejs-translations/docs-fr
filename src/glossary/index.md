@@ -317,9 +317,9 @@ Une *fonction de rendu* est la partie d'un composant qui génère les VNodes uti
 Pour plus de détails, voir :
 - [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 
-## scheduler {#scheduler}
+## programmateur {#scheduler}
 
-The *scheduler* is the part of Vue's internals that controls the timing of when [reactive effects](#reactive-effect) are run.
+Le *programmateur* est la partie des composants internes de Vue qui contrôle le moment où les [effets réactifs](#reactive-effect) sont exécutés.
 
 When reactive state changes, Vue doesn't immediately trigger rendering updates. Instead, it batches them together using a queue. This ensures that a component only re-renders once, even if multiple changes are made to the underlying data.
 
