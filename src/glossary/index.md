@@ -329,13 +329,13 @@ Les tâches du programmateur sont également utilisées pour effectuer diverses 
 
 ## scoped slot {#scoped-slot}
 
-The term *scoped slot* is used to refer to a [slot](#slot) that receives [props](#prop).
+Le terme *scoped slot* est utilisé pour désigner un [slot](#slot) qui reçoit des [props](#prop).
 
-Historically, Vue made a much greater distinction between scoped and non-scoped slots. To some extent they could be regarded as two separate features, unified behind a common template syntax.
+Historiquement, Vue faisait une plus grande distinction entre les slots scoped et non scoped. Dans une certaine mesure, ils pourraient être considérés comme deux fonctionnalités distinctes, unifiées derrière une syntaxe de template commune.
 
-In Vue 3, the slot APIs were simplified to make all slots behave like scoped slots. However, the use cases for scoped and non-scoped slots often differ, so the term still proves useful as a way to refer to slots with props.
+Dans Vue 3, les API des slots ont été simplifiées pour que tous les slots se comportent comme des scoped slots. Cependant, les cas d'utilisation des scoped slots et non scoped diffèrent souvent, de sorte que le terme s'avère toujours utile pour désigner les slots avec des props.
 
-The props passed to a slot can only be used within a specific region of the parent template, responsible for defining the slot's contents. This region of the template behaves as a variable scope for the props, hence the name 'scoped slot'.
+Les props transmis à un slot ne peuvent être utilisés que dans une région spécifique du template parent, responsable de la définition du contenu du slot. Cette région du template se comporte comme une variable de scope pour les props, d'où le nom de 'scoped slot'.
 
 Pour plus de détails, voir :
 - [Guide - Slots - Scoped Slots](/guide/components/slots.html#scoped-slots)
