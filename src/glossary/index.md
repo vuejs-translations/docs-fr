@@ -335,7 +335,7 @@ Historiquement, Vue faisait une plus grande distinction entre les slots scoped e
 
 Dans Vue 3, les API des slots ont été simplifiées pour que tous les slots se comportent comme des scoped slots. Cependant, les cas d'utilisation des scoped slots et non scoped diffèrent souvent, de sorte que le terme s'avère toujours utile pour désigner les slots avec des props.
 
-The props passed to a slot can only be used within a specific region of the parent template, responsible for defining the slot's contents. This region of the template behaves as a variable scope for the props, hence the name 'scoped slot'.
+Les props transmis à un slot ne peuvent être utilisés que dans une région spécifique du template parent, responsable de la définition du contenu du slot. Cette région du template se comporte comme une variable de scope pour les props, d'où le nom de 'scoped slot'.
 
 Pour plus de détails, voir :
 - [Guide - Slots - Scoped Slots](/guide/components/slots.html#scoped-slots)
