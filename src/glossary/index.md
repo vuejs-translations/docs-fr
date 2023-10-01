@@ -319,7 +319,7 @@ Pour plus de détails, voir :
 
 ## programmateur {#scheduler}
 
-Le *programmateur* est la partie des composants internes de Vue qui contrôle le moment où les [effets réactifs](#reactive-effect) sont exécutés.
+Le *programmateur* est la partie des rouages internes de Vue qui contrôle le moment où les [effets réactifs](#reactive-effect) sont exécutés.
 
 Lorsque l'état réactif change, Vue ne déclenche pas immédiatement les mises à jour du rendu. Au lieu de cela, il les regroupe à l'aide d'une file d'attente. Cela permet de s'assurer qu'un composant n'effectue qu'un seul nouveau rendu, même si plusieurs changements sont apportés aux données sous-jacentes.
 
