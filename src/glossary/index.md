@@ -398,7 +398,7 @@ Plutôt que de créer directement des nœuds DOM, les composants Vue génèrent 
 
 Chaque fois qu'un composant est redessiné, le nouvel arbre de VNodes est comparé à l'arbre de VNodes précédent et toutes les différences sont alors appliquées au DOM réel. Si rien n'a changé, le DOM n'a pas besoin d'être touché.
 
-Vue uses a hybrid approach that we call [Compiler-Informed Virtual DOM](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Vue's template compiler is able to apply performance optimizations based on static analysis of the template. Rather than performing a full comparison of a component's old and new VNode trees at runtime, Vue can use information extracted by the compiler to reduce the comparison to just the parts of the tree that can actually change.
+Vue utilise une approche hybride que nous appelons [DOM virtuel basé sur la compilation](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Le compilateur de template de Vue est capable d'appliquer des optimisations de performance basées sur l'analyse statique du template. Plutôt que d'effectuer une comparaison complète des anciens et nouveaux arbres VNode d'un composant au moment de l'exécution, Vue peut utiliser les informations extraites par le compilateur pour réduire la comparaison aux seules parties de l'arbre qui peuvent réellement changer.
 
 Pour plus de détails, voir :
 - [Guide - Mécanismes de rendu](/guide/extras/rendering-mechanism.html)
