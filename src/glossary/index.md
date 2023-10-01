@@ -392,7 +392,7 @@ Le terme *DOM virtuel* (VDOM) n'est pas propre à Vue. Il s'agit d'une approche 
 
 Les navigateurs utilisent un arbre de nœuds pour représenter l'état actuel de la page. Cet arbre, et les API JavaScript utilisées pour interagir avec lui, sont appelés *document object model*, ou *DOM*.
 
-Manipulating the DOM is a major performance bottleneck. The virtual DOM provides one strategy for managing that.
+La manipulation du DOM est un goulot d'étranglement majeur pour les performances. Le DOM virtuel fournit une stratégie pour gérer cela.
 
 Rather than creating DOM nodes directly, Vue components generate a description of what DOM nodes they would like. These descriptors are plain JavaScript objects, known as VNodes (virtual DOM nodes). Creating VNodes is relatively cheap.
 
