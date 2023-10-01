@@ -321,7 +321,7 @@ Pour plus de détails, voir :
 
 Le *programmateur* est la partie des composants internes de Vue qui contrôle le moment où les [effets réactifs](#reactive-effect) sont exécutés.
 
-When reactive state changes, Vue doesn't immediately trigger rendering updates. Instead, it batches them together using a queue. This ensures that a component only re-renders once, even if multiple changes are made to the underlying data.
+Lorsque l'état réactif change, Vue ne déclenche pas immédiatement les mises à jour du rendu. Au lieu de cela, il les regroupe à l'aide d'une file d'attente. Cela permet de s'assurer qu'un composant n'effectue qu'un seul nouveau rendu, même si plusieurs changements sont apportés aux données sous-jacentes.
 
 [Watchers](/guide/essentials/watchers.html) are also batched using the scheduler queue. Watchers with `flush: 'pre'` (the default) will run before component rendering, whereas those with `flush: 'post'` will run after component rendering.
 
