@@ -386,7 +386,7 @@ Pour plus de détails, voir :
 
 Voir [DOM virtuel](#virtual-dom).
 
-## virtual DOM {#virtual-dom}
+## DOM virtuel {#virtual-dom}
 
 The term *virtual DOM* (VDOM) is not unique to Vue. It is a common approach used by several web frameworks for managing updates to the UI.
 
@@ -401,8 +401,8 @@ Every time a component re-renders, the new tree of VNodes is compared to the pre
 Vue uses a hybrid approach that we call [Compiler-Informed Virtual DOM](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Vue's template compiler is able to apply performance optimizations based on static analysis of the template. Rather than performing a full comparison of a component's old and new VNode trees at runtime, Vue can use information extracted by the compiler to reduce the comparison to just the parts of the tree that can actually change.
 
 Pour plus de détails, voir :
-- [Guide - Rendering Mechanism](/guide/extras/rendering-mechanism.html)
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Mécanismes de rendu](/guide/extras/rendering-mechanism.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 
 ## VNode {#vnode}
 
