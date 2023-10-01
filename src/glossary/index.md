@@ -329,7 +329,7 @@ Jobs in the scheduler are also used to perform various other internal tasks, suc
 
 ## scoped slot {#scoped-slot}
 
-The term *scoped slot* is used to refer to a [slot](#slot) that receives [props](#prop).
+Le terme *scoped slot* est utilisé pour désigner un [slot](#slot) qui reçoit des [props](#prop).
 
 Historically, Vue made a much greater distinction between scoped and non-scoped slots. To some extent they could be regarded as two separate features, unified behind a common template syntax.
 
