@@ -388,7 +388,7 @@ Voir [DOM virtuel](#virtual-dom).
 
 ## DOM virtuel {#virtual-dom}
 
-The term *virtual DOM* (VDOM) is not unique to Vue. It is a common approach used by several web frameworks for managing updates to the UI.
+Le terme *DOM virtuel* (VDOM) n'est pas propre à Vue. Il s'agit d'une approche commune utilisée par plusieurs frameworks web pour gérer les mises à jour de l'interface utilisateur.
 
 Browsers use a tree of nodes to represent the current state of the page. That tree, and the JavaScript APIs used to interact with it, are referred to as the *document object model*, or *DOM*.
 
