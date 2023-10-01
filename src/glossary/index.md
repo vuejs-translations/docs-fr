@@ -394,7 +394,7 @@ Les navigateurs utilisent un arbre de nœuds pour représenter l'état actuel de
 
 La manipulation du DOM est un goulot d'étranglement majeur pour les performances. Le DOM virtuel fournit une stratégie pour gérer cela.
 
-Rather than creating DOM nodes directly, Vue components generate a description of what DOM nodes they would like. These descriptors are plain JavaScript objects, known as VNodes (virtual DOM nodes). Creating VNodes is relatively cheap.
+Plutôt que de créer directement des nœuds DOM, les composants Vue génèrent une description des nœuds DOM qu'ils souhaitent. Ces descripteurs sont des objets JavaScript simples, connus sous le nom de VNodes (nœud virtuel du DOM). La création de VNodes est relativement peu coûteuse.
 
 Every time a component re-renders, the new tree of VNodes is compared to the previous tree of VNodes and any differences are then applied to the real DOM. If nothing has changed then the DOM doesn't need to be touched.
 
