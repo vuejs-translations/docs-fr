@@ -325,7 +325,7 @@ Lorsque l'état réactif change, Vue ne déclenche pas immédiatement les mises 
 
 Les [Observateurs](/guide/essentials/watchers.html) sont également mis en lots en utilisant la file d'attente du programmateur. Les observateurs avec `flush: 'pre'` (par défaut) seront exécutés avant le rendu du composant, tandis que ceux avec `flush: 'post'` seront exécutés après le rendu du composant.
 
-Jobs in the scheduler are also used to perform various other internal tasks, such as triggering some [lifecycle hooks](#lifecycle-hooks) and updating [template refs](#template-ref).
+Les tâches du programmateur sont également utilisées pour effectuer diverses autres tâches internes, telles que le déclenchement de certains [hooks du cycle de vie](#lifecycle-hooks) et la mise à jour des [refs de template](#template-ref).
 
 ## scoped slot {#scoped-slot}
 
