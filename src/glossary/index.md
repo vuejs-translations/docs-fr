@@ -390,7 +390,7 @@ Voir [DOM virtuel](#virtual-dom).
 
 Le terme *DOM virtuel* (VDOM) n'est pas propre à Vue. Il s'agit d'une approche commune utilisée par plusieurs frameworks web pour gérer les mises à jour de l'interface utilisateur.
 
-Les navigateurs utilisent un arbre de nœuds pour représenter l'état actuel de la page. Cet arbre, et les API JavaScript utilisées pour interagir avec lui, sont appelés *document object model*, ou *DOM*.
+Les navigateurs utilisent un arbre de nœuds pour représenter l'état actuel de la page. Cet arbre, et les API JavaScript utilisées pour interagir avec celui-ci, représentent le *document object model*, ou *DOM*.
 
 La manipulation du DOM est un goulot d'étranglement majeur pour les performances. Le DOM virtuel fournit une stratégie pour gérer cela.
 
