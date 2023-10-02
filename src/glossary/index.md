@@ -396,7 +396,7 @@ La manipulation du DOM est un goulot d'étranglement majeur pour les performance
 
 Plutôt que de créer directement des nœuds DOM, les composants Vue génèrent une description des nœuds DOM qu'ils souhaitent. Ces descripteurs sont des objets JavaScript simples, connus sous le nom de VNodes (nœud virtuel du DOM). La création de VNodes est relativement peu coûteuse.
 
-Chaque fois qu'un composant est redessiné, le nouvel arbre de VNodes est comparé à l'arbre de VNodes précédent et toutes les différences sont alors appliquées au DOM réel. Si rien n'a changé, le DOM n'a pas besoin d'être touché.
+Chaque fois qu'un composant est rerendu, le nouvel arbre de VNodes est comparé à l'arbre de VNodes précédent et toutes les différences sont alors appliquées au DOM réel. Si rien n'a changé, le DOM n'a pas besoin d'être modifié.
 
 Vue utilise une approche hybride que nous appelons [DOM virtuel basé sur la compilation](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Le compilateur de template de Vue est capable d'appliquer des optimisations de performance basées sur l'analyse statique du template. Plutôt que d'effectuer une comparaison complète des anciens et nouveaux arbres VNode d'un composant au moment de l'exécution, Vue peut utiliser les informations extraites par le compilateur pour réduire la comparaison aux seules parties de l'arbre qui peuvent réellement changer.
 
