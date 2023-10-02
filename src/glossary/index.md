@@ -386,23 +386,23 @@ Pour plus de détails, voir :
 
 Voir [DOM virtuel](#virtual-dom).
 
-## virtual DOM {#virtual-dom}
+## DOM virtuel {#virtual-dom}
 
-The term *virtual DOM* (VDOM) is not unique to Vue. It is a common approach used by several web frameworks for managing updates to the UI.
+Le terme *DOM virtuel* (VDOM) n'est pas propre à Vue. Il s'agit d'une approche commune utilisée par plusieurs frameworks web pour gérer les mises à jour de l'interface utilisateur.
 
-Browsers use a tree of nodes to represent the current state of the page. That tree, and the JavaScript APIs used to interact with it, are referred to as the *document object model*, or *DOM*.
+Les navigateurs utilisent un arbre de nœuds pour représenter l'état actuel de la page. Cet arbre, et les API JavaScript utilisées pour interagir avec celui-ci, représentent le *document object model*, ou *DOM*.
 
-Manipulating the DOM is a major performance bottleneck. The virtual DOM provides one strategy for managing that.
+La manipulation du DOM est un goulot d'étranglement majeur pour les performances. Le DOM virtuel fournit une stratégie pour gérer cela.
 
-Rather than creating DOM nodes directly, Vue components generate a description of what DOM nodes they would like. These descriptors are plain JavaScript objects, known as VNodes (virtual DOM nodes). Creating VNodes is relatively cheap.
+Plutôt que de créer directement des nœuds DOM, les composants Vue génèrent une description des nœuds DOM qu'ils souhaitent. Ces descripteurs sont des objets JavaScript simples, connus sous le nom de VNodes (nœud virtuel du DOM). La création de VNodes est relativement peu coûteuse.
 
-Every time a component re-renders, the new tree of VNodes is compared to the previous tree of VNodes and any differences are then applied to the real DOM. If nothing has changed then the DOM doesn't need to be touched.
+Chaque fois qu'un composant est rerendu, le nouvel arbre de VNodes est comparé à l'arbre de VNodes précédent et toutes les différences sont alors appliquées au DOM réel. Si rien n'a changé, le DOM n'a pas besoin d'être modifié.
 
-Vue uses a hybrid approach that we call [Compiler-Informed Virtual DOM](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Vue's template compiler is able to apply performance optimizations based on static analysis of the template. Rather than performing a full comparison of a component's old and new VNode trees at runtime, Vue can use information extracted by the compiler to reduce the comparison to just the parts of the tree that can actually change.
+Vue utilise une approche hybride que nous appelons [DOM virtuel basé sur la compilation](/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Le compilateur de template de Vue est capable d'appliquer des optimisations de performance basées sur l'analyse statique du template. Plutôt que d'effectuer une comparaison complète des anciens et nouveaux arbres VNode d'un composant au moment de l'exécution, Vue peut utiliser les informations extraites par le compilateur pour réduire la comparaison aux seules parties de l'arbre qui peuvent réellement changer.
 
 Pour plus de détails, voir :
-- [Guide - Rendering Mechanism](/guide/extras/rendering-mechanism.html)
-- [Guide - Render Functions & JSX](/guide/extras/render-function.html)
+- [Guide - Mécanismes de rendu](/guide/extras/rendering-mechanism.html)
+- [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 
 ## VNode {#vnode}
 
