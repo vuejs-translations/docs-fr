@@ -313,15 +313,15 @@ Une *fonction de rendu* est la partie d'un composant qui génère les VNodes uti
 Pour plus de détails, voir :
 - [Guide - Fonctions de rendu et JSX](/guide/extras/render-function.html)
 
-## scheduler {#scheduler}
+## programmateur {#scheduler}
 
-The *scheduler* is the part of Vue's internals that controls the timing of when [reactive effects](#reactive-effect) are run.
+Le *programmateur* est la partie des rouages internes de Vue qui contrôle le moment où les [effets réactifs](#reactive-effect) sont exécutés.
 
-When reactive state changes, Vue doesn't immediately trigger rendering updates. Instead, it batches them together using a queue. This ensures that a component only re-renders once, even if multiple changes are made to the underlying data.
+Lorsque l'état réactif change, Vue ne déclenche pas immédiatement les mises à jour du rendu. Au lieu de cela, il les regroupe à l'aide d'une file d'attente. Cela permet de s'assurer qu'un composant n'effectue qu'un seul nouveau rendu, même si plusieurs changements sont apportés aux données sous-jacentes.
 
-[Watchers](/guide/essentials/watchers.html) are also batched using the scheduler queue. Watchers with `flush: 'pre'` (the default) will run before component rendering, whereas those with `flush: 'post'` will run after component rendering.
+Les [Observateurs](/guide/essentials/watchers.html) sont également mis en lots en utilisant la file d'attente du programmateur. Les observateurs avec `flush: 'pre'` (par défaut) seront exécutés avant le rendu du composant, tandis que ceux avec `flush: 'post'` seront exécutés après le rendu du composant.
 
-Jobs in the scheduler are also used to perform various other internal tasks, such as triggering some [lifecycle hooks](#lifecycle-hooks) and updating [template refs](#template-ref).
+Les tâches du programmateur sont également utilisées pour effectuer diverses autres tâches internes, telles que le déclenchement de certains [hooks du cycle de vie](#lifecycle-hooks) et la mise à jour des [refs de template](#template-ref).
 
 ## scoped slot {#scoped-slot}
 
