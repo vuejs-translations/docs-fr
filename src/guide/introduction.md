@@ -38,7 +38,7 @@ import { createApp } from 'vue'
 createApp({
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   }
 }).mount('#app')
@@ -63,8 +63,8 @@ createApp({
 
 ```vue-html
 <div id="app">
-  <button @click="compteur++">
-    Le compteur est à {{ compteur }}
+  <button @click="count++">
+    Le compteur est à {{ count }}
   </button>
 </div>
 ```
@@ -73,12 +73,12 @@ createApp({
 
 <script setup>
 import { ref } from 'vue'
-const compteur = ref(0)
+const count = ref(0)
 </script>
 
 <div class="demo">
-  <button @click="compteur++">
-    Le compteur est à {{ compteur }}
+  <button @click="count++">
+    Le compteur est à {{ count }}
   </button>
 </div>
 
@@ -122,14 +122,14 @@ Dans la plupart des projets Vue dotés d'outils de construction, nous créons de
 export default {
   data() {
     return {
-      compteur: 0
+      count: 0
     }
   }
 }
 </script>
 
 <template>
-  <button @click="compteur++">Le compteur est à {{ compteur }}</button>
+  <button @click="count++">Le compteur est à {{ count }}</button>
 </template>
 
 <style scoped>
@@ -145,11 +145,11 @@ button {
 ```vue
 <script setup>
 import { ref } from 'vue'
-const compteur = ref(0)
+const count = ref(0)
 </script>
 
 <template>
-  <button @click="compteur++">Le compteur est à {{ compteur }}</button>
+  <button @click="count++">Le compteur est à {{ count }}</button>
 </template>
 
 <style scoped>
