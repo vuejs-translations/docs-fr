@@ -6,7 +6,7 @@ export default {
   },
   data: () => ({
     searchQuery: '',
-    gridColumns: ['nom', 'puissance'],
+    gridColumns: ['name', 'power'],
     gridData: [
       { name: 'Chuck Norris', power: Infinity },
       { name: 'Bruce Lee', power: 9000 },
