@@ -86,13 +86,25 @@
   {
     "name": "Curotec",
     "logo": "curotec.png",
-    "intro": "Nos clients tirent parti de notre expertise approfondie de Vue.js et Nuxt.js pour développer de meilleurs produits numériques et accroître rapidement la vélocité de leur équipe de développement de produits.",
+    "intro": "Travaillez avec une équipe qui comprend Vue.js à l'intérieur et à l'extérieur. Les équipes de SaaS et d'entreprises font appel à Curotec pour des services d'exécution de projets et de renforcement du personnel de premier ordre axés sur Vue.js.",
     "description": [
-      "Curotec aborde le développement de logiciels et le support informatique différemment - aborder les problèmes commerciaux que nos clients ont besoin de voir résolus avec la technologie et avec les bonnes ressources au bon moment. Il s'agit d'abord de comprendre vos défis et de les associer à des solutions et à des talents pour obtenir le résultat que vous recherchez.",
-      "Le résultat ? Des produits qui répondent à vos besoins et sont prêts pour votre croissance, tout en garantissant que vos applications offrent une expérience claire et simple à l'utilisateur final. Et avec un code bien développé et élégamment écrit, il est facile pour nous d'assurer le support et la maintenance au fur et à mesure de l'évolution de vos besoins."
+      "Whether you need a firm to build your idea, support an existing codebase, or augment your front-end dev team, we’ve got you covered. SaaS and enterprise product teams turn to Curotec for a firm that can get the job done right.",
+      "We've got an all-shores model with team members in the US, LATAM, and South Asia. We'll create a flexible engagement for your needs aligned with your budget, timezone, and project goals. We also cover three main focus areas which include:",
+      "- Enterprise software development",
+      "- SaaS product development",
+      "- Headless / Jamstack website development",
+      "If you're looking for a Vue.js-focused front-end development team that writes great quality code and gets stuff done, click the contact button below and get in touch!"
     ],
-    "region": ["Amérique du Nord", "Amérique latine"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Jamstack"],
+    "region": ["North America", "Latin America"],
+    "proficiencies": [
+      "Vue.js",
+      "Nuxt",
+      "Laravel",
+      "Headless",
+      "Node.js",
+      "Python",
+      "WordPress"
+    ],
     "website": {
       "text": "www.curotec.com",
       "url": "https://www.curotec.com/services/technologies/vuejs/"
