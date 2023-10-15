@@ -86,13 +86,25 @@
   {
     "name": "Curotec",
     "logo": "curotec.png",
-    "intro": "Nos clients tirent parti de notre expertise approfondie de Vue.js et Nuxt.js pour développer de meilleurs produits numériques et accroître rapidement la vélocité de leur équipe de développement de produits.",
+    "intro": "Travaillez avec une équipe qui comprend Vue.js de fond en comble. Les équipes de SaaS et d'entreprises font appel à Curotec pour des services d'exécution de projets et de renforcement des développeurs Vue.js spécialisés.",
     "description": [
-      "Curotec aborde le développement de logiciels et le support informatique différemment - aborder les problèmes commerciaux que nos clients ont besoin de voir résolus avec la technologie et avec les bonnes ressources au bon moment. Il s'agit d'abord de comprendre vos défis et de les associer à des solutions et à des talents pour obtenir le résultat que vous recherchez.",
-      "Le résultat ? Des produits qui répondent à vos besoins et sont prêts pour votre croissance, tout en garantissant que vos applications offrent une expérience claire et simple à l'utilisateur final. Et avec un code bien développé et élégamment écrit, il est facile pour nous d'assurer le support et la maintenance au fur et à mesure de l'évolution de vos besoins."
+      "Que vous ayez besoin d'une entreprise pour développer votre idée, soutenir une base de code existante ou renforcer votre équipe de développeurs front, nous avons ce qu'il vous faut. Les équipes de produits SaaS et d'entreprise se tournent vers Curotec pour trouver une entreprise capable de faire le travail correctement.",
+      "Nous disposons d'un modèle à tous les niveaux, avec des membres de l'équipe aux États-Unis, en Amérique latine et en Asie du Sud. Nous nous engagerons de manière flexible pour vos besoins en fonction de votre budget, de votre fuseau horaire et des objectifs de votre projet. Nous couvrons également trois domaines principaux, à savoir :",
+      "- Développement de logiciels d'entreprise",
+      "- Développement de produits SaaS",
+      "- Développement de sites web Headless / Jamstack",
+      "Si vous êtes à la recherche d'une équipe de développement front-end axée sur Vue.js qui écrit du code de grande qualité et qui fait avancer les choses, cliquez sur le bouton de contact ci-dessous et contactez-nous !"
     ],
     "region": ["Amérique du Nord", "Amérique latine"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Jamstack"],
+    "proficiencies": [
+      "Vue.js",
+      "Nuxt",
+      "Laravel",
+      "Headless",
+      "Node.js",
+      "Python",
+      "WordPress"
+    ],
     "website": {
       "text": "www.curotec.com",
       "url": "https://www.curotec.com/services/technologies/vuejs/"
