@@ -223,3 +223,4 @@ Les composants génériques sont pris en charge dans deux cas :
 
 - [TS avec la Composition API](./composition-api)
 - [TS avec l'Options API](./options-api)
+
