@@ -41,7 +41,7 @@ Vue est utilisé en production par des organisations renommées dans le monde en
 
 Vue 3 est l'un des frameworks frontend grand public les plus performants, et gère la plupart des cas d'utilisation des applications web avec facilité, sans nécessiter d'optimisations manuelles.
 
-Dans les scénarios de test de stress, Vue surpasse React et Angular avec une marge décente dans le [js-framework-benchmark](https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html). Il est également au coude à coude avec certains des frameworks sans DOM virtuel les plus rapides du benchmark.
+Dans les scénarios de test de stress, Vue surpasse React et Angular avec une marge décente dans le [js-framework-benchmark](https://krausest.github.io/js-framework-benchmark/current.html). Il est également au coude à coude avec certains des frameworks sans DOM virtuel les plus rapides du benchmark.
 
 Notez que les benchmarks synthétiques comme ceux présentés ci-dessus se concentrent sur les performances de rendu brutes avec des optimisations dédiées et peuvent ne pas être totalement représentatifs des résultats de performance du monde réel. Si vous vous intéressez davantage aux performances de chargement des pages, vous pouvez vérifier ce qui est avancé sur ce site à l'aide de [WebPageTest](https://www.webpagetest.org/lighthouse) ou de [PageSpeed Insights](https://pagespeed.web.dev/). Ce site est propulsé par Vue lui-même, avec un pré-rendu SSG, une hydratation complète de la page et une navigation côté client SPA. Il obtient un score de 100 en termes de performances sur un Moto G4 émulé avec une accélération du processeur de 4x sur des réseaux 4G lents.
 
