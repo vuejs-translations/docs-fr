@@ -518,7 +518,6 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
 - Autres outils utiles
   - [HeadingMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=fr-FR)
   - [Color Oracle](https://colororacle.org)
-  - [Focus Indicator](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=fr-FR)
   - [NerdeFocus](https://chrome.google.com/webstore/detail/nerdefocus/lpfiljldhgjecfepfljnbjnbjfhennpd?hl=fr-FR)
   - [Visual Aria](https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=fr-FR)
   - [Simulateur d'accessibilité de site web Silktide](https://chrome.google.com/webstore/detail/silktide-website-accessib/okcpiimdfkpkjcbihbmhppldhiebhhaf?hl=fr-FR)
