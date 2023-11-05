@@ -692,11 +692,6 @@ export default defineConfigWithTheme<ThemeConfig>({
         repo: 'https://github.com/vuejs-translations/docs-uk'
       },
       {
-        link: 'https://fr.vuejs.org',
-        text: 'Français',
-        repo: 'https://github.com/vuejs-translations/docs-fr'
-      },
-      {
         link: 'https://ko.vuejs.org',
         text: '한국어',
         repo: 'https://github.com/vuejs-translations/docs-ko'
@@ -726,7 +721,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     algolia: {
       indexName: 'fr-vuejs',
       appId: 'HH5AXEOM9U',
-      apiKey: 'b33b47187a1497e2a75b99d8a4deee38',
+      apiKey: 'b33b47187a1497e2a75b99d8a4deee38'
     },
 
     carbonAds: {
@@ -757,7 +752,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   markdown: {
     config(md) {
       md.use(headerPlugin)
-        // .use(textAdPlugin)
+      // .use(textAdPlugin)
     }
   },
 
