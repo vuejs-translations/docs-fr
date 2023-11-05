@@ -176,7 +176,7 @@ export default {
 
 </div>
 
-L'option `emits` prend également en charge une syntaxe avec objet, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
+L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec objet, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
 
 <div class="composition-api">
 
