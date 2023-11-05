@@ -24,7 +24,7 @@ Quand vous concevez la stratégie de test de votre application Vue, vous devriez
 - **Composant** : Vérifie que le montage, le rendu, les interactions et le comportement d'un composant ont lieu comme prévu. Ces tests exercent plus de code que des tests unitaires, sont plus complexes et requièrent plus de temps pour s'exécuter.
 - **End-to-end** : Vérifie des fonctionnalités qui traversent plusieurs pages et émettent des vraies requêtes réseau sur votre application Vue construite pour la production. Ces tests impliquent souvent la mise en place d'une base de données ou d'un autre backend.
 
-Chaque type de test joue un rôle dans la stratégie de test de votre application et vous protégera de problèmes différents.
+Chaque type de test joue un rôle dans la stratégie de test de votre application, et vous protégera de problèmes différents.
 
 ## Aperçu {#overview}
 
@@ -141,7 +141,7 @@ const { getByText } = render(Stepper, {
 
 getByText('0') // Vérification implicite que "0" se trouve dans le composant
 
-const button = getByText('increment')
+const button = getByRole('button', { name: /increment/i })
 
 // Envoi d'un événement click sur notre bouton d'incrémentation.
 await fireEvent.click(button)
@@ -242,9 +242,9 @@ Les tests End-to-end détectent souvent des problèmes avec votre routeur, votre
 
 Les tests End-to-end n'importent pas le code de votre application Vue, mais reposent entièrement sur le test de votre application en naviguant dans des pages entières dans un navigateur réel.
 
-Les tests End-to-end valident de nombreuses couches de votre application. Ils peuvent soit cibler votre application localement, soit même un environnement de staging déployé. Les tests exercés sur votre environnement de staging incluent non seulement votre code frontend et votre serveur statique, mais également tous les services et infrastructures backend associés.
+Les tests End-to-end valident de nombreuses couches de votre application. Ils peuvent soit cibler votre application localement soit même un environnement de staging déployé. Les tests exercés sur votre environnement de staging incluent non seulement votre code frontend et votre serveur statique mais également tous les services et infrastructures backend associés.
 
-> Plus vos tests ressemblent à l'utilisation de votre application, plus ils peuvent vous donner confiance. [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106), auteur de la bibliothèque de tests
+> Plus vos tests ressemblent à la manière dont votre application est utilisée, plus ils vous donneront confiance. [Kent C. Dodds](https://twitter.com/kentcdodds/status/977018512689455106), auteur de la bibliothèque de tests
 
 En testant l'impact des actions des utilisateurs sur votre application, les tests E2E sont souvent la clé d'une plus grande confiance dans le bon fonctionnement ou non d'une application.
 
@@ -266,7 +266,7 @@ Alors que les développeurs s'appuyaient traditionnellement sur l'analyse des lo
 
 #### Visibilité en mode headless {#visibility-in-headless-mode}
 
-Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration / déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
+Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration/déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
 
 ### Recommandation {#recommentation-2}
 
@@ -314,8 +314,6 @@ export default defineConfig({
 Si vous utilisez Typescript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
 
 ```json
-// tsconfig.json
-
 {
   "compilerOptions": {
     "types": ["vitest/globals"]
@@ -417,7 +415,7 @@ export function withSetup(composable) {
   })
   app.mount(document.createElement('div'))
   // renvoie le résultat et l'instance de l'application
-  // pour les tests, provide / unmount
+  // pour les tests, provide/unmount
   return [result, app]
 }
 ```
