@@ -163,7 +163,7 @@ Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de for
 Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; en liant `for` et `id`.
 
 ```vue-html
-<label for="name">Name</label>
+<label for="name">Name: </label>
 <input type="text" name="name" id="name" v-model="name" />
 ```
 
@@ -191,7 +191,7 @@ Associer les labels avec un id correspondant est mieux supporté par les technol
 Vous pouvez aussi donner un nom accessible au champ avec [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
 
 ```vue-html
-<label for="name">Name</label>
+<label for="name">Name: </label>
 <input
   type="text"
   name="name"
@@ -220,7 +220,7 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 >
   <h1 id="billing">Billing</h1>
   <div class="form-item">
-    <label for="name">Name:</label>
+    <label for="name">Name: </label>
     <input
       type="text"
       name="name"
@@ -250,7 +250,7 @@ L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Acces
 >
   <h1 id="billing">Billing</h1>
   <div class="form-item">
-    <label for="name">Full Name:</label>
+    <label for="name">Full Name: </label>
     <input
       type="text"
       name="name"
@@ -330,7 +330,7 @@ Vous pouvez fournir des instructions complémentaires et associer plusieurs ids 
 ```vue-html
 <fieldset>
   <legend>Using aria-labelledby</legend>
-  <label id="date-label" for="date">Current Date:</label>
+  <label id="date-label" for="date">Current Date: </label>
   <input
     type="date"
     name="date"
@@ -346,7 +346,7 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 ```vue-html
 <fieldset>
   <legend>En utilisant aria-describedby</legend>
-  <label id="dob" for="dob">Date of Birth:</label>
+  <label id="dob" for="dob">Date of Birth: </label>
   <input type="date" name="dob" id="dob" aria-describedby="dob-instructions" />
   <p id="dob-instructions">MM/DD/YYYY</p>
 </fieldset>
