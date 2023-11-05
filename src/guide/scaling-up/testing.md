@@ -266,7 +266,7 @@ Alors que les développeurs s'appuyaient traditionnellement sur l'analyse des lo
 
 #### Visibilité en mode headless {#visibility-in-headless-mode}
 
-Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration / déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
+Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégration/déploiement continus, ils sont souvent exécutés dans des navigateurs headless (c'est-à-dire qu'aucun navigateur visible n'est ouvert pour que l'utilisateur puisse le regarder). Une caractéristique essentielle des frameworks de test E2E modernes est la possibilité de voir des snapshots et / ou des vidéos de l'application pendant les tests, fournissant un aperçu des raisons pour lesquelles des erreurs se produisent. Historiquement, il était fastidieux de maintenir ces intégrations.
 
 ### Recommandation {#recommentation-2}
 
@@ -314,8 +314,6 @@ export default defineConfig({
 Si vous utilisez Typescript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
 
 ```json
-// tsconfig.json
-
 {
   "compilerOptions": {
     "types": ["vitest/globals"]
@@ -417,7 +415,7 @@ export function withSetup(composable) {
   })
   app.mount(document.createElement('div'))
   // renvoie le résultat et l'instance de l'application
-  // pour les tests, provide / unmount
+  // pour les tests, provide/unmount
   return [result, app]
 }
 ```
