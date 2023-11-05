@@ -8,7 +8,7 @@ Un composant Vue doit être "enregistré" afin que Vue sache où localiser son i
 
 ## Enregistrement global {#global-registration}
 
-Nous pouvons rendre les composants disponibles globalement dans l'[application Vue](/guide/essentials/application) actuelle en utilisant la méthode `app.component()` :
+Nous pouvons rendre les composants disponibles globalement dans l'[application Vue](/guide/essentials/application) actuelle en utilisant la méthode `.component()` :
 
 ```js
 import { createApp } from 'vue'
@@ -33,7 +33,7 @@ import MyComponent from './App.vue'
 app.component('MyComponent', MyComponent)
 ```
 
-La méthode `app.component()` peut être chaînée :
+La méthode `.component()` peut être chaînée :
 
 ```js
 app
