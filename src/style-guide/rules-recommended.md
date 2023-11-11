@@ -159,7 +159,7 @@ computed: {
 </div>
 
 <div class="style-example style-example-good">
-<h3>Bon</h3>
+<h3>OK</h3>
 
 ```js
 // Ne pas mettre d'espace convient également, tant que
