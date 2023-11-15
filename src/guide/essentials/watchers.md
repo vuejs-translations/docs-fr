@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     async getAnswer() {
-       this.loading = true
+      this.loading = true
       this.answer = 'Thinking...'
       try {
         const res = await fetch('https://yesno.wtf/api')
@@ -80,7 +80,7 @@ const answer = ref('Questions usually contain a question mark. ;-)')
 const loading = ref(false)
 
 // watch agit directement sur une ref
-watch(question, async (newQuestion) => {
+watch(question, async (newQuestion, oldQuestion) => {
   if (newQuestion.indexOf('?')) {
     loading.value = true
     answer.value = 'Thinking...'

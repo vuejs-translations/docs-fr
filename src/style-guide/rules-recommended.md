@@ -128,7 +128,7 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
 Lorsque les composants commencent à prendre beaucoup d'espace ou deviennent difficiles à lire, l'ajout d'espaces entre les propriétés multi-lignes peut les rendre plus faciles à parcourir. Dans certains éditeurs, comme Vim, des options de formatage comme celle-ci peuvent également faciliter la navigation au clavier.
 
 <div class="style-example style-example-bad">
-<h3>Mauvais</h3>
+<h3>À éviter</h3>
 
 ```js
 props: {
@@ -162,8 +162,8 @@ computed: {
 <h3>OK</h3>
 
 ```js
-// Ne pas mettre d'espace convient également, tant que
-// le composant est toujours facile à lire et navigable.
+// Sans espace c'est aussi bon tant que
+// le composant soit toujours facile à lire
 props: {
   value: {
     type: String,

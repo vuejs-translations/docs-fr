@@ -1,4 +1,4 @@
 <p>Id de la liste de tâches: {{ todoId }}</p>
-<button @click="todoId++">Récupérer la prochaine liste de tâches</button>
+<button @click="todoId++" :disabled="!todoData">Récupérer la prochaine liste de tâches</button>
 <p v-if="!todoData">Chargement...</p>
 <pre v-else>{{ todoData }}</pre>

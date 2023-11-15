@@ -346,9 +346,9 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 ```vue-html
 <fieldset>
   <legend>En utilisant aria-describedby</legend>
-  <label id="dob" for="dob">Date of Birth: </label>
+  <label id="dob" for="dob">Date de naissance : </label>
   <input type="date" name="dob" id="dob" aria-describedby="dob-instructions" />
-  <p id="dob-instructions">MM/DD/YYYY</p>
+  <p id="dob-instructions">DD/MM/YYYY</p>
 </fieldset>
 ```
 
