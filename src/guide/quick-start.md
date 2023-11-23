@@ -381,16 +381,16 @@ Au fur et à mesure que nous progressons dans le guide, il se peut que nous devi
 
 <script type="module">
   import { createApp } from 'vue'
-  import MyComposant from './my-composant.js'
+  import MyComponent from './my-component.js'
 
-  createApp(MyComposant).mount('#app')
+  createApp(MyComponent).mount('#app')
 </script>
 ```
 
 <div class="options-api">
 
 ```js
-// my-composant.js
+// my-component.js
 export default {
   data() {
     return { count: 0 }
