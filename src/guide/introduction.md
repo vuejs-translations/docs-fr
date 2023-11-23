@@ -108,7 +108,7 @@ Si vous trouvez ces concepts intimidants, ne vous inquiétez pas ! Le tutoriel e
 
 Si vous êtes un développeur expérimenté et que vous souhaitez savoir comment intégrer au mieux Vue dans vos outils, ou si vous êtes curieux de savoir ce que ces termes signifient, nous en parlons plus en détail dans [Les manières d'utiliser Vue](/guide/extras/ways-of-using-vue).
 
-Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue sont partagées dans tous ces cas d'utilisation. Même si vous n'êtes qu'à vos débuts, les connaissances acquises en cours de route vous seront utiles pour atteindre des objectifs plus ambitieux à l'avenir. Si vous avez niveau expérimenté, vous pouvez choisir la manière optimale de tirer parti de Vue en fonction des problèmes que vous essayez de résoudre, tout en conservant la même productivité. C'est pourquoi nous appelons Vue "le framework évolutif" : c'est un framework qui peut grandir avec vous et s'adapter à vos besoins.
+Malgré la flexibilité, les connaissances de base sur le fonctionnement de Vue sont partagées dans tous ces cas d'utilisation. Même si vous n'êtes qu'à vos débuts, les connaissances acquises en cours de route vous seront utiles pour atteindre des objectifs plus ambitieux à l'avenir. Si vous avez un niveau expérimenté, vous pouvez choisir la manière optimale de tirer parti de Vue en fonction des problèmes que vous essayez de résoudre, tout en conservant la même productivité. C'est pourquoi nous appelons Vue "le framework évolutif" : c'est un framework qui peut grandir avec vous et s'adapter à vos besoins.
 
 ## Composant monofichier (Single-File Components) {#single-file-components}
 
