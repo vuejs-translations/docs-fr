@@ -288,7 +288,7 @@ Vous pouvez utiliser `v-for` directement sur un composant, comme avec n'importe 
 <MyComponent v-for="item in items" :key="item.id" />
 ```
 
-Toutefois, les données ne vont pas être automatiquement être passées au composant, car les composants ont chacun leur propre portée isolée. Afin de passer la donnée itérée au composant, il faut également utiliser les props :
+Toutefois, les données ne vont pas être automatiquement passées au composant, car les composants ont chacun leur propre portée isolée. Afin de passer la donnée itérée au composant, il faut également utiliser les props :
 
 ```vue-html
 <MyComponent
@@ -425,7 +425,7 @@ methods: {
 </ul>
 ```
 
-Faites attention à `reverse()` et `sort()` dans une propriété calculée ! Ces deux méthodes vont muter le tableau original, ce qui doit être évité dans des accesseurs calculés. Créez plutôt une copie du tableau originale avant d'appeler ces méthodes :
+Faites attention à `reverse()` et `sort()` dans une propriété calculée ! Ces deux méthodes vont muter le tableau original, ce qui doit être évité dans des accesseurs calculés. Créez plutôt une copie du tableau original avant d'appeler ces méthodes :
 
 ```diff
 - return numbers.reverse()
