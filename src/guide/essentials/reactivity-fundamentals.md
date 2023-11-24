@@ -125,7 +125,7 @@ Vous pouvez également muter une ref directement dans les gestionnaires d'évén
 </button>
 ```
 
-Pour une logique plus complexe, nous pouvons déclarer des fonctions qui modifient les ref dans la même portée et les exposer en tant que méthodes à côté de l'état :
+Pour une logique plus complexe, nous pouvons déclarer des fonctions qui modifient les refs dans la même portée et les exposer en tant que méthodes à côté de l'état :
 
 ```js{7-10,15}
 import { ref } from 'vue'
