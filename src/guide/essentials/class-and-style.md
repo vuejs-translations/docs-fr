@@ -343,4 +343,4 @@ Vous pouvez fournir un tableau de plusieurs valeurs (préfixées) à une propri�
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-Cela ne rendra que la dernière valeur du tableau pris en charge par le navigateur. Dans cet exemple, il affichera `display: flex` pour les navigateurs prenant en charge la version sans préfixe de flexbox.
+Cela ne rendra que la dernière valeur du tableau prise en charge par le navigateur. Dans cet exemple, il affichera `display: flex` pour les navigateurs prenant en charge la version sans préfixe de flexbox.
