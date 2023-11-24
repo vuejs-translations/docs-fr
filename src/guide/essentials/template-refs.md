@@ -6,7 +6,7 @@ Bien que le modèle de rendu déclaratif de Vue fasse abstraction pour vous de l
 <input ref="input">
 ```
 
-`ref` est un attribut spécial, semblable à l'attribut `key` évoqué dans le chapitre `v-for`. Il nous permet d'obtenir une référence directe à un élément spécifique du DOM ou à une instance d'un composant enfant une fois qu'il a été monté. Cela peut être utile lorsque vous voulez, par exemple, se concentrer de manière programmatique sur une entrée lors du montage d'un composant, ou bien initialiser une librairie tierce sur un élément.
+`ref` est un attribut spécial, semblable à l'attribut `key` évoqué dans le chapitre `v-for`. Il nous permet d'obtenir une référence directe à un élément spécifique du DOM ou à une instance d'un composant enfant une fois qu'il a été monté. Cela peut être utile lorsque vous voulez, par exemple, vous concentrer de manière programmatique sur une entrée lors du montage d'un composant, ou bien initialiser une librairie tierce sur un élément.
 
 ## Accéder aux refs {#accessing-the-refs}
 
@@ -78,7 +78,7 @@ watchEffect(() => {
   if (input.value) {
     input.value.focus()
   } else {
-    // pas encore monté, où l'élément a été démonté (par ex. par v-if)
+    // pas encore monté ou l'élément a été démonté (par ex. par v-if)
   }
 })
 ```
