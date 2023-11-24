@@ -4,7 +4,7 @@ Chaque instance d'un composant Vue passe par une série d'étapes d'initialisati
 
 ## Enregistrement des hooks du cycle de vie {#registering-lifecycle-hooks}
 
-Par exemple, le hook <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span>  peut être utilisé pour exécuter du code après que le composant ait terminé son rendu initial et créer les nœuds du DOM :
+Par exemple, le hook <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span>  peut être utilisé pour exécuter du code après que le composant ait terminé son rendu initial et créé les nœuds du DOM :
 
 <div class="composition-api">
 
