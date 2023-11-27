@@ -180,7 +180,7 @@ Voir les [mises en garde concernant l'analyse du template DOM](#in-dom-template-
 
 Si nous construisons un blog, il est probable que nous ayons besoin d'un composant pour représenter un article du blog. Nous voulons que tous les articles partagent la même mise en page, mais avec un contenu différent. Un tel composant ne sera utile que si vous pouvez lui passer des données, comme le titre et le contenu d'un article spécifique que l'on voudrait afficher. C'est là que les props entrent en jeu.
 
-Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state#props).</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-defineemits)une macro</span> :
+Les props sont des attributs personnalisés que l'on peut enregistrer sur un composant. Pour passer un titre au composant article de notre blog, nous devons le déclarer dans la liste des props que ce composant accepte, en utilisant <span class="options-api">l'option [`props`](/api/options-state#props)</span><span class="composition-api">la macro [`defineProps`](/api/sfc-script-setup#defineprops-defineemits)</span> :
 
 <div class="options-api">
 
@@ -222,7 +222,7 @@ console.log(props.title)
 
 Voir aussi : [Typer les props d'un composant](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
-Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passée à `setup()` en premier argument :
+Si vous n'utilisez pas `<script setup>`, les propriétés doivent être déclarées via l'option `props`, et l'objet props sera passé à `setup()` en premier argument :
 
 ```js
 export default {
@@ -462,7 +462,7 @@ Comme pour les éléments HTML, il est souvent utile de pouvoir passer du conten
 
 Ce qui devrait rendre :
 
-:::danger Il s'agit d'une Erreur à des Fins de Démonstration
+:::danger Il s'agit d'une Erreur à des fins de Démonstration
 Quelque chose de grave s'est produit.
 :::
 
@@ -471,7 +471,7 @@ Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>`
 ```vue{4}
 <template>
   <div class="alert-box">
-    <strong>Il s'agit d'une Erreur à des Fins de Démonstration</strong>
+    <strong>Il s'agit d'une Erreur à des fins de Démonstration</strong>
     <slot />
   </div>
 </template>
