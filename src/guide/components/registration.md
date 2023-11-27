@@ -130,7 +130,7 @@ Notez que **les composants enregistrés localement _ne_ sont _pas_ également di
 
 ## Casse des noms des composants {#component-name-casing}
 
-Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) lors de l'enregistrement des composants. Ceci est dû au fait :
+Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) lors de l'enregistrement des composants. Ceci est dû au fait que :
 
 1. Les noms en casse Pascal sont des identifiants JavaScript valides. Cela facilite l'import et l'enregistrement des composants en JavaScript. Il aide également les IDE avec l'auto-complétion.
 
@@ -138,4 +138,4 @@ Tout au long de ce guide, nous utilisons des noms en casse Pascal (PascalCase) l
 
 Il s'agit du style recommandé lorsque vous travaillez avec des templates à base de SFC ou de chaînes de caractères. Cependant, comme indiqué dans [les mises en garde concernant l'analyse du template DOM](/guide/essentials/component-basics#in-dom-template-parsing-caveats), les balises déclarées en casse Pascal ne sont pas utilisables dans les templates DOM.
 
-Heureusement, Vue prend en charge la résolution des balises au format kebab-case en leur équivalent composants enregistrés à la condition qu'ils utilisent la casse Pascal. Cela signifie qu'un composant enregistré en tant que `MyComponent` peut être référencé dans le template via à la fois `<MyComponent>` et `<my-component>`. Cela nous permet d'utiliser le même code d'enregistrement de composant JavaScript quelle que soit la source du template.
+Heureusement, Vue prend en charge la résolution des balises au format kebab-case et leur équivalent composants enregistrés à la condition qu'ils utilisent la casse Pascal. Cela signifie qu'un composant enregistré en tant que `MyComponent` peut être référencé dans le template via à la fois `<MyComponent>` et `<my-component>`. Cela nous permet d'utiliser le même code d'enregistrement de composant JavaScript quelle que soit la source du template.
