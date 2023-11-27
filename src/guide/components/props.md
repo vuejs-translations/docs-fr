@@ -591,7 +591,7 @@ Le composant peut être utilisé comme ceci :
 <MyComponent />
 ```
 
-Lorsqu'un accessoire est déclaré pour autoriser plusieurs types, les règles de conversion pour `Boolean` seront également appliquées. Cependant, il y a un avantage lorsque `String` et `Boolean` sont autorisés - la règle de casting sur Boolean ne s'applique que si Boolean apparaît avant String :
+Lorsqu'un prop est déclaré pour autoriser plusieurs types, les règles de conversion pour `Boolean` seront également appliquées. Cependant, il y a un avantage lorsque `String` et `Boolean` sont autorisés - la règle de casting sur Boolean ne s'applique que si Boolean apparaît avant String :
 
 <div class="composition-api">
 
