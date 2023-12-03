@@ -23,17 +23,17 @@ Fournit une valeur qui peut être injectée par les composants descendants.
   ```vue
   <script setup>
   import { ref, provide } from 'vue'
-  import { fooSymbol } from './injectionSymbols'
+  import { countSymbol } from './injectionSymbols'
 
   // fournit une valeur statique
-  provide('foo', 'bar')
+  provide('path', '/project/')
 
   // fournit une valeur réactive
   const count = ref(0)
   provide('count', count)
 
   // fournit des clés de symboles
-  provide(fooSymbol, count)
+  provide(countSymbol, count)
   </script>
   ```
 
@@ -66,7 +66,7 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
 
   Le premier argument est la clé d'injection. Vue remontera la chaîne des parents pour localiser une valeur fournie avec une clé correspondante. Si plusieurs composants de la chaîne des parents fournissent la même clé, celui qui est le plus proche du composant qui injecte la valeur l'emportera sur ceux qui sont plus haut dans la chaîne. Si aucune valeur avec la clé correspondante n'a été trouvée, `inject()` renvoie `undefined` sauf si une valeur par défaut est fournie.
 
-  Le second argument est optionnel et représente la valeur par défaut à utiliser si aucune valeur correspondante n'a été trouvée. 
+  Le second argument est optionnel et représente la valeur par défaut à utiliser si aucune valeur correspondante n'a été trouvée.
 
   Il peut aussi être une fonction _factory_ pour retourner des valeurs qui sont coûteuses à créer. Dans ce cas, la valeur `true` doit être passée comme troisième argument pour indiquer que la fonction doit être utilisée comme une _factory_ au lieu de la valeur elle-même.
 
@@ -81,19 +81,19 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   ```vue
   <script setup>
   import { inject } from 'vue'
-  import { fooSymbol } from './injectionSymbols'
+  import { countSymbol } from './injectionSymbols'
 
   // injecte une valeur statique par défaut
-  const foo = inject('foo')
+  const path = inject('path')
 
   // injecte une valeur réactive
   const count = inject('count')
 
   // injection avec des clés de symboles
-  const foo2 = inject(fooSymbol)
+  const count2 = inject(countSymbol)
 
   // injection avec une valeur par défaut
-  const bar = inject('foo', 'default value')
+  const bar = inject('path', '/default-path')
 
   // injection avec une valeur par défaut via une fonction factory
   const baz = inject('foo', () => new Map())
