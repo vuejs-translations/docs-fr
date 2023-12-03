@@ -17,6 +17,7 @@ if (typeof window !== 'undefined') {
   }
 }
 </script>
+
 # Les événements de composant {#component-events}
 
 > Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
@@ -176,14 +177,14 @@ export default {
 
 </div>
 
-L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec objet, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
+L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec objet. Si vous utilisez TypeScript, vous pouvez taper des arguments, ce qui nous permet d'effectuer une validation en cours d'exécution de la charge utile des événements émis :
 
 <div class="composition-api">
 
 ```vue
 <script setup>
 const emit = defineEmits({
-  submit(payload) {
+  submit(payload: { email: string, password: string }) {
     // renvoie `true` ou `false` pour indiquer
     // que la validation a réussi/échoué
   }
@@ -210,7 +211,7 @@ Plus de détails : [Typer les données émises par les composants](/guide/typesc
 ```js
 export default {
   emits: {
-    submit(payload) {
+    submit(payload: { email: string, password: string }) {
       // renvoie `true` ou `false` pour indiquer
       // que la validation a réussi/échoué
     }
