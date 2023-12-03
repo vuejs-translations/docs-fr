@@ -44,6 +44,7 @@ Dans le code source, les définitions de prop devraient toujours être le plus d
   :::
 
 <div class="options-api">
+
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 
@@ -83,9 +84,11 @@ props: {
 ```
 
 </div>
+
 </div>
 
 <div class="composition-api">
+
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 
@@ -123,6 +126,7 @@ const props = defineProps({
 ```
 
 </div>
+
 </div>
 
 ## Utilisez `v-for` avec une clé {#use-keyed-v-for}
@@ -131,6 +135,8 @@ const props = defineProps({
 
 ::: details Explications détaillées
 Imaginons que vous ayez une liste de todos :
+
+<div class="options-api">
 
 ```js
 data() {
@@ -148,6 +154,25 @@ data() {
   }
 }
 ```
+
+</div>
+
+<div class="composition-api">
+
+```js
+const todos = ref([
+  {
+    id: 1,
+    text: 'Learn to use v-for'
+  },
+  {
+    id: 2,
+    text: 'Learn to use key'
+  }
+])
+```
+
+</div>
 
 Puis vous les triez par ordre alphabétique. Lors de la mise à jour du DOM, Vue va optimiser le rendu de manière à réaliser les mutations du DOM les moins coûteuses. Cela peut signifier supprimer la première todo, puis la remettre à la fin de la liste.
 
@@ -214,6 +239,8 @@ Va produire une erreur, car la directive `v-if` sera d'abord évaluée et la var
 
 Cela peut être résolu en itérant sur une propriété calculée à la place, de cette façon :
 
+<div class="options-api">
+
 ```js
 computed: {
   activeUsers() {
@@ -221,6 +248,18 @@ computed: {
   }
 }
 ```
+
+</div>
+
+<div class="composition-api">
+
+```js
+const activeUsers = computed(() => {
+  return users.filter((user) => user.isActive)
+})
+```
+
+</div>
 
 ```vue-html
 <ul>
