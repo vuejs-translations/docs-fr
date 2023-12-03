@@ -298,4 +298,4 @@ L'utilisation de `props.onEvent` a un comportement différent de l'utilisation d
 Si `:onEvent` et `@event` sont tous deux passés, `props.onEvent` peut être un tableau de `fonctions` au lieu de `function`, ce comportement n'est pas stable et pourrait changer dans le futur.
 :::
 
-Pour cette raison, il est recommandé d'utiliser `emit('event')` au lieu de `props.onEvent` lors de l'émission d'événements.
+Pour cette raison, il est recommandé d'utiliser `emit('event')` au lieu de `props.onEvent` pour émettre des événements.
