@@ -177,7 +177,7 @@ export default {
 
 </div>
 
-L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec objet. Si vous utilisez TypeScript, vous pouvez taper des arguments, ce qui nous permet d'effectuer une validation en cours d'exécution de la charge utile des événements émis :
+L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec un objet. Si vous utilisez TypeScript, vous pouvez utiliser les arguments, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
 
 <div class="composition-api">
 
