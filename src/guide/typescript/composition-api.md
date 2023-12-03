@@ -146,11 +146,11 @@ const emit = defineEmits(['change', 'update'])
 // basée sur les options
 const emit = defineEmits({
   change: (id: number) => {
-    // retourne `true` ou `false` à indiquer
+    // retourne `true` ou `false` à retourner
     // validation pass / fail
   },
   update: (value: string) => {
-    // retourne `true` ou `false` à indiquer
+    // retourne `true` ou `false` à retourner
     // validation pass / fail
   }
 })
