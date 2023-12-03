@@ -56,6 +56,8 @@ Une application Vue idéale est composée de flux de props vers le bas, et d'év
 
 Le problème, c'est qu'il existe aussi de nombreux cas _simples_ où ces modèles peuvent être pratiques. Attention : ne vous laissez pas séduire par l'idée d'échanger la simplicité (être capable de comprendre le flux de votre état) contre la commodité à court terme (écrire moins de code).
 
+<div class="options-api">
+
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 
@@ -146,5 +148,94 @@ app.component('TodoItem', {
   `
 })
 ```
+
+</div>
+
+</div>
+
+<div class="composition-api">
+
+<div class="style-example style-example-bad">
+<h3>Bad</h3>
+
+```vue
+<script setup>
+defineProps({
+  todo: {
+    type: Object,
+    required: true
+  }
+})
+</script>
+<template>
+  <input v-model="todo.text" />
+</template>
+```
+
+```vue
+<script setup>
+import { getCurrentInstance } from 'vue'
+const props = defineProps({
+  todo: {
+    type: Object,
+    required: true
+  }
+})
+const instance = getCurrentInstance()
+function removeTodo() {
+  const parent = instance.parent
+  if (!parent) return
+  parent.props.todos = parent.props.todos.filter((todo) => {
+    return todo.id !== props.todo.id
+  })
+}
+</script>
+<template>
+  <span>
+    {{ todo.text }}
+    <button @click="removeTodo">×</button>
+  </span>
+</template>
+```
+
+</div>
+
+<div class="style-example style-example-good">
+<h3>Good</h3>
+
+```vue
+<script setup>
+defineProps({
+  todo: {
+    type: Object,
+    required: true
+  }
+})
+const emit = defineEmits(['input'])
+</script>
+<template>
+  <input :value="todo.text" @input="emit('input', $event.target.value)" />
+</template>
+```
+
+```vue
+<script setup>
+defineProps({
+  todo: {
+    type: Object,
+    required: true
+  }
+})
+const emit = defineEmits(['delete'])
+</script>
+<template>
+  <span>
+    {{ todo.text }}
+    <button @click="emit('delete')">×</button>
+  </span>
+</template>
+```
+
+</div>
 
 </div>

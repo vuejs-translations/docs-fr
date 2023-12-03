@@ -91,7 +91,7 @@ Cet exemple illustre les deux principales fonctionnalités de Vue :
 Il se peut que vous ayez déjà des questions - pas d'inquiétude. Nous allons couvrir tous les petits détails dans la suite de la documentation. Pour l'instant, veuillez lire scrupuleusement la documentation afin d'avoir une vision d'ensemble de ce que propose Vue.
 
 :::tip Pré-requis
-La suite de la documentation présuppose que vous soyez familier avec le HTML, le CSS et le JavaScript. Si vous débutez totalement dans le développement front-end, ce n'est peut-être pas la meilleure idée de vous lancer directement dans un framework pour vos premiers pas. Apprenez les bases puis revenez ! Vous pouvez consolider votre niveau de connaissance avec [l'introduction au Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction). Une précédente expérience avec d'autres frameworks vous aidera, mais n'est pas strictement requise.
+La suite de la documentation présuppose que vous soyez familier avec le HTML, le CSS et le JavaScript. Si vous débutez totalement dans le développement front-end, ce n'est peut-être pas la meilleure idée de vous lancer directement dans un framework pour vos premiers pas. Apprenez les bases puis revenez ! Vous pouvez consolider votre niveau de connaissance avec ces aperçus pour [Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction), [HTML](https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML) et [CSS](https://developer.mozilla.org/fr/docs/Learn/CSS/First_steps) si nécessaire. Une précédente expérience avec d'autres frameworks vous aidera, mais n'est pas strictement requise.
 :::
 
 ## Le Framework Évolutif {#the-progressive-framework}

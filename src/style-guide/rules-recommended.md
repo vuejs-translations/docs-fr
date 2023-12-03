@@ -127,6 +127,8 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
 
 Lorsque les composants commencent à prendre beaucoup d'espace ou deviennent difficiles à lire, l'ajout d'espaces entre les propriétés multi-lignes peut les rendre plus faciles à parcourir. Dans certains éditeurs, comme Vim, des options de formatage comme celle-ci peuvent également faciliter la navigation au clavier.
 
+<div class="options-api">
+
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 
@@ -156,6 +158,7 @@ computed: {
   }
 }
 ```
+
 </div>
 
 <div class="style-example style-example-good">
@@ -185,6 +188,68 @@ computed: {
   }
 }
 ```
+
+</div>
+
+</div>
+
+<div class="composition-api">
+
+<div class="style-example style-example-bad">
+<h3>Bad</h3>
+
+```js
+defineProps({
+  value: {
+    type: String,
+    required: true
+  },
+  focused: {
+    type: Boolean,
+    default: false
+  },
+  label: String,
+  icon: String
+})
+const formattedValue = computed(() => {
+  // ...
+})
+const inputClasses = computed(() => {
+  // ...
+})
+```
+
+</div>
+
+<div class="style-example style-example-good">
+<h3>Good</h3>
+
+```js
+defineProps({
+  value: {
+    type: String,
+    required: true
+  },
+
+  focused: {
+    type: Boolean,
+    default: false
+  },
+
+  label: String,
+  icon: String
+})
+
+const formattedValue = computed(() => {
+  // ...
+})
+
+const inputClasses = computed(() => {
+  // ...
+})
+```
+
+</div>
 
 </div>
 

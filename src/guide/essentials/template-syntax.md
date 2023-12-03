@@ -115,7 +115,7 @@ Vous pouvez les lier à un seul élément en utilisant `v-bind` sans argument :
 
 Jusqu'à présent, nous n'avons lié que des clés de propriété simples dans nos templates. Mais Vue prend en charge toute la puissance des expressions JavaScript dans toutes les liaisons de données :
 
-```vue-html
+```html
 {{ number + 1 }}
 
 {{ ok ? 'YES' : 'NO' }}
@@ -138,7 +138,7 @@ Chaque liaison ne peut contenir qu'**une seule expression**. Une expression est 
 
 Par conséquent, ce qui suit ne fonctionnera **PAS** :
 
-```vue-html
+```html
 <!-- ceci est une déclaration, pas une expression : -->
 {{ var a = 1 }}
 
@@ -150,7 +150,7 @@ Par conséquent, ce qui suit ne fonctionnera **PAS** :
 
 Il est possible d'appeler une méthode exposée au composant dans une expression de liaison :
 
-```vue-html
+```html
 <time :title="toTitleDate(date)" :datetime="date">
   {{ formatDate(date) }}
 </time>
