@@ -150,8 +150,8 @@ const emit = defineEmits({
     // selon si validation ou échec
   },
   update: (value: string) => {
-    // retourne `true` ou `false` à retourner
-    // validation pass / fail
+    // retourner `true` ou `false`
+    // selon si validation ou échec
   }
 })
 
