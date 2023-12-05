@@ -67,7 +67,7 @@ export default {
 
 </div>
 
-Notez que vous ne pouvez accéder à la ref **qu'après que le composant ait été monté.** Si vous essayez d'accéder à <span class="options-api">`$refs.input`</span><span class="composition-api">`input`</span> via une expression dans le template, ça sera `null` lors du premier rendu. C'est parce que l'élément n'existe pas avant la fin du premier rendu !
+Notez que vous ne pouvez accéder à la ref **qu'après que le composant ait été monté.** Si vous essayez d'accéder à <span class="options-api">`$refs.input`</span><span class="composition-api">`input`</span> via une expression dans le template, ça sera <span class="options-api">`undefined`</span><span class="composition-api">`null`</span> lors du premier rendu. C'est parce que l'élément n'existe pas avant la fin du premier rendu !
 
 <div class="composition-api">
 
