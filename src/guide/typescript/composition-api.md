@@ -146,8 +146,8 @@ const emit = defineEmits(['change', 'update'])
 // basée sur la déclaration de type
 const emit = defineEmits({
   change: (id: number) => {
-    // retourne `true` ou `false` à retourner
-    // validation pass / fail
+    // retourner `true` ou `false`
+    // selon si validation ou échec
   },
   update: (value: string) => {
     // retourne `true` ou `false` à retourner
