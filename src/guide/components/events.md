@@ -17,6 +17,7 @@ if (typeof window !== 'undefined') {
   }
 }
 </script>
+
 # Les événements de composant {#component-events}
 
 > Cette page suppose que vous avez déjà lu les [principes fondamentaux des composants](/guide/essentials/component-basics). Lisez-les d'abord si vous débutez avec les composants.
@@ -176,14 +177,14 @@ export default {
 
 </div>
 
-L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec objet, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
+L'option `emits` et la macro `defineEmits()` supportent également une syntaxe avec un objet. Si vous utilisez TypeScript, vous pouvez utiliser les arguments, ce qui nous permet d'effectuer une validation à l'exécution du contenu des événements émis :
 
 <div class="composition-api">
 
 ```vue
 <script setup>
 const emit = defineEmits({
-  submit(payload) {
+  submit(payload: { email: string, password: string }) {
     // renvoie `true` ou `false` pour indiquer
     // que la validation a réussi/échoué
   }
@@ -210,7 +211,7 @@ Plus de détails : [Typer les données émises par les composants](/guide/typesc
 ```js
 export default {
   emits: {
-    submit(payload) {
+    submit(payload: { email: string, password: string }) {
       // renvoie `true` ou `false` pour indiquer
       // que la validation a réussi/échoué
     }
@@ -287,3 +288,14 @@ export default {
 ```
 
 </div>
+
+## Les événements comme Props {#events-props}
+
+Vous pouvez également déclarer et passer des `events` comme `props`, en préfixant le nom de l'événement en majuscules par `on`.
+L'utilisation de `props.onEvent` a un comportement différent de l'utilisation de `emit('event')`, car le premier ne passera que l'écouteur basé sur la propriété (soit `@event` ou `:on-event`).
+
+:::warning
+Si `:onEvent` et `@event` sont tous deux passés, `props.onEvent` peut être un tableau de `fonctions` au lieu de `function`, ce comportement n'est pas stable et pourrait changer dans le futur.
+:::
+
+Pour cette raison, il est recommandé d'utiliser `emit('event')` au lieu de `props.onEvent` pour émettre des événements.

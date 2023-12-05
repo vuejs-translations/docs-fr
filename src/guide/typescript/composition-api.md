@@ -143,6 +143,18 @@ Dans `<script setup>`, la fonction `emit` peut également être typée en utilis
 // à l'exécution
 const emit = defineEmits(['change', 'update'])
 
+// basée sur la déclaration de type
+const emit = defineEmits({
+  change: (id: number) => {
+    // retourner `true` ou `false`
+    // selon si validation ou échec
+  },
+  update: (value: string) => {
+    // retourner `true` ou `false`
+    // selon si validation ou échec
+  }
+})
+
 // basée sur les types
 const emit = defineEmits<{
   (e: 'change', id: number): void
