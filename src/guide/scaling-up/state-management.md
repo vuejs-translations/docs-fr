@@ -71,7 +71,7 @@ Dans le premier cas, une solution possible consiste à "élever" l'état partag�
 
 Dans le deuxième cas, nous nous retrouvons souvent à utiliser des solutions telles que l'atteinte d'instances directes parent/enfant par le biais des refs de template, ou à essayer de modifier et de synchroniser plusieurs copies de l'état par le biais d'événements émis. Ces deux modèles sont fragiles et conduisent rapidement à un code non maintenable.
 
-Une solution plus simple et plus directe consiste à extraire l'état partagé des composants, et à le gérer dans un singleton global. Ainsi, notre arbre de composants devient une grande "vue", et n'importe quel composant peut accéder à l'état ou déclencher des actions, peut importe où il se trouve dans l'arbre !
+Une solution plus simple et plus directe consiste à extraire l'état partagé des composants, et à le gérer dans un singleton global. Ainsi, notre arbre de composants devient une grande "vue", et n'importe quel composant peut accéder à l'état ou déclencher des actions, peu importe où il se trouve dans l'arbre !
 
 ## Gestion d'état simple avec l'API de réactivité {#simple-state-management-with-reactivity-api}
 
@@ -151,7 +151,7 @@ export default {
 
 </div>
 
-Maintenant, chaque fois que l'objet `store` est modifié, `<ComposantA>` et `<ComposantB>` mettront à jour leurs vues automatiquement - nous avons désormais une seule source de vérité maintenant.
+Maintenant, chaque fois que l'objet `store` est modifié, `<ComposantA>` et `<ComposantB>` mettront à jour leur vue automatiquement - nous avons désormais une seule source de vérité.
 
 Cependant, cela signifie également que n'importe quel composant important `store` peut le modifier comme il le souhaite :
 
