@@ -16,7 +16,7 @@ const AsyncComp = defineAsyncComponent(() => {
 // ... utiliser `AsyncComp` comme un composant normal
 ```
 
-Comme vous pouvez le voir, `defineAsyncComponent` accepte une fonction de chargement qui renvoie une promesse (Promise). La fonction `resolve` de la promesse doit être appelé lorsque vous avez récupéré la définition de votre composant à partir du serveur. Vous pouvez également appeler `reject(reason)` pour indiquer que le chargement a échoué.
+Comme vous pouvez le voir, `defineAsyncComponent` accepte une fonction de chargement qui renvoie une promesse (Promise). La fonction `resolve` de la promesse doit être appelée lorsque vous avez récupéré la définition de votre composant à partir du serveur. Vous pouvez également appeler `reject(reason)` pour indiquer que le chargement a échoué.
 
 L'[import dynamique des modules ES](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) renvoie également une promesse, ainsi la plupart du temps, nous l'utiliserons en combinaison avec `defineAsyncComponent`. Les Bundlers comme Vite et webpack prennent également en charge la syntaxe (et l'utiliseront comme méthode de séparation du bundle), nous pouvons donc l'utiliser pour importer des SFC Vue :
 
