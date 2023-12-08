@@ -117,7 +117,7 @@ const myDirective = {
   // appelé juste avant que l'élément ne soit inséré dans le DOM.
   beforeMount(el, binding, vnode, prevVnode) {},
   // appelé lorsque le composant parent de l'élément lié
-  // et tous ses enfants soient montés.
+  // et tous ses enfants sont montés.
   mounted(el, binding, vnode, prevVnode) {},
   // appelé avant que le composant parent ne soit mis à jour
   beforeUpdate(el, binding, vnode, prevVnode) {},
