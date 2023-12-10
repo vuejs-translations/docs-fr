@@ -17,7 +17,7 @@ footer: false
 :::tip Pré-requis
 
 - Être familier avec l'invite de commandes
-- Avoir installé [Node.js](https://nodejs.org/) version 15.0 ou plus
+- Avoir installé [Node.js](https://nodejs.org/) version 18.0 ou plus
   :::
 
 Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
@@ -321,7 +321,7 @@ export default {
 
 </div>
 
-Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevées parce que les modules ES ne peuvent fonctionner via le protocol `file://`, qui est le protocole utilisé par le navigateur lorsque vous ouvrez un fichier local. 
+Si vous tentez d'ouvrir le fichier `index.html` ci-dessus dans votre navigateur, vous trouverez des erreurs relevées parce que les modules ES ne peuvent fonctionner via le protocol `file://`, qui est le protocole utilisé par le navigateur lorsque vous ouvrez un fichier local.
 
 Pour des raisons de sécurité, les modules ES ne peuvent fonctionner que sur le protocole `http://`, qui est celui que les navigateurs utilisent lors de l'ouverture de pages sur le Web. Pour que les modules ES fonctionnent sur notre machine locale, nous devons servir le `index.html` sur le protocole `http://`, avec un serveur HTTP local.
 
