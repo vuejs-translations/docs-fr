@@ -177,36 +177,6 @@
     "hiring": "https://webreinvent.com/career?utm_source=vuejs.org&utm_medium=website&utm_campaign=partner-hiring-link"
   },
   {
-    "name": "Dreamonkey",
-    "logo": "dreamonkey.png",
-    "hero": "dreamonkey-hero.png",
-    "intro": "Nous sommes une maison de logiciels italienne, comprenant des collaborateurs d'équipes internationales, avec 8 ans d'expérience dans la conception et le développement de logiciels. Nous construisons des logiciels à partir de zéro ou les reconceptualisons et soutenons les équipes d'autres entreprises, notamment pour l'IoT industriel, la livraison, la finance, le médical, l'automobile et la chaîne d'approvisionnement, en travaillant principalement pour des clients américains et canadiens. Nous sommes de fiers sponsors du framework Quasar et membres de son équipe centrale.",
-    "description": [
-      "Notre pile comprend Vue, Quasar, Laravel et, sur demande, Angular également. Nous nous efforçons de produire un code de haute qualité, propre et bien documenté, le rendant solide comme un roc grâce à des tests automatiques. Notre frontend suit les principales directives de Google Material Design.",
-      "Nous sommes en mesure de mener des projets du tout début jusqu'à leur déploiement, y compris l'analyse des besoins, la conception UX/UI, le transfert des actifs de conception, le développement et la configuration des pipelines CI/CD sur AWS. Nous pouvons fusionner avec la méthodologie agile du client et, sur demande, nous pouvons également prendre en charge la gestion du projet avec un professionnel dédié.",
-      "Nous avons de l'expérience avec différentes complexités de projets, de la startup à l'entreprise. Nous pouvons fournir des interfaces utilisateur statiques, des MPV fonctionnels, des SPA ou des applications mobiles entièrement opérationnelles. Nous divisons également notre équipe afin de fournir au client l'expertise spécifique dont il a besoin, qu'il s'agisse du développement, de la conception ou d'une simple analyse de faisabilité.",
-      "Si vous avez besoin d'intégrer de nouvelles compétences dans votre équipe, nous pouvons structurer un programme de formation axé sur des sujets de développement ou de conception qui vous intéressent et aider vos employés à progresser grâce à des leçons dédiées."
-    ],
-    "proficiencies": [
-      "Vue",
-      "Quasar",
-      "Angular",
-      "Capacitor",
-      "Laravel",
-      "Node.js",
-      "NestJS",
-      "UX Design",
-      "AWS"
-    ],
-    "region": ["Europe", "Amérique du Nord"],
-    "website": {
-      "text": "dreamonkey.com",
-      "url": "https://dreamonkey.com/en/vue-partner"
-    },
-    "contact": "info@dreamonkey.com",
-    "hiring": "https://dreamonkey.com/en/work-with-us"
-  },
-  {
     "name": "HeroDevs",
     "logo": "herodevs.png",
     "flipLogo": true,
