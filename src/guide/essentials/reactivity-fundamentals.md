@@ -506,6 +506,8 @@ const map = reactive(new Map([['count', ref(0)]]))
 console.log(map.get('count').value)
 ```
 
+### Pièges lors de déballage dans les templates \*\* {#caveat-when-unwrapping-in-templates}
+
 Le déballage de ref dans les templates ne s'applique que si la ref est une propriété de premier niveau dans le contexte de rendu du template.
 
 Dans l'exemple ci-dessous, `count` et `object` sont des propriétés de premier niveau, mais `object.id` ne l'est pas :
