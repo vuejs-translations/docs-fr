@@ -315,10 +315,6 @@ export default {
 
 La fonction `computed()` est généralement utilisée dans les composants utilisant la Composition API, mais peut également être utilisée pour compléter certains cas d'usage avec l'Options API. Vous pouvez en savoir plus sur son utilisation en lisant [les fondamentaux de la réactivité](/guide/essentials/reactivity-fundamentals) et [les propriétés calculées](/guide/essentials/computed) avec la préférence d'API définie sur Composition API.
 
-:::warning Configuration temporaire requise
-L'utilisation ci-dessus nécessite de définir `app.config.unwrapInjectedRef = true` pour que les injections exposent automatiquement les valeurs des références calculées. Cela deviendra le comportement par défaut dans Vue 3.3 et cette configuration est introduite temporairement pour éviter les erreurs de compatibilité. Il ne sera plus nécessaire après 3.3.
-:::
-
 </div>
 
 ## Injection avec des Symbols en tant que clés {#working-with-symbol-keys}
