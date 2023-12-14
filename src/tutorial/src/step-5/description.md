@@ -34,7 +34,7 @@ function onInput(e) {
 
 Essayez de taper dans le champ de saisie - vous devriez voir le texte dans `<p>` se mettre à jour au fur et à mesure que vous tapez.
 
-Pour simplifier une communiation bidirectionnelle, Vue fournit une directive, `v-model`, qui est essentiellement du sucre syntaxique pour ce qui suit précède :
+Pour simplifier une communiation bidirectionnelle, Vue fournit une directive, `v-model`, qui est essentiellement du sucre syntaxique pour ce qui précède :
 
 ```vue-html
 <input v-model="text">
