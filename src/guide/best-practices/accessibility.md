@@ -123,7 +123,7 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 | main            | role="main"          | Le contenu central ou principal du document.                                                                                   |
 | footer          | role="contentinfo"   | Information à propos du document parent : notes de pied de page/copyrights/liens vers la déclaration de confidentialité        |
 | aside           | role="complementary" | Supporte le contenu principal, malgré tout est séparé et a du sens par lui-même                                               |
-| _Not available_ | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
+| search          | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
 | section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
 
