@@ -42,4 +42,6 @@ Les responsables du projet qui ne suivent pas ou n'appliquent pas le code de bon
 
 Le présent code de bonne conduite est adapté de la [Convention des contributeurs][page d'accueil], version 1.4, disponible à l'adresse https://www.contributor-covenant.org/version/1/4/code-of-conduct.html.
 
+Pour les réponses aux questions les plus courantes concernant ce code de conduite, voir https://www.contributor-covenant.org/faq.
+
 [page d'accueil]: https://www.contributor-covenant.org
