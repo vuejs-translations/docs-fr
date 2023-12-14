@@ -22,7 +22,7 @@ Vérifie si une valeur est un objet ref.
 
 ## unref() {#unref}
 
-Retourne la valeur interne si l'argument est une ref, sinon retourne l'argument lui-même. C'est une fonction de sucre synthétique équivalente à `val = isRef(val) ? val.value : val`.
+Retourne la valeur interne si l'argument est une ref, sinon retourne l'argument lui-même. C'est une fonction de sucre syntaxique équivalente à `val = isRef(val) ? val.value : val`.
 
 - **Type :**
 
@@ -130,7 +130,7 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
 
   Lorsque `toRef` est utilisée avec des props de composant, les restrictions classiques concernant la modification des props s'appliquent. Tenter d'assigner une nouvelle valeur à la ref équivaut à essayer de modifier directement la prop et n'est pas autorisé. Dans ce cas, vous pouvez envisager d'utiliser [`computed`](./reactivity-core#computed) avec `get` et `set` à la place. Consultez le guide expliquant comment [utiliser `v-model` avec les composants](/guide/components/v-model) pour plus d'informations.
 
-  
+
 
   En utilisant la signature des propriétés d'objets, `toRef()` retournera une ref utilisable même si la propriété source n'existe pas actuellement. Cela permet de travailler avec des propriétés optionnelles qui ne seraient pas prises en compte par [`toRefs`](#torefs).
 
@@ -203,7 +203,7 @@ Convertit un objet réactif en un objet simple où chaque propriété de l'objet
   }
   */
 
-  // La ref et la propriété originale sont "liée"
+  // La ref et la propriété originale sont "liées"
   state.foo++
   console.log(stateAsRefs.foo.value) // 2
 
