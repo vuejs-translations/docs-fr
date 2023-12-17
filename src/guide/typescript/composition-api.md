@@ -50,6 +50,16 @@ const props = defineProps<Props>()
 </script>
 ```
 
+Cela fonctionne également si `Props` est importé d'une source externe. Cette fonctionnalité nécessite que TypeScript soit une dépendance peer de Vue.
+
+```vue
+<script setup lang="ts">
+import type { Props } from './foo'
+
+const props = defineProps<Props>()
+</script>
+```
+
 #### Limitations de syntaxe {#syntax-limitations}
 
 Dans la version 3.2 et les versions antérieures, le paramètre de type générique pour `defineProps()` était limité à un littéral de type ou à une référence à une interface locale.

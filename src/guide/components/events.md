@@ -292,6 +292,7 @@ export default {
 ## Les événements comme Props {#events-props}
 
 Vous pouvez également déclarer et passer des `events` comme `props`, en préfixant le nom de l'événement en majuscules par `on`.
+
 L'utilisation de `props.onEvent` a un comportement différent de l'utilisation de `emit('event')`, car le premier ne passera que l'écouteur basé sur la propriété (soit `@event` ou `:on-event`).
 
 :::warning
