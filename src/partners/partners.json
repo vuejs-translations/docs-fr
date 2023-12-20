@@ -53,6 +53,7 @@
   {
     "name": "Monterail",
     "logo": "monterail.png",
+    "hero": "monterail-hero.png",
     "flipLogo": true,
     "intro": "Monterail est une société polonaise de développement de logiciels variés. Depuis 2010, nous créons des logiciels innovants pour des start-ups, des PME et des entreprises de divers secteurs d'activité dans le monde entier. Nos experts Vue, utilisant des technologies et des frameworks éprouvés, ont livré plus de 30 projets basés sur Vue.",
     "description": [
