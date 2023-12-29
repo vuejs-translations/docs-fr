@@ -99,27 +99,6 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
   </template>
   ```
 
-  Since 3.3 you can also use `defineOptions` directly in `<script setup>`:
-
-  ```vue
-  <script setup>
-  defineProps(['label', 'value'])
-  defineEmits(['input'])
-  defineOptions({ inheritAttrs: false })
-  </script>
-
-  <template>
-    <label>
-      {{ label }}
-      <input
-        v-bind="$attrs"
-        v-bind:value="value"
-        v-on:input="$emit('input', $event.target.value)"
-      />
-    </label>
-  </template>
-  ```
-
   </div>
 
 - **Voir aussi** [Attributs implicitement déclarés](/guide/components/attrs)
@@ -184,7 +163,5 @@ Un objet qui enregistre les directives devant être accessibles par l'instance a
   ```vue-html
   <input v-focus>
   ```
-
-  Une liste des directives devant être accessibles par l'instance actuelle du composant.
 
 - **Voir aussi** [Directives personnalisées](/guide/reusability/custom-directives)

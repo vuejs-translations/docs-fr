@@ -124,6 +124,51 @@ Désormais, pour la plupart des composants, la prop `active` restera la même lo
 
 `v-memo` est une directive intégrée qui peut être utilisée pour éviter conditionnellement la mise à jour de grands sous-arbres ou de listes `v-for`. Consultez la [référence de son API](/api/built-in-directives#v-memo) pour plus de détails.
 
+### Stabilité des Computed <sup class="vt-badge" data-text="3.4+" /> {#computed-stability}
+
+À partir de 3.4, une propriété calculée ne déclenchera des effets que lorsque la valeur calculée aura changé par rapport à sa valeur précédente. Par exemple, la propriété calculée `isEven` ne va déclencher des effets que si la valeur retournée a changé de `true` à `false`, ou vice-versa :
+
+```js
+const count = ref(0)
+const isEven = computed(() => count.value % 2 === 0)
+
+watchEffect(() => console.log(isEven.value)) // true
+
+// ne vas pas déclencher de nouveaux logs car la valeur calculée reste à `true`
+count.value = 2
+count.value = 4
+```
+
+Cela réduit le déclenchement inutile d'effet, mais ne fonctionne pas si la la propriété calculée retourne un nouvel object à chaque calcul: 
+
+```js
+const computedObj = computed(() => {
+  return {
+    isEven: count.value % 2 === 0
+  }
+})
+```
+
+Du fait qu'un objet est créé à chaque fois, la nouvelle valeur sera techniquement toujours différente comparée à son ancienne valeur. Même si la propriété `isEven` reste la même, Vue ne sera pas capable de savoir sans une comparaison profonde entre son ancienne et sa nouvelle valeur. Ce genre de comparaison peut être très coûteuse and ne vaudrait pas toujours le coup.
+
+À la place, nous pouvons optimiser cela en comparant manuellement la nouvelle valeur avec l'ancienne, et retourner l'ancienne valeur si l'on détecte aucun changement.
+
+```js
+const computedObj = computed((oldValue) => {
+  const newValue = {
+    isEven: count.value % 2 === 0
+  }
+  if (oldValue && oldValue.isEven === newValue.isEven) {
+    return oldValue
+  }
+  return newValue
+})
+```
+
+[Playground Example](https://play.vuejs.org/#eNqVVMtu2zAQ/JUFgSZK4UpuczMkow/40AJ9IC3aQ9mDIlG2EokUyKVt1PC/d0lKtoEminMQQC1nZ4c7S+7Yu66L11awGUtNoesOwQi03ZzLuu2URtiBFtUECtV2FkU5gU2OxWpRVaJA2EOlVQuXxHDJJZeFkgYJayVC5hKj6dUxLnzSjZXmV40rZfFrh3Vb/82xVrLH//5DCQNNKPkweNiNVFP+zBsrIJvDjksgGrRahjVAbRZrIWdBVLz2yBfwBrIsg6mD7LncPyryfIVnywupUmz68HOEEqqCI+XFBQzrOKR79MDdx66GCn1jhpQDZx8f0oZ+nBgdRVcH/aMuBt1xZ80qGvGvh/X6nlXwnGpPl6qsLLxTtitzFFTNl0oSN/79AKOCHHQuS5pw4XorbXsr9ImHZN7nHFdx1SilI78MeOJ7Ca+nbvgd+GgomQOv6CNjSQqXaRJuHd03+kHRdg3JoT+A3a7XsfcmpbcWkQS/LZq6uM84C8o5m4fFuOg0CemeOXXX2w2E6ylsgj2gTgeYio/f1l5UEqj+Z3yC7lGuNDlpApswNNTrql7Gd0ZJeqW8TZw5t+tGaMdDXnA2G4acs7xp1OaTj6G2YjLEi5Uo7h+I35mti3H2TQsj9Jp6etjDXC8Fhu3F9y9iS+vDZqtK2xB6ZPNGGNVYpzHA3ltZkuwTnFf70b+1tVz+MIstCmmGQzmh/p56PGf00H4YOfpR7nV8PTxubP8P2GAP9Q==)
+
+Notez que vous devez toujours effectuer le calcul complet avant la comparaison et retourner l'ancienne valeur, ainsi les mêmes dépendances pourront être réutiliser à chaque exécution.
+
 ## Optimisations générales {#general-optimizations}
 
 > Les conseils suivants concernent les performances de chargement et de mise à jour des pages.

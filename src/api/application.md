@@ -374,6 +374,10 @@ Installe un gestionnaire global pour les erreurs non détectées se propageant d
   - Hooks de directives personnalisés
   - Hooks de transition
 
+  :::tip
+  En production, le troisième argument (`info`) sera un code raccourci plutôt que toute la chaîne d'information. Vous pouvez trouver le code correspondant dans la [Référence des erreurs en production](/error-reference/#runtime-errors).
+  :::
+
 - **Exemple**
 
   ```js

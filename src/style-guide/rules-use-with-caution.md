@@ -167,6 +167,7 @@ defineProps({
   }
 })
 </script>
+
 <template>
   <input v-model="todo.text" />
 </template>
@@ -181,10 +182,13 @@ const props = defineProps({
     required: true
   }
 })
+
 const instance = getCurrentInstance()
+
 function removeTodo() {
   const parent = instance.parent
   if (!parent) return
+
   parent.props.todos = parent.props.todos.filter((todo) => {
     return todo.id !== props.todo.id
   })
@@ -211,8 +215,10 @@ defineProps({
     required: true
   }
 })
+
 const emit = defineEmits(['input'])
 </script>
+
 <template>
   <input :value="todo.text" @input="emit('input', $event.target.value)" />
 </template>
@@ -226,8 +232,10 @@ defineProps({
     required: true
   }
 })
+
 const emit = defineEmits(['delete'])
 </script>
+
 <template>
   <span>
     {{ todo.text }}

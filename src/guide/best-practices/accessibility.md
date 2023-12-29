@@ -117,12 +117,12 @@ Les utilisateurs peuvent naviguer dans une application à travers les titres. Le
 [Les rôles ARIA landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) permettent d'accéder programmatiquement aux sections d'une application. Les utilisateurs qui s'appuient sur des technologies d'assistance peuvent naviguer vers chaque section de l'application et passer d'un contenu à l'autre. Vous pouvez utiliser les [rôles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) pour vous aider à atteindre ce résultat.
 
 | HTML            | Rôle ARIA            | But du landmark                                                                                                                |
-|-----------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| header          | role="banner"        | Entête principal : titre de la page\*                                                                                        |
+| --------------- | ---------------------| ------------------------------------------------------------------------------------------------------------------------------ |
+| header          | role="banner"        | Entête principal : titre de la page.                                                                                           |
 | nav             | role="navigation"    | Collection de liens utilisables lors de la navigation dans le document ou vers des documents associés                          |
 | main            | role="main"          | Le contenu central ou principal du document.                                                                                   |
 | footer          | role="contentinfo"   | Information à propos du document parent : notes de pied de page/copyrights/liens vers la déclaration de confidentialité        |
-| aside           | role="complementary" | Supporte le contenu principal, malgré tout est séparé et a du sens par lui-même                                               |
+| aside           | role="complementary" | Supporte le contenu principal, malgré tout est séparé et a du sens par lui-même                                                |
 | search          | role="search"        | Cette section contient la fonctionnalité de recherche pour l'application                                                       |
 | form            | role="form"          | Collection d'éléments associés à un formulaire                                                                                 |
 | section         | role="region"        | Contenus pertinents vers lesquels les utilisateurs sont susceptibles de naviguer. Un libellé doit être fourni pour cet élément |
@@ -503,7 +503,7 @@ WAI-ARIA du W3C fournit des conseils sur comment construire du contenu dynamique
   - [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
 - Outils de loupe
   - [MAGic](https://www.freedomscientific.com/products/software/magic/)
-  - [ZoomText](https://www.zoomtext.com/)
+  - [ZoomText](https://www.freedomscientific.com/products/software/zoomtext/)
   - [Magnifier](https://support.microsoft.com/fr/help/11542/windows-use-magnifier-to-make-things-easier-to-see)
 
 ### Tester l'accessibilité {#testing}

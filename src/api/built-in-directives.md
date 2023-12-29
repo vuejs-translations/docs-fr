@@ -257,7 +257,9 @@ Attache un écouteur d'événements à l'élément.
 
 Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une expression.
 
-- **Raccourci :** `:` ou `.` (lorsqu'on utilise le modificateur `.prop`)
+- **Raccourci :** 
+  - `:` ou `.` (lorsqu'on utilise le modificateur `.prop`)
+  - En omettant la valeur (lorsque l'attribut et la valeur liée portent le même nom) <sup class="vt-badge">3.4+</sup>
 
 - **Attendu :** `any (avec argument) | Object (sans argument)`
 
@@ -291,6 +293,9 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
   <!-- raccourci -->
   <img :src="imageSrc" />
 
+  <!-- raccourci même nom (3.4+), se transforme en :src="src" -->
+  <img :src />
+  
   <!-- raccourci d'un nom d'attribut dynamique -->
   <button :[key]="value"></button>
 
