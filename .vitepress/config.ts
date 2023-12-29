@@ -17,6 +17,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Commencer', link: '/guide/quick-start' },
       // { text: 'Bonnes pratiques', link: '/style-guide/' },
       { text: 'Glossaire', link: '/glossary/' },
+      { text: 'Référence des erreurs', link: '/error-reference/' },
       {
         text: 'Vue 2 Docs',
         link: 'https://v2.fr.vuejs.org'
@@ -442,7 +443,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Types utilitaires TypeScript',
           link: '/api/utility-types'
         },
-        { text: 'Rendu personnalisé', link: '/api/custom-renderer' }
+        { text: 'Rendu personnalisé', link: '/api/custom-renderer' },
+        { text: 'Drapeaux pour la compilation', link: '/api/compile-time-flags' }
       ]
     }
   ],
@@ -634,6 +636,8 @@ export default defineConfigWithTheme<ThemeConfig>({
         content: 'Vue.js - Le Framework JavaScript Évolutif'
       }
     ],
+    ['meta', { name: 'twitter:site', content: '@vuejs' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
     [
       'meta',
       {

@@ -195,6 +195,10 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
   Ce hook reçoit trois arguments : l'erreur, l'instance du composant qui a déclenché l'erreur, et une information sous forme de chaînes de caractères spécifiant le type de source de l'erreur.
 
+  :::tip
+  En production, le troisième argument (`info`) sera un code raccourci plutôt que toute la chaîne d'information. Vous pouvez trouver le code correspondant dans la [Référence des erreurs en production](/error-reference/#runtime-errors).
+  :::
+
   Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important de ne pas rendre le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
 
   Le hook peut retourner `false` pour empêcher la propagation de l'erreur. Consultez les détails sur la propagation des erreurs ci-dessous.

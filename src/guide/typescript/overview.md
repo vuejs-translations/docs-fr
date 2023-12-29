@@ -42,11 +42,13 @@ Les projets construits via `create-vue` incluent un `tsconfig.json` préconfigur
 
 Lors de la configuration manuelle de `tsconfig.json`, certaines options notables incluent :
 
-- [`compilerOptions.isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) est défini sur `true` car Vite utilise [esbuild](https://esbuild.github.io/) pour transpiler TypeScript et est soumis à des limitations de transpilation de fichier unique. [`compilerOptions.verbatimModuleSyntax`](https://www.typescriptlang.org/tsconfig#verbatimModuleSyntax) est [un surensemble de `isolatedModules`](https://github.com/microsoft/TypeScript/issues/53601) et c'est aussi un bon choix - c'est ce que `[@vue/tsconfig](https://github.com/vuejs/tsconfig)` utilise.
+- [`compilerOptions.isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) est défini sur `true` car Vite utilise [esbuild](https://esbuild.github.io/) pour transpiler TypeScript et est soumis à des limitations de transpilation de fichier unique. [`compilerOptions.verbatimModuleSyntax`](https://www.typescriptlang.org/tsconfig#verbatimModuleSyntax) est [un surensemble de `isolatedModules`](https://github.com/microsoft/TypeScript/issues/53601) et c'est aussi un bon choix - c'est ce que [`@vue/tsconfig`](https://github.com/vuejs/tsconfig) utilise.
 
 - Si vous utilisez l'Options API, vous devez définir [`compilerOptions.strict`](https://www.typescriptlang.org/tsconfig#strict) sur `true` (ou au moins activer [`compilerOptions.noImplicitThis`](https://www.typescriptlang.org/tsconfig#noImplicitThis), qui fait partie de l'indicateur `strict`) pour tirer parti de la vérification de type de `this` dans les options de composant. Sinon, `this` sera traité comme `any`.
 
 - Si vous avez configuré des alias de résolveur dans votre outil de construction, par exemple l'alias `@/*` configuré par défaut dans un projet `create-vue`, vous devez également le configurer pour TypeScript via [`compilerOptions.paths`](https://www.typescriptlang.org/tsconfig#paths).
+
+- Si vous avez l'intention d'utiliser TSX avec Vue, définissez [`compilerOptions.jsx`](https://www.typescriptlang.org/tsconfig#jsx) à `"preserve"`, et définissez [`compilerOptions.jsxImportSource`](https://www.typescriptlang.org/tsconfig#jsxImportSource) to `"vue"`.
 
 Voir aussi :
 

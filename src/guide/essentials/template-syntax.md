@@ -64,6 +64,20 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 > Pour le reste du guide, nous utiliserons la syntaxe abrégée dans les exemples de code, car c'est l'utilisation la plus courante pour les développeurs Vue.
 
+### Raccourci de même nom <sup class="vt-badge" data-text="3.4+" /> {#same-name-shorthand}
+
+Si l'attribut a le même nom que la valeur liée, la syntaxe peut être raccourci pour omettre la valeur de l'attribut :
+
+```vue-html
+<!-- pareil que :id="id" -->
+<div :id></div>
+
+<!-- ceci fonctionne également -->
+<div v-bind:id></div>
+```
+
+C'est similaire au raccourci pour déclarer un objet en JavaScript. Notez que cette fonctionnalité n'est disponible pour la version Vue 3.4 et plus.
+
 ### Attributs booléens {#boolean-attributes}
 
 [Les attributs booléens](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) sont des attributs qui peuvent indiquer des valeurs vrai/faux par leur présence sur un élément. Par exemple, [`disabled`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/disabled) est l'un des attributs booléens les plus couramment utilisés.

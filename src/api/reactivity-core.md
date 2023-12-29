@@ -52,7 +52,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   ```ts
   // lecture seule
   function computed<T>(
-    getter: () => T,
+    getter: (oldValue: T | undefined) => T,
     // voir "Débogage des propriétés calculées" plus bas
     debuggerOptions?: DebuggerOptions
   ): Readonly<Ref<Readonly<T>>>
@@ -60,7 +60,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   // modifiable
   function computed<T>(
     options: {
-      get: () => T
+      get: (oldValue: T | undefined) => T
       set: (value: T) => void
     },
     debuggerOptions?: DebuggerOptions
@@ -112,6 +112,7 @@ Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lectur
   - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
+  - [Guide - Performance - Stabilité des Computed](/guide/best-practices/performance#computed-stability) <sup class="vt-badge" data-text="3.4+" />
 
 ## reactive() {#reactive}
 
@@ -360,6 +361,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
     flush?: 'pre' | 'post' | 'sync' // default: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
+    once?: boolean // default: false (3.4+)
   }
   ```
 
@@ -386,6 +388,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
+  - **`once`**: déclenche la fonction de rappel une seul fois. L'observateur sera automatiquement arrêté après le premier déclenchement.
 
   Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 

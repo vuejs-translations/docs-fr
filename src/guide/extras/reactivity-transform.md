@@ -1,12 +1,9 @@
 # Reactivity Transform {#reactivity-transform}
 
 :::danger Fonctionnalité expérimentale dépréciée
-Reactivity Transform était une fonctionnalité expérimentale, et a été dépréciée. Consultez [le raisonnement ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+Reactivity Transform était une fonctionnalité expérimentale, et a été supprimée dans la dernière version 3.4. Consultez [le raisonnement ici](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
-Elle sera probablement supprimée du noyau de Vue dans une version mineure à venir. 
-
-- Pour vous en éloigner, consultez cet [outil de ligne de commande](https://github.com/edison1105/drop-reactivity-transform) qui peut automatiser le processus.
-- Si vous voulez continuer de l'utiliser, cela est désormais possible en utilisant le plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
+Si vous voulez continuer de l'utiliser, cela est désormais possible en utilisant le plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
 :::
 
 :::tip Spécifique à la Composition API
@@ -287,7 +284,7 @@ Si vous importez explicitement les macros à partir de `vue/macros`, le type fon
 ## Activation explicite {#explicit-opt-in}
 
 :::warning
-Ce qui suit ne s'applique qu'aux versions 3.3 et inférieures de Vue. La prise en charge par le noyau sera supprimée à partir de la version 3.4. Si vous voulez continuer à utiliser la transformation, veuillez migrer vers [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) à la place.
+Ce qui suit ne s'applique qu'aux versions 3.3 et inférieures de Vue. La prise en charge par le noyau a été supprimée depuis la version 3.4. Si vous voulez continuer à utiliser la transformation, veuillez migrer vers [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) à la place.
 :::
 
 ### Vite {#vite}

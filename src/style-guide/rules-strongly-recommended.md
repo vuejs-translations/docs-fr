@@ -156,34 +156,6 @@ components/
 
 </div>
 
-## Noms des composants à instance unique {#single-instance-component-names}
-
-**Les composants qui ne devraient avoir qu'une seule instance active doivent commencer par le préfixe `The`, pour indiquer qu'il ne peut y en avoir qu'une seule.**
-
-Cela ne signifie pas que le composant n'est utilisé que dans une seule page, mais il ne sera utilisé qu'une seule fois _par page_. Ces composants n'acceptent aucun accessoire, car ils sont spécifiques à votre application, pas à leur contexte dans votre application. Si vous trouvez le besoin d'ajouter des accessoires, c'est une bonne indication qu'il s'agit en fait d'un composant réutilisable qui n'est utilisé qu'une fois par page _pour l'instant_.
-
-<div class="style-example style-example-bad">
-<h3>À éviter</h3>
-
-```
-components/
-|- Heading.vue
-|- MySidebar.vue
-```
-
-</div>
-
-<div class="style-example style-example-good">
-<h3>OK</h3>
-
-```
-components/
-|- TheHeading.vue
-|- TheSidebar.vue
-```
-
-</div>
-
 ## Noms des composants étroitement liés {#tightly-coupled-component-names}
 
 **Les composants enfants étroitement couplés à leur parent doivent inclure le nom du composant parent comme préfixe.**
