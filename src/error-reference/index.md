@@ -19,12 +19,12 @@ Dans les versions de production, le troisième argument transmis aux API de gest
 - [`onErrorCaptured`](/api/composition-api-lifecycle#onerrorcaptured) (Composition API)
 - [`errorCaptured`](/api/options-lifecycle#errorcaptured) (Options API)
 
-The following table maps the codes to their original full information strings.
+Le tableau suivant établit une correspondance entre les codes et leurs chaînes d'information complètes d'origine.
 
 <ErrorsTable kind="runtime" :errors="data.runtime" :highlight="highlight" />
 
-## Compiler Errors {#compiler-errors}
+## Erreurs de compilation {#compiler-errors}
 
-The following table provides a mapping of the production compiler error codes to their original messages.
+Le tableau suivant fournit une correspondance entre les codes d'erreur du compilateur de production et leurs messages d'origine.
 
 <ErrorsTable kind="compiler" :errors="data.compiler" :highlight="highlight" />
