@@ -355,7 +355,7 @@ Créons un exemple de modificateur personnalisé, `capitalize`, qui met en majus
 
 <div class="composition-api">
 
-Modifiers added to a component `v-model` can be accessed in the child component by destructuring the `defineModel()` return value like this:
+Les modificateurs ajoutés à un composant `v-model` sont accessibles dans le composant enfant en déstructurant la valeur de retour de `defineModel()` comme suit :
 
 ```vue{4}
 <script setup>
@@ -369,7 +369,7 @@ console.log(modifiers) // { capitalize: true }
 </template>
 ```
 
-To conditionally adjust how the value should be read / written based on modifiers, we can pass `get` and `set` options to `defineModel()`. These two options receive the value on get / set of the model ref and should return a transformed value. This is how we can use the `set` option to implement the `capitalize` modifier:
+Pour ajuster conditionnellement la façon dont la valeur doit être lue / écrite en fonction des modificateurs, nous pouvons passer les options `get` et `set` à `defineModel()`. Ces deux options reçoivent la valeur sur get / set du modèle ref et doivent retourner une valeur transformée. C'est ainsi que nous pouvons utiliser l'option `set` pour implémenter le modificateur `capitalize` :
 
 ```vue{6-8}
 <script setup>
