@@ -228,7 +228,7 @@ defineEmits(['update:title'])
 </div>
 <div class="options-api">
 
-In this case, instead of the default `modelValue` prop and `update:modelValue` event, the child component should expect a `title` prop and emit an `update:title` event to update the parent value:
+Dans ce cas, au lieu de la prop `modelValue` et de l'événement `update:modelValue` par défaut, le composant enfant doit s'attendre à une prop `title` et émettre un événement `update:title` pour mettre à jour la valeur du parent :
 
 ```vue
 <!-- MyComponent.vue -->
