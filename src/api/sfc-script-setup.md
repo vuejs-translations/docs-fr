@@ -234,21 +234,21 @@ Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui pe
 Sous le capot, cette macro déclare un modèle prop et un événement de mise à jour de valeur correspondant. Si le premier argument est une chaîne littérale, il sera utilisé comme nom de la prop ; sinon, le nom de la propriété sera par défaut `"modelValue"`. Dans les deux cas, vous pouvez également passer un objet supplémentaire qui peut inclure les options de la prop et les options de transformation de la valeur de la ref du modèle.
 
 ```js
-// declares "modelValue" prop, consumed by parent via v-model
+// déclare la prop "modelValue", consommée par le parent via le v-model
 const model = defineModel()
-// OR: declares "modelValue" prop with options
+// OU: déclare la prop "modelValue" avec des options
 const model = defineModel({ type: String })
 
-// emits "update:modelValue" when mutated
+// émet "update:modelValue" lorsqu'il est modifié
 model.value = 'hello'
 
-// declares "count" prop, consumed by parent via v-model:count
+// déclare la prop "count", consommée par le parent via v-model:count
 const count = defineModel('count')
-// OR: declares "count" prop with options
+// OU: déclare la prop "count" avec des options
 const count = defineModel('count', { type: Number, default: 0 })
 
 function inc() {
-  // emits "update:count" when mutated
+  // émet "update:count" lorsqu'il est muté
   count.value++
 }
 ```
