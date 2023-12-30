@@ -72,15 +72,15 @@ const emit = defineEmits(['update:modelValue'])
 </template>
 ```
 
-As you can see, it is quite a bit more verbose. However, it is helpful to understand what is happening under the hood.
+Comme vous pouvez le voir, c'est un peu plus verbeux. Cependant, il est utile de comprendre ce qui se passe sous le capot.
 
-Because `defineModel` declares a prop, you can therefore declare the underlying prop's options by passing it to `defineModel`:
+Puisque `defineModel` déclare une prop, vous pouvez donc déclarer les options de la prop sous-jacente en la passant à `defineModel` :
 
 ```js
-// making the v-model required
+// rendre v-model obligatoire
 const model = defineModel({ required: true })
 
-// providing a default value
+// fournir une valeur par défaut
 const model = defineModel({ default: 0 })
 ```
 
