@@ -10,7 +10,7 @@ Les indicateurs de compilation ne s'appliquent que lors de l'utilisation de la v
 
 Lorsque l'on utilise Vue avec une étape de construction, il est possible de configurer un certain nombre d'indicateurs de compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
 
-Vue will work even if these flags are not explicitly configured. However, it is recommended to always configure them so that the relevant features can be properly removed when possible.
+Vue fonctionnera même si ces indicateurs ne sont pas explicitement configurés. Cependant, il est recommandé de toujours les configurer afin que les fonctionnalités concernées puissent être correctement supprimées lorsque cela est possible.
 
 See [Configuration Guides](#configuration-guides) on how to configure them depending on your build tool.
 
