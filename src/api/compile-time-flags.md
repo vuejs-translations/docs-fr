@@ -36,7 +36,7 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 ### Vite
 
-`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces drapeaux. Pour changer les valeurs par défaut, utilisez l'option de configuration [`define` option de configuration](https://vitejs.dev/config/shared-options.html#define) de Vite :
+`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez l'option de configuration [`define` option de configuration](https://vitejs.dev/config/shared-options.html#define) de Vite :
 
 ```js
 // vite.config.js
@@ -52,7 +52,7 @@ export default defineConfig({
 
 ### vue-cli
 
-`@vue/cli-service` automatically provides default values for some of these flags. To configure /change the values:
+`@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer/modifier les valeurs :
 
 ```js
 // vue.config.js
