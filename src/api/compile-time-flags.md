@@ -12,7 +12,7 @@ Lorsque l'on utilise Vue avec une étape de construction, il est possible de con
 
 Vue fonctionnera même si ces indicateurs ne sont pas explicitement configurés. Cependant, il est recommandé de toujours les configurer afin que les fonctionnalités concernées puissent être correctement supprimées lorsque cela est possible.
 
-See [Configuration Guides](#configuration-guides) on how to configure them depending on your build tool.
+Voir [Guides de configuration](#configuration-guides) pour savoir comment les configurer en fonction de votre outil de construction.
 
 ## `__VUE_OPTIONS_API__`
 
@@ -32,7 +32,7 @@ See [Configuration Guides](#configuration-guides) on how to configure them depen
 
   Enable/disable detailed warnings for hydration mismatches in production builds. This will result in more code included in the bundle, so it is recommended to only enable this for debugging purposes.
 
-## Configuration Guides
+## Guides de configuration
 
 ### Vite
 
