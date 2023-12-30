@@ -49,14 +49,14 @@ const model = defineModel()
 
 [Playground Example](https://play.vuejs.org/#eNqFUtFKwzAU/ZWYl06YLbK30Q10DFSYigq+5KW0t11mmoQknZPSf/cm3eqEsT0l555zuefmpKV3WsfbBuiUpjY3XDtiwTV6ziSvtTKOLNZcFKQ0qiZRnATkG6JB0BIDJen2kp5iMlfSOlLbisw8P4oeQAhFPpURxVV0zWSa9PNwEgIHtRaZA0SEpOvbeduG5q5LE0Sh2jvZ3tSqADFjFHlGSYJkmhz10zF1FseXvIo3VklcrfX9jOaq1lyAedGOoz1GpyQwnsvQ3fdTqDnTwPhQz9eQf52ob+zO1xh9NWDBbIHRgXOZqcD19PL9GXZ4H0h03whUnyHfwCrReI+97L6RBdo+0gW3j+H9uaw+7HLnQNrDUt6oV3ZBzyhmsjiz+p/dSTwJfUx2+IpD1ic+xz5enwQGXEDJJaw8Gl2I1upMzlc/hEvdOBR6SNKAjqP1J6P/o6XdL11L5h4=)
 
-### Under the Hood
+### Sous le capot
 
-`defineModel` is a convenience macro. The compiler expands it to the following:
+`defineModel` est une macro de commodité. Le compilateur l'étend de la manière suivante :
 
-- A prop named `modelValue`, which the local ref's value is synced with;
-- An event named `update:modelValue`, which is emitted when the local ref's value is mutated.
+- Une propriété nommée `modelValue`, avec laquelle la valeur du ref local est synchronisée ;
+- Un événement nommé `update:modelValue`, qui est émis lorsque la valeur du ref local est modifiée.
 
-This is how you would implement the same child component shown above prior to 3.4:
+C'est ainsi que l'on mettrait en œuvre le même composant enfant que celui présenté ci-dessus avant la version 3.4 :
 
 ```vue
 <script setup>
