@@ -423,7 +423,7 @@ function emitValue(e) {
 
 <div class="options-api">
 
-Modifiers added to a component `v-model` will be provided to the component via the `modelModifiers` prop. In the below example, we have created a component that contains a `modelModifiers` prop that defaults to an empty object:
+Les modificateurs ajoutés à un composant `v-model` seront fournis au composant via la prop `modelModifiers`. Dans l'exemple ci-dessous, nous avons créé un composant qui contient une prop `modelModifiers` qui est par défaut un objet vide :
 
 ```vue{11}
 <script>
@@ -450,9 +450,9 @@ export default {
 </template>
 ```
 
-Notice the component's `modelModifiers` prop contains `capitalize` and its value is `true` - due to it being set on the `v-model` binding `v-model.capitalize="myText"`.
+Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - parce qu'elle est définie sur le binding `v-model` `v-model.capitalize="myText"`.
 
-Now that we have our prop set up, we can check the `modelModifiers` object keys and write a handler to change the emitted value. In the code below we will capitalize the string whenever the `<input />` element fires an `input` event.
+Maintenant que nous avons mis en place notre prop, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour changer la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne en majuscules chaque fois que l'élément `<input />` déclenchera un événement `input`.
 
 ```vue{13-15}
 <script>
