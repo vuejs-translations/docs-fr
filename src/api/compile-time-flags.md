@@ -22,9 +22,9 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 ## `__VUE_PROD_DEVTOOLS__`
 
-- **Default:** `false`
+- **Par défaut:** `false`
 
-  Enable / disable devtools support in production builds. This will result in more code included in the bundle, so it is recommended to only enable this for debugging purposes.
+  Activer / désactiver le support des outils de développement dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le *bundle*, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
 ## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" />
 
