@@ -229,7 +229,7 @@ Cela sera compilé avec les options "default" des props à l'exécution. De plus
 
 ## defineModel() <sup class="vt-badge" data-text="3.4+" /> {#definemodel}
 
-This macro can be used to declare a two-way binding prop that can be consumed via `v-model` from the parent component. Example usage is also discussed in the [Component `v-model`](/guide/components/v-model) guide.
+Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui peut être consommée via `v-model` à partir du composant parent. Des exemples d'utilisation sont également présentés dans le guide [v-model du composant](/guide/components/v-model).
 
 Under the hood, this macro declares a model prop and a corresponding value update event. If the first argument is a literal string, it will be used as the prop name; Otherwise the prop name will default to `"modelValue"`. In both cases, you can also pass an additional object which can include the prop's options and the model ref's value transform options.
 
