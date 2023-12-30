@@ -282,15 +282,15 @@ const [modelValue, modelModifiers] = defineModel({
 })
 ```
 
-### Usage with TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
+### Utilisation avec TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
 
-Like `defineProps` and `defineEmits`, `defineModel` can also receive type arguments to specify the types of the model value and the modifiers:
+Comme `defineProps` et `defineEmits`, `defineModel` peut aussi recevoir des arguments de type pour spécifier les types de la valeur du modèle et des modificateurs :
 
 ```ts
 const modelValue = defineModel<string>()
 //    ^? Ref<string | undefined>
 
-// default model with options, required removes possible undefined values
+// modèle par défaut avec options, les valeurs requises suppriment les valeurs indéfinies possibles
 const modelValue = defineModel<string>({ required: true })
 //    ^? Ref<string>
 
