@@ -36,7 +36,7 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 ### Vite
 
-`@vitejs/plugin-vue` automatically provides default values for these flags. To change the default values, use Vite's [`define` config option](https://vitejs.dev/config/shared-options.html#define):
+`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces drapeaux. Pour changer les valeurs par défaut, utilisez l'option de configuration [`define` option de configuration](https://vitejs.dev/config/shared-options.html#define) de Vite :
 
 ```js
 // vite.config.js
@@ -44,7 +44,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   define: {
-    // enable hydration mismatch details in production build
+    // activer les détails de l'inadéquation de l'hydratation dans la version de production
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true'
   }
 })
