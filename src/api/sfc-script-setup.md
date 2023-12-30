@@ -266,17 +266,17 @@ if (modelModifiers.trim) {
 }
 ```
 
-When a modifier is present, we likely need to transform the value when reading or syncing it back to the parent. We can achieve this by using the `get` and `set` transformer options:
+Lorsqu'un modificateur est présent, il est probable que nous devions transformer la valeur lors de la lecture ou de la synchronisation avec le parent. Nous pouvons y parvenir en utilisant les options de transformation `get` et `set` :
 
 ```js
 const [modelValue, modelModifiers] = defineModel({
-  // get() omitted as it is not needed here
+  // get() est omis car il n'est pas nécessaire ici
   set(value) {
-    // if the .trim modifier is used, return trimmed value
+    // si le modificateur .trim est utilisé, renvoie la valeur sans espaces supplémentaires
     if (modelModifiers.trim) {
       return value.trim()
     }
-    // otherwise, return the value as-is
+    // sinon, renvoyer la valeur telle quelle
     return value
   }
 })
