@@ -16,9 +16,9 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 ## `__VUE_OPTIONS_API__`
 
-- **Default:** `true`
+- **Par défaut:** `true`
 
-  Enable / disable Options API support. Disabling this will result in smaller bundles, but may affect compatibility with 3rd party libraries if they rely on Options API.
+  Activer / désactiver la prise en charge de l'Option API. La désactivation de cette fonction permet d'obtenir des paquets plus petits, mais peut affecter la compatibilité avec les bibliothèques tierces si elles s'appuient sur l'Option API.
 
 ## `__VUE_PROD_DEVTOOLS__`
 
