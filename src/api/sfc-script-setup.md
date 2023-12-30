@@ -253,14 +253,14 @@ function inc() {
 }
 ```
 
-### Modifiers and Transformers
+### Modificateurs et transformateurs
 
-To access modifiers used with the `v-model` directive, we can destructure the return value of `defineModel()` like this:
+Pour accéder aux modificateurs utilisés avec la directive `v-model`, nous pouvons déstructurer la valeur de retour de `defineModel()` comme ceci :
 
 ```js
 const [modelValue, modelModifiers] = defineModel()
 
-// corresponds to v-model.trim
+// correspond à v-model.trim
 if (modelModifiers.trim) {
   // ...
 }
