@@ -231,7 +231,7 @@ Cela sera compilé avec les options "default" des props à l'exécution. De plus
 
 Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui peut être consommée via `v-model` à partir du composant parent. Des exemples d'utilisation sont également présentés dans le guide [v-model du composant](/guide/components/v-model).
 
-Under the hood, this macro declares a model prop and a corresponding value update event. If the first argument is a literal string, it will be used as the prop name; Otherwise the prop name will default to `"modelValue"`. In both cases, you can also pass an additional object which can include the prop's options and the model ref's value transform options.
+Sous le capot, cette macro déclare un modèle prop et un événement de mise à jour de valeur correspondant. Si le premier argument est une chaîne littérale, il sera utilisé comme nom de la prop ; sinon, le nom de la propriété sera par défaut `"modelValue"`. Dans les deux cas, vous pouvez également passer un objet supplémentaire qui peut inclure les options de la prop et les options de transformation de la valeur de la ref du modèle.
 
 ```js
 // declares "modelValue" prop, consumed by parent via v-model
