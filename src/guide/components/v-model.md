@@ -450,7 +450,7 @@ export default {
 </template>
 ```
 
-Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - parce qu'elle est définie sur le binding `v-model` `v-model.capitalize="myText"`.
+Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - parce qu'elle est définie sur le lien `v-model` `v-model.capitalize="myText"`.
 
 Maintenant que nous avons mis en place notre prop, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour changer la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne en majuscules chaque fois que l'élément `<input />` déclenchera un événement `input`.
 
@@ -489,7 +489,7 @@ export default {
 
 <div class="options-api">
 
-For `v-model` bindings with both argument and modifiers, the generated prop name will be `arg + "Modifiers"`. For example:
+Pour les liens `v-model` avec à la fois un argument et un modificateur, le nom de la prop générée sera `arg + "Modifiers"`. Par exemple :
 
 ```vue-html
 <MyComponent v-model:title.capitalize="myText">
