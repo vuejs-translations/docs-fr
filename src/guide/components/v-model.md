@@ -23,14 +23,14 @@ function update() {
 </template>
 ```
 
-The parent can then bind a value with `v-model`:
+Le parent peut alors lier une valeur avec `v-model` :
 
 ```vue-html
 <!-- Parent.vue -->
 <Child v-model="count" />
 ```
 
-The value returned by `defineModel()` is a ref. It can be accessed and mutated like any other ref, except that it acts as a two-way binding between a parent value and a local one:
+La valeur retournée par `defineModel()` est une ref. On peut y accéder et la modifier comme n'importe quel autre ref, sauf qu'elle agit comme une liaison bidirectionnelle entre une valeur parent et une valeur locale :
 
 - Its `.value` is synced with the value bound by the parent `v-model`;
 - When it is mutated by the child, it causes the parent bound value to be updated as well.
