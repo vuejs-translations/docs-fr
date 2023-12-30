@@ -32,10 +32,10 @@ Le parent peut alors lier une valeur avec `v-model` :
 
 La valeur retournée par `defineModel()` est une ref. On peut y accéder et la modifier comme n'importe quel autre ref, sauf qu'elle agit comme une liaison bidirectionnelle entre une valeur parent et une valeur locale :
 
-- Its `.value` is synced with the value bound by the parent `v-model`;
-- When it is mutated by the child, it causes the parent bound value to be updated as well.
+- Sa `.value` est synchronisée avec la valeur liée au `v-model` parent ;
+- Lorsqu'elle est modifiée par l'enfant, la valeur liée au parent est également mise à jour.
 
-This means you can also bind this ref to a native input element with `v-model`, making it straightforward to wrap native input elements while providing the same `v-model` usage:
+Cela signifie que vous pouvez également lier cette ref à un élément d'entrée natif avec `v-model`, ce qui permet d'envelopper les éléments d'entrée natifs tout en fournissant la même utilisation de `v-model` :
 
 ```vue
 <script setup>
