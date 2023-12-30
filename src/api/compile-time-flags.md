@@ -72,7 +72,7 @@ module.exports = {
 
 ### webpack
 
-Flags should be defined using webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/):
+Les indicateurs doivent être définis à l'aide de la fonction [DefinePlugin](https://webpack.js.org/plugins/define-plugin/) de webpack :
 
 ```js
 // webpack.config.js
