@@ -90,7 +90,7 @@ module.exports = {
 
 ### Rollup
 
-Flags should be defined using [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace):
+Les indicateurs doivent être définis à l'aide de [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace) :
 
 ```js
 // rollup.config.js
