@@ -1,12 +1,12 @@
 # v-model du composant {#component-v-model}
 
-## Basic Usage
+## Utilisation de base
 
 `v-model` peut être utilisé sur un composant pour implémenter une liaison à double sens.
 
 <div class="composition-api">
 
-Starting in Vue 3.4, the recommended approach to achieve this is using the [`defineModel()`](/api/sfc-script-setup#definemodel) macro:
+À partir de Vue 3.4, l'approche recommandée consiste à utiliser la macro [`defineModel()`](/api/sfc-script-setup#definemodel) :
 
 ```vue
 <!-- Child.vue -->
@@ -19,7 +19,7 @@ function update() {
 </script>
 
 <template>
-  <div>parent bound v-model is: {{ model }}</div>
+  <div>Le v-model lié au parent est : {{ model }}</div>
 </template>
 ```
 
