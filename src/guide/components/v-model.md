@@ -88,7 +88,7 @@ const model = defineModel({ default: 0 })
 
 <div class="options-api">
 
-First let's revisit how `v-model` is used on a native element:
+Revenons tout d'abord sur la façon dont `v-model` est utilisé sur un élément natif :
 
 ```vue-html
 <input v-model="searchText" />
@@ -136,7 +136,7 @@ export default {
 </template>
 ```
 
-Now `v-model` should work perfectly with this component:
+Maintenant, `v-model` devrait fonctionner parfaitement avec ce composant :
 
 ```vue-html
 <CustomInput v-model="searchText" />
@@ -144,7 +144,7 @@ Now `v-model` should work perfectly with this component:
 
 [Essayer en ligne](https://play.vuejs.org/#eNqFkctqwzAQRX9lEAEn4Np744aWrvoD3URdiHiSGvRCHpmC8b93JDfGKYGCkJjXvTrSJF69r8aIohHtcA69p6O0vfEuELzFgZx5tz4SXIIzUFT1JpfGCmmlxe/c3uFFRU0wSQtwdqxh0dLQwHSnNJep3ilS+8PSCxCQYrC3CMDgMKgrNlB8odaOXVJ2TgdvvNp6vSwHhMZrRcgRQLs1G5+M61A/S/ErKQXUR5immwXMWW1VEKX4g3j3Mo9QfXCeKU9FtvpQmp/lM0Oi6RP/qYieebHZNvyL0acLLODNmGYSxCogxVJ6yW1c2iWz/QOnEnY48kdUpMIVGSllD8t8zVZb+PkHqPG4iw==)
 
-Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée`  en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
+Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée` en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
 
 ```vue
 <!-- CustomInput.vue -->
