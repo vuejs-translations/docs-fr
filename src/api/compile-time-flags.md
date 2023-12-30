@@ -8,7 +8,7 @@ outline: deep
 Les indicateurs de compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
 :::
 
-When using Vue with a build step, it is possible to configure a number of compile-time flags to enable / disable certain features. The benefit of using compile-time flags is that features disabled this way can be removed from the final bundle via tree-shaking.
+Lorsque l'on utilise Vue avec une étape de construction, il est possible de configurer un certain nombre d'indicateurs de compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
 
 Vue will work even if these flags are not explicitly configured. However, it is recommended to always configure them so that the relevant features can be properly removed when possible.
 
