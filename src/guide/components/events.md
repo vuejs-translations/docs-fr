@@ -288,15 +288,3 @@ export default {
 ```
 
 </div>
-
-## Les événements comme Props {#events-props}
-
-Vous pouvez également déclarer et passer des `events` comme `props`, en préfixant le nom de l'événement en majuscules par `on`.
-
-L'utilisation de `props.onEvent` a un comportement différent de l'utilisation de `emit('event')`, car le premier ne passera que l'écouteur basé sur la propriété (soit `@event` ou `:on-event`).
-
-:::warning
-Si `:onEvent` et `@event` sont tous deux passés, `props.onEvent` peut être un tableau de `fonctions` au lieu de `function`, ce comportement n'est pas stable et pourrait changer dans le futur.
-:::
-
-Pour cette raison, il est recommandé d'utiliser `emit('event')` au lieu de `props.onEvent` pour émettre des événements.
