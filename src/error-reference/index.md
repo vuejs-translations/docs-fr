@@ -25,6 +25,6 @@ Le tableau suivant établit une correspondance entre les codes et leurs chaînes
 
 ## Erreurs de compilation {#compiler-errors}
 
-Le tableau suivant fournit une correspondance entre les codes d'erreur du compilateur de production et leurs messages d'origine.
+Le tableau suivant fournit une correspondance entre les codes d'erreur du compilateur en production et leurs messages d'origine.
 
 <ErrorsTable kind="compiler" :errors="data.compiler" :highlight="highlight" />
