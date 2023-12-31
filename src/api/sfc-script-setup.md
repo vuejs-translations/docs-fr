@@ -244,7 +244,7 @@ model.value = 'hello'
 
 // déclare la prop "count", consommée par le parent via v-model:count
 const count = defineModel('count')
-// OU: déclare la prop "count" avec des options
+// OU : déclare la prop "count" avec des options
 const count = defineModel('count', { type: Number, default: 0 })
 
 function inc() {
