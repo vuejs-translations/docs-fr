@@ -54,7 +54,7 @@ const model = defineModel()
 `defineModel` est une macro de commodité. Le compilateur l'étend de la manière suivante :
 
 - Une propriété nommée `modelValue`, avec laquelle la valeur du ref local est synchronisée ;
-- Un événement nommé `update:modelValue`, qui est émis lorsque la valeur du ref local est modifiée.
+- Un événement nommé `update:modelValue`, qui est émis lorsque la valeur de la ref locale est modifiée.
 
 C'est ainsi que l'on mettrait en œuvre le même composant enfant que celui présenté ci-dessus avant la version 3.4 :
 
