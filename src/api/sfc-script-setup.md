@@ -236,7 +236,7 @@ Sous le capot, cette macro déclare un modèle prop et un événement de mise à
 ```js
 // déclare la prop "modelValue", consommée par le parent via le v-model
 const model = defineModel()
-// OU: déclare la prop "modelValue" avec des options
+// OU : déclare la prop "modelValue" avec des options
 const model = defineModel({ type: String })
 
 // émet "update:modelValue" lorsqu'il est modifié
