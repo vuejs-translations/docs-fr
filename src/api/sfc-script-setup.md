@@ -290,7 +290,7 @@ Comme `defineProps` et `defineEmits`, `defineModel` peut aussi recevoir des argu
 const modelValue = defineModel<string>()
 //    ^? Ref<string | undefined>
 
-// modèle par défaut avec options, les valeurs requises suppriment les valeurs indéfinies possibles
+// modèle par défaut avec options, les valeurs requises suppriment les possibles valeurs indéfinies
 const modelValue = defineModel<string>({ required: true })
 //    ^? Ref<string>
 
