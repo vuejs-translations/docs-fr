@@ -276,7 +276,7 @@ const [modelValue, modelModifiers] = defineModel({
     if (modelModifiers.trim) {
       return value.trim()
     }
-    // sinon, renvoyer la valeur telle quelle
+    // sinon, renvoie la valeur telle quelle
     return value
   }
 })
