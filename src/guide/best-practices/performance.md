@@ -139,7 +139,7 @@ count.value = 2
 count.value = 4
 ```
 
-Cela réduit le déclenchement inutile d'effet, mais ne fonctionne pas si la la propriété calculée retourne un nouvel object à chaque calcul:
+Cela réduit le déclenchement inutile d'effet, mais ne fonctionne pas si la la propriété calculée retourne un nouvel object à chaque calcul :
 
 ```js
 const computedObj = computed(() => {
