@@ -12,7 +12,7 @@ Bien que le modèle de rendu déclaratif de Vue fasse abstraction pour vous de l
 
 <div class="composition-api">
 
-Pour obtenir la référence avec la Composition API, nous devons déclarer une ref avec le même nom :
+Pour obtenir la référence avec la Composition API, nous devons déclarer une ref dont le nom correspond à la valeur de l'attribut ref du template :
 
 ```vue
 <script setup>
@@ -89,7 +89,7 @@ Voir aussi : [Typer les refs du template](/guide/typescript/composition-api#typi
 
 ## Refs à l'intérieur d'un `v-for` {#refs-inside-v-for}
 
-> Requiert v3.2.25 ou ultérieure 
+> Requiert v3.2.25 ou ultérieure
 
 <div class="composition-api">
 
