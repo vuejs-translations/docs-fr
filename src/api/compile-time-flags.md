@@ -52,7 +52,7 @@ export default defineConfig({
 
 ### vue-cli
 
-`@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer/modifier les valeurs :
+`@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer / modifier les valeurs :
 
 ```js
 // vue.config.js
