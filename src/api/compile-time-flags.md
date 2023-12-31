@@ -8,7 +8,7 @@ outline: deep
 Les indicateurs de compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
 :::
 
-Lorsque l'on utilise Vue avec une étape de construction, il est possible de configurer un certain nombre d'indicateurs de compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
+Lorsque l'on utilise Vue avec des outils de build, il est possible de configurer un certain nombre d'indicateurs à la compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
 
 Vue fonctionnera même si ces indicateurs ne sont pas explicitement configurés. Cependant, il est recommandé de toujours les configurer afin que les fonctionnalités concernées puissent être correctement supprimées lorsque cela est possible.
 
