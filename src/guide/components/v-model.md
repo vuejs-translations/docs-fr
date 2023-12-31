@@ -204,7 +204,7 @@ const title = defineModel('title', { required: true })
 ```
 
 <details>
-<summary>Pré 3.4 Utilisation</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue
 <!-- MyComponent.vue -->
