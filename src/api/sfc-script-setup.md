@@ -163,7 +163,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['change', 'delete'])
-// code du setup
+// code du script setup
 </script>
 ```
 
