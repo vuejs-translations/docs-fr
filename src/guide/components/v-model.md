@@ -531,7 +531,7 @@ console.log(lastNameModifiers) // { uppercase: true}
 ```
 
 <details>
-<summary>Pré 3.4 Utilisation</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue{5,6,10,11}
 <script setup>
