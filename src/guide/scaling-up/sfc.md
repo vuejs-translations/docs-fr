@@ -92,7 +92,7 @@ export default {
 
 Les balises `<style>` à l'intérieur des SFC sont généralement injectées comme des balises `<style>` natives pendant le développement pour supporter les mises à jour à chaud. Pour la production, elles peuvent être extraites et fusionnées dans un seul fichier CSS.
 
-Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [Playground SFC de Vue](https://play.vuejs.org/).
+Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [Essayez en ligne SFC de Vue](https://play.vuejs.org/).
 
 Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outils pour SFC](/guide/scaling-up/tooling).
 
