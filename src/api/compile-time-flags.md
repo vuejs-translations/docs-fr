@@ -44,7 +44,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   define: {
-    // activer les détails de l'inadéquation de l'hydratation dans la version de production
+    // activer les détails d'incohérences lors de l'hydratation dans la version de production
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true'
   }
 })
