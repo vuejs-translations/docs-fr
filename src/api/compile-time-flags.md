@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Indicateurs de temps de compilation {#compile-time-flags}
+# Drapeaux pour la compilation {#compile-time-flags}
 
 :::tip
 Les indicateurs de compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
