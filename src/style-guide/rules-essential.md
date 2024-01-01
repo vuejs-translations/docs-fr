@@ -138,6 +138,8 @@ Imaginons que vous ayez une liste de todos :
 
 <div class="options-api">
 
+<div class="options-api">
+
 ```js
 data() {
   return {
@@ -238,6 +240,8 @@ Lorsque Vue traite les directives, `v-if` a la priorité sur `v-for`, donc ce te
 Va produire une erreur, car la directive `v-if` sera d'abord évaluée et la variable d'itération `user` n'existe pas à ce moment précis.
 
 Cela peut être résolu en itérant sur une propriété calculée à la place, de cette façon :
+
+<div class="options-api">
 
 <div class="options-api">
 
