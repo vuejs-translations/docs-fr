@@ -14,27 +14,27 @@ Vue fonctionnera même si ces indicateurs ne sont pas explicitement configurés.
 
 Voir [Guides de configuration](#configuration-guides) pour savoir comment les configurer en fonction de votre outil de construction.
 
-## `__VUE_OPTIONS_API__`
+## `__VUE_OPTIONS_API__` {#VUE_OPTIONS_API}
 
 - **Par défaut:** `true`
 
   Activer / désactiver la prise en charge de l'Option API. La désactivation de cette fonction permet d'obtenir des paquets plus petits, mais peut affecter la compatibilité avec les bibliothèques tierces si elles s'appuient sur l'Option API.
 
-## `__VUE_PROD_DEVTOOLS__`
+## `__VUE_PROD_DEVTOOLS__` {#VUE_PROD_DEVTOOLS}
 
 - **Par défaut:** `false`
 
   Activer / désactiver le support des outils de développement dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le *bundle*, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
-## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" />
+## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" /> {#VUE_PROD_HYDRATATION_MISMATCH_DETAILS}
 
 - **Par défaut :** `false`
 
   Activer / désactiver les avertissements détaillés pour les erreurs d'hydratation dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le bundle, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
-## Guides de configuration
+## Guides de configuration {#configuration-guides}
 
-### Vite
+### Vite {#vite}
 
 `@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez [l'option de configuration `define`](https://vitejs.dev/config/shared-options.html#define) de Vite :
 
@@ -50,7 +50,7 @@ export default defineConfig({
 })
 ```
 
-### vue-cli
+### vue-cli {#vue-cli}
 
 `@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer / modifier les valeurs :
 
@@ -70,7 +70,7 @@ module.exports = {
 }
 ```
 
-### webpack
+### webpack {#webpack}
 
 Les indicateurs doivent être définis à l'aide de la fonction [DefinePlugin](https://webpack.js.org/plugins/define-plugin/) de webpack :
 
@@ -88,7 +88,7 @@ module.exports = {
 }
 ```
 
-### Rollup
+### Rollup {#rollup}
 
 Les indicateurs doivent être définis à l'aide de [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace) :
 
