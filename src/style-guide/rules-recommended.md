@@ -129,6 +129,8 @@ Lorsque les composants commencent à prendre beaucoup d'espace ou deviennent dif
 
 <div class="options-api">
 
+<div class="options-api">
+
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 

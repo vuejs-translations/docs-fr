@@ -56,4 +56,4 @@ Bien que Vue soit principalement conçu pour construire des applications Web, il
 - Construire des applications de bureau avec [Electron](https://www.electronjs.org/) ou [Tauri](https://tauri.studio/)
 - Construire des applications mobiles avec [Ionic Vue](https://ionicframework.com/docs/vue/overview)
 - Construire des applications de bureau et mobile à partir du même code avec [Quasar](https://quasar.dev/)
-- Utiliser l'API de [rendu personnalisé](/api/custom-renderer) de Vue pour construire des rendus personnalisés ciblant [WebGL](https://troisjs.github.io/) ou même [le terminal](https://github.com/vue-terminal/vue-termui)!
+- Utiliser l'API de [rendu personnalisé](/api/custom-renderer) de Vue pour construire des rendus personnalisés ciblant [WebGL](https://troisjs.github.io/) ou même [le terminal](https://github.com/vue-terminal/vue-termui) !
