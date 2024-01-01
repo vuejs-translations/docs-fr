@@ -163,7 +163,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['change', 'delete'])
-// setup code
+// code du script setup
 </script>
 ```
 
@@ -229,68 +229,68 @@ Cela sera compilé avec les options "default" des props à l'exécution. De plus
 
 ## defineModel() <sup class="vt-badge" data-text="3.4+" /> {#definemodel}
 
-This macro can be used to declare a two-way binding prop that can be consumed via `v-model` from the parent component. Example usage is also discussed in the [Component `v-model`](/guide/components/v-model) guide.
+Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui peut être consommée via `v-model` à partir du composant parent. Des exemples d'utilisation sont également présentés dans le guide [v-model du composant](/guide/components/v-model).
 
-Under the hood, this macro declares a model prop and a corresponding value update event. If the first argument is a literal string, it will be used as the prop name; Otherwise the prop name will default to `"modelValue"`. In both cases, you can also pass an additional object which can include the prop's options and the model ref's value transform options.
+Sous le capot, cette macro déclare un modèle prop et un événement de mise à jour de valeur correspondant. Si le premier argument est une chaîne littérale, il sera utilisé comme nom de la prop, sinon, le nom de la propriété sera par défaut `"modelValue"`. Dans les deux cas, vous pouvez également passer un objet supplémentaire qui peut inclure les options de la prop et les options de transformation de la valeur de la ref du modèle.
 
 ```js
-// declares "modelValue" prop, consumed by parent via v-model
+// déclare la prop "modelValue", consommée par le parent via le v-model
 const model = defineModel()
-// OR: declares "modelValue" prop with options
+// OU : déclare la prop "modelValue" avec des options
 const model = defineModel({ type: String })
 
-// emits "update:modelValue" when mutated
+// émet "update:modelValue" lorsqu'il est modifié
 model.value = 'hello'
 
-// declares "count" prop, consumed by parent via v-model:count
+// déclare la prop "count", consommée par le parent via v-model:count
 const count = defineModel('count')
-// OR: declares "count" prop with options
+// OU : déclare la prop "count" avec des options
 const count = defineModel('count', { type: Number, default: 0 })
 
 function inc() {
-  // emits "update:count" when mutated
+  // émet "update:count" lorsqu'il est muté
   count.value++
 }
 ```
 
-### Modifiers and Transformers
+### Modificateurs et transformateurs
 
-To access modifiers used with the `v-model` directive, we can destructure the return value of `defineModel()` like this:
+Pour accéder aux modificateurs utilisés avec la directive `v-model`, nous pouvons déstructurer la valeur de retour de `defineModel()` comme ceci :
 
 ```js
 const [modelValue, modelModifiers] = defineModel()
 
-// corresponds to v-model.trim
+// correspond à v-model.trim
 if (modelModifiers.trim) {
   // ...
 }
 ```
 
-When a modifier is present, we likely need to transform the value when reading or syncing it back to the parent. We can achieve this by using the `get` and `set` transformer options:
+Lorsqu'un modificateur est présent, il est probable que nous devions transformer la valeur lors de la lecture ou de la synchronisation avec le parent. Nous pouvons y parvenir en utilisant les options de transformation `get` et `set` :
 
 ```js
 const [modelValue, modelModifiers] = defineModel({
-  // get() omitted as it is not needed here
+  // get() est omis car il n'est pas nécessaire ici
   set(value) {
-    // if the .trim modifier is used, return trimmed value
+    // si le modificateur .trim est utilisé, renvoie la valeur sans espaces supplémentaires
     if (modelModifiers.trim) {
       return value.trim()
     }
-    // otherwise, return the value as-is
+    // sinon, renvoie la valeur telle quelle
     return value
   }
 })
 ```
 
-### Usage with TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
+### Utilisation avec TypeScript <sup class="vt-badge ts" /> {#usage-with-typescript}
 
-Like `defineProps` and `defineEmits`, `defineModel` can also receive type arguments to specify the types of the model value and the modifiers:
+Comme `defineProps` et `defineEmits`, `defineModel` peut aussi recevoir des arguments de type pour spécifier les types de la valeur du modèle et des modificateurs :
 
 ```ts
 const modelValue = defineModel<string>()
 //    ^? Ref<string | undefined>
 
-// default model with options, required removes possible undefined values
+// modèle par défaut avec options, les valeurs requises suppriment les possibles valeurs indéfinies
 const modelValue = defineModel<string>({ required: true })
 //    ^? Ref<string>
 
