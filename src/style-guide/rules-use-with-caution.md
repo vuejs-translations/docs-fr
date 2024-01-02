@@ -58,8 +58,6 @@ Le problème, c'est qu'il existe aussi de nombreux cas _simples_ où ces modèle
 
 <div class="options-api">
 
-<div class="options-api">
-
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
 
