@@ -115,26 +115,6 @@
     "platinum": true
   },
   {
-    "name": "Tighten",
-    "logo": "tighten.svg",
-    "flipLogo": true,
-    "intro": "Traiter correctement les gens, résoudre les bons problèmes, construire des logiciels spectaculaires - voilà comment nous fonctionnons. Nous sommes ultra-concentrés et très expérimentés dans les technologies qui alimentent les entreprises modernes, notamment Vue.js. Grâce à notre méthode, notre équipe méticuleusement constituée fournit un service inégalé, vous aidant à en faire plus avec votre logiciel et à bien gérer votre entreprise.",
-    "description": [
-      "Une opinion empathique, un développement exécuté par des experts. C'est ce que nous offrons.",
-      "Chez Tighten, nous nous occupons de tous les détails pour donner à votre application la forme et la finition que les utilisateurs d'aujourd’hui attendent, tout en vous donnant la clarté et la confiance nécessaires pour aller de l'avant.",
-      "Que vous cherchiez simplement à améliorer une interface utilisateur ou à créer une application sophistiquée basée sur JavaScript, nous avons ce qu'il vous faut. Vue.js est un framework flexible et robuste, capable d'alimenter une application monopage complexe. Nous le combinons généralement avec une API basée sur Laravel.",
-      "Si vous mettez en place une équipe de développement, vous savez que cela demande du temps et de la diligence, et que cela pourrait être le facteur déterminant pour votre entreprise. Les entreprises se tournent vers Tighten à des moments clés, pour faire avancer leur technologie pendant qu'elles mettent en place l'équipe <b>adéquate</b> pour leur activité."
-    ],
-    "region": ["Amérique du Nord", "Europe", "Amérique latine"],
-    "proficiencies": ["Vue", "Nuxt", "Laravel", "Inertia", "Tailwind"],
-    "website": {
-      "text": "tighten.com",
-      "url": "https://tighten.com/vue"
-    },
-    "contact": "hello@tighten.co",
-    "platinum": true
-  },
-  {
     "name": "Redberry",
     "logo": "redberry.png",
     "intro": "Nous sommes une agence de conception de logiciels, de développement et de marketing de croissance de Tbilissi, partenaire de Laravel et Vue, et primée à plus de 100 reprises. En 8 ans, nous avons fait passer plus de 300 produits de zéro à héros en utilisant Vue, Laravel, React et React Native pour des clients allant des startups et des institutions gouvernementales aux agences et aux entreprises internationales.",
