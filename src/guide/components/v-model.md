@@ -1,12 +1,12 @@
 # v-model du composant {#component-v-model}
 
-## Basic Usage {#basic-usage}
+## Utilisation de base {#basic-usage}
 
 `v-model` peut être utilisé sur un composant pour implémenter une liaison à double sens.
 
 <div class="composition-api">
 
-Starting in Vue 3.4, the recommended approach to achieve this is using the [`defineModel()`](/api/sfc-script-setup#definemodel) macro:
+À partir de Vue 3.4, l'approche recommandée consiste à utiliser la macro [`defineModel()`](/api/sfc-script-setup#definemodel) :
 
 ```vue
 <!-- Child.vue -->
@@ -19,23 +19,23 @@ function update() {
 </script>
 
 <template>
-  <div>parent bound v-model is: {{ model }}</div>
+  <div>Le v-model lié au parent est : {{ model }}</div>
 </template>
 ```
 
-The parent can then bind a value with `v-model`:
+Le parent peut alors lier une valeur avec `v-model` :
 
 ```vue-html
 <!-- Parent.vue -->
 <Child v-model="count" />
 ```
 
-The value returned by `defineModel()` is a ref. It can be accessed and mutated like any other ref, except that it acts as a two-way binding between a parent value and a local one:
+La valeur retournée par `defineModel()` est une ref. On peut y accéder et la modifier comme n'importe quel autre ref, sauf qu'elle agit comme une liaison bidirectionnelle entre une valeur parent et une valeur locale :
 
-- Its `.value` is synced with the value bound by the parent `v-model`;
-- When it is mutated by the child, it causes the parent bound value to be updated as well.
+- Sa `.value` est synchronisée avec la valeur liée au `v-model` parent ;
+- Lorsqu'elle est modifiée par l'enfant, la valeur liée au parent est également mise à jour.
 
-This means you can also bind this ref to a native input element with `v-model`, making it straightforward to wrap native input elements while providing the same `v-model` usage:
+Cela signifie que vous pouvez également lier cette ref à un élément d'entrée natif avec `v-model`, ce qui permet d'envelopper les éléments d'entrée natifs tout en fournissant la même utilisation de `v-model` :
 
 ```vue
 <script setup>
@@ -47,16 +47,16 @@ const model = defineModel()
 </template>
 ```
 
-[Playground Example](https://play.vuejs.org/#eNqFUtFKwzAU/ZWYl06YLbK30Q10DFSYigq+5KW0t11mmoQknZPSf/cm3eqEsT0l555zuefmpKV3WsfbBuiUpjY3XDtiwTV6ziSvtTKOLNZcFKQ0qiZRnATkG6JB0BIDJen2kp5iMlfSOlLbisw8P4oeQAhFPpURxVV0zWSa9PNwEgIHtRaZA0SEpOvbeduG5q5LE0Sh2jvZ3tSqADFjFHlGSYJkmhz10zF1FseXvIo3VklcrfX9jOaq1lyAedGOoz1GpyQwnsvQ3fdTqDnTwPhQz9eQf52ob+zO1xh9NWDBbIHRgXOZqcD19PL9GXZ4H0h03whUnyHfwCrReI+97L6RBdo+0gW3j+H9uaw+7HLnQNrDUt6oV3ZBzyhmsjiz+p/dSTwJfUx2+IpD1ic+xz5enwQGXEDJJaw8Gl2I1upMzlc/hEvdOBR6SNKAjqP1J6P/o6XdL11L5h4=)
+[Essayez en ligne](https://play.vuejs.org/#eNqFUtFKwzAU/ZWYl06YLbK30Q10DFSYigq+5KW0t11mmoQknZPSf/cm3eqEsT0l555zuefmpKV3WsfbBuiUpjY3XDtiwTV6ziSvtTKOLNZcFKQ0qiZRnATkG6JB0BIDJen2kp5iMlfSOlLbisw8P4oeQAhFPpURxVV0zWSa9PNwEgIHtRaZA0SEpOvbeduG5q5LE0Sh2jvZ3tSqADFjFHlGSYJkmhz10zF1FseXvIo3VklcrfX9jOaq1lyAedGOoz1GpyQwnsvQ3fdTqDnTwPhQz9eQf52ob+zO1xh9NWDBbIHRgXOZqcD19PL9GXZ4H0h03whUnyHfwCrReI+97L6RBdo+0gW3j+H9uaw+7HLnQNrDUt6oV3ZBzyhmsjiz+p/dSTwJfUx2+IpD1ic+xz5enwQGXEDJJaw8Gl2I1upMzlc/hEvdOBR6SNKAjqP1J6P/o6XdL11L5h4=)
 
-### Under the Hood {#under-the-hood}
+### Sous le capot {#under-the-hood}
 
-`defineModel` is a convenience macro. The compiler expands it to the following:
+`defineModel` est une macro de commodité. Le compilateur l'étend de la manière suivante :
 
-- A prop named `modelValue`, which the local ref's value is synced with;
-- An event named `update:modelValue`, which is emitted when the local ref's value is mutated.
+- Une propriété nommée `modelValue`, avec laquelle la valeur de la ref locale est synchronisée ;
+- Un événement nommé `update:modelValue`, qui est émis lorsque la valeur de la ref locale est modifiée.
 
-This is how you would implement the same child component shown above prior to 3.4:
+C'est ainsi que l'on mettrait en œuvre le même composant enfant que celui présenté ci-dessus avant la version 3.4 :
 
 ```vue
 <script setup>
@@ -72,15 +72,15 @@ const emit = defineEmits(['update:modelValue'])
 </template>
 ```
 
-As you can see, it is quite a bit more verbose. However, it is helpful to understand what is happening under the hood.
+Comme vous pouvez le voir, c'est un peu plus verbeux. Cependant, il est utile de comprendre ce qui se passe sous le capot.
 
-Because `defineModel` declares a prop, you can therefore declare the underlying prop's options by passing it to `defineModel`:
+Puisque `defineModel` déclare une prop, vous pouvez donc déclarer les options de la prop sous-jacente en la passant à `defineModel` :
 
 ```js
-// making the v-model required
+// rendre v-model obligatoire
 const model = defineModel({ required: true })
 
-// providing a default value
+// fournir une valeur par défaut
 const model = defineModel({ default: 0 })
 ```
 
@@ -88,7 +88,7 @@ const model = defineModel({ default: 0 })
 
 <div class="options-api">
 
-First let's revisit how `v-model` is used on a native element:
+Revenons tout d'abord sur la façon dont `v-model` est utilisé sur un élément natif :
 
 ```vue-html
 <input v-model="searchText" />
@@ -136,7 +136,7 @@ export default {
 </template>
 ```
 
-Now `v-model` should work perfectly with this component:
+Maintenant, `v-model` devrait fonctionner parfaitement avec ce composant :
 
 ```vue-html
 <CustomInput v-model="searchText" />
@@ -144,7 +144,7 @@ Now `v-model` should work perfectly with this component:
 
 [Essayer en ligne](https://play.vuejs.org/#eNqFkctqwzAQRX9lEAEn4Np744aWrvoD3URdiHiSGvRCHpmC8b93JDfGKYGCkJjXvTrSJF69r8aIohHtcA69p6O0vfEuELzFgZx5tz4SXIIzUFT1JpfGCmmlxe/c3uFFRU0wSQtwdqxh0dLQwHSnNJep3ilS+8PSCxCQYrC3CMDgMKgrNlB8odaOXVJ2TgdvvNp6vSwHhMZrRcgRQLs1G5+M61A/S/ErKQXUR5immwXMWW1VEKX4g3j3Mo9QfXCeKU9FtvpQmp/lM0Oi6RP/qYieebHZNvyL0acLLODNmGYSxCogxVJ6yW1c2iWz/QOnEnY48kdUpMIVGSllD8t8zVZb+PkHqPG4iw==)
 
-Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée`  en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
+Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée` en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
 
 ```vue
 <!-- CustomInput.vue -->
@@ -182,7 +182,7 @@ export default {
 
 <div class="composition-api">
 
-In the child component, we can support the corresponding argument by passing a string to `defineModel()` as its first argument:
+Dans le composant enfant, nous pouvons prendre en charge l'argument correspondant en passant une chaîne à `defineModel()` comme premier argument :
 
 ```vue
 <!-- MyComponent.vue -->
@@ -197,14 +197,14 @@ const title = defineModel('title')
 
 [Essayer en ligne](https://play.vuejs.org/#eNqFkl9PwjAUxb9K05dhglsMb2SQqOFBE9Soj31Zxh0Uu7bpHxxZ9t29LWOiQXzaes7p2a+9a+mt1unOA53S3JaGa0csOK/nTPJaK+NISwxUpCOVUTVJMJoM1nJ/r/BNgnS9nWYnWujFMCFMlkpaRxx3AsgsFI6S3XWtViBIYda+Dg3QFLUWkFwxmWcHFqTAhQPUCwe4IiTf3Mzbtq/qujzDddRPYfruaUzNGI1PRkmG0Twb+uiY/sI9cw0/0VdQcQnL0D5KovgfL5fa4/69jiDQOOTo+S6SOYtfrvg63VolkauNN0lLxOUCzLN2HMkYnZLoBK8QQn0+Rs0ZD+OjXm6g/Dijb20TNEZfDFgwOwQZPIdzAWQN9uLtKXIPJtL7gH3BfAWrhA+Mh9idlyvEPslF2of4J3G5freLxoG0x0MF0JDsYp5RHE6Y1F9H/8adpJO4j8mOdl/Hw/nf)
 
-If prop options are also needed, they should be passed after the model name:
+Si des options de prop sont également nécessaires, elles doivent être transmises après le nom du modèle :
 
 ```js
 const title = defineModel('title', { required: true })
 ```
 
 <details>
-<summary>Pre 3.4 Usage</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue
 <!-- MyComponent.vue -->
@@ -228,7 +228,7 @@ defineEmits(['update:title'])
 </div>
 <div class="options-api">
 
-In this case, instead of the default `modelValue` prop and `update:modelValue` event, the child component should expect a `title` prop and emit an `update:title` event to update the parent value:
+Dans ce cas, au lieu de la prop `modelValue` et de l'événement `update:modelValue` par défaut, le composant enfant doit s'attendre à une prop `title` et émettre un événement `update:title` pour mettre à jour la valeur du parent :
 
 ```vue
 <!-- MyComponent.vue -->
@@ -282,7 +282,7 @@ const lastName = defineModel('lastName')
 [Essayer en ligne](https://play.vuejs.org/#eNqFkstuwjAQRX/F8iZUAqKKHQpIfbAoUmnVx86bKEzANLEt26FUkf+9Y4MDSAg2UWbu9fjckVv6oNRw2wAd08wUmitLDNhGTZngtZLakpZoKIkjpZY1SdCadNK3Ab3IazhowzQ2/ES0MVFIYSwpucbvxA/qJXO5FsldlKr8qDxL8EKW7kEQAQsLtapyC1gRkq3vp217mOccwf8wwLksRSlYIoMvCNkOarmEahyODAT2J4yGgtFzhx8UDf5/r6c4NEs7CNqnpxkvbO0kcVjNhCyh5AJe/SW9pBPOV3DJGvu3dsKFaiyxf8qTW9gheQwVs4Z90BDm5oF47cF/Ht4aZC75argxUmD61g9ktJC14hXoN2U5ZmJ0TILitbyq5O889KxuoB/7xRqKnwv9jdn5HqPvGnDVWwTpNJvrFSCul2efi4DeiRigqdB9RfwAI6vGM+5tj41YIvaJL9C+hOfNxerLzHYWhImhPKh3uuBnFJ/A05XoR9zRcBTOMeGo+wcs+yse)
 
 <details>
-<summary>Pre 3.4 Usage</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue
 <script setup>
@@ -355,7 +355,7 @@ Créons un exemple de modificateur personnalisé, `capitalize`, qui met en majus
 
 <div class="composition-api">
 
-Modifiers added to a component `v-model` can be accessed in the child component by destructuring the `defineModel()` return value like this:
+Les modificateurs ajoutés à un composant `v-model` sont accessibles dans le composant enfant en déstructurant la valeur de retour de `defineModel()` comme suit :
 
 ```vue{4}
 <script setup>
@@ -369,7 +369,7 @@ console.log(modifiers) // { capitalize: true }
 </template>
 ```
 
-To conditionally adjust how the value should be read / written based on modifiers, we can pass `get` and `set` options to `defineModel()`. These two options receive the value on get / set of the model ref and should return a transformed value. This is how we can use the `set` option to implement the `capitalize` modifier:
+Pour ajuster conditionnellement la façon dont la valeur doit être lue / écrite en fonction des modificateurs, nous pouvons passer les options `get` et `set` à `defineModel()`. Ces deux options reçoivent la valeur sur get / set du modèle ref et doivent retourner une valeur transformée. C'est ainsi que nous pouvons utiliser l'option `set` pour implémenter le modificateur `capitalize` :
 
 ```vue{6-8}
 <script setup>
@@ -391,7 +391,7 @@ const [model, modifiers] = defineModel({
 [Essayez en ligne](https://play.vuejs.org/#eNp9UsFu2zAM/RVClzhY5mzoLUgHdEUPG9Bt2LLTtIPh0Ik6WxIkyosb5N9LybFrFG1OkvgeyccnHsWNtXkbUKzE2pdOWQKPFOwnqVVjjSM4gsMKTlA508CMqbMRuu9uDd80ajrD+XISi3WZDCB1abQnaLoNHgiuY8VsNptLvV72TbkdPwgbWxeE/ALY7JUHpW0gKAurqKjVI3rAFl1He6V30JkA3AbdKvLXUzXt+8Zssc6fM6+l6NtLAUtusF6O3cRCvFB9yY2SiYFw+8KSYcY/qfEC+FCVQuf/8rxbrJTG+4hkxyiWq2ZtUQecQ3oDqAqyMWeieyQAu0bBaUh5ebkv3A1lH+Y5md/WorstPGZzeHfGfa1KzD6yxzH11B/TCjHC4dPlX1j3P0CdjQ5S79/Z3WhpPF91lDz7Uald/uCNZj/TFFJE91SN7rslxX5JsRrmk6Koa/P/a4qRC7gY4uUey3+vxB/8Icak+OHQo2tRihGjwu2QtUb47te3pHsEWXWomX0B/Ine1CFq7Gmfg96y7Akvqf2StoKXcePvDoTaD0NFocnhxJeClyRu2FujP8u9yq+GnxGnJxSEO+M=)
 
 <details>
-<summary>Pre 3.4 Usage</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue{11-13}
 <script setup>
@@ -423,7 +423,7 @@ function emitValue(e) {
 
 <div class="options-api">
 
-Modifiers added to a component `v-model` will be provided to the component via the `modelModifiers` prop. In the below example, we have created a component that contains a `modelModifiers` prop that defaults to an empty object:
+Les modificateurs ajoutés à un composant `v-model` seront fournis au composant via la prop `modelModifiers`. Dans l'exemple ci-dessous, nous avons créé un composant qui contient une prop `modelModifiers` qui est par défaut un objet vide :
 
 ```vue{11}
 <script>
@@ -450,9 +450,9 @@ export default {
 </template>
 ```
 
-Notice the component's `modelModifiers` prop contains `capitalize` and its value is `true` - due to it being set on the `v-model` binding `v-model.capitalize="myText"`.
+Notez que la prop `modelModifiers` du composant contient `capitalize` et que sa valeur est `true` - parce qu'elle est définie sur le lien `v-model` `v-model.capitalize="myText"`.
 
-Now that we have our prop set up, we can check the `modelModifiers` object keys and write a handler to change the emitted value. In the code below we will capitalize the string whenever the `<input />` element fires an `input` event.
+Maintenant que nous avons mis en place notre prop, nous pouvons vérifier les clés de l'objet `modelModifiers` et écrire un gestionnaire pour changer la valeur émise. Dans le code ci-dessous, nous mettrons la chaîne en majuscules chaque fois que l'élément `<input />` déclenchera un événement `input`.
 
 ```vue{13-15}
 <script>
@@ -489,7 +489,7 @@ export default {
 
 <div class="options-api">
 
-For `v-model` bindings with both argument and modifiers, the generated prop name will be `arg + "Modifiers"`. For example:
+Pour les liens `v-model` avec à la fois un argument et un modificateur, le nom de la prop générée sera `arg + "Modifiers"`. Par exemple :
 
 ```vue-html
 <MyComponent v-model:title.capitalize="myText">
@@ -531,7 +531,7 @@ console.log(lastNameModifiers) // { uppercase: true}
 ```
 
 <details>
-<summary>Pre 3.4 Usage</summary>
+<summary>Utilisation avant la 3.4</summary>
 
 ```vue{5,6,10,11}
 <script setup>
