@@ -5,7 +5,7 @@ outline: deep
 # Indicateurs à la compilation {#compile-time-flags}
 
 :::tip
-Les indicateurs de compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
+Les indicateurs à la compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
 :::
 
 Lorsque l'on utilise Vue avec des outils de build, il est possible de configurer un certain nombre d'indicateurs à la compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
