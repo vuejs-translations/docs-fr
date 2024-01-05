@@ -79,8 +79,8 @@ Si vous **ne souhaitez pas** qu'un composant hérite automatiquement des attribu
 
 <div class="composition-api">
 
-Since 3.3 you can also use [`defineOptions`](/api/sfc-script-setup#defineoptions) directly in `<script setup>`:
-
+Depuis la version 3.3, vous pouvez également utiliser [`defineOptions`](/api/sfc-script-setup#defineoptions) directement dans `<script setup>`:
+ 
 ```vue
 <script setup>
 defineOptions({
