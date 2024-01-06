@@ -444,7 +444,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
           link: '/api/utility-types'
         },
         { text: 'Rendu personnalisé', link: '/api/custom-renderer' },
-        { text: 'Drapeaux pour la compilation', link: '/api/compile-time-flags' }
+        { text: 'Indicateurs à la compilation', link: '/api/compile-time-flags' }
       ]
     }
   ],
