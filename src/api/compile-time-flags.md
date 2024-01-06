@@ -2,41 +2,41 @@
 outline: deep
 ---
 
-# Compile-Time Flags {#compile-time-flags}
+# Indicateurs à la compilation {#compile-time-flags}
 
 :::tip
-Compile-time flags only apply when using the `esm-bundler` build of Vue (i.e. `vue/dist/vue.esm-bundler.js`).
+Les indicateurs à la compilation ne s'appliquent que lors de l'utilisation de la version `esm-bundler` de Vue (c'est-à-dire `vue/dist/vue.esm-bundler.js`).
 :::
 
-When using Vue with a build step, it is possible to configure a number of compile-time flags to enable / disable certain features. The benefit of using compile-time flags is that features disabled this way can be removed from the final bundle via tree-shaking.
+Lorsque l'on utilise Vue avec des outils de build, il est possible de configurer un certain nombre d'indicateurs à la compilation pour activer/désactiver certaines fonctionnalités. L'avantage de l'utilisation des indicateurs à la compilation est que les fonctionnalités désactivées de cette manière peuvent être supprimées du paquet final via le *tree-shaking*.
 
-Vue will work even if these flags are not explicitly configured. However, it is recommended to always configure them so that the relevant features can be properly removed when possible.
+Vue fonctionnera même si ces indicateurs ne sont pas explicitement configurés. Cependant, il est recommandé de toujours les configurer afin que les fonctionnalités concernées puissent être correctement supprimées lorsque cela est possible.
 
-See [Configuration Guides](#configuration-guides) on how to configure them depending on your build tool.
+Voir [Guides de configuration](#configuration-guides) pour savoir comment les configurer en fonction de votre outil de construction.
 
 ## `__VUE_OPTIONS_API__` {#VUE_OPTIONS_API}
 
-- **Default:** `true`
+- **Par défaut:** `true`
 
-  Enable / disable Options API support. Disabling this will result in smaller bundles, but may affect compatibility with 3rd party libraries if they rely on Options API.
+  Activer / désactiver la prise en charge de l'Option API. La désactivation de cette fonction permet d'obtenir des paquets plus petits, mais peut affecter la compatibilité avec les bibliothèques tierces si elles s'appuient sur l'Option API.
 
 ## `__VUE_PROD_DEVTOOLS__` {#VUE_PROD_DEVTOOLS}
 
-- **Default:** `false`
+- **Par défaut:** `false`
 
-  Enable / disable devtools support in production builds. This will result in more code included in the bundle, so it is recommended to only enable this for debugging purposes.
+  Activer / désactiver le support des outils de développement dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le *bundle*, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
 ## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" /> {#VUE_PROD_HYDRATATION_MISMATCH_DETAILS}
 
-- **Default:** `false`
+- **Par défaut :** `false`
 
-  Enable/disable detailed warnings for hydration mismatches in production builds. This will result in more code included in the bundle, so it is recommended to only enable this for debugging purposes.
+  Activer / désactiver les avertissements détaillés pour les erreurs d'hydratation dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le bundle, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
-## Configuration Guides {#configuration-guides}
+## Guides de configuration {#configuration-guides}
 
 ### Vite {#vite}
 
-`@vitejs/plugin-vue` automatically provides default values for these flags. To change the default values, use Vite's [`define` config option](https://vitejs.dev/config/shared-options.html#define):
+`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez [l'option de configuration `define`](https://vitejs.dev/config/shared-options.html#define) de Vite :
 
 ```js
 // vite.config.js
@@ -44,7 +44,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   define: {
-    // enable hydration mismatch details in production build
+    // activer les détails d'incohérences lors de l'hydratation dans la version de production
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true'
   }
 })
@@ -52,7 +52,7 @@ export default defineConfig({
 
 ### vue-cli {#vue-cli}
 
-`@vue/cli-service` automatically provides default values for some of these flags. To configure /change the values:
+`@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer / modifier les valeurs :
 
 ```js
 // vue.config.js
@@ -72,7 +72,7 @@ module.exports = {
 
 ### webpack {#webpack}
 
-Flags should be defined using webpack's [DefinePlugin](https://webpack.js.org/plugins/define-plugin/):
+Les indicateurs doivent être définis à l'aide de la fonction [DefinePlugin](https://webpack.js.org/plugins/define-plugin/) de webpack :
 
 ```js
 // webpack.config.js
@@ -90,7 +90,7 @@ module.exports = {
 
 ### Rollup {#rollup}
 
-Flags should be defined using [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace):
+Les indicateurs doivent être définis à l'aide de [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace) :
 
 ```js
 // rollup.config.js
