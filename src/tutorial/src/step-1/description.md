@@ -21,6 +21,33 @@ Si vous êtes un développeur expérimenté venant de Vue 2 ou d'autres framewor
 
 - Vous pouvez également passer du mode SFC au mode HTML. Le premier affichera des exemples de code dans le format <a target="_blank" href="/guide/introduction.html#single-file-components">monofichier (SFC)</a>, qui est celui utilisé par la plupart des dévelopeurs quand il s'agit de Vue avec des outils de build.
 
+<div class="html">
+
+:::tip
+If you're about to use HTML-mode without a build step in your own applications, make sure you either change imports to:
+
+```js
+import { ... } from 'vue/dist/vue.esm-bundler.js'
+```
+
+inside your scripts or configure your build tool to resolve `vue` accordingly. Sample config for [Vite](https://vitejs.dev/):
+
+```js
+// vite.config.js
+export default {
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.esm-bundler.js'
+    }
+  }
+}
+```
+
+See the respective [section in Tooling guide](/guide/scaling-up/tooling.html#note-on-in-browser-template-compilation) for more information.
+:::
+
+</div>
+
 </details>
 
 Prêts? Cliquez sur "Suivant" pour commencer.
