@@ -239,7 +239,7 @@ De manière similaire, vous pouvez utiliser des arguments dynamiques pour lier u
 <a v-on:[eventName]="doSomething"> ... </a>
 
 <!-- raccourci -->
-<a @[eventName]="doSomething">
+<a @[eventName]="doSomething"> ... </a>
 ```
 
 Dans cet exemple, quand la valeur de `eventName` est `"focus"`, `v-on:[eventName]` sera équivalent à `v-on:focus`.
