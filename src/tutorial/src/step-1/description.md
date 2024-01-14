@@ -24,13 +24,13 @@ Si vous êtes un développeur expérimenté venant de Vue 2 ou d'autres framewor
 <div class="html">
 
 :::tip
-If you're about to use HTML-mode without a build step in your own applications, make sure you either change imports to:
+Si vous êtes sur le point d'utiliser le mode HTML sans étape de construction dans vos propres applications, assurez-vous de changer les importations en :
 
 ```js
 import { ... } from 'vue/dist/vue.esm-bundler.js'
 ```
 
-inside your scripts or configure your build tool to resolve `vue` accordingly. Sample config for [Vite](https://vitejs.dev/):
+dans vos scripts ou configurez votre outil de construction pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vitejs.dev/):
 
 ```js
 // vite.config.js
@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-See the respective [section in Tooling guide](/guide/scaling-up/tooling.html#note-on-in-browser-template-compilation) for more information.
+Voir la page [Note sur la compilation des templates dans le navigateur](/guide/scaling-up/tooling.html#note-on-in-browser-template-compilation) pour plus d'informations.
 :::
 
 </div>
