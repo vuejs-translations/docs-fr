@@ -24,13 +24,13 @@ Si vous êtes un développeur expérimenté venant de Vue 2 ou d'autres framewor
 <div class="html">
 
 :::tip
-Si vous êtes sur le point d'utiliser le mode HTML sans étape de construction dans vos propres applications, assurez-vous de changer les importations en :
+Si vous êtes sur le point d'utiliser le mode HTML sans outil de build dans vos propres applications, assurez-vous de changer les importations en :
 
 ```js
 import { ... } from 'vue/dist/vue.esm-bundler.js'
 ```
 
-dans vos scripts ou configurez votre outil de construction pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vitejs.dev/):
+dans vos scripts ou configurez votre outil de build pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vitejs.dev/):
 
 ```js
 // vite.config.js
