@@ -20,6 +20,7 @@ aside: false
 
 - [فارسی / Persian](https://fa.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-fa)]
 - [Čeština / Czech](https://cs.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-cs)]
+- [العربية / Arabic](https://ar.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ar)]
 
 ## Commencer une nouvelle traduction {#starting-a-new-translation}
 
