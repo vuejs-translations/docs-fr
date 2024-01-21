@@ -241,7 +241,7 @@ La définition de type de Vue fournit également une inférence de type pour l'u
 
 ### Inférence de type JSX {#jsx-type-inference}
 
-De la même manière que pour la transformation, le JSX de Vue nécessite également des définitions de types différentes. 
+De la même manière que pour la transformation, le JSX de Vue nécessite également des définitions de types différentes.
 
 À partir de Vue 3.4, Vue n'inscrit plus implicitement `JSX` dans l'espace de noms global. Pour demander à TypeScript d'utiliser les définitions de type JSX de Vue, assurez-vous d'inclure ce qui suit dans votre `tsconfig.json`:
 
@@ -553,7 +553,7 @@ h(MyComponent, () => 'hello')
 
 // slots nommés
 // remarquez que `null` est requis afin d'éviter que
-// l'objet de slots soit traité comme une prop 
+// l'objet de slots soit traité comme une prop
 h(MyComponent, null, {
   default: () => 'default slot',
   foo: () => h('div', 'foo'),
@@ -576,6 +576,41 @@ h(MyComponent, null, {
 ```
 
 Passer des slots en tant que fonctions leur permet d'être invoqués à la volée par le composant enfant. Ainsi, les dépendances du slot sont traquées par l'enfant plutôt que par le parent, ce qui permet des mises à jour plus précises et plus efficaces.
+
+### Slots Scopés {#scoped-slots}
+
+Pour rendre un slot scopé dans le composant parent, un slot est passé au composant enfant. Remarquez que le slot a maintenant un paramètre `text`. Le slot sera appelé dans le composant enfant et les données du composant enfant seront transmises au composant parent.
+
+```js
+// parent component
+export default {
+  setup() {
+    return () => h(MyComp, null, {
+      default: ({ text }) => h('p', text)
+    })
+  }
+}
+```
+
+N'oubliez pas de passer `null` pour que les slots ne soient pas traités comme des props.
+
+```js
+// child component
+export default {
+  setup(props, { slots }) {
+    const text = ref('hi')
+    return () => h('div', null, slots.default({ text: text.value }))
+  }
+}
+```
+
+Équivalent JSX :
+
+```jsx
+<MyComponent>{{
+  default: ({ text }) => <p>{ text }</p>
+}}</MyComponent>
+```
 
 ### Composants natifs {#built-in-components}
 
