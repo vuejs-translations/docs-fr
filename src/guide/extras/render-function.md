@@ -577,7 +577,7 @@ h(MyComponent, null, {
 
 Passer des slots en tant que fonctions leur permet d'être invoqués à la volée par le composant enfant. Ainsi, les dépendances du slot sont traquées par l'enfant plutôt que par le parent, ce qui permet des mises à jour plus précises et plus efficaces.
 
-### Slots Scopés
+### Slots Scopés {#scoped-slots}
 
 Pour rendre un slot scopé dans le composant parent, un slot est passé au composant enfant. Remarquez que le slot a maintenant un paramètre `text`. Le slot sera appelé dans le composant enfant et les données du composant enfant seront transmises au composant parent.
 
