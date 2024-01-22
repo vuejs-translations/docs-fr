@@ -427,7 +427,7 @@ Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous de
 </template>
 ```
 
-L'utilisation explicite d'une balise `<template>` pour le slot par défaut aide à indiquer clairement que le prop `message` n'est pas disponible dans l'autre slot :
+L'utilisation explicite d'une balise `<template>` pour le slot par défaut aide à indiquer clairement que la prop `message` n'est pas disponible dans l'autre slot :
 
 ```vue-html
 <template>
