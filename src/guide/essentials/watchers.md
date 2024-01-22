@@ -264,7 +264,7 @@ Nous pouvons forcer l'exécution immédiate d'un observateur en passant l'option
 watch(
   source,
   (newValue, oldValue) => {
-    // executed immediately, then again when `source` changes
+    // execution immédiate, puis à chaque fois que `source` change
   },
   { immediate: true }
 )

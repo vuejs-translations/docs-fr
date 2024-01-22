@@ -427,7 +427,7 @@ Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous de
 </template>
 ```
 
-L'utilisation explicite d'une balise `<template>` pour le slot par défaut aide à indiquer clairement que le prop `message` n'est pas disponible dans l'autre slot :
+L'utilisation explicite d'une balise `<template>` pour le slot par défaut aide à indiquer clairement que la prop `message` n'est pas disponible dans l'autre slot :
 
 ```vue-html
 <template>
@@ -484,7 +484,7 @@ Dans `<FancyList>`, nous pouvons afficher le même `<slot>` plusieurs fois avec 
 
 Le cas d'utilisation `<FancyList>` dont nous avons parlé ci-dessus encapsule à la fois la logique réutilisable (récupération de données, pagination, etc.) et l'affichage, tout en déléguant une partie de l'affichage au composant consommateur via des scoped slots.
 
-Si nous poussons ce concept un peu plus loin, nous pouvons proposer des composants qui encapsulent uniquement la logique et n'affichent rien par eux-mêmes - l'affichage est entièrement déléguée au composant consommateur avec des scoped slots. Nous appelons ce type de composant un **Composant sans affichage** (Renderless Component).
+Si nous poussons ce concept un peu plus loin, nous pouvons proposer des composants qui encapsulent uniquement la logique et n'affichent rien par eux-mêmes - l'affichage est entièrement délégué au composant consommateur avec des scoped slots. Nous appelons ce type de composant un **Composant sans affichage** (Renderless Component).
 
 Un exemple de composant sans affichage pourrait être un composant qui encapsule la logique de suivi de la position actuelle de la souris :
 

@@ -90,7 +90,7 @@ export default {
 
 </div>
 
-Pour chaque propriété dans l'objet servant de déclaration, la clé est le nom du prop, tandis que la valeur doit être la fonction constructeur du type attendu.
+Pour chaque propriété dans l'objet servant de déclaration, la clé est le nom de la prop, tandis que la valeur doit être la fonction constructeur du type attendu.
 
 Cela documente non seulement votre composant, mais avertira également, dans la console du navigateur, les autres développeurs utilisant votre composant s'ils transmettent le mauvais type. Nous discuterons plus en détail de la [validation de prop](#prop-validation) plus loin sur cette page.
 
@@ -176,7 +176,7 @@ Vous avez également vu des props assignés dynamiquement avec `v-bind` ou son r
 
 ### Passage de différents types de valeur {#passing-different-value-types}
 
-Dans les deux exemples ci-dessus, nous passons des chaînes de caractères, mais _n'importe quel_ type de valeur peut être passé à un prop.
+Dans les deux exemples ci-dessus, nous passons des chaînes de caractères, mais _n'importe quel_ type de valeur peut être passé à une prop.
 
 #### Nombre {#number}
 
@@ -305,7 +305,7 @@ export default {
 
 Il y a généralement deux cas où il est tentant de muter une prop :
 
-1. **Le prop est utilisé pour passer une valeur initiale; le composant enfant veut ensuite l'utiliser comme propriété de données locale.** Dans ce cas, il est préférable de définir une propriété de données locale qui utilise la prop comme valeur initiale :
+1. **La prop est utilisée pour passer une valeur initiale; le composant enfant veut ensuite l'utiliser comme propriété de données locale.** Dans ce cas, il est préférable de définir une propriété de données locale qui utilise la prop comme valeur initiale :
 
    <div class="composition-api">
 
@@ -591,7 +591,7 @@ Le composant peut être utilisé comme ceci :
 <MyComponent />
 ```
 
-Lorsqu'un accessoire est déclaré pour autoriser plusieurs types, les règles de conversion pour `Boolean` seront également appliquées. Cependant, il y a un avantage lorsque `String` et `Boolean` sont autorisés - la règle de casting sur Boolean ne s'applique que si Boolean apparaît avant String :
+Lorsqu'une prop est déclarée pour autoriser plusieurs types, les règles de conversion pour `Boolean` seront également appliquées. Cependant, il y a un avantage lorsque `String` et `Boolean` sont autorisés - la règle de casting sur Boolean ne s'applique que si Boolean apparaît avant String :
 
 <div class="composition-api">
 

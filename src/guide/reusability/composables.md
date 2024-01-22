@@ -305,9 +305,9 @@ Les composables ne peuvent être appelés que dans `<script setup>` ou dans le h
 
 Ces restrictions sont importantes car ce sont ces contextes où Vue est capable de déterminer l'instance de composant active actuelle. L'accès à une instance de composant actif est nécessaire pour que :
 
-1. Les hooks de cycle de vie peuvent y être enregistrés.
+1. Les hooks de cycle de vie puissent y être enregistrés.
 
-2. Les propriétés calculées et les observateurs peuvent y être liés, afin qu'ils puissent être supprimés lorsque l'instance est démontée pour éviter les fuites de mémoire.
+2. Les propriétés calculées et les observateurs puissent y être liés, afin qu'ils puissent être supprimés lorsque l'instance est démontée pour éviter les fuites de mémoire.
 
 :::tip
 `<script setup>` est le seul endroit où vous pouvez appeler des composables **après** avoir utilisé `await`. Le compilateur restaure automatiquement le contexte d'instance actif pour vous après l'opération asynchrone.

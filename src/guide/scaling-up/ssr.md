@@ -132,7 +132,7 @@ Enfin, exécutez `node server.js` et visitez `http://localhost:3000`. Vous devri
 
 Si vous cliquez sur le bouton, vous verrez que le nombre ne change pas. L'HTML est complètement statique côté client car nous n'avons pas chargé Vue dans le navigateur.
 
-Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de **hydratation**. Pendant l'hydratation, il crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
+Pour rendre l'application côté client interactive, Vue doit effectuer l'étape de l'**hydratation**. Pendant l'hydratation, il crée la même application Vue qui a été exécutée sur le serveur, associe chaque composant aux nœuds DOM qu'il doit contrôler et attache les écouteurs d'événements du DOM.
 
 Pour monter une application en mode hydratation, nous devons utiliser [`createSSRApp()`](/api/application#createssrapp) au lieu de `createApp()` :
 
@@ -197,7 +197,7 @@ De plus, pour charger les fichiers client dans le navigateur, nous devons égale
 
 1. Servir les fichiers client en ajoutant `server.use(express.static('.'))` dans `server.js`.
 2. Charger l'entrée client en ajoutant `<script type="module" src="/client.js"></script>` au fichier HTML.
-3. Prend en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) au fichier HTML.
+3. Prendre en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) au fichier HTML.
 
 [Essayez l'exemple complété sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js). Le bouton est maintenant interactif !
 
@@ -261,7 +261,7 @@ Dans le chapitre de Gestion d'État, nous avons introduit un [patron de gestion 
 
 Le modèle déclare un état partagé dans la portée d'un module JavaScript. Cela les rend **singletons** - c'est-à-dire qu'il n'y a qu'une seule instance de l'objet réactif tout au long de la vie de notre application. Cela fonctionne comme prévu dans une application Vue côté client, car les modules de notre application sont initialisés à nouveau pour chaque visite de page navigateur.
 
-Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut être accidentellement fuir vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état par demandes croisées.**
+Cependant, dans un contexte SSR, les modules d'application sont généralement initialisés une seule fois sur le serveur, lorsque le serveur démarre. Les mêmes instances de modules seront réutilisées à travers plusieurs demandes de serveur, et donc nos objets d'état singletons. Si nous modifions l'état partagé singleton avec des données spécifiques à un utilisateur, cela peut accidentellement causer une fuite vers une demande provenant d'un autre utilisateur. Nous appelons cela une **pollution d'état par demandes croisées.**
 
 Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaque demande, tout comme nous le faisons dans les navigateurs. Cependant, l'initialisation des modules JavaScript peut être coûteuse, ce qui affecterait significativement les performances du serveur.
 

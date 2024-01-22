@@ -18,7 +18,7 @@ La balise moustache sera remplacée par la valeur de la propriété `msg` de [l'
 
 ## HTML brut {#raw-html}
 
-Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v)-html:
+Les doubles moustaches interprètent les données comme du texte brut et non comme du HTML. Afin de produire du vrai HTML, vous devrez utiliser la directive [`v-html`](/api/built-in-directives#v-html) :
 
 ```vue-html
 <p>Using text interpolation: {{ rawHtml }}</p>
@@ -265,7 +265,7 @@ Lorsque vous utilisez des templates dans le DOM (templates directement écrits d
 <a :[someAttr]="value"> ... </a>
 ```
 
-Ci-dessus sera converti en `:[someattr]` dans les templates dans le DOM. Si votre composant a une propriété `someAttr` au lieu de `someattr`, votre code ne fonctionnera pas. Les templates à l'intérieur des composants à fichier unique ne sont **pas** soumis à cette contrainte.
+Ci-dessus sera converti en `:[someattr]` dans les templates dans le DOM. Si votre composant a une propriété `someAttr` au lieu de `someattr`, votre code ne fonctionnera pas. Les templates à l'intérieur des composants à fichier unique **ne sont pas** soumis à cette contrainte.
 
 ### Modificateurs {#modifiers}
 

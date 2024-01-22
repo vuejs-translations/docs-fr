@@ -220,8 +220,8 @@ export default {
       },
       // mutateur
       set(newValue) {
-        // Note : nous utilisons ici la syntaxe d'assignation par déstructuration
-        ;[this.firstName, this.lastName] = newValue.split(' ')
+        // Note : nous utilisons ici la syntaxe d'assignation par déstructuration.
+        [this.firstName, this.lastName] = newValue.split(' ')
       }
     }
   }
