@@ -333,6 +333,10 @@ Lorsque vous mutez un état réactif, cela peut déclencher à la fois la mise �
 
 Comme pour les mises à jour de composants, les rappels de l'observateur créés par l'utilisateur sont regroupés afin d'éviter les invocations en double. Par exemple, nous ne voulons probablement pas qu'un observateur se déclenche mille fois si nous introduisons de manière synchrone mille éléments dans un tableau observé.
 
+Par défaut, le rappel d'un observateur est appelé **après** les mises à jour du composant parent (le cas échéant), et **avant** les mises à jour du DOM du composant propriétaire. Cela signifie que si vous tentez d'accéder au DOM du composant propriétaire à l'intérieur d'un callback de l'observateur, le DOM sera dans un état de pré-mise à jour.
+
+### Publier des Observateurs
+
 Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
 <div class="options-api">
