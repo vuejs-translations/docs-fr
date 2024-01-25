@@ -331,7 +331,7 @@ Pour des exemples comme ceux-ci, avec une seule dépendance, le bénéfice de `w
 
 Lorsque vous mutez un état réactif, cela peut déclencher à la fois la mise à jour des composants Vue et des rappels d'observateur que vous avez créés.
 
-Par défaut, les rappels des observateurs créés par les utilisateurs sont appelés **avant** la mise à jour des composants Vue. Cela signifie que si vous essayez d'accéder au DOM pendant le rappel d'un observateur, le DOM sera dans l'état d'avant la mise à jour de Vue.
+Comme pour les mises à jour de composants, les rappels de l'observateur créés par l'utilisateur sont regroupés afin d'éviter les invocations en double. Par exemple, nous ne voulons probablement pas qu'un observateur se déclenche mille fois si nous introduisons de manière synchrone mille éléments dans un tableau observé.
 
 Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
