@@ -265,7 +265,7 @@ Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la 
 <!-- l'événement clic sera déclenché au maximum une fois -->
 <a @click.once="doThis"></a>
 
-<!-- le comportement par défaut de l'élément de défilement (scrolling) aura lieu -->
+<!-- le comportement par défaut de l'élément de défilement aura lieu -->
 <!-- immédiatement, au lieu d'attendre la fin de `onScroll`  -->
 <!-- s'il contient `event.preventDefault()`                -->
 <div @scroll.passive="onScroll">...</div>
