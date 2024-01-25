@@ -335,7 +335,7 @@ Comme pour les mises à jour de composants, les rappels de l'observateur créés
 
 Par défaut, le rappel d'un observateur est appelé **après** les mises à jour du composant parent (le cas échéant), et **avant** les mises à jour du DOM du composant propriétaire. Cela signifie que si vous tentez d'accéder au DOM du composant propriétaire à l'intérieur d'un callback de l'observateur, le DOM sera dans un état de pré-mise à jour.
 
-### Publier des Observateurs
+### Publier des Observateurs {#post-watchers}
 
 Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
@@ -378,6 +378,54 @@ watchPostEffect(() => {
 ```
 
 </div>
+
+### Observateurs de synchronisation {#sync-watchers}
+
+Il est également possible de créer un observateur qui se déclenche de manière synchrone, avant toute mise à jour gérée par Vue.
+
+<div class="options-api">
+
+```js{6}
+export default {
+  // ...
+  watch: {
+    key: {
+      handler() {},
+      flush: 'sync'
+    }
+  }
+}
+```
+
+</div>
+
+<div class="composition-api">
+
+```js{2,6}
+watch(source, callback, {
+  flush: 'sync'
+})
+
+watchEffect(callback, {
+  flush: 'sync'
+})
+```
+
+Sync `watchEffect()` a également un alias de commodité, `watchSyncEffect()` :
+
+```js
+import { watchSyncEffect } from 'vue'
+
+watchSyncEffect(() => {
+  /* exécuté de manière synchrone lors d'une modification réactive des données */
+})
+```
+
+</div>
+
+:::warning A utiliser avec précaution
+Les observateurs synchrones n'ont pas de fonction de mise en lot et se déclenchent à chaque fois qu'une mutation réactive est détectée. Il est possible de les utiliser pour surveiller de simples valeurs booléennes, mais il faut éviter de les utiliser sur des sources de données qui peuvent être mutées plusieurs fois de manière synchrone, par exemple des tableaux.
+:::
 
 <div class="options-api">
 
