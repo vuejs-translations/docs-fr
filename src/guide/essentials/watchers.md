@@ -333,6 +333,8 @@ Lorsque vous mutez un état réactif, cela peut déclencher à la fois la mise �
 
 Par défaut, les rappels des observateurs créés par les utilisateurs sont appelés **avant** la mise à jour des composants Vue. Cela signifie que si vous essayez d'accéder au DOM pendant le rappel d'un observateur, le DOM sera dans l'état d'avant la mise à jour de Vue.
 
+### Publier des Observateurs {#post-watchers}
+
 Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
 <div class="options-api">
@@ -378,6 +380,8 @@ watchPostEffect(() => {
 <div class="options-api">
 
 ## `this.$watch()` \* {#this-watch}
+
+### Observateurs de synchronisation {#sync-watchers}
 
 Il est également possible de créer des observateurs de manière impérative en utilisant [la méthode d'instance `$watch()`](/api/component-instance#watch):
 
