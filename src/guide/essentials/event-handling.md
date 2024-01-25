@@ -257,8 +257,9 @@ L'ordre est important lorsqu'on utilise des modificateurs car le code correspond
 Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la méthode native `addEventListener`](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener#options):
 
 ```vue-html
-<!-- utiliser le mode capture lorsque vous ajoutez l'écouteur d'événements -->
-<!-- par exemple un événement visant un élément intérieur est traité ici avant d'être traité par cet élément -->
+<!-- utiliser le mode capture lors de l'ajout de l'écouteur d'événement -->
+<!-- c'est-à-dire qu'un événement ciblant un élément interne est traité -->
+<!-- ici avant d'être traité par cet élément -->
 <div @click.capture="doThis">...</div>
 
 <!-- l'événement clic sera déclenché au maximum une fois -->
