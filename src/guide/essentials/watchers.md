@@ -341,7 +341,7 @@ Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez 
 
 <div class="options-api">
 
-```js
+```js{6}
 export default {
   // ...
   watch: {
@@ -357,7 +357,7 @@ export default {
 
 <div class="composition-api">
 
-```js
+```js{2,6}
 watch(source, callback, {
   flush: 'post'
 })
