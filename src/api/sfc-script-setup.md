@@ -254,13 +254,13 @@ function inc() {
 ```
 
 :::warning
-If you have a `default` value for `defineModel` prop and you don't provide any value for this prop from the parent component, it can cause a de-synchronization between parent and child components. In the example below, the parent's `myRef` is undefined, but the child's `model` is 1:
+Si vous avez une valeur `default` pour la propriété `defineModel` et que vous ne fournissez aucune valeur pour cette propriété à partir du composant parent, cela peut provoquer une désynchronisation entre les composants parent et enfant. Dans l'exemple ci-dessous, le composant parent `myRef` est undefined, mais le composant enfant `model` vaut 1 :
 
 ```js
-// child component:
+// composant enfant :
 const model = defineModel({ default: 1 })
 
-// parent component:
+// composant parent :
 const myRef = ref()
 ```
 
