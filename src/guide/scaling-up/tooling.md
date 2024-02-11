@@ -1,3 +1,7 @@
+<script setup>
+import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
+</script>
+
 # Outils {#tooling}
 
 ## Essayer en ligne {#try-it-online}
@@ -21,7 +25,36 @@ Il est également recommandé d'utiliser ces terrains de jeu en ligne pour fourn
 
 Pour commencer avec Vite + Vue, exécutez simplement :
 
-<div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">$</span> <span style="color:#A6ACCD;">npm create vue@latest</span></span></code></pre></div>
+<VTCodeGroup>
+  <VTCodeGroupTab label="npm">
+
+  ```sh
+  $ npm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="pnpm">
+
+  ```sh
+  $ pnpm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="yarn">
+
+  ```sh
+  $ yarn create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+  <VTCodeGroupTab label="bun">
+
+  ```sh
+  $ bun create vue@latest
+  ```
+
+  </VTCodeGroupTab>
+</VTCodeGroup>
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel d'élaboration d'un projet Vue.
 
