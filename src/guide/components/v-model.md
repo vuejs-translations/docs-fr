@@ -84,6 +84,23 @@ const model = defineModel({ required: true })
 const model = defineModel({ default: 0 })
 ```
 
+:::warning
+Si vous avez une valeur `default` pour la propriété `defineModel` et que vous ne fournissez aucune valeur pour cette propriété à partir du composant parent, cela peut provoquer une désynchronisation entre les composants parent et enfant. Dans l'exemple ci-dessous, le composant parent `myRef` est undefined, mais le composant enfant `model` vaut 1 :
+
+```js
+// composant enfant :
+const model = defineModel({ default: 1 })
+
+// composant parent :
+const myRef = ref()
+```
+
+```html
+<Child v-model="myRef"></Child>
+```
+
+:::
+
 </div>
 
 <div class="options-api">
@@ -211,7 +228,7 @@ const title = defineModel('title', { required: true })
 <script setup>
 defineProps({
   title: {
-    required: true 
+    required: true
   }
 })
 defineEmits(['update:title'])
