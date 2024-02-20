@@ -125,6 +125,10 @@
     ],
     "location": "Singapour",
     "languages": ["Chinois", "Anglais"],
+    "website": {
+      "label": "jinjiang.me",
+      "url": "http://jinjiang.me"
+    },
     "socials": {
       "github": "jinjiang",
       "twitter": "zhaojinjiang"

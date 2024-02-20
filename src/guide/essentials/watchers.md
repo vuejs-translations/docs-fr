@@ -371,7 +371,7 @@ Comme pour les mises à jour de composants, les rappels de l'observateur créés
 
 Par défaut, le rappel d'un observateur est appelé **après** les mises à jour du composant parent (le cas échéant), et **avant** les mises à jour du DOM du composant propriétaire. Cela signifie que si vous tentez d'accéder au DOM du composant propriétaire à l'intérieur d'un callback de l'observateur, le DOM sera dans un état de pré-mise à jour.
 
-### Publier des Observateurs {#post-watchers}
+### Observateurs à posterio {#post-watchers}
 
 Si vous voulez accéder au DOM **après** que Vue l'ait mis à jour, vous devez spécifier l'option `flush: 'post'` :
 
@@ -415,7 +415,7 @@ watchPostEffect(() => {
 
 </div>
 
-### Observateurs de synchronisation {#sync-watchers}
+### Observateurs synchrones {#sync-watchers}
 
 Il est également possible de créer un observateur qui se déclenche de manière synchrone, avant toute mise à jour gérée par Vue.
 
