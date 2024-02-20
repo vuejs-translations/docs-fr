@@ -273,9 +273,9 @@ watch(
 </div>
 
 
-## Once Watchers <sup class="vt-badge" data-text="3.4+" /> {#once-watchers}
+## Observateurs unitaires <sup class="vt-badge" data-text="3.4+" /> {#once-watchers}
 
-Watcher's callback will execute whenever the watched source changes. If you want the callback to trigger only once when the source changes, use the `once: true` option.
+La fonction de rappel de l'observateur sera exécutée dès lors qu'une source observée change. Si vous voulez que la fonction de rappel soit déclenchée une seule fois quand il y a un changement, utilisez l'option `once: true`.
 
 <div class="options-api">
   
@@ -284,7 +284,7 @@ export default {
   watch: {
     source: {
       handler(newValue, oldValue) {
-        // when `source` changes, triggers only once
+        // quand `source` change, déclenchée une seule fois
       },
       once: true
     }
@@ -300,7 +300,7 @@ export default {
 watch(
   source,
   (newValue, oldValue) => {
-    // when `source` changes, triggers only once
+    // quand `source` change, déclenchée une seule fois
   },
   { once: true }
 )
