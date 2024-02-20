@@ -519,6 +519,7 @@ Le `type` peut être l'un des constructeurs natifs suivants :
 - `Date`
 - `Function`
 - `Symbol`
+- `Error`
 
 De plus, `type` peut également être une classe personnalisée ou une fonction constructeur et l'assertion sera faite avec une vérification `instanceof`. Par exemple, étant donné la classe suivante :
 
