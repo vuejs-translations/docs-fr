@@ -543,7 +543,7 @@ Lorsqu'on alterne entre plusieurs composants avec `<component :is="...">`, seul 
 
 ## Mises en garde concernant l'analyse du template DOM {#in-dom-template-parsing-caveats}
 
-Si vous écrivez vos templates Vue directement dans le DOM, Vue va devoir extraire du DOM la chaîne de caractère représentant le template. Cela entraîne quelques avertissements à cause du comportement d'analyse du HTML natif des navigateurs.
+Si vous écrivez vos templates Vue directement dans le DOM, Vue va devoir extraire du DOM la chaîne de caractères représentant le template. Cela entraîne quelques avertissements à cause du comportement d'analyse du HTML natif des navigateurs.
 
 :::tip
 Il est important de rappeler que les limitations que nous allons aborder ne s'appliquent que lorsque vous écrivez vos templates directement dans le DOM. Elles ne s'appliquent PAS si vous utilisez des templates en chaîne de caractères à partir des sources suivantes :
@@ -630,4 +630,4 @@ Lorsqu'il est utilisé sur des éléments HTML natifs, la valeur de `is` doit ê
 
 C'est tout ce que vous avez besoin de savoir à propos des mises en garde concernant l'analyse du template DOM pour le moment - et d'ailleurs, la fin des _Essentiels_ de Vue. Félicitations ! Il y a encore à apprendre, mais d'abord, nous vous recommandons de prendre une pause afin d'expérimenter Vue par vous-même - construisez quelque chose d'amusant, ou découvrez certains des [Exemples](/examples/) si ça n'est pas déjà fait.
 
-Dès que vous vous sentez à l'aide avec le savoir que vous venez de digérer, avancez dans le guide pour découvrir les composants en profondeur.
+Dès que vous vous sentez à l'aise avec le savoir que vous venez de digérer, avancez dans le guide pour découvrir les composants en profondeur.
