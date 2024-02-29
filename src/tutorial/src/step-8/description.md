@@ -9,7 +9,7 @@ Continuons à construire sur la liste des tâches de la dernière étape. Ici, n
 </li>
 ```
 
-La prochaine amélioration que nous pouvons ajouter est de pouvoir cacher les tâches déjà terminées. Nous avons déjà un bouton qui bascule le state `hideCompleted`. Mais comment render les différents éléments de la liste en fonction de ce state ?
+La prochaine amélioration que nous pouvons ajouter est de pouvoir cacher les tâches déjà terminées. Nous avons déjà un bouton qui bascule le state `hideCompleted`. Mais comment rendre les différents éléments de la liste en fonction de ce state ?
 
 <div class="options-api">
 
