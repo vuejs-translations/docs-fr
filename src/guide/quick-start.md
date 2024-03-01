@@ -369,6 +369,8 @@ Si votre navigateur préféré ne prend pas encore en charge les Import Maps, vo
 
 :::warning À éviter en production
 L'usage des Import Maps est destiné à l'apprentissage uniquement. Si vous avez l'intention d'utiliser Vue sans outils de compilation en production, consultez le [Guide de déploiement en production](/guide/best-practices/production-deployment#without-build-tools).
+
+Bien qu'il soit possible d'utiliser Vue sans outil de build, une alternative à considérer consiste à utiliser [`vuejs/petite-vue`](https://github.com/vuejs/petite-vue) qui pourrait mieux convenir au contexte dans lequel [`jquery/jquery`](https://github.com/jquery/jquery) (dans le passé) ou [`alpinejs/alpine`](https://github.com/alpinejs/alpine) (actuellement) pourrait plutôt être utilisée.
 :::
 
 ### Séparation des modules {#splitting-up-the-modules}
