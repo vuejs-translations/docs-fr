@@ -222,7 +222,7 @@ function increment() {
 
 // hooks de cycle de vie
 onMounted(() => {
-  console.log(`La valeur initiale de count est ${this.count}.`)
+  console.log(`La valeur initiale de count est ${count.value}.`)
 })
 </script>
 
