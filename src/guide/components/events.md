@@ -182,7 +182,7 @@ L'option `emits` et la macro `defineEmits()` supportent également une syntaxe a
 <div class="composition-api">
 
 ```vue
-<script setup>
+<script setup lang="ts">
 const emit = defineEmits({
   submit(payload: { email: string, password: string }) {
     // renvoie `true` ou `false` pour indiquer
