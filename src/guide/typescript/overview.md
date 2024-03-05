@@ -32,8 +32,6 @@ Avec une configuration basée sur Vite, le serveur de développement et le bundl
     Volar remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension VSCode officielle pour Vue 2. Si Vetur est actuellement installé, assurez-vous de le désactiver dans les projets Vue 3 .
     :::
 
-  - [TypeScript Vue Plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) est également nécessaire pour obtenir la prise en charge du type pour les importations `*.vue` dans les fichiers TS.
-
 - [WebStorm](https://www.jetbrains.com/webstorm/) fournit également une prise en charge prête à l'emploi pour TypeScript et Vue. D'autres IDE JetBrains les prennent également en charge, soit prêts à l'emploi, soit via [un plugin gratuit](https://plugins.jetbrains.com/plugin/9442-vue-js). À partir de la version 2023.2, WebStorm et le plugin Vue sont livrés avec une prise en charge intégrée de Vue Language Server. Vous pouvez configurer le service Vue pour qu'il utilise l'intégration Volar sur toutes les versions de TypeScript, sous Settings > Languages and frameworks > TypeScript > Vue. Par défaut, Volar sera utilisé pour les versions TypeScript 5.0 et supérieures.
 
 ### Configurer `tsconfig.json` {#configuring-tsconfig-json}
@@ -54,24 +52,6 @@ Voir aussi :
 
 - [Documentation officielle des options du compilateur TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 - [Avertissements concernant la compilation TypeScript d'esbuild](https://esbuild.github.io/content-types/#typescript-caveats)
-
-### Mode prise de contrôle de Volar {#volar-takeover-mode}
-
-> Cette section s'applique uniquement à VSCode + Volar.
-
-Pour que les SFC de Vue et TypeScript fonctionnent ensemble, Volar crée une instance de service de langage TS distincte avec un support spécifique à Vue et l'utilise dans les SFC. Dans le même temps, les fichiers TS simples sont toujours gérés par le service de langage TS intégré de VSCode, c'est pourquoi nous avons besoin du [plugin TypeScript Vue](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) pour prendre en charge les importations SFC dans les fichiers TS. Cette configuration par défaut fonctionne, mais pour chaque projet, nous exécutons deux instances de service de langage TS : une pour Volar, une pour le service intégré de VSCode. Ceci est un peu inefficace et peut entraîner des problèmes de performances dans les grands projets.
-
-Volar fournit une fonctionnalité appelée "Mode prise de contrôle" (ou Takeover Mode) pour améliorer les performances. En mode prise de contrôle, Volar prend en charge les fichiers Vue et TS à l'aide d'une seule instance de service de langage TS.
-
-Pour l'activer, vous devez désactiver le service de langage TS intégré de VSCode dans **l'espace de travail de votre projet uniquement** en suivant ces étapes :
-
-1. Dans l'espace de travail de votre projet, affichez la palette de commandes avec `Ctrl + Shift + P` (macOS : `Cmd + Shift + P`).
-2. Tapez `built` et sélectionnez "Extensions : Afficher les extensions intégrées".
-3. Tapez `typescript` dans la zone de recherche d'extension (ne supprimez pas le préfixe `@builtin`).
-4. Cliquez sur la petite icône d'engrenage de "Fonctionnalités du langage TypeScript et JavaScript", et sélectionnez "Désactiver (espace de travail)".
-5. Rechargez l'espace de travail. Le mode Prise de contrôle sera activé lorsque vous ouvrirez un fichier Vue ou TS.
-
-<img src="./images/takeover-mode.png" width="590" height="426" style="margin:0px auto;border-radius:8px">
 
 ### Remarque à propos de Vue CLI et `ts-loader` {#note-on-vue-cli-and-ts-loader}
 
