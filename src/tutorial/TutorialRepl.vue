@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Repl, ReplStore } from '@vue/repl'
+import { Repl, useStore, useVueImportMap } from '@vue/repl'
 import CodeMirror from '@vue/repl/codemirror-editor'
-import { inject, watch, version, Ref, ref, computed, nextTick } from 'vue'
+import { inject, watch, Ref, ref, computed, nextTick } from 'vue'
 import { data } from './tutorial.data'
 import {
   resolveSFCExample,
@@ -16,8 +16,13 @@ import {
   VTLink
 } from '@vue/theme'
 
-const store = new ReplStore({
-  defaultVueRuntimeURL: `https://unpkg.com/vue@${version}/dist/vue.esm-browser.js`
+const { vueVersion, defaultVersion, importMap } = useVueImportMap({
+  runtimeDev: () =>
+    `https://unpkg.com/vue@${vueVersion.value || defaultVersion
+    }/dist/vue.esm-browser.js`
+})
+const store = useStore({
+  builtinImportMap: importMap
 })
 
 const instruction = ref<HTMLElement>()
@@ -110,13 +115,8 @@ updateExample()
     <article class="instruction" ref="instruction">
       <PreferenceSwitch />
       <VTFlyout :button="`${currentStepIndex} / ${totalSteps}`">
-        <VTLink
-          v-for="(step, i) of allSteps"
-          class="vt-menu-link"
-          :class="{ active: i + 1 === currentStepIndex }"
-          :href="step.link"
-          >{{ step.text }}</VTLink
-        >
+        <VTLink v-for="(step, i) of allSteps" class="vt-menu-link" :class="{ active: i + 1 === currentStepIndex }"
+          :href="step.link">{{ step.text }}</VTLink>
       </VTFlyout>
       <div class="vt-doc" v-html="currentDescription"></div>
       <div class="hint" v-if="data[currentStep]?._hint">
@@ -125,24 +125,17 @@ updateExample()
         </button>
       </div>
       <footer>
-        <a v-if="prevStep" :href="`#${prevStep}`"
-          ><VTIconChevronLeft class="vt-link-icon" style="margin: 0" />
-          Précédent</a
-        >
-        <a class="next-step" v-if="nextStep" :href="`#${nextStep}`"
-          >Suivant <VTIconChevronRight class="vt-link-icon"
-        /></a>
+        <a v-if="prevStep" :href="`#${prevStep}`">
+          <VTIconChevronLeft class="vt-link-icon" style="margin: 0" />
+          Précédent
+        </a>
+        <a class="next-step" v-if="nextStep" :href="`#${nextStep}`">Suivant
+          <VTIconChevronRight class="vt-link-icon" />
+        </a>
       </footer>
     </article>
-    <Repl
-      layout="vertical"
-      :editor="CodeMirror"
-      :store="store"
-      :showCompileOutput="false"
-      :clearConsole="false"
-      :showImportMap="false"
-      @keyup="showingHint = false"
-    />
+    <Repl layout="vertical" :editor="CodeMirror" :store="store" :showCompileOutput="false" :clearConsole="false"
+      :showImportMap="false" @keyup="showingHint = false" />
   </section>
 </template>
 
