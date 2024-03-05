@@ -53,8 +53,8 @@ L'équipe Vue maintient également un générateur de site statique appelé [Vit
 
 Bien que Vue soit principalement conçu pour construire des applications Web, il n'est en aucun cas limité au navigateur. Vous pouvez :
 
-- Construire des applications de bureau avec [Electron](https://www.electronjs.org/) ou [Tauri](https://tauri.app)
+- Construire des applications de bureau avec [Electron](https://www.electronjs.org/)
 - Construire des applications mobiles avec [Ionic Vue](https://ionicframework.com/docs/vue/overview)
-- Construire des applications de bureau et mobile à partir du même code avec [Quasar](https://quasar.dev/)
+- Construire des applications de bureau et mobile à partir du même code avec [Quasar](https://quasar.dev/) ou [Tauri](https://tauri.app)
 - Créez des expériences 3D WebGL avec [TresJS](https://tresjs.org/)
 - Utiliser l'API de [rendu personnalisé](/api/custom-renderer) de Vue pour construire des rendus personnalisés comme ceux du [terminal](https://github.com/vue-terminal/vue-termui) !
