@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Utiliser Vue avec Typescript {#using-vue-with-typescript}
+# Utiliser Vue avec TypeScript {#using-vue-with-typescript}
 
 Un système de typage comme TypeScript peut détecter de nombreuses erreurs courantes via une analyse statique au moment du build. Cela réduit le risque d'erreurs d'exécution en production et nous permet également de refactoriser le code avec plus de confiance dans les applications à grande échelle. TypeScript améliore également l'ergonomie des développeurs via l'auto-complétion basée sur le type dans les IDE.
 

@@ -118,7 +118,7 @@ L'extension du navigateur Vue devtools vous permet d'explorer l'arborescence des
 
 ## TypeScript {#typescript}
 
-Article principal : [Utiliser Vue avec Typescript](/guide/typescript/overview).
+Article principal : [Utiliser Vue avec TypeScript](/guide/typescript/overview).
 
 - [Volar](https://github.com/johnsoncodehk/volar) fournit une vérification de type pour les composants monofichiers utilisant des blocs `<script lang="ts">`, y compris les expressions de templates et la validation de props entre composants.
 

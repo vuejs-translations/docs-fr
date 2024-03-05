@@ -73,7 +73,7 @@ describe('increment', () => {
 
 Comme mentionné précédemment, les tests unitaires sont généralement exercés sur de la logique métier, des composants, classes, modules, ou fonctions qui ne nécessitent pas de rendu visuel, de requêtes réseau, ou d'autres problématiques d'environnement.
 
-Il s'agit généralement de modules écrits en Javascript / Typescript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
+Il s'agit généralement de modules écrits en JavaScript / TypeScript simple sans rapport avec Vue. En général, écrire des tests unitaires pour de la logique métier dans des applications Vue ne diffère pas de manière significative des applications utilisant d'autres frameworks.
 
 Il existe deux cas où vous testez unitairement des fonctionnalités spécifiques à Vue :
 
@@ -301,7 +301,7 @@ export default defineConfig({
 ```
 
 :::tip
-Si vous utilisez Typescript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
+Si vous utilisez TypeScript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
 
 ```json
 {
