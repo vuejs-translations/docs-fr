@@ -7,6 +7,5 @@ Il existe de nombreuses newsletters et de nombreux blogs de la communauté consa
 - [Jakub Andrzejewski](https://dev.to/jacobandrewsky)
 - [Weekly Vue News](https://weekly-vue.news/)
 - [Vue.js Developers Newsletter](https://vuejsdevelopers.com/newsletter/)
-- [VueDose](https://vuedose.tips/articles#newsletter)
 
 Si vous en connaissez une newsletter ou un blog qui n'est pas encore inclus, veuillez soumettre une pull request en utilisant le lien ci-dessous !
