@@ -24,7 +24,7 @@ dependencies:
     specifier: 1.0.0-rc.33
     version: 1.0.0-rc.33(@types/node@20.11.3)(terser@5.26.0)
   vue:
-    specifier: ^3.4.0
+    specifier: ^3.4.21
     version: 3.4.21
 
 devDependencies:
@@ -631,7 +631,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.10(@types/node@20.10.1)(terser@5.14.2)
+      vite: 5.0.10(@types/node@20.11.3)(terser@5.26.0)
       vue: 3.4.21
     dev: false
 
@@ -1086,11 +1086,11 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.10.1
-      esbuild: 0.19.8
+      '@types/node': 20.11.3
+      esbuild: 0.19.10
       postcss: 8.4.35
-      rollup: 4.6.0
-      terser: 5.14.2
+      rollup: 4.9.1
+      terser: 5.26.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -1118,9 +1118,9 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.3.0
       mrmime: 2.0.0
-      shikiji: 0.9.12
-      shikiji-transformers: 0.9.12
-      vite: 5.0.10(@types/node@20.10.1)(terser@5.14.2)
+      shikiji: 0.9.15
+      shikiji-transformers: 0.9.15
+      vite: 5.0.10(@types/node@20.11.3)(terser@5.26.0)
       vue: 3.4.21
     transitivePeerDependencies:
       - '@algolia/client-search'
