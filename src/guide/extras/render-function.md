@@ -787,7 +787,7 @@ Les composants fonctionnels peuvent être enregistrés et consommés tout comme 
 
 ### Typer des composants fonctionnels<sup class="vt-badge ts" /> {#typing-functional-components}
 
-Les composants fonctionnels peuvent être typés selon qu'ils sont nommés ou anonymes. Volar prend également en charge la vérification de type des composants fonctionnels correctement typés lors de leur utilisation dans des templates SFC.
+Les composants fonctionnels peuvent être typés selon qu'ils sont nommés ou anonymes. [L'extension Vue - Official](https://github.com/vuejs/language-tools) prend également en charge la vérification de type des composants fonctionnels correctement typés lors de leur utilisation dans des templates SFC.
 
 **Composants fonctionnels nommés**
 

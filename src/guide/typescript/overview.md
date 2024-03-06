@@ -26,10 +26,10 @@ Avec une configuration basée sur Vite, le serveur de développement et le bundl
 
 - [Visual Studio Code](https://code.visualstudio.com/) (VSCode) est fortement recommandé pour son excellent support prêt à l'emploi pour TypeScript.
 
-  - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) est l'extension VSCode officielle qui fournit la prise en charge de TypeScript pour les SFC de Vue, ainsi que de nombreuses autres fonctionnalités intéressantes.
+  - [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (précédemment Volar) est l'extension VSCode officielle qui fournit la prise en charge de TypeScript pour les SFC de Vue, ainsi que de nombreuses autres fonctionnalités intéressantes.
 
     :::tip
-    Volar remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension VSCode officielle pour Vue 2. Si Vetur est actuellement installé, assurez-vous de le désactiver dans les projets Vue 3 .
+    Vue - Official remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension VSCode officielle pour Vue 2. Si Vetur est actuellement installé, assurez-vous de le désactiver dans les projets Vue 3.
     :::
 
 - [WebStorm](https://www.jetbrains.com/webstorm/) fournit également une prise en charge prête à l'emploi pour TypeScript et Vue. D'autres IDE JetBrains les prennent également en charge, soit prêts à l'emploi, soit via [un plugin gratuit](https://plugins.jetbrains.com/plugin/9442-vue-js). À partir de la version 2023.2, WebStorm et le plugin Vue sont livrés avec une prise en charge intégrée de Vue Language Server. Vous pouvez configurer le service Vue pour qu'il utilise l'intégration Volar sur toutes les versions de TypeScript, sous Settings > Languages and frameworks > TypeScript > Vue. Par défaut, Volar sera utilisé pour les versions TypeScript 5.0 et supérieures.

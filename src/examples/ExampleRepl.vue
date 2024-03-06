@@ -5,6 +5,7 @@ import { data } from './examples.data'
 import {
   inject,
   watchEffect,
+  version,
   Ref,
   onMounted,
   ref,
@@ -18,7 +19,8 @@ import {
 
 const { vueVersion, defaultVersion, importMap } = useVueImportMap({
   runtimeDev: () =>
-    `https://unpkg.com/vue@${vueVersion.value || defaultVersion
+    `https://unpkg.com/vue@${
+      vueVersion.value || defaultVersion
     }/dist/vue.esm-browser.js`
 })
 const store = useStore({

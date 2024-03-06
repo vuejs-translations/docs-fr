@@ -86,10 +86,10 @@ Si vous recherchez une alternative plus légère pour une utilisation sans étap
 
 ## Support des environnements de développement {#ide-support}
 
-- La configuration IDE recommandée est [VSCode](https://code.visualstudio.com/) + l'extension [Vue Language Features (Volar)](https://github.com/johnsoncodehk/volar). L'extension fournit la coloration syntaxique, la prise en charge de TypeScript et l'intellisense pour les expressions des templates et les props des composants.
+- La configuration IDE recommandée est [VSCode](https://code.visualstudio.com/) + l'extension [Vue Language Features (Volar)](https://github.com/johnsoncodehk/volar) (précédemment Volar). L'extension fournit la coloration syntaxique, la prise en charge de TypeScript et l'intellisense pour les expressions des templates et les props des composants.
 
   :::tip
-  Volar remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension officielle VSCode pour Vue 2. Si vous avez Vetur actuellement installé, assurez-vous de le désactiver dans les projets Vue 3.
+  Vue - Official remplace [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), notre précédente extension officielle VSCode pour Vue 2. Si vous avez Vetur actuellement installé, assurez-vous de le désactiver dans les projets Vue 3.
   :::
 
 - [WebStorm](https://www.jetbrains.com/webstorm/) offre également un excellent support intégré pour les composants monofichiers de Vue.
@@ -120,7 +120,7 @@ L'extension du navigateur Vue devtools vous permet d'explorer l'arborescence des
 
 Article principal : [Utiliser Vue avec TypeScript](/guide/typescript/overview).
 
-- [Volar](https://github.com/johnsoncodehk/volar) fournit une vérification de type pour les composants monofichiers utilisant des blocs `<script lang="ts">`, y compris les expressions de templates et la validation de props entre composants.
+- [Extension Vue - Official](https://github.com/vuejs/language-tools) fournit une vérification de type pour les composants monofichiers utilisant des blocs `<script lang="ts">`, y compris les expressions de templates et la validation de props entre composants.
 
 - Utilisez [`vue-tsc`](https://github.com/vuejs/language-tools/tree/master/packages/tsc) pour effectuer la même vérification de type depuis la ligne de commande, ou pour générer des fichiers `d.ts` pour les composants monofichiers.
 
@@ -150,7 +150,7 @@ Les utilisateurs utilisant Vue CLI avant peuvent être habitués à avoir des li
 
 ## Mise en page {#formatting}
 
-- L'extension VSCode [Volar](https://github.com/johnsoncodehk/volar) permet de formater les composants monofichiers de Vue.
+- L'extension VSCode [Vue - Official](https://github.com/vuejs/language-tools) permet de formater les composants monofichiers de Vue.
 
 - Autrement, [Prettier](https://prettier.io/) offre une prise en charge intégrée du formatage des composants monofichiers de Vue.
 

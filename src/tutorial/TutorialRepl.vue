@@ -18,7 +18,8 @@ import {
 
 const { vueVersion, defaultVersion, importMap } = useVueImportMap({
   runtimeDev: () =>
-    `https://unpkg.com/vue@${vueVersion.value || defaultVersion
+    `https://unpkg.com/vue@${
+      vueVersion.value || defaultVersion
     }/dist/vue.esm-browser.js`
 })
 const store = useStore({
