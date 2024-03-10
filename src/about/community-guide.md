@@ -23,7 +23,7 @@ Notre [Code de bonne conduite](/about/coc) est un guide destiné à faciliter no
 
 ### Obtenez de l'aide {#get-support}
 
-- [Discord Chat](https://chat.vuejs.org/) : Un endroit où les développeuses et développeurs de Vue peuvent se rencontrer et discuter en temps réel.
+- [Discord Chat](https://discord.com/invite/vue) : Un endroit où les développeuses et développeurs de Vue peuvent se rencontrer et discuter en temps réel.
 - [Forum](https://forum.vuejs.org/) : Le meilleur endroit pour poser des questions et obtenir des réponses sur Vue et son écosystème.
 - [Communauté DEV](https://dev.to/t/vue) : Partagez et discutez des sujets liés à Vue sur Dev.to.
 - [Rencontres](https://events.vuejs.org/meetups) : Vous souhaitez trouver des passionnés de Vue comme vous ? Vous souhaitez devenir un leader de la communauté ? Nous avons l'aide et le soutien dont vous avez besoin ici même !
