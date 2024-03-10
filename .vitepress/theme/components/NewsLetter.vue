@@ -46,7 +46,7 @@ import { VTLink } from '@vue/theme'
           no-icon
         >news.vuejs.org</VTLink>. Vue est présent sur
         <VTLink class="link" href="https://twitter.com/vuejs" no-icon>Twitter</VTLink>, et sur
-        <VTLink class="link" href="https://chat.vuejs.org/" no-icon>Discord</VTLink>.
+        <VTLink class="link" href="https://discord.com/invite/vue" no-icon>Discord</VTLink>.
       </p>
     </div>
   </section>
