@@ -450,7 +450,7 @@ Lors de l'utilisation de transitions JavaScript uniquement, il est généralemen
 
 Avec `:css="false"`, nous sommes également entièrement responsables du contrôle de la fin de la transition. Dans ce cas, les rappels `done` sont requis pour les hooks `@enter` et `@leave`. Sinon, les hooks seront appelés de manière synchrone et la transition se terminera immédiatement.
 
-Voici une démo utilisant la [bibliothèque GreenSock](https://greensock.com/) pour réaliser les animations. Vous pouvez bien sûr utiliser toute autre bibliothèque d'animation de votre choix, par exemple [Anime.js](https://animejs.com/) ou [Motion One](https://motion.dev/).
+Voici une démo utilisant la [bibliothèque GSAP](https://gsap.com/) pour réaliser les animations. Vous pouvez bien sûr utiliser toute autre bibliothèque d'animation de votre choix, par exemple [Anime.js](https://animejs.com/) ou [Motion One](https://motion.dev/).
 
 <JsHooks />
 

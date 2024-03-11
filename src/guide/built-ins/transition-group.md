@@ -102,7 +102,7 @@ En communiquant avec les transitions JavaScript par le biais d'attributs de donn
 </TransitionGroup>
 ```
 
-Ensuite, dans les hooks JavaScript, nous animons l'élément avec un délai basé sur l'attribut de données. Cet exemple utilise la [bibliothèque GreenSock](https://greensock.com/) pour réaliser l'animation :
+Ensuite, dans les hooks JavaScript, nous animons l'élément avec un délai basé sur l'attribut de données. Cet exemple utilise la [bibliothèque GSAP](https://gsap.com/) pour réaliser l'animation :
 
 ```js{5}
 function onEnter(el, done) {
