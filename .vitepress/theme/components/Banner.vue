@@ -30,7 +30,7 @@ function dismiss() {
         target="_blank"
         class="vt-primary-action"
         href="https://vueconf.us?utm_source=vuejs&utm_content=top_banner"
-      >Register <span class="vt-time-now">Maintenant</span></a
+      >S'inscrire <span class="vt-time-now">maintenant</span></a
       >
     </p>
     <button @click="dismiss">
