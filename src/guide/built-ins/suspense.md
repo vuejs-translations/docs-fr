@@ -131,4 +131,11 @@ L'exemple suivant montre comment imbriquer ces composants afin qu'ils se comport
 </RouterView>
 ```
 
-Vue Router supporte nativement les [composants chargés de manière paresseuse](https://router.vuejs.org/guide/advanced/lazy-loading.html) via l'utilisation des importations dynamiques. Ceux-ci sont distincts des composants asynchrones et, actuellement, ils ne déclenchent pas `<Suspense>`. Cependant, ils peuvent toujours avoir des composants asynchrones comme descendants et ceux-ci peuvent déclencher `<Suspense>` de manière normale.
+Vue Router supporte nativement les [composants chargés de manière paresseuse](https://router.vuejs.org/guide/advanced/lazy-loading.html) via l'utilisation des importations dynamiques. Ceux-ci sont distincts des composants asynchrones et, actuellement, ils ne déclenchent pas `<Suspense>`. Cependant, ils peuvent toujours avoir des composants asynchrones comme descendants et ceux-ci peuvent déclencher `<Suspense>` normalement.
+
+
+---
+
+**Référence**
+
+- [`<Suspense>` API](/api/built-in-components#suspense)
