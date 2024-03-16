@@ -114,7 +114,7 @@ Depuis la version 3.3, vous pouvez directement utiliser `defineOptions` dans `<s
 
 :::
 
-Si vous avez l'intention d'utiliser exclusivement la Composition API (ainsi que les options énumérées ci-dessus), vous pouvez réduire de quelques kilobits votre paquet de production grâce à un [flag de compilation](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) qui supprime le code lié à l'Options API de Vue. Notez que cela affecte également les composants Vue dans vos dépendances.
+Si vous avez l'intention d'utiliser exclusivement la Composition API (ainsi que les options énumérées ci-dessus), vous pouvez réduire de quelques kilobits votre paquet de production grâce à un [flag de compilation](/api/compile-time-flags) qui supprime le code lié à l'Options API de Vue. Notez que cela affecte également les composants Vue dans vos dépendances.
 
 ### Puis-je utiliser les deux API simultanément ? {#can-i-use-both-apis-together}
 
