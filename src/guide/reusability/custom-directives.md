@@ -147,7 +147,7 @@ Les hooks des directives fournissent ces différents arguments :
   - `dir`: l'objet de définition de la directive.
 
 - `vnode`: le VNode sous-jacent représentant l'élément lié.
-- `prevNode`: le VNode représentant l'élément lié du rendu précédent. Disponible uniquement dans les hooks `beforeUpdate` et `updated`.
+- `prevVnode`: le VNode représentant l'élément lié du rendu précédent. Disponible uniquement dans les hooks `beforeUpdate` et `updated`.
 
 En guise d'exemple, considérez l'utilisation de la directive suivante :
 
