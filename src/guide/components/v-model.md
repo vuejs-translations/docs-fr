@@ -27,7 +27,7 @@ Le parent peut alors lier une valeur avec `v-model` :
 
 ```vue-html
 <!-- Parent.vue -->
-<Child v-model="count" />
+<Child v-model="countModel" />
 ```
 
 La valeur retournée par `defineModel()` est une ref. On peut y accéder et la modifier comme n'importe quel autre ref, sauf qu'elle agit comme une liaison bidirectionnelle entre une valeur parent et une valeur locale :
