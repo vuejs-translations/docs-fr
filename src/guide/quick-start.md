@@ -79,8 +79,8 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 <VTCodeGroup>
   <VTCodeGroupTab label="npm">
 
-  ```sh
-  $ cd <votre-nouveau-projet>
+  ```sh-vue
+  $ cd {{'<votre-nouveau-projet>'}}
   $ npm install
   $ npm run dev
   ```
@@ -88,8 +88,8 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
   </VTCodeGroupTab>
   <VTCodeGroupTab label="pnpm">
 
-  ```sh
-  $ cd <votre-nouveau-projet>
+  ```sh-vue
+  $ cd {{'<votre-nouveau-projet>'}}
   $ pnpm install
   $ pnpm run dev
   ```
@@ -97,8 +97,8 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
   </VTCodeGroupTab>
   <VTCodeGroupTab label="yarn">
 
-  ```sh
-  $ cd <votre-nouveau-projet>
+  ```sh-vue
+  $ cd {{'<votre-nouveau-projet>'}}
   $ yarn
   $ yarn dev
   ```
@@ -106,8 +106,8 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
   </VTCodeGroupTab>
   <VTCodeGroupTab label="bun">
 
-  ```sh
-  $ cd <votre-nouveau-projet>
+  ```sh-vue
+  $ cd {{'<votre-nouveau-projet>'}}
   $ bun install
   $ bun run dev
   ```
