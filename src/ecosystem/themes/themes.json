@@ -245,55 +245,53 @@
     ]
   },
   {
-    {
-      "nom": "CodedThemes",
-      "description": "Explorez les templates de tableau de bord d'administration Vue.js conçus avec les développeurs de nos partenaires [CodedThemes](https://codedthemes.com). Téléchargez dès maintenant pour accélérer le développement de vos applications web en temps réel, vous faisant gagner des heures innombrables en conception et développement.",
-      "voirPlusUrl": "https://codedthemes.com/item/category/templates/vue-template/",
-      "produits": [
-        {
-          "nom": "Template d'administration gratuit Berry Vuetify VueJs",
-          "prix": 0,
-          "description": "Template d'administration VueJs gratuit et open source avec le design bien connu de Berry",
-          "url": "https://codedthemes.com/item/berry-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Berry-free-vue.png"
-        },
-        {
-          "nom": "Tableau de bord d'administration Berry Vue3",
-          "prix": 59,
-          "description": "Découvrez notre thème de tableau de bord Vue 3 visuellement captivant!",
-          "url": "https://codedthemes.com/item/berry-vue-admin-dashboard/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Berry-pro-vue.png"
-        },
-        {
-          "nom": "Tableau de bord d'administration Mantis Vue3",
-          "prix": 59,
-          "description": "Simple mais robuste pour démarrer n'importe quel développement avec les dernières versions de VueJs et Vuetify",
-          "url": "https://codedthemes.com/item/mantis-vue-admin-template/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Mantis-pro-vue.png"
-        },
-        {
-          "nom": "Template d'administration gratuit Mantis Vuetify VueJs",
-          "prix": 0,
-          "description": "Template de tableau de bord Vuetify gratuit avec le design et le code les plus simples",
-          "url": "https://codedthemes.com/item/mantis-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Mantis-free-vue.png"
-        },
-        {
-          "nom": "Able Pro VueJs gratuit",
-          "prix": 0,
-          "description": "Template d'administration VueJs Able pro gratuit et open source",
-          "url": "https://codedthemes.com/item/able-pro-free-vuejs-admin-dashboard/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Able-pro-free-vue.png"
-        },
-        {
-          "nom": "Able Pro Vue3 + Vuetify Dashboard",
-          "prix": 11,
-          "description": "Vue3 + Vite + Vuetify + Typescript",
-          "url": "https://codedthemes.com/item/able-pro-vuejs-admin-dashboard/?ref=evan.vuejs",
-          "image": "https://codedthemes.com/wp-content/uploads/2024/03/Able-pro-pro-vue.png"
-        }
-      ]
-    }
+    "nom": "CodedThemes",
+    "description": "Explorez les templates de tableau de bord d'administration Vue.js conçus avec les développeurs de nos partenaires [CodedThemes](https://codedthemes.com). Téléchargez dès maintenant pour accélérer le développement de vos applications web en temps réel, vous faisant gagner des heures innombrables en conception et développement.",
+    "voirPlusUrl": "https://codedthemes.com/item/category/templates/vue-template/",
+    "produits": [
+      {
+        "nom": "Template d'administration gratuit Berry Vuetify VueJs",
+        "prix": 0,
+        "description": "Template d'administration VueJs gratuit et open source avec le design bien connu de Berry",
+        "url": "https://codedthemes.com/item/berry-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Berry-free-vue.png"
+      },
+      {
+        "nom": "Tableau de bord d'administration Berry Vue3",
+        "prix": 59,
+        "description": "Découvrez notre thème de tableau de bord Vue 3 visuellement captivant!",
+        "url": "https://codedthemes.com/item/berry-vue-admin-dashboard/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Berry-pro-vue.png"
+      },
+      {
+        "nom": "Tableau de bord d'administration Mantis Vue3",
+        "prix": 59,
+        "description": "Simple mais robuste pour démarrer n'importe quel développement avec les dernières versions de VueJs et Vuetify",
+        "url": "https://codedthemes.com/item/mantis-vue-admin-template/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Mantis-pro-vue.png"
+      },
+      {
+        "nom": "Template d'administration gratuit Mantis Vuetify VueJs",
+        "prix": 0,
+        "description": "Template de tableau de bord Vuetify gratuit avec le design et le code les plus simples",
+        "url": "https://codedthemes.com/item/mantis-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Mantis-free-vue.png"
+      },
+      {
+        "nom": "Able Pro VueJs gratuit",
+        "prix": 0,
+        "description": "Template d'administration VueJs Able pro gratuit et open source",
+        "url": "https://codedthemes.com/item/able-pro-free-vuejs-admin-dashboard/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Able-pro-free-vue.png"
+      },
+      {
+        "nom": "Able Pro Vue3 + Vuetify Dashboard",
+        "prix": 11,
+        "description": "Vue3 + Vite + Vuetify + Typescript",
+        "url": "https://codedthemes.com/item/able-pro-vuejs-admin-dashboard/?ref=evan.vuejs",
+        "image": "https://codedthemes.com/wp-content/uploads/2024/03/Able-pro-pro-vue.png"
+      }
+    ]
 }
 
 ]
