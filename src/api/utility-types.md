@@ -79,6 +79,8 @@ Pour extraire les props destinées à être utilisées publiquement, c'est-à-di
 
 Extrait les types de props à partir d'un objet d'options de props. Les types extraits sont destinés à un usage public, c'est-à-dire les props que le parent est autorisé à transmettre.
 
+- Supporté uniquement dans la version 3.3+.
+
 - **Exemple**
 
   ```ts
@@ -201,7 +203,7 @@ Utilisé pour augmenter les valeurs autorisées dans les liaisons de propriété
 :::tip
 Les augmentations doivent être placées dans un fichier module `.ts` ou `.d.ts`. Consultez le [placement des annotations de types](/guide/typescript/options-api#augmenting-global-properties) pour plus de détails.
 :::
-  
+
 :::info Voir aussi
 Les balises `<style>` des composants monofichiers permettent de lier les valeurs CSS à l'état dynamique des composants via la fonction CSS `v-bind`. Cela permet d'obtenir des propriétés personnalisées sans augmentation de type.
 
