@@ -120,7 +120,7 @@ Une balise `<style module>` est compilée en tant que [modules CSS](https://gith
 
 Les classes qui en résultent sont hachées pour éviter les collisions, ce qui permet d'obtenir le même effet que de limiter la portée du CSS au seul composant actuel.
 
-Consultez la [spécification des modules CSS](https://github.com/css-modules/css-modules) pour plus de détails, notamment les parties sur les [exceptions globales](https://github.com/css-modules/css-modules#exceptions) et la [composition](https://github.com/css-modules/css-modules#composition).
+Consultez la [spécification des modules CSS](https://github.com/css-modules/css-modules) pour plus de détails, notamment les parties sur les [exceptions globales](https://github.com/css-modules/css-modules/blob/master/docs/composition.md#exceptions) et la [composition](https://github.com/css-modules/css-modules/blob/master/docs/composition.md#composition).
 
 ### Nom d'injection personnalisé {#custom-inject-name}
 
