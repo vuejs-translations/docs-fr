@@ -298,7 +298,7 @@ Puis vous voudriez rendre un composant pour chacun d'entre eux, grâce à `v-for
 
 </div>
 
-Remarquez comment `v-bind` est utilisé pour passer des valeurs de props dynamiques. Cela est particulièrement utile lorsque vous ne connaissez pas le contenu exact que vous allez rendre au fur et à mesure du temps.
+Remarquez que la [syntaxe `v-bind`](/api/built-in-directives#v-bind) (`:title="post.title"`) est utilisée pour passer des valeurs de props dynamiques. Cela est particulièrement utile lorsque vous ne connaissez pas le contenu exact que vous allez rendre au fur et à mesure du temps.
 
 Pour le moment, c'est tout ce dont vous avez besoin concernant les props, mais une fois que vous aurez terminé de lire cette page et vous sentirez à l'aise avec son contenu, nous vous recommandons de revenir afin de lire le guide complet sur les [Props](/guide/components/props).
 
