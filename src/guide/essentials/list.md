@@ -346,7 +346,7 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 </div>
 
-On pourrait penser que cela va pousser Vue à se débarrasser du DOM actuel et à rendre à nouveau toute la liste - heureusement, ça n'est pas le cas. Vue implémente des heuristiques intelligentes afin de maximiser la réutilisation des éléments du DOM, de manière à ce que remplacer un tableau par un autre tableau composé en partie des mêmes éléments soit une opération très efficace.
+On pourrait penser que cela va pousser Vue à se débarrasser du DOM actuel et à rendre à nouveau toute la liste - heureusement, ça n'est pas le cas. Vue implémente des approches intelligentes afin de maximiser la réutilisation des éléments du DOM, de manière à ce que remplacer un tableau par un autre tableau composé en partie des mêmes éléments soit une opération très efficace.
 
 ## Afficher des résultats filtrés/triés  {#displaying-filtered-sorted-results}
 
