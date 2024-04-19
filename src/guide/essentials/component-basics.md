@@ -469,6 +469,7 @@ Quelque chose de grave s'est produit.
 Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>` :
 
 ```vue{4}
+<!-- AlertBox.vue -->
 <template>
   <div class="alert-box">
     <strong>Il s'agit d'une Erreur à des fins de Démonstration</strong>
