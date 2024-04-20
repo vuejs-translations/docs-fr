@@ -161,14 +161,14 @@ Pour résoudre ce problème, nous pourrions avoir un suspense imbriqué pour gé
 </Suspense>
 ```
 
-If you don't set the `suspensible` prop, the inner `<Suspense>` will be treated like a sync component by the parent `<Suspense>`.
-That means that it has its own fallback slot and if both `Dynamic` components change at the same time,
-there might be empty nodes and multiple patching cycles while the child `<Suspense>` is loading its own dependency tree,
-which might not be desirable. When it's set, all the async dependency handling is given to the parent `<Suspense>` (including the events emitted)
-and the inner `<Suspense>` serves solely as another boundary for the dependency resolution and patching.
+Si vous ne définissez pas la prop `suspensible`, le `<Suspense>` interne sera traité comme un composant sync par le parent `<Suspense>`.
+Cela signifie qu'il a son propre slot de repli et que si les deux composants `Dynamic` changent en même temps,
+il pourrait y avoir des noeuds vides et de multiples cycles de correction pendant que l'enfant `<Suspense>` charge son propre arbre de dépendance,
+ce qui n'est pas forcément souhaitable. Quand il est défini, toute la gestion asynchrone des dépendances est donnée au parent `<Suspense>` (y compris les événements émis)
+et le `<Suspense>` intérieur sert uniquement de frontière pour la résolution des dépendances et le patching.
 
 ---
 
 **Référence**
 
-- [`<Suspense>` API](/api/built-in-components#suspense)
+- [Référence de l'API `<Suspense>`](/api/built-in-components#suspense)
