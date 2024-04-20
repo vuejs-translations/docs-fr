@@ -149,7 +149,7 @@ Lorsque nous avons plusieurs composants asynchrones (ce qui est courant pour les
 comme prévu. Cependant, lorsque nous modifions `DynamicAsyncOuter`, `<Suspense>` l'attend correctement, mais lorsque nous modifions `DynamicAsyncInner`,
 le `DynamicAsyncInner` imbriqué rend un noeud vide jusqu'à ce qu'il soit résolu (au lieu du noeud précédent ou du slot de repli).
 
-In order to solve that, we could have a nested suspense to handle the patch for the nested component, like:
+Pour résoudre ce problème, nous pourrions avoir un suspense imbriqué pour gérer le correctif pour le composant imbriqué, comme par exemple :
 
 ```vue-html
 <Suspense>
