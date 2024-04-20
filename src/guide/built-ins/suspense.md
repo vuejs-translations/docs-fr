@@ -135,7 +135,7 @@ Vue Router supporte nativement les [composants chargés de manière paresseuse](
 
 ## Suspense imbriqué {#nested-suspense}
 
-When we have multiple async components (common for nested or layout-based routes) like this:
+Lorsque nous avons plusieurs composants asynchrones (ce qui est courant pour les routes imbriquées ou basées sur la mise en page) comme ceci :
 
 ```vue-html
 <Suspense>
@@ -145,9 +145,9 @@ When we have multiple async components (common for nested or layout-based routes
 </Suspense>
 ```
 
-`<Suspense>` creates a boundary that will resolve all the async components down the tree,
-as expected. However, when we change `DynamicAsyncOuter`, `<Suspense>` awaits it correctly, but when we change `DynamicAsyncInner`,
-the nested `DynamicAsyncInner` renders an empty node until it has been resolved (instead of the previous one or fallback slot).
+`<Suspense>` crée une frontière qui résoudra tous les composants asynchrones en bas de l'arbre,
+comme prévu. Cependant, lorsque nous modifions `DynamicAsyncOuter`, `<Suspense>` l'attend correctement, mais lorsque nous modifions `DynamicAsyncInner`,
+le `DynamicAsyncInner` imbriqué rend un noeud vide jusqu'à ce qu'il soit résolu (au lieu du noeud précédent ou du slot de repli).
 
 In order to solve that, we could have a nested suspense to handle the patch for the nested component, like:
 
