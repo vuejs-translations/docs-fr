@@ -334,7 +334,7 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
 
   S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async) et des composants avec [`async setup()`](/guide/built-ins/suspense#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
 
-  En définissant le Suspense comme `suspensible`, toutes les dépendances asynchrones seront gérées par le Suspense parent.
+  En définissant Suspense comme `suspensible`, toutes les dépendances asynchrones seront gérées par le Suspense parent.
   Voir [les détails d'implémentation](https://github.com/vuejs/core/pull/6736)
 
 - **Voir aussi** [Guide - Suspense](/guide/built-ins/suspense)
