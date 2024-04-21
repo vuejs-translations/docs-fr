@@ -133,9 +133,42 @@ L'exemple suivant montre comment imbriquer ces composants afin qu'ils se comport
 
 Vue Router supporte nativement les [composants chargés de manière paresseuse](https://router.vuejs.org/guide/advanced/lazy-loading.html) via l'utilisation des importations dynamiques. Ceux-ci sont distincts des composants asynchrones et, actuellement, ils ne déclenchent pas `<Suspense>`. Cependant, ils peuvent toujours avoir des composants asynchrones comme descendants et ceux-ci peuvent déclencher `<Suspense>` normalement.
 
+## Suspense imbriqué {#nested-suspense}
+
+Lorsque nous avons plusieurs composants asynchrones (ce qui est courant pour les routes imbriquées ou basées sur la mise en page) comme ceci :
+
+```vue-html
+<Suspense>
+  <component :is="DynamicAsyncOuter">
+    <component :is="DynamicAsyncInner" />
+  </component>
+</Suspense>
+```
+
+`<Suspense>` crée une frontière qui résoudra tous les composants asynchrones en bas de l'arbre,
+comme prévu. Cependant, lorsque nous modifions `DynamicAsyncOuter`, `<Suspense>` l'attend correctement, mais lorsque nous modifions `DynamicAsyncInner`,
+`DynamicAsyncInner` imbriqué rend un noeud vide jusqu'à ce qu'il soit résolu (au lieu du noeud précédent ou du slot de repli).
+
+Pour résoudre ce problème, nous pourrions avoir un suspense imbriqué pour gérer le correctif pour le composant imbriqué, comme par exemple :
+
+```vue-html
+<Suspense>
+  <component :is="DynamicAsyncOuter">
+    <Suspense suspensible> <!-- this -->
+      <component :is="DynamicAsyncInner" />
+    </Suspense>
+  </component>
+</Suspense>
+```
+
+Si vous ne définissez pas la prop `suspensible`, le `<Suspense>` interne sera traité comme un composant sync par le parent `<Suspense>`.
+Cela signifie qu'il a son propre slot de repli et que si les deux composants `Dynamic` changent en même temps,
+il pourrait y avoir des noeuds vides et de multiples cycles de correction pendant que l'enfant `<Suspense>` charge son propre arbre de dépendance,
+ce qui n'est pas forcément souhaitable. Quand il est défini, toute la gestion asynchrone des dépendances est donnée au parent `<Suspense>` (y compris les événements émis)
+et le `<Suspense>` intérieur sert uniquement de frontière pour la résolution des dépendances et le patching.
 
 ---
 
 **Référence**
 
-- [`<Suspense>` API](/api/built-in-components#suspense)
+- [Référence de l'API `<Suspense>`](/api/built-in-components#suspense)

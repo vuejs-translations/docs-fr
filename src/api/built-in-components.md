@@ -103,7 +103,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
   ```
 
   Transition forcée en modifiant l'attribut `key` :
-  
+
   ```vue-html
   <Transition>
     <div :key="text">{{ text }}</div>
@@ -183,7 +183,7 @@ Met en cache les composants activés dynamiquement qui y sont imbriqués.
   ```ts
   interface KeepAliveProps {
     /**
-     * Si spécifié, seuls les composants dont les noms correspondent à 
+     * Si spécifié, seuls les composants dont les noms correspondent à
      * `include` seront mis en cache.
      */
     include?: MatchPattern
@@ -317,7 +317,8 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
 
   ```ts
   interface SuspenseProps {
-    timeout?: string | number
+    timeout?: string | number,
+    suspensible?: boolean
   }
   ```
 
@@ -332,5 +333,8 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
   `<Suspense>` accepte deux slots : le slot `#default` et le slot `#fallback`. Il affichera le contenu du slot de secours tout en rendant le slot par défaut en mémoire.
 
   S'il rencontre des dépendances asynchrones ([Composants asynchrones](/guide/components/async) et des composants avec [`async setup()`](/guide/built-ins/suspense#async-setup)) lors du rendu du slot par défaut, il attendra qu'elles soient toutes résolues avant d'afficher le slot par défaut.
+
+  En définissant Suspense comme `suspensible`, toutes les dépendances asynchrones seront gérées par le Suspense parent.
+  Voir [les détails d'implémentation](https://github.com/vuejs/core/pull/6736)
 
 - **Voir aussi** [Guide - Suspense](/guide/built-ins/suspense)
