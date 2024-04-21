@@ -147,7 +147,7 @@ Lorsque nous avons plusieurs composants asynchrones (ce qui est courant pour les
 
 `<Suspense>` crée une frontière qui résoudra tous les composants asynchrones en bas de l'arbre,
 comme prévu. Cependant, lorsque nous modifions `DynamicAsyncOuter`, `<Suspense>` l'attend correctement, mais lorsque nous modifions `DynamicAsyncInner`,
-le `DynamicAsyncInner` imbriqué rend un noeud vide jusqu'à ce qu'il soit résolu (au lieu du noeud précédent ou du slot de repli).
+`DynamicAsyncInner` imbriqué rend un noeud vide jusqu'à ce qu'il soit résolu (au lieu du noeud précédent ou du slot de repli).
 
 Pour résoudre ce problème, nous pourrions avoir un suspense imbriqué pour gérer le correctif pour le composant imbriqué, comme par exemple :
 
