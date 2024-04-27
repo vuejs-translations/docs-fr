@@ -4,15 +4,15 @@
 
 Cette politique de confidentialité décrit les pratiques de l'organisation Vue.js ("Vue", "nous", "notre" ou "nos") en matière de traitement de vos informations dans le cadre de ce site Web (https://vuejs.org) et de nos sites Web ("Websites") liés à l'open source et de tout contenu, documentation connexe, information et service (par exemple, tutoriels, outils de soutien au flux de travail des développeurs, accès à des ressources, etc.) mis à votre disposition sur ce site web (collectivement, les "Services"). La présente politique de confidentialité décrit les informations personnelles que nous traitons pour soutenir nos Services.
 
-For clarity, this Privacy Policy only applies to the Websites and does not apply to any:
+Pour plus de clarté, la présente politique de confidentialité ne s'applique qu'aux sites web et ne s'applique pas à :
 
-1. Use of open source code, documentation or specifications made available on GitHub (https://github.com/), which are governed by the terms of the applicable open source license;
+1. L'utilisation du code source ouvert, de la documentation ou des spécifications mises à disposition sur GitHub (https://github.com/), qui sont régis par les termes de la licence source ouverte applicable ;
 
-2. Pull requests, issues and any other interactions or features related to participation in open source projects on GitHub, which are governed by GitHub's terms and conditions; or
+2. les demandes d'extraction, les problèmes et toute autre interaction ou fonctionnalité liée à la participation à des projets open source sur GitHub, qui sont régis par les conditions générales de GitHub ; ou
 
-3. Usage statistics of our published packages on NPM (https://npmjs.com/), which are governed by NPM's terms and conditions; or
+3. les statistiques d'utilisation de nos offres publiées sur NPM (https://npmjs.com/), qui sont régies par les conditions générales de NPM ; ou
 
-4. Usage statistics of our published browser extensions, which are collected by the browser vendors and governed by their respective terms and conditions.
+4. les statistiques d'utilisation de nos extensions de navigateur publiées, qui sont collectées par les fournisseurs de navigateur et régies par leurs conditions générales respectives.
 
 ## What Kinds of Information Do We Collect?
 
