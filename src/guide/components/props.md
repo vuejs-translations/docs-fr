@@ -567,6 +567,39 @@ export default {
 
 Vue utilisera `instanceof Person` pour valider si la valeur de la prop `author` est bien une instance de la classe `Person`.
 
+### Type Nullable
+
+Si le type est obligatoire mais nullable, vous pouvez utiliser la syntaxe des tableaux qui inclut `null` :
+
+<div class="composition-api">
+
+```js
+defineProps({
+  id: {
+    type: [String, null],
+    required: true
+  }
+})
+```
+
+</div>
+<div class="options-api">
+
+```js
+export default {
+  props: {
+    id: {
+      type: [String, null],
+      required: true
+    }
+  }
+}
+```
+
+</div>
+
+Notez que si `type` est juste `null` sans utiliser la syntaxe du tableau, il autorisera n'importe quel type.
+
 ## Conversion en booléen {#boolean-casting}
 
 Les props avec le type `Boolean` ont des règles de conversion spéciales pour imiter le comportement des attributs booléens natifs. Admettons un composant `<MyComponent>` avec la déclaration suivante :
