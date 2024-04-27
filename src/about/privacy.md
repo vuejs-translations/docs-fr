@@ -37,4 +37,4 @@ Toutes les données collectées sont stockées sur les services tiers susmention
 
 ## Questions
 
-If you have any questions about this Privacy Policy or our practices, please contact us via email at hello@vuejs.org.
+Si vous avez des questions concernant la présente politique de confidentialité ou nos pratiques, veuillez nous contacter par courrier électronique à l'adresse hello@vuejs.org.
