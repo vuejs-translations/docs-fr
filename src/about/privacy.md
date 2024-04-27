@@ -31,9 +31,9 @@ Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous
 
 Le seul objectif de la collecte des données susmentionnées est de comprendre le trafic et l'utilisation de notre site web de la manière la plus respectueuse possible de la vie privée, afin que nous puissions continuellement améliorer la qualité de notre site web et de notre documentation. La base légale selon le RGPD est "l'article 6(1)(f) ; où nos intérêts légitimes sont d'améliorer continuellement notre site web et nos activités". Conformément à l'explication, aucune donnée personnelle n'est stockée au fil du temps.
 
-## Data Retention
+## Conservation des données
 
-All data collected are stored on aforementioned 3rd party services and are subject to the services' respective data retention policies.
+Toutes les données collectées sont stockées sur les services tiers susmentionnés et sont soumises aux politiques de conservation des données respectives de ces services.
 
 ## Questions
 
