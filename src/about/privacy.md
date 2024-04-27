@@ -18,7 +18,7 @@ Pour plus de clarté, la présente politique de confidentialité ne s'applique q
 
 Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous pouvons collecter des données anonymes par le biais de services tiers intégrés à nos sites web :
 
-- **Les données relatives aux visiteurs de nos sites web.** Nos sites web sont fournies par [Fathom Analytics](https://usefathom.com/), qui n'utilise pas de cookies et respecte le GDPR, ePrivacy (y compris PECR), COPPA et CCPA. Grâce à ce logiciel d'analyse de site web respectueux de la vie privée, votre adresse IP n'est traitée que brièvement et nous (qui gérons ce site web) n'avons aucun moyen de vous identifier. Conformément à la CCPA, vos informations personnelles sont dépersonnalisées. Vous pouvez en savoir plus à ce sujet sur le site web de Fathom Analytics.
+- **Les données relatives aux visiteurs de nos sites web.** Nos sites web sont fournies par [Fathom Analytics](https://usefathom.com/), qui n'utilise pas de cookies et respecte le RGPD, ePrivacy (y compris PECR), COPPA et CCPA. Grâce à ce logiciel d'analyse de site web respectueux de la vie privée, votre adresse IP n'est traitée que brièvement et nous (qui gérons ce site web) n'avons aucun moyen de vous identifier. Conformément à la CCPA, vos informations personnelles sont dépersonnalisées. Vous pouvez en savoir plus à ce sujet sur le site web de Fathom Analytics.
 
   - Politique de confidentialité de Fathom Analytics : https://usefathom.com/legal/privacy
 
@@ -27,9 +27,9 @@ Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous
   - Politique de confidentialité d'Algolia : https://www.algolia.com/policies/privacy/
   - Conformité d'Algolia en matière de sécurité et de respect de la vie privée : https://www.algolia.com/distributed-secure/security-compliance/
 
-## How Do We Use Information?
+## Comment utilisons-nous les informations ?
 
-The sole purpose of collecting the aforementioned data is to understand our website traffic and usage in the most privacy-friendly way possible so that we can continually improve our website and documentation quality. The lawful basis as per the GDPR is "Article 6(1)(f); where our legitimate interests are to improve our website and business continually." As per the explanation, no personal data is stored over time.
+Le seul objectif de la collecte des données susmentionnées est de comprendre le trafic et l'utilisation de notre site web de la manière la plus respectueuse possible de la vie privée, afin que nous puissions continuellement améliorer la qualité de notre site web et de notre documentation. La base légale selon le RGPD est "l'article 6(1)(f) ; où nos intérêts légitimes sont d'améliorer continuellement notre site web et nos activités". Conformément à l'explication, aucune donnée personnelle n'est stockée au fil du temps.
 
 ## Data Retention
 
