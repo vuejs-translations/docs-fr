@@ -22,10 +22,10 @@ Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous
 
   - Politique de confidentialité de Fathom Analytics : https://usefathom.com/legal/privacy
 
-- **Usage data of the search functionality.** Our search functionality is powered by [Algolia DocSearch](https://docsearch.algolia.com/), which does not perform any type of user tracking or fingerprinting, and does not use cookies. Algolia services are GPDR compliant, CCPA compliant, and TRUSTe Certified.
+- **Données d'utilisation de la fonctionnalité de recherche.** Notre fonctionnalité de recherche est assurée par [Algolia DocSearch](https://docsearch.algolia.com/), qui n'effectue aucun type de suivi de l'utilisateur ou d'empreinte digitale et n'utilise pas de cookies. Les services Algolia sont conformes au GPDR, à la CCPA et à la certification TRUSTe.
 
-  - Algolia's privacy policy: https://www.algolia.com/policies/privacy/
-  - Algolia's security and privacy compliance: https://www.algolia.com/distributed-secure/security-compliance/
+  - Politique de confidentialité d'Algolia : https://www.algolia.com/policies/privacy/
+  - Conformité d'Algolia en matière de sécurité et de respect de la vie privée : https://www.algolia.com/distributed-secure/security-compliance/
 
 ## How Do We Use Information?
 
