@@ -1,8 +1,8 @@
 # Politique de confidentialité de Vue.js
 
-> Effective Date: April 26, 2024
+> Date d'entrée en vigueur : 26 avril 2024
 
-This Privacy Policy describes the Vue.js organization ("Vue", "we", "us" or "our") practices for handling your information in connection with this website (https://vuejs.org) and our open source-related websites ("Websites") and any content, related documentation, information and services (e.g. tutorials, tools to support the developer workflow, access to resources, etc.) made available to you on this website (collectively, the "Services"). This Privacy Policy describes the personal information we process to support our Services.
+Cette politique de confidentialité décrit les pratiques de l'organisation Vue.js ("Vue", "nous", "notre" ou "nos") en matière de traitement de vos informations dans le cadre de ce site Web (https://vuejs.org) et de nos sites Web ("Websites") liés à l'open source et de tout contenu, documentation connexe, information et service (par exemple, tutoriels, outils de soutien au flux de travail des développeurs, accès à des ressources, etc.) mis à votre disposition sur ce site web (collectivement, les "Services"). La présente politique de confidentialité décrit les informations personnelles que nous traitons pour soutenir nos Services.
 
 For clarity, this Privacy Policy only applies to the Websites and does not apply to any:
 
