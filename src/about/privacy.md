@@ -1,4 +1,4 @@
-# Vue.js Privacy Policy
+# Politique de confidentialité de Vue.js
 
 > Effective Date: April 26, 2024
 

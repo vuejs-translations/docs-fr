@@ -119,7 +119,7 @@ const nav: ThemeConfig['nav'] = [
         link: '/about/community-guide'
       },
       { text: 'Code de bonne conduite', link: '/about/coc' },
-      { text: 'Privacy Policy', link: '/about/privacy' },
+      { text: 'Politique de confidentialité', link: '/about/privacy' },
       {
         text: 'Le documentaire',
         link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
