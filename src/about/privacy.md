@@ -14,9 +14,9 @@ Pour plus de clarté, la présente politique de confidentialité ne s'applique q
 
 4. les statistiques d'utilisation de nos extensions de navigateur publiées, qui sont collectées par les fournisseurs de navigateur et régies par leurs conditions générales respectives.
 
-## What Kinds of Information Do We Collect?
+## Quels types d'informations recueillons-nous ?
 
-We do not collect or store any type of personal data, but may collect anonymized data via 3rd party services integrated in our websites:
+Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous pouvons collecter des données anonymes par le biais de services tiers intégrés à nos sites web :
 
 - **Visitor data to our websites.** Our website analytics is powered by [Fathom Analytics](https://usefathom.com/), which doesn't use cookies and complies with the GDPR, ePrivacy (including PECR), COPPA and CCPA. Using this privacy-friendly website analytics software, your IP address is only briefly processed, and we (running this website) have no way of identifying you. As per the CCPA, your personal information is de-identified. You can read more about this on Fathom Analytics' website.
 
