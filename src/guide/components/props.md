@@ -389,13 +389,18 @@ defineProps({
     type: String,
     required: true
   },
-  // Nombre avec une valeur par défaut
+  // Obligatoire, mais chaîne de caractères nulle
   propD: {
+    type: [String, null],
+    required: true
+  },
+  // Nombre avec une valeur par défaut
+  propE: {
     type: Number,
     default: 100
   },
   // Objet avec une valeur par défaut
-  propE: {
+  propF: {
     type: Object,
     // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
     // d'une fonction factory. La fonction reçoit les props bruts
@@ -406,14 +411,14 @@ defineProps({
   },
   // Fonction de validation personnalisée
   // Toutes les props passées dans le 2nd argument depuis la 3.4
-  propF: {
+  propG: {
     validator(value, props) {
       // La valeur doit correspondre à l'une de ces chaînes de caractères
       return ['success', 'warning', 'danger'].includes(value)
     }
   },
   // Fonction avec une valeur par défaut
-  propG: {
+  propH: {
     type: Function,
     // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction
     // factory - il s'agit d'une fonction servant de valeur par défaut
@@ -444,13 +449,18 @@ export default {
       type: String,
       required: true
     },
-    // Nombre avec une valeur par défaut
+    // Obligatoire, mais chaîne de caractères nulle
     propD: {
+      type: [String, null],
+      required: true
+    },
+    // Nombre avec une valeur par défaut
+    propE: {
       type: Number,
       default: 100
     },
     // Objet avec une valeur par défaut
-    propE: {
+    propF: {
       type: Object,
       // Les valeurs par défaut d'un objet ou d'un tableau doivent être renvoyées à partir
       // d'une fonction factory. La fonction reçoit les props bruts
@@ -461,14 +471,14 @@ export default {
     },
     // Fonction de validation personnalisée
     // Toutes les props passées dans le 2nd argument depuis la 3.4
-    propF: {
+    propG: {
       validator(value, props) {
         // The value must match one of these strings
         return ['success', 'warning', 'danger'].includes(value)
       }
     },
     // Fonction avec une valeur par défaut
-    propG: {
+    propH: {
       type: Function,
       // Contrairement aux valeurs par défaut d'un objet ou d'un tableau, il ne s'agit pas d'une fonction
       // factory - il s'agit d'une fonction servant de valeur par défaut
@@ -556,6 +566,39 @@ export default {
 </div>
 
 Vue utilisera `instanceof Person` pour valider si la valeur de la prop `author` est bien une instance de la classe `Person`.
+
+### Type Nullable
+
+Si le type est obligatoire mais nullable, vous pouvez utiliser la syntaxe des tableaux qui inclut `null` :
+
+<div class="composition-api">
+
+```js
+defineProps({
+  id: {
+    type: [String, null],
+    required: true
+  }
+})
+```
+
+</div>
+<div class="options-api">
+
+```js
+export default {
+  props: {
+    id: {
+      type: [String, null],
+      required: true
+    }
+  }
+}
+```
+
+</div>
+
+Notez que si `type` est juste `null` sans utiliser la syntaxe du tableau, il autorisera n'importe quel type.
 
 ## Conversion en booléen {#boolean-casting}
 
