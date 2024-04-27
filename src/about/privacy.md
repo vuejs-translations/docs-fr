@@ -18,9 +18,9 @@ Pour plus de clarté, la présente politique de confidentialité ne s'applique q
 
 Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous pouvons collecter des données anonymes par le biais de services tiers intégrés à nos sites web :
 
-- **Visitor data to our websites.** Our website analytics is powered by [Fathom Analytics](https://usefathom.com/), which doesn't use cookies and complies with the GDPR, ePrivacy (including PECR), COPPA and CCPA. Using this privacy-friendly website analytics software, your IP address is only briefly processed, and we (running this website) have no way of identifying you. As per the CCPA, your personal information is de-identified. You can read more about this on Fathom Analytics' website.
+- **Les données relatives aux visiteurs de nos sites web.** Nos sites web sont fournies par [Fathom Analytics](https://usefathom.com/), qui n'utilise pas de cookies et respecte le GDPR, ePrivacy (y compris PECR), COPPA et CCPA. Grâce à ce logiciel d'analyse de site web respectueux de la vie privée, votre adresse IP n'est traitée que brièvement et nous (qui gérons ce site web) n'avons aucun moyen de vous identifier. Conformément à la CCPA, vos informations personnelles sont dépersonnalisées. Vous pouvez en savoir plus à ce sujet sur le site web de Fathom Analytics.
 
-  - Fathom Analytics' Privacy Policy: https://usefathom.com/legal/privacy
+  - Politique de confidentialité de Fathom Analytics : https://usefathom.com/legal/privacy
 
 - **Usage data of the search functionality.** Our search functionality is powered by [Algolia DocSearch](https://docsearch.algolia.com/), which does not perform any type of user tracking or fingerprinting, and does not use cookies. Algolia services are GPDR compliant, CCPA compliant, and TRUSTe Certified.
 
