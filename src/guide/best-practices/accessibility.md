@@ -169,7 +169,7 @@ Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; e
 
 <!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-Si vous inspectez cet élément dans vos outils de développeur chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Éléments, vous verrez comment le champ prend son nom du label :
+Si vous inspectez cet élément dans vos Outils de développement Chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Éléments, vous verrez comment le champ prend son nom du label :
 
 ![Outils de développement Chrome montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
 
