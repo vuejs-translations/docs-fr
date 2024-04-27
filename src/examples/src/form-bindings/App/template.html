@@ -1,5 +1,6 @@
 <h2>Champ Texte</h2>
-<input v-model="text"> {{ text }}
+<input v-model="text">
+<p>{{ text }}</p>
 
 <h2>Case à cocher</h2>
 <input type="checkbox" id="checkbox" v-model="checked">
@@ -16,7 +17,7 @@
 <label for="jean">Jean</label>
 <input type="checkbox" id="michel" value="Michel" v-model="checkedNames">
 <label for="michel">Michel</label>
-<p>Noms cochés : <pre>{{ checkedNames }}</pre></p>
+<p>Noms cochés : {{ checkedNames }}</p>
 
 <h2>Radio</h2>
 <input type="radio" id="un" value="Un" v-model="picked">
@@ -25,7 +26,7 @@
 <input type="radio" id="deux" value="Deux" v-model="picked">
 <label for="deux">Deux</label>
 <br>
-<span>Choisi : {{ picked }}</span>
+<p>Choisi : {{ picked }}</p>
 
 <h2>Sélection</h2>
 <select v-model="selected">
@@ -34,7 +35,7 @@
   <option>B</option>
   <option>C</option>
 </select>
-<span>Sélectionné : {{ selected }}</span>
+<p>Sélectionné : {{ selected }}</p>
 
 <h2>Sélection multiple</h2>
 <select v-model="multiSelected" multiple style="width:100px">
@@ -42,4 +43,4 @@
   <option>B</option>
   <option>C</option>
 </select>
-<span>Sélectionné : {{ multiSelected }}</span>
+<p>Sélectionné : {{ multiSelected }}</p>
