@@ -567,7 +567,7 @@ export default {
 
 Vue utilisera `instanceof Person` pour valider si la valeur de la prop `author` est bien une instance de la classe `Person`.
 
-### Type Nullable
+### Type Nullable {#nullable-type}
 
 Si le type est obligatoire mais nullable, vous pouvez utiliser la syntaxe des tableaux qui inclut `null` :
 
