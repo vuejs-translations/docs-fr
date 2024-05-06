@@ -14,7 +14,7 @@ Lorsqu'un composant affiche un seul élément racine, les attributs implicitemen
 
 ```vue-html
 <!-- template de <MyButton> -->
-<button>click me</button>
+<button>Cliquez-Moi</button>
 ```
 
 Et un parent utilisant ce composant avec :
@@ -26,7 +26,7 @@ Et un parent utilisant ce composant avec :
 Le DOM rendu final serait :
 
 ```html
-<button class="large">click me</button>
+<button class="large">Cliquez-Moi</button>
 ```
 
 Ici, `<MyButton>` n'a pas déclaré `class` comme une prop acceptée. Par conséquent, `class` est traitée comme un attribut implicitement déclaré et automatiquement ajoutée à l'élément racine de `<MyButton>`.
@@ -37,13 +37,13 @@ Si l'élément racine du composant enfant a déjà des attributs `class` ou `sty
 
 ```vue-html
 <!-- template de <MyButton> -->
-<button class="btn">click me</button>
+<button class="btn">Cliquez-Moi</button>
 ```
 
 Ainsi, le DOM final rendu deviendrait :
 
 ```html
-<button class="btn large">click me</button>
+<button class="btn large">Cliquez-Moi</button>
 ```
 
 ### Héritage de l'écouteur "v-on" {#v-on-listener-inheritance}
@@ -80,7 +80,7 @@ Si vous **ne souhaitez pas** qu'un composant hérite automatiquement des attribu
 <div class="composition-api">
 
 Depuis la version 3.3, vous pouvez également utiliser [`defineOptions`](/api/sfc-script-setup#defineoptions) directement dans `<script setup>`:
- 
+
 ```vue
 <script setup>
 defineOptions({
@@ -112,7 +112,7 @@ En utilisant notre composant exemple `<MyButton>` de la [section précédente](#
 
 ```vue-html
 <div class="btn-wrapper">
-  <button class="btn">click me</button>
+  <button class="btn">Cliquez-Moi</button>
 </div>
 ```
 
@@ -120,7 +120,7 @@ Nous voulons que tous les attributs implicitement déclarés tels que `class` et
 
 ```vue-html{2}
 <div class="btn-wrapper">
-  <button class="btn" v-bind="$attrs">click me</button>
+  <button class="btn" v-bind="$attrs">Cliquez-Moi</button>
 </div>
 ```
 
