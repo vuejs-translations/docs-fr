@@ -63,7 +63,7 @@ Les propriétés renvoyées par l'objet seront disponibles dans le template. C'e
 
 ```vue-html
 <h1>{{ message }}</h1>
-<p>count à: {{ counter.count }}</p>
+<p>Count à: {{ counter.count }}</p>
 ```
 
 Remarquez que nous n'avons pas eu besoin d'utiliser `.value` pour accéder à la référence `message` dans le template : elle est automatiquement déballée pour une utilisation plus succincte.
