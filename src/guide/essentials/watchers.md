@@ -141,7 +141,7 @@ const obj = reactive({ count: 0 })
 
 // cela ne fonctionnera pas car on passe un nombre à watch()
 watch(obj.count, (count) => {
-  console.log(`Count est égale à: ${count}`)
+  console.log(`Count est égal à: ${count}`)
 })
 ```
 
@@ -152,7 +152,7 @@ watch(obj.count, (count) => {
 watch(
   () => obj.count,
   (count) => {
-    console.log(`Count est égale à: ${count}`)
+    console.log(`Count est égal à: ${count}`)
   }
 )
 ```
