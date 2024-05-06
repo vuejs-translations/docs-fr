@@ -212,7 +212,7 @@ API impérative pour créer des observateurs.
 
 - **Détails**
 
-  Le premier argument est la source observée. Cela peut être une chaîne de caractères correspondant au nom d'une propriété du composant, ou une fonction accesseur.
+  Le premier argument est la source observée. Cela peut être une chaîne de caractères correspondant au nom d'une propriété du composant, ou une fonction [accesseur](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/get#description).
 
   Le second argument est la fonction de rappel. La fonction de rappel reçoit en paramètres la nouvelle et l'ancienne valeur de la source observée.
 

@@ -1,4 +1,4 @@
-# Politique de confidentialité de Vue.js
+# Politique de confidentialité de Vue.js {#vue.js-privacy-policy}
 
 > Date d'entrée en vigueur : 26 avril 2024
 
@@ -14,7 +14,7 @@ Pour plus de clarté, la présente politique de confidentialité ne s'applique q
 
 4. les statistiques d'utilisation de nos extensions de navigateur publiées, qui sont collectées par les fournisseurs de navigateur et régies par leurs conditions générales respectives.
 
-## Quels types d'informations recueillons-nous ?
+## Quels types d'informations recueillons-nous ? {#what-kinds-of-information-do-we-collect}
 
 Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous pouvons collecter des données anonymes par le biais de services tiers intégrés à nos sites web :
 
@@ -27,14 +27,14 @@ Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous
   - Politique de confidentialité d'Algolia : https://www.algolia.com/policies/privacy/
   - Conformité d'Algolia en matière de sécurité et de respect de la vie privée : https://www.algolia.com/distributed-secure/security-compliance/
 
-## Comment utilisons-nous les informations ?
+## Comment utilisons-nous les informations ? {#how-do-we-use-information}
 
 Le seul objectif de la collecte des données susmentionnées est de comprendre le trafic et l'utilisation de notre site web de la manière la plus respectueuse possible de la vie privée, afin que nous puissions continuellement améliorer la qualité de notre site web et de notre documentation. La base légale selon le RGPD est "l'article 6(1)(f) ; où nos intérêts légitimes sont d'améliorer continuellement notre site web et nos activités". Conformément à l'explication, aucune donnée personnelle n'est stockée au fil du temps.
 
-## Conservation des données
+## Conservation des données {#data-retention}
 
 Toutes les données collectées sont stockées sur les services tiers susmentionnés et sont soumises aux politiques de conservation des données respectives de ces services.
 
-## Questions
+## Questions {#questions}
 
 Si vous avez des questions concernant la présente politique de confidentialité ou nos pratiques, veuillez nous contacter par courrier électronique à l'adresse hello@vuejs.org.

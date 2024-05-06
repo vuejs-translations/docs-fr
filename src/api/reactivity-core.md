@@ -45,7 +45,7 @@ Prend une valeur interne et retourne un objet ref réactif et mutable, qui n'a q
 
 ## computed() {#computed}
 
-Prend une fonction accesseur et retourne un objet [ref](#ref) réactif en lecture seule pour la valeur retournée par la fonction acesseur. Elle peut aussi prendre un objet avec les fonctions `get` et `set` pour créer un objet ref modifiable.
+Prend une fonction [accesseur](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/get#description) et retourne un objet [ref](#ref) réactif en lecture seule pour la valeur retournée par la fonction acesseur. Elle peut aussi prendre un objet avec les fonctions `get` et `set` pour créer un objet ref modifiable.
 
 - **Type :**
 
