@@ -210,6 +210,10 @@ app.directive('demo', (el, binding) => {
 
 ## Utilisation sur les composants {#usage-on-components}
 
+:::warning Non recommandé
+L'utilisation de directives personnalisées sur les composants n'est pas recommandée, car un comportement inattendu peut se produire lorsqu'un composant a plusieurs nœuds racine.
+:::
+
 Lorsqu'elles sont utilisées sur des composants, les directives personnalisées s'appliquent toujours au nœud racine du composant, comme dans les [attributs implicitement déclarés](/guide/components/attrs).
 
 ```vue-html
@@ -224,4 +228,4 @@ Lorsqu'elles sont utilisées sur des composants, les directives personnalisées 
 </div>
 ```
 
-Notez que les composants peuvent potentiellement avoir plus d'un nœud racine. Lorsqu'elle est appliquée à un composant multi-racine, une directive sera ignorée et un avertissement sera envoyé. Contrairement aux attributs, les directives ne peuvent pas être passées à un autre élément avec `v-bind="$attrs"`. En général, il n'est **pas** recommandé d'utiliser des directives personnalisées sur des composants.
+Notez que les composants peuvent potentiellement avoir plus d'un nœud racine. Lorsqu'elle est appliquée à un composant multi-racine, une directive sera ignorée et un avertissement sera envoyé. Contrairement aux attributs, les directives ne peuvent pas être passées à un autre élément avec `v-bind="$attrs"`.
