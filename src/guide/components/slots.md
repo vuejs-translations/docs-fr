@@ -302,8 +302,8 @@ Il arrive que l'on veuille rendre quelque chose en fonction de la présence ou n
 
 Vous pouvez utiliser la propriété [$slots](/api/component-instance.html#slots) en combinaison avec un [v-if](/guide/essentials/conditional.html#v-if) pour y parvenir.
 
-Dans l'exemple ci-dessous, nous définissons un composant Card avec deux slots conditionnels : `header` et `footer`.
-Lorsque l'en-tête ou le pied de page sont présents, nous voulons les envelopper pour leur donner un style supplémentaire :
+Dans l'exemple ci-dessous, nous définissons un composant Card avec trois slots conditionnels : `header`, `footer` et `default`.
+Lorsque l'en-tête / le pied de page / la valeur par défaut sont présents, nous voulons les envelopper pour leur donner un style supplémentaire :
 
 ```vue-html
 <template>
@@ -312,7 +312,7 @@ Lorsque l'en-tête ou le pied de page sont présents, nous voulons les enveloppe
       <slot name="header" />
     </div>
 
-    <div class="card-content">
+    <div v-if="$slots.default" class="card-content">
       <slot />
     </div>
 
@@ -323,7 +323,7 @@ Lorsque l'en-tête ou le pied de page sont présents, nous voulons les enveloppe
 </template>
 ```
 
-[Essayer en ligne](https://play.vuejs.org/#eNqFVD1v2zAQ/SsEWyBLIjVoJlcN0AYZ2qEt2oxaaOkkMaZIgqRcGYH/e4+kqFi26wAejvfevfu0XugXrbPtAHRFC1sZrh2x4AZ9X0rea2UceWCmJo1RPbnKcv/w9KtSFnnkIxMfDnotmAN8EVJ4WrDQTgh51wGrwUx+RLrb+6eOW4I/1wGJcJGjewrND1RP1Gpo2CB8+klOL9QqJR1IV+S+lbfVGqXcYW3QL9QiXOToPqPmn1PLCz+9ps5iIQ1vs2erJA75xbNLWqlecwHmp3ZcSVvSFQmIx5gQ6u/34HNmgOvkrzqoNmf8z3b0vpL+MmDBbKGkM+aYacFF+PHPDxjRnsFe1YNA9gXwN1glBl9jpH0dZI1lH/BCtd/CqXDZPtnHEcduU1O+UM/cB35J8XQeLrT+Wu7H7C7ElXKPU0xn5690Ofeab0klmLWfcUDIKmlakEe2N7xB4L0VytksHlhJFwE3yfu6e88mkvWAlDkmnxePwpN9kGkhOd3eieYbGstq48kdV5u856udY04zJevob1BYtxNxlplPkHaxVgb7XpFbPRI8AV6TtWDV5lNENatr3PaKfAgO3NIsMM1z1sGg1ig8G5yKUKhoN7u1GOBY6U6Pp1rTIJPYZXJs/v+JBW871xq2u5g6fNjCTOj+H/sTpqs=)
+[Essayer en ligne](https://play.vuejs.org/#eNqVVMtu2zAQ/BWCLZBLIjVoTq4aoA1yaA9t0eaoCy2tJcYUSZCUKyPwv2dJioplOw4C+EDuzM4+ONYT/aZ1tumBLmhhK8O1IxZcr29LyTutjCN3zNRkZVRHLrLcXzz9opRFHvnIxIuDTgvmAG+EFJ4WTnhOCPnQAqvBjHFE2uvbh5Zbgj/XAolwkWN4TM33VI/UalixXvjyo5yeqVVKOpCuyP0ob6utlHL7vUE3U4twkWP4hJq/jiPP4vSSOouNrHiTPVolcclPnl3SSnWaCzC/teNK2pIuSEA8xoRQ/3+GmDM9XKZ41UK1PhF/tIOPlfSPAQtmAyWdMMdMAy7C9/9+wYDnCexU3QtknwH/glWi9z1G2vde1tj2Hi90+yNYhcvmwd4PuHabhvKNeuYu8EuK1rk7M/pLu5+zm5BXyh1uMdnOu3S+95pvSCWYtV9xQcgqaXogj2yu+AqBj1YoZ7NosJLOEq5S9OXtPZtI1gFSppx8engUHs+vVhq9eVhq9ORRrXdpRyseSqfo6SmmnONK6XTw9yis24q448wXSG+0VAb3sSDXeiBoDV6TpWDV+ktENatrdMGCfAoBfL1JYNzzpINJjVFoJ9yKUKho19ul6OFQ6UYPx1rjIpPYeXIc/vXCgjetawzbni0dPnhhJ3T3DMVSruI=)
 
 ## Noms de slot dynamiques {#dynamic-slot-names}
 
