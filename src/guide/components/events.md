@@ -32,7 +32,7 @@ Un composant peut émettre des événements personnalisés directement à partir
 
 ```vue-html
 <!-- MyComponent -->
-<button @click="$emit('someEvent')">click me</button>
+<button @click="$emit('someEvent')">Cliquez-Moi</button>
 ```
 
 <div class="options-api">
