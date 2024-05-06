@@ -154,8 +154,6 @@ Les labels sont en général placés en haut ou à gauche des champs de formulai
 </form>
 ```
 
-<!-- <common-codepen-snippet title="Simple Form" slug="dyNzzWZ" :height="368" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
-
 Remarquez comment vous pouvez inclure `autocomplete='on'` sur l'élément de formulaire et il sera appliqué à tous les input de votre formulaire. Vous pouvez aussi positionner différentes [valeurs pour l'attribut autocomplete](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete) pour chaque input.
 
 ### Labels {#labels}
@@ -166,8 +164,6 @@ Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; e
 <label for="name">Name: </label>
 <input type="text" name="name" id="name" v-model="name" />
 ```
-
-<!-- <common-codepen-snippet title="Form Label" slug="XWpaaaj" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
 Si vous inspectez cet élément dans vos Outils de développement Chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Éléments, vous verrez comment le champ prend son nom du label :
 
@@ -201,8 +197,6 @@ Vous pouvez aussi donner un nom accessible au champ avec [`aria-label`](https://
 />
 ```
 
-<!-- <common-codepen-snippet title="Form ARIA label" slug="NWdvvYQ" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
-
 N'hésitez pas à inspecter cet élément dans les outils de développeur de Chrome pour voir comment le nom accessible a changé.
 
 ![Outils de développement de Chrome montrant le nom accessible d'un champs via aria-label](./images/AccessibleARIAlabelDevTools.png)
@@ -233,8 +227,6 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 </form>
 ```
 
-<!-- <common-codepen-snippet title="Form ARIA labelledby" slug="MWJvvBe" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
-
 ![Outils de développeur de Chrome montrant le nom du champs accessible via aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
 
 #### `aria-describedby` {#aria-describedby}
@@ -264,8 +256,6 @@ L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Acces
   <button type="submit">Submit</button>
 </form>
 ```
-
-<!-- <common-codepen-snippet title="Form ARIA describedby" slug="gOgxxQE" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
 Vous pouvez voir la description en inspectant depuis les outils de développeur Chrome :
 
@@ -352,8 +342,6 @@ De façon alternative, vous pouvez attacher les instructions au champ avec [`ari
 </fieldset>
 ```
 
-<!-- <common-codepen-snippet title="Form Instructions" slug="WNREEqv" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
-
 ### Cacher du contenu {#hiding-content}
 
 En règle générale, il n'est pas recommandé de cacher visuellement des labels, même si le champ est un nom accessible. Cependant, si la fonctionnalité du champ peut être comprise à l'aide du contenu alentour, alors, nous pouvons cacher le libellé visuel.
@@ -386,8 +374,6 @@ Nous pouvons utiliser du CSS pour cacher visuellement des éléments, mais les l
 }
 ```
 
-<!-- <common-codepen-snippet title="Form Search" slug="QWdMqWy" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
-
 #### `aria-hidden="true"` {#aria-hidden-true}
 
 Ajouter `aria-hidden="true"` va cacher l'élément aux technologies d'assistance, mais les laissera disponibles visuellement pour les autres utilisateurs. Ne l'utilisez pas pour des éléments sur lesquels il est possible de faire le focus, uniquement sur des éléments décoratifs ou du contenu hors écran.
@@ -413,8 +399,6 @@ Vous pouvez aussi utiliser un input pour créer des boutons :
   <input type="submit" value="Submit" />
 </form>
 ```
-
-<!-- <common-codepen-snippet title="Form Buttons" slug="JjEyrYZ" :height="467" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
 ### Images fonctionnelles {#functional-images}
 
@@ -449,8 +433,6 @@ Vous pouvez utiliser cette technique pour créer des images fonctionnelles.
   </button>
 </form>
 ```
-
-<!-- <common-codepen-snippet title="Functional Images" slug="jOyLGqM" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
 ## Standards {#standards}
 
