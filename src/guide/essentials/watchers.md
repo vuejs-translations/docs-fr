@@ -141,7 +141,7 @@ const obj = reactive({ count: 0 })
 
 // cela ne fonctionnera pas car on passe un nombre à watch()
 watch(obj.count, (count) => {
-  console.log(`count is: ${count}`)
+  console.log(`Count est égale à: ${count}`)
 })
 ```
 
@@ -152,7 +152,7 @@ watch(obj.count, (count) => {
 watch(
   () => obj.count,
   (count) => {
-    console.log(`count is: ${count}`)
+    console.log(`Count est égale à: ${count}`)
   }
 )
 ```
@@ -278,7 +278,7 @@ watch(
 La fonction de rappel de l'observateur sera exécutée dès lors qu'une source observée change. Si vous voulez que la fonction de rappel soit déclenchée une seule fois quand il y a un changement, utilisez l'option `once: true`.
 
 <div class="options-api">
-  
+
 ```js
 export default {
   watch: {
