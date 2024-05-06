@@ -1,10 +1,10 @@
 # Politique de confidentialité de Vue.js {#vue.js-privacy-policy}
 
-> Date d'entrée en vigueur : 26 avril 2024
+> Date d'entrée en vigueur : 3 mai 2024
 
 Cette politique de confidentialité décrit les pratiques de l'organisation Vue.js ("Vue", "nous", "notre" ou "nos") en matière de traitement de vos informations dans le cadre de ce site Web (https://vuejs.org) et de nos sites Web ("Websites") liés à l'open source et de tout contenu, documentation connexe, information et service (par exemple, tutoriels, outils de soutien au flux de travail des développeurs, accès à des ressources, etc.) mis à votre disposition sur ce site web (collectivement, les "Services"). La présente politique de confidentialité décrit les informations personnelles que nous traitons pour soutenir nos Services.
 
-Pour plus de clarté, la présente politique de confidentialité ne s'applique qu'aux sites web et ne s'applique pas à :
+Pour plus de clarté, la présente politique de confidentialité ne s'applique pas à :
 
 1. L'utilisation du code source ouvert, de la documentation ou des spécifications mises à disposition sur GitHub (https://github.com/), qui sont régis par les termes de la licence source ouverte applicable ;
 
@@ -12,11 +12,13 @@ Pour plus de clarté, la présente politique de confidentialité ne s'applique q
 
 3. les statistiques d'utilisation de nos offres publiées sur NPM (https://npmjs.com/), qui sont régies par les conditions générales de NPM ; ou
 
-4. les statistiques d'utilisation de nos extensions de navigateur publiées, qui sont collectées par les fournisseurs de navigateur et régies par leurs conditions générales respectives.
+4. les statistiques d'utilisation de nos extensions de navigateur / IDE publiées, collectées par les vendeurs de navigateur / IDE. Ces statistiques sont régies par les conditions générales respectives des fournisseurs
 
 ## Quels types d'informations recueillons-nous ? {#what-kinds-of-information-do-we-collect}
 
-Nous ne collectons ni ne stockons aucun type de données personnelles, mais nous pouvons collecter des données anonymes par le biais de services tiers intégrés à nos sites web :
+Nous **ne collectons** ni **ne stockons** aucun type de données personnelles, que ce soit par le biais de nos sites web ou de nos paquets npm publiés ou d'extensions de navigateur ou d'IDE.
+
+Nous pouvons collecter des données anonymes par l'intermédiaire de services tiers intégrés dans nos sites web :
 
 - **Les données relatives aux visiteurs de nos sites web.** Nos sites web sont fournies par [Fathom Analytics](https://usefathom.com/), qui n'utilise pas de cookies et respecte le RGPD, ePrivacy (y compris PECR), COPPA et CCPA. Grâce à ce logiciel d'analyse de site web respectueux de la vie privée, votre adresse IP n'est traitée que brièvement et nous (qui gérons ce site web) n'avons aucun moyen de vous identifier. Conformément à la CCPA, vos informations personnelles sont dépersonnalisées. Vous pouvez en savoir plus à ce sujet sur le site web de Fathom Analytics.
 
