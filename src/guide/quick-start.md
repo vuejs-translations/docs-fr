@@ -196,7 +196,7 @@ Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-nivea
 </script>
 ```
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/QWJwJLp)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/QWJwJLp)
 
 </div>
 
@@ -221,7 +221,7 @@ Le lien ci-dessus charge le _build global_ de Vue, où toutes les API haut-nivea
 </script>
 ```
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/eYQpQEG)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/eYQpQEG)
 
 :::tip
 De nombreux exemples de la Composition API tout au long du guide utiliseront la syntaxe `<script setup>`, qui nécessite des outils de génération. Si vous avez l'intention d'utiliser la Composition API sans outil de build, consultez l'utilisation de l'option [`setup()`](/api/composition-api-setup).
@@ -278,12 +278,12 @@ Notez que nous utilisons `<script type="module">`, et que l'url CDN importée po
 
 <div class="options-api">
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/VwVYVZO)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/VwVYVZO)
 
 </div>
 <div class="composition-api">
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/MWzazEv)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/MWzazEv)
 
 </div>
 
@@ -323,7 +323,7 @@ Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Imp
 </script>
 ```
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/wvQKQyM)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/wvQKQyM)
 
 
 </div>
@@ -355,7 +355,7 @@ Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Imp
 </script>
 ```
 
-[Codepen demo](https://codepen.io/vuejs-examples/pen/YzRyRYM)
+[CodePen Demo >](https://codepen.io/vuejs-examples/pen/YzRyRYM)
 
 </div>
 
