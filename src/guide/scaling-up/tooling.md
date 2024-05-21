@@ -28,30 +28,30 @@ Pour commencer avec Vite + Vue, exécutez simplement :
 <VTCodeGroup>
   <VTCodeGroupTab label="npm">
 
-  ```sh
-  $ npm create vue@latest
-  ```
+```sh
+$ npm create vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="pnpm">
 
-  ```sh
-  $ pnpm create vue@latest
-  ```
+```sh
+$ pnpm create vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="yarn">
 
-  ```sh
-  $ yarn create vue@latest
-  ```
+```sh
+$ yarn create vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="bun">
 
-  ```sh
-  $ bun create vue@latest
-  ```
+```sh
+$ bun create vue@latest
+```
 
   </VTCodeGroupTab>
 </VTCodeGroup>
@@ -192,7 +192,7 @@ Le loader officiel qui assure le support des composants monofichiers de Vue dans
 
 - [Terrain de jeu VueUse](https://play.vueuse.org)
 - [Vue + Vite sur Repl.it](https://replit.com/@templates/VueJS-with-Vite)
-- [Vue sur CodeSandbox](https://codesandbox.io/s/vue-3)
+- [Vue sur CodeSandbox](https://codesandbox.io/p/devbox/github/codesandbox/sandbox-templates/tree/main/vue-vite)
 - [Vue sur Codepen](https://codepen.io/pen/editor/vue)
 - [Vue sur Components.studio](https://components.studio/create/vue3)
 - [Vue sur WebComponents.dev](https://webcomponents.dev/create/cevue)
