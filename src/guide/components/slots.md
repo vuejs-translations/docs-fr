@@ -444,33 +444,37 @@ Notez que l'attribut `name` d'un slot ne sera pas inclus dans les props car il e
 Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous devez utiliser une balise `<template>` explicite pour le slot par défaut. Tenter de placer la directive `v-slot` directement sur le composant entraînera une erreur de compilation. Ceci afin d'éviter toute ambiguïté sur la portée des props du slot par défaut. Par exemple :
 
 ```vue-html
+<!-- <MyComponent> template -->
+<div>
+  <slot :message="hello"></slot>
+  <slot name="footer" />
+</div>
+```
+
+```vue-html
 <!-- Ce template ne compilera pas -->
-<template>
-  <MyComponent v-slot="{ message }">
+<MyComponent v-slot="{ message }">
+  <p>{{ message }}</p>
+  <template #footer>
+    <!-- message appartient au slot par défaut, et n'est pas disponible ici -->
     <p>{{ message }}</p>
-    <template #footer>
-      <!-- message appartient au slot par défaut, et n'est pas disponible ici -->
-      <p>{{ message }}</p>
-    </template>
-  </MyComponent>
-</template>
+  </template>
+</MyComponent>
 ```
 
 L'utilisation explicite d'une balise `<template>` pour le slot par défaut aide à indiquer clairement que la prop `message` n'est pas disponible dans l'autre slot :
 
 ```vue-html
-<template>
-  <MyComponent>
-    <!-- Utiliser un slot par défaut explicit -->
-    <template #default="{ message }">
-      <p>{{ message }}</p>
-    </template>
+<MyComponent>
+  <!-- Utiliser un slot par défaut explicit -->
+  <template #default="{ message }">
+    <p>{{ message }}</p>
+  </template>
 
-    <template #footer>
-      <p>Here's some contact info</p>
-    </template>
-  </MyComponent>
-</template>
+  <template #footer>
+    <p>Here's some contact info</p>
+  </template>
+</MyComponent>
 ```
 
 ### Exemple Fancy List {#fancy-list-example}
