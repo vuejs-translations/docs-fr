@@ -211,7 +211,7 @@ app.directive('demo', (el, binding) => {
 ## Utilisation sur les composants {#usage-on-components}
 
 :::warning Non recommandé
-L'utilisation de directives personnalisées sur les composants n'est pas recommandée, car un comportement inattendu peut se produire lorsqu'un composant a plusieurs nœuds racine.
+L'utilisation de directives personnalisées sur les composants n'est pas recommandée. Un comportement inattendu peut se produire lorsqu'un composant a plusieurs nœuds racine.
 :::
 
 Lorsqu'elles sont utilisées sur des composants, les directives personnalisées s'appliquent toujours au nœud racine du composant, comme dans les [attributs implicitement déclarés](/guide/components/attrs).
