@@ -129,62 +129,66 @@ Les tests de composant doivent se concentrer sur les interfaces publiques du com
 <VTCodeGroup>
   <VTCodeGroupTab label="Vue Test Utils">
 
-  ```js
-  const valueSelector = '[data-testid=stepper-value]'
-  const buttonSelector = '[data-testid=increment]'
+```js
+const valueSelector = '[data-testid=stepper-value]'
+const buttonSelector = '[data-testid=increment]'
 
-  const wrapper = mount(Stepper, {
-    props: {
-      max: 1
-    }
-  })
+const wrapper = mount(Stepper, {
+  props: {
+    max: 1
+  }
+})
 
-  expect(wrapper.find(valueSelector).text()).toContain('0')
+expect(wrapper.find(valueSelector).text()).toContain('0')
 
-  await wrapper.find(buttonSelector).trigger('click')
+await wrapper.find(buttonSelector).trigger('click')
 
-  expect(wrapper.find(valueSelector).text()).toContain('1')
-  ```
+expect(wrapper.find(valueSelector).text()).toContain('1')
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="Cypress">
 
-  ```js
-  const valueSelector = '[data-testid=stepper-value]'
-  const buttonSelector = '[data-testid=increment]'
+```js
+const valueSelector = '[data-testid=stepper-value]'
+const buttonSelector = '[data-testid=increment]'
 
-  mount(Stepper, {
-    props: {
-      max: 1
-    }
-  })
+mount(Stepper, {
+  props: {
+    max: 1
+  }
+})
 
-  cy.get(valueSelector).should('be.visible').and('contain.text', '0')
-    .get(buttonSelector).click()
-    .get(valueSelector).should('contain.text', '1')
-  ```
+cy.get(valueSelector)
+  .should('be.visible')
+  .and('contain.text', '0')
+  .get(buttonSelector)
+  .click()
+  .get(valueSelector)
+  .should('contain.text', '1')
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="Testing Library">
 
-  ```js
-  const { getByText } = render(Stepper, {
-    props: {
-      max: 1
-    }
-  })
+```js
+const { getByText } = render(Stepper, {
+  props: {
+    max: 1
+  }
+})
 
-  getByText('0') // Vérification implicite que "0" se trouve dans le composant
+getByText('0') // Vérification implicite que "0" se trouve dans le composant
 
-  const button = getByRole('button', { name: /increment/i })
+const button = getByRole('button', { name: /increment/i })
 
-  // Envoi d'un événement click sur notre bouton d'incrémentation.
-  await fireEvent.click(button)
+// Envoi d'un événement click sur notre bouton d'incrémentation.
+await fireEvent.click(button)
 
-  getByText('1')
+getByText('1')
 
-  await fireEvent.click(button)
-  ```
+await fireEvent.click(button)
+```
 
   </VTCodeGroupTab>
 </VTCodeGroup>
@@ -214,7 +218,6 @@ Le test de composant implique souvent le montage du composant testé isolément,
 - [`@vue/test-utils`](https://github.com/vuejs/test-utils) est la bibliothèque officielle de test de composants de bas niveau qui a été écrite pour permettre aux utilisateurs d'accéder à des API spécifiques à Vue. C'est aussi la bibliothèque de bas niveau sur laquelle `@testing-library/vue` est construite.
 
 - [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) est une bibliothèque de test Vue axée sur le test de composants sans s'appuyer sur les détails de l'implémentation. Construit avec l'accessibilité à l'esprit, son approche rend également la refactorisation un jeu d'enfant. Son principe directeur est que plus les tests ressemblent à la façon dont les logiciels sont utilisés, plus on peut leur faire confiance.
-
 
 Nous vous recommandons d'utiliser `@vue/test-utils` pour tester les composants dans les applications. `@testing-library/vue` a des problèmes avec le test du composant asynchrone avec Suspense, il doit donc être utilisé avec prudence.
 
@@ -262,7 +265,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 - [Cypress](https://www.cypress.io/)
 
-  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance à la "flakiness" des tests, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants](https://docs.cypress.io/guides/component-testing/introduction). Cependant, il ne prend en charge que les navigateurs basés sur Chromium et Firefox.
+  Dans l'ensemble, nous pensons que Cypress fournit la solution E2E la plus complète avec des fonctionnalités telles qu'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance à la "flakiness" des tests, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants](https://docs.cypress.io/guides/component-testing/introduction). Il prend en charge les navigateurs basés sur Chromium, Firefox et Electron. Le support de WebKit est disponible, mais marqué comme expérimental.
 
 ### Autres options {#other-options-2}
 
