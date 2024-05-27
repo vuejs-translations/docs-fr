@@ -269,7 +269,7 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 
 ### Autres options {#other-options-2}
 
-- [Playwright](https://playwright.dev/) est également une excellente solution de test E2E. WebKit est pris en charge par Playwright, mais Electron est marqué comme expérimental. Voir [Pourquoi Playwright](https://playwright.dev/docs/why-playwright) pour plus de détails.
+- [Playwright](https://playwright.dev/) est également une excellente solution de test E2E qui prend en charge tous les moteurs de rendu modernes, y compris Chromium, WebKit et Firefox. Testez sur Windows, Linux et macOS, localement ou sur CI, headless ou non avec l'émulation mobile native de Google Chrome pour Android et Mobile Safari.
 
 - [Nightwatch](https://nightwatchjs.org/) est une solution de test E2E basée sur [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Cela lui permet de prendre en charge le plus grand nombre de navigateurs, y compris les tests mobiles natifs. Les solutions basées sur Selenium seront plus lentes que Playwright ou Cypress.
 
