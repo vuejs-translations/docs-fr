@@ -7,7 +7,7 @@
     ></div>
     <a
       id="vm-banner"
-      href="https://www.vuemastery.com/free-weekend"
+      href="https://www.vuemastery.com/pricing/?coupon=FREEWEEKEND2024"
       target="_blank"
     >
       <img
@@ -23,11 +23,12 @@
       <div class="vm-banner-wrapper">
         <div class="vm-banner-content">
           <h1 class="vm-banner-title">
-            WEEKEND GRATUIT <span>10-12 mai</span>
+            Obtenir
+            <span> 60% </span>
+            d'une année de cours Vue Mastery
           </h1>
-          <p class="vm-banner-sub">Accédez à tous les cours Vue Mastery gratuitement</p>
         </div>
-        <button id="vm-banner-cta">J'y vais</button>
+        <button id="vm-banner-cta">Obtenir une réduction</button>
       </div>
       <button id="vm-banner-close" @click.prevent="closeBanner">
         <VTIconPlus class="close" />
@@ -160,6 +161,16 @@ onMounted(() => {
   -webkit-text-fill-color: transparent;
 }
 
+.vm-banner-title span{
+  background: linear-gradient(145deg, #c3ffac, #86ec87, #38a56a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.vm-banner-title {
+  font-size: 12px;
+}
+
 .vm-banner-sub {
   margin: 0 2em;
   padding: 0;
@@ -238,9 +249,6 @@ onMounted(() => {
     display: block;
     left: 10px;
     width: 40px;
-  }
-  .vm-banner-title {
-    font-size: 14px;
   }
   .vm-banner-sub {
     font-size: 12px;

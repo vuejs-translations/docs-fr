@@ -324,7 +324,7 @@ Vous remarquerez peut-être que les animations présentées ci-dessus utilisent 
 
 2. La plupart des navigateurs modernes peuvent tirer parti de l'accélération matérielle GPU lors de l'animation de `transform`.
 
-En comparaison, des propriétés telles que `height` ou `margin` déclencheront la mise en page CSS, elles sont donc beaucoup plus coûteuses à animer et doivent être utilisées avec prudence. Nous pouvons consulter des ressources comme [CSS-Triggers](https://csstriggers.com/) pour voir quelles propriétés déclencheront la mise en page si nous les animons.
+En comparaison, des propriétés telles que `height` ou `margin` déclencheront la mise en page CSS, elles sont donc beaucoup plus coûteuses à animer et doivent être utilisées avec prudence.
 
 ## Hooks JavaScript {#javascript-hooks}
 
@@ -593,10 +593,10 @@ Prenons par exemple ce composant de compteur :
 
 ```vue
 <script setup>
-import { ref } from 'vue';
-const count = ref(0);
+import { ref } from 'vue'
+const count = ref(0)
 
-setInterval(() => count.value++, 1000);
+setInterval(() => count.value++, 1000)
 </script>
 
 <template>
@@ -620,7 +620,7 @@ export default {
   },
   mounted() {
     this.interval = setInterval(() => {
-      this.count++;
+      this.count++
     }, 1000)
   },
   beforeDestroy() {
