@@ -146,6 +146,8 @@ Les hooks React sont invoqués de manière répétée à chaque fois qu'un compo
 
 - Le problème des fermetures périmées, combiné aux fonctionnalités concurrentes, rend difficile de repérer le moment où un morceau de code d'un hook est exécuté, et rend difficile de travailler avec un état mutable qui devrait persister à travers les rendus (via `useRef`).
 
+> Note: certains des problèmes susmentionnés liés à la mémoïsation peuvent être résolus par le prochain système de mémoïsation [React Compiler](https://react.dev/learn/react-compiler).
+
 En comparaison, la Composition API de Vue :
 
 - Appelle le code de `setup()` ou de `<script setup>` une seule fois. Cela permet au code de mieux s'aligner avec les intuitions d'une utilisation idiomatique de JavaScript, car il n'y a pas de fermetures périmées à craindre. Les appels de la Composition API ne sont pas non plus dans un ordre figé et peuvent être conditionnels.
