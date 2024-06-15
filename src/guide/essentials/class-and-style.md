@@ -189,7 +189,7 @@ Cela appliquera toujours `errorClass`, mais `activeClass` ne sera appliqué que 
 Cependant, cela peut être un peu verbeux si vous avez plusieurs classes conditionnelles. C'est pourquoi il est également possible d'utiliser la syntaxe objet à l'intérieur de la syntaxe tableau :
 
 ```vue-html
-<div :class="[{ activeClass: isActive }, errorClass]"></div>
+<div :class="[{ [activeClass]: isActive }, errorClass]"></div>
 ```
 
 ### Avec les composants {#with-components}
