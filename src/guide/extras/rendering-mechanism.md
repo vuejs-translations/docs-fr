@@ -176,7 +176,7 @@ Les directives `v-if` et `v-for` vont créer de nouveaux nœuds pour un bloc :
   <div>
     <div v-if> <!-- bloc if -->
       ...
-    <div>
+    </div>
   </div>
 </div>
 ```
