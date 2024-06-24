@@ -111,23 +111,23 @@ La définition d'un objet directive peut fournir plusieurs fonctions de hook (to
 const myDirective = {
   // appelé avant les attributs de l'élément lié
   // ou que les écouteurs d'événements soient appliqués
-  created(el, binding, vnode, prevVnode) {
+  created(el, binding, vnode) {
     // voir ci-dessous pour plus de détails sur les arguments
   },
   // appelé juste avant que l'élément ne soit inséré dans le DOM.
-  beforeMount(el, binding, vnode, prevVnode) {},
+  beforeMount(el, binding, vnode) {},
   // appelé lorsque le composant parent de l'élément lié
   // et tous ses enfants sont montés.
-  mounted(el, binding, vnode, prevVnode) {},
+  mounted(el, binding, vnode) {},
   // appelé avant que le composant parent ne soit mis à jour
   beforeUpdate(el, binding, vnode, prevVnode) {},
   // appelé après que le composant parent et
   // tous ses enfants aient été mis à jour
   updated(el, binding, vnode, prevVnode) {},
   // appelé avant que le composant parent ne soit démonté
-  beforeUnmount(el, binding, vnode, prevVnode) {},
+  beforeUnmount(el, binding, vnode) {},
   // appelé lorsque le composant parent est démonté
-  unmounted(el, binding, vnode, prevVnode) {}
+  unmounted(el, binding, vnode) {}
 }
 ```
 
