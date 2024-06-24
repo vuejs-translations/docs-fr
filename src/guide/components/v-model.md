@@ -73,7 +73,7 @@ const emit = defineEmits(['update:modelValue'])
 </template>
 ```
 
-Ensuite, `v-model="modelValue"` dans le composant parent sera compilé en :
+Ensuite, `v-model="foo"` dans le composant parent sera compilé en :
 
 ```vue-html
 <!-- Parent.vue -->
