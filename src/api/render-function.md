@@ -305,7 +305,7 @@ Utilisée pour ajouter des modificateurs natifs [`v-on`](/guide/essentials/event
 - **Type :**
 
   ```ts
-  function withModifiers(fn: Function, modifiers: string[]): Function
+  function withModifiers(fn: Function, modifiers: ModifierGuardsKeys[]): Function
   ```
 
 - **Exemple**
