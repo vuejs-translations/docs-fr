@@ -133,7 +133,23 @@ html:not(.dark) .accent,
   transition: background-color 0.5s, color 0.5s;
 }
 
-.actions .get-started {
+.actions .security {
+  background: linear-gradient(var(--vt-c-bg-mute), var(--vt-c-bg-mute)) padding-box,
+    linear-gradient(45deg, #42d392, #647eff) border-box;
+  border: 2px solid transparent;
+}
+.actions .security:hover {
+  background: linear-gradient(var(--vt-c-gray-light-4), var(--vt-c-gray-light-4)) padding-box,
+    linear-gradient(45deg, #42d392, #647eff) border-box;
+}
+.actions .security .icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.actions .get-started,
+.actions .setup {
   margin-right: 18px;
 }
 
@@ -155,18 +171,21 @@ html:not(.dark) .accent,
 }
 
 .actions .get-started,
-.actions .setup {
+.actions .setup,
+.actions .security {
   color: var(--vt-c-text-code);
 }
 
 .actions .get-started:hover,
-.actions .setup:hover {
+.actions .setup:hover,
+.actions .security:hover {
   background-color: var(--vt-c-gray-light-4);
   transition-duration: 0.2s;
 }
 
 .dark .actions .get-started:hover,
-.dark .actions .setup:hover {
+.dark .actions .setup:hover,
+.dark .actions .security:hover {
   background-color: var(--vt-c-gray-dark-3);
 }
 
@@ -255,10 +274,13 @@ html:not(.dark) .accent,
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 794) {
   .tagline {
     font-size: 48px;
     letter-spacing: -0.5px;
+  }
+  .actions .security {
+    margin-top: 18px;
   }
 }
 
@@ -288,6 +310,9 @@ html:not(.dark) .accent,
   }
   .actions a {
     margin: 18px 0;
+  }
+  .actions .security {
+    margin-top: 0;
   }
 }
 
