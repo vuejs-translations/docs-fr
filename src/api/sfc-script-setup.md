@@ -227,6 +227,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 Cela sera compilé avec les options "default" des props à l'exécution. De plus, l'assistant `withDefaults` fournit des vérifications de type pour les valeurs par défaut et s'assure que le type `props` renvoyé a les drapeaux facultatifs supprimés pour les propriétés qui ont des valeurs par défaut déclarées.
 
+:::info
+Il convient de noter que les valeurs par défaut des types de référence mutables (tels que les tableaux ou les objets) doivent être intégrées dans des fonctions afin d'éviter toute modification accidentelle et tout effet secondaire externe. Cela permet de s'assurer que chaque instance de composant reçoit sa propre copie de la valeur par défaut.
+:::
+
 ## defineModel() <sup class="vt-badge" data-text="3.4+" /> {#definemodel}
 
 Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui peut être consommée via `v-model` à partir du composant parent. Des exemples d'utilisation sont également présentés dans le guide [v-model du composant](/guide/components/v-model).
