@@ -84,6 +84,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 Ceci sera compilé en options à l'exécution `default` équivalentes aux props. De plus, `withDefaults` fournit des vérifications de type pour les valeurs par défaut, et assure que le type `props` retourné n'a pas les options facultatives pour les propriétés qui ont des valeurs déclarées par défaut.
 
+:::info
+Il convient de noter que les valeurs par défaut des types de référence mutables (tels que les tableaux ou les objets) doivent être intégrées dans des fonctions afin d'éviter toute modification accidentelle et tout effet secondaire externe. Cela permet de s'assurer que chaque instance de composant reçoit sa propre copie de la valeur par défaut.
+:::
+
 ### Sans `<script setup>` {#without-script-setup}
 
 Si vous n'utilisez pas `<script setup>`, il est nécessaire d'utiliser `defineComponent()` pour activer l'inférence de type des props. Le type de l'objet props passé à `setup()` est déduit de l'option `props`.
