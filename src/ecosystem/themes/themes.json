@@ -201,9 +201,9 @@
     "seeMoreUrl": "https://www.wrappixel.com/templates/category/vuejs-templates/",
     "products": [
       {
-        "name": "Spike Free VueJs Admin Template",
+        "name": "Spike Free Vue.js Admin Template",
         "price": 0,
-        "description": "Template Admin VueJS open-source & gratuit",
+        "description": "Template Admin Vue.js open-source & gratuit",
         "url": "https://www.wrappixel.com/templates/spike-free-vuejs-admin-template/?ref=320",
         "image": "https://www.wrappixel.com/wp-content/uploads/edd/2023/10/spike-free-vuetify-vuejs-admin-template-wp.jpg"
       },
@@ -229,9 +229,9 @@
         "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/05/materialpro-vuejs-lite-admin-wp-20.jpg"
       },
       {
-        "name": "Free AdminPro VueJs Lite",
+        "name": "Free AdminPro Vue.js Lite",
         "price": 0,
-        "description": "Template Admin VueJS open-source & gratuit",
+        "description": "Template Admin Vue.js open-source & gratuit",
         "url": "https://www.wrappixel.com/templates/adminpro-vuetify-admin-lite/?ref=320",
         "image": "https://www.wrappixel.com/wp-content/uploads/edd/2020/11/feature_image.jpg"
       },
@@ -250,9 +250,9 @@
     "seeMoreUrl": "https://codedthemes.com/item/category/templates/vue-template/",
     "products": [
       {
-        "name": "Template d'administration gratuit Berry Vuetify VueJs",
+        "name": "Template d'administration gratuit Berry Vuetify Vue.js",
         "price": 0,
-        "description": "Template d'administration VueJs gratuit et open source avec le design bien connu de Berry",
+        "description": "Template d'administration Vue.js gratuit et open source avec le design bien connu de Berry",
         "url": "https://codedthemes.com/item/berry-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
         "image": "https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Berry-free-vue.png"
       },
@@ -266,21 +266,21 @@
       {
         "name": "Tableau de bord d'administration Mantis Vue3",
         "price": 49,
-        "description": "Simple mais robuste pour démarrer n'importe quel développement avec les dernières versions de VueJs et Vuetify",
+        "description": "Simple mais robuste pour démarrer n'importe quel développement avec les dernières versions de Vue.js et Vuetify",
         "url": "https://codedthemes.com/item/mantis-vue-admin-template/?ref=evan.vuejs",
         "image": "https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Mantis-pro-vue.png"
       },
       {
-        "name": "Template d'administration gratuit Mantis Vuetify VueJs",
+        "name": "Template d'administration gratuit Mantis Vuetify Vue.js",
         "price": 0,
         "description": "Template de tableau de bord Vuetify gratuit avec le design et le code les plus simples",
         "url": "https://codedthemes.com/item/mantis-free-vuetify-vuejs-admin-template/?ref=evan.vuejs",
         "image": "https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Mantis-free-vue.png"
       },
       {
-        "name": "Able Pro VueJs gratuit",
+        "name": "Able Pro Vue.js gratuit",
         "price": 0,
-        "description": "Template d'administration VueJs Able pro gratuit et open source",
+        "description": "Template d'administration Vue.js Able pro gratuit et open source",
         "url": "https://codedthemes.com/item/able-pro-free-vuejs-admin-dashboard/?ref=evan.vuejs",
         "image": "https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Able+pro-free-vue.png"
       },
@@ -349,14 +349,14 @@
     "seeMoreUrl": "https://adminmart.com/templates/vuejs-admin/?ref=34",
     "products": [
       {
-        "name": "Tableau de bord VueJs Matdash gratuit",
+        "name": "Tableau de bord Vue.js Matdash gratuit",
         "price": 0,
-        "description": "Modèle d'administration VueJs gratuit et open source",
+        "description": "Modèle d'administration Vue.js gratuit et open source",
         "url": "https://adminmart.com/product/matdash-free-vuejs-admin-dashboard/?ref=34",
         "image": "https://adminmart.com/wp-content/uploads/2024/05/matdash-vuetifi-vuejs-2.png"
       },
       {
-        "name": "Tableau de bord VueJs Matdash",
+        "name": "Tableau de bord Vue.js Matdash",
         "price": 49,
         "description": "Donner aux développeurs une flexibilité et une puissance inégalées",
         "url": "https://adminmart.com/product/matdash-vuejs-admin-dashboard/?ref=34",
@@ -370,9 +370,9 @@
         "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-vuetify-admin-dashboard-min.png"
       },
       {
-        "name": "Moderniser le tableau de bord administratif gratuit de Vuetify + VueJs",
+        "name": "Moderniser le tableau de bord administratif gratuit de Vuetify + Vue.js",
         "price": 0,
-        "description": "Modèle d'administration VueJs gratuit et open source",
+        "description": "Modèle d'administration Vue.js gratuit et open source",
         "url": "https://adminmart.com/product/modernize-free-vuetify-vue-js-admin-dashboard/?ref=34",
         "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-free-vuetify-admin-dashboard-am-min1.png"
       },
