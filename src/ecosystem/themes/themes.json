@@ -341,5 +341,55 @@
         "image": "https://cdn.themeselection.com/ts-assets/materio/materio-vuetify-nuxtjs-admin-template/banner/banner.png"
       }
     ]
+  },
+
+  {
+    "name": "AdminMart",
+    "description": "Découvrez nos meilleurs [Modèles de tableau de bord Vue](https://adminmart.com/templates/vuejs-admin/?ref=34) créés par nos partenaires de [AdminMart](https://adminmart.com/?ref=34). Téléchargez-les pour accélérer votre processus de développement web et créer des applications web de premier ordre.",
+    "seeMoreUrl": "https://adminmart.com/templates/vuejs-admin/?ref=34",
+    "products": [
+      {
+        "name": "Tableau de bord VueJs Matdash gratuit",
+        "price": 0,
+        "description": "Modèle d'administration VueJs gratuit et open source",
+        "url": "https://adminmart.com/product/matdash-free-vuejs-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2024/05/matdash-vuetifi-vuejs-2.png"
+      },
+      {
+        "name": "Tableau de bord VueJs Matdash",
+        "price": 49,
+        "description": "Donner aux développeurs une flexibilité et une puissance inégalées",
+        "url": "https://adminmart.com/product/matdash-vuejs-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2024/05/matdash-vuetify-vuejs-admin-dashboard.png"
+      },
+      {
+        "name": "Moderniser le tableau de bord de Vuetify 3 & Vue 3",
+        "price": 49,
+        "description": "Modèle de tableau de bord d'administration Vue le plus puissant et le plus convivial pour les développeurs",
+        "url": "https://adminmart.com/product/modernize-vuetify-vue-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-vuetify-admin-dashboard-min.png"
+      },
+      {
+        "name": "Moderniser le tableau de bord administratif gratuit de Vuetify + VueJs",
+        "price": 0,
+        "description": "Modèle d'administration VueJs gratuit et open source",
+        "url": "https://adminmart.com/product/modernize-free-vuetify-vue-js-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-free-vuetify-admin-dashboard-am-min1.png"
+      },
+      {
+        "name": "Moderniser le modèle tableau de bord administratif gratuit NuxtJs",
+        "price": 0,
+        "description": "Modèle de tableau de bord NuxtJs gratuit",
+        "url": "https://adminmart.com/product/modernize-free-vuetify-vue-js-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-free-nuxt-admin-dashboard-am-min.png"
+      },
+      {
+        "name": "Moderniser le tableau de bord de l'administration de NuxtJs",
+        "price": 49,
+        "description": "Construire rapidement de puissants tableaux de bord avec NuxtJs - Vuetify : Le rêve d'un développeur",
+        "url": "https://adminmart.com/product/modernize-nuxt-js-admin-dashboard/?ref=34",
+        "image": "https://adminmart.com/wp-content/uploads/2023/02/modernize-nuxt-js-admin-dashboard.png"
+      }
+    ]
   }
 ]
