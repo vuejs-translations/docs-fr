@@ -469,7 +469,7 @@ defineProps<{
 </script>
 ```
 
-Pour utiliser une référence d'un composant générique dans une 'ref', il convient d'utiliser librarie [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) du fait que `InstanceType` ne fonctionnera pas
+Pour utiliser une référence d'un composant générique dans une 'ref', il convient d'utiliser la librairie [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) au lieu de `InstanceType` qui ne fonctionnera pas.
 
 ```vue
 <script
