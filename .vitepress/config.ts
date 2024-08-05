@@ -619,6 +619,10 @@ const i18n: ThemeConfig['i18n'] = {
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
+  sitemap: {
+    hostname: 'https://vuejs.org'
+  },
+
   lang: 'fr-FR',
   title: 'Vue.js',
   description: 'Vue.js - Le Framework JavaScript Évolutif',
