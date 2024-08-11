@@ -620,7 +620,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   sitemap: {
-    hostname: 'https://vuejs.org'
+    hostname: 'https://fr.vuejs.org'
   },
 
   lang: 'fr-FR',
