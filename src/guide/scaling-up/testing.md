@@ -193,9 +193,9 @@ await fireEvent.click(button)
   </VTCodeGroupTab>
 </VTCodeGroup>
 
-- **NE FAITES PAS**
+**NE FAITES PAS**
 
-  Ne vérifiez pas l'état privé d'une instance de composant et ne testez pas les méthodes privées d'un composant. Tester les détails de l'implémentation rend les tests fragiles, car ils sont plus susceptibles de se rompre et nécessitent des mises à jour lorsque l'implémentation change.
+- Ne vérifiez pas l'état privé d'une instance de composant et ne testez pas les méthodes privées d'un composant. Tester les détails de l'implémentation rend les tests fragiles, car ils sont plus susceptibles de se rompre et nécessitent des mises à jour lorsque l'implémentation change.
 
   Le travail ultime du composant est un rendu DOM en sortie correct, de sorte que les tests axés sur la sortie DOM fournissent le même niveau d'assurance d'exactitude (sinon plus) tout en étant plus robustes et résilients au changement.
 
