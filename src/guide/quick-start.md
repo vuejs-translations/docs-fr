@@ -46,7 +46,11 @@ Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'ins
   <VTCodeGroupTab label="yarn">
 
   ```sh
+  # Avec Yarn Moderne (v2+)
   $ yarn create vue@latest
+
+  # Avec Yarn ^v4.11
+  $ yarn dlx create-vue@latest
   ```
 
   </VTCodeGroupTab>
