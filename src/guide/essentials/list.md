@@ -134,7 +134,7 @@ Vous pouvez également utiliser `of` comme séparateur au lieu de `in`, pour que
 
 ## `v-for` avec un objet {#v-for-with-an-object}
 
-Vous pouvez également utiliser `v-for` pour itérer sur les propriétés d'un objet. L'ordre d'itération sera basé sur le résultat de l'appel à `Object.keys()` sur l'objet :
+Vous pouvez également utiliser `v-for` pour itérer sur les propriétés d'un objet. L'ordre d'itération sera basé sur le résultat de l'appel à `Object.values()` sur l'objet :
 
 <div class="composition-api">
 
