@@ -101,7 +101,13 @@ Vérifie si le comportement par défaut de l'attribut du composant doit être ac
 
   </div>
 
-- **Voir aussi** [Attributs implicitement déclarés](/guide/components/attrs)
+- **Voir aussi**
+
+  - [Attributs implicitement déclarés](/guide/components/attrs)
+  <div class="composition-api">
+
+  - [Utiliser `inheritAttrs` dans un `<script>` normal](/api/sfc-script-setup.html#usage-alongside-normal-script)
+  </div>
 
 ## components {#components}
 
