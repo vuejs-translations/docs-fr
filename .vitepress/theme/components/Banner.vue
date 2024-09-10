@@ -48,6 +48,8 @@ function dismiss() {
 html:not(.banner-dismissed) {
   --vt-banner-height: 60px;
 }
+</style>
+
 <style scoped>
 .banner {
   position: fixed;
