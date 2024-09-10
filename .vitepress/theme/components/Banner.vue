@@ -48,7 +48,8 @@ function dismiss() {
 html:not(.banner-dismissed) {
   --vt-banner-height: 60px;
 }
-<style scoped>.banner {
+<style scoped>
+.banner {
   position: fixed;
   z-index: var(--vp-z-index-banner);
   box-sizing: border-box;
@@ -76,7 +77,7 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+.banner button {
   position: absolute;
   right: 0;
   top: 0;
