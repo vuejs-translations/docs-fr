@@ -112,7 +112,7 @@ Prend une fonction [accesseur](https://developer.mozilla.org/fr/docs/Web/JavaScr
   - [Guide - Propriétés calculées](/guide/essentials/computed)
   - [Guide - Débogage des propriétés calculées](/guide/extras/reactivity-in-depth#computed-debugging)
   - [Guide - Typer `computed()`](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
-  - [Guide - Performance - Stabilité des Computed](/guide/best-practices/performance#computed-stability) <sup class="vt-badge" data-text="3.4+" />
+  - [Guide - Performance - Stabilité des Computed](/guide/best-practices/performance#computed-stability)
 
 ## reactive() {#reactive}
 
@@ -238,7 +238,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   function watchEffect(
     effect: (onCleanup: OnCleanup) => void,
     options?: WatchEffectOptions
-  ): StopHandle
+  ): WatchHandle
 
   type OnCleanup = (cleanupFn: () => void) => void
 
@@ -248,12 +248,17 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
     onTrigger?: (event: DebuggerEvent) => void
   }
 
-  type StopHandle = () => void
+  interface WatchHandle {
+    (): void // callable, same as `stop`
+    pause: () => void
+    resume: () => void
+    stop: () => void
+  }
   ```
 
 - **Détails**
 
-  Le premier argument est la fonction à exécuter qui reçoit elle-même en argument une fonction qui peut être utilisée pour enregistrer une fonction de nettoyage. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
+  Le premier argument est la fonction à exécuter qui reçoit elle-même en argument une fonction qui peut être utilisée pour enregistrer une fonction de nettoyage. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisé pour nettoyer les effets de bord invalidés, par exemple une requête asynchrone en attente (voir l'exemple ci-dessous).
 
   Le second argument est un objet optionnel d'options qui peut être utilisé pour ajuster le timing du nettoyage de l'effet ou pour déboguer ses dépendances.
 
@@ -273,7 +278,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   // -> affiche 1
   ```
 
-  Nettoyage des effets secondaires :
+  Nettoyage des effets de bord :
 
   ```js
   watchEffect(async (onCleanup) => {
@@ -293,6 +298,47 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
   // lorsqu'on a plus besoin de l'observateur :
   stop()
+  ```
+
+  Mettre en pause / reprendre un observateur : <sup class="vt-badge" data-text="3.5+" />
+
+  ```js
+  const { stop, pause, resume } = watchEffect(() => {})
+
+  // mettre en pause temporairement l'observateur
+  pause()
+
+  // reprendre plus tard
+  resume()
+
+  // arrêter
+  stop()
+  ```
+
+  Nettoyage des effets de bord :
+
+  ```js
+  watchEffect(async (onCleanup) => {
+    const { response, cancel } = doAsyncWork(newId)
+    // `cancel` sera appelé si `id` change, 
+    // annulant la requête précédente si elle n'a pas déjà été complétée.
+    onCleanup(cancel)
+    data.value = await response
+  })
+  ```
+
+  Nettoyage des effets de bord à partir de la version 3.5 :
+
+  ```js
+  import { onWatcherCleanup } from 'vue'
+
+  watchEffect(async () => {
+    const { response, cancel } = doAsyncWork(newId)
+    // `cancel` sera appelé si `id` change, 
+    // annulant la requête précédente si elle n'a pas déjà été complétée.
+    onWatcherCleanup(cancel)
+    data.value = await response
+  })
   ```
 
   Options :
@@ -333,14 +379,14 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
     source: WatchSource<T>,
     callback: WatchCallback<T>,
     options?: WatchOptions
-  ): StopHandle
+  ): WatchHandle
 
   // observation de plusieurs sources
   function watch<T>(
     sources: WatchSource<T>[],
     callback: WatchCallback<T[]>,
     options?: WatchOptions
-  ): StopHandle
+  ): WatchHandle
 
   type WatchCallback<T> = (
     value: T,
@@ -357,11 +403,18 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
   interface WatchOptions extends WatchEffectOptions {
     immediate?: boolean // default: false
-    deep?: boolean // default: false
+    deep?: boolean | number // default: false
     flush?: 'pre' | 'post' | 'sync' // default: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
     once?: boolean // default: false (3.4+)
+  }
+
+  interface WatchHandle {
+    (): void // callable, same as `stop`
+    pause: () => void
+    resume: () => void
+    stop: () => void
   }
   ```
 
@@ -378,7 +431,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - Un objet réactif
   - ...ou un tableau des éléments ci-dessus.
 
-  Le second argument est la fonction de rappel qui sera appelée lorsque la source sera modifiée. Celle-ci reçoit trois arguments : la nouvelle valeur, l'ancienne, et une fonction pour enregistrer une fonction de nettoyage des effets secondaires. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisée pour nettoyer les effets secondaires invalidés, par exemple une requête asynchrone en attente.
+  Le second argument est la fonction de rappel qui sera appelée lorsque la source sera modifiée. Celle-ci reçoit trois arguments : la nouvelle valeur, l'ancienne, et une fonction pour enregistrer une fonction de nettoyage des effets de bord. La fonction de nettoyage sera appelée juste avant la prochaine exécution de l'effet, et peut être utilisée pour nettoyer les effets de bord invalidés, par exemple une requête asynchrone en attente.
 
   Lors de l'observation de plusieurs sources, la fonction de rappel reçoit deux tableaux contenant les nouvelles / anciennes valeurs correspondant au tableau des sources.
 
@@ -388,11 +441,11 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   - **`deep`** : force la traversée profonde de la source si c'est un objet, de sorte que la fonction de rappel se déclenche sur les mutations profondes. Voir [les observateurs profonds](/guide/essentials/watchers#deep-watchers).
   - **`flush`** : ajuste le timing de nettoyage de la fonction de rappel. Voir [timing du nettoyage des rappels](/guide/essentials/watchers#callback-flush-timing) et [`watchEffect()`](/api/reactivity-core#watcheffect).
   - **`onTrack / onTrigger`** : débogue les dépendances de l'observateur. Voir [Débogage des observateur](/guide/extras/reactivity-in-depth#watcher-debugging).
-  - **`once`**: déclenche la fonction de rappel une seul fois. L'observateur sera automatiquement arrêté après le premier déclenchement.
+  - **`once`** : (3.4+) déclenche la fonction de rappel une seul fois. L'observateur sera automatiquement arrêté après le premier déclenchement.
 
   Comparée à [`watchEffect()`](#watcheffect), `watch()` nous permet de :
 
-  - Exécuter l'effet secondaire à la volée ;
+  - Exécuter l'effet de bord à la volée ;
   - Être plus spécifique quant à l'état qui doit déclencher la ré-exécution de l'observateur ;
   - Accéder à la fois à la valeur précédente et à la valeur actuelle de l'état surveillé.
 
@@ -472,7 +525,23 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   stop()
   ```
 
-  Nettoyage des effets secondaires :
+  
+  Mettre en pause / reprendre un observateur : <sup class="vt-badge" data-text="3.5+" />
+
+  ```js
+  const { stop, pause, resume } = watchEffect(() => {})
+
+  // mettre en pause temporairement l'observateur
+  pause()
+
+  // reprendre plus tard
+  resume()
+
+  // arrêter
+  stop()
+  ```
+  
+  Nettoyage des effets de bord :
 
   ```js
   watch(id, async (newId, oldId, onCleanup) => {
@@ -484,7 +553,45 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   })
   ```
 
+  Nettoyage des effets de bord à partir de la version 3.5 :
+
+  ```js
+  import { onWatcherCleanup } from 'vue'
+
+  watch(id, async (newId) => {
+    const { response, cancel } = doAsyncWork(newId)
+    onWatcherCleanup(cancel)
+    data.value = await response
+  })
+  ```
+
 - **Voir aussi**
 
   - [Guide - Observateurs](/guide/essentials/watchers)
   - [Guide - Débogage des observateurs](/guide/extras/reactivity-in-depth#watcher-debugging)
+
+## onWatcherCleanup() <sup class="vt-badge" data-text="3.5+" /> {#onwatchercleanup}
+
+Register a cleanup function to be executed when the current watcher is about to re-run. Can only be called during the synchronous execution of a `watchEffect` effect function or `watch` callback function (i.e. it cannot be called after an `await` statement in an async function.)
+
+- **Type**
+
+  ```ts
+  function onWatcherCleanup(
+    cleanupFn: () => void,
+    failSilently?: boolean
+  ): void
+  ```
+
+- **Example**
+
+  ```ts
+  import { watch, onWatcherCleanup } from 'vue'
+
+  watch(id, (newId) => {
+    const { response, cancel } = doAsyncWork(newId)
+    // `cancel` will be called if `id` changes, cancelling
+    // the previous request if it hasn't completed yet
+    onWatcherCleanup(cancel)
+  })
+  ```

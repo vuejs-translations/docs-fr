@@ -124,7 +124,7 @@ Désormais, pour la plupart des composants, la prop `active` restera la même lo
 
 `v-memo` est une directive intégrée qui peut être utilisée pour éviter conditionnellement la mise à jour de grands sous-arbres ou de listes `v-for`. Consultez la [référence de son API](/api/built-in-directives#v-memo) pour plus de détails.
 
-### Stabilité des Computed <sup class="vt-badge" data-text="3.4+" /> {#computed-stability}
+### Stabilité des Computed {#computed-stability}
 
 À partir de 3.4, une propriété calculée ne déclenchera des effets que lorsque la valeur calculée aura changé par rapport à sa valeur précédente. Par exemple, la propriété calculée `isEven` ne va déclencher des effets que si la valeur retournée a changé de `true` à `false`, ou vice-versa :
 

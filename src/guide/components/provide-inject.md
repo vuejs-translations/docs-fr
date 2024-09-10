@@ -205,7 +205,7 @@ Si nous voulons faire fonctionner une propriété injectée avec des fournisseur
 const value = inject('message', 'default value')
 ```
 
-Dans certains cas, la valeur par défaut peut devoir être créée en appelant une fonction ou en instanciant une nouvelle classe. Pour éviter des calculs inutiles ou des effets secondaires si la valeur facultative n'est pas utilisée, nous pouvons utiliser une fonction factory pour créer la valeur par défaut :
+Dans certains cas, la valeur par défaut peut devoir être créée en appelant une fonction ou en instanciant une nouvelle classe. Pour éviter des calculs inutiles ou des effets de bord si la valeur facultative n'est pas utilisée, nous pouvons utiliser une fonction factory pour créer la valeur par défaut :
 
 ```js
 const value = inject('key', () => new ExpensiveClass(), true)

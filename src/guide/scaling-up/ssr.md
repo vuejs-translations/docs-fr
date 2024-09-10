@@ -243,7 +243,7 @@ Pendant le SSR, chaque URL requêtée correspond à un état souhaité de notre 
 
 Vu qu'il n'y a pas de mises à jour dynamiques, les hooks de cycle de vie tels que <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> ou <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> ne seront **PAS** appelés pendant le SSR et ne seront exécutés que côté client.<span class="options-api"> Les seuls hooks qui sont appelés pendant le SSR sont `beforeCreate` et `created`</span>
 
-Vous devriez éviter le code qui produit des effets secondaires qui nécessitent un nettoyage dans <span class="options-api">`beforeCreate` et `created`</span><span class="composition-api">`setup()` ou dans la portée de `<script setup>`</span>. Un exemple d'effets secondaires est la configuration de minuteries avec `setInterval`. Dans le code exécuté côté client, nous pouvons configurer une minuterie et la démonter dans <span class="options-api">`beforeUnmount`</span><span class="composition-api">`onBeforeUnmount`</span> ou <span class="options-api">`unmounted`</span><span class="composition-api">`onUnmounted`</span>. Cependant, étant donné que les hooks de démontage ne seront jamais appelés pendant le SSR, les minuteries resteront à jamais. Pour éviter cela, déplacez votre code d'effets secondaires dans <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
+Vous devriez éviter le code qui produit des effets de bord qui nécessitent un nettoyage dans <span class="options-api">`beforeCreate` et `created`</span><span class="composition-api">`setup()` ou dans la portée de `<script setup>`</span>. Un exemple d'effets de bord est la configuration de minuteries avec `setInterval`. Dans le code exécuté côté client, nous pouvons configurer une minuterie et la démonter dans <span class="options-api">`beforeUnmount`</span><span class="composition-api">`onBeforeUnmount`</span> ou <span class="options-api">`unmounted`</span><span class="composition-api">`onUnmounted`</span>. Cependant, étant donné que les hooks de démontage ne seront jamais appelés pendant le SSR, les minuteries resteront à jamais. Pour éviter cela, déplacez votre code d'effets de bord dans <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
 
 ### Accès aux API spécifiques à la plateforme {#access-to-platform-specific-apis}
 
@@ -313,6 +313,10 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
 3. Le temps local pour l'utilisateur ne peut pas toujours être déterminé sur le serveur en raison de différences de fuseau horaire, il doit donc être converti côté client.
 
 Lorsque Vue rencontre une incohérence d'hydratation, il tentera de récupérer automatiquement et de régler le DOM pré-rendu pour correspondre à l'état côté client. Cela entraînera une perte de performance de rendu due à la suppression de nœuds incorrects et au montage de nouveaux nœuds, mais dans la plupart des cas, l'application devrait continuer à fonctionner comme prévu. Cela dit, il est toujours préférable d'éliminer les incohérences d'hydratation pendant le développement.
+
+#### Suppressing Hydration Mismatches <sup class="vt-badge" data-text="3.5+" /> {#suppressing-hydration-mismatches}
+
+In Vue 3.5+, it is possible to selectively suppress inevitable hydration mismatches by using the [`data-allow-mismatch`](/api/ssr#data-allow-mismatch) attribute.
 
 ### Directives personnalisées {#custom-directives}
 

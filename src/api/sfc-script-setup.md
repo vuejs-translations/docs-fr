@@ -209,12 +209,48 @@ const emit = defineEmits<{
 
   Cette limitation a été résolue en 3.3. La dernière version de Vue prend en charge le référencement importé et un ensemble limité de types complexes dans le paramètre de type. Cependant, étant donné que la conversion de type à l'exécution est toujours basée sur AST, certains types complexes qui nécessitent une analyse de type réelle, par exemple les types conditionnels ne sont pas pris en charge. Vous pouvez utiliser des types conditionnels pour le type d'une prop, mais pas pour l'ensemble de l'objet props.
 
-### Valeurs par défaut des props lors de l'utilisation de la déclaration de type {#default-props-values-when-using-type-declaration}
+### Destructuration réactive des props <sup class="vt-badge" data-text="3.5+" /> {#reactive-props-destructure}
 
-Un inconvénient de la déclaration de type `defineProps` est qu'elle n'a pas de moyen de fournir des valeurs par défaut pour les props. Pour résoudre ce problème, une macro de compilateur `withDefaults` est également fournie :
+À partir de la Vue 3.5, les variables destructurées retournées par `defineProps` sont reatives. Le compilateur de Vue ajoute automatiquement `props.` quand le code dans le même bloc `<script setup>` accède aux variables destructurées provenant de `defineProps` :
 
 ```ts
-export interface Props {
+const { foo } = defineProps(['foo'])
+
+watchEffect(() => {
+  // s'exécute une seule fois avant la version 3.5
+  // se ré-exécute quand la props "foo" change à partir de la version 3.5
+  console.log(foo)
+})
+```
+
+Le code ci-dessus est compilé comme suit :
+
+```js {5}
+const props = defineProps(['foo'])
+
+watchEffect(() => {
+  // `foo` transformé en `props.foo` par le compilateur
+  console.log(props.foo)
+})
+```
+
+De plus, vous pouvez utiliser la syntaxe native des valeurs par défaut de JavaScript pour déclarer des valeurs par défaut pour les accessoires. Ceci est particulièrement utile lorsque vous utilisez la déclaration de props basée sur le type :
+
+```ts
+interface Props {
+  msg?: string
+  labels?: string[]
+}
+
+const { msg = 'hello', labels = ['one', 'two'] } = defineProps<Props>()
+```
+
+### Default props values when using type declaration <sup class="vt-badge ts" /> {#default-props-values-when-using-type-declaration}
+
+Dans les versions 3.5 et supérieures, les valeurs par défaut peuvent être déclarées naturellement lors de l'utilisation de la destructuration réactive des props. Mais dans les versions 3.4 et inférieures, la destructuration réactive des props n'est pas activé par défaut. Afin de déclarer les valeurs par défaut des props avec la déclaration basée sur le type, la macro de compilation `withDefaults` est nécessaire :
+
+```ts
+interface Props {
   msg?: string
   labels?: string[]
 }
@@ -225,13 +261,15 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-Cela sera compilé avec les options "default" des props à l'exécution. De plus, l'assistant `withDefaults` fournit des vérifications de type pour les valeurs par défaut et s'assure que le type `props` renvoyé a les drapeaux facultatifs supprimés pour les propriétés qui ont des valeurs par défaut déclarées.
+Cela sera compilé avec les options `default` des props à l'exécution. De plus, l'assistant `withDefaults` fournit des vérifications de type pour les valeurs par défaut et s'assure que le type `props` renvoyé a les drapeaux facultatifs supprimés pour les propriétés qui ont des valeurs par défaut déclarées.
 
 :::info
-Il convient de noter que les valeurs par défaut des types de référence mutables (tels que les tableaux ou les objets) doivent être intégrées dans des fonctions afin d'éviter toute modification accidentelle et tout effet secondaire externe. Cela permet de s'assurer que chaque instance de composant reçoit sa propre copie de la valeur par défaut.
+Notez que les valeurs par défaut de référence mutables (comme les tableaux ou les objets) doivent être enveloppées dans des fonctions lors de l'utilisation de `withDefaults` afin d'éviter toute modification accidentelle et tout effet de bord externe. Cela permet de s'assurer que chaque instance de composant reçoit sa propre copie de la valeur par défaut. Ceci n'est **pas** nécessaire lors de l'utilisation de valeurs par défaut avec destructuration.
 :::
 
-## defineModel() <sup class="vt-badge" data-text="3.4+" /> {#definemodel}
+## defineModel() {#definemodel}
+
+- Disponible à partir de la version 3.4
 
 Cette macro peut être utilisée pour déclarer une prop bidirectionnelle qui peut être consommée via `v-model` à partir du composant parent. Des exemples d'utilisation sont également présentés dans le guide [v-model du composant](/guide/components/v-model).
 
@@ -341,7 +379,9 @@ defineExpose({
 
 Lorsqu'un parent accède à une instance de ce composant via des refs de template, l'instance récupérée sera de la forme `{ a: number, b: number }` (les refs sont automatiquement déballés comme pour les instances normales).
 
-## defineOptions() <sup class="vt-badge" data-text="3.3+" /> {#defineoptions}
+## defineOptions() {#defineoptions}
+
+- Only supported in 3.3+
 
 Cette macro peut être utilisée pour déclarer des options de composant directement dans `<script setup>` sans avoir à utiliser un bloc `<script>` séparé :
 
@@ -356,10 +396,11 @@ defineOptions({
 </script>
 ```
 
-- Uniquement pris en charge dans 3.3+.
 - Ceci est une macro. Les options seront hissées à la portée du module et ne pourront pas accéder aux variables locales du `<script setup>` qui ne sont pas des constantes littérales.
 
 ## defineSlots()<sup class="vt-badge ts"/> {#defineslots}
+
+- Uniquement pris en charge à partir de la version 3.3.
 
 Cette macro peut être utilisée pour fournir des indications de type aux IDE pour la vérification du nom de slot et du type des props.
 
@@ -374,8 +415,6 @@ const slots = defineSlots<{
 }>()
 </script>
 ```
-
-- Uniquement pris en charge dans 3.3+.
 
 ## `useSlots()` et `useAttrs()` {#useslots-useattrs}
 
@@ -398,7 +437,7 @@ const attrs = useAttrs()
 
 - Déclarer des options qui ne peuvent pas être exprimées dans `<script setup>`, par exemple `inheritAttrs` ou des options personnalisées activées par des plugins.
 - Déclarer des exportations nommées.
-- Exécuter des effets secondaires ou créer des objets qui ne doivent être exécutés qu'une fois.
+- Exécuter des effets de bord ou créer des objets qui ne doivent être exécutés qu'une fois.
 
 ```vue
 <script>
@@ -486,7 +525,6 @@ ref<InstanceType<typeof componentWithoutGenerics>>();
 
 ref<ComponentExposed<typeof genericComponent>>();
 ```
-
 
 ## Restrictions {#restrictions}
 

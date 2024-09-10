@@ -45,7 +45,7 @@ function update() {
 
 Ensuite, nous devons définir quelques termes :
 
-- La fonction `update()` produit un **effet secondaire**, ou **effet** pour faire court, car elle modifie l'état du programme.
+- La fonction `update()` produit un **effet de bord**, ou **effet** pour faire court, car elle modifie l'état du programme.
 
 - `A0` et `A1` sont considérées comme des **dépendances** de l'effet, puisque leurs valeurs sont utilisées pour le réaliser. On dit que l'effet est un **souscripteur** de ses dépendances.
 

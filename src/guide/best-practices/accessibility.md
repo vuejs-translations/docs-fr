@@ -167,8 +167,6 @@ Utilisez des labels pour décrire le but de chaque contrôle de formulaire ; e
 
 Si vous inspectez cet élément dans vos Outils de développement Chrome et que vous ouvrez l'onglet Accessibilité dans l'onglet Éléments, vous verrez comment le champ prend son nom du label :
 
-![Outils de développement Chrome montrant un nom de champs accessible via son label](./images/AccessibleLabelChromeDevTools.png)
-
 :::warning Attention :
 Vous pourriez avoir vu cette façon d'envelopper un champ de saisie par un label :
 
@@ -197,7 +195,7 @@ Vous pouvez aussi donner un nom accessible au champ avec [`aria-label`](https://
 />
 ```
 
-N'hésitez pas à inspecter cet élément dans les outils de développeur de Chrome pour voir comment le nom accessible a changé.
+N'hésitez pas à inspecter cet élément dans les outils de développeur de Chrome pour voir comment le nom accessible a changé :
 
 ![Outils de développement de Chrome montrant le nom accessible d'un champs via aria-label](./images/AccessibleARIAlabelDevTools.png)
 

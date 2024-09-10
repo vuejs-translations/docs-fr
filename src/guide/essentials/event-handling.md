@@ -116,7 +116,7 @@ methods: {
 
 </div>
 
-Une méthode gestionnaire reçoit automatiquement l'objet événement natif du DOM qui la déclenche - dans l'exemple ci-dessus, nous pouvons accéder à l'élément qui envoie l'événement via `event.target.tagName`.
+Une méthode gestionnaire reçoit automatiquement l'objet événement natif du DOM qui la déclenche - dans l'exemple ci-dessus, nous pouvons accéder à l'élément qui envoie l'événement via `event.target`.
 
 <div class="composition-api">
 

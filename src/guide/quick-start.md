@@ -329,7 +329,6 @@ Nous pouvons dire au navigateur où trouver l'import `vue` par l'usage de l'[Imp
 
 [CodePen Demo >](https://codepen.io/vuejs-examples/pen/wvQKQyM)
 
-
 </div>
 
 <div class="composition-api">

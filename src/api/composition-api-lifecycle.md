@@ -22,7 +22,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 
   - Son propre arbre du DOM a été créé et inséré dans le conteneur parent. Notez que cela garantit que seulement l'arbre du DOM du composant est déjà placé dans le document, même si le conteneur racine de l'application y est.
 
-  Ce hook est généralement utilisé pour effectuer des effets secondaires qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr).
+  Ce hook est généralement utilisé pour effectuer des effets de bord qui nécessitent un accès au DOM rendu du composant, ou pour limiter le code lié au DOM au client dans une [application rendue par le serveur](/guide/scaling-up/ssr).
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 
@@ -107,7 +107,7 @@ Enregistre une fonction de rappel qui sera appelée après le démontage du comp
 
   - Tous ses effets réactifs associés (effet de rendu et propriétés calculées / observateurs créés pendant `setup()`) ont été arrêtés.
 
-  Utilisez ce hook pour nettoyer manuellement les effets secondaires créés, tels que les minuteurs, les écouteurs d'événements du DOM ou les connexions au serveur.
+  Utilisez ce hook pour nettoyer manuellement les effets de bord créés, tels que les minuteurs, les écouteurs d'événements du DOM ou les connexions au serveur.
 
   **Ce hook n'est pas appelé pendant le rendu côté serveur.**
 

@@ -107,7 +107,9 @@ Injecte une valeur fournie par un composant ancêtre ou par l'application (via `
   - [Guide - Provide / Inject](/guide/components/provide-inject)
   - [Guide - Typer Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
-## hasInjectionContext() <sup class="vt-badge" data-text="3.3+" /> {#has-injection-context}
+## hasInjectionContext() {#has-injection-context}
+
+- Supporté à partir de la version 3.3
 
 Retourne vraie si [inject()](#inject) peut être utilisé sans avertissement sur le fait d'être appelée au mauvais endroit (par exemple en dehors de `setup()`). Cette méthode est conçue pour être utilisée par les bibliothèques qui veulent utiliser `inject()` en interne sans déclencher d'avertissement pour l'utilisateur final.
 

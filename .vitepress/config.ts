@@ -386,6 +386,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {
           text: 'Injection de dépendances',
           link: '/api/composition-api-dependency-injection'
+        },
+        {
+          text: 'Helpers',
+          link: '/api/composition-api-helpers'
         }
       ]
     },
@@ -438,6 +442,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'API avancées',
       items: [
+        { text: 'Web Components', link: '/api/custom-elements' },
         { text: 'Fonctions de rendu', link: '/api/render-function' },
         { text: 'Rendu côté serveur', link: '/api/ssr' },
         {
@@ -769,7 +774,10 @@ export default defineConfigWithTheme<ThemeConfig>({
     algolia: {
       indexName: 'fr-vuejs',
       appId: 'HH5AXEOM9U',
-      apiKey: 'b33b47187a1497e2a75b99d8a4deee38'
+      apiKey: 'b33b47187a1497e2a75b99d8a4deee38',
+      searchParameters: {
+        facetFilters: ['version:v3']
+      }
     },
 
     carbonAds: {
@@ -825,7 +833,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     },
     build: {
-      minify: 'terser',
       chunkSizeWarningLimit: Infinity
     },
     json: {

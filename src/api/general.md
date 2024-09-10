@@ -129,7 +129,9 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
   type FooInstance = InstanceType<typeof Foo>
   ```
 
-  ### Signature de fonction <sup class="vt-badge" data-text="3.3+" /> {#function-signature}
+  ### Signature de fonction {#function-signature}
+  
+  - Supporté à partir de la version 3.3
 
   `defineComponent()` possède également une signature alternative destinée à être utilisée avec la Composition API et les [fonctions de rendu ou du JSX](/guide/extras/render-function.html).
 
@@ -189,7 +191,7 @@ Un utilitaire de type pour définir un composant Vue avec l'inférence de type.
   export default /*#__PURE__*/ defineComponent(/* ... */)
   ```
 
-  Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet secondaire sans avoir besoin d'annotations manuelles.
+  Notez que cela n'est pas nécessaire si vous utilisez Vite, car Rollup (le bundler de production sous-jacent utilisé par Vite) est suffisamment intelligent pour déterminer que `defineComponent()` est en fait exempte d'effet de bord sans avoir besoin d'annotations manuelles.
 
 - **Voir aussi** [Guide - Utiliser Vue avec TypeScript](/guide/typescript/overview#general-usage-notes)
 
@@ -222,47 +224,4 @@ Définit un composant asynchrone qui est chargé de manière paresseuse uniqueme
   }
   ```
 
-- **Voir aussi** [Guide - Composants asynchrones](/guide/components/async)
-
-## defineCustomElement() {#definecustomelement}
-
-Cette méthode accepte le même argument que [`defineComponent`](#definecomponent), mais renvoie à la place un constructeur natif de la classe [Custom Element](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements).
-
-- **Type :**
-
-  ```ts
-  function defineCustomElement(
-    component:
-      | (ComponentOptions & { styles?: string[] })
-      | ComponentOptions['setup']
-  ): {
-    new (props?: object): HTMLElement
-  }
-  ```
-
-  > Le type est simplifié dans un souci de lisibilité.
-
-- **Détails**
-
-  En plus des options classiques du composant, `defineCustomElement()` supporte également une option spéciale `styles`, qui doit être un tableau de chaînes de caractères CSS en ligne, pour fournir le CSS qui doit être injecté dans la racine du shadow DOM de l'élément.
-
-  La valeur retournée est un constructeur d'élément personnalisé qui peut être enregistré en utilisant [`customElements.define()`](https://developer.mozilla.org/fr/docs/Web/API/CustomElementRegistry/define).
-
-- **Exemple**
-
-  ```js
-  import { defineCustomElement } from 'vue'
-
-  const MyVueElement = defineCustomElement({
-    /* options du composant */
-  })
-
-  // Enregistrement de l'élément personnalisé.
-  customElements.define('my-vue-element', MyVueElement)
-  ```
-
-- **Voir aussi**
-
-  - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components#building-custom-elements-with-vue)
-
-  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components#sfc-as-custom-element) lorsqu'elle est utilisée avec des composants monofichiers.
+- **See also** [Guide - Async Components](/guide/components/async)

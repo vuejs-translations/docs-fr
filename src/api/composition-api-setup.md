@@ -112,7 +112,7 @@ export default {
 }
 ```
 
-`attrs` et `slots` sont des objets d'état qui sont toujours mis à jour lorsque le composant lui-même est mis à jour. Cela signifie que vous devriez éviter de les déstructurer et toujours faire référence aux propriétés via `attrs.x` ou `slots.x`. Notez également que, contrairement aux `props`, les propriétés d'`attrs` et de `slots` **ne sont pas réactives**. Si vous avez l'intention d'appliquer des effets secondaires en fonction des changements apportés à `attrs` ou `slots`, vous devriez le faire à l'intérieur du hook de cycle de vie `onBeforeUpdate`.
+`attrs` et `slots` sont des objets d'état qui sont toujours mis à jour lorsque le composant lui-même est mis à jour. Cela signifie que vous devriez éviter de les déstructurer et toujours faire référence aux propriétés via `attrs.x` ou `slots.x`. Notez également que, contrairement aux `props`, les propriétés d'`attrs` et de `slots` **ne sont pas réactives**. Si vous avez l'intention d'appliquer des effets de bord en fonction des changements apportés à `attrs` ou `slots`, vous devriez le faire à l'intérieur du hook de cycle de vie `onBeforeUpdate`.
 
 ### Exposer des propriétés publiques {#exposing-public-properties}
 

@@ -66,6 +66,8 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 ### Raccourci de même nom <sup class="vt-badge" data-text="3.4+" /> {#same-name-shorthand}
 
+- Supporté à partir de la version 3.4
+
 Si l'attribut a le même nom que la valeur liée, la syntaxe peut être raccourci pour omettre la valeur de l'attribut :
 
 ```vue-html

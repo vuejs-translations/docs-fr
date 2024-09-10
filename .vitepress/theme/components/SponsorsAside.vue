@@ -12,9 +12,9 @@ const { frontmatter } = useData()
   >
     <img width="22" height="22" src="/viteconf.svg" />
     <span>
-      <p class="extra-info">Construire ensemble</p>
-      <p class="heading">ViteConf 24 - 3 Octobre</p>
-      <p class="extra-info">Obtenez votre billet gratuit !</p>
+      <p class="extra-info">Building Together</p>
+      <p class="heading">ViteConf 24 - Oct 3</p>
+      <p class="extra-info">Get your free ticket!</p>
     </span>
   </a>
   <div v-if="frontmatter.sponsors !== false">

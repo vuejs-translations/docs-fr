@@ -130,7 +130,7 @@ const publishedBooksMessage = computed(() => {
 
 [Essayer en ligne](https://play.vuejs.org/#eNp1kE9Lw0AQxb/KI5dtoTainkoaaREUoZ5EEONhm0ybYLO77J9CCfnuzta0vdjbzr6Zeb95XbIwZroPlMySzJW2MR6OfDB5oZrWaOvRwZIsfbOnCUrdmuCpQo+N1S0ET4pCFarUynnI4GttMT9PjLpCAUq2NIN41bXCkyYxiZ9rrX/cDF/xDYiPQLjDDRbVXqqSHZ5DUw2tg3zP8lK6pvxHe2DtvSasDs6TPTAT8F2ofhzh0hTygm5pc+I1Yb1rXE3VMsKsyDm5JcY/9Y5GY8xzHI+wnIpVw4nTI/10R2rra+S4xSPEJzkBvvNNs310ztK/RDlLLjy1Zic9cQVkJn+R7gIwxJGlMXiWnZEq77orhH3Pq2NH9DjvTfpfSBSbmA==)
 
-Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La fonction `computed()` prend une fonction accesseur en argument, et la valeur retournée est une **ref calculée**. De la même manière que pour les refs classiques, vous pouvez accéder au résultat calculé grâce à `publishedBooksMessage.value`. Les refs calculées sont automatiquement déballées dans les templates de manière à ce que vous puissiez y faire référence sans `.value` dans les expressions au sein du template.
+Ici nous avons déclaré une propriété calculée `publishedBooksMessage`. La fonction `computed()` prend une [fonction accesseur](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#description) en argument, et la valeur retournée est une **ref calculée**. De la même manière que pour les refs classiques, vous pouvez accéder au résultat calculé grâce à `publishedBooksMessage.value`. Les refs calculées sont automatiquement déballées dans les templates de manière à ce que vous puissiez y faire référence sans `.value` dans les expressions au sein du template.
 
 Une propriété calculée traque automatiquement ses dépendances réactives. Vue sait que le calcul de `publishedBooksMessage` dépend de `author.books`, donc il va mettre à jour les liaisons dépendantes de `publishedBooksMessage` lorsque `author.books` change.
 
@@ -261,9 +261,9 @@ Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutate
 
 ## Bonnes Pratiques {#best-practices}
 
-### Les accesseurs ne doivent pas entraîner d'effets secondaires {#getters-should-be-side-effect-free}
+### Les accesseurs ne doivent pas entraîner d'effets de bord {#getters-should-be-side-effect-free}
 
-Il est important de se rappeler que les fonctions accesseurs de propriétés calculées doivent seulement réaliser des opérations pures et ne pas entraîner d'effets secondaires. Par exemple, **ne faites pas de requêtes asynchrones ou ne mutez pas le DOM à l'intérieur d'un accesseur calculé !** Pensez à une propriété calculée comme une description déclarative de la manière d'obtenir une valeur selon d'autres valeurs - sa seule responsabilité devrait être de calculer et de retourner cette valeur. Plus loin dans le guide nous traiterons de la manière d'effectuer des effets secondaires en réaction à des changements de l'état avec les [observateurs](./watchers).
+Il est important de se rappeler que les fonctions accesseurs de propriétés calculées doivent seulement réaliser des opérations pures et ne pas entraîner d'effets de bord. Par exemple, **ne faites pas de requêtes asynchrones ou ne mutez pas le DOM à l'intérieur d'un accesseur calculé !** Pensez à une propriété calculée comme une description déclarative de la manière d'obtenir une valeur selon d'autres valeurs - sa seule responsabilité devrait être de calculer et de retourner cette valeur. Plus loin dans le guide nous traiterons de la manière d'effectuer des effets de bord en réaction à des changements de l'état avec les [observateurs](./watchers).
 
 ### Évitez de modifier les valeurs calculées {#avoid-mutating-computed-value}
 

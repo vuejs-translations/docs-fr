@@ -286,6 +286,12 @@ Rend le contenu de son slot à une autre partie du DOM.
      * Peut être changé de manière dynamique.
      */
     disabled?: boolean
+    /**
+     * When `true`, the Teleport will defer until other
+     * parts of the application have been mounted before
+     * resolving its target. (3.5+)
+     */
+    defer?: boolean
   }
   ```
 
@@ -307,6 +313,15 @@ Rend le contenu de son slot à une autre partie du DOM.
   </Teleport>
   ```
 
+  Différer la résolution du conteneur cible <sup class="vt-badge" data-text="3.5+" /> :
+
+  ```vue-html
+  <Teleport defer to="#late-div">...</Teleport>
+
+  <!-- plus loins dans le template -->
+  <div id="late-div"></div>
+  ```
+
 - **Voir aussi** [Guide - Teleport](/guide/built-ins/teleport)
 
 ## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
@@ -317,7 +332,7 @@ Utilisé pour orchestrer des dépendances asynchrones imbriquées dans un arbre 
 
   ```ts
   interface SuspenseProps {
-    timeout?: string | number,
+    timeout?: string | number
     suspensible?: boolean
   }
   ```

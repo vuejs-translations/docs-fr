@@ -259,7 +259,7 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 
 - **Raccourci :**
   - `:` ou `.` (lorsqu'on utilise le modificateur `.prop`)
-  - En omettant la valeur (lorsque l'attribut et la valeur liée portent le même nom) <sup class="vt-badge">3.4+</sup>
+  - En omettant la valeur (lorsque l'attribut et la valeur liée portent le même nom, requière 3.4+)
 
 - **Attendu :** `any (avec argument) | Object (sans argument)`
 
@@ -268,8 +268,8 @@ Lie dynamiquement un ou plusieurs attributs, ou une prop d'un composant à une e
 - **Modificateurs**
 
   - `.camel` - transforme le nom de l'attribut kebab-case en camelCase.
-  - `.prop` - force une liaison à être définie comme une propriété du DOM. <sup class="vt-badge">3.2+</sup>
-  - `.attr` - force une liaison à être définie comme un attribut du DOM. <sup class="vt-badge">3.2+</sup>
+  - `.prop` - force une liaison à être définie comme une propriété du DOM (3.2+).
+  - `.attr` - force une liaison à être définie comme un attribut du DOM (3.2+).
 
 - **Utilisation :**
 
@@ -468,7 +468,9 @@ Rend l'élément et le composant une seule fois, et ignore les mises à jour fut
   - [Syntaxe de la liaison bidirectionnelle - interpolations](/guide/essentials/template-syntax#text-interpolation)
   - [v-memo](#v-memo)
 
-## v-memo <sup class="vt-badge" data-text="3.2+" /> {#v-memo}
+## v-memo {#v-memo}
+
+- Supporté à partir de la version 3.2
 
 - **Attendu :** `any[]`
 

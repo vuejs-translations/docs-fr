@@ -108,16 +108,14 @@ Si vous recherchez une alternative plus légère pour une utilisation sans étap
 
 ## Outils de développement du navigateur {#browser-devtools}
 
-<VueSchoolLink href="https://vueschool.io/lessons/using-vue-dev-tools-with-vuejs-3" title="Leçon gratuite sur les outils de développement de Vue.js"/>
-
 L'extension du navigateur Vue devtools vous permet d'explorer l'arborescence des composants d'une application Vue, d'inspecter l'état des composants individuels, de suivre les événements de gestion de l'état et d'analyser les performances.
 
-![devtools screenshot](https://raw.githubusercontent.com/vuejs/devtools/main/media/screenshot-shadow.png)
+![devtools screenshot](./images/devtools.png)
 
 - [Documentation](https://devtools.vuejs.org/)
 - [Extension Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - [Addon Firefox](https://addons.mozilla.org/fr/firefox/addon/vue-js-devtools/)
-- [Extension Edge](https://microsoftedge.microsoft.com/addons/detail/vuejs-devtools/olofadcdnkkjdfgjcmjaadnlehnnihnl)
+- [Plugin Vite](https://devtools.vuejs.org/guide/vite-plugin)
 - [Application autonome Electron](https://devtools.vuejs.org/guide/installation.html#standalone)
 
 ## TypeScript {#typescript}

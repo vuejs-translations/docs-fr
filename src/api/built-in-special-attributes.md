@@ -91,7 +91,9 @@ Désigne une [ref du template](/guide/essentials/template-refs).
 
 - **Attendu :** `string | Component`
 
-- **Utilisation sur des éléments natifs** <sup class="vt-badge">3.1+</sup>
+- **Utilisation sur des éléments natifs**
+ 
+  - Supporté à partir de la version 3.1
 
   Lorsque l'attribut "is" est utilisé sur un élément HTML natif, il sera interprété comme un [élément natif personnalisé](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), qui est une fonctionnalité native de la plate-forme Web.
 

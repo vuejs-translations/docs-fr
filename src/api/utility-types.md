@@ -34,15 +34,15 @@ Utilisé pour annoter une prop avec des types plus avancés lors de l'utilisatio
 
 ## MaybeRef\<T> {#mayberef}
 
-Alias pour `T | Ref<T>`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
+- Supporté à partir de la version 3.3
 
-- Pris en charge uniquement dans la version 3.3+.
+Alias pour `T | Ref<T>`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
 
 ## MaybeRefOrGetter\<T> {#maybereforgetter}
 
-Alias pour `T | Ref<T> | (() => T)`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
+- Supporté à partir de la version 3.3
 
-- Pris en charge uniquement dans la version 3.3+.
+Alias pour `T | Ref<T> | (() => T)`. Utile pour annoter les arguments des [Composables](/guide/reusability/composables.html).
 
 ## ExtractPropTypes\<T> {#extractproptypes}
 
@@ -77,9 +77,9 @@ Pour extraire les props destinées à être utilisées publiquement, c'est-à-di
 
 ## ExtractPublicPropTypes\<T> {#extractpublicproptypes}
 
-Extrait les types de props à partir d'un objet d'options de props. Les types extraits sont destinés à un usage public, c'est-à-dire les props que le parent est autorisé à transmettre.
+- Supporté à partir de la version 3.3
 
-- Supporté uniquement dans la version 3.3+.
+Extrait les types de props à partir d'un objet d'options de props. Les types extraits sont destinés à un usage public, c'est-à-dire les props que le parent est autorisé à transmettre.
 
 - **Exemple**
 

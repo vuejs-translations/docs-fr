@@ -26,13 +26,15 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
   Activer / désactiver le support des outils de développement dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le *bundle*, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
-## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` <sup class="vt-badge" data-text="3.4+" /> {#VUE_PROD_HYDRATION_MISMATCH_DETAILS}
+## `__VUE_PROD_HYDRATION_MISMATCH_DETAILS__` {#VUE_PROD_HYDRATION_MISMATCH_DETAILS}
 
 - **Par défaut :** `false`
 
   Activer / désactiver les avertissements détaillés pour les erreurs d'hydratation dans les versions de production. Cela aura pour conséquence d'inclure plus de code dans le bundle, il est donc recommandé de ne l'activer qu'à des fins de débogage.
 
 ## Guides de configuration {#configuration-guides}
+
+- Disponible à partir de la version 3.4
 
 ### Vite {#vite}
 

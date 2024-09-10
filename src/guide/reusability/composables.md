@@ -59,7 +59,7 @@ export function useMouse() {
   }
 
   // un composable peut également s'accrocher au cycle de vie de son composant
-  // propriétaire pour configurer et démonter les effets secondaires.
+  // propriétaire pour configurer et démonter les effets de bord.
   onMounted(() => window.addEventListener('mousemove', update))
   onUnmounted(() => window.removeEventListener('mousemove', update))
 
@@ -199,7 +199,7 @@ const { data, error } = useFetch(url)
 url.value = '/new-url'
 ```
 
-Ou, accepter une fonction accesseur :
+Ou, accepter une fonction [accesseur](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#description) :
 
 ```js
 // nouveau rendu lorsque props.id change

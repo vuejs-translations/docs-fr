@@ -149,7 +149,7 @@ Pour que vos utilisateurs soient totalement à l'abri du détournement de clic, 
 
 ### Injection JavaScript {#javascript-injection}
 
-Nous déconseillons fortement de rendre un élément `<script>` avec Vue, car les templates et les fonctions de rendu ne devraient jamais avoir d'effets secondaires. Cependant, ce n'est pas la seule façon d'inclure des chaînes de caractères qui peuvent être évaluées comme du JavaScript au moment de l'exécution.
+Nous déconseillons fortement de rendre un élément `<script>` avec Vue, car les templates et les fonctions de rendu ne devraient jamais avoir d'effets de bord. Cependant, ce n'est pas la seule façon d'inclure des chaînes de caractères qui peuvent être évaluées comme du JavaScript au moment de l'exécution.
 
 Chaque élément HTML possède des attributs dont les valeurs acceptent des chaînes de caractères JavaScript, comme `onclick`, `onfocus` et `onmouseenter`. Lier du JavaScript fourni par l'utilisateur à l'un de ces attributs d'événement constitue un risque potentiel pour la sécurité et doit donc être évité.
 

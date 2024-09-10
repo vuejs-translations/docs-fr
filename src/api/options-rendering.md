@@ -86,7 +86,9 @@ Configure les options du compilateur d'exécution pour le template du composant.
 
 ## slots<sup class="vt-badge ts"/> {#slots}
 
-Une option pour aider à l'inférence de type lors de l'utilisation de slots dans les fonctions de rendu. Prise en charge uniquement dans la version 3.3+.
+- Prise en charge à partir de la version 3.3+
+
+Une option pour aider à l'inférence de type lors de l'utilisation de slots dans les fonctions de rendu. 
 
 - **Détails**
 

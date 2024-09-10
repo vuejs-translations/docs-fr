@@ -134,7 +134,9 @@ Peut être utilisée pour créer une ref pour une propriété sur un objet sourc
 
   En utilisant la signature des propriétés d'objets, `toRef()` retournera une ref utilisable même si la propriété source n'existe pas actuellement. Cela permet de travailler avec des propriétés optionnelles qui ne seraient pas prises en compte par [`toRefs`](#torefs).
 
-## toValue() <sup class="vt-badge" data-text="3.3+" /> {#tovalue}
+## toValue() {#tovalue}
+
+- Only supported in 3.3+
 
 Normalise les valeurs / refs / accesseurs en valeurs. Cela est similaire à [unref()](#unref), sauf que cela normalise aussi les accesseurs. Si l'argument est un accesseur, il sera invoqué et sa valeur de retour sera renvoyée.
 
