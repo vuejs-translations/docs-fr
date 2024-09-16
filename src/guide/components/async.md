@@ -119,7 +119,7 @@ In Vue 3.5+, async components can control when they are hydrated by providing a 
 
 - The design is intentionally low-level for flexibility. Compiler syntax sugar can potentially be built on top of this in the future either in core or in higher level solutions (e.g. Nuxt).
 
-### Hydrate on Idle
+### Hydrate on Idle {#hydrate-on-idle}
 
 Hydrates via `requestIdleCallback`:
 
@@ -132,7 +132,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydrate on Visible
+### Hydrate on Visible {#hydrate-on-visible}
 
 Hydrate when element(s) become visible via `IntersectionObserver`.
 
@@ -151,7 +151,7 @@ Can optionally pass in an options object value for the observer:
 hydrateOnVisible({ rootMargin: '100px' })
 ```
 
-### Hydrate on Media Query
+### Hydrate on Media Query {#hydrate-on-media-query}
 
 Hydrates when the specified media query matches.
 
@@ -164,7 +164,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydrate on Interaction
+### Hydrate on Interaction {#hydrate-on-interaction}
 
 Hydrates when specified event(s) are triggered on the component element(s). The event that triggered the hydration will also be replayed once hydration is complete.
 
@@ -183,7 +183,7 @@ Can also be a list of multiple event types:
 hydrateOnInteraction(['wheel', 'mouseover'])
 ```
 
-### Custom Strategy
+### Custom Strategy {#custom-strategy}
 
 ```ts
 import { defineAsyncComponent, type HydrationStrategy } from 'vue'
