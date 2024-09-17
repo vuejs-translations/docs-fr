@@ -285,7 +285,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
 ## app.runWithContext() {#app-runwithcontext}
 
-- Uniquement supporté dans la version 3.3+
+- Supporté à partir de la version 3.3
 
 Exécute une fonction de rappel avec l'application courante comme contexte injecté.
 
@@ -627,7 +627,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
 
 ## app.config.idPrefix <sup class="vt-badge" data-text="3.5+" /> {#app-config-idprefix}
 
-Configurer un préfixe pour tous les identifiants générés via [useId()](/api/general#useid) dans cette application.
+Configurer un préfixe pour tous les identifiants générés via [useId()](/api/general#useid) dans l'application.
 
 - **Type:** `string`
 
