@@ -442,7 +442,7 @@ Si vous voulez que l'entrée de l'utilisateur soit automatiquement typée comme 
 <input v-model.number="age" />
 ```
 
-Si la valeur ne peut pas être analysée avec `parseFloat()`, alors la valeur originale est utilisée à la place.
+Si la valeur ne peut pas être analysée avec `parseFloat()`, alors la valeur originale (chaîne) est utilisée à la place. En particulier, si l'entrée est vide (par exemple après que l'utilisateur ait effacé le champ de saisie), une chaîne vide est renvoyée. Ce comportement diffère de la [propriété DOM `valueAsNumber`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#valueasnumber).
 
 Le modificateur `number` est appliqué automatiquement si l'entrée possède `type="number"`.
 
