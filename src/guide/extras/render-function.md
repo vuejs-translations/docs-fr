@@ -26,7 +26,7 @@ const vnode = h(
 )
 ```
 
-`h()` est l'abréviation de **hyperscript** - ce qui signifie "JavaScript produisant du HTML (langage de balises pour l'hypertexte)". Ce nom est hérité de conventions partagées par de nombreuses implémentations du DOM virtuel. Un nom plus descriptif serait `createVnode()`, mais un nom plus court aide lorsque vous devez appeler cette fonction plusieurs fois dans une fonction de rendu.
+`h()` est l'abréviation de **hyperscript** - ce qui signifie "JavaScript produisant du HTML (langage de balises pour l'hypertexte)". Ce nom est hérité de conventions partagées par de nombreuses implémentations du DOM virtuel. Un nom plus descriptif serait `createVNode()`, mais un nom plus court aide lorsque vous devez appeler cette fonction plusieurs fois dans une fonction de rendu.
 
 La fonction `h()` est conçue pour être très flexible :
 
@@ -116,11 +116,7 @@ import { h } from 'vue'
 export default {
   setup() {
     // utiliser un tableau pour retourner plusieurs nœuds racines
-    return () => [
-      h('div'),
-      h('div'),
-      h('div')
-    ]
+    return () => [h('div'), h('div'), h('div')]
   }
 }
 ```
@@ -167,11 +163,7 @@ import { h } from 'vue'
 export default {
   render() {
     // utiliser un tableau pour retourner plusieurs nœuds racines
-    return [
-      h('div'),
-      h('div'),
-      h('div')
-    ]
+    return [h('div'), h('div'), h('div')]
   }
 }
 ```
@@ -585,9 +577,10 @@ Pour rendre un slot scopé dans le composant parent, un slot est passé au compo
 // parent component
 export default {
   setup() {
-    return () => h(MyComp, null, {
-      default: ({ text }) => h('p', text)
-    })
+    return () =>
+      h(MyComp, null, {
+        default: ({ text }) => h('p', text)
+      })
   }
 }
 ```
@@ -607,9 +600,11 @@ export default {
 Équivalent JSX :
 
 ```jsx
-<MyComponent>{{
-  default: ({ text }) => <p>{ text }</p>
-}}</MyComponent>
+<MyComponent>
+  {{
+    default: ({ text }) => <p>{text}</p>
+  }}
+</MyComponent>
 ```
 
 ### Composants natifs {#built-in-components}
@@ -622,8 +617,8 @@ export default {
 import { h, KeepAlive, Teleport, Transition, TransitionGroup } from 'vue'
 
 export default {
-  setup () {
-    return () => h(Transition, { mode: 'out-in' }, /* ... */)
+  setup() {
+    return () => h(Transition, { mode: 'out-in' } /* ... */)
   }
 }
 ```
@@ -635,8 +630,8 @@ export default {
 import { h, KeepAlive, Teleport, Transition, TransitionGroup } from 'vue'
 
 export default {
-  render () {
-    return h(Transition, { mode: 'out-in' }, /* ... */)
+  render() {
+    return h(Transition, { mode: 'out-in' } /* ... */)
   }
 }
 ```
@@ -673,7 +668,8 @@ export default {
   render() {
     return h(SomeComponent, {
       modelValue: this.modelValue,
-      'onUpdate:modelValue': (value) => this.$emit('update:modelValue', value)
+      'onUpdate:modelValue': (value) =>
+        this.$emit('update:modelValue', value)
     })
   }
 }
@@ -690,8 +686,12 @@ import { h, withDirectives } from 'vue'
 
 // une directive personnalisée
 const pin = {
-  mounted() { /* ... */ },
-  updated() { /* ... */ }
+  mounted() {
+    /* ... */
+  },
+  updated() {
+    /* ... */
+  }
 }
 
 // <div v-pin:top.animate="200"></div>
@@ -807,7 +807,7 @@ function FComponent(
 ) {
   return (
     <button onClick={() => context.emit('sendMessage', props.message)}>
-        {props.message} {' '}
+      {props.message}{' '}
     </button>
   )
 }
