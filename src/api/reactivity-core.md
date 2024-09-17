@@ -278,19 +278,6 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   // -> affiche 1
   ```
 
-  Nettoyage des effets de bord :
-
-  ```js
-  watchEffect(async (onCleanup) => {
-    const { response, cancel } = doAsyncWork(id.value)
-    // `cancel` sera appelé si `id` change
-    // de manière à ce que la demande précédente soit annulée
-    // si elle n'est pas encore terminée
-    onCleanup(cancel)
-    data.value = await response
-  })
-  ```
-
   Arrêter l'observateur :
 
   ```js
@@ -303,7 +290,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   Mettre en pause / reprendre un observateur : <sup class="vt-badge" data-text="3.5+" />
 
   ```js
-  const { stop, pause, resume } = watchEffect(() => {})
+  const { stop, pause, resume } = watch(() => {})
 
   // mettre en pause temporairement l'observateur
   pause()
@@ -320,7 +307,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   ```js
   watchEffect(async (onCleanup) => {
     const { response, cancel } = doAsyncWork(newId)
-    // `cancel` sera appelé si `id` change, 
+    // `cancel` sera appelé si `id` change,
     // annulant la requête précédente si elle n'a pas déjà été complétée.
     onCleanup(cancel)
     data.value = await response
@@ -334,7 +321,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
 
   watchEffect(async () => {
     const { response, cancel } = doAsyncWork(newId)
-    // `cancel` sera appelé si `id` change, 
+    // `cancel` sera appelé si `id` change,
     // annulant la requête précédente si elle n'a pas déjà été complétée.
     onWatcherCleanup(cancel)
     data.value = await response
@@ -504,66 +491,65 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
 
 `watch()` a les mêmes options de timing et de débogage que [`watchEffect()`](#watcheffect) :
 
-  ```js
-  watch(source, callback, {
-    flush: 'post',
-    onTrack(e) {
-      debugger
-    },
-    onTrigger(e) {
-      debugger
-    }
-  })
-  ```
+```js
+watch(source, callback, {
+  flush: 'post',
+  onTrack(e) {
+    debugger
+  },
+  onTrigger(e) {
+    debugger
+  }
+})
+```
 
-  Arrêter l'observateur :
+Arrêter l'observateur :
 
-  ```js
-  const stop = watch(source, callback)
+```js
+const stop = watch(source, callback)
 
-  // lorsqu'on n'a plus besoin de l'observateur :
-  stop()
-  ```
+// lorsqu'on n'a plus besoin de l'observateur :
+stop()
+```
 
-  
-  Mettre en pause / reprendre un observateur : <sup class="vt-badge" data-text="3.5+" />
+Mettre en pause / reprendre un observateur : <sup class="vt-badge" data-text="3.5+" />
 
-  ```js
-  const { stop, pause, resume } = watchEffect(() => {})
+```js
+const { stop, pause, resume } = watchEffect(() => {})
 
-  // mettre en pause temporairement l'observateur
-  pause()
+// mettre en pause temporairement l'observateur
+pause()
 
-  // reprendre plus tard
-  resume()
+// reprendre plus tard
+resume()
 
-  // arrêter
-  stop()
-  ```
-  
-  Nettoyage des effets de bord :
+// arrêter
+stop()
+```
 
-  ```js
-  watch(id, async (newId, oldId, onCleanup) => {
-    const { response, cancel } = doAsyncWork(newId)
-    // `cancel` sera appelée si `id` change, annulant
-    // la requête précédente si elle n'est pas terminée
-    onCleanup(cancel)
-    data.value = await response
-  })
-  ```
+Nettoyage des effets de bord :
 
-  Nettoyage des effets de bord à partir de la version 3.5 :
+```js
+watch(id, async (newId, oldId, onCleanup) => {
+  const { response, cancel } = doAsyncWork(newId)
+  // `cancel` sera appelée si `id` change, annulant
+  // la requête précédente si elle n'est pas terminée
+  onCleanup(cancel)
+  data.value = await response
+})
+```
 
-  ```js
-  import { onWatcherCleanup } from 'vue'
+Nettoyage des effets de bord à partir de la version 3.5 :
 
-  watch(id, async (newId) => {
-    const { response, cancel } = doAsyncWork(newId)
-    onWatcherCleanup(cancel)
-    data.value = await response
-  })
-  ```
+```js
+import { onWatcherCleanup } from 'vue'
+
+watch(id, async (newId) => {
+  const { response, cancel } = doAsyncWork(newId)
+  onWatcherCleanup(cancel)
+  data.value = await response
+})
+```
 
 - **Voir aussi**
 
