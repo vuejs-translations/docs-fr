@@ -627,7 +627,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
 
 ## app.config.idPrefix <sup class="vt-badge" data-text="3.5+" /> {#app-config-idprefix}
 
-Configure a prefix for all IDs generated via [useId()](/api/general#useid) inside this application.
+Configurer un préfixe pour tous les identifiants générés via [useId()](/api/general#useid) dans cette application.
 
 - **Type:** `string`
 
