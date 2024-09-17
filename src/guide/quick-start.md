@@ -31,34 +31,37 @@ Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'ins
 <VTCodeGroup>
   <VTCodeGroupTab label="npm">
 
-  ```sh
-  $ npm create vue@latest
-  ```
+```sh
+$ npm create vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="pnpm">
 
-  ```sh
-  $ pnpm create vue@latest
-  ```
+```sh
+$ pnpm create vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="yarn">
 
-  ```sh
-  # Avec Yarn Moderne (v2+)
-  $ yarn create vue@latest
+```sh
+# For Yarn (v1+)
+$ yarn create vue
 
-  # Avec Yarn ^v4.11
-  $ yarn dlx create-vue@latest
-  ```
+# Avec Yarn Moderne (v2+)
+$ yarn create vue@latest
+
+# Avec Yarn ^v4.11
+$ yarn dlx create-vue@latest
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="bun">
 
-  ```sh
-  $ bun create vue@latest
-  ```
+```sh
+$ bun create vue@latest
+```
 
   </VTCodeGroupTab>
 </VTCodeGroup>
@@ -84,38 +87,38 @@ Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant su
 <VTCodeGroup>
   <VTCodeGroupTab label="npm">
 
-  ```sh-vue
-  $ cd {{'<votre-nouveau-projet>'}}
-  $ npm install
-  $ npm run dev
-  ```
+```sh-vue
+$ cd {{'<votre-nouveau-projet>'}}
+$ npm install
+$ npm run dev
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="pnpm">
 
-  ```sh-vue
-  $ cd {{'<votre-nouveau-projet>'}}
-  $ pnpm install
-  $ pnpm run dev
-  ```
+```sh-vue
+$ cd {{'<votre-nouveau-projet>'}}
+$ pnpm install
+$ pnpm run dev
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="yarn">
 
-  ```sh-vue
-  $ cd {{'<votre-nouveau-projet>'}}
-  $ yarn
-  $ yarn dev
-  ```
+```sh-vue
+$ cd {{'<votre-nouveau-projet>'}}
+$ yarn
+$ yarn dev
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="bun">
 
-  ```sh-vue
-  $ cd {{'<votre-nouveau-projet>'}}
-  $ bun install
-  $ bun run dev
-  ```
+```sh-vue
+$ cd {{'<votre-nouveau-projet>'}}
+$ bun install
+$ bun run dev
+```
 
   </VTCodeGroupTab>
 </VTCodeGroup>
@@ -132,30 +135,30 @@ Dès que vous êtes prêts à livrer votre application en production, exécutez 
 <VTCodeGroup>
   <VTCodeGroupTab label="npm">
 
-  ```sh
-  $ npm run build
-  ```
+```sh
+$ npm run build
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="pnpm">
 
-  ```sh
-  $ pnpm run build
-  ```
+```sh
+$ pnpm run build
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="yarn">
 
-  ```sh
-  $ yarn build
-  ```
+```sh
+$ yarn build
+```
 
   </VTCodeGroupTab>
   <VTCodeGroupTab label="bun">
 
-  ```sh
-  $ bun run build
-  ```
+```sh
+$ bun run build
+```
 
   </VTCodeGroupTab>
 </VTCodeGroup>
