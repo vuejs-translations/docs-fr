@@ -92,7 +92,7 @@ Démonte une instance d'application montée, déclenchant les hooks de cycle de 
 
 ## app.onUnmount() <sup class="vt-badge" data-text="3.5+" /> {#app-onunmount}
 
-Registers a callback to be called when the app is unmounted.
+Enregistre une fonction de rappel à exécuter lorsque l'application est démontée.
 
 - **Type**
 
