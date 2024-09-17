@@ -647,18 +647,18 @@ Configurer un préfixe pour tous les identifiants générés via [useId()](/api/
 
 ## app.config.throwUnhandledErrorInProduction <sup class="vt-badge" data-text="3.5+" /> {#app-config-throwunhandlederrorinproduction}
 
-Force unhandled errors to be thrown in production mode.
+Forcer l'envoi des erreurs non gérées en mode production.
 
 - **Type:** `boolean`
 
 - **Default:** `false`
 
-- **Details**
+- **Détails**
 
-  By default, errors thrown inside a Vue application but not explicitly handled have different behavior between development and production modes:
+  Par défaut, les erreurs lancées dans une application Vue mais non gérées explicitement ont un comportement différent entre les modes développement et production :
 
-  - In development, the error is thrown and can possibly crash the application. This is to make the error more prominent so that it can be noticed and fixed during development.
+  - Lors du développement, l'erreur est lancée et peut éventuellement faire planter l'application. Il s'agit de rendre l'erreur plus visible afin qu'elle puisse être remarquée et corrigée au cours du développement.
 
-  - In production, the error will only be logged to the console to minimize the impact to end users. However, this may prevent errors that only happen in production from being caught by error monitoring services.
+  - En production, l'erreur ne sera consignée que dans la console afin de minimiser l'impact sur les utilisateurs finaux. Toutefois, cela peut empêcher les erreurs qui ne se produisent qu'en production d'être détectées par les services de surveillance des erreurs.
 
-  By setting `app.config.throwUnhandledErrorInProduction` to `true`, unhandled errors will be thrown even in production mode.
+  En mettant `app.config.throwUnhandledErrorInProduction` à `true`, les erreurs non gérées seront lancées même en mode production.
