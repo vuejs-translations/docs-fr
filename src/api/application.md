@@ -92,7 +92,7 @@ Démonte une instance d'application montée, déclenchant les hooks de cycle de 
 
 ## app.onUnmount() <sup class="vt-badge" data-text="3.5+" /> {#app-onunmount}
 
-Registers a callback to be called when the app is unmounted.
+Enregistre une fonction de rappel à exécuter lorsque l'application est démontée.
 
 - **Type**
 
@@ -285,7 +285,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
 ## app.runWithContext() {#app-runwithcontext}
 
-- Only supported in 3.3+
+- Supporté à partir de la version 3.3
 
 Exécute une fonction de rappel avec l'application courante comme contexte injecté.
 
@@ -627,7 +627,7 @@ Objet permettant de définir des stratégies de fusion pour les options de compo
 
 ## app.config.idPrefix <sup class="vt-badge" data-text="3.5+" /> {#app-config-idprefix}
 
-Configure a prefix for all IDs generated via [useId()](/api/general#useid) inside this application.
+Configurer un préfixe pour tous les identifiants générés via [useId()](/api/general#useid) dans l'application.
 
 - **Type:** `string`
 
@@ -647,18 +647,18 @@ Configure a prefix for all IDs generated via [useId()](/api/general#useid) insid
 
 ## app.config.throwUnhandledErrorInProduction <sup class="vt-badge" data-text="3.5+" /> {#app-config-throwunhandlederrorinproduction}
 
-Force unhandled errors to be thrown in production mode.
+Forcer l'envoi des erreurs non gérées en mode production.
 
 - **Type:** `boolean`
 
 - **Default:** `false`
 
-- **Details**
+- **Détails**
 
-  By default, errors thrown inside a Vue application but not explicitly handled have different behavior between development and production modes:
+  Par défaut, les erreurs lancées dans une application Vue mais non gérées explicitement ont un comportement différent entre les modes développement et production :
 
-  - In development, the error is thrown and can possibly crash the application. This is to make the error more prominent so that it can be noticed and fixed during development.
+  - Lors du développement, l'erreur est lancée et peut éventuellement faire planter l'application. Il s'agit de rendre l'erreur plus visible afin qu'elle puisse être remarquée et corrigée au cours du développement.
 
-  - In production, the error will only be logged to the console to minimize the impact to end users. However, this may prevent errors that only happen in production from being caught by error monitoring services.
+  - En production, l'erreur ne sera consignée que dans la console afin de minimiser l'impact sur les utilisateurs finaux. Toutefois, cela peut empêcher les erreurs qui ne se produisent qu'en production d'être détectées par les services de surveillance des erreurs.
 
-  By setting `app.config.throwUnhandledErrorInProduction` to `true`, unhandled errors will be thrown even in production mode.
+  En mettant `app.config.throwUnhandledErrorInProduction` à `true`, les erreurs non gérées seront lancées même en mode production.
