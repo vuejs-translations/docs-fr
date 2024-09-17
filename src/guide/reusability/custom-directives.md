@@ -1,12 +1,23 @@
 # Directives personnalisées {#custom-directives}
 
 <script setup>
-const vFocus = {
+const vHighlight = {
   mounted: el => {
-    el.focus()
+    el.classList.add('is-highlight')
   }
 }
 </script>
+
+<style>
+.vt-doc p.is-highlight {
+  margin-bottom: 0;
+}
+
+.is-highlight {
+  background-color: yellow;
+  color: black;
+}
+</style>
 
 ## Introduction {#introduction}
 
@@ -20,12 +31,100 @@ Une directive personnalisée se définit comme un objet contenant des hooks du c
 
 ```vue
 <script setup>
-// active v-focus dans les templates
+// active v-highlight dans les templates
+const vHighlight = {
+  mounted: (el) => {
+    el.classList.add('is-highlight')
+  }
+}
+</script>
+
+<template>
+  <p v-highlight>Cette phrase est importante !</p>
+</template>
+```
+
+</div>
+
+<div class="options-api">
+
+```js
+const highlight = {
+  mounted: (el) => el.classList.add('is-highlight')
+}
+
+export default {
+  directives: {
+    // active v-highlight dans le template
+    highlight
+  }
+}
+```
+
+```vue-html
+<p v-highlight>Cette phrase est importante !</p>
+```
+
+</div>
+
+<div class="demo">
+  <p v-highlight>Cette phrase est importante !</p>
+</div>
+
+<div class="composition-api">
+
+Dans `<script setup>`, toute variable camelCase qui commence par le préfixe `v` peut être utilisée comme une directive personnalisée. Dans l'exemple ci-dessus, `vHighlight` peut être utilisé dans le template via `v-highlight`.
+
+Si vous n'utilisez pas `<script setup>`, les directives personnalisées peuvent être enregistrées grâce à l'option `directives` :
+
+```js
+export default {
+  setup() {
+    /*...*/
+  },
+  directives: {
+    // active v-highlight dans le template
+    highlight: {
+      /* ... */
+    }
+  }
+}
+```
+
+</div>
+
+<div class="options-api">
+
+Comme pour les composants, les directives personnalisées doivent être enregistrées afin de pouvoir être utilisées dans les modèles. Dans l'exemple ci-dessus, nous utilisons l'enregistrement local via l'option `directives`.
+
+</div>
+
+Il est également courant d'enregistrer globalement des directives personnalisées au niveau de l'application :
+
+```js
+const app = createApp({})
+
+// rendre v-highlight utilisable dans tous les composants
+app.directive('highlight', {
+  /* ... */
+})
+```
+
+## Quand utiliser les directives personnalisées {#when-to-use}
+
+Les directives personnalisées ne doivent être utilisées que lorsque la fonctionnalité souhaitée ne peut être obtenue que par une manipulation directe du DOM.
+
+Un exemple courant est la directive personnalisée `v-focus` qui met un élément au premier plan.
+
+<div class="composition-api">
+
+```vue
+<script setup>
+// active v-focus dans le template
 const vFocus = {
   mounted: (el) => el.focus()
 }
 </script>
-
 <template>
   <input v-focus />
 </template>
@@ -54,54 +153,9 @@ export default {
 
 </div>
 
-<div class="demo">
-  <input v-focus placeholder="This should be focused" />
-</div>
+Cette directive est plus utile que l'attribut `autofocus` car elle ne fonctionne pas seulement au chargement de la page - elle fonctionne également lorsque l'élément est inséré dynamiquement par Vue !
 
-En supposant que vous n'ayez pas cliqué ailleurs sur la page, le champ de saisie ci-dessus devrait être auto-focalisé. Cette directive est plus utile que l'attribut `autofocus` car elle ne fonctionne pas uniquement au chargement de la page - elle fonctionne également lorsque l'élément est inséré dynamiquement par Vue.
-
-<div class="composition-api">
-
-Dans `<script setup>`, toute variable camelCase qui commence par le préfixe `v` peut être utilisée comme une directive personnalisée. Dans l'exemple ci-dessus, `vFocus` peut être utilisé dans le template via `v-focus`.
-
-Si vous n'utilisez pas `<script setup>`, les directives personnalisées peuvent être enregistrées grâce à l'option `directives` :
-
-```js
-export default {
-  setup() {
-    /*...*/
-  },
-  directives: {
-    // active v-focus dans le template
-    focus: {
-      /* ... */
-    }
-  }
-}
-```
-
-</div>
-
-<div class="options-api">
-
-Comme pour les composants, les directives personnalisées doivent être enregistrées afin de pouvoir être utilisées dans les modèles. Dans l'exemple ci-dessus, nous utilisons l'enregistrement local via l'option `directives`.
-
-</div>
-
-Il est également courant d'enregistrer globalement des directives personnalisées au niveau de l'application :
-
-```js
-const app = createApp({})
-
-// rendre v-focus utilisable dans tous les composants
-app.directive('focus', {
-  /* ... */
-})
-```
-
-:::tip
-Les directives personnalisées ne doivent être utilisées que lorsque la fonctionnalité souhaitée ne peut être obtenue seulement par une manipulation directe du DOM. Préférez les templates déclaratifs utilisant des directives intégrées telles que `v-bind` lorsque c'est possible, car ils sont plus efficaces et respectueux du rendu côté serveur.
-:::
+La déclaration de template avec des directives intégrées telles que `v-bind` est recommandé lorsque c'est possible, car il est plus efficace et plus facile à gérer pour le serveur.
 
 ## Hooks des directives {#directive-hooks}
 
