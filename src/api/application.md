@@ -285,7 +285,7 @@ Fournit une valeur pouvant être injectée dans tous les composants descendants 
 
 ## app.runWithContext() {#app-runwithcontext}
 
-- Only supported in 3.3+
+- Uniquement supporté dans la version 3.3+
 
 Exécute une fonction de rappel avec l'application courante comme contexte injecté.
 
