@@ -68,7 +68,7 @@ C'est l'aide sous-jacente qui alimente [`defineModel()`](/api/sfc-script-setup#d
 
 ## useTemplateRef() <sup class="vt-badge" data-text="3.5+" /> {#usetemplateref}
 
-Returns a shallow ref whose value will be synced with the template element or component with a matching ref attribute.
+Renvoie une ref peu profonde dont la valeur sera synchronisée avec l'élément ou le composant du template ayant un attribut ref correspondant.
 
 - **Type**
 
@@ -76,7 +76,7 @@ Returns a shallow ref whose value will be synced with the template element or co
   function useTemplateRef<T>(key: string): Readonly<ShallowRef<T | null>>
   ```
 
-- **Example**
+- **Exemple**
 
   ```vue
   <script setup>
@@ -94,10 +94,10 @@ Returns a shallow ref whose value will be synced with the template element or co
   </template>
   ```
 
-- **See also**
-  - [Guide - Template Refs](/guide/essentials/template-refs)
-  - [Guide - Typing Template Refs](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
-  - [Guide - Typing Component Template Refs](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
+- **Voir aussi**
+  - [Guide - Les refs du template](/guide/essentials/template-refs)
+  - [Guide - Typer les refs de template](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
+  - [Guide - Typer les refs du template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 ## useId() <sup class="vt-badge" data-text="3.5+" /> {#useid}
 
