@@ -2,7 +2,7 @@
 
 ## useAttrs() {#useattrs}
 
-Retourne l'objet `attrs` du [Contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les [attributs implicitement déclarés (Fallthrough Attributes)](/guide/components/attrs#fallthrough-attributes) du composant courant. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
+Retourne l'objet `attrs` du [contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les [attributs implicitement déclarés (Fallthrough Attributes)](/guide/components/attrs#fallthrough-attributes) du composant courant. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
 
 - **Type**
 
@@ -12,9 +12,9 @@ Retourne l'objet `attrs` du [Contexte de la fonction setup](/api/composition-api
 
 ## useSlots() {#useslots}
 
-Returns the `slots` object from the [Setup Context](/api/composition-api-setup#setup-context), which includes parent passed slots as callable functions that return Virtual DOM nodes. This is intended to be used in `<script setup>` where the setup context object is not available.
+Retourne l'objet `slots` du [contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les slots passés par les parents comme des fonctions appelables qui retournent des noeuds virtuels du DOM. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
 
-If using TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots) should be preferred instead.
+Si vous utilisez TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots) devrait être préféré.
 
 - **Type**
 
