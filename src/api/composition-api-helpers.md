@@ -24,9 +24,9 @@ Si vous utilisez TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots
 
 ## useModel() {#usemodel}
 
-This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setup#definemodel). If using `<script setup>`, `defineModel()` should be preferred instead.
+C'est l'aide sous-jacente qui alimente [`defineModel()`](/api/sfc-script-setup#definemodel). Si vous utilisez `<script setup>`, `defineModel()` devrait être préféré.
 
-- Only available in 3.4+
+- Disponible uniquement dans la version 3.4+
 
 - **Type**
 
@@ -49,7 +49,7 @@ This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setu
     [ModelRef<T, M, G, S>, Record<M, true | undefined>]
   ```
 
-- **Example**
+- **Exemple**
 
   ```js
   export default {
@@ -62,9 +62,9 @@ This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setu
   }
   ```
 
-- **Details**
+- **Détails**
 
-  `useModel()` can be used in non-SFC components, e.g. when using raw `setup()` function. It expects the `props` object as the first argument, and the model name as the second argument. The optional third argument can be used to declare custom getter and setter for the resulting model ref. Note that unlike `defineModel()`, you are responsible for declaring the props and emits yourself.
+  `useModel()` peut être utilisé dans les composants non-SFC, par exemple lors de l'utilisation de la fonction raw `setup()`. Elle attend l'objet `props` comme premier argument, et le nom du modèle comme second argument. Le troisième argument optionnel peut être utilisé pour déclarer des getter et setter personnalisés pour le modèle ref résultant. Notez que contrairement à `defineModel()`, vous êtes responsable de la déclaration des objets props et emits vous-même.
 
 ## useTemplateRef() <sup class="vt-badge" data-text="3.5+" /> {#usetemplateref}
 
