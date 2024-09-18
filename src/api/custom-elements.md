@@ -54,33 +54,33 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   La valeur de retour est un constructeur d'élément personnalisé qui peut être enregistré à l'aide de [`customElements.define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define).
 
-- **Example**
+- **Exemple**
 
   ```js
   import { defineCustomElement } from 'vue'
 
   const MyVueElement = defineCustomElement({
-    /* component options */
+    /* options des composants */
   })
 
-  // Register the custom element.
+  // Enregistrez l'élément personnalisé.
   customElements.define('my-vue-element', MyVueElement)
   ```
 
-- **See also**
+- **Voir aussi**
 
-  - [Guide - Building Custom Elements with Vue](/guide/extras/web-components#building-custom-elements-with-vue)
+  - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components#building-custom-elements-with-vue)
 
-  - Also note that `defineCustomElement()` requires [special config](/guide/extras/web-components#sfc-as-custom-element) when used with Single-File Components.
+  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components#sfc-as-custom-element) lorsqu'il est utilisé avec des composants à fichier unique.
 
 ## useHost() <sup class="vt-badge" data-text="3.5+"/> {#usehost}
 
-A Composition API helper that returns the host element of the current Vue custom element.
+Un assistant de la Composition API qui renvoie l'élément hôte de l'élément personnalisé Vue actuel.
 
 ## useShadowRoot() <sup class="vt-badge" data-text="3.5+"/> {#useshadowroot}
 
-A Composition API helper that returns the shadow root of the current Vue custom element.
+Un assistant de la Composition API qui renvoie la racine d'ombre de l'élément personnalisé Vue actuel.
 
 ## this.$host <sup class="vt-badge" data-text="3.5+"/> {#this-host}
 
-An Options API property that exposes the host element of the current Vue custom element.
+Une propriété de l'Options API qui expose l’élément hôte de l’élément personnalisé Vue actuel.
