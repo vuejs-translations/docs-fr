@@ -1,8 +1,8 @@
-# Composition API: Helpers {#composition-api-helpers}
+# Composition API: Aides {#composition-api-helpers}
 
 ## useAttrs() {#useattrs}
 
-Returns the `attrs` object from the [Setup Context](/api/composition-api-setup#setup-context), which includes the [fallthrough attributes](/guide/components/attrs#fallthrough-attributes) of the current component. This is intended to be used in `<script setup>` where the setup context object is not available.
+Retourne l'objet `attrs` du [Contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les [attributs implicitement déclarés (Fallthrough Attributes)](/guide/components/attrs#fallthrough-attributes) du composant courant. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
 
 - **Type**
 
@@ -42,10 +42,11 @@ This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setu
     set?: (v: T) => any
   }
 
-  type ModelRef<T, M extends PropertyKey = string, G = T, S = T> = Ref<G, S> & [
-    ModelRef<T, M, G, S>,
-    Record<M, true | undefined>
-]
+  type ModelRef<T, M extends PropertyKey = string, G = T, S = T> = Ref<
+    G,
+    S
+  > &
+    [ModelRef<T, M, G, S>, Record<M, true | undefined>]
   ```
 
 - **Example**
