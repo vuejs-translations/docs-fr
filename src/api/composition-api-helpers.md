@@ -1,4 +1,4 @@
-# Composition API: Aides {#composition-api-helpers}
+# Composition API: Helpers {#composition-api-helpers}
 
 ## useAttrs() {#useattrs}
 
