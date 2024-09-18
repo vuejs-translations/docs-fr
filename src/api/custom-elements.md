@@ -28,19 +28,19 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   > Les caractères sont simplifiés pour une meilleure lisibilité.
 
-- **Details**
+- **Détails**
 
-  In addition to normal component options, `defineCustomElement()` also supports a number of options that are custom-elements-specific:
+  En plus des options normales des composants, `defineCustomElement()` supporte également un certain nombre d'options spécifiques aux éléments personnalisés :
 
-  - **`styles`**: an array of inlined CSS strings for providing CSS that should be injected into the element's shadow root.
+  - **`styles`**: un tableau de chaînes CSS intégrées pour fournir du CSS à injecter dans la racine de l'ombre de l'élément.
 
-  - **`configureApp`** <sup class="vt-badge" data-text="3.5+"/>: a function that can be used to configure the Vue app instance for the custom element.
+  - **`configureApp`** <sup class="vt-badge" data-text="3.5+"/>: une fonction qui peut être utilisée pour configurer l'instance de l'application Vue pour l'élément personnalisé.
 
-  - **`shadowRoot`** <sup class="vt-badge" data-text="3.5+"/>: `boolean`, defaults to `true`. Set to `false` to render the custom element without a shadow root. This means `<style>` in custom element SFCs will no longer be encapsulated.
+  - **`shadowRoot`** <sup class="vt-badge" data-text="3.5+"/>: `boolean`, par défaut `true`. Définir à `false` pour restituer l'élément personnalisé sans racine fantôme. Cela signifie que `<style>` dans les SFC d'éléments personnalisés ne sera plus encapsulé.
 
-  - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, if provided, will be set as the `nonce` attribute on style tags injected to the shadow root.
+  - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, s'il est fourni, sera défini comme l'attribut `nonce` sur les tags de style injectés dans la racine de l'ombre.
 
-  Note that instead of being passed as part of the component itself, these options can also be passed via a second argument:
+  Notez qu'au lieu d'être transmises dans le cadre du composant lui-même, ces options peuvent également être transmises via un deuxième argument :
 
   ```js
   import Element from './MyElement.ce.vue'
@@ -52,7 +52,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
   })
   ```
 
-  The return value is a custom element constructor that can be registered using [`customElements.define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define).
+  La valeur de retour est un constructeur d'élément personnalisé qui peut être enregistré à l'aide de [`customElements.define()`](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define).
 
 - **Example**
 
