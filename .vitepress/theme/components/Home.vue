@@ -30,7 +30,7 @@ onMounted(load)
       </a>
       <a class="setup" href="/guide/quick-start.html">Installation</a>
       <a class="security" href="https://v2.vuejs.org/eol/" target="_blank">
-        Avoir des infos de sécurité à propos de Vue 2
+        Infos de sécurité à propos de Vue 2
         <svg
           class="icon"
           xmlns="http://www.w3.org/2000/svg"
