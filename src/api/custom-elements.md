@@ -1,8 +1,8 @@
-# Custom Elements API {#custom-elements-api}
+# API des éléments personnalisés {#custom-elements-api}
 
 ## defineCustomElement() {#definecustomelement}
 
-This method accepts the same argument as [`defineComponent`](#definecomponent), but instead returns a native [Custom Element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) class constructor.
+Cette méthode accepte le même argument que [`defineComponent`](#definecomponent), mais renvoie à la place un constructeur natif de classe [Élément personnalisé](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
 
 - **Type**
 
@@ -19,14 +19,14 @@ This method accepts the same argument as [`defineComponent`](#definecomponent), 
   interface CustomElementsOptions {
     styles?: string[]
 
-    // the following options are 3.5+
+    // les options suivantes sont possibles 3.5+
     configureApp?: (app: App) => void
     shadowRoot?: boolean
     nonce?: string
   }
   ```
 
-  > Type is simplified for readability.
+  > Les caractères sont simplifiés pour une meilleure lisibilité.
 
 - **Details**
 
