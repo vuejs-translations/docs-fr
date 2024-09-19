@@ -19,7 +19,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
   interface CustomElementsOptions {
     styles?: string[]
 
-    // les options suivantes sont possibles 3.5+
+    // les options suivantes sont possibles à partir de la version 3.5
     configureApp?: (app: App) => void
     shadowRoot?: boolean
     nonce?: string
