@@ -24,7 +24,7 @@ Si vous utilisez TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots
 
 ## useModel() {#usemodel}
 
-C'est l'aide sous-jacente qui alimente [`defineModel()`](/api/sfc-script-setup#definemodel). Si vous utilisez `<script setup>`, `defineModel()` devrait être préféré.
+C'est l'helper sous-jacente qui alimente [`defineModel()`](/api/sfc-script-setup#definemodel). Si vous utilisez `<script setup>`, `defineModel()` devrait être préféré.
 
 - Disponible uniquement dans la version 3.4+
 
