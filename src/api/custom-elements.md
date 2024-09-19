@@ -79,7 +79,7 @@ Un assistant d'aide de la Composition API qui renvoie l'élément hôte de l'él
 
 ## useShadowRoot() <sup class="vt-badge" data-text="3.5+"/> {#useshadowroot}
 
-Un assistant d'aide de la Composition API qui renvoie la racine d'ombre de l'élément personnalisé Vue actuel.
+Un assistant helper de la Composition API qui renvoie la racine d'ombre de l'élément personnalisé Vue actuel.
 
 ## this.$host <sup class="vt-badge" data-text="3.5+"/> {#this-host}
 
