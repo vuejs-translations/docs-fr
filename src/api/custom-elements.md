@@ -26,7 +26,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
   }
   ```
 
-  > Les caractères sont simplifiés pour une meilleure lisibilité.
+  > Les types sont simplifiés pour une meilleure lisibilité.
 
 - **Détails**
 
