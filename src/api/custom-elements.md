@@ -38,7 +38,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   - **`shadowRoot`** <sup class="vt-badge" data-text="3.5+"/>: `boolean`, par défaut `true`. Définir à `false` pour restituer l'élément personnalisé sans shadow root. Cela signifie que `<style>` dans les SFC d'éléments personnalisés ne sera plus encapsulé.
 
-  - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, s'il est fourni, sera défini comme l'attribut `nonce` sur les tags de style injectés dans la racine de l'ombre.
+  - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, s'il est fourni, sera défini comme l'attribut `nonce` sur les tags de style injectés dans la shadow root.
 
   Notez qu'au lieu d'être transmises dans le cadre du composant lui-même, ces options peuvent également être transmises via un deuxième argument :
 
