@@ -36,7 +36,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   - **`configureApp`** <sup class="vt-badge" data-text="3.5+"/>: une fonction qui peut être utilisée pour configurer l'instance de l'application Vue pour l'élément personnalisé.
 
-  - **`shadowRoot`** <sup class="vt-badge" data-text="3.5+"/>: `boolean`, par défaut `true`. Définir à `false` pour restituer l'élément personnalisé sans racine fantôme. Cela signifie que `<style>` dans les SFC d'éléments personnalisés ne sera plus encapsulé.
+  - **`shadowRoot`** <sup class="vt-badge" data-text="3.5+"/>: `boolean`, par défaut `true`. Définir à `false` pour restituer l'élément personnalisé sans shadow root. Cela signifie que `<style>` dans les SFC d'éléments personnalisés ne sera plus encapsulé.
 
   - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, s'il est fourni, sera défini comme l'attribut `nonce` sur les tags de style injectés dans la racine de l'ombre.
 
