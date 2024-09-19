@@ -75,7 +75,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
 ## useHost() <sup class="vt-badge" data-text="3.5+"/> {#usehost}
 
-Un assistant d'aide de la Composition API qui renvoie l'élément hôte de l'élément personnalisé Vue actuel.
+Un assistant helper de la Composition API qui renvoie l'élément hôte de l'élément personnalisé Vue actuel.
 
 ## useShadowRoot() <sup class="vt-badge" data-text="3.5+"/> {#useshadowroot}
 
