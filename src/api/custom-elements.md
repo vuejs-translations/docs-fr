@@ -71,7 +71,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   - [Guide - Créer des éléments personnalisés avec Vue](/guide/extras/web-components#building-custom-elements-with-vue)
 
-  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components#sfc-as-custom-element) lorsqu'il est utilisé avec des composants à fichier unique.
+  - Notez également que `defineCustomElement()` nécessite une [configuration spéciale](/guide/extras/web-components#sfc-as-custom-element) lorsqu'il est utilisé avec des composants monofichiers.
 
 ## useHost() <sup class="vt-badge" data-text="3.5+"/> {#usehost}
 
