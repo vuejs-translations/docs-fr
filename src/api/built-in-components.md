@@ -35,7 +35,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
     name?: string
     /**
      * S'il faut appliquer les classes de transition CSS ou non
-     * Default: true
+     * Par défaut: true
      */
     css?: boolean
     /**
@@ -58,7 +58,7 @@ Fournit des effets de transition animés à **un seul** élément ou composant.
     mode?: 'in-out' | 'out-in' | 'default'
     /**
      * Si la transition doit être appliquée au rendu initial ou non.
-     * Default: false
+     * Par défaut: false
      */
     appear?: boolean
 
@@ -287,9 +287,9 @@ Rend le contenu de son slot à une autre partie du DOM.
      */
     disabled?: boolean
     /**
-     * When `true`, the Teleport will defer until other
-     * parts of the application have been mounted before
-     * resolving its target. (3.5+)
+     * Lorsque la valeur est `true`, le Teleport sera reportée jusqu'à ce que d'autres
+     * parties de l'application aient été montées avant
+     * de résoudre sa cible. (A partir de 3.5+)
      */
     defer?: boolean
   }
