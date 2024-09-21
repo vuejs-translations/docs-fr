@@ -40,7 +40,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   - **`nonce`** <sup class="vt-badge" data-text="3.5+"/>: `string`, s'il est fourni, sera défini comme l'attribut `nonce` sur les tags de style injectés dans la shadow root.
 
-  Notez qu'au lieu d'être transmises dans le cadre du composant lui-même, ces options peuvent également être transmises via un deuxième argument :
+  Notez qu'au lieu d'être transmises comme une partie du composant lui-même, ces options peuvent également être transmises via un deuxième argument :
 
   ```js
   import Element from './MyElement.ce.vue'
