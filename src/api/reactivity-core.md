@@ -249,7 +249,7 @@ Exécute immédiatement une fonction tout en suivant de manière réactive ses d
   }
 
   interface WatchHandle {
-    (): void // callable, same as `stop`
+    (): void // appelable, comme `stop`
     pause: () => void
     resume: () => void
     stop: () => void
@@ -389,16 +389,16 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
     : never // objet réactif
 
   interface WatchOptions extends WatchEffectOptions {
-    immediate?: boolean // default: false
-    deep?: boolean | number // default: false
-    flush?: 'pre' | 'post' | 'sync' // default: 'pre'
+    immediate?: boolean // Par défaut: false
+    deep?: boolean | number // Par défaut: false
+    flush?: 'pre' | 'post' | 'sync' // Par défaut: 'pre'
     onTrack?: (event: DebuggerEvent) => void
     onTrigger?: (event: DebuggerEvent) => void
-    once?: boolean // default: false (3.4+)
+    once?: boolean // Par défaut: false (3.4+)
   }
 
   interface WatchHandle {
-    (): void // callable, same as `stop`
+    (): void // appelable, comme `stop`
     pause: () => void
     resume: () => void
     stop: () => void
@@ -558,7 +558,7 @@ watch(id, async (newId) => {
 
 ## onWatcherCleanup() <sup class="vt-badge" data-text="3.5+" /> {#onwatchercleanup}
 
-Register a cleanup function to be executed when the current watcher is about to re-run. Can only be called during the synchronous execution of a `watchEffect` effect function or `watch` callback function (i.e. it cannot be called after an `await` statement in an async function.)
+Enregistre une fonction de nettoyage à exécuter lorsque l'observateur actuel est sur le point de s'exécuter à nouveau. Elle ne peut être appelée que pendant l'exécution synchrone d'une fonction d'effet `watchEffect` ou d'une fonction de rappel `watch` (c'est-à-dire qu'elle ne peut pas être appelée après une instruction `await` dans une fonction asynchrone).
 
 - **Type**
 
@@ -569,15 +569,15 @@ Register a cleanup function to be executed when the current watcher is about to 
   ): void
   ```
 
-- **Example**
+- **Exemple**
 
   ```ts
   import { watch, onWatcherCleanup } from 'vue'
 
   watch(id, (newId) => {
     const { response, cancel } = doAsyncWork(newId)
-    // `cancel` will be called if `id` changes, cancelling
-    // the previous request if it hasn't completed yet
+    // `cancel` sera appelé si `id` change, ce qui annulera
+    // la demande précédente si elle n'est pas encore terminée
     onWatcherCleanup(cancel)
   })
   ```
