@@ -373,7 +373,7 @@ const foo = inject('foo') as string
 
 Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le type des refs créés par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément sur lequel l'attribut `ref` correspondant est utilisé.
 
-Dans les cas où l'auto-inférence n'est pas possible, vous pouvez toujours convertir le modèle ref en un type explicite via l'argument générique :
+Dans les cas où l'auto-inférence n'est pas possible, vous pouvez toujours convertir le template ref en un type explicite via l'argument générique :
 
 ```ts
 const el = useTemplateRef<HTMLInputElement>(null)
@@ -408,11 +408,11 @@ Notez que pour une sécurité de type stricte, il est nécessaire d'utiliser un 
 
 ## Typer les refs du template d'un composant {#typing-component-template-refs}
 
-With Vue 3.5 and `@vue/language-tools` 2.1 (powering both the IDE language service and `vue-tsc`), the type of refs created by `useTemplateRef()` in SFCs can be **automatically inferred** for static refs based on what element or component the matching `ref` attribute is used on.
+Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le type de refs créés par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
 
-In cases where auto-inference is not possible (e.g. non-SFC usage or dynamic components), you can still cast the template ref to an explicit type via the generic argument.
+Dans les cas où l'auto-inférence n'est pas possible (par exemple, utilisation non-SFC ou composants dynamiques), vous pouvez toujours convertir la référence du template en un type explicite par l'intermédiaire de l'argument générique.
 
-In order to get the instance type of an imported component, we need to first get its type via `typeof`, then use TypeScript's built-in `InstanceType` utility to extract its instance type:
+Pour obtenir le type d'instance d'un composant importé, nous devons d'abord obtenir son type via `typeof`, puis utiliser l'utilitaire intégré `InstanceType` de TypeScript pour extraire son type d'instance :
 
 ```vue{5}
 <!-- App.vue -->
@@ -432,7 +432,7 @@ const compRef = useTemplateRef<FooType | BarType>('comp')
 </template>
 ```
 
-In cases where the exact type of the component isn't available or isn't important, `ComponentPublicInstance` can be used instead. This will only include properties that are shared by all components, such as `$el`:
+Dans les cas où le type exact du composant n'est pas disponible ou n'est pas important, `ComponentPublicInstance` peut être utilisé à la place. Cela n'inclura que les propriétés qui sont partagées par tous les composants, comme `$el` :
 
 ```ts
 import { useTemplateRef } from 'vue'
@@ -441,7 +441,7 @@ import type { ComponentPublicInstance } from 'vue'
 const child = useTemplateRef<ComponentPublicInstance | null>(null)
 ```
 
-In cases where the component referenced is a [generic component](/guide/typescript/overview.html#generic-components), for instance `MyGenericModal`:
+Dans le cas où le composant référencé est un [composant générique](/guide/typescript/overview.html#generic-components), par exemple `MyGenericModal` :
 
 ```vue
 <!-- MyGenericModal.vue -->
@@ -458,7 +458,7 @@ defineExpose({
 </script>
 ```
 
-It needs to be referenced using `ComponentExposed` from the [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) library as `InstanceType` won't work.
+Il doit être référencé en utilisant `ComponentExposed` de la bibliothèque [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) car `InstanceType` ne fonctionnera pas.
 
 ```vue
 <!-- App.vue -->
@@ -475,4 +475,4 @@ const openModal = () => {
 </script>
 ```
 
-Note that with `@vue/language-tools` 2.1+, static template refs' types can be automatically inferred and the above is only needed in edge cases.
+Notez qu'avec `@vue/language-tools` 2.1+, les types des refs statiques des templates peuvent être automatiquement déduits et ce qui précède n'est nécessaire que dans les cas extrêmes.
