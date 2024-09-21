@@ -371,16 +371,16 @@ const foo = inject('foo') as string
 
 ## Typer les refs de template {#typing-template-refs}
 
-With Vue 3.5 and `@vue/language-tools` 2.1 (powering both the IDE language service and `vue-tsc`), the type of refs created by `useTemplateRef()` in SFCs can be **automatically inferred** for static refs based on what element the matching `ref` attribute is used on.
+Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le type des refs créés par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément sur lequel l'attribut `ref` correspondant est utilisé.
 
-In cases where auto-inference is not possible, you can still cast the template ref to an explicit type via the generic argument:
+Dans les cas où l'auto-inférence n'est pas possible, vous pouvez toujours convertir le modèle ref en un type explicite via l'argument générique :
 
 ```ts
 const el = useTemplateRef<HTMLInputElement>(null)
 ```
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant la version 3.5</summary>
 
 Les références du template doivent être créées avec un argument de type générique explicite et une valeur initiale de `null` :
 
