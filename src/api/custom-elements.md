@@ -32,7 +32,7 @@ Cette méthode accepte le même argument que [`defineComponent`](#definecomponen
 
   En plus des options normales des composants, `defineCustomElement()` supporte également un certain nombre d'options spécifiques aux éléments personnalisés :
 
-  - **`styles`**: un tableau de chaînes CSS intégrées pour fournir du CSS à injecter dans la shadow root de l'élément.
+  - **`styles`**: un tableau de chaînes CSS  pour fournir du CSS à injecter dans la shadow root de l'élément.
 
   - **`configureApp`** <sup class="vt-badge" data-text="3.5+"/>: une fonction qui peut être utilisée pour configurer l'instance de l'application Vue pour l'élément personnalisé.
 
