@@ -245,7 +245,7 @@ interface Props {
 const { msg = 'hello', labels = ['one', 'two'] } = defineProps<Props>()
 ```
 
-### Default props values when using type declaration <sup class="vt-badge ts" /> {#default-props-values-when-using-type-declaration}
+### Valeurs par défaut des props quand on utilise une déclaration de type <sup class="vt-badge ts" /> {#default-props-values-when-using-type-declaration}
 
 Dans les versions 3.5 et supérieures, les valeurs par défaut peuvent être déclarées naturellement lors de l'utilisation de la destructuration réactive des props. Mais dans les versions 3.4 et inférieures, la destructuration réactive des props n'est pas activé par défaut. Afin de déclarer les valeurs par défaut des props avec la déclaration basée sur le type, la macro de compilation `withDefaults` est nécessaire :
 
@@ -381,7 +381,7 @@ Lorsqu'un parent accède à une instance de ce composant via des refs de templat
 
 ## defineOptions() {#defineoptions}
 
-- Only supported in 3.3+
+- Uniquement pris en charge à partir de la version 3.3.
 
 Cette macro peut être utilisée pour déclarer des options de composant directement dans `<script setup>` sans avoir à utiliser un bloc `<script>` séparé :
 
@@ -520,7 +520,7 @@ import genericComponent from '../generic-component.vue';
 
 import type { ComponentExposed } from 'vue-component-type-helpers';
 
-// Works for a component without generics
+// Fonctionne pour un composant non générique
 ref<InstanceType<typeof componentWithoutGenerics>>();
 
 ref<ComponentExposed<typeof genericComponent>>();
