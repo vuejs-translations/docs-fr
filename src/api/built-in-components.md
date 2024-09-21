@@ -287,7 +287,7 @@ Rend le contenu de son slot à une autre partie du DOM.
      */
     disabled?: boolean
     /**
-     * Lorsque la valeur est `true`, le Teleport sera reportée jusqu'à ce que d'autres
+     * Lorsque la valeur est `true`, le traitement de Teleport sera reporté jusqu'à ce que d'autres
      * parties de l'application aient été montées avant
      * de résoudre sa cible. (A partir de 3.5+)
      */
