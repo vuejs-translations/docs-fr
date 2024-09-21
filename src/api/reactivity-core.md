@@ -558,7 +558,7 @@ watch(id, async (newId) => {
 
 ## onWatcherCleanup() <sup class="vt-badge" data-text="3.5+" /> {#onwatchercleanup}
 
-Enregistre une fonction de nettoyage à exécuter lorsque le watcher actuel est sur le point de s'exécuter à nouveau. Elle ne peut être appelée que pendant l'exécution synchrone d'une fonction d'effet `watchEffect` ou d'une fonction de rappel `watch` (c'est-à-dire qu'elle ne peut pas être appelée après une instruction `await` dans une fonction asynchrone).
+Enregistre une fonction de nettoyage à exécuter lorsque l'observateur actuel est sur le point de s'exécuter à nouveau. Elle ne peut être appelée que pendant l'exécution synchrone d'une fonction d'effet `watchEffect` ou d'une fonction de rappel `watch` (c'est-à-dire qu'elle ne peut pas être appelée après une instruction `await` dans une fonction asynchrone).
 
 - **Type**
 
