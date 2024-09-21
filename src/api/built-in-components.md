@@ -289,7 +289,7 @@ Rend le contenu de son slot à une autre partie du DOM.
     /**
      * Lorsque la valeur est `true`, le traitement de Teleport sera reporté jusqu'à ce que d'autres
      * parties de l'application aient été montées avant
-     * de résoudre sa cible. (A partir de 3.5+)
+     * de résoudre sa cible. (A partir de la version 3.5)
      */
     defer?: boolean
   }
