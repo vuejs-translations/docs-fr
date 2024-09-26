@@ -216,5 +216,143 @@
         "endDate": "2016"
       }
     ]
+  },
+  {
+    "id": 2535,
+    "name": "Tomek Jankowski",
+    "slug": "tomek-vue-node-fullstack-developer",
+    "alias": "Tomek",
+    "description": [
+      "Tomek est un développeur fullstack avec plus de 17 ans d'expérience commerciale. Au fil des ans, il est passé de l'utilisation de PHP à la maîtrise des piles technologiques modernes, en se concentrant sur Vue.js et Node.js au cours des six dernières années. Son expertise dans ces technologies a permis de développer et de soutenir des systèmes robustes et à fort trafic.",
+      "En tant que directeur technique d'une agence de développement web pendant plus de dix ans, il a géré avec succès une équipe de 12 à 17 personnes et supervisé des projets pour des clients de premier plan dans divers secteurs.",
+      "Tomek a toujours été très apprécié par les clients de Proxify pour ses contributions et son leadership exceptionnels."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Node.js",
+      "MongoDB",
+      "Nuxt.js",
+      "PHP",
+      "MySQL",
+      "Google Cloud",
+      "ElasticSearch",
+      "Redis",
+      "RabbitMQ",
+      "Kubernetes",
+      "TypeScript",
+      "Express.js",
+      "Koa",
+      "Nest.js"
+    ],
+    "compensations": {
+      "partTime": "4 696 €/mois (20 heures par semaine)",
+      "monthly": "8 551 €/mois (40 heures par semaine)"
+    },
+    "location": "Pologne",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Directeur technique",
+        "company": "i3MEDIA LTD",
+        "startDate": "Juillet 2010",
+        "endDate": "Juin 2022",
+        "period": "11 ans et 11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception des fonctionnalités, exigences pour l'équipe de développement.",
+              "Développement de fonctionnalités plus avancées ou critiques.",
+              "Revue de code + support des autres dev/front-end.",
+              "Réunions techniques avec les clients.",
+              "Conception et maintenance de l'infrastructure/automatisation (GCP au cours des 10 dernières années).",
+              "Estimation des délais et des coûts."
+            ]
+          },
+          {
+            "isGrouped": false,
+            "content": "Des systèmes qui construisent"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Solution d'e-commerce multi-canal (eBay, Amazon + web front) avec des modules avancés pour calculer les prix de vente optimaux, des définitions de produits et des règles d'expédition complexes, des promotions, et des intégrations avec des solutions de messagerie et d'entreposage.",
+              "CMS du secteur public avec versionnement du contenu, contrôle d'accès avancé, flux de publication, éditeur de contenu basé sur des widgets, module de formulaires dynamiques avec logique gérable, validation et paiements ; finalement utilisé par les conseils pour la plupart des interactions entre les citoyens et les conseils (environ 80 formulaires par site web, par exemple pour les cartes de bus, le signalement de problèmes, les poubelles).",
+              "Plate-forme de dons caritatifs - utilisée à ce jour par un certain nombre d'organisations caritatives de taille moyenne à grande au Royaume-Uni, intégrée à MS Dynamics et à d'autres solutions de gestion de la relation client (CRM), également intégrée à Gov.UK.",
+              "Gestion de projet - dédié aux agences médias, utilisé en interne depuis environ 4 ans. Trop de fonctionnalités pour être énumérées, certainement plus que Basecamp/TeamWork (leaders à l'époque).",
+              "Gestion des campagnes de référencement - dédiée aux agences de marketing, intégrée à tous les outils pertinents du monde du marketing en ligne, génération de rapports, négociations avec les prospects, rédaction de contenu, suivi du temps, planification du calendrier des campagnes, listes de tâches, etc.",
+              "De nombreux sites web sur mesure : enchères au centime, conception d'affiches en ligne, répertoires de recherche de toutes sortes, candidatures à des prix, recrutement... la liste est longue."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Symfony",
+          "Laravel",
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "jQuery",
+          "Node.js",
+          "Zend",
+          "Google Cloud"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur web, puis développeur principal",
+        "company": "i3MEDIA",
+        "startDate": "Mai 2007",
+        "endDate": "Juillet 2010",
+        "period": "3 ans et 2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "i3MEDIA était une petite agence qui créait des sites web pour des entreprises locales.\n\n"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement du premier CMS sur mesure, qui est devenu le produit de base, dont la deuxième version a été mise en œuvre sur des sites web de renommée nationale en 2010."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "Zend"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur web",
+        "company": "Freelance",
+        "startDate": "Mars 2005",
+        "endDate": "Mars 2007",
+        "period": "2 ans",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Gestion de 3 projets commerciaux."
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "Adobe Flash"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Computer Science",
+        "school": "Faculté de mathématiques et d'informatique, Université de Łódź",
+        "startDate": "2002",
+        "endDate": "2006"
+      }
+    ]
   }
 ]
