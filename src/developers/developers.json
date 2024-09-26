@@ -736,7 +736,8 @@
         "endDate": "2014"
       }
     ]
-  },{
+  },
+  {
     "id": 5328,
     "name": "Santiago Anaya",
     "slug": "santiago-anaya-vue-ruby-fullstack-developer",
@@ -879,4 +880,192 @@
       }
     ]
   },
+  {
+    "id": 5697,
+    "name": "Harshit Sangani",
+    "slug": "harshit-vue-frontend-developer",
+    "alias": "Harshit",
+    "description": [
+      "Harshit est un ingénieur frontend avec plus de six ans d'expérience commerciale, spécialisé dans Vue.js. Il a participé aux différentes étapes du cycle de développement des logiciels, de l'idéation au déploiement, garantissant des expériences utilisateur de premier ordre et des applications évolutives.",
+      "Son expertise s'étend aux technologies frontales modernes et à la maîtrise des pratiques DevOps. Il a notamment dirigé le développement d'un calculateur de CO2 permettant de diviser les coûts d'émissions et d'une application communautaire visant une base de plus de 15 millions d'utilisateurs.",
+      "Sa solide expérience dans la construction de solutions frontend complexes et modulaires et dans la gestion des cycles de déploiement et des outils de gestion d'état tels que Vuex et Apollo renforce encore sa capacité à fournir des applications de haute qualité centrées sur l'utilisateur."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Nuxt.js",
+      "TypeScript",
+      "Flutter",
+      "Node.js",
+      "Golang",
+      "GraphQL",
+      "React.js",
+      "JavaScript",
+      "Tailwind",
+      "Dart",
+      "Apollo",
+      "Vuex",
+      "Figma",
+      "Neo4j",
+      "Vuetify",
+      "Angular",
+      "Storybook",
+      "Laravel",
+      "React Native"
+    ],
+    "compensations": {
+      "partTime": "3 688 €/mois (20 heures par semaine)",
+      "monthly": "6 552 €/mois (40 heures par semaine)"
+    },
+    "location": "Inde",
+    "region": "GTM+5:30",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur logiciel senior",
+        "company": "Purpose Digital Real Estate GmbH",
+        "startDate": "Novembre 2022",
+        "endDate": "Juin 2024",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé seul sur un calculateur de CO2, qui a permis de calculer facilement la répartition des coûts d'émission de CO2 entre les propriétaires et les locataires.",
+              "Création de la configuration du projet de base, en utilisant TypeScript pour accélérer le développement à long terme.",
+              "Création de nombreux composants de base modulaires à utiliser tout au long du projet.",
+              "Aide à la mise en place de cycles et d'environnements de déploiement à l'aide de Vercel."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "Microservices",
+          "Tailwind",
+          "DevOps",
+          "Angular",
+          "VSCode",
+          "Storybook",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Fondateur et responsable de l'ingénierie",
+        "company": "BK Softech",
+        "startDate": "Juin 2022",
+        "endDate": "Avril 2024",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Gestion d'une équipe de plus de 15 membres collaborant activement à des projets communautaires à but non lucratif.",
+              "Des communautés connectées à travers des régions divisées sur une plateforme unique pour réaliser des affaires intégrées, trouver des mariages, s'engager dans des discussions avancées, et bien plus encore."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Vue.js",
+          "TypeScript",
+          "Node.js",
+          "Flutter",
+          "Golang",
+          "Microservices",
+          "Figma",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "Dart",
+          "Neo4j",
+          "MVVM",
+          "Vuetify",
+          "VSCode",
+          "Chakra UI",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel senior",
+        "company": "REO",
+        "startDate": "Novembre 2021",
+        "endDate": "Octobre 2022",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé avec une équipe formidable pour créer un logiciel de courtage immobilier avancé.",
+              "Résolution de nombreux problèmes centrés sur l'utilisateur et aide à la transition de l'équipe vers TypeScript.",
+              "Création d'une compilation en temps réel des schémas GraphQL à utiliser directement dans la base de code Frontend, ce qui a permis de réduire les rapports de bogues d'environ 40 % et d'améliorer l'expérience des développeurs."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "GraphQL",
+          "Microservices",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "VSCode",
+          "Apollo",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Cofondateur et ingénieur logiciel senior",
+        "company": "HK Byte",
+        "startDate": "Novembre 2017",
+        "endDate": "Avril 2022",
+        "period": "4 ans et 5 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A répondu aux besoins de plus de 20 clients.",
+              "Développement de plus de 25 projets.",
+              "A contribué à la croissance de l'équipe grâce à une expérience globale du processus SDLC.",
+              "Gestion d'une équipe de plus de 8 personnes.",
+              "J'ai fourni une assistance technique à deux start-ups prospères, augmentant leurs bénéfices de plus de 250 % et ce n'est pas fini."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Adobe Illustrator",
+          "Node.js",
+          "React Native",
+          "Flutter",
+          "Figma",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "Dart",
+          "Neo4j",
+          "MVVM",
+          "VSCode",
+          "Fusion 360",
+          "Storybook",
+          "Vuex"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Computer Science",
+        "school": "Smt. CZMG BCA College",
+        "startDate": "2015",
+        "endDate": "2018"
+      }
+    ]
+  }
 ]
