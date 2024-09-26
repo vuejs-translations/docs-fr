@@ -543,5 +543,198 @@
         "endDate": "2017"
       }
     ]
+  },
+  {
+    "id": 2030,
+    "name": "Emre Demir",
+    "slug": "emre-vue-frontend-developer",
+    "alias": "Emre",
+    "description": [
+      "Emre est un développeur frontend talentueux avec plus de six ans d'expérience commerciale dans les services et solutions informatiques et la conception. Tout au long de sa carrière, Emre a travaillé dans divers secteurs, notamment la FinTech, la banque, le jeu, l'automatisation du marketing, la défense et la cybersécurité.",
+      "Il est le plus compétent dans les langages de programmation frontale comme le cadre JS Vue.js, React.js, Typescript, et RxJs. Il se spécialise dans la collaboration avec les chefs de produit et les concepteurs pour recueillir les exigences, produire des plans et améliorer les conceptions pour la convivialité et la fonctionnalité.",
+      "Emre est orienté vers les objectifs et s'engage fortement dans la collaboration. Il utilise différents logiciels de conception de sites web pour développer des sites web et des conceptions sur mesure, axés sur le client."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Nuxt.js",
+      "Java",
+      "AWS",
+      "Figma",
+      "Jira",
+      "API REST"
+    ],
+    "compensations": {
+      "partTime": "4 452 €/mois (20 heures par semaine)",
+      "monthly": "8 215 €/mois (40 heures par semaine)"
+    },
+    "location": "Turquie",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Front-end senior",
+        "company": "A5 Labs",
+        "startDate": "Mars 2021",
+        "endDate": "Oct 2022",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé en tant que développeur Front End dans le projet Back Office de l'application WPTO Poker. Ce projet est responsable des opérations CRUD telles que la lecture des résultats de la détection BOT, le verrouillage des comptes, le verrouillage des retraits/dépôts, etc...",
+              "Responsable de la création de contrats GraphQL et de leur intégration avec le backend (GraphQL, Rest, Websocket).",
+              "Création d'une bibliothèque d'interface utilisateur utilisant MaterialUI.",
+              "Organisation de réunions avec le concepteur et le chef de produit pour traiter les cas de figure, les améliorations et les exigences."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Vue.js",
+          "RxJs",
+          "GraphQL",
+          "Figma",
+          "API",
+          "Jira",
+          "Material-UI",
+          "API REST"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Consultant senior",
+        "company": "Softtech",
+        "startDate": "Août 2020",
+        "endDate": "Avr 2021",
+        "period": "8 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Consultant senior dans des projets bancaires et financiers en tant que membre d'équipes Agile internationales - (Delivery Hub - Remote) Vue.js, Amazon AWS"
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "AWS",
+          "Agile"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Front-end senior",
+        "company": "Insider",
+        "startDate": "Fév 2020",
+        "endDate": "Août 2020",
+        "period": "6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Insider - une plate-forme pour des expériences individualisées et cross-canal - permet aux spécialistes du marketing d'entreprise de connecter les données des clients à travers les canaux et les systèmes, de prédire leur comportement futur avec un moteur d'intention AI et d'individualiser les expériences des clients. Les spécialistes du marketing utilisent la plateforme Insider pour proposer des expériences sur des canaux tels que le Web, les applications, le Web Push, les e-mails, les SMS et les applications de messagerie (WhatsApp, Facebook Messenger, RCS).",
+              "J'ai travaillé en tant que développeur frontend senior, j'ai implémenté la partie frontend d'un tableau de bord à l'aide de Vue.js."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Expert en développement de logiciels",
+        "company": "Comodo",
+        "startDate": "Mai 2018",
+        "endDate": "Déc 2019",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "A travaillé sur le projet de filtrage Web basé sur le DNS, Dome Shield, ainsi que sur les sous-projets Dome Analytics, Comodo Threat Analysis et NuEDUSec. A travaillé en tant que développeur full-stack sur tous les projets - Dome Shield, Dome Analytics, Comodo Threat Analysis et NuEDUSec."
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MySQL",
+          "MongoDB",
+          "AWS",
+          "Redis",
+          "Node.js",
+          "Jenkins",
+          "AWS SQS",
+          "AWS Lambda",
+          "Nuxt.js",
+          "Angular"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur de logiciel",
+        "company": "Freelance",
+        "startDate": "Juillet 2017",
+        "endDate": "Mai 2018",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a quitté son emploi pour suivre un master à l'université technique de Berlin. Il a commencé à travailler en free-lance pour gagner un peu d'argent avant d'aller à Berlin. Des problèmes médicaux sont survenus qui l'ont poussé à annuler son master.",
+              "A travaillé au développement, à la conception, au déploiement et à l'ASO de jeux Android et iOS utilisant Unity.",
+              "Création d'une SPA utilisant Vue.js et Node.js pour des clients qui m'ont trouvé sur upwork.com"
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "Node.js",
+          "Unity"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Ingénieur en recherche et développement",
+        "company": "Havelsan Teknoloji Radar(HTR)",
+        "startDate": "Sep 2016",
+        "endDate": "Juillet 2017",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception et mise en œuvre d'un système d'information géographique en Java et Android.",
+              "Création et gestion d'un système de base de données pour les versions Java et Android du SIG à l'aide de PostgreSql et de Java.",
+              "Conception de l'infrastructure de messagerie RabbitMQ pour la communication avec tous les dispositifs du système.",
+              "Intégration des radars, sonars, caméras, cabines et onduleurs au SIG à l'aide de RabbitMQ et PostgreSQL.",
+              "Affichage de caméras en direct et enregistrées à l'aide de bibliothèques d'encodeurs et de décodeurs vidéo.",
+              "Ce projet est présenté par Havelsan Teknoloji Radar A.Ş. à la foire internationale de l'industrie de la défense IDEF17 à Istanbul."
+            ]
+          }
+        ],
+        "skills": [
+          "PostgreSQL",
+          "Java",
+          "Android",
+          "RabbitMQ"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Computer Engineering",
+        "school": "TOBB Ekonomi ve Teknoloji Üniversitesi",
+        "startDate": "2011",
+        "endDate": "2016"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Computer Engineering",
+        "school": "School name AGH University of Science and Technology (Exchange)",
+        "startDate": "2013",
+        "endDate": "2014"
+      }
+    ]
   }
 ]
