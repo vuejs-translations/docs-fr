@@ -1067,5 +1067,159 @@
         "endDate": "2018"
       }
     ]
+  },
+  {
+    "id": 3709,
+    "name": "Kostiantyn Draliuk",
+    "slug": "kostiantyn-vue-frontend-developer",
+    "alias": "Kostiantyn",
+    "description": [
+      "Kostiantyn est un développeur frontal avec huit ans d'expérience commerciale. Son expertise principale réside dans Vue.js, où il a démontré une compétence exceptionnelle dans la construction d'applications web robustes et évolutives.",
+      "Outre ses compétences en matière de développement, il a un grand sens de la conception et travaille avec les concepteurs de ses équipes à l'aide de Figma.",
+      "Il a fait ses preuves en travaillant avec les clients de Proxify et en fournissant des résultats exceptionnels, tant en termes de rendement que de qualité du code."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Figma",
+      "Nuxt.js",
+      "TypeScript",
+      "Cypress",
+      "Svelte",
+      "JavaScript",
+      "SvelteKit"
+    ],
+    "compensations": {
+      "partTime": "4 024 €/mois (20 heures par semaine)",
+      "monthly": "7 375 €/mois (40 heures par semaine)"
+    },
+    "location": "Ukraine",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur logiciel (Développeur Frontend / Développeur VueJs / Développeur Svelte)",
+        "company": "DNV GL (Norvège, à distance)",
+        "startDate": "Octobre 2021",
+        "endDate": "Juillet 2024",
+        "period": "2 ans et 9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de micro-frontend très performants à l'aide de technologies de pointe telles que VueJS, Svelte et TypeScript, ce qui a permis d'améliorer les performances et l'évolutivité de l'application.",
+              "A joué un rôle clé dans la conception et la mise en œuvre d'applications micro-frontend, de bibliothèques de composants et de routage, ce qui a permis d'accélérer le développement, de faciliter la maintenance et d'offrir aux utilisateurs des expériences cohérentes dans plusieurs applications.",
+              "Collaboré avec des équipes interfonctionnelles, y compris des concepteurs UX/UI, des développeurs backend et des gestionnaires de produits, dans un environnement Agile pour assurer une communication fluide, la livraison de fonctionnalités en temps opportun et la réussite globale du projet.",
+              "Participation active aux révisions de code, garantissant le respect des meilleures pratiques et des normes de code de haute qualité.",
+              "Mise en œuvre et maintenance des tests unitaires et d'intégration, ce qui a permis d'accroître la stabilité de l'application et de réduire le temps consacré à la correction des bogues.",
+              "Engagement manifeste en faveur de la formation continue et du développement professionnel en se tenant au courant des dernières technologies frontales et des tendances du secteur, ce qui a conduit à l'adoption de nouveaux outils et de nouvelles pratiques qui ont amélioré l'efficacité de l'équipe et la qualité du produit."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "Svelte"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Full-stack",
+        "company": "Freelance",
+        "startDate": "Décembre 2017",
+        "endDate": "Octobre 2021",
+        "period": "3 ans et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a mené à bien un large éventail de projets pour divers clients, notamment le développement de sites web à partir de zéro, l'amélioration des interfaces existantes et la création d'applications web personnalisées, en faisant preuve d'adaptabilité et de polyvalence pour répondre aux besoins variés des clients.",
+              "Il a obtenu des résultats exceptionnels en matière d'optimisation de la vitesse, d'optimisation du référencement et d'audits de qualité, ce qui a permis d'accroître la satisfaction des clients, d'améliorer le classement des sites et de réduire les temps de chargement des pages.",
+              "Utilisation experte d'une gamme variée de technologies frontend et backend, notamment VueJS, Laravel, NodeJS, AdonisJs et ExpressJS, pour développer des solutions sur mesure qui répondent aux exigences des clients et dépassent leurs attentes.",
+              "Développement et maintenance de bibliothèques de composants et de systèmes de conception en VueJS, garantissant une expérience utilisateur transparente, une meilleure maintenabilité et un développement efficace de l'interface utilisateur dans le cadre de plusieurs projets.",
+              "Collaborer avec les clients pour recueillir les besoins, fournir des estimations et offrir des conseils techniques, en veillant à une communication claire, à une livraison dans les délais et à l'alignement sur les objectifs du projet.",
+              "Gérer efficacement des projets à l'aide d'outils tels que Jira, Azure et YouTrack, en hiérarchisant les tâches, en suivant les progrès et en fournissant des mises à jour régulières aux clients.",
+              "Il a identifié et traité de manière proactive les goulets d'étranglement en matière de performance, les vulnérabilités en matière de sécurité et les problèmes de maintenabilité du code, ce qui a permis de fournir des applications web robustes, sûres et faciles à maintenir.",
+              "Se tenir au courant des dernières tendances du secteur, des meilleures pratiques et des technologies émergentes, en les intégrant dans les projets le cas échéant, afin de fournir des solutions de pointe et de rester compétitif sur le marché."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "Vue.js",
+          "Node.js",
+          "Express.js",
+          "Azure"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Frontend",
+        "company": "Boboyan (Khmelnytskyy, Ukraine)",
+        "startDate": "Mars 2016",
+        "endDate": "Décembre 2017",
+        "period": "1 an et 9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de solutions frontend de haute qualité pour les plateformes de commerce électronique Magento et OpenCart, en respectant constamment les délais des projets et en dépassant les attentes des clients grâce à des conceptions visuellement attrayantes et conviviales.",
+              "A mis à profit son expertise en Git, Docker et Linux pour optimiser les flux de développement, améliorer la collaboration entre les membres de l'équipe et garantir l'efficacité du déploiement et de la maintenance des applications.",
+              "Il a encadré des collègues dans les meilleures pratiques de développement des applications frontend, en favorisant un environnement d'équipe collaboratif et positif qui encourage le développement des compétences et le partage des connaissances.",
+              "Il a joué un rôle clé dans la planification et l'exécution des projets, en travaillant en étroite collaboration avec les chefs de projet et les autres membres de l'équipe afin de recueillir les besoins, d'estimer les délais et d'allouer les ressources de manière efficace.",
+              "Mise en œuvre des principes de conception réactive, garantissant une expérience utilisateur transparente et cohérente sur différents appareils et navigateurs, ce qui a permis d'accroître l'engagement des clients et de réduire les taux de rebond.",
+              "Identification et résolution proactive des problèmes de performance, des bogues et des problèmes d'utilisation, ce qui a permis d'améliorer la stabilité du site, d'augmenter les taux de conversion et d'accroître la satisfaction générale des utilisateurs.",
+              "Il a participé à des revues de code régulières, en fournissant des commentaires constructifs et des suggestions d'amélioration, conduisant à un code de meilleure qualité et à une réduction de la dette technique.",
+              "Restez au courant des dernières tendances de l'industrie et des technologies front-end, en intégrant de nouveaux outils et les meilleures pratiques pour améliorer l'efficacité de l'équipe, la qualité des produits et la satisfaction des clients."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Angular.js",
+          "Docker",
+          "Magento",
+          "Linux",
+          "eCommerce"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Avivi (Khmelnytskyy, Ukraine)",
+        "startDate": "Février 2015",
+        "endDate": "Octobre 2016",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de conceptions frontales visuellement étonnantes et réactives pour une variété de sites web basés sur des CMS à l'aide de Photoshop et de maquettes Zeplin, ce qui a permis d'accroître la satisfaction des clients et d'améliorer l'expérience des utilisateurs.",
+              "Développement de modèles d'e-mails réactifs qui ont considérablement amélioré l'engagement des clients, les taux d'ouverture et les taux de clics en les optimisant pour différents appareils et clients de messagerie.",
+              "Compétences démontrées en CSS, HTML, JavaScript, PHP, Angular et Git pour fournir des résultats exceptionnels, en faisant preuve d'adaptabilité et d'une base solide dans les technologies de développement frontales.",
+              "Collaborer avec des équipes interfonctionnelles, notamment des concepteurs, des développeurs et des chefs de projet, afin d'assurer une communication claire, des flux de travail efficaces et l'alignement sur les objectifs du projet.",
+              "Mise en œuvre des meilleures pratiques en matière d'accessibilité au web, garantissant que les sites web sont utilisables et inclusifs pour un large éventail d'utilisateurs, ce qui a permis d'augmenter le trafic sur le site et d'améliorer la réputation de la marque.",
+              "Participation active aux revues de code et aux sessions de partage des connaissances, contribuant à l'amélioration continue des normes et pratiques de codage de l'équipe.",
+              "A travaillé avec différentes plateformes CMS, acquérant une expérience précieuse dans la personnalisation et l'extension de leurs fonctionnalités pour répondre aux besoins spécifiques des clients.",
+              "Se tient au courant des dernières tendances du secteur, des meilleures pratiques et des technologies frontales émergentes, en appliquant les nouvelles connaissances et techniques aux projets, le cas échéant."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "JavaScript",
+          "Angular"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Ingénierie informatique et programmation des systèmes",
+        "school": "Khmelnytskyi National University",
+        "startDate": "2013",
+        "endDate": "2017"
+      }
+    ]
   }
 ]
