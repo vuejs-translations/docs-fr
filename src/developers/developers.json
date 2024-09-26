@@ -1,0 +1,220 @@
+[
+  {
+    "id": 1346,
+    "name": "Stelios Kitziris",
+    "slug": "stelios-vue-node-fullstack-developer",
+    "alias": "Stelios",
+    "description": [
+      "Stelios est un développeur fullstack avec plus de six ans d'expérience commerciale, spécialisé dans la pile MEVN.",
+      "Il est compétent dans la construction de solutions logicielles évolutives et a dirigé avec succès le développement de plusieurs systèmes à grande échelle et critiques pour l'entreprise. Il s'intéresse également aux technologies émergentes telles que le Web3 et l'IA.",
+      "Stelios est titulaire d'un Master en informatique, ce qui lui confère une connaissance approfondie du paysage technologique. Son approche perfectionniste est idéale pour les projets qui bénéficient d'une attention méticuleuse aux détails."
+    ],
+    "proficiencies": [
+      "MongoDB",
+      "Vue.js",
+      "Express.js",
+      "Node.js",
+      "TypeScript",
+      "Nuxt.js",
+      "Laravel",
+      "PHP",
+      "PostgreSQL",
+      "Ionic",
+      "Cordova",
+      "MySQL",
+      "Docker",
+      "React.js"
+    ],
+    "compensations": {
+      "partTime": "4 276 €/mois (20 heures par semaine)",
+      "monthly": "7 879 €/mois (40 heures par semaine)"
+    },
+    "location": "Grèce",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur Frontend senior",
+        "company": "White Hat Gaming",
+        "startDate": "Déc 2020",
+        "endDate": "Mai 2024",
+        "period": "3 ans et 5 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "White Hat Gaming est un fournisseur de jeux de casino établi à Malte :"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Utilisation de Vue.js version 3 avec l'API de composition pour le développement de l'interface utilisateur Architecture logicielle ;",
+              "Planification et développement d'applications Web internes ; tests unitaires."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "PostgreSQL",
+          "Node.js",
+          "Nuxt.js",
+          "TypeScript"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Lead Développeur Node.js",
+        "company": "Netguru S.A.",
+        "startDate": "Déc 2019",
+        "endDate": "Déc 2020",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Dépannage et remédiation efficaces des applications web ;",
+              "Interface avec les clients pour identifier les besoins de l'entreprise ;",
+              "Utilisation des derniers outils, techniques et approches de développement de logiciels. Utilisation de Node.js, Express.js, Vue.js, React.js, MongoDB, PostgreSQL. Une passion et un dévouement sont nés pour le développement de logiciels ;",
+              "Utilisation des outils, techniques et approches les plus récents en matière de développement de logiciels."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MongoDB",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "TypeScript",
+          "Nuxt.js"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel en chef",
+        "company": "Draxis Environment S.A.",
+        "startDate": "Oct 2017",
+        "endDate": "Déc 2019",
+        "period": "2 ans et 2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Draxis était une entreprise qui créait des applications pour les syndicats européens, en particulier dans le domaine de l'agriculture :"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Architecture logicielle, planification et développement d'applications web et d'applications mobiles.",
+              "ception et développement de systèmes ICT à grande échelle, financés par des donateurs internationaux, le programme Horizon 2020 et la Commission européenne."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "JavaScript",
+          "React.js",
+          "Vue.js",
+          "PostgreSQL",
+          "TypeScript",
+          "Node.js",
+          "Nuxt.js",
+          "Cordova"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Full-Stack",
+        "company": "Archirodon Group N.V.",
+        "startDate": "Sept 2015",
+        "endDate": "Août 2017",
+        "period": "1 an et 11 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Archirodon Group N.V. était une entreprise de construction spécialisée dans la construction de lacs artificiels et de gratte-ciel."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement d'applications web ;",
+              "Création, communication et gestion de plans de projet."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "JavaScript",
+          "Angular.js",
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Web",
+        "company": "24 Media Digital Media Group",
+        "startDate": "Jan 2015",
+        "endDate": "Août 2015",
+        "period": "7 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Il s'agissait d'un stage. 24 Media Digital Media Group est une grande société de presse en Grèce."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de sites web et d'applications web."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "Angular.js",
+          "WordPress"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Web",
+        "company": "Shape LTD",
+        "startDate": "Déc 2013",
+        "endDate": "Fév 2014",
+        "period": "2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Il s'agissait d'une société de publicité, et Stelios créait des sites web."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement et soutien du site web ;",
+              "Réalisation du référencement de la plateforme."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "WordPress"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Computing",
+        "school": "Cardiff Metropolitan University",
+        "startDate": "2019",
+        "endDate": "2022"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Computer Science",
+        "school": "IEK Akmi",
+        "startDate": "2014",
+        "endDate": "2016"
+      }
+    ]
+  }
+]
