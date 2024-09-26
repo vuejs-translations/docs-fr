@@ -743,7 +743,7 @@
     "slug": "santiago-anaya-vue-ruby-fullstack-developer",
     "alias": "Santiago",
     "description": [
-      "Santiago est un ingénieur fullstack avec plus de six ans d'expérience commerciale, se concentrant sur le développement frontal. Il est expert en Vue.js. Pour le backend, il utilise Ruby on Rails et diverses bases de données relationnelles, en particulier PostgreSQL.",
+      "Santiago est un ingénieur fullstack avec plus de six ans d'expérience commerciale, se concentrant sur le développement frontend. Il est expert en Vue.js. Pour le backend, il utilise Ruby on Rails et diverses bases de données relationnelles, en particulier PostgreSQL.",
       "Il est capable d'augmenter les performances des applications et d'améliorer l'expérience des utilisateurs, contribuant ainsi de manière significative à chaque mission qu'il entreprend. Son expérience en tant que Tech et Lead Ingénieur met en évidence ses capacités de leadership et son aptitude à mener des initiatives techniques.",
       "La combinaison de l'expertise technique de Santiago, de ses compétences en matière de leadership et de son dévouement à l'amélioration des performances des applications fait de lui un atout précieux pour toute équipe de développement."
     ],
@@ -1074,7 +1074,7 @@
     "slug": "kostiantyn-vue-frontend-developer",
     "alias": "Kostiantyn",
     "description": [
-      "Kostiantyn est un développeur frontal avec huit ans d'expérience commerciale. Son expertise principale réside dans Vue.js, où il a démontré une compétence exceptionnelle dans la construction d'applications web robustes et évolutives.",
+      "Kostiantyn est un développeur frontend avec huit ans d'expérience commerciale. Son expertise principale réside dans Vue.js, où il a démontré une compétence exceptionnelle dans la construction d'applications web robustes et évolutives.",
       "Outre ses compétences en matière de développement, il a un grand sens de la conception et travaille avec les concepteurs de ses équipes à l'aide de Figma.",
       "Il a fait ses preuves en travaillant avec les clients de Proxify et en fournissant des résultats exceptionnels, tant en termes de rendement que de qualité du code."
     ],
@@ -1219,6 +1219,310 @@
         "school": "Khmelnytskyi National University",
         "startDate": "2013",
         "endDate": "2017"
+      }
+    ]
+  },
+  {
+    "id": 5022,
+    "name": "Eduard Miskov",
+    "slug": "eduard-miskov-vue-frontend-developer",
+    "alias": "Eduard",
+    "description": [
+      "Eduard est un développeur frontend avec plus de sept ans d'expérience commerciale. Son expertise principale est la création d'applications web visuellement attrayantes et conviviales à l'aide de Vue.js.",
+      "La positivité et la grande motivation d'Eduard le distinguent dans le domaine en pleine évolution du développement frontend. La qualité exceptionnelle de son code met en évidence son expertise technique et son engagement en faveur de l'excellence.",
+      "Il a collaboré avec succès avec les clients de Proxify, en fournissant constamment des résultats dans les délais et en maintenant des normes de haute qualité. La capacité d'Eduard à se concentrer sur les objectifs de l'engagement et à fournir des résultats exceptionnels fait de lui un membre précieux de l'équipe."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Nuxt.js",
+      "Vanilla JavaScript",
+      "TypeScript",
+      "Jest",
+      "Figma",
+      "Vagrant",
+      "Shopware",
+      "jQuery",
+      "Storybook"
+    ],
+    "compensations": {
+      "partTime": "3 436 €/mois (20 heures par semaine)",
+      "monthly": "6 119 €/mois (40 heures par semaine)"
+    },
+    "location": "Ukraine",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Frontend",
+        "company": "Avenga",
+        "startDate": "Mai 2023",
+        "endDate": "Août 2023",
+        "period": "3 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A dirigé les efforts de développement de la partie frontend en créant le réseau de magasins de vêtements en ligne pour un acteur majeur du marché allemand.",
+              "Il s'est concentré sur la conception et la mise en œuvre de panneaux d'utilisateurs, de pages de listes de produits et de fonctionnalités de recherche afin d'améliorer l'expérience de l'utilisateur.",
+              "Développement de composants réutilisables pour Storybook, avec divers thèmes, afin de garantir la cohérence des éléments de conception dans toutes les boutiques en ligne dotées d'une identité visuelle unique.",
+              "Utilisation de Nuxt 3 pour ses capacités d'optimisation des performances et de rendu côté serveur, ce qui a permis d'améliorer la vitesse et la réactivité de l'ensemble du site web.",
+              "Maîtrise avérée de Storybook, Vue, Nuxt et Shopware pour répondre efficacement aux exigences du projet."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Nuxt.js",
+          "Storybook",
+          "Shopware"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Frontend",
+        "company": "Simplifai",
+        "startDate": "Février 2021",
+        "endDate": "Octobre 2022",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement d'une application web pour une filiale d'Elop spécialisée dans les solutions de numérisation intelligente du béton pour les entreprises d'architecture et de construction de ponts.",
+              "Conception et mise en œuvre de composants d'interface utilisateur réutilisables afin d'améliorer la convivialité et la maintenabilité de l'application.",
+              "Utilisation de TypeScript pour écrire un code propre et facile à maintenir, garantissant la qualité et la fiabilité de la base de code.",
+              "Exploitation de la bibliothèque Three.js pour créer des visualisations 3D interactives de structures en béton, améliorant ainsi l'expérience de l'utilisateur.",
+              "Expertise démontrée en Vue.js, JavaScript, Vuetify et TypeScript pour répondre efficacement aux exigences techniques du projet.",
+              "Contribuer à l'avancement des solutions de numérisation du béton intelligent, en soutenant les entreprises d'architecture et de construction de ponts dans leurs projets."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Vuetify"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Frontend",
+        "company": "Recman AS",
+        "startDate": "Mai 2020",
+        "endDate": "Février 2021",
+        "period": "9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A dirigé le développement d'un calendrier web robuste en tant que module intégral au sein de la plateforme Recman.",
+              "Utilisation intensive de Vanilla.js pour mettre en œuvre des fonctionnalités essentielles, notamment le routage, l'architecture MVC, la gestion de l'état et le rendu des vues, toutes créées à partir de zéro.",
+              "Conception et mise en place d'un système de calendrier semblable à Google Calendar, intégré de manière transparente dans l'infrastructure interne de l'organisation.",
+              "Maîtrise avérée de Vue.js, JavaScript et SASS, garantissant la réussite du projet.",
+              "Contribution significative à l'amélioration des fonctionnalités de la plateforme Recman par l'ajout d'un module de calendrier web riche en fonctionnalités et axé sur l'interne."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Trinetix",
+        "startDate": "Juin 2019",
+        "endDate": "Mai 2020",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A joué un rôle clé dans un projet analytique important visant à améliorer l'industrie de l'hôtellerie et de la restauration.",
+              "J'ai dirigé le processus de migration d'une application Angular.js vers Angular, en assurant une transition transparente tout en préservant les lignes directrices du système de conception existant.",
+              "Mise en œuvre réussie de nouvelles fonctionnalités au sein du cadre Angular afin d'améliorer la fonctionnalité et les capacités de l'application.",
+              "Maîtrise avérée de Vue.js, JavaScript, SASS et Angular pour répondre efficacement aux exigences du projet.",
+              "A contribué de manière significative à la réussite du projet, en améliorant les outils et les capacités d'analyse mis à la disposition du secteur de l'hôtellerie et de la restauration."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Angular.js",
+          "Vue.js",
+          "Less CSS",
+          "Angular"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Frontend Medior",
+        "company": "Devellar",
+        "startDate": "Mar 2017",
+        "endDate": "Jun 2019",
+        "period": "2 years 3 months",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de modèles WordPress personnalisés à partir de zéro dans le secteur de l'éducation, en accordant une attention particulière à l'esthétique, aux meilleures pratiques en matière de référencement et à l'alignement sur les valeurs fondamentales de l'entreprise.",
+              "Maîtrise avérée de JavaScript, WordPress, PHP et Angular pour créer avec succès des modèles sur mesure adaptés aux besoins éducatifs.",
+              "A joué un rôle crucial dans l'amélioration de la présence en ligne et de la fonctionnalité des sites web éducatifs, en s'occupant à la fois de l'expérience des utilisateurs et de l'optimisation des moteurs de recherche.",
+              "Il a contribué à la croissance et au succès des établissements d'enseignement en leur fournissant des solutions WordPress sur mesure qui répondent à leurs exigences et à leurs objectifs spécifiques."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "WordPress",
+          "SQL",
+          "Angular",
+          "SASS"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Frontend Medior",
+        "company": "Webkitchen",
+        "startDate": "Juin 2016",
+        "endDate": "Janvier 2017",
+        "period": "7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai créé des modèles personnalisés pour répondre aux exigences uniques des clients en matière de conception et de fonctionnalité lorsque j'étais dans une agence web.",
+              "Nous avons fourni des solutions sur mesure pour divers projets, y compris des sites web d'entreprise de base et de vastes magasins de cosmétiques en ligne, tous construits à partir de la base.",
+              "J'ai démontré mon expertise en WordPress, PHP et MySQL pour développer des modèles qui répondent aux besoins et aux objectifs spécifiques de chaque client.",
+              "J'ai joué un rôle essentiel dans la capacité de l'agence à fournir à ses clients des solutions web hautement personnalisées, contribuant ainsi au succès de diverses entreprises en ligne."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "HTML",
+          "WordPress",
+          "SQL",
+          "SASS"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "Mentor en développement web",
+        "company": "Education US",
+        "startDate": "Novembre 2014",
+        "endDate": "Juin 2016",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a offert des conseils précieux et un mentorat aux étudiants, en se concentrant sur les techniques contemporaines de création de sites web, les outils Adobe Creative Cloud (CC) et la navigation dans le processus de recherche d'emploi.",
+              "A permis aux étudiants d'acquérir les compétences et les connaissances nécessaires pour exceller dans le développement de sites web au sein de l'industrie dynamique des technologies de l'information.",
+              "A faciliter le parcours des étudiants vers l'obtention de leur premier poste dans le domaine des technologies de l'information en leur fournissant des informations essentielles et des conseils pratiques.",
+              "Il a apporté son soutien et ses connaissances aux professionnels en devenir, contribuant ainsi à leur développement de carrière et à leur épanouissement."
+            ]
+          }
+        ],
+        "skills": [
+          "jQuery",
+          "Adobe Photoshop"
+        ]
+      },
+      {
+        "id": 8,
+        "role": "Web Designer",
+        "company": "Slicemix",
+        "startDate": "Mars 2014",
+        "endDate": "Août 2014",
+        "period": "5 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai occupé le poste de concepteur principal de sites web, avec pour principales responsabilités la création de sites web promotionnels visuellement captivants et percutants.",
+              "Conception de bannières et de documents imprimés attrayants adaptés aux besoins spécifiques des clients au sein de notre agence de marketing numérique.",
+              "Il a mis à profit ses compétences dans les logiciels Adobe Photoshop et Adobe Illustrator pour assurer la réalisation de travaux de conception de haute qualité qui communiquent efficacement les messages et les identités de marque de nos clients.",
+              "Il a joué un rôle essentiel dans l'amélioration de la présence en ligne et des supports marketing de divers clients, contribuant ainsi à leur succès dans le paysage numérique."
+            ]
+          }
+        ],
+        "skills": [
+          "Adobe Photoshop",
+          "Adobe Illustrator"
+        ]
+      },
+      {
+        "id": 9,
+        "role": "Web Designer",
+        "company": "DigitalDealerz",
+        "startDate": "Février 2013",
+        "endDate": "Janvier 2014",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception et développement de sites web commerciaux et de matériel promotionnel répondant aux besoins des petites et moyennes entreprises.",
+              "Priorité à la convivialité, à la réactivité et à l'attrait visuel dans tous les projets web afin d'améliorer la présence en ligne et l'engagement des clients.",
+              "Création de plans et d'images filaires pour les sites web, établissant des plans clairs et concis avant la phase de développement.",
+              "Il a veillé à ce que les produits finaux soient non seulement interactifs mais aussi attrayants pour les utilisateurs, améliorant ainsi l'expérience globale de l'utilisateur et la satisfaction du client."
+            ]
+          }
+        ],
+        "skills": [
+          "Adobe Photoshop",
+          "Adobe Illustrator",
+          "AutoCAD"
+        ]
+      },
+      {
+        "id": 10,
+        "role": "Développeur PHP junior",
+        "company": "Metr&co",
+        "startDate": "Janvier 2012",
+        "endDate": "Janvier 2013",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Explorer et appliquer activement l'API de Drupal pour améliorer la fonctionnalité et l'interactivité des applications web, contribuant ainsi à la maîtrise de ce système de gestion de contenu polyvalent.",
+              "Acquisition de connaissances et d'expertise dans l'exploitation des capacités de Drupal pour créer des applications web dynamiques et riches en fonctionnalités.",
+              "nir au courant des dernières tendances et des meilleures pratiques en matière de développement web Drupal, afin d'être en mesure de créer des solutions robustes et efficaces."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "SQL",
+          "Drupal"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Informatique et technologies de l'information",
+        "school": "National University of Food Technologies",
+        "startDate": "2014",
+        "endDate": "2019"
+      },
+      {
+        "id": 2,
+        "degree": "Sc. éveloppement de logiciels",
+        "school": "Kyiv Optical and Mechanical College",
+        "startDate": "2010",
+        "endDate": "2014"
       }
     ]
   }
