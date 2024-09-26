@@ -736,5 +736,147 @@
         "endDate": "2014"
       }
     ]
-  }
+  },{
+    "id": 5328,
+    "name": "Santiago Anaya",
+    "slug": "santiago-anaya-vue-ruby-fullstack-developer",
+    "alias": "Santiago",
+    "description": [
+      "Santiago est un ingénieur fullstack avec plus de six ans d'expérience commerciale, se concentrant sur le développement frontal. Il est expert en Vue.js. Pour le backend, il utilise Ruby on Rails et diverses bases de données relationnelles, en particulier PostgreSQL.",
+      "Il est capable d'augmenter les performances des applications et d'améliorer l'expérience des utilisateurs, contribuant ainsi de manière significative à chaque mission qu'il entreprend. Son expérience en tant que Tech et Lead Ingénieur met en évidence ses capacités de leadership et son aptitude à mener des initiatives techniques.",
+      "La combinaison de l'expertise technique de Santiago, de ses compétences en matière de leadership et de son dévouement à l'amélioration des performances des applications fait de lui un atout précieux pour toute équipe de développement."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "PostgreSQL",
+      "Ruby",
+      "Ruby on Rails",
+      "TypeScript",
+      "SQL",
+      "Java",
+      "Vuex",
+      "Backbone",
+      "Angular",
+      "MySQL",
+      "Vuetify",
+      "React.js",
+      "Node.js",
+      "WordPress",
+      "MongoDB"
+    ],
+    "compensations": {
+      "partTime": "3 100 €/mois (20 heures par semaine)",
+      "monthly": "5 695 €/mois (40 heures par semaine)"
+    },
+    "location": "Argentine",
+    "region": "GTM-3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Manager Ingénieur",
+        "company": "WISBOO.COM",
+        "startDate": "Oct 2022",
+        "endDate": "Août 2023",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "CHEF DE GROUPE TECHNIQUE ET INGÉNIEUR DÉVELOPPEUR MANAGER.",
+              "APP DEVELOPPEMENT - WISBOO.COM / Une application dynamique conçue pour les créateurs de contenu, leur permettant de créer et de vendre des cours par le biais de sites web personnalisés.",
+              "Responsable des rôles d'ingénieur manager et de chef technique.",
+              "Aider l'équipe à contribuer de manière significative à une cellule de travail dédiée à un composant spécifique de l'application."
+            ]
+          }
+        ],
+        "skills": [
+          "Angular.js",
+          "React.js",
+          "Ruby on Rails",
+          "Bootstrap"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Full Stack",
+        "company": "KEEPCON",
+        "startDate": "Juin 2020",
+        "endDate": "Avril 2022",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "DÉVELOPPEMENT D'APPLIQUES - KEEPCON.COM / Une application innovante pour les grandes entreprises, agrégeant les messages de diverses plateformes de médias sociaux pour une réponse efficace de l'opérateur.",
+              "Responsable d'une migration stratégique vers Vue.js.",
+              "Aider l'équipe à améliorer les performances de l'application et l'expérience des utilisateurs."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "Ruby on Rails",
+          "Bootstrap",
+          "TypeScript",
+          "Java",
+          "Backbone"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Full Stack",
+        "company": "XUBIO",
+        "startDate": "Mars 2019",
+        "endDate": "Décembre 2019",
+        "period": "9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "APP DEVELOPMENT - XUBIO.COM / Une application spécialisée pour les comptables, conçue pour gérer les comptes des clients ou des entreprises avec des fonctionnalités adaptées à différents pays.",
+              "Responsable de la fourniture d'une plateforme robuste et conviviale pour les besoins de la comptabilité."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "Bootstrap",
+          "TypeScript",
+          "Java"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Full Stack",
+        "company": "KEEPERS",
+        "startDate": "Février 2018",
+        "endDate": "Mars 2019",
+        "period": "1 an et 1 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "DÉVELOPPEMENT D'APPLICATIONS WEB..",
+              "Responsable de la convivialité et de l'efficacité des plateformes."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MongoDB",
+          "Node.js"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Systems Engeneering",
+        "school": "Universidad Technologica Nacinal",
+        "startDate": "2015",
+        "endDate": "2021"
+      }
+    ]
+  },
 ]
