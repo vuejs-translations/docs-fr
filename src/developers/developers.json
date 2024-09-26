@@ -354,5 +354,194 @@
         "endDate": "2006"
       }
     ]
+  },
+  {
+    "id": 3021,
+    "name": "Vardan Hayrapetyan",
+    "slug": "vardan-vue-node-fullstack-developer",
+    "alias": "Vardan",
+    "description": [
+      "Vardan est un développeur fullstack avec une expertise en Vue.js et Node.js. Avec six ans d'expérience, il a travaillé sur plusieurs applications web à grande échelle, excellant particulièrement dans le secteur de l'immobilier.",
+      "Il est connu pour ses compétences en matière de leadership, guidant les équipes de développement vers la réalisation de projets de haute qualité qui dépassent souvent les attentes. Ses capacités de résolution de problèmes et de gestion garantissent la réussite des projets.",
+      "Au-delà de ses compétences techniques, les capacités d'analyse de Vardan sont renforcées par sa maîtrise en relations internationales, ce qui ajoute une perspective unique à son approche des projets technologiques."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "TypeScript",
+      "PostgreSQL",
+      "SQL",
+      "Apollo",
+      "Flask"
+    ],
+    "compensations": {
+      "partTime": "3 772 €/mois (20 heures par semaine)",
+      "monthly": "6 871 €/mois (40 heures par semaine)"
+    },
+    "location": "Arménie",
+    "region": "GTM+4",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Tech Lead",
+        "company": "Flair.hr",
+        "startDate": "Fév 2023",
+        "endDate": "Fév 2024",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a dirigé le développement des projets de Help Desk RH, Ticketing, Inventaire, Gestion des documents et Examens de performance.",
+              "Il a participé à des revues de code et a fourni des commentaires constructifs à ses collègues afin de garantir les meilleures pratiques et un code de haute qualité.",
+              "Il a mené des évaluations post-projet afin d'identifier les domaines à améliorer et a mis en œuvre des améliorations de processus pour les projets futurs."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Node.js",
+          "GraphQL",
+          "Apollo"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Tech Lead",
+        "company": "Monday Merch",
+        "startDate": "Fév 2022",
+        "endDate": "Dec 2023",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a communiqué efficacement l'état d'avancement du projet, les risques et les problèmes aux parties prenantes, en veillant à ce que toutes les parties soient informées et alignées tout au long du projet.",
+              "Il a procédé à une analyse approfondie des processus existants et a identifié les domaines susceptibles d'être améliorés, en utilisant ces connaissances pour élaborer et mettre en œuvre de nouveaux processus mieux adaptés aux besoins et aux objectifs de l'entreprise.",
+              "Changement de la version MVP en définissant la structure du projet et en revisitant l'architecture."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Python",
+          "Tailwind",
+          "Team leading"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Web",
+        "company": "Remix",
+        "startDate": "Mai 2022",
+        "endDate": "Nov 2022",
+        "period": "6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de l'interface utilisateur et des principales fonctionnalités du site web officiel de Remix, en veillant à ce qu'il soit adapté à la mobilité ;",
+              "Utilisation des pages GitHub pour déployer l'application React ;",
+              "Mise en œuvre d'un défilement de section personnalisé pour améliorer l'expérience des utilisateurs."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "React.js",
+          "TypeScript",
+          "Gestion de projet",
+          "Tailwind"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Tech Lead",
+        "company": "Flote",
+        "startDate": "Mai 2017",
+        "endDate": "Nov 2022",
+        "period": "5 ans et 6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Mentorat de 4 développeurs frontaux juniors, améliorant leurs compétences en JavaScript et Vue.js ;",
+              "Il a collaboré étroitement avec le chef de projet pour garantir l'alignement sur les plans, les calendriers et la facturation du projet ;",
+              "Développement et construction d'interfaces utilisateur dynamiques dans des environnements Agile pour des entreprises dont la valeur peut atteindre 3 milliards de dollars ;",
+              "Participation active à toutes les phases de développement, de la conceptualisation et de la conception fonctionnelle à la mise en œuvre détaillée, au débogage et au déploiement de la solution logicielle ;",
+              "Supervision et coordination d'une équipe de six employés, supervision de plusieurs processus commerciaux critiques ;",
+              "Il a dirigé la conception de l'architecture frontale du projet, les réunions hebdomadaires de l'équipe ainsi que la formulation et l'exécution des stratégies et des plans ;",
+              "Fournir une assistance technique 24 heures sur 24 et 7 jours sur 7 pour assurer le bon fonctionnement du site web ;",
+              "Générer des wireframes, des maquettes et des prototypes pour communiquer visuellement les concepts de conception ;",
+              "Mise en œuvre de techniques de conception réactive, garantissant une performance optimale de l'interface utilisateur sur différents appareils et tailles d'écran ;",
+              "Contribuer à l'amélioration du développement des logiciels en proposant de nouveaux outils et en mettant en œuvre les meilleures pratiques ;",
+              "Il a mené des recherches sur les utilisateurs et des tests de convivialité, en recueillant des commentaires et en identifiant les domaines à améliorer ;",
+              "Il a joué un rôle clé dans la documentation des exigences du projet, des spécifications techniques et des procédures de développement."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Gestion de projet",
+          "Design",
+          "Tailwind",
+          "Lead d'équipe"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Tech Lead",
+        "company": "Tenanti",
+        "startDate": "Déc 2019",
+        "endDate": "Juin 2021",
+        "period": "1 an et 6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Supervision d'une équipe de développement web, comprenant des développeurs contractuels et des développeurs offshore, et responsabilités de supervision des employés ;",
+              "Il a établi des normes à l'échelle de l'équipe pour les processus et les méthodologies de qualité, en veillant à ce que toutes les applications respectent les critères de qualité les plus élevés ;",
+              "Il a encadré et soutenu les autres membres de l'équipe, en tant que chef d'équipe et dans le cadre des interactions avec les clients ;",
+              "Il a dirigé des réunions d'équipe et organisé la hiérarchisation des tâches afin de garantir la livraison ponctuelle des projets dans le respect des normes requises ;",
+              "Supervision vigilante de toutes les facettes du développement des applications afin de garantir l'alignement sur les normes de qualité ;",
+              "Création d'une documentation complète pour les tâches de développement et les documents relatifs aux exigences du produit (PRD), afin de garantir la clarté pour les membres de l'équipe et les parties prenantes ;",
+              "Il a orchestré la planification et l'exécution des versions de logiciels, en englobant les processus de test, de déploiement et de documentation ;",
+              "Il a procédé à l'examen du code du travail des membres de l'équipe, en offrant un retour d'information constructif et des conseils afin d'améliorer la qualité du code."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "React.js",
+          "TypeScript",
+          "Flask",
+          "Design",
+          "Tailwind",
+          "Lead d'équipe"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Relations et affaires internationales",
+        "school": "Armenian National Academy of Sciences",
+        "startDate": "2017",
+        "endDate": "2019"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Caucasian Studies",
+        "school": "Yerevan State University",
+        "startDate": "2013",
+        "endDate": "2017"
+      }
+    ]
   }
 ]
