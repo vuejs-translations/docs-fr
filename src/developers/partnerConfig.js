@@ -25,27 +25,27 @@ const partnerConfig = {
 
   // Hero Section
   pageHeroBanner: {
-    title: 'Vue Developers',
-    description: 'Vue Developers are certified individual freelancers. Payments, compliance and vetting are administrated by our partner Proxify. Interested to join the list?',
+    title: 'Développeurs Vue',
+    description: 'Les développeurs Vue sont des indépendants certifiés. Les paiements, la conformité et la vérification sont administrés par notre partenaire Proxify. Vous souhaitez rejoindre la liste ?',
     applyButton: {
       url: applyUrl,
-      label: 'Apply here'
+      label: 'Postulez ici'
     }
   },
 
   // Hero Section
   pageJoinSection: {
-    title: 'Become a listed developer',
-    description: 'Get a long-term part-time or full-time position at company looking for a Vue.js developer.',
+    title: 'Devenir un développeur référencé',
+    description: 'Obtenez un poste à long terme, à temps partiel ou à temps plein, dans une entreprise qui recherche un développeur Vue.js.',
     applyButton: {
       url: applyUrl,
-      label: 'Apply to join'
+      label: 'Poser sa candidature'
     }
   },
 
   // Footer Configuration
   pageFooter: {
-    text: `This highly vetted developer is brought to you by Vue’s partner:`,
+    text: `Ce développeur hautement qualifié vous est présenté par le partenaire de Vue :`,
     email: 'vue@proxify.io',
     phone: '+44 20 4614 2667',
     websiteVueLink: vueArticleUrl,
@@ -54,14 +54,14 @@ const partnerConfig = {
 
   // Diagram sections
   profileDiagram: {
-    title: 'Candidate profile',
+    title: 'Profil du candidat',
     prependText: 'How our developers score in the parameters that correlate best with future success in the role.'
   },
 
   scoreDiagram: {
-    title: 'Engineering excellence score',
-    prependText: 'The practical score range is 0 to 300. This is the distribution of scores for all evaluated Vue.js developers, and here’s where your candidate scored.',
-    appendText: 'Data from 3,661 evaluated Vue.js developers and 38,008 applicants.'
+    title: 'Score d\'excellence en ingénierie',
+    prependText: 'Les résultats obtenus par nos développeurs dans les paramètres les mieux corrélés à leur réussite future dans le poste.',
+    appendText: 'Données provenant de 3 661 développeurs Vue.js évalués et de 38 008 candidats.'
   },
 
   // Proficiency Section
