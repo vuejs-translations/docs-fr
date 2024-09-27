@@ -112,7 +112,7 @@ export default defineComponent({
 Voir aussi :
 
 - [Note sur le Treeshaking de Webpack](/api/general#note-on-webpack-treeshaking)
-- [Tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/packages/dts-test/defineComponent.test-d.tsx)
+- [Tests sur les types de `defineComponent`](https://github.com/vuejs/core/blob/main/packages-private/dts-test/defineComponent.test-d.tsx)
 
 :::tip
 `defineComponent()` permet également l'inférence de type pour les composants définis en JavaScript simple.
