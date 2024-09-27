@@ -179,5 +179,39 @@
     "platinum": true,
     "contact": "hello@herodevs.com",
     "hiring": "https://www.herodevs.com/job-board"
+  },
+  {
+    "name": "Proxify",
+    "logo": "proxify.svg",
+    "flipLogo": true,
+    "intro": "Avec Proxify, vous pouvez embaucher des développeurs Vue.js experts, à un prix équitable et sans risque, en quelques jours seulement. La qualité et l'engagement d'une équipe interne, avec la flexibilité des entrepreneurs. Renforcez votre équipe existante ou créez-en une nouvelle, sans les risques et l'administration d'un emploi permanent.",
+    "description": [
+      "Proxify est un partenaire de bout en bout qui met en relation les entreprises avec des développeurs rigoureusement sélectionnés, et qui vous met en relation avec des développeurs parfaitement adaptés en seulement deux jours.",
+      "Notre réseau compte plus de 4 000 développeurs spécialisés dans plus de 500 domaines techniques. Nous n'acceptons que 2 % des candidats afin de garantir les normes de qualité les plus élevées. Des milliers d'entreprises dans le monde entier font confiance à notre processus de sélection rigoureux.",
+      "- <b>Délai d'embauche</b> : les candidats idéaux sont présentés dans un délai de deux jours seulement.",
+      "- <b>Un membre essentiel de l'équipe, pas seulement un freelance</b> : Les développeurs de Proxify assurent la qualité du code critique pour l'entreprise et s'intègrent parfaitement à la culture de votre équipe. Ils s'intègrent parfaitement à la culture de votre équipe.",
+      "- <b>Des prix équitables</b> : Notre modèle de collaboration avec des talents de haut niveau à distance dans le monde entier est à la fois rentable pour nos clients et lucratif pour nos développeurs. Tout le monde y gagne.",
+      "- <b>Sans risque et adaptable</b> : profitez d'une équipe qui peut s'adapter rapidement à vos priorités, sans les risques et les limites d'un emploi permanent."
+    ],
+    "proficiencies": [
+      "Vue",
+      "Ruby on Rails",
+      "Node.js",
+      "React Native",
+      "Flutter"
+    ],
+    "region": [
+      "Europe"
+    ],
+    "location": [
+      "Europe"
+    ],
+    "website": {
+      "text": "proxify.io",
+      "url": "https://proxify.io?utm_source=partnership&utm_medium=vuejs&utm_campaign=partners-proxify.html"
+    },
+    "contactPage": "https://proxify.io/hire-vuejs?utm_source=partnership&utm_medium=vuejs&utm_campaign=partners-proxify.html",
+    "hiring": "https://career.proxify.io/apply?utm_source=partnership&utm_medium=vuejs&utm_campaign=partners-proxify.html",
+    "platinum": true
   }
 ]
