@@ -1812,5 +1812,216 @@
         "endDate": "2004"
       }
     ]
+  },
+  {
+    "id": 1020,
+    "name": "Abdusaid Umarov",
+    "slug": "abdusaid-html-css-vue-typescript-frontend-dev",
+    "alias": "Abdusaid",
+    "intro": "Abdusaid est un développeur Frontend senior avec plus de six ans d'expérience, où il s'est fait un nom dans Vue.js et Nuxt.js. Ses compétences en Vue.js sont de premier ordre, comme le prouve le score parfait de 100 % qu'il a obtenu au test Proxify.",
+    "description": [
+      "Bien qu'il se concentre sur le travail de frontend, Abdusaid ne se limite pas à cela - il a également participé à des tâches de backend à l'aide de Laravel.",
+      "Son expérience dans les domaines de la gestion de l'identité, de la fintech, du commerce électronique et d'autres secteurs technologiques montre sa capacité à s'adapter et à s'épanouir dans différents environnements.",
+      "Abdusaid se distingue non seulement par ses compétences techniques, mais aussi par son aptitude à comprendre la situation dans son ensemble et à fournir un travail qui réponde véritablement aux besoins de chaque projet qu'il entreprend."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Nuxt.js",
+      "Laravel",
+      "Java",
+      "Tailwind",
+      "Jest",
+      "React.js",
+      "Jenkins",
+      "Storybook",
+      "SonarQube",
+      "Docker"
+    ],
+    "compensations": {
+      "partTime": "2 764 €/mois (20 heures par semaine)",
+      "monthly": "5 359 €/mois (40 heures par semaine)"
+    },
+    "location": "Uzbekistan",
+    "region": "GTM+5",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Frontend senior",
+        "company": "Identity Blitz",
+        "startDate": "Septembre 2023",
+        "endDate": "Juillet 2024",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Expérience dans la création de plugins web personnalisés : plugin de localisation i18n et plugin d'exécution automatisée de docker utilisant Vite.",
+              "Configuration des paramètres du projet avec prettierrc et vite.config, postcss.config, tsup.config, ts.config.",
+              "Developed Tablet and Mobile views by applying PostCSS."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "Docker",
+          "TypeScript",
+          "SCSS"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Frontend senior",
+        "company": "Uzum",
+        "startDate": "Janvier 2023",
+        "endDate": "Septembre 2023",
+        "period": "8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Expérience dans la construction d'applications web utilisant l'architecture modulaire.",
+              "Assume l'entière responsabilité de tâches complexes (telles que l'authentification et la résolution de conflits de fusion).",
+              "Expérience dans l'utilisation de Turbo repo dans des projets basés sur une architecture mono repo.",
+              "A effectué des mises à jour dans l'environnement PROD.",
+              "Localisation intégrée à l'aide du paquet i18n-vue."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Tailwind"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel",
+        "company": "EPAM Systems",
+        "startDate": "Septembre 2021",
+        "endDate": "Mai 2023",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Mise en œuvre de nouvelles fonctionnalités à l'aide de Vue.js/NUXT.js.",
+              "Réalisation des examens du code.",
+              "Correction de bugs.",
+              "Refonte du code pour le rendre plus propre.",
+              "Rédaction de rapports documentés sur les commits à l'aide de MergeRequests et Spikes de Gitlab.",
+              "Apprentissage du nouveau CMS Prismic.",
+              "Expérience avec Magnolia CMS pour travailler avec la version classique du projet.",
+              "A travaillé dans un environnement Scrum et comprendre toutes les caractéristiques et terminologies de la méthodologie, y compris les sprints, les planifications de sprints, les rétrospectives et les réunions quotidiennes."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "ES5/ES6",
+          "Jenkins",
+          "Nuxt.js",
+          "SonarQube"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Genesis-Innovation LLC. (Uzcard)",
+        "startDate": "Janvier 2021",
+        "endDate": "Décembre 2021",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de composants/UI selon la conception Figma.",
+              "Connexion des API à l'interface utilisateur à l'aide d'Axios.",
+              "Autorisations de jetons fournies, méthode d'authentification silencieuse et jeton JWT actualisé.",
+              "Graphiques connectés à l'aide de graphiques Apex.",
+              "Création de Vue Routers.",
+              "Utilisation de la localisation linguistique interne i18n.",
+              "Structure modulaire « Vuex » largement utilisée.",
+              "Création de dessins à l'aide d'Element UI."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "UI",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Web",
+        "company": "Fido-Biznes LLC",
+        "startDate": "Juin 2019",
+        "endDate": "Juin 2021",
+        "period": "2 ans",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A travaillé au sein d'une équipe pour mettre en place le système bancaire de l'Ouzbékistan.",
+              "Amélioration des performances et de la stabilité du système Interrogation, indexation, écriture de procédures et de fonctions pour créer la section « backend » du système.",
+              "Création de pages JSP sophistiquées avec le langage JavaScript pour la logique frontend du système bancaire.",
+              "Création de services Java pour l'échange d'informations avec le Government Custom Center dans les formats XML et JSON avec des techniques d'échange de clés pour fournir de telles API REST potentielles."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "JavaScript",
+          "Java",
+          "SQL",
+          "Oracle",
+          "JSON",
+          "PL/SQL",
+          "XML"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Web",
+        "company": "Artel",
+        "startDate": "Septembre 2018",
+        "endDate": "Janvier 2020",
+        "period": "1 an et 4 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Travailler en équipe pour construire un système réel pour l'industrie technologique.",
+              "Amélioration de l'interface UI/frontend.",
+              "Construction d'une section analytique du système avec une analyse graphique, selon les feuilles Excel fournies par l'industrie, en utilisant la logique pour extraire les données.",
+              "Mise en œuvre des structures/composants frontend du système d'échange de documents internes."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "ES5/ES6",
+          "SCSS",
+          "Vuex"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Sciences informatiques et génie logiciel",
+        "school": "INHA University in Tashkent",
+        "startDate": "2015",
+        "endDate": "2019"
+      }
+    ]
   }
 ]
