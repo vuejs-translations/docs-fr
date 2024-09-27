@@ -72,7 +72,7 @@ const hireUsLink = computed(() => generateUTMUrl(partnerConfig.hireUsButtonUrl, 
         <DeveloperProficiencies
           v-if="proficiencies"
           class="developer-page__text-section"
-          title="Proficiencies"
+          title="Compétences"
           :proficiencies="proficiencies"
         />
 
@@ -98,7 +98,7 @@ const hireUsLink = computed(() => generateUTMUrl(partnerConfig.hireUsButtonUrl, 
         <DeveloperExperiences
           v-if="experiences"
           class="developer-page__text-section"
-          title="Selected experience"
+          title="Expériences"
           :experiences="experiences"
         />
 
