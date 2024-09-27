@@ -1,0 +1,2027 @@
+[
+  {
+    "id": 1346,
+    "name": "Stelios Kitziris",
+    "slug": "stelios-vue-node-fullstack-developer",
+    "alias": "Stelios",
+    "description": [
+      "Stelios est un développeur fullstack avec plus de six ans d'expérience commerciale, spécialisé dans la pile MEVN.",
+      "Il est compétent dans la construction de solutions logicielles évolutives et a dirigé avec succès le développement de plusieurs systèmes à grande échelle et critiques pour l'entreprise. Il s'intéresse également aux technologies émergentes telles que le Web3 et l'IA.",
+      "Stelios est titulaire d'un Master en informatique, ce qui lui confère une connaissance approfondie du paysage technologique. Son approche perfectionniste est idéale pour les projets qui bénéficient d'une attention méticuleuse aux détails."
+    ],
+    "proficiencies": [
+      "MongoDB",
+      "Vue.js",
+      "Express.js",
+      "Node.js",
+      "TypeScript",
+      "Nuxt.js",
+      "Laravel",
+      "PHP",
+      "PostgreSQL",
+      "Ionic",
+      "Cordova",
+      "MySQL",
+      "Docker",
+      "React.js"
+    ],
+    "compensations": {
+      "partTime": "4 276 €/mois (20 heures par semaine)",
+      "monthly": "7 879 €/mois (40 heures par semaine)"
+    },
+    "location": "Grèce",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur Frontend senior",
+        "company": "White Hat Gaming",
+        "startDate": "Décembre 2020",
+        "endDate": "Mai 2024",
+        "period": "3 ans et 5 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "White Hat Gaming est un fournisseur de jeux de casino établi à Malte :"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Utilisation de Vue.js version 3 avec l'API de composition pour le développement de l'interface utilisateur Architecture logicielle ;",
+              "Planification et développement d'applications Web internes ; tests unitaires."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "PostgreSQL",
+          "Node.js",
+          "Nuxt.js",
+          "TypeScript"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Lead Développeur Node.js",
+        "company": "Netguru S.A.",
+        "startDate": "Décembre 2019",
+        "endDate": "Décembre 2020",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Dépannage et remédiation efficaces des applications web ;",
+              "Interface avec les clients pour identifier les besoins de l'entreprise ;",
+              "Utilisation des derniers outils, techniques et approches de développement de logiciels. Utilisation de Node.js, Express.js, Vue.js, React.js, MongoDB, PostgreSQL. Une passion et un dévouement sont nés pour le développement de logiciels ;",
+              "Utilisation des outils, techniques et approches les plus récents en matière de développement de logiciels."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MongoDB",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "TypeScript",
+          "Nuxt.js"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel en chef",
+        "company": "Draxis Environment S.A.",
+        "startDate": "Octobre 2017",
+        "endDate": "Décembre 2019",
+        "period": "2 ans et 2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Draxis était une entreprise qui créait des applications pour les syndicats européens, en particulier dans le domaine de l'agriculture :"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Architecture logicielle, planification et développement d'applications web et d'applications mobiles.",
+              "ception et développement de systèmes ICT à grande échelle, financés par des donateurs internationaux, le programme Horizon 2020 et la Commission européenne."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "JavaScript",
+          "React.js",
+          "Vue.js",
+          "PostgreSQL",
+          "TypeScript",
+          "Node.js",
+          "Nuxt.js",
+          "Cordova"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Full-Stack",
+        "company": "Archirodon Group N.V.",
+        "startDate": "Septembre 2015",
+        "endDate": "Août 2017",
+        "period": "1 an et 11 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Archirodon Group N.V. était une entreprise de construction spécialisée dans la construction de lacs artificiels et de gratte-ciel."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement d'applications web ;",
+              "Création, communication et gestion de plans de projet."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "JavaScript",
+          "Angular.js",
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Web",
+        "company": "24 Media Digital Media Group",
+        "startDate": "Janvier 2015",
+        "endDate": "Août 2015",
+        "period": "7 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Il s'agissait d'un stage. 24 Media Digital Media Group est une grande société de presse en Grèce."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de sites web et d'applications web."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "Angular.js",
+          "WordPress"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Web",
+        "company": "Shape LTD",
+        "startDate": "Décembre 2013",
+        "endDate": "Février 2014",
+        "period": "2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Il s'agissait d'une société de publicité, et Stelios créait des sites web."
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement et soutien du site web ;",
+              "Réalisation du référencement de la plateforme."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "WordPress"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Computing",
+        "school": "Cardiff Metropolitan University",
+        "startDate": "2019",
+        "endDate": "2022"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Computer Science",
+        "school": "IEK Akmi",
+        "startDate": "2014",
+        "endDate": "2016"
+      }
+    ]
+  },
+  {
+    "id": 2535,
+    "name": "Tomek Jankowski",
+    "slug": "tomek-vue-node-fullstack-developer",
+    "alias": "Tomek",
+    "description": [
+      "Tomek est un développeur fullstack avec plus de 17 ans d'expérience commerciale. Au fil des ans, il est passé de l'utilisation de PHP à la maîtrise des piles technologiques modernes, en se concentrant sur Vue.js et Node.js au cours des six dernières années. Son expertise dans ces technologies a permis de développer et de soutenir des systèmes robustes et à fort trafic.",
+      "En tant que directeur technique d'une agence de développement web pendant plus de dix ans, il a géré avec succès une équipe de 12 à 17 personnes et supervisé des projets pour des clients de premier plan dans divers secteurs.",
+      "Tomek a toujours été très apprécié par les clients de Proxify pour ses contributions et son leadership exceptionnels."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Node.js",
+      "MongoDB",
+      "Nuxt.js",
+      "PHP",
+      "MySQL",
+      "Google Cloud",
+      "ElasticSearch",
+      "Redis",
+      "RabbitMQ",
+      "Kubernetes",
+      "TypeScript",
+      "Express.js",
+      "Koa",
+      "Nest.js"
+    ],
+    "compensations": {
+      "partTime": "4 696 €/mois (20 heures par semaine)",
+      "monthly": "8 551 €/mois (40 heures par semaine)"
+    },
+    "location": "Pologne",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Directeur technique",
+        "company": "i3MEDIA LTD",
+        "startDate": "Juillet 2010",
+        "endDate": "Juin 2022",
+        "period": "11 ans et 11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception des fonctionnalités, exigences pour l'équipe de développement.",
+              "Développement de fonctionnalités plus avancées ou critiques.",
+              "Revue de code + support des autres dev/front-end.",
+              "Réunions techniques avec les clients.",
+              "Conception et maintenance de l'infrastructure/automatisation (GCP au cours des 10 dernières années).",
+              "Estimation des délais et des coûts."
+            ]
+          },
+          {
+            "isGrouped": false,
+            "content": "Des systèmes qui construisent"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Solution d'e-commerce multi-canal (eBay, Amazon + web front) avec des modules avancés pour calculer les prix de vente optimaux, des définitions de produits et des règles d'expédition complexes, des promotions, et des intégrations avec des solutions de messagerie et d'entreposage.",
+              "CMS du secteur public avec versionnement du contenu, contrôle d'accès avancé, flux de publication, éditeur de contenu basé sur des widgets, module de formulaires dynamiques avec logique gérable, validation et paiements ; finalement utilisé par les conseils pour la plupart des interactions entre les citoyens et les conseils (environ 80 formulaires par site web, par exemple pour les cartes de bus, le signalement de problèmes, les poubelles).",
+              "Plate-forme de dons caritatifs - utilisée à ce jour par un certain nombre d'organisations caritatives de taille moyenne à grande au Royaume-Uni, intégrée à MS Dynamics et à d'autres solutions de gestion de la relation client (CRM), également intégrée à Gov.UK.",
+              "Gestion de projet - dédié aux agences médias, utilisé en interne depuis environ 4 ans. Trop de fonctionnalités pour être énumérées, certainement plus que Basecamp/TeamWork (leaders à l'époque).",
+              "Gestion des campagnes de référencement - dédiée aux agences de marketing, intégrée à tous les outils pertinents du monde du marketing en ligne, génération de rapports, négociations avec les prospects, rédaction de contenu, suivi du temps, planification du calendrier des campagnes, listes de tâches, etc.",
+              "De nombreux sites web sur mesure : enchères au centime, conception d'affiches en ligne, répertoires de recherche de toutes sortes, candidatures à des prix, recrutement... la liste est longue."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Symfony",
+          "Laravel",
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "jQuery",
+          "Node.js",
+          "Zend",
+          "Google Cloud"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur web, puis développeur principal",
+        "company": "i3MEDIA",
+        "startDate": "Mai 2007",
+        "endDate": "Juillet 2010",
+        "period": "3 ans et 2 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "i3MEDIA était une petite agence qui créait des sites web pour des entreprises locales.\n\n"
+          },
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement du premier CMS sur mesure, qui est devenu le produit de base, dont la deuxième version a été mise en œuvre sur des sites web de renommée nationale en 2010."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "Zend"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur web",
+        "company": "Freelance",
+        "startDate": "Mars 2005",
+        "endDate": "Mars 2007",
+        "period": "2 ans",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Gestion de 3 projets commerciaux."
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "Adobe Flash"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Computer Science",
+        "school": "Faculté de mathématiques et d'informatique, Université de Łódź",
+        "startDate": "2002",
+        "endDate": "2006"
+      }
+    ]
+  },
+  {
+    "id": 3021,
+    "name": "Vardan Hayrapetyan",
+    "slug": "vardan-vue-node-fullstack-developer",
+    "alias": "Vardan",
+    "description": [
+      "Vardan est un développeur fullstack avec une expertise en Vue.js et Node.js. Avec six ans d'expérience, il a travaillé sur plusieurs applications web à grande échelle, excellant particulièrement dans le secteur de l'immobilier.",
+      "Il est connu pour ses compétences en matière de leadership, guidant les équipes de développement vers la réalisation de projets de haute qualité qui dépassent souvent les attentes. Ses capacités de résolution de problèmes et de gestion garantissent la réussite des projets.",
+      "Au-delà de ses compétences techniques, les capacités d'analyse de Vardan sont renforcées par sa maîtrise en relations internationales, ce qui ajoute une perspective unique à son approche des projets technologiques."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "TypeScript",
+      "PostgreSQL",
+      "SQL",
+      "Apollo",
+      "Flask"
+    ],
+    "compensations": {
+      "partTime": "3 772 €/mois (20 heures par semaine)",
+      "monthly": "6 871 €/mois (40 heures par semaine)"
+    },
+    "location": "Arménie",
+    "region": "GTM+4",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Tech Lead",
+        "company": "Flair.hr",
+        "startDate": "Février 2023",
+        "endDate": "Février 2024",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a dirigé le développement des projets de Help Desk RH, Ticketing, Inventaire, Gestion des documents et Examens de performance.",
+              "Il a participé à des revues de code et a fourni des commentaires constructifs à ses collègues afin de garantir les meilleures pratiques et un code de haute qualité.",
+              "Il a mené des évaluations post-projet afin d'identifier les domaines à améliorer et a mis en œuvre des améliorations de processus pour les projets futurs."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Node.js",
+          "GraphQL",
+          "Apollo"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Tech Lead",
+        "company": "Monday Merch",
+        "startDate": "Février 2022",
+        "endDate": "Dec 2023",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a communiqué efficacement l'état d'avancement du projet, les risques et les problèmes aux parties prenantes, en veillant à ce que toutes les parties soient informées et alignées tout au long du projet.",
+              "Il a procédé à une analyse approfondie des processus existants et a identifié les domaines susceptibles d'être améliorés, en utilisant ces connaissances pour élaborer et mettre en œuvre de nouveaux processus mieux adaptés aux besoins et aux objectifs de l'entreprise.",
+              "Changement de la version MVP en définissant la structure du projet et en revisitant l'architecture."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Python",
+          "Tailwind",
+          "Team leading"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Web",
+        "company": "Remix",
+        "startDate": "Mai 2022",
+        "endDate": "Novembre 2022",
+        "period": "6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de l'interface utilisateur et des principales fonctionnalités du site web officiel de Remix, en veillant à ce qu'il soit adapté à la mobilité ;",
+              "Utilisation des pages GitHub pour déployer l'application React ;",
+              "Mise en œuvre d'un défilement de section personnalisé pour améliorer l'expérience des utilisateurs."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "React.js",
+          "TypeScript",
+          "Gestion de projet",
+          "Tailwind"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Tech Lead",
+        "company": "Flote",
+        "startDate": "Mai 2017",
+        "endDate": "Novembre 2022",
+        "period": "5 ans et 6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Mentorat de 4 développeurs frontaux juniors, améliorant leurs compétences en JavaScript et Vue.js ;",
+              "Il a collaboré étroitement avec le chef de projet pour garantir l'alignement sur les plans, les calendriers et la facturation du projet ;",
+              "Développement et construction d'interfaces utilisateur dynamiques dans des environnements Agile pour des entreprises dont la valeur peut atteindre 3 milliards de dollars ;",
+              "Participation active à toutes les phases de développement, de la conceptualisation et de la conception fonctionnelle à la mise en œuvre détaillée, au débogage et au déploiement de la solution logicielle ;",
+              "Supervision et coordination d'une équipe de six employés, supervision de plusieurs processus commerciaux critiques ;",
+              "Il a dirigé la conception de l'architecture frontend du projet, les réunions hebdomadaires de l'équipe ainsi que la formulation et l'exécution des stratégies et des plans ;",
+              "Fournir une assistance technique 24 heures sur 24 et 7 jours sur 7 pour assurer le bon fonctionnement du site web ;",
+              "Générer des wireframes, des maquettes et des prototypes pour communiquer visuellement les concepts de conception ;",
+              "Mise en œuvre de techniques de conception réactive, garantissant une performance optimale de l'interface utilisateur sur différents appareils et tailles d'écran ;",
+              "Contribuer à l'amélioration du développement des logiciels en proposant de nouveaux outils et en mettant en œuvre les meilleures pratiques ;",
+              "Il a mené des recherches sur les utilisateurs et des tests de convivialité, en recueillant des commentaires et en identifiant les domaines à améliorer ;",
+              "Il a joué un rôle clé dans la documentation des exigences du projet, des spécifications techniques et des procédures de développement."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Gestion de projet",
+          "Design",
+          "Tailwind",
+          "Lead d'équipe"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Tech Lead",
+        "company": "Tenanti",
+        "startDate": "Décembre 2019",
+        "endDate": "Juin 2021",
+        "period": "1 an et 6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Supervision d'une équipe de développement web, comprenant des développeurs contractuels et des développeurs offshore, et responsabilités de supervision des employés ;",
+              "Il a établi des normes à l'échelle de l'équipe pour les processus et les méthodologies de qualité, en veillant à ce que toutes les applications respectent les critères de qualité les plus élevés ;",
+              "Il a encadré et soutenu les autres membres de l'équipe, en tant que chef d'équipe et dans le cadre des interactions avec les clients ;",
+              "Il a dirigé des réunions d'équipe et organisé la hiérarchisation des tâches afin de garantir la livraison ponctuelle des projets dans le respect des normes requises ;",
+              "Supervision vigilante de toutes les facettes du développement des applications afin de garantir l'alignement sur les normes de qualité ;",
+              "Création d'une documentation complète pour les tâches de développement et les documents relatifs aux exigences du produit (PRD), afin de garantir la clarté pour les membres de l'équipe et les parties prenantes ;",
+              "Il a orchestré la planification et l'exécution des versions de logiciels, en englobant les processus de test, de déploiement et de documentation ;",
+              "Il a procédé à l'examen du code du travail des membres de l'équipe, en offrant un retour d'information constructif et des conseils afin d'améliorer la qualité du code."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "React.js",
+          "TypeScript",
+          "Flask",
+          "Design",
+          "Tailwind",
+          "Lead d'équipe"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "MSc. Relations et affaires internationales",
+        "school": "Armenian National Academy of Sciences",
+        "startDate": "2017",
+        "endDate": "2019"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Caucasian Studies",
+        "school": "Yerevan State University",
+        "startDate": "2013",
+        "endDate": "2017"
+      }
+    ]
+  },
+  {
+    "id": 2030,
+    "name": "Emre Demir",
+    "slug": "emre-vue-frontend-developer",
+    "alias": "Emre",
+    "description": [
+      "Emre est un développeur frontend talentueux avec plus de six ans d'expérience commerciale dans les services et solutions informatiques et la conception. Tout au long de sa carrière, Emre a travaillé dans divers secteurs, notamment la FinTech, la banque, le jeu, l'automatisation du marketing, la défense et la cybersécurité.",
+      "Il est le plus compétent dans les langages de programmation frontend comme le cadre JS Vue.js, React.js, Typescript, et RxJs. Il se spécialise dans la collaboration avec les chefs de produit et les concepteurs pour recueillir les exigences, produire des plans et améliorer les conceptions pour la convivialité et la fonctionnalité.",
+      "Emre est orienté vers les objectifs et s'engage fortement dans la collaboration. Il utilise différents logiciels de conception de sites web pour développer des sites web et des conceptions sur mesure, axés sur le client."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Nuxt.js",
+      "Java",
+      "AWS",
+      "Figma",
+      "Jira",
+      "API REST"
+    ],
+    "compensations": {
+      "partTime": "4 452 €/mois (20 heures par semaine)",
+      "monthly": "8 215 €/mois (40 heures par semaine)"
+    },
+    "location": "Turquie",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Front-end senior",
+        "company": "A5 Labs",
+        "startDate": "Mars 2021",
+        "endDate": "Octobre 2022",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé en tant que développeur Front End dans le projet Back Office de l'application WPTO Poker. Ce projet est responsable des opérations CRUD telles que la lecture des résultats de la détection BOT, le verrouillage des comptes, le verrouillage des retraits/dépôts, etc...",
+              "Responsable de la création de contrats GraphQL et de leur intégration avec le backend (GraphQL, Rest, Websocket).",
+              "Création d'une bibliothèque d'interface utilisateur utilisant MaterialUI.",
+              "Organisation de réunions avec le concepteur et le chef de produit pour traiter les cas de figure, les améliorations et les exigences."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Vue.js",
+          "RxJs",
+          "GraphQL",
+          "Figma",
+          "API",
+          "Jira",
+          "Material-UI",
+          "API REST"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Consultant senior",
+        "company": "Softtech",
+        "startDate": "Août 2020",
+        "endDate": "Avril 2021",
+        "period": "8 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Consultant senior dans des projets bancaires et financiers en tant que membre d'équipes Agile internationales - (Delivery Hub - Remote) Vue.js, Amazon AWS"
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "AWS",
+          "Agile"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Front-end senior",
+        "company": "Insider",
+        "startDate": "Février 2020",
+        "endDate": "Août 2020",
+        "period": "6 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Insider - une plate-forme pour des expériences individualisées et cross-canal - permet aux spécialistes du marketing d'entreprise de connecter les données des clients à travers les canaux et les systèmes, de prédire leur comportement futur avec un moteur d'intention AI et d'individualiser les expériences des clients. Les spécialistes du marketing utilisent la plateforme Insider pour proposer des expériences sur des canaux tels que le Web, les applications, le Web Push, les e-mails, les SMS et les applications de messagerie (WhatsApp, Facebook Messenger, RCS).",
+              "J'ai travaillé en tant que développeur frontend senior, j'ai implémenté la partie frontend d'un tableau de bord à l'aide de Vue.js."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Expert en développement de logiciels",
+        "company": "Comodo",
+        "startDate": "Mai 2018",
+        "endDate": "Décembre 2019",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "A travaillé sur le projet de filtrage Web basé sur le DNS, Dome Shield, ainsi que sur les sous-projets Dome Analytics, Comodo Threat Analysis et NuEDUSec. A travaillé en tant que développeur full-stack sur tous les projets - Dome Shield, Dome Analytics, Comodo Threat Analysis et NuEDUSec."
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MySQL",
+          "MongoDB",
+          "AWS",
+          "Redis",
+          "Node.js",
+          "Jenkins",
+          "AWS SQS",
+          "AWS Lambda",
+          "Nuxt.js",
+          "Angular"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur de logiciel",
+        "company": "Freelance",
+        "startDate": "Juillet 2017",
+        "endDate": "Mai 2018",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a quitté son emploi pour suivre un master à l'université technique de Berlin. Il a commencé à travailler en free-lance pour gagner un peu d'argent avant d'aller à Berlin. Des problèmes médicaux sont survenus qui l'ont poussé à annuler son master.",
+              "A travaillé au développement, à la conception, au déploiement et à l'ASO de jeux Android et iOS utilisant Unity.",
+              "Création d'une SPA utilisant Vue.js et Node.js pour des clients qui m'ont trouvé sur upwork.com"
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "Node.js",
+          "Unity"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Ingénieur en recherche et développement",
+        "company": "Havelsan Teknoloji Radar(HTR)",
+        "startDate": "Septembre 2016",
+        "endDate": "Juillet 2017",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception et mise en œuvre d'un système d'information géographique en Java et Android.",
+              "Création et gestion d'un système de base de données pour les versions Java et Android du SIG à l'aide de PostgreSql et de Java.",
+              "Conception de l'infrastructure de messagerie RabbitMQ pour la communication avec tous les dispositifs du système.",
+              "Intégration des radars, sonars, caméras, cabines et onduleurs au SIG à l'aide de RabbitMQ et PostgreSQL.",
+              "Affichage de caméras en direct et enregistrées à l'aide de bibliothèques d'encodeurs et de décodeurs vidéo.",
+              "Ce projet est présenté par Havelsan Teknoloji Radar A.Ş. à la foire internationale de l'industrie de la défense IDEF17 à Istanbul."
+            ]
+          }
+        ],
+        "skills": [
+          "PostgreSQL",
+          "Java",
+          "Android",
+          "RabbitMQ"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Computer Engineering",
+        "school": "TOBB Ekonomi ve Teknoloji Üniversitesi",
+        "startDate": "2011",
+        "endDate": "2016"
+      },
+      {
+        "id": 2,
+        "degree": "BSc. Computer Engineering",
+        "school": "School name AGH University of Science and Technology (Exchange)",
+        "startDate": "2013",
+        "endDate": "2014"
+      }
+    ]
+  },
+  {
+    "id": 5328,
+    "name": "Santiago Anaya",
+    "slug": "santiago-anaya-vue-ruby-fullstack-developer",
+    "alias": "Santiago",
+    "description": [
+      "Santiago est un ingénieur fullstack avec plus de six ans d'expérience commerciale, se concentrant sur le développement frontend. Il est expert en Vue.js. Pour le backend, il utilise Ruby on Rails et diverses bases de données relationnelles, en particulier PostgreSQL.",
+      "Il est capable d'augmenter les performances des applications et d'améliorer l'expérience des utilisateurs, contribuant ainsi de manière significative à chaque mission qu'il entreprend. Son expérience en tant que Tech et Lead Ingénieur met en évidence ses capacités de leadership et son aptitude à mener des initiatives techniques.",
+      "La combinaison de l'expertise technique de Santiago, de ses compétences en matière de leadership et de son dévouement à l'amélioration des performances des applications fait de lui un atout précieux pour toute équipe de développement."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "PostgreSQL",
+      "Ruby",
+      "Ruby on Rails",
+      "TypeScript",
+      "SQL",
+      "Java",
+      "Vuex",
+      "Backbone",
+      "Angular",
+      "MySQL",
+      "Vuetify",
+      "React.js",
+      "Node.js",
+      "WordPress",
+      "MongoDB"
+    ],
+    "compensations": {
+      "partTime": "3 100 €/mois (20 heures par semaine)",
+      "monthly": "5 695 €/mois (40 heures par semaine)"
+    },
+    "location": "Argentine",
+    "region": "GTM-3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Manager Ingénieur",
+        "company": "WISBOO.COM",
+        "startDate": "Octobre 2022",
+        "endDate": "Août 2023",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "CHEF DE GROUPE TECHNIQUE ET INGÉNIEUR DÉVELOPPEUR MANAGER.",
+              "APP DEVELOPPEMENT - WISBOO.COM / Une application dynamique conçue pour les créateurs de contenu, leur permettant de créer et de vendre des cours par le biais de sites web personnalisés.",
+              "Responsable des rôles d'ingénieur manager et de chef technique.",
+              "Aider l'équipe à contribuer de manière significative à une cellule de travail dédiée à un composant spécifique de l'application."
+            ]
+          }
+        ],
+        "skills": [
+          "Angular.js",
+          "React.js",
+          "Ruby on Rails",
+          "Bootstrap"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Full Stack",
+        "company": "KEEPCON",
+        "startDate": "Juin 2020",
+        "endDate": "Avril 2022",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "DÉVELOPPEMENT D'APPLIQUES - KEEPCON.COM / Une application innovante pour les grandes entreprises, agrégeant les messages de diverses plateformes de médias sociaux pour une réponse efficace de l'opérateur.",
+              "Responsable d'une migration stratégique vers Vue.js.",
+              "Aider l'équipe à améliorer les performances de l'application et l'expérience des utilisateurs."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "Ruby on Rails",
+          "Bootstrap",
+          "TypeScript",
+          "Java",
+          "Backbone"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Full Stack",
+        "company": "XUBIO",
+        "startDate": "Mars 2019",
+        "endDate": "Décembre 2019",
+        "period": "9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "APP DEVELOPMENT - XUBIO.COM / Une application spécialisée pour les comptables, conçue pour gérer les comptes des clients ou des entreprises avec des fonctionnalités adaptées à différents pays.",
+              "Responsable de la fourniture d'une plateforme robuste et conviviale pour les besoins de la comptabilité."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "Bootstrap",
+          "TypeScript",
+          "Java"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Full Stack",
+        "company": "KEEPERS",
+        "startDate": "Février 2018",
+        "endDate": "Mars 2019",
+        "period": "1 an et 1 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "DÉVELOPPEMENT D'APPLICATIONS WEB..",
+              "Responsable de la convivialité et de l'efficacité des plateformes."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "MongoDB",
+          "Node.js"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Systems Engeneering",
+        "school": "Universidad Technologica Nacinal",
+        "startDate": "2015",
+        "endDate": "2021"
+      }
+    ]
+  },
+  {
+    "id": 5697,
+    "name": "Harshit Sangani",
+    "slug": "harshit-vue-frontend-developer",
+    "alias": "Harshit",
+    "description": [
+      "Harshit est un ingénieur frontend avec plus de six ans d'expérience commerciale, spécialisé dans Vue.js. Il a participé aux différentes étapes du cycle de développement des logiciels, de l'idéation au déploiement, garantissant des expériences utilisateur de premier ordre et des applications évolutives.",
+      "Son expertise s'étend aux technologies frontend modernes et à la maîtrise des pratiques DevOps. Il a notamment dirigé le développement d'un calculateur de CO2 permettant de diviser les coûts d'émissions et d'une application communautaire visant une base de plus de 15 millions d'utilisateurs.",
+      "Sa solide expérience dans la construction de solutions frontend complexes et modulaires et dans la gestion des cycles de déploiement et des outils de gestion d'état tels que Vuex et Apollo renforce encore sa capacité à fournir des applications de haute qualité centrées sur l'utilisateur."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Nuxt.js",
+      "TypeScript",
+      "Flutter",
+      "Node.js",
+      "Golang",
+      "GraphQL",
+      "React.js",
+      "JavaScript",
+      "Tailwind",
+      "Dart",
+      "Apollo",
+      "Vuex",
+      "Figma",
+      "Neo4j",
+      "Vuetify",
+      "Angular",
+      "Storybook",
+      "Laravel",
+      "React Native"
+    ],
+    "compensations": {
+      "partTime": "3 688 €/mois (20 heures par semaine)",
+      "monthly": "6 552 €/mois (40 heures par semaine)"
+    },
+    "location": "Inde",
+    "region": "GTM+5:30",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur logiciel senior",
+        "company": "Purpose Digital Real Estate GmbH",
+        "startDate": "Novembre 2022",
+        "endDate": "Juin 2024",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé seul sur un calculateur de CO2, qui a permis de calculer facilement la répartition des coûts d'émission de CO2 entre les propriétaires et les locataires.",
+              "Création de la configuration du projet de base, en utilisant TypeScript pour accélérer le développement à long terme.",
+              "Création de nombreux composants de base modulaires à utiliser tout au long du projet.",
+              "Aide à la mise en place de cycles et d'environnements de déploiement à l'aide de Vercel."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "Microservices",
+          "Tailwind",
+          "DevOps",
+          "Angular",
+          "VSCode",
+          "Storybook",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Fondateur et responsable de l'ingénierie",
+        "company": "BK Softech",
+        "startDate": "Juin 2022",
+        "endDate": "Avril 2024",
+        "period": "1 an et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Gestion d'une équipe de plus de 15 membres collaborant activement à des projets communautaires à but non lucratif.",
+              "Des communautés connectées à travers des régions divisées sur une plateforme unique pour réaliser des affaires intégrées, trouver des mariages, s'engager dans des discussions avancées, et bien plus encore."
+            ]
+          }
+        ],
+        "skills": [
+          "React.js",
+          "Vue.js",
+          "TypeScript",
+          "Node.js",
+          "Flutter",
+          "Golang",
+          "Microservices",
+          "Figma",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "Dart",
+          "Neo4j",
+          "MVVM",
+          "Vuetify",
+          "VSCode",
+          "Chakra UI",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel senior",
+        "company": "REO",
+        "startDate": "Novembre 2021",
+        "endDate": "Octobre 2022",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai travaillé avec une équipe formidable pour créer un logiciel de courtage immobilier avancé.",
+              "Résolution de nombreux problèmes centrés sur l'utilisateur et aide à la transition de l'équipe vers TypeScript.",
+              "Création d'une compilation en temps réel des schémas GraphQL à utiliser directement dans la base de code Frontend, ce qui a permis de réduire les rapports de bogues d'environ 40 % et d'améliorer l'expérience des développeurs."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "GraphQL",
+          "Microservices",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "VSCode",
+          "Apollo",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Cofondateur et ingénieur logiciel senior",
+        "company": "HK Byte",
+        "startDate": "Novembre 2017",
+        "endDate": "Avril 2022",
+        "period": "4 ans et 5 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A répondu aux besoins de plus de 20 clients.",
+              "Développement de plus de 25 projets.",
+              "A contribué à la croissance de l'équipe grâce à une expérience globale du processus SDLC.",
+              "Gestion d'une équipe de plus de 8 personnes.",
+              "J'ai fourni une assistance technique à deux start-ups prospères, augmentant leurs bénéfices de plus de 250 % et ce n'est pas fini."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Adobe Illustrator",
+          "Node.js",
+          "React Native",
+          "Flutter",
+          "Figma",
+          "Tailwind",
+          "Nuxt.js",
+          "DevOps",
+          "Dart",
+          "Neo4j",
+          "MVVM",
+          "VSCode",
+          "Fusion 360",
+          "Storybook",
+          "Vuex"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Computer Science",
+        "school": "Smt. CZMG BCA College",
+        "startDate": "2015",
+        "endDate": "2018"
+      }
+    ]
+  },
+  {
+    "id": 3709,
+    "name": "Kostiantyn Draliuk",
+    "slug": "kostiantyn-vue-frontend-developer",
+    "alias": "Kostiantyn",
+    "description": [
+      "Kostiantyn est un développeur frontend avec huit ans d'expérience commerciale. Son expertise principale réside dans Vue.js, où il a démontré une compétence exceptionnelle dans la construction d'applications web robustes et évolutives.",
+      "Outre ses compétences en matière de développement, il a un grand sens de la conception et travaille avec les concepteurs de ses équipes à l'aide de Figma.",
+      "Il a fait ses preuves en travaillant avec les clients de Proxify et en fournissant des résultats exceptionnels, tant en termes de rendement que de qualité du code."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Figma",
+      "Nuxt.js",
+      "TypeScript",
+      "Cypress",
+      "Svelte",
+      "JavaScript",
+      "SvelteKit"
+    ],
+    "compensations": {
+      "partTime": "4 024 €/mois (20 heures par semaine)",
+      "monthly": "7 375 €/mois (40 heures par semaine)"
+    },
+    "location": "Ukraine",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur logiciel (Développeur Frontend / Développeur VueJs / Développeur Svelte)",
+        "company": "DNV GL (Norvège, à distance)",
+        "startDate": "Octobre 2021",
+        "endDate": "Juillet 2024",
+        "period": "2 ans et 9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de micro-frontend très performants à l'aide de technologies de pointe telles que VueJS, Svelte et TypeScript, ce qui a permis d'améliorer les performances et l'évolutivité de l'application.",
+              "A joué un rôle clé dans la conception et la mise en œuvre d'applications micro-frontend, de bibliothèques de composants et de routage, ce qui a permis d'accélérer le développement, de faciliter la maintenance et d'offrir aux utilisateurs des expériences cohérentes dans plusieurs applications.",
+              "Collaboré avec des équipes interfonctionnelles, y compris des concepteurs UX/UI, des développeurs backend et des gestionnaires de produits, dans un environnement Agile pour assurer une communication fluide, la livraison de fonctionnalités en temps opportun et la réussite globale du projet.",
+              "Participation active aux révisions de code, garantissant le respect des meilleures pratiques et des normes de code de haute qualité.",
+              "Mise en œuvre et maintenance des tests unitaires et d'intégration, ce qui a permis d'accroître la stabilité de l'application et de réduire le temps consacré à la correction des bogues.",
+              "Engagement manifeste en faveur de la formation continue et du développement professionnel en se tenant au courant des dernières technologies frontend et des tendances du secteur, ce qui a conduit à l'adoption de nouveaux outils et de nouvelles pratiques qui ont amélioré l'efficacité de l'équipe et la qualité du produit."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "TypeScript",
+          "Svelte"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Full-stack",
+        "company": "Freelance",
+        "startDate": "Décembre 2017",
+        "endDate": "Octobre 2021",
+        "period": "3 ans et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a mené à bien un large éventail de projets pour divers clients, notamment le développement de sites web à partir de zéro, l'amélioration des interfaces existantes et la création d'applications web personnalisées, en faisant preuve d'adaptabilité et de polyvalence pour répondre aux besoins variés des clients.",
+              "Il a obtenu des résultats exceptionnels en matière d'optimisation de la vitesse, d'optimisation du référencement et d'audits de qualité, ce qui a permis d'accroître la satisfaction des clients, d'améliorer le classement des sites et de réduire les temps de chargement des pages.",
+              "Utilisation experte d'une gamme variée de technologies frontend et backend, notamment VueJS, Laravel, NodeJS, AdonisJs et ExpressJS, pour développer des solutions sur mesure qui répondent aux exigences des clients et dépassent leurs attentes.",
+              "Développement et maintenance de bibliothèques de composants et de systèmes de conception en VueJS, garantissant une expérience utilisateur transparente, une meilleure maintenabilité et un développement efficace de l'interface utilisateur dans le cadre de plusieurs projets.",
+              "Collaborer avec les clients pour recueillir les besoins, fournir des estimations et offrir des conseils techniques, en veillant à une communication claire, à une livraison dans les délais et à l'alignement sur les objectifs du projet.",
+              "Gérer efficacement des projets à l'aide d'outils tels que Jira, Azure et YouTrack, en hiérarchisant les tâches, en suivant les progrès et en fournissant des mises à jour régulières aux clients.",
+              "Il a identifié et traité de manière proactive les goulets d'étranglement en matière de performance, les vulnérabilités en matière de sécurité et les problèmes de maintenabilité du code, ce qui a permis de fournir des applications web robustes, sûres et faciles à maintenir.",
+              "Se tenir au courant des dernières tendances du secteur, des meilleures pratiques et des technologies émergentes, en les intégrant dans les projets le cas échéant, afin de fournir des solutions de pointe et de rester compétitif sur le marché."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "Vue.js",
+          "Node.js",
+          "Express.js",
+          "Azure"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Frontend",
+        "company": "Boboyan (Khmelnytskyy, Ukraine)",
+        "startDate": "Mars 2016",
+        "endDate": "Décembre 2017",
+        "period": "1 an et 9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de solutions frontend de haute qualité pour les plateformes de commerce électronique Magento et OpenCart, en respectant constamment les délais des projets et en dépassant les attentes des clients grâce à des conceptions visuellement attrayantes et conviviales.",
+              "A mis à profit son expertise en Git, Docker et Linux pour optimiser les flux de développement, améliorer la collaboration entre les membres de l'équipe et garantir l'efficacité du déploiement et de la maintenance des applications.",
+              "Il a encadré des collègues dans les meilleures pratiques de développement des applications frontend, en favorisant un environnement d'équipe collaboratif et positif qui encourage le développement des compétences et le partage des connaissances.",
+              "Il a joué un rôle clé dans la planification et l'exécution des projets, en travaillant en étroite collaboration avec les chefs de projet et les autres membres de l'équipe afin de recueillir les besoins, d'estimer les délais et d'allouer les ressources de manière efficace.",
+              "Mise en œuvre des principes de conception réactive, garantissant une expérience utilisateur transparente et cohérente sur différents appareils et navigateurs, ce qui a permis d'accroître l'engagement des clients et de réduire les taux de rebond.",
+              "Identification et résolution proactive des problèmes de performance, des bogues et des problèmes d'utilisation, ce qui a permis d'améliorer la stabilité du site, d'augmenter les taux de conversion et d'accroître la satisfaction générale des utilisateurs.",
+              "Il a participé à des revues de code régulières, en fournissant des commentaires constructifs et des suggestions d'amélioration, conduisant à un code de meilleure qualité et à une réduction de la dette technique.",
+              "Restez au courant des dernières tendances de l'industrie et des technologies front-end, en intégrant de nouveaux outils et les meilleures pratiques pour améliorer l'efficacité de l'équipe, la qualité des produits et la satisfaction des clients."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Angular.js",
+          "Docker",
+          "Magento",
+          "Linux",
+          "eCommerce"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Avivi (Khmelnytskyy, Ukraine)",
+        "startDate": "Février 2015",
+        "endDate": "Octobre 2016",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de conceptions frontend visuellement étonnantes et réactives pour une variété de sites web basés sur des CMS à l'aide de Photoshop et de maquettes Zeplin, ce qui a permis d'accroître la satisfaction des clients et d'améliorer l'expérience des utilisateurs.",
+              "Développement de modèles d'e-mails réactifs qui ont considérablement amélioré l'engagement des clients, les taux d'ouverture et les taux de clics en les optimisant pour différents appareils et clients de messagerie.",
+              "Compétences démontrées en CSS, HTML, JavaScript, PHP, Angular et Git pour fournir des résultats exceptionnels, en faisant preuve d'adaptabilité et d'une base solide dans les technologies de développement frontend.",
+              "Collaborer avec des équipes interfonctionnelles, notamment des concepteurs, des développeurs et des chefs de projet, afin d'assurer une communication claire, des flux de travail efficaces et l'alignement sur les objectifs du projet.",
+              "Mise en œuvre des meilleures pratiques en matière d'accessibilité au web, garantissant que les sites web sont utilisables et inclusifs pour un large éventail d'utilisateurs, ce qui a permis d'augmenter le trafic sur le site et d'améliorer la réputation de la marque.",
+              "Participation active aux revues de code et aux sessions de partage des connaissances, contribuant à l'amélioration continue des normes et pratiques de codage de l'équipe.",
+              "A travaillé avec différentes plateformes CMS, acquérant une expérience précieuse dans la personnalisation et l'extension de leurs fonctionnalités pour répondre aux besoins spécifiques des clients.",
+              "Se tient au courant des dernières tendances du secteur, des meilleures pratiques et des technologies frontend émergentes, en appliquant les nouvelles connaissances et techniques aux projets, le cas échéant."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "JavaScript",
+          "Angular"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Ingénierie informatique et programmation des systèmes",
+        "school": "Khmelnytskyi National University",
+        "startDate": "2013",
+        "endDate": "2017"
+      }
+    ]
+  },
+  {
+    "id": 5022,
+    "name": "Eduard Miskov",
+    "slug": "eduard-miskov-vue-frontend-developer",
+    "alias": "Eduard",
+    "description": [
+      "Eduard est un développeur frontend avec plus de sept ans d'expérience commerciale. Son expertise principale est la création d'applications web visuellement attrayantes et conviviales à l'aide de Vue.js.",
+      "La positivité et la grande motivation d'Eduard le distinguent dans le domaine en pleine évolution du développement frontend. La qualité exceptionnelle de son code met en évidence son expertise technique et son engagement en faveur de l'excellence.",
+      "Il a collaboré avec succès avec les clients de Proxify, en fournissant constamment des résultats dans les délais et en maintenant des normes de haute qualité. La capacité d'Eduard à se concentrer sur les objectifs de l'engagement et à fournir des résultats exceptionnels fait de lui un membre précieux de l'équipe."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Nuxt.js",
+      "Vanilla JavaScript",
+      "TypeScript",
+      "Jest",
+      "Figma",
+      "Vagrant",
+      "Shopware",
+      "jQuery",
+      "Storybook"
+    ],
+    "compensations": {
+      "partTime": "3 436 €/mois (20 heures par semaine)",
+      "monthly": "6 119 €/mois (40 heures par semaine)"
+    },
+    "location": "Ukraine",
+    "region": "GTM+3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Frontend",
+        "company": "Avenga",
+        "startDate": "Mai 2023",
+        "endDate": "Août 2023",
+        "period": "3 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A dirigé les efforts de développement de la partie frontend en créant le réseau de magasins de vêtements en ligne pour un acteur majeur du marché allemand.",
+              "Il s'est concentré sur la conception et la mise en œuvre de panneaux d'utilisateurs, de pages de listes de produits et de fonctionnalités de recherche afin d'améliorer l'expérience de l'utilisateur.",
+              "Développement de composants réutilisables pour Storybook, avec divers thèmes, afin de garantir la cohérence des éléments de conception dans toutes les boutiques en ligne dotées d'une identité visuelle unique.",
+              "Utilisation de Nuxt 3 pour ses capacités d'optimisation des performances et de rendu côté serveur, ce qui a permis d'améliorer la vitesse et la réactivité de l'ensemble du site web.",
+              "Maîtrise avérée de Storybook, Vue, Nuxt et Shopware pour répondre efficacement aux exigences du projet."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Nuxt.js",
+          "Storybook",
+          "Shopware"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Frontend",
+        "company": "Simplifai",
+        "startDate": "Février 2021",
+        "endDate": "Octobre 2022",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement d'une application web pour une filiale d'Elop spécialisée dans les solutions de numérisation intelligente du béton pour les entreprises d'architecture et de construction de ponts.",
+              "Conception et mise en œuvre de composants d'interface utilisateur réutilisables afin d'améliorer la convivialité et la maintenabilité de l'application.",
+              "Utilisation de TypeScript pour écrire un code propre et facile à maintenir, garantissant la qualité et la fiabilité de la base de code.",
+              "Exploitation de la bibliothèque Three.js pour créer des visualisations 3D interactives de structures en béton, améliorant ainsi l'expérience de l'utilisateur.",
+              "Expertise démontrée en Vue.js, JavaScript, Vuetify et TypeScript pour répondre efficacement aux exigences techniques du projet.",
+              "Contribuer à l'avancement des solutions de numérisation du béton intelligent, en soutenant les entreprises d'architecture et de construction de ponts dans leurs projets."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Vuetify"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur Frontend",
+        "company": "Recman AS",
+        "startDate": "Mai 2020",
+        "endDate": "Février 2021",
+        "period": "9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A dirigé le développement d'un calendrier web robuste en tant que module intégral au sein de la plateforme Recman.",
+              "Utilisation intensive de Vanilla.js pour mettre en œuvre des fonctionnalités essentielles, notamment le routage, l'architecture MVC, la gestion de l'état et le rendu des vues, toutes créées à partir de zéro.",
+              "Conception et mise en place d'un système de calendrier semblable à Google Calendar, intégré de manière transparente dans l'infrastructure interne de l'organisation.",
+              "Maîtrise avérée de Vue.js, JavaScript et SASS, garantissant la réussite du projet.",
+              "Contribution significative à l'amélioration des fonctionnalités de la plateforme Recman par l'ajout d'un module de calendrier web riche en fonctionnalités et axé sur l'interne."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Trinetix",
+        "startDate": "Juin 2019",
+        "endDate": "Mai 2020",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A joué un rôle clé dans un projet analytique important visant à améliorer l'industrie de l'hôtellerie et de la restauration.",
+              "J'ai dirigé le processus de migration d'une application Angular.js vers Angular, en assurant une transition transparente tout en préservant les lignes directrices du système de conception existant.",
+              "Mise en œuvre réussie de nouvelles fonctionnalités au sein du cadre Angular afin d'améliorer la fonctionnalité et les capacités de l'application.",
+              "Maîtrise avérée de Vue.js, JavaScript, SASS et Angular pour répondre efficacement aux exigences du projet.",
+              "A contribué de manière significative à la réussite du projet, en améliorant les outils et les capacités d'analyse mis à la disposition du secteur de l'hôtellerie et de la restauration."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Angular.js",
+          "Vue.js",
+          "Less CSS",
+          "Angular"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Frontend Medior",
+        "company": "Devellar",
+        "startDate": "Mars 2017",
+        "endDate": "Juin 2019",
+        "period": "2 years 3 months",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement de modèles WordPress personnalisés à partir de zéro dans le secteur de l'éducation, en accordant une attention particulière à l'esthétique, aux meilleures pratiques en matière de référencement et à l'alignement sur les valeurs fondamentales de l'entreprise.",
+              "Maîtrise avérée de JavaScript, WordPress, PHP et Angular pour créer avec succès des modèles sur mesure adaptés aux besoins éducatifs.",
+              "A joué un rôle crucial dans l'amélioration de la présence en ligne et de la fonctionnalité des sites web éducatifs, en s'occupant à la fois de l'expérience des utilisateurs et de l'optimisation des moteurs de recherche.",
+              "Il a contribué à la croissance et au succès des établissements d'enseignement en leur fournissant des solutions WordPress sur mesure qui répondent à leurs exigences et à leurs objectifs spécifiques."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "WordPress",
+          "SQL",
+          "Angular",
+          "SASS"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Frontend Medior",
+        "company": "Webkitchen",
+        "startDate": "Juin 2016",
+        "endDate": "Janvier 2017",
+        "period": "7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai créé des modèles personnalisés pour répondre aux exigences uniques des clients en matière de conception et de fonctionnalité lorsque j'étais dans une agence web.",
+              "Nous avons fourni des solutions sur mesure pour divers projets, y compris des sites web d'entreprise de base et de vastes magasins de cosmétiques en ligne, tous construits à partir de la base.",
+              "J'ai démontré mon expertise en WordPress, PHP et MySQL pour développer des modèles qui répondent aux besoins et aux objectifs spécifiques de chaque client.",
+              "J'ai joué un rôle essentiel dans la capacité de l'agence à fournir à ses clients des solutions web hautement personnalisées, contribuant ainsi au succès de diverses entreprises en ligne."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "HTML",
+          "WordPress",
+          "SQL",
+          "SASS"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "Mentor en développement web",
+        "company": "Education US",
+        "startDate": "Novembre 2014",
+        "endDate": "Juin 2016",
+        "period": "1 an et 7 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Il a offert des conseils précieux et un mentorat aux étudiants, en se concentrant sur les techniques contemporaines de création de sites web, les outils Adobe Creative Cloud (CC) et la navigation dans le processus de recherche d'emploi.",
+              "A permis aux étudiants d'acquérir les compétences et les connaissances nécessaires pour exceller dans le développement de sites web au sein de l'industrie dynamique des technologies de l'information.",
+              "A faciliter le parcours des étudiants vers l'obtention de leur premier poste dans le domaine des technologies de l'information en leur fournissant des informations essentielles et des conseils pratiques.",
+              "Il a apporté son soutien et ses connaissances aux professionnels en devenir, contribuant ainsi à leur développement de carrière et à leur épanouissement."
+            ]
+          }
+        ],
+        "skills": [
+          "jQuery",
+          "Adobe Photoshop"
+        ]
+      },
+      {
+        "id": 8,
+        "role": "Web Designer",
+        "company": "Slicemix",
+        "startDate": "Mars 2014",
+        "endDate": "Août 2014",
+        "period": "5 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "J'ai occupé le poste de concepteur principal de sites web, avec pour principales responsabilités la création de sites web promotionnels visuellement captivants et percutants.",
+              "Conception de bannières et de documents imprimés attrayants adaptés aux besoins spécifiques des clients au sein de notre agence de marketing numérique.",
+              "Il a mis à profit ses compétences dans les logiciels Adobe Photoshop et Adobe Illustrator pour assurer la réalisation de travaux de conception de haute qualité qui communiquent efficacement les messages et les identités de marque de nos clients.",
+              "Il a joué un rôle essentiel dans l'amélioration de la présence en ligne et des supports marketing de divers clients, contribuant ainsi à leur succès dans le paysage numérique."
+            ]
+          }
+        ],
+        "skills": [
+          "Adobe Photoshop",
+          "Adobe Illustrator"
+        ]
+      },
+      {
+        "id": 9,
+        "role": "Web Designer",
+        "company": "DigitalDealerz",
+        "startDate": "Février 2013",
+        "endDate": "Janvier 2014",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception et développement de sites web commerciaux et de matériel promotionnel répondant aux besoins des petites et moyennes entreprises.",
+              "Priorité à la convivialité, à la réactivité et à l'attrait visuel dans tous les projets web afin d'améliorer la présence en ligne et l'engagement des clients.",
+              "Création de plans et d'images filaires pour les sites web, établissant des plans clairs et concis avant la phase de développement.",
+              "Il a veillé à ce que les produits finaux soient non seulement interactifs mais aussi attrayants pour les utilisateurs, améliorant ainsi l'expérience globale de l'utilisateur et la satisfaction du client."
+            ]
+          }
+        ],
+        "skills": [
+          "Adobe Photoshop",
+          "Adobe Illustrator",
+          "AutoCAD"
+        ]
+      },
+      {
+        "id": 10,
+        "role": "Développeur PHP junior",
+        "company": "Metr&co",
+        "startDate": "Janvier 2012",
+        "endDate": "Janvier 2013",
+        "period": "1 an",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Explorer et appliquer activement l'API de Drupal pour améliorer la fonctionnalité et l'interactivité des applications web, contribuant ainsi à la maîtrise de ce système de gestion de contenu polyvalent.",
+              "Acquisition de connaissances et d'expertise dans l'exploitation des capacités de Drupal pour créer des applications web dynamiques et riches en fonctionnalités.",
+              "nir au courant des dernières tendances et des meilleures pratiques en matière de développement web Drupal, afin d'être en mesure de créer des solutions robustes et efficaces."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "MySQL",
+          "SQL",
+          "Drupal"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Informatique et technologies de l'information",
+        "school": "National University of Food Technologies",
+        "startDate": "2014",
+        "endDate": "2019"
+      },
+      {
+        "id": 2,
+        "degree": "Sc. éveloppement de logiciels",
+        "school": "Kyiv Optical and Mechanical College",
+        "startDate": "2010",
+        "endDate": "2014"
+      }
+    ]
+  },
+  {
+    "id": 4290,
+    "name": "Nicolas Tellez",
+    "slug": "nicolas-vue-php-fullstack-developer",
+    "alias": "Nicolas",
+    "description": [
+      "Nicolas est un développeur Fullstack et Intégrations avec sept ans d'expérience dans des secteurs tels que l'éducation, le gouvernement, le transport et le conseil en Argentine et aux États-Unis. Il a acquis de solides compétences techniques et sait s'adapter aux différents besoins des entreprises.",
+      "En plus de son travail technique, Nicolas a été responsable de l'embauche de techniciens, du choix du personnel et de la formation technique interne. Son leadership a permis de constituer des équipes de développement solides et d'améliorer les connaissances techniques au sein des entreprises pour lesquelles il a travaillé.",
+      "Nicolas est compétent dans l'intégration de systèmes avec Hubspot et Mercadopago en utilisant des API et des webhooks. Il a également travaillé avec les produits Mulesoft pour créer des solutions pour les systèmes sur site et dans le nuage. Il a de l'expérience dans la conception de solutions d'intégration de données et dans la construction de projets basés sur Firebase."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "JavaScript",
+      "Nuxt.js",
+      "PHP",
+      "Laravel",
+      "Node.js",
+      "MySQL",
+      "Firebase",
+      "MongoDB",
+      "Express.js",
+      "Java"
+    ],
+    "compensations": {
+      "partTime": "4 452 €/mois (20 heures par semaine)",
+      "monthly": "8 215 €/mois (40 heures par semaine)"
+    },
+    "location": "Argentine",
+    "region": "GTM-3",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Ingénieur technique principal",
+        "company": "MuleSoft",
+        "startDate": "Juillet 2020",
+        "endDate": "Mai 2024",
+        "period": "3 ans et 10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Poste en contact avec les clients, fournissant des solutions sur les produits et services Mulesoft pour des solutions intégrées sur site et dans le nuage.",
+              "Membre de l'équipe Core Runtime."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Docker",
+          "Java",
+          "Microservices",
+          "Maven",
+          "Eclipse",
+          "Bash",
+          "Data Engineering",
+          "Linux",
+          "API",
+          "IntelliJ",
+          "Load testing",
+          "Apache HTTP Server",
+          "AWS EC2"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Ingénieur logiciel",
+        "company": "Fundacion Conocimiento Abierto",
+        "startDate": "Janvier 2018",
+        "endDate": "Juin 2024",
+        "period": "6 ans et 5 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Conception et développement de solutions de communication pour l'organisation.",
+              "Impliqué et responsable du processus de livraison en tant qu'administrateur système, mais aussi porteur de projets en tant que développeur Full Stack."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "Laravel",
+          "Node.js",
+          "SQL",
+          "Google Cloud",
+          "Product Development",
+          "Linux",
+          "Vuetify",
+          "Unix",
+          "REST API",
+          "Serverless",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Développeur NodeJS Backend",
+        "company": "ProMujer",
+        "startDate": "Juin 2022",
+        "endDate": "Mars 2023",
+        "period": "9 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement du backend pour Edutech en utilisant typescript, NestJs, typeORM.",
+              "Travail sur l'intégration avec Hubspot et Mercadopago par API et webhooks."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Nest.js",
+          "REST API",
+          "eCommerce"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Fullstack",
+        "company": "El Patronato en Casa",
+        "startDate": "Février 2020",
+        "endDate": "Décembre 2020",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Développement d'un site éducatif, ruines VueJs et Nuxt, basé sur la suite Firebase (Auth, Firestore, Storage, Hosting, and Functions) et intégration personnalisée avec Stripe et Vimeo."
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "Bootstrap",
+          "Node.js",
+          "Express.js",
+          "Google Cloud",
+          "Firebase",
+          "Nuxt.js",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Responsable développement/opérations",
+        "company": "Raxar",
+        "startDate": "Septembre 2019",
+        "endDate": "Juillet 2020",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Responsable du développement et de l'infrastructure de l'entreprise. Impliqué et responsable du processus de livraison.",
+              "Responsable de l'embauche technique et de la sélection du personnel. Réalisation de projets critiques en tant que développeur Full Stack. (PHP/Laravel/JS/Vue) Formation technique interne."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "JavaScript",
+          "Vue.js",
+          "Docker",
+          "NGINX",
+          "Zend",
+          "Operational management",
+          "Google Cloud",
+          "Firebase",
+          "Nuxt.js",
+          "Jira",
+          "HTML / CSS",
+          "Apache HTTP Server",
+          "Electron"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Product Owner / Développeur FullStack",
+        "company": "National Ministry of culture",
+        "startDate": "Juin 2018",
+        "endDate": "Juillet 2019",
+        "period": "1 an et 1 mois",
+        "description": [
+          {
+            "isGrouped": false,
+            "content": "Il a dirigé le développement d'un système permettant aux artistes de soumettre des informations et des données pour organiser des concours afin d'obtenir non seulement une visibilité/exposition, mais aussi un soutien financier potentiel de la part du gouvernement."
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "MySQL",
+          "Vue.js",
+          "SQL",
+          "Nuxt.js",
+          "Product Development",
+          "REST API",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 7,
+        "role": "Consultant indépendant en technologies de l'information",
+        "company": "IT Consultant",
+        "startDate": "Juin 2016",
+        "endDate": "Juillet 2019",
+        "period": "3 ans et 1 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Développement d'applications et de produits personnalisés en tant que développeur fullstack utilisant PHP/Laravel, VueJS, et mongoDB/MySQL.",
+              "Administrateur système Unix travaillant avec AWS/Azure/GoogleCloud. Services de gestion de projet. Soutien à l'infrastructure et planification de la stratégie. Évaluation et renforcement de la sécurité Unix."
+            ]
+          }
+        ],
+        "skills": [
+          "PHP",
+          "Laravel",
+          "JavaScript",
+          "Vue.js",
+          "MongoDB",
+          "AWS",
+          "Google Cloud",
+          "Linux",
+          "Vuetify",
+          "Azure Cloud",
+          "REST API",
+          "HTML / CSS",
+          "Apache HTTP Server",
+          "Electron",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 8,
+        "role": "Spécialiste senior en Web Middleware",
+        "company": "Hewlett Packard",
+        "startDate": "Juin 2007",
+        "endDate": "Octobre 2016",
+        "period": "9 ans et 4 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "L3/L4 prennent en charge les types de produits et les marques de services web les plus répandus. Mise en place de l'environnement.",
+              "Coordination, évaluation et correction des règles de conformité de la sécurité PCI impliquant le contrôle d'accès, la protection des données, le cryptage et les meilleures pratiques pour permettre aux systèmes de traiter les transactions par carte de crédit.",
+              "Responsable de l'équipe offshore de middleware web en tant que gestionnaire de file d'attente et PME régionale. Gestion de milliers de certificats SSL sur de nombreuses plateformes."
+           ]
+          }
+        ],
+        "skills": [
+          "Java",
+          "Project management",
+          "Google Cloud",
+          "Perl",
+          "Linux",
+          "Unix",
+          "Load testing",
+          "REST API",
+          "Apache HTTP Server",
+          "Tomcat",
+          "Jakarta",
+          "Team leading"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "Sc. Certified MuleSoft Developer",
+        "school": "SalesForce",
+        "startDate": "2020",
+        "endDate": "2020"
+      },
+      {
+        "id": 2,
+        "degree": "Sc. Certified Websphere Network Deployment Administration",
+        "school": "IBM",
+        "startDate": "2004",
+        "endDate": "2004"
+      }
+    ]
+  },
+  {
+    "id": 1020,
+    "name": "Abdusaid Umarov",
+    "slug": "abdusaid-html-css-vue-typescript-frontend-dev",
+    "alias": "Abdusaid",
+    "intro": "Abdusaid est un développeur Frontend senior avec plus de six ans d'expérience, où il s'est fait un nom dans Vue.js et Nuxt.js. Ses compétences en Vue.js sont de premier ordre, comme le prouve le score parfait de 100 % qu'il a obtenu au test Proxify.",
+    "description": [
+      "Bien qu'il se concentre sur le travail de frontend, Abdusaid ne se limite pas à cela - il a également participé à des tâches de backend à l'aide de Laravel.",
+      "Son expérience dans les domaines de la gestion de l'identité, de la fintech, du commerce électronique et d'autres secteurs technologiques montre sa capacité à s'adapter et à s'épanouir dans différents environnements.",
+      "Abdusaid se distingue non seulement par ses compétences techniques, mais aussi par son aptitude à comprendre la situation dans son ensemble et à fournir un travail qui réponde véritablement aux besoins de chaque projet qu'il entreprend."
+    ],
+    "proficiencies": [
+      "Vue.js",
+      "Vuex",
+      "Nuxt.js",
+      "Laravel",
+      "Java",
+      "Tailwind",
+      "Jest",
+      "React.js",
+      "Jenkins",
+      "Storybook",
+      "SonarQube",
+      "Docker"
+    ],
+    "compensations": {
+      "partTime": "2 764 €/mois (20 heures par semaine)",
+      "monthly": "5 359 €/mois (40 heures par semaine)"
+    },
+    "location": "Uzbekistan",
+    "region": "GTM+5",
+    "experiences": [
+      {
+        "id": 1,
+        "role": "Développeur Frontend senior",
+        "company": "Identity Blitz",
+        "startDate": "Septembre 2023",
+        "endDate": "Juillet 2024",
+        "period": "10 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Expérience dans la création de plugins web personnalisés : plugin de localisation i18n et plugin d'exécution automatisée de docker utilisant Vite.",
+              "Configuration des paramètres du projet avec prettierrc et vite.config, postcss.config, tsup.config, ts.config.",
+              "Developed Tablet and Mobile views by applying PostCSS."
+            ]
+          }
+        ],
+        "skills": [
+          "Vue.js",
+          "Docker",
+          "TypeScript",
+          "SCSS"
+        ]
+      },
+      {
+        "id": 2,
+        "role": "Développeur Frontend senior",
+        "company": "Uzum",
+        "startDate": "Janvier 2023",
+        "endDate": "Septembre 2023",
+        "period": "8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Expérience dans la construction d'applications web utilisant l'architecture modulaire.",
+              "Assume l'entière responsabilité de tâches complexes (telles que l'authentification et la résolution de conflits de fusion).",
+              "Expérience dans l'utilisation de Turbo repo dans des projets basés sur une architecture mono repo.",
+              "A effectué des mises à jour dans l'environnement PROD.",
+              "Localisation intégrée à l'aide du paquet i18n-vue."
+            ]
+          }
+        ],
+        "skills": [
+          "Laravel",
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "TypeScript",
+          "Tailwind"
+        ]
+      },
+      {
+        "id": 3,
+        "role": "Ingénieur logiciel",
+        "company": "EPAM Systems",
+        "startDate": "Septembre 2021",
+        "endDate": "Mai 2023",
+        "period": "1 an et 8 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Mise en œuvre de nouvelles fonctionnalités à l'aide de Vue.js/NUXT.js.",
+              "Réalisation des examens du code.",
+              "Correction de bugs.",
+              "Refonte du code pour le rendre plus propre.",
+              "Rédaction de rapports documentés sur les commits à l'aide de MergeRequests et Spikes de Gitlab.",
+              "Apprentissage du nouveau CMS Prismic.",
+              "Expérience avec Magnolia CMS pour travailler avec la version classique du projet.",
+              "A travaillé dans un environnement Scrum et comprendre toutes les caractéristiques et terminologies de la méthodologie, y compris les sprints, les planifications de sprints, les rétrospectives et les réunions quotidiennes."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "JavaScript",
+          "Vue.js",
+          "ES5/ES6",
+          "Jenkins",
+          "Nuxt.js",
+          "SonarQube"
+        ]
+      },
+      {
+        "id": 4,
+        "role": "Développeur Frontend",
+        "company": "Genesis-Innovation LLC. (Uzcard)",
+        "startDate": "Janvier 2021",
+        "endDate": "Décembre 2021",
+        "period": "11 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Création de composants/UI selon la conception Figma.",
+              "Connexion des API à l'interface utilisateur à l'aide d'Axios.",
+              "Autorisations de jetons fournies, méthode d'authentification silencieuse et jeton JWT actualisé.",
+              "Graphiques connectés à l'aide de graphiques Apex.",
+              "Création de Vue Routers.",
+              "Utilisation de la localisation linguistique interne i18n.",
+              "Structure modulaire « Vuex » largement utilisée.",
+              "Création de dessins à l'aide d'Element UI."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "UI",
+          "Vuex"
+        ]
+      },
+      {
+        "id": 5,
+        "role": "Développeur Web",
+        "company": "Fido-Biznes LLC",
+        "startDate": "Juin 2019",
+        "endDate": "Juin 2021",
+        "period": "2 ans",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "A travaillé au sein d'une équipe pour mettre en place le système bancaire de l'Ouzbékistan.",
+              "Amélioration des performances et de la stabilité du système Interrogation, indexation, écriture de procédures et de fonctions pour créer la section « backend » du système.",
+              "Création de pages JSP sophistiquées avec le langage JavaScript pour la logique frontend du système bancaire.",
+              "Création de services Java pour l'échange d'informations avec le Government Custom Center dans les formats XML et JSON avec des techniques d'échange de clés pour fournir de telles API REST potentielles."
+            ]
+          }
+        ],
+        "skills": [
+          "MySQL",
+          "JavaScript",
+          "Java",
+          "SQL",
+          "Oracle",
+          "JSON",
+          "PL/SQL",
+          "XML"
+        ]
+      },
+      {
+        "id": 6,
+        "role": "Développeur Web",
+        "company": "Artel",
+        "startDate": "Septembre 2018",
+        "endDate": "Janvier 2020",
+        "period": "1 an et 4 mois",
+        "description": [
+          {
+            "isGrouped": true,
+            "content": [
+              "Travailler en équipe pour construire un système réel pour l'industrie technologique.",
+              "Amélioration de l'interface UI/frontend.",
+              "Construction d'une section analytique du système avec une analyse graphique, selon les feuilles Excel fournies par l'industrie, en utilisant la logique pour extraire les données.",
+              "Mise en œuvre des structures/composants frontend du système d'échange de documents internes."
+            ]
+          }
+        ],
+        "skills": [
+          "JavaScript",
+          "Vue.js",
+          "ES5/ES6",
+          "SCSS",
+          "Vuex"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "degree": "BSc. Sciences informatiques et génie logiciel",
+        "school": "INHA University in Tashkent",
+        "startDate": "2015",
+        "endDate": "2019"
+      }
+    ]
+  }
+]
