@@ -36,7 +36,7 @@
         "id": 1,
         "role": "Ingénieur Frontend senior",
         "company": "White Hat Gaming",
-        "startDate": "Déc 2020",
+        "startDate": "Décembre 2020",
         "endDate": "Mai 2024",
         "period": "3 ans et 5 mois",
         "description": [
@@ -64,8 +64,8 @@
         "id": 2,
         "role": "Lead Développeur Node.js",
         "company": "Netguru S.A.",
-        "startDate": "Déc 2019",
-        "endDate": "Déc 2020",
+        "startDate": "Décembre 2019",
+        "endDate": "Décembre 2020",
         "period": "1 an",
         "description": [
           {
@@ -92,8 +92,8 @@
         "id": 3,
         "role": "Ingénieur logiciel en chef",
         "company": "Draxis Environment S.A.",
-        "startDate": "Oct 2017",
-        "endDate": "Déc 2019",
+        "startDate": "Octobre 2017",
+        "endDate": "Décembre 2019",
         "period": "2 ans et 2 mois",
         "description": [
           {
@@ -125,7 +125,7 @@
         "id": 4,
         "role": "Développeur Full-Stack",
         "company": "Archirodon Group N.V.",
-        "startDate": "Sept 2015",
+        "startDate": "Septembre 2015",
         "endDate": "Août 2017",
         "period": "1 an et 11 mois",
         "description": [
@@ -152,7 +152,7 @@
         "id": 5,
         "role": "Développeur Web",
         "company": "24 Media Digital Media Group",
-        "startDate": "Jan 2015",
+        "startDate": "Janvier 2015",
         "endDate": "Août 2015",
         "period": "7 mois",
         "description": [
@@ -178,8 +178,8 @@
         "id": 6,
         "role": "Développeur Web",
         "company": "Shape LTD",
-        "startDate": "Déc 2013",
-        "endDate": "Fév 2014",
+        "startDate": "Décembre 2013",
+        "endDate": "Février 2014",
         "period": "2 mois",
         "description": [
           {
@@ -387,8 +387,8 @@
         "id": 1,
         "role": "Tech Lead",
         "company": "Flair.hr",
-        "startDate": "Fév 2023",
-        "endDate": "Fév 2024",
+        "startDate": "Février 2023",
+        "endDate": "Février 2024",
         "period": "1 an",
         "description": [
           {
@@ -411,7 +411,7 @@
         "id": 2,
         "role": "Tech Lead",
         "company": "Monday Merch",
-        "startDate": "Fév 2022",
+        "startDate": "Février 2022",
         "endDate": "Dec 2023",
         "period": "1 an et 10 mois",
         "description": [
@@ -438,7 +438,7 @@
         "role": "Développeur Web",
         "company": "Remix",
         "startDate": "Mai 2022",
-        "endDate": "Nov 2022",
+        "endDate": "Novembre 2022",
         "period": "6 mois",
         "description": [
           {
@@ -463,7 +463,7 @@
         "role": "Tech Lead",
         "company": "Flote",
         "startDate": "Mai 2017",
-        "endDate": "Nov 2022",
+        "endDate": "Novembre 2022",
         "period": "5 ans et 6 mois",
         "description": [
           {
@@ -498,7 +498,7 @@
         "id": 5,
         "role": "Tech Lead",
         "company": "Tenanti",
-        "startDate": "Déc 2019",
+        "startDate": "Décembre 2019",
         "endDate": "Juin 2021",
         "period": "1 an et 6 mois",
         "description": [
@@ -578,7 +578,7 @@
         "role": "Développeur Front-end senior",
         "company": "A5 Labs",
         "startDate": "Mars 2021",
-        "endDate": "Oct 2022",
+        "endDate": "Octobre 2022",
         "period": "1 an et 7 mois",
         "description": [
           {
@@ -608,7 +608,7 @@
         "role": "Consultant senior",
         "company": "Softtech",
         "startDate": "Août 2020",
-        "endDate": "Avr 2021",
+        "endDate": "Avril 2021",
         "period": "8 mois",
         "description": [
           {
@@ -626,7 +626,7 @@
         "id": 3,
         "role": "Développeur Front-end senior",
         "company": "Insider",
-        "startDate": "Fév 2020",
+        "startDate": "Février 2020",
         "endDate": "Août 2020",
         "period": "6 mois",
         "description": [
@@ -647,7 +647,7 @@
         "role": "Expert en développement de logiciels",
         "company": "Comodo",
         "startDate": "Mai 2018",
-        "endDate": "Déc 2019",
+        "endDate": "Décembre 2019",
         "period": "1 an et 7 mois",
         "description": [
           {
@@ -696,7 +696,7 @@
         "id": 6,
         "role": "Ingénieur en recherche et développement",
         "company": "Havelsan Teknoloji Radar(HTR)",
-        "startDate": "Sep 2016",
+        "startDate": "Septembre 2016",
         "endDate": "Juillet 2017",
         "period": "10 mois",
         "description": [
@@ -776,7 +776,7 @@
         "id": 1,
         "role": "Manager Ingénieur",
         "company": "WISBOO.COM",
-        "startDate": "Oct 2022",
+        "startDate": "Octobre 2022",
         "endDate": "Août 2023",
         "period": "10 mois",
         "description": [
@@ -1362,8 +1362,8 @@
         "id": 5,
         "role": "Développeur Frontend Medior",
         "company": "Devellar",
-        "startDate": "Mar 2017",
-        "endDate": "Jun 2019",
+        "startDate": "Mars 2017",
+        "endDate": "Juin 2019",
         "period": "2 years 3 months",
         "description": [
           {
