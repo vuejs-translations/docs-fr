@@ -259,12 +259,11 @@ Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutate
 
 </div>
 
-## Getting the previous value {#previous}
+## Obtenir la valeur précédente {#previous}
 
-- Only supported in 3.4+
+- Supporté à partir de la version 3.4
 
-In case you need it, you can get the previous value returned by the computed property accessing
-the first argument of the getter:
+Si vous en avez besoin, vous pouvez obtenir la valeur précédente renvoyée par la propriété calculée en accédant au premier argument du getter :
 
 <div class="options-api">
 
@@ -276,9 +275,9 @@ export default {
     }
   },
   computed: {
-    // This computed will return the value of count when it's less or equal to 3.
-    // When count is >=4, the last value that fulfilled our condition will be returned
-    // instead until count is less or equal to 3
+    // Ce calcul renvoie la valeur de count lorsqu'elle est inférieure ou égale à 3.
+    // Lorsque count est >=4, la dernière valeur qui remplit notre condition est renvoyée.
+    // jusqu'à ce que count soit inférieur ou égal à 3
     alwaysSmall(previous) {
       if (this.count <= 3) {
         return this.count;
@@ -299,9 +298,9 @@ import { ref, computed } from 'vue'
 
 const count = ref(2)
 
-// This computed will return the value of count when it's less or equal to 3.
-// When count is >=4, the last value that fulfilled our condition will be returned
-// instead until count is less or equal to 3
+// Ce calcul renvoie la valeur de count lorsqu'elle est inférieure ou égale à 3.
+// Lorsque count est >=4, la dernière valeur qui remplit notre condition est renvoyée.
+// jusqu'à ce que count soit inférieur ou égal à 3
 const alwaysSmall = computed((previous) => {
   if (count.value <= 3) {
     return count.value;
@@ -313,7 +312,7 @@ const alwaysSmall = computed((previous) => {
 ```
 </div>
 
-In case you're using a writable computed:
+Si vous utilisez un valeur calculée modifiable :
 
 <div class="options-api">
 
