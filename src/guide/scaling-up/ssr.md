@@ -314,9 +314,9 @@ Si la structure du DOM du HTML pré-rendu ne correspond pas à la sortie attendu
 
 Lorsque Vue rencontre une incohérence d'hydratation, il tentera de récupérer automatiquement et de régler le DOM pré-rendu pour correspondre à l'état côté client. Cela entraînera une perte de performance de rendu due à la suppression de nœuds incorrects et au montage de nouveaux nœuds, mais dans la plupart des cas, l'application devrait continuer à fonctionner comme prévu. Cela dit, il est toujours préférable d'éliminer les incohérences d'hydratation pendant le développement.
 
-#### Suppressing Hydration Mismatches <sup class="vt-badge" data-text="3.5+" /> {#suppressing-hydration-mismatches}
+#### Suppression de la non-concordance de d'hydratation <sup class="vt-badge" data-text="3.5+" /> {#suppressing-hydration-mismatches}
 
-In Vue 3.5+, it is possible to selectively suppress inevitable hydration mismatches by using the [`data-allow-mismatch`](/api/ssr#data-allow-mismatch) attribute.
+Dans Vue 3.5+, il est possible de supprimer sélectivement les non-concordances d'hydratation inévitables en utilisant l'attribut [`data-allow-mismatch`](/api/ssr#data-allow-mismatch).
 
 ### Directives personnalisées {#custom-directives}
 
