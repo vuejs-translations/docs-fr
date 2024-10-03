@@ -447,9 +447,9 @@ export default {
 
 </div>
 
-Note that `onWatcherCleanup` is only supported in Vue 3.5+ and must be called during the synchronous execution of a `watchEffect` effect function or `watch` callback function: you cannot call it after an `await` statement in an async function.
+Notez que `onWatcherCleanup` n'est supporté que dans Vue 3.5+ et doit être appelé pendant l'exécution synchrone d'une fonction d'effet `watchEffect` ou d'une fonction de callback `watch` : vous ne pouvez pas l'appeler après une instruction `await` dans une fonction asynchrone.
 
-Alternatively, an `onCleanup` function is also passed to watcher callbacks as the 3rd argument<span class="composition-api">, and to the `watchEffect` effect function as the first argument</span>:
+Alternativement, une fonction `onCleanup` est également transmise aux callbacks des observateurs en tant que troisième argument<span class="composition-api">, et à la fonction d'effet `watchEffect` en tant que premier argument</span>:
 
 <div class="composition-api">
 
@@ -457,14 +457,14 @@ Alternatively, an `onCleanup` function is also passed to watcher callbacks as th
 watch(id, (newId, oldId, onCleanup) => {
   // ...
   onCleanup(() => {
-    // cleanup logic
+    // logique de rappel
   })
 })
 
 watchEffect((onCleanup) => {
   // ...
   onCleanup(() => {
-    // cleanup logic
+    // logique de rappel
   })
 })
 ```
@@ -478,7 +478,7 @@ export default {
     id(newId, oldId, onCleanup) {
       // ...
       onCleanup(() => {
-        // cleanup logic
+        // logique de rappel
       })
     }
   }
@@ -487,7 +487,7 @@ export default {
 
 </div>
 
-This works in versions before 3.5. In addition, `onCleanup` passed via function argument is bound to the watcher instance so it is not subject to the synchronously constraint of `onWatcherCleanup`.
+Cela fonctionne dans les versions antérieures à la 3.5. De plus, `onCleanup` passé en argument de la fonction est lié à l'instance de l'observateur et n'est donc pas soumis à la contrainte de synchronisation de `onWatcherCleanup`.
 
 ## Timing de nettoyage des rappels {#callback-flush-timing}
 
