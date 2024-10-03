@@ -367,16 +367,16 @@ Pour des exemples comme ceux-ci, avec une seule dépendance, le bénéfice de `w
 
 </div>
 
-## Side Effect Cleanup {#side-effect-cleanup}
+## Nettoyage des effets de bord {#side-effect-cleanup}
 
-Sometimes we may perform side effects, e.g. asynchronous requests, in a watcher:
+Parfois, nous pouvons effectuer des effets secondaires, par exemple des requêtes asynchrones, dans un observateur :
 
 <div class="composition-api">
 
 ```js
 watch(id, (newId) => {
   fetch(`/api/${newId}`).then(() => {
-    // callback logic
+    // logique de rappel
   })
 })
 ```
@@ -389,7 +389,7 @@ export default {
   watch: {
     id(newId) {
       fetch(`/api/${newId}`).then(() => {
-        // callback logic
+        // logique de rappel
       })
     }
   }
