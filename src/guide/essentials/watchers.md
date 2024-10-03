@@ -398,9 +398,9 @@ export default {
 
 </div>
 
-But what if `id` changes before the request completes? When the previous request completes, it will still fire the callback with an ID value that is already stale. Ideally, we want to be able to cancel the stale request when `id` changes to a new value.
+Mais que se passe-t-il si `id` change avant que la requête ne soit terminée ? Lorsque la requête précédente se termine, elle déclenche toujours le callback avec une valeur d'ID qui est déjà périmée. Idéalement, nous voulons pouvoir annuler la requête périmée lorsque `id` change pour une nouvelle valeur.
 
-We can use the [`onWatcherCleanup()`](/api/reactivity-core#onwatchercleanup) <sup class="vt-badge" data-text="3.5+" /> API to register a cleanup function that will be called when the watcher is invalidated and is about to re-run:
+Nous pouvons utiliser l'API [`onWatcherCleanup()`](/api/reactivity-core#onwatchercleanup) <sup class="vt-badge" data-text="3.5+" /> pour enregistrer une fonction de nettoyage qui sera appelée lorsque l'observateur est invalidé et sur le point d'être réexécuté :
 
 <div class="composition-api">
 
@@ -411,11 +411,11 @@ watch(id, (newId) => {
   const controller = new AbortController()
 
   fetch(`/api/${newId}`, { signal: controller.signal }).then(() => {
-    // callback logic
+    // logique de rappel
   })
 
   onWatcherCleanup(() => {
-    // abort stale request
+    // annuler la demande périmée
     controller.abort()
   })
 })
@@ -433,11 +433,11 @@ export default {
       const controller = new AbortController()
 
       fetch(`/api/${newId}`, { signal: controller.signal }).then(() => {
-        // callback logic
+        // logique de rappel
       })
 
       onWatcherCleanup(() => {
-        // abort stale request
+        // annuler la demande périmée
         controller.abort()
       })
     }
