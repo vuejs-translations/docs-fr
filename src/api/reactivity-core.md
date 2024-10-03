@@ -384,9 +384,7 @@ Observe une ou plusieurs sources de données réactives et invoque une fonction 
   type WatchSource<T> =
     | Ref<T> // ref
     | (() => T) // accesseur
-    | T extends object
-    ? T
-    : never // objet réactif
+    | (T extends object ? T : never) // objet réactif
 
   interface WatchOptions extends WatchEffectOptions {
     immediate?: boolean // Par défaut: false
