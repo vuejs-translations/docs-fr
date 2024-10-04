@@ -171,9 +171,9 @@ Les événements émis via `this.$emit` ou la configuration `emit` sont distribu
 
 L'[API Provide /Inject](/guide/components/provide-inject#provide-inject) et son [équivalent pour la Composition API](/api/composition-api-dependency-injection#provide) fonctionnent également entre les éléments personnalisés définis par Vue. Cependant, notez que cela fonctionne **uniquement entre les éléments personnalisés**. C'est-à-dire qu'un élément personnalisé défini par Vue ne pourra pas injecter les propriétés fournies par un composant Vue non personnalisé.
 
-#### App Level Config <sup class="vt-badge" data-text="3.5+" /> {#app-level-config}
+#### Configuration au niveau de l'application <sup class="vt-badge" data-text="3.5+" /> {#app-level-config}
 
-You can configure the app instance of a Vue custom element using the `configureApp` option:
+Vous pouvez configurer l'instance d'application d'un élément personnalisé Vue en utilisant l'option `configureApp` :
 
 ```js
 defineCustomElement(MyComponent, {
