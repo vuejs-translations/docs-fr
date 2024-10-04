@@ -224,7 +224,6 @@ watch(
 
 </div>
 
-In Vue 3.5+, the `deep` option can also be a number indicating the max traversal depth - i.e. how many levels should Vue traverse an object's nested properties.
 À partir de la version 3.5, l'option `deep` peut aussi être un numbre indiquant la profondeur maximale à traverser, c'est-à-dire de combien de niveaux Vue traverse un objet avec des propriétés imbriquées.
 
 :::warning À utiliser avec précaution
@@ -367,16 +366,16 @@ Pour des exemples comme ceux-ci, avec une seule dépendance, le bénéfice de `w
 
 </div>
 
-## Side Effect Cleanup {#side-effect-cleanup}
+## Nettoyage des effets de bord {#side-effect-cleanup}
 
-Sometimes we may perform side effects, e.g. asynchronous requests, in a watcher:
+Parfois, nous pouvons effectuer des effets secondaires, par exemple des requêtes asynchrones, dans un observateur :
 
 <div class="composition-api">
 
 ```js
 watch(id, (newId) => {
   fetch(`/api/${newId}`).then(() => {
-    // callback logic
+    // logique de rappel
   })
 })
 ```
@@ -389,7 +388,7 @@ export default {
   watch: {
     id(newId) {
       fetch(`/api/${newId}`).then(() => {
-        // callback logic
+        // logique de rappel
       })
     }
   }
@@ -398,9 +397,9 @@ export default {
 
 </div>
 
-But what if `id` changes before the request completes? When the previous request completes, it will still fire the callback with an ID value that is already stale. Ideally, we want to be able to cancel the stale request when `id` changes to a new value.
+Mais que se passe-t-il si `id` change avant que la requête ne soit terminée ? Lorsque la requête précédente se termine, elle déclenche toujours le callback avec une valeur d'ID qui est déjà périmée. Idéalement, nous voulons pouvoir annuler la requête périmée lorsque `id` change pour une nouvelle valeur.
 
-We can use the [`onWatcherCleanup()`](/api/reactivity-core#onwatchercleanup) <sup class="vt-badge" data-text="3.5+" /> API to register a cleanup function that will be called when the watcher is invalidated and is about to re-run:
+Nous pouvons utiliser l'API [`onWatcherCleanup()`](/api/reactivity-core#onwatchercleanup) <sup class="vt-badge" data-text="3.5+" /> pour enregistrer une fonction de nettoyage qui sera appelée lorsque l'observateur est invalidé et sur le point d'être réexécuté :
 
 <div class="composition-api">
 
@@ -411,11 +410,11 @@ watch(id, (newId) => {
   const controller = new AbortController()
 
   fetch(`/api/${newId}`, { signal: controller.signal }).then(() => {
-    // callback logic
+    // logique de rappel
   })
 
   onWatcherCleanup(() => {
-    // abort stale request
+    // annuler la demande périmée
     controller.abort()
   })
 })
@@ -433,11 +432,11 @@ export default {
       const controller = new AbortController()
 
       fetch(`/api/${newId}`, { signal: controller.signal }).then(() => {
-        // callback logic
+        // logique de rappel
       })
 
       onWatcherCleanup(() => {
-        // abort stale request
+        // annuler la demande périmée
         controller.abort()
       })
     }
@@ -447,9 +446,9 @@ export default {
 
 </div>
 
-Note that `onWatcherCleanup` is only supported in Vue 3.5+ and must be called during the synchronous execution of a `watchEffect` effect function or `watch` callback function: you cannot call it after an `await` statement in an async function.
+Notez que `onWatcherCleanup` n'est supporté que dans Vue 3.5+ et doit être appelé pendant l'exécution synchrone d'une fonction d'effet `watchEffect` ou d'une fonction de callback `watch` : vous ne pouvez pas l'appeler après une instruction `await` dans une fonction asynchrone.
 
-Alternatively, an `onCleanup` function is also passed to watcher callbacks as the 3rd argument<span class="composition-api">, and to the `watchEffect` effect function as the first argument</span>:
+Alternativement, une fonction `onCleanup` est également transmise aux callbacks des observateurs en tant que troisième argument<span class="composition-api">, et à la fonction d'effet `watchEffect` en tant que premier argument</span>:
 
 <div class="composition-api">
 
@@ -457,14 +456,14 @@ Alternatively, an `onCleanup` function is also passed to watcher callbacks as th
 watch(id, (newId, oldId, onCleanup) => {
   // ...
   onCleanup(() => {
-    // cleanup logic
+    // logique de rappel
   })
 })
 
 watchEffect((onCleanup) => {
   // ...
   onCleanup(() => {
-    // cleanup logic
+    // logique de rappel
   })
 })
 ```
@@ -478,7 +477,7 @@ export default {
     id(newId, oldId, onCleanup) {
       // ...
       onCleanup(() => {
-        // cleanup logic
+        // logique de rappel
       })
     }
   }
@@ -487,7 +486,7 @@ export default {
 
 </div>
 
-This works in versions before 3.5. In addition, `onCleanup` passed via function argument is bound to the watcher instance so it is not subject to the synchronously constraint of `onWatcherCleanup`.
+Cela fonctionne dans les versions antérieures à la 3.5. De plus, `onCleanup` passé en argument de la fonction est lié à l'instance de l'observateur et n'est donc pas soumis à la contrainte de synchronisation de `onWatcherCleanup`.
 
 ## Timing de nettoyage des rappels {#callback-flush-timing}
 
