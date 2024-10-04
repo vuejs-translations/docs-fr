@@ -224,7 +224,6 @@ watch(
 
 </div>
 
-In Vue 3.5+, the `deep` option can also be a number indicating the max traversal depth - i.e. how many levels should Vue traverse an object's nested properties.
 À partir de la version 3.5, l'option `deep` peut aussi être un numbre indiquant la profondeur maximale à traverser, c'est-à-dire de combien de niveaux Vue traverse un objet avec des propriétés imbriquées.
 
 :::warning À utiliser avec précaution
