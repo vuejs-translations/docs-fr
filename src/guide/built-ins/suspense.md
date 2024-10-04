@@ -135,6 +135,8 @@ Vue Router supporte nativement les [composants chargés de manière paresseuse](
 
 ## Suspense imbriqué {#nested-suspense}
 
+- Supporté à partir de la version 3.3
+
 Lorsque nous avons plusieurs composants asynchrones (ce qui est courant pour les routes imbriquées ou basées sur la mise en page) comme ceci :
 
 ```vue-html

@@ -371,7 +371,7 @@ const foo = inject('foo') as string
 
 ## Typer les refs de template {#typing-template-refs}
 
-Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le typage des refs créés par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément sur lequel l'attribut `ref` correspondant est utilisé.
+Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le typage des refs créées par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément sur lequel l'attribut `ref` correspondant est utilisé.
 
 Dans les cas où l'auto-inférence n'est pas possible, vous pouvez toujours convertir le template ref en un type explicite via l'argument générique :
 
@@ -408,7 +408,7 @@ Notez que pour une sécurité de type stricte, il est nécessaire d'utiliser un 
 
 ## Typer les refs du template d'un composant {#typing-component-template-refs}
 
-Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le typage de refs créés par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
+Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service linguistique de l'IDE et `vue-tsc`), le typage de refs créées par `useTemplateRef()` dans les SFC peut être **automatiquement déduit** pour les refs statiques en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
 
 Dans les cas où l'auto-inférence n'est pas possible (par exemple, utilisation non-SFC ou composants dynamiques), vous pouvez toujours convertir la référence du template en un type explicite par l'intermédiaire de l'argument générique.
 

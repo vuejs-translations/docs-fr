@@ -1,6 +1,7 @@
 ---
 page: true
 footer: false
+title: Partenaires de Vue.js
 ---
 
 <script setup>

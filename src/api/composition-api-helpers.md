@@ -2,7 +2,7 @@
 
 ## useAttrs() {#useattrs}
 
-Returns the `attrs` object from the [Setup Context](/api/composition-api-setup#setup-context), which includes the [fallthrough attributes](/guide/components/attrs#fallthrough-attributes) of the current component. This is intended to be used in `<script setup>` where the setup context object is not available.
+Retourne l'objet `attrs` du [contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les [attributs implicitement déclarés (Fallthrough Attributes)](/guide/components/attrs#fallthrough-attributes) du composant courant. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
 
 - **Type**
 
@@ -12,9 +12,9 @@ Returns the `attrs` object from the [Setup Context](/api/composition-api-setup#s
 
 ## useSlots() {#useslots}
 
-Returns the `slots` object from the [Setup Context](/api/composition-api-setup#setup-context), which includes parent passed slots as callable functions that return Virtual DOM nodes. This is intended to be used in `<script setup>` where the setup context object is not available.
+Retourne l'objet `slots` du [contexte de la fonction setup](/api/composition-api-setup#setup-context), qui inclut les slots passés par les parents comme des fonctions appelables qui retournent des noeuds virtuels du DOM. Il est destiné à être utilisé dans `<script setup>` lorsque l'objet setup context n'est pas disponible.
 
-If using TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots) should be preferred instead.
+Si vous utilisez TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots) devrait être préféré.
 
 - **Type**
 
@@ -24,9 +24,9 @@ If using TypeScript, [`defineSlots()`](/api/sfc-script-setup#defineslots) should
 
 ## useModel() {#usemodel}
 
-This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setup#definemodel). If using `<script setup>`, `defineModel()` should be preferred instead.
+C'est le helper sous-jacent qui alimente [`defineModel()`](/api/sfc-script-setup#definemodel). Si vous utilisez `<script setup>`, `defineModel()` devrait être préféré.
 
-- Only available in 3.4+
+- Disponible à partir de la version 3.4
 
 - **Type**
 
@@ -42,13 +42,14 @@ This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setu
     set?: (v: T) => any
   }
 
-  type ModelRef<T, M extends PropertyKey = string, G = T, S = T> = Ref<G, S> & [
-    ModelRef<T, M, G, S>,
-    Record<M, true | undefined>
-]
+  type ModelRef<T, M extends PropertyKey = string, G = T, S = T> = Ref<
+    G,
+    S
+  > &
+    [ModelRef<T, M, G, S>, Record<M, true | undefined>]
   ```
 
-- **Example**
+- **Exemple**
 
   ```js
   export default {
@@ -61,13 +62,13 @@ This is the underlying helper that powers [`defineModel()`](/api/sfc-script-setu
   }
   ```
 
-- **Details**
+- **Détails**
 
-  `useModel()` can be used in non-SFC components, e.g. when using raw `setup()` function. It expects the `props` object as the first argument, and the model name as the second argument. The optional third argument can be used to declare custom getter and setter for the resulting model ref. Note that unlike `defineModel()`, you are responsible for declaring the props and emits yourself.
+  `useModel()` peut être utilisé dans les composants non-SFC, par exemple lors de l'utilisation de la fonction raw `setup()`. Elle attend l'objet `props` comme premier argument, et le nom du modèle comme second argument. Le troisième argument optionnel peut être utilisé pour déclarer des getter et setter personnalisés pour le modèle ref résultant. Notez que contrairement à `defineModel()`, vous êtes responsable de la déclaration des objets props et emits vous-même.
 
 ## useTemplateRef() <sup class="vt-badge" data-text="3.5+" /> {#usetemplateref}
 
-Returns a shallow ref whose value will be synced with the template element or component with a matching ref attribute.
+Renvoie une ref peu profonde dont la valeur sera synchronisée avec l'élément ou le composant du template ayant un attribut ref correspondant.
 
 - **Type**
 
@@ -75,7 +76,7 @@ Returns a shallow ref whose value will be synced with the template element or co
   function useTemplateRef<T>(key: string): Readonly<ShallowRef<T | null>>
   ```
 
-- **Example**
+- **Exemple**
 
   ```vue
   <script setup>
@@ -93,14 +94,14 @@ Returns a shallow ref whose value will be synced with the template element or co
   </template>
   ```
 
-- **See also**
-  - [Guide - Template Refs](/guide/essentials/template-refs)
-  - [Guide - Typing Template Refs](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
-  - [Guide - Typing Component Template Refs](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
+- **Voir aussi**
+  - [Guide - Les refs du template](/guide/essentials/template-refs)
+  - [Guide - Typer les refs de template](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
+  - [Guide - Typer les refs de template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 ## useId() <sup class="vt-badge" data-text="3.5+" /> {#useid}
 
-Used to generate unique-per-application IDs for accessibility attributes or form elements.
+Utilisé pour générer des identifiants uniques par application pour les attributs d'accessibilité ou les éléments de formulaire.
 
 - **Type**
 
@@ -108,7 +109,7 @@ Used to generate unique-per-application IDs for accessibility attributes or form
   function useId(): string
   ```
 
-- **Example**
+- **Exemple**
 
   ```vue
   <script setup>
@@ -125,10 +126,10 @@ Used to generate unique-per-application IDs for accessibility attributes or form
   </template>
   ```
 
-- **Details**
+- **Détails**
 
-  IDs generated by `useId()` are unique-per-application. It can be used to generate IDs for form elements and accessibility attributes. Multiple calls in the same component will generate different IDs; multiple instances of the same component calling `useId()` will also have different IDs.
+  Les identifiants générés par `useId()` sont uniques pour chaque application. Il peut être utilisé pour générer des identifiants pour les éléments de formulaire et les attributs d'accessibilité. Plusieurs appels dans le même composant génèreront des ID différents ; plusieurs instances du même composant appelant `useId()` auront également des ID différents.
 
-  IDs generated by `useId()` are also guaranteed to be stable across the server and client renders, so they can be used in SSR applications without leading to hydration mismatches.
+  Les identifiants générés par `useId()` sont également garantis stables entre les rendus du serveur et du client, de sorte qu'ils peuvent être utilisés dans des applications SSR sans entraîner de disparités d'hydratation.
 
-  If you have more than one Vue application instance of the same page, you can avoid ID conflicts by giving each app an ID prefix via [`app.config.idPrefix`](/api/application#app-config-idprefix).
+  Si vous avez plus d'une instance d'application Vue sur la même page, vous pouvez éviter les conflits d'ID en donnant à chaque application un préfixe d'ID via [`app.config.idPrefix`](/api/application#app-config-idprefix).
