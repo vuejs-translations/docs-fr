@@ -221,7 +221,7 @@ export default {
       // mutateur
       set(newValue) {
         // Note : nous utilisons ici la syntaxe d'assignation par déstructuration.
-        [this.firstName, this.lastName] = newValue.split(' ')
+        ;[this.firstName, this.lastName] = newValue.split(' ')
       }
     }
   }
@@ -258,6 +258,114 @@ const fullName = computed({
 Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutateur sera invoqué et `firstName` et `lastName` seront mis à jour en conséquence.
 
 </div>
+
+## Obtenir la valeur précédente {#previous}
+
+- Supporté à partir de la version 3.4
+
+Si vous en avez besoin, vous pouvez obtenir la valeur précédente renvoyée par la propriété calculée en accédant au premier argument du getter :
+
+<div class="options-api">
+
+```js
+export default {
+  data() {
+    return {
+      count: 2
+    }
+  },
+  computed: {
+    // Ce calcul renvoie la valeur de count lorsqu'elle est inférieure ou égale à 3.
+    // Lorsque count est >=4, la dernière valeur qui remplit notre condition est renvoyée.
+    // jusqu'à ce que count soit inférieur ou égal à 3
+    alwaysSmall(previous) {
+      if (this.count <= 3) {
+        return this.count;
+      }
+
+      return previous;
+    }
+  }
+}
+```
+</div>
+
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref, computed } from 'vue'
+
+const count = ref(2)
+
+// Ce calcul renvoie la valeur de count lorsqu'elle est inférieure ou égale à 3.
+// Lorsque count est >=4, la dernière valeur qui remplit notre condition est renvoyée.
+// jusqu'à ce que count soit inférieur ou égal à 3
+const alwaysSmall = computed((previous) => {
+  if (count.value <= 3) {
+    return count.value;
+  }
+
+  return previous;
+})
+</script>
+```
+</div>
+
+Si vous utilisez un valeur calculée modifiable :
+
+<div class="options-api">
+
+```js
+export default {
+  data() {
+    return {
+      count: 2
+    }
+  },
+  computed: {
+    alwaysSmall: {
+      get(previous) {
+        if (this.count <= 3) {
+          return this.count;
+        }
+
+        return previous;
+      },
+      set(newValue) {
+        this.count = newValue * 2;
+      }
+    }
+  }
+}
+```
+
+</div>
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref, computed } from 'vue'
+
+const count = ref(2)
+
+const alwaysSmall = computed({
+  get(previous) {
+    if (count.value <= 3) {
+      return count.value;
+    }
+
+    return previous;
+  },
+  set(newValue) {
+    count.value = newValue * 2;
+  }
+})
+</script>
+```
+
+</div>
+
 
 ## Bonnes Pratiques {#best-practices}
 
