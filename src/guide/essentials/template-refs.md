@@ -56,7 +56,7 @@ onMounted(() => {
 </template>
 ```
 
-Si vous n'utilisez pas `<script setup>`, assurez vous également de retourner la ref depuis `setup()`:
+Si vous n'utilisez pas `<script setup>`, assurez vous également de retourner la ref depuis `setup()` :
 
 ```js{6}
 export default {
@@ -75,7 +75,7 @@ export default {
 </div>
 <div class="options-api">
 
-La ref correspondante est accessible via `this.$refs`:
+La ref correspondante est accessible via `this.$refs` :
 
 ```vue
 <script>
@@ -234,7 +234,7 @@ import Child from './Child.vue'
 const childRef = useTemplateRef('child')
 
 onMounted(() => {
-  // childRef.value will hold an instance of <Child />
+  // childRef.value contiendra une instance de <Child />
 })
 </script>
 
@@ -244,7 +244,7 @@ onMounted(() => {
 ```
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant 3.5</summary>
 
 ```vue
 <script setup>
