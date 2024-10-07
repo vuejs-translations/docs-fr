@@ -12,13 +12,13 @@ Bien que le modèle de rendu déclaratif de Vue fasse abstraction pour vous de l
 
 <div class="composition-api">
 
-To obtain the reference with Composition API, we can use the [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" /> helper:
+Pour obtenir la référence avec l'API Composition, nous pouvons utiliser l'aide [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" />:
 
 ```vue
 <script setup>
 import { useTemplateRef, onMounted } from 'vue'
 
-// the first argument must match the ref value in the template
+// le premier argument doit correspondre à la valeur ref dans le template
 const input = useTemplateRef('my-input')
 
 onMounted(() => {
@@ -31,12 +31,12 @@ onMounted(() => {
 </template>
 ```
 
-When using TypeScript, Vue's IDE support and `vue-tsc` will automatically infer the type of `inputRef.value` based on what element or component the matching `ref` attribute is used on.
+Lorsque vous utilisez TypeScript, le support IDE de Vue et `vue-tsc` déduiront automatiquement le type de `inputRef.value` en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant 3.5</summary>
 
-In versions before 3.5 where `useTemplateRef()` was not introduced, we need to declare a ref with a name that matches the template ref attribute's value:
+Dans les versions antérieures à la 3.5 où `useTemplateRef()` n'a pas été introduit, nous devons déclarer une ref avec un nom qui correspond à la valeur de l'attribut template ref :
 
 ```vue
 <script setup>
