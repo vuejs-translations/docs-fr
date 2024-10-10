@@ -119,7 +119,7 @@ Plus de détails: [Typage de props de composant](/guide/typescript/composition-a
 
 <div class="composition-api">
 
-## Props réactifs Déstructuration <sup class="vt-badge" data-text="3.5+" /> \*\* {#reactive-props-destructure}
+## Déstructuration réactive des props <sup class="vt-badge" data-text="3.5+" /> \*\* {#reactive-props-destructure}
 
 Le système de réactivité de Vue suit l'utilisation de l'état en fonction de l'accès à la propriété. Par exemple, lorsque vous accédez à `props.foo` dans un getter ou un watcher calculé, la prop `foo` est suivie comme une dépendance.
 
