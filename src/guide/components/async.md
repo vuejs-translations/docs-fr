@@ -109,15 +109,15 @@ Si un composant de chargement est fourni, il sera affiché en premier lors du ch
 
 Si un composant d'erreur est fourni, il sera affiché lorsque la promesse renvoyée par la fonction de chargement est rejetée. Vous pouvez également spécifier un délai d'expiration pour afficher le composant d'erreur lorsque la demande prend trop de temps.
 
-## Lazy Hydration <sup class="vt-badge" data-text="3.5+" /> {#lazy-hydration}
+## Hydratation paresseuse <sup class="vt-badge" data-text="3.5+" /> {#lazy-hydration}
 
-> This section only applies if you are using [Server-Side Rendering](/guide/scaling-up/ssr).
+> Cette section ne s'applique que si vous utilisez [Rendu côté serveur (SSR)](/guide/scaling-up/ssr).
 
-In Vue 3.5+, async components can control when they are hydrated by providing a hydration strategy.
+Dans Vue 3.5+, les composants asynchrones peuvent contrôler le moment où ils sont hydratés en fournissant une stratégie d'hydratation.
 
-- Vue provides a number of built-in hydration strategies. These built-in strategies need to be individually imported so they can be tree-shaken if not used.
+- Vue fournit un certain nombre de stratégies d'hydratation intégrées. Ces stratégies intégrées doivent être importées individuellement afin qu'elles puissent être supprimées si elles ne sont pas utilisées.
 
-- The design is intentionally low-level for flexibility. Compiler syntax sugar can potentially be built on top of this in the future either in core or in higher level solutions (e.g. Nuxt).
+- La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau (par exemple, Nuxt).
 
 ### Hydrate on Idle {#hydrate-on-idle}
 
