@@ -119,44 +119,44 @@ Plus de détails: [Typage de props de composant](/guide/typescript/composition-a
 
 <div class="composition-api">
 
-## Reactive Props Destructure <sup class="vt-badge" data-text="3.5+" /> \*\* {#reactive-props-destructure}
+## Déstructuration réactive des props <sup class="vt-badge" data-text="3.5+" /> \*\* {#reactive-props-destructure}
 
-Vue's reactivity system tracks state usage based on property access. E.g. when you access `props.foo` in a computed getter or a watcher, the `foo` prop gets tracked as a dependency.
+Le système de réactivité de Vue suit l'utilisation de l'état en fonction de l'accès à la propriété. Par exemple, lorsque vous accédez à `props.foo` dans une computed ou un watcher, la prop `foo` est suivie comme une dépendance.
 
-So, given the following code:
+Ainsi, selon le code suivant :
 
 ```js
 const { foo } = defineProps(['foo'])
 
 watchEffect(() => {
-  // runs only once before 3.5
-  // re-runs when the "foo" prop changes in 3.5+
+  // ne s'exécute qu'une seule fois avant 3.5
+  // se ré-exécute lorsque la prop "foo" est modifiée dans la version 3.5+.
   console.log(foo)
 })
 ```
 
-In version 3.4 and below, `foo` is an actual constant and will never change. In version 3.5 and above, Vue's compiler automatically prepends `props.` when code in the same `<script setup>` block accesses variables destructured from `defineProps`. Therefore the code above becomes equivalent to the following:
+Dans les versions 3.4 et inférieures, `foo` est une constante réelle et ne changera jamais. Dans les versions 3.5 et supérieures, le compilateur de Vue ajoute automatiquement le préfixe `props.` lorsque le code dans le même bloc `<script setup>` accède à des variables déstructurées à partir de `defineProps`. Par conséquent, le code ci-dessus devient équivalent à ce qui suit :
 
 ```js {5}
 const props = defineProps(['foo'])
 
 watchEffect(() => {
-  // `foo` transformed to `props.foo` by the compiler
+  // `foo` transformé en `props.foo` par le compilateur
   console.log(props.foo)
 })
 ```
 
-In addition, you can use JavaScript's native default value syntax to declare default values for the props. This is particularly useful when using the type-based props declaration:
+En outre, vous pouvez utiliser la syntaxe native des valeurs par défaut de JavaScript pour déclarer des valeurs par défaut pour les props. Ceci est particulièrement utile lorsque vous utilisez la déclaration de props basée sur le type :
 
 ```ts
 const { foo = 'hello' } = defineProps<{ foo?: string }>()
 ```
 
-If you prefer to have more visual distinction between destructured props and normal variables in your IDE, Vue's VSCode extension provides a setting to enable inlay-hints for destructured props.
+Si vous préférez avoir plus de distinction visuelle entre les props déstructurées et les variables normales dans votre IDE, l'extension VSCode de Vue fournit un paramètre pour activer les indices d'incrustation pour les props déstructurées.
 
-### Passing Destructured Props into Functions {#passing-destructured-props-into-functions}
+### Passer des props déstructurées dans des fonctions {#passing-destructured-props-into-functions}
 
-When we pass a destructured prop into a function, e.g.:
+Lorsque nous passons une prop déstructuré dans une fonction, par exemple :
 
 ```js
 const { foo } = defineProps(['foo'])
@@ -164,21 +164,21 @@ const { foo } = defineProps(['foo'])
 watch(foo, /* ... */)
 ```
 
-This will not work as expected because it is equivalent to `watch(props.foo, ...)` - we are passing a value instead of a reactive data source to `watch`. In fact, Vue's compiler will catch such cases and throw a warning.
+Cela ne fonctionnera pas comme prévu car c'est équivalent à `watch(props.foo, ...)` - nous passons une valeur au lieu d'une source de données réactive à `watch`. En fait, le compilateur de Vue détectera de tels cas et lancera un avertissement.
 
-Similar to how we can watch a normal prop with `watch(() => props.foo, ...)`, we can watch a destructured prop also by wrapping it in a getter:
+De la même façon que l'on peut surveiller une prop normale avec `watch(() => props.foo, ...)`, on peut aussi surveiller une prop déstructurée en l'enveloppant dans un getter :
 
 ```js
 watch(() => foo, /* ... */)
 ```
 
-In addition, this is the recommended approach when we need to pass a destructured prop into an external function while retaining reactivity:
+En outre, il s'agit de l'approche recommandée lorsque nous devons passer une prop déstructurée dans une fonction externe tout en conservant la réactivité :
 
 ```js
 useComposable(() => foo)
 ```
 
-The external function can call the getter (or normalize it with [toValue](/api/reactivity-utilities.html#tovalue)) when it needs to track changes of the provided prop, e.g. in a computed or watcher getter.
+La fonction externe peut appeler le getter (ou le normaliser avec [toValue](/api/reactivity-utilities.html#tovalue)) lorsqu'elle a besoin de suivre les changements de l'objet fourni, par exemple dans un computed ou watcher getter.
 
 </div>
 
