@@ -132,9 +132,9 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydrate on Visible {#hydrate-on-visible}
+### Hydratation visible {#hydrate-on-visible}
 
-Hydrate when element(s) become visible via `IntersectionObserver`.
+Hydratez lorsque le(s) élément(s) devient(ent) visible(s) via `IntersectionObserver`.
 
 ```js
 import { defineAsyncComponent, hydrateOnVisible } from 'vue'
@@ -145,7 +145,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-Can optionally pass in an options object value for the observer:
+Peut optionnellement passer une valeur d'objet d'options pour l'observateur :
 
 ```js
 hydrateOnVisible({ rootMargin: '100px' })
