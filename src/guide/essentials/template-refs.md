@@ -12,7 +12,7 @@ Bien que le modèle de rendu déclaratif de Vue fasse abstraction pour vous de l
 
 <div class="composition-api">
 
-Pour obtenir la référence avec l'API Composition, nous pouvons utiliser l'aide [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" />:
+Pour obtenir la référence avec l'API Composition, nous pouvons utiliser le helper [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" />:
 
 ```vue
 <script setup>
