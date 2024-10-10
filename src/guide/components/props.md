@@ -123,7 +123,7 @@ Plus de détails: [Typage de props de composant](/guide/typescript/composition-a
 
 Le système de réactivité de Vue suit l'utilisation de l'état en fonction de l'accès à la propriété. Par exemple, lorsque vous accédez à `props.foo` dans une computed ou un watcher, la prop `foo` est suivie comme une dépendance.
 
-Ainsi, étant donné le code suivant :
+Ainsi, selon le code suivant :
 
 ```js
 const { foo } = defineProps(['foo'])
