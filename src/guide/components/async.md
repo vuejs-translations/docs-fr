@@ -183,22 +183,22 @@ Il peut également s'agir d'une liste de plusieurs types d'événements :
 hydrateOnInteraction(['wheel', 'mouseover'])
 ```
 
-### Custom Strategy {#custom-strategy}
+### Stratégie personnalisée {#custom-strategy}
 
 ```ts
 import { defineAsyncComponent, type HydrationStrategy } from 'vue'
 
 const myStrategy: HydrationStrategy = (hydrate, forEachElement) => {
-  // forEachElement is a helper to iterate through all the root elements
-  // in the component's non-hydrated DOM, since the root can be a fragment
-  // instead of a single element
+  // forEachElement est une aide qui permet de parcourir tous les éléments de la racine
+  // dans le DOM non hydraté du composant, puisque la racine peut être un fragment
+  // au lieu d'un seul élément
   forEachElement(el => {
     // ...
   })
-  // call `hydrate` when ready
+  // appeler `hydrate` lorsqu'il est prêt
   hydrate()
   return () => {
-    // return a teardown function if needed
+    // retourner une fonction de démontage si nécessaire
   }
 }
 
