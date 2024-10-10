@@ -164,9 +164,9 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydrate on Interaction {#hydrate-on-interaction}
+### Hydratation à l'interaction {#hydrate-on-interaction}
 
-Hydrates when specified event(s) are triggered on the component element(s). The event that triggered the hydration will also be replayed once hydration is complete.
+S'hydrate lorsque le ou les événements spécifiés sont déclenchés sur le ou les éléments du composant. L'événement qui a déclenché l'hydratation sera également rejoué une fois l'hydratation terminée.
 
 ```js
 import { defineAsyncComponent, hydrateOnInteraction } from 'vue'
@@ -177,7 +177,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-Can also be a list of multiple event types:
+Il peut également s'agir d'une liste de plusieurs types d'événements :
 
 ```js
 hydrateOnInteraction(['wheel', 'mouseover'])
