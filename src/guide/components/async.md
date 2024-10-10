@@ -119,16 +119,16 @@ Dans Vue 3.5+, les composants asynchrones peuvent contrôler le moment où ils s
 
 - La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau (par exemple, Nuxt).
 
-### Hydrate on Idle {#hydrate-on-idle}
+### Hydratation au ralenti {#hydrate-on-idle}
 
-Hydrates via `requestIdleCallback`:
+Hydrate par `requestIdleCallback`:
 
 ```js
 import { defineAsyncComponent, hydrateOnIdle } from 'vue'
 
 const AsyncComp = defineAsyncComponent({
   loader: () => import('./Comp.vue'),
-  hydrate: hydrateOnIdle(/* optionally pass a max timeout */)
+  hydrate: hydrateOnIdle(/* optionnellement, passer un délai maximum */)
 })
 ```
 
