@@ -129,7 +129,7 @@ Ainsi, selon le code suivant :
 const { foo } = defineProps(['foo'])
 
 watchEffect(() => {
-  // ne fonctionne qu'une seule fois avant 3.5
+  // ne s'exécute qu'une seule fois avant 3.5
   // se ré-exécute lorsque la prop "foo" est modifiée dans la version 3.5+.
   console.log(foo)
 })
