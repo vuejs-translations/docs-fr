@@ -12,13 +12,13 @@ Bien que le modèle de rendu déclaratif de Vue fasse abstraction pour vous de l
 
 <div class="composition-api">
 
-To obtain the reference with Composition API, we can use the [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" /> helper:
+Pour obtenir la référence avec l'API Composition, nous pouvons utiliser le helper [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" />:
 
 ```vue
 <script setup>
 import { useTemplateRef, onMounted } from 'vue'
 
-// the first argument must match the ref value in the template
+// le premier argument doit correspondre à la valeur ref dans le template
 const input = useTemplateRef('my-input')
 
 onMounted(() => {
@@ -31,12 +31,12 @@ onMounted(() => {
 </template>
 ```
 
-When using TypeScript, Vue's IDE support and `vue-tsc` will automatically infer the type of `inputRef.value` based on what element or component the matching `ref` attribute is used on.
+Lorsque vous utilisez TypeScript, le support IDE de Vue et `vue-tsc` déduiront automatiquement le type de `inputRef.value` en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant 3.5</summary>
 
-In versions before 3.5 where `useTemplateRef()` was not introduced, we need to declare a ref with a name that matches the template ref attribute's value:
+Dans les versions antérieures à la 3.5 où `useTemplateRef()` n'a pas été introduit, nous devons déclarer une ref avec un nom qui correspond à la valeur de l'attribut template ref :
 
 ```vue
 <script setup>
@@ -56,7 +56,7 @@ onMounted(() => {
 </template>
 ```
 
-Si vous n'utilisez pas `<script setup>`, assurez vous également de retourner la ref depuis `setup()`:
+Si vous n'utilisez pas `<script setup>`, assurez vous également de retourner la ref depuis `setup()` :
 
 ```js{6}
 export default {
@@ -75,7 +75,7 @@ export default {
 </div>
 <div class="options-api">
 
-La ref correspondante est accessible via `this.$refs`:
+La ref correspondante est accessible via `this.$refs` :
 
 ```vue
 <script>
@@ -143,10 +143,10 @@ onMounted(() => console.log(itemRefs.value))
 </template>
 ```
 
-[Try it in the Playground](https://play.vuejs.org/#eNp9UsluwjAQ/ZWRLwQpDepyQoDUIg6t1EWUW91DFAZq6tiWF4oU5d87dtgqVRyyzLw3b+aN3bB7Y4ptQDZkI1dZYTw49MFMuBK10dZDAxZXOQSHC6yNLD3OY6zVsw7K4xJaWFldQ49UelxxVWnlPEhBr3GszT6uc7jJ4fazf4KFx5p0HFH+Kme9CLle4h6bZFkfxhNouAIoJVqfHQSKbSkDFnVpMhEpovC481NNVcr3SaWlZzTovJErCqgydaMIYBRk+tKfFLC9Wmk75iyqg1DJBWfRxT7pONvTAZom2YC23QsMpOg0B0l0NDh2YjnzjpyvxLrYOK1o3ckLZ5WujSBHr8YL2gxnw85lxEop9c9TynkbMD/kqy+svv/Jb9wu5jh7s+jQbpGzI+ZLu0byEuHZ+wvt6Ays9TJIYl8A5+i0DHHGjvYQ1JLGPuOlaR/TpRFqvXCzHR2BO5iKg0Zmm/ic0W2ZXrB+Gve2uEt1dJKs/QXbwePE)
+[Essayer en ligne](https://play.vuejs.org/#eNp9UsluwjAQ/ZWRLwQpDepyQoDUIg6t1EWUW91DFAZq6tiWF4oU5d87dtgqVRyyzLw3b+aN3bB7Y4ptQDZkI1dZYTw49MFMuBK10dZDAxZXOQSHC6yNLD3OY6zVsw7K4xJaWFldQ49UelxxVWnlPEhBr3GszT6uc7jJ4fazf4KFx5p0HFH+Kme9CLle4h6bZFkfxhNouAIoJVqfHQSKbSkDFnVpMhEpovC481NNVcr3SaWlZzTovJErCqgydaMIYBRk+tKfFLC9Wmk75iyqg1DJBWfRxT7pONvTAZom2YC23QsMpOg0B0l0NDh2YjnzjpyvxLrYOK1o3ckLZ5WujSBHr8YL2gxnw85lxEop9c9TynkbMD/kqy+svv/Jb9wu5jh7s+jQbpGzI+ZLu0byEuHZ+wvt6Ays9TJIYl8A5+i0DHHGjvYQ1JLGPuOlaR/TpRFqvXCzHR2BO5iKg0Zmm/ic0W2ZXrB+Gve2uEt1dJKs/QXbwePE)
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant 3.5</summary>
 
 ```vue
 <script setup>
@@ -234,7 +234,7 @@ import Child from './Child.vue'
 const childRef = useTemplateRef('child')
 
 onMounted(() => {
-  // childRef.value will hold an instance of <Child />
+  // childRef.value contiendra une instance de <Child />
 })
 </script>
 
@@ -244,7 +244,7 @@ onMounted(() => {
 ```
 
 <details>
-<summary>Usage before 3.5</summary>
+<summary>Utilisation avant 3.5</summary>
 
 ```vue
 <script setup>
