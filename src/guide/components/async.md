@@ -119,7 +119,7 @@ Dans Vue 3.5+, les composants asynchrones peuvent contrôler le moment où ils s
 
 - La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau (par exemple, Nuxt).
 
-### Hydratation au ralenti {#hydrate-on-idle}
+### Hydratation quand stable  {#hydrate-on-idle}
 
 Hydrate par `requestIdleCallback`:
 
