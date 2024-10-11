@@ -109,32 +109,32 @@ Si un composant de chargement est fourni, il sera affiché en premier lors du ch
 
 Si un composant d'erreur est fourni, il sera affiché lorsque la promesse renvoyée par la fonction de chargement est rejetée. Vous pouvez également spécifier un délai d'expiration pour afficher le composant d'erreur lorsque la demande prend trop de temps.
 
-## Lazy Hydration <sup class="vt-badge" data-text="3.5+" /> {#lazy-hydration}
+## Hydratation paresseuse <sup class="vt-badge" data-text="3.5+" /> {#lazy-hydration}
 
-> This section only applies if you are using [Server-Side Rendering](/guide/scaling-up/ssr).
+> Cette section ne s'applique que si vous utilisez [Rendu côté serveur (SSR)](/guide/scaling-up/ssr).
 
-In Vue 3.5+, async components can control when they are hydrated by providing a hydration strategy.
+Dans Vue 3.5+, les composants asynchrones peuvent contrôler le moment où ils sont hydratés en fournissant une stratégie d'hydratation.
 
-- Vue provides a number of built-in hydration strategies. These built-in strategies need to be individually imported so they can be tree-shaken if not used.
+- Vue fournit un certain nombre de stratégies d'hydratation intégrées. Ces stratégies intégrées doivent être importées individuellement afin qu'elles puissent être supprimées si elles ne sont pas utilisées.
 
-- The design is intentionally low-level for flexibility. Compiler syntax sugar can potentially be built on top of this in the future either in core or in higher level solutions (e.g. Nuxt).
+- La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau (par exemple, Nuxt).
 
-### Hydrate on Idle {#hydrate-on-idle}
+### Hydratation quand stable  {#hydrate-on-idle}
 
-Hydrates via `requestIdleCallback`:
+Hydrate par `requestIdleCallback`:
 
 ```js
 import { defineAsyncComponent, hydrateOnIdle } from 'vue'
 
 const AsyncComp = defineAsyncComponent({
   loader: () => import('./Comp.vue'),
-  hydrate: hydrateOnIdle(/* optionally pass a max timeout */)
+  hydrate: hydrateOnIdle(/* optionnellement, passer un délai maximum */)
 })
 ```
 
-### Hydrate on Visible {#hydrate-on-visible}
+### Hydratation quand visible {#hydrate-on-visible}
 
-Hydrate when element(s) become visible via `IntersectionObserver`.
+Hydratez lorsque le(s) élément(s) devient(ent) visible(s) via `IntersectionObserver`.
 
 ```js
 import { defineAsyncComponent, hydrateOnVisible } from 'vue'
@@ -145,7 +145,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-Can optionally pass in an options object value for the observer:
+Peut optionnellement passer une valeur d'objet d'options pour l'observateur :
 
 ```js
 hydrateOnVisible({ rootMargin: '100px' })
@@ -164,9 +164,9 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydrate on Interaction {#hydrate-on-interaction}
+### Hydratation à l'interaction {#hydrate-on-interaction}
 
-Hydrates when specified event(s) are triggered on the component element(s). The event that triggered the hydration will also be replayed once hydration is complete.
+S'hydrate lorsque le ou les événements spécifiés sont déclenchés sur le ou les éléments du composant. L'événement qui a déclenché l'hydratation sera également rejoué une fois l'hydratation terminée.
 
 ```js
 import { defineAsyncComponent, hydrateOnInteraction } from 'vue'
@@ -177,28 +177,28 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-Can also be a list of multiple event types:
+Il peut également s'agir d'une liste de plusieurs types d'événements :
 
 ```js
 hydrateOnInteraction(['wheel', 'mouseover'])
 ```
 
-### Custom Strategy {#custom-strategy}
+### Stratégie personnalisée {#custom-strategy}
 
 ```ts
 import { defineAsyncComponent, type HydrationStrategy } from 'vue'
 
 const myStrategy: HydrationStrategy = (hydrate, forEachElement) => {
-  // forEachElement is a helper to iterate through all the root elements
-  // in the component's non-hydrated DOM, since the root can be a fragment
-  // instead of a single element
+  // forEachElement est un helper qui permet de parcourir tous les éléments de la racine
+  // dans le DOM non hydraté du composant, puisque la racine peut être un fragment
+  // au lieu d'un seul élément
   forEachElement(el => {
     // ...
   })
-  // call `hydrate` when ready
+  // appeler `hydrate` lorsqu'il est prêt
   hydrate()
   return () => {
-    // return a teardown function if needed
+    // retourner une fonction de démontage si nécessaire
   }
 }
 
