@@ -189,7 +189,7 @@ hydrateOnInteraction(['wheel', 'mouseover'])
 import { defineAsyncComponent, type HydrationStrategy } from 'vue'
 
 const myStrategy: HydrationStrategy = (hydrate, forEachElement) => {
-  // forEachElement est un helpder qui permet de parcourir tous les éléments de la racine
+  // forEachElement est un helper qui permet de parcourir tous les éléments de la racine
   // dans le DOM non hydraté du composant, puisque la racine peut être un fragment
   // au lieu d'un seul élément
   forEachElement(el => {
