@@ -132,7 +132,7 @@ const AsyncComp = defineAsyncComponent({
 })
 ```
 
-### Hydratation visible {#hydrate-on-visible}
+### Hydratation quand visible {#hydrate-on-visible}
 
 Hydratez lorsque le(s) élément(s) devient(ent) visible(s) via `IntersectionObserver`.
 
