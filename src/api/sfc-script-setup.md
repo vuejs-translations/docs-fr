@@ -211,7 +211,7 @@ const emit = defineEmits<{
 
 ### Destructuration réactive des props <sup class="vt-badge" data-text="3.5+" /> {#reactive-props-destructure}
 
-À partir de la Vue 3.5, les variables destructurées retournées par `defineProps` sont reatives. Le compilateur de Vue ajoute automatiquement `props.` quand le code dans le même bloc `<script setup>` accède aux variables destructurées provenant de `defineProps` :
+À partir de la Vue 3.5, les variables destructurées retournées par `defineProps` sont réactives. Le compilateur de Vue ajoute automatiquement `props.` quand le code dans le même bloc `<script setup>` accède aux variables destructurées provenant de `defineProps` :
 
 ```ts
 const { foo } = defineProps(['foo'])
