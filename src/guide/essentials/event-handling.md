@@ -286,7 +286,7 @@ Lorsque nous écoutons des événements du clavier, nous avons souvent besoin de
 <input @keyup.enter="submit" />
 ```
 
-Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values) comme des modificateurs en les convertissant en kebab-case.
+Vous pouvez utiliser directement n'importe quel nom de touche exposé via [`KeyboardEvent.key`](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) comme des modificateurs en les convertissant en kebab-case.
 
 ```vue-html
 <input @keyup.page-down="onPageDown" />
