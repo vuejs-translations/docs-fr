@@ -31,7 +31,7 @@ onMounted(() => {
 </template>
 ```
 
-Lorsque vous utilisez TypeScript, le support IDE de Vue et `vue-tsc` déduiront automatiquement le type de `inputRef.value` en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
+Lorsque vous utilisez TypeScript, le support IDE de Vue et `vue-tsc` déduiront automatiquement le type de `input.value` en fonction de l'élément ou du composant sur lequel l'attribut `ref` correspondant est utilisé.
 
 <details>
 <summary>Utilisation avant 3.5</summary>
