@@ -43,8 +43,8 @@ C'est le helper sous-jacent qui alimente [`defineModel()`](/api/sfc-script-setup
   }
 
   type ModelRef<T, M extends PropertyKey = string, G = T, S = T> = Ref<G, S> & [
-      ModelRef<T, M, G, S>,
-      Record<M, true | undefined>
+    ModelRef<T, M, G, S>,
+    Record<M, true | undefined>
   ]
   ```
 
