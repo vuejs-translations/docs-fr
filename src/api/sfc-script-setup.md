@@ -479,6 +479,20 @@ De plus, l'expression attendue sera automatiquement compilée dans un format qui
 `async setup()` doit être utilisée en combinaison avec [`Suspense`](/guide/built-ins/suspense.html), qui est actuellement encore une fonctionnalité expérimentale. Nous prévoyons de la finaliser et de la documenter dans une prochaine version - mais si vous êtes curieux, vous pouvez vous référer à ses [tests](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) pour voir comment elle fonctionne.
 :::
 
+## Déclaration d'importation {#imports-statements}
+
+Les déclarations d'importation en Vue sont conformes à la [spécification des modules ECMAScript](https://nodejs.org/api/esm.html).
+En outre, vous pouvez utiliser des alias définis dans la configuration de votre outil de construction :
+
+```vue
+<script setup>
+import { ref } from 'vue'
+import { componentA } from './Components'
+import { componentB } from '@/Components'
+import { componentC } from '~/Components'
+</script>
+```
+
 ## Génériques <sup class="vt-badge ts" /> {#generics}
 
 Les paramètres de type générique peuvent être déclarés à l'aide de l'attribut `generic` sur la balise `<script>` :

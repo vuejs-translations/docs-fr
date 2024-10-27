@@ -136,6 +136,13 @@ Les importations `src` fonctionnent également avec des blocs personnalisés, pa
 </unit-test>
 ```
 
+:::warning Note
+Lorsque vous utilisez des alias dans `src`, ne commencez pas par `~`, tout ce qui suit est interprété comme une requête de module. Cela signifie que vous pouvez référencer des assets à l'intérieur de node modules :
+```vue
+<img src="~some-npm-package/foo.png">
+```
+:::
+
 ## Commentaires {#comments}
 
 À l'intérieur de chaque bloc, vous devez utiliser la syntaxe de commentaires du langage utilisé (HTML, CSS, JavaScript, Pug, etc.). Pour les commentaires de haut niveau, utilisez la syntaxe de commentaire HTML : `<!-- contenu du commentaire ici -->`
