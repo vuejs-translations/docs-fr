@@ -481,7 +481,7 @@ De plus, l'expression attendue sera automatiquement compilée dans un format qui
 
 ## Déclaration d'importation {#imports-statements}
 
-Les déclarations d'importation dans vue sont conformes à la [spécification des modules ECMAScript](https://nodejs.org/api/esm.html).
+Les déclarations d'importation en Vue sont conformes à la [spécification des modules ECMAScript](https://nodejs.org/api/esm.html).
 En outre, vous pouvez utiliser des alias définis dans la configuration de votre outil de construction :
 
 ```vue
