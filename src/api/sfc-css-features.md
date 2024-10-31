@@ -153,6 +153,26 @@ useCssModule()
 useCssModule('classes')
 ```
 
+- **Exemple**
+
+```vue
+<script setup lang="ts">
+import { useCssModule } from 'vue'
+
+const classes = useCssModule()
+</script>
+
+<template>
+  <p :class="classes.red">rouge</p>
+</template>
+
+<style module>
+.red {
+  color: red;
+}
+</style>
+```
+
 ## `v-bind()` dans du CSS {#v-bind-in-css}
 
 Les balises `<style>` des composants monopages permettent de lier les valeurs CSS à l'état dynamique des composants à l'aide de la fonction CSS `v-bind` :
