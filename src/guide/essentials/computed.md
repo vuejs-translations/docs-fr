@@ -259,7 +259,7 @@ Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutate
 
 </div>
 
-## Obtenir la valeur précédente {#previous}
+## Obtenir la Valeur Précédente {#previous}
 
 - Supporté à partir de la version 3.4
 
