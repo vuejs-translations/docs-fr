@@ -80,6 +80,10 @@ Maintenant, c'est beaucoup mieux - elle s'anime même en douceur lorsque la list
 
 [Exemple complet](/examples/#list-transition)
 
+### Classes de TransitionGroup personnalisées {#custom-transitiongroup-classes}
+
+Vous pouvez également spécifier des classes de transition personnalisées pour l'élément mobile en passant la propriété `moveClass` à `<TransitionGroup>`, comme dans l'exemple suivant [Classes de transition personnalisées](/guide/built-ins/transition.html#custom-transition-classes).
+
 ## Échelonner des transitions de liste {#staggering-list-transitions}
 
 En communiquant avec les transitions JavaScript par le biais d'attributs de données, il est également possible d'échelonner les transitions dans une liste. Tout d'abord, nous rendons l'index d'un élément comme un attribut de données sur l'élément du DOM :
