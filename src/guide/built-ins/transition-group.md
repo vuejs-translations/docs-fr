@@ -80,7 +80,7 @@ Maintenant, c'est beaucoup mieux - elle s'anime même en douceur lorsque la list
 
 [Exemple complet](/examples/#list-transition)
 
-### Classes de TransitionGroup personnalisées
+### Classes de TransitionGroup personnalisées {#custom-transitiongroup-classes}
 
 Vous pouvez également spécifier des classes de transition personnalisées pour l'élément mobile en passant la propriété `moveClass` à `<TransitionGroup>`, comme dans l'exemple suivant [Classes de transition personnalisées](https://fr.vuejs.org/guide/built-ins/transition.html#custom-transition-classes).
 
