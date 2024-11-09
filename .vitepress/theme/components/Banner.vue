@@ -24,7 +24,7 @@ function dismiss() {
   <div class="banner" v-if="open">
     <p class="vt-banner-text">
       <span class="vt-text-primary">VueConf Toronto</span>
-      <span class="vt-tagline"> - Join the premier Vue.js conference</span>
+      <span class="vt-tagline"> - Rejoignez la première conférence Vue.js</span>
       | 18-20 Nov 2024 <span class="vt-place"> - Toronto, Canada</span>
       <a
         target="_blank"
