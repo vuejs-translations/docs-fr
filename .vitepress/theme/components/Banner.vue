@@ -31,15 +31,15 @@ function dismiss() {
         class="vt-primary-action"
         href="https://vuetoronto.com/?utm_source=vuejs&utm_content=top_banner"
       >
-        Register
+        S'inscrire
       </a>
     </p>
     <button @click="dismiss">
       <VTIconPlus class="close" />
     </button>
     <p class="vt-banner-text vt-coupon">
-      <span class="vt-text-primary">Use code</span> VUEJS
-      <span class="vt-text-primary">to get 15% off</span>
+      <span class="vt-text-primary">Utiliser le code</span> VUEJS
+      <span class="vt-text-primary">pour obtenir 15 % de réduction</span>
     </p>
   </div>
 </template>
