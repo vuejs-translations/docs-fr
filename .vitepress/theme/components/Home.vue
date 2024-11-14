@@ -58,6 +58,14 @@ onMounted(load)
     </template>
   </section>
 
+  <section v-else id="special-sponsor">
+    <span>
+      <a href="/sponsor/#tier-benefits">
+        La place de sponsor spécial est maintenant vacante - Demande d'offre
+      </a>
+    </span>
+  </section>
+
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
       <h2>Accessible</h2>
