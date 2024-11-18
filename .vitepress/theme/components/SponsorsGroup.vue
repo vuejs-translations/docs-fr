@@ -136,6 +136,9 @@ function resolveList(data: SponsorData) {
   font-size: 11px;
   color: var(--vt-c-text-3);
 }
+.sponsor-container.page .sponsor-item.action {
+ font-size: 16px;
+}
 .sponsor-item img {
   max-width: calc(var(--max-width) - 30px);
   max-height: calc(var(--max-width) / 2 - 20px);

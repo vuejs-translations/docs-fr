@@ -7,6 +7,10 @@ sponsors: false
 
 <script setup>
 import SponsorsGroup from '@theme/components/SponsorsGroup.vue'
+import { load, data } from '@theme/components/sponsors'
+import { onMounted } from 'vue'
+
+onMounted(load)
 </script>
 
 # Devenez un sponsor de Vue.js {#become-a-vue-js-sponsor}
@@ -18,11 +22,11 @@ L'énorme quantité d'efforts nécessaires pour maintenir un écosystème aussi 
 
 Les soutiens financiers peuvent être effectués via les [Sponsors GitHub](https://github.com/sponsors/yyx990803) ou [OpenCollective](https://opencollective.com/vuejs). Les factures peuvent être obtenues via le système de paiement de GitHub. Les dons mensuels récurrents et les dons ponctuels sont acceptés. Les dons récurrents ont droit à des emplacements de logo comme spécifié dans les [avantages par niveau](#tier-benefits).
 
-If you have questions regarding tiers, payment logistics, or sponsor exposure data, please reach out to [sponsor@vuejs.org](mailto:sponsor@vuejs.org).
+Si vous avez des questions concernant les paliers, la logistique des paiements ou les données relatives à l'exposition des sponsors, veuillez contacter [sponsor@vuejs.org](mailto:sponsor@vuejs.org?subject=Vue.js%20sponsorship%20inquiry).
 
 ## Sponsoriser Vue en tant qu'entreprise {#sponsoring-vue-as-a-business}
 
-Sponsoriser Vue vous offre une grande visibilité auprès de plus de **1,7 million** de développeurs Vue dans le monde via notre site Web et les fichiers README du projet GitHub. De plus, le soutien aux Logiciels Open Source améliore la réputation de votre marque, ce qui est un atout important pour toute entreprise qui interagit avec les développeurs.
+Sponsoriser Vue vous offre une grande visibilité auprès de plus de **2 million** de développeurs Vue dans le monde via notre site Web et les fichiers README du projet GitHub. Cela permet non seulement de générer directement des leads, mais aussi d'améliorer la reconnaissance de votre marque en tant qu'entreprise qui se préoccupe de l'Open Source. Il s'agit là d'un atout intangible mais extrêmement important pour les entreprises qui conçoivent des produits destinés aux développeurs, car il permet d'améliorer le taux de conversion.
 
 Si vous utilisez Vue pour créer un produit générateur de revenus, il est logique sur le plan commercial de sponsoriser le développement de Vue : **cela garantit que le projet sur lequel repose votre produit reste en bonne santé et activement maintenu.** L'exposition et l'image de marque positive dans Vue permet également d'attirer et de recruter plus facilement des développeurs Vue.
 
@@ -37,9 +41,9 @@ Vous pouvez également essayer de convaincre votre employeur de sponsoriser Vue 
 ## Avantages par niveau {#tier-benefits}
 
 - **Spécial Mondial** :
-  - Limité à un sponsor mondial (actuellement pourvu).
-  - Emplacement exclusif du logo sur la première page de [vuejs.org](/).
-  - Emplacement du logo le plus visible parmi tous les emplacements des sponsors.
+  - Limité à un sponsor mondial <span v-if="!data?.special">Actuellement vacant. [Prendre contact](mailto:sponsor@vuejs.org?subject=Vue.js%20special%20sponsor%20inquiry)!</span><span v-else>(actuellement pourvu).</span>
+  - (Exclusif) Emplacement exclusif du logo sur la première page de [vuejs.org](/).
+  - (Exclusif) Mise en avant spéciale et retweets réguliers des principaux lancements de produits via [le compte X officiel de Vue](https://twitter.com/vuejs) (320k followers).
 - **Platine (USD$2,000/mois)** :
   - Emplacement imposant pour votre logo sur la première page de [vuejs.org](/).
   - Emplacement imposant pour votre logo dans la barre latérale de chacunes des pages.
