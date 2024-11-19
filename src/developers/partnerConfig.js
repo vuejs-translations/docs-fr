@@ -25,12 +25,14 @@ const partnerConfig = {
 
   // Hero Section
   pageHeroBanner: {
-    title: 'Développeurs Vue',
-    description: 'Les développeurs Vue sont des indépendants certifiés. Les paiements, la conformité et la vérification sont administrés par notre partenaire Proxify. Vous souhaitez rejoindre la liste ?',
-    applyButton: {
-      url: applyUrl,
-      label: 'Postulez ici'
-    }
+    title: 'Trouvez les meilleurs développeurs Vue.js pour votre équipe',
+    description1: 'Accédez à des développeurs Vue.js certifiés disponibles pour votre prochain projet.',
+    description2: 'Proxify prend en charge le processus de sélection afin de garantir une qualité et une fiabilité de premier ordre..',
+    hireButton: {
+      url: hireUrl,
+      label: 'Trouver des développeurs Vue.js maintenant'
+    },
+    footer: "Vous serez mis en relation avec un développeur Vue.js de haut niveau en moins de 48 heures",
   },
 
   // Hero Section
