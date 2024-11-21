@@ -44,7 +44,7 @@
         "guid": "open-collective",
         "type": "other",
         "address": "https://opencollective.com/vuejs",
-        "description": "OpenCollective supports payment via credit card, Google Pay, or US bank ACH transfer."
+        "description": "OpenCollective prend en charge les paiements par carte de crédit, Google Pay ou virement bancaire américain ACH."
       },
       {
         "guid": "bank-of-america",
