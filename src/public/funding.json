@@ -100,7 +100,7 @@
         "description": "Placement d'un petit logo sur la page des sponsors de vuejs.org + dans les fichiers README et BACKERS du repo de vuejs/core.",
         "amount": 250,
         "currency": "USD",
-        "frequency": "monthly",
+        "frequency": "mensuel",
         "channels": ["github-sponsors", "open-collective"]
       },
       {
