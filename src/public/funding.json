@@ -107,7 +107,7 @@
         "guid": "bronze",
         "status": "active",
         "name": "Bronze Sponsor",
-        "description": "Small logo placement in the README and BACKERS files of the vuejs/core repo.",
+        "description": "Placement d'un petit logo dans les fichiers README et BACKERS du repo de vuejs/core.,
         "amount": 100,
         "currency": "USD",
         "frequency": "mensuel",
