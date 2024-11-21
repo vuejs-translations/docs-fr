@@ -18,7 +18,7 @@
     {
       "guid": "vuejs",
       "name": "Vue.js",
-      "description": "Vue.js is one of the most widely adopted frontend frameworks, with over 5.5 million weekly downloads and 2 million weekly active users. It is also the technology powering Zerodha's frontend.",
+      "description": "Vue.js est l'un des frameworks frontaux les plus largement adoptés, avec plus de 5,5 millions de téléchargements hebdomadaires et 2 millions d'utilisateurs actifs hebdomadaires. C'est également la technologie qui alimente le frontend de Zerodha.",
       "webpageUrl": {
         "url": "https://vuejs.org",
         "wellKnown": ""
