@@ -29,7 +29,7 @@ Vue est un projet libre et open source publié sous la [Licence MIT](https://ope
 
 ## Quels navigateurs supporte Vue ? {#what-browsers-does-vue-support}
 
-La dernière version de Vue (3.x) ne prend en charge que les [navigateurs avec support ES2015 natif](https://caniuse.com/es6). Cela exclut IE11. Vue 3.x utilise des fonctionnalités ES2015 qui ne peuvent pas recevoir de polyfills dans les anciens navigateurs, donc si vous avez besoin de prendre en charge les anciens navigateurs, vous devrez utiliser Vue 2.x à la place.
+La dernière version de Vue (3.x) ne prend en charge que les [navigateurs avec support ES2016 natif](https://caniuse.com/es2016). Cela exclut IE11. Vue 3.x utilise des fonctionnalités ES2016 qui ne peuvent pas recevoir de polyfills dans les anciens navigateurs, donc si vous avez besoin de prendre en charge les anciens navigateurs, vous devrez utiliser Vue 2.x à la place.
 
 ## Est-ce que Vue est fiable ? {#is-vue-reliable}
 
