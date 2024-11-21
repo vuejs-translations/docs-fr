@@ -110,7 +110,7 @@
         "description": "Small logo placement in the README and BACKERS files of the vuejs/core repo.",
         "amount": 100,
         "currency": "USD",
-        "frequency": "monthly",
+        "frequency": "mensuel",
         "channels": ["github-sponsors", "open-collective"]
       }
     ],
