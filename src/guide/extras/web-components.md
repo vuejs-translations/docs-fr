@@ -238,7 +238,7 @@ export function register() {
 }
 ```
 
-Un consommateur peut utiliser les éléments d'un fichier Vue,
+On peut utiliser les éléments d'un fichier Vue,
 
 ```vue
 <script setup>
@@ -270,7 +270,7 @@ export function MyComponent() {
 }
 ```
 
-### Basé Vue Web Components et TypeScript {#web-components-and-typescript}
+### Composants personnalisés basé sur Vue, et TypeScript {#web-components-and-typescript}
 
 Lorsque vous écrivez des templates Vue SFC, vous pouvez vouloir [vérifier le type](/guide/scaling-up/tooling.html#typescript) de vos composants Vue, y compris ceux qui sont définis en tant qu'éléments personnalisés.
 
@@ -300,7 +300,7 @@ declare module 'vue' {
 }
 ```
 
-## Non Vue Web Components et TypeScript
+## Composants personnalisés sans Vue, et TypeScript
 
 Voici la méthode recommandée pour activer la vérification de type dans les templates SFC des
 éléments personnalisés qui ne sont pas construits avec Vue.
