@@ -357,3 +357,5 @@ Le modificateur `.exact` permet le contrôle de la combinaison exacte de touches
 - `.middle`
 
 Ces modificateurs limitent le gestionnaire aux événements déclenchés par un bouton spécifique de la souris.
+
+Notez cependant que les noms des modificateurs `.left`, `.right` et `.middle` sont basés sur la disposition typique d'une souris pour droitier, mais représentent en fait les déclencheurs d'événements des dispositifs de pointage "principal", "secondaire" et "auxiliaire", respectivement, et non les boutons physiques réels. Ainsi, pour une souris de gaucher, le bouton "principal" peut être physiquement celui de droite, mais il déclenchera le gestionnaire du modificateur `.left`. Ou bien un trackpad peut déclencher le gestionnaire `.left` en tapant avec un doigt, le gestionnaire `.right` en tapant avec deux doigts, et le gestionnaire `.middle` en tapant avec trois doigts. De même, d'autres dispositifs et sources d'événements générant des événements "souris" peuvent avoir des modes de déclenchement qui ne sont pas liés à "left" et "right".
