@@ -1,0 +1,120 @@
+{
+  "version": "v1.0.0",
+
+  "entity": {
+    "type": "organisation",
+    "role": "owner",
+    "name": "Vue Technology LLC",
+    "email": "evan@vuejs.org",
+    "phone": "",
+    "description": "Vue Technology LLC est l'entité juridique qui représente les opérations commerciales de Vue et la distribution des fonds aux membres de l'équipe.",
+    "webpageUrl": {
+      "url": "https://vuejs.org",
+      "wellKnown": ""
+    }
+  },
+
+  "projects": [
+    {
+      "guid": "vuejs",
+      "name": "Vue.js",
+      "description": "Vue.js est l'un des frameworks frontaux les plus largement adoptés, avec plus de 5,5 millions de téléchargements hebdomadaires et 2 millions d'utilisateurs actifs hebdomadaires. C'est également la technologie qui alimente le frontend de Zerodha.",
+      "webpageUrl": {
+        "url": "https://vuejs.org",
+        "wellKnown": ""
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/vuejs/core",
+        "wellKnown": "https://github.com/vuejs/core/blob/main/.well-known/funding-manifest-urls"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": ["frontend", "javascript", "web-development", "ui"]
+    }
+  ],
+
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "other",
+        "address": "https://github.com/sponsors/yyx990803",
+        "description": "GitHub prend en charge les paiements par carte de crédit ou par facturation."
+      },
+      {
+        "guid": "open-collective",
+        "type": "other",
+        "address": "https://opencollective.com/vuejs",
+        "description": "OpenCollective prend en charge les paiements par carte de crédit, Google Pay ou virement bancaire américain ACH."
+      },
+      {
+        "guid": "bank-of-america",
+        "type": "bank",
+        "address": "",
+        "description": "Pour les dons par virement bancaire, veuillez nous contacter pour obtenir les coordonnées bancaires."
+      }
+    ],
+
+    "plans": [
+      {
+        "guid": "special",
+        "status": "active",
+        "name": "Sponsor mondial spécial",
+        "description": "Placement exclusif du logo au plus haut la page d'accueil de vuejs.org / Placement du logo le plus visible dans la barre latérale droite de chaque page de contenu sur vuejs.org (3M+ pages vues par mois / 500k+ utilisateurs actifs uniques mensuel) / Placement du logo le plus visible dans les fichiers README et BACKERS du repo de vuejs/core.",
+        "amount": 5000,
+        "currency": "USD",
+        "frequency": "mensuel",
+        "channels": [
+          "github-sponsors",
+          "open-collective",
+          "bank-of-america"
+        ]
+      },
+      {
+        "guid": "platinum",
+        "status": "active",
+        "name": "Sponsor Platinum",
+        "description": "Logo sur la barre latérale droite de chaque page de contenu sur vuejs.org (3M+ pages vues par mois / 500k+ utilisateurs uniques actifs mensuel) / Grand placement du logo sur la page d'accueil de vuejs.org + la page des sponsors + dans les fichiers README et BACKERS du repo de vuejs/core.",
+        "amount": 2000,
+        "currency": "USD",
+        "frequency": "mensuel",
+        "channels": [
+          "github-sponsors",
+          "open-collective",
+          "bank-of-america"
+        ]
+      },
+      {
+        "guid": "gold",
+        "status": "active",
+        "name": "Sponsor Gold",
+        "description": "Placement d'un logo de taille moyenne sur la page d'accueil de vuejs.org + la page des sponsors + dans les fichiers README et BACKERS du repo de vuejs/core.",
+        "amount": 500,
+        "currency": "USD",
+        "frequency": "mensuel",
+        "channels": ["github-sponsors", "open-collective"]
+      },
+      {
+        "guid": "silver",
+        "status": "active",
+        "name": "Sponsor Silver",
+        "description": "Placement d'un petit logo sur la page des sponsors de vuejs.org + dans les fichiers README et BACKERS du repo de vuejs/core.",
+        "amount": 250,
+        "currency": "USD",
+        "frequency": "mensuel",
+        "channels": ["github-sponsors", "open-collective"]
+      },
+      {
+        "guid": "bronze",
+        "status": "active",
+        "name": "Sponsor Bronze",
+        "description": "Placement d'un petit logo dans les fichiers README et BACKERS du repo de vuejs/core.,
+        "amount": 100,
+        "currency": "USD",
+        "frequency": "mensuel",
+        "channels": ["github-sponsors", "open-collective"]
+      }
+    ],
+
+    "history": []
+  }
+}
