@@ -5,16 +5,8 @@
       class="vuemastery-background-dim"
       ref="vuemastery-banner-flash"
     ></div>
-    <a
-      id="vm-banner"
-      href="https://www.vuemastery.com/pricing/?coupon=FREEWEEKEND2024"
-      target="_blank"
-    >
-      <img
-        id="vm-logo-full"
-        src="/vuemastery/vuemastery-white.svg"
-        alt="vuemastery"
-      />
+    <a id="vm-banner" href="https://www.vuemastery.com/black-friday" target="_blank">
+      <img id="vm-logo-full" src="/vuemastery/vuemastery-white.svg" alt="vuemastery" />
       <img
         id="vm-logo-small"
         src="https://firebasestorage.googleapis.com/v0/b/vue-mastery.appspot.com/o/flamelink%2Fmedia%2Fvue-mastery-logo-small.png?alt=media&token=941fcc3a-2b6f-40e9-b4c8-56b3890da108"
@@ -22,11 +14,8 @@
       />
       <div class="vm-banner-wrapper">
         <div class="vm-banner-content">
-          <h1 class="vm-banner-title">
-            Obtenir
-            <span> 60% </span>
-            d'une année de cours Vue Mastery
-          </h1>
+          <h1 class="vm-banner-title">BLACK FRIDAY</h1>
+          <p class="vm-banner-sub">Obtenez 60% de réduction sur une année de Vue Mastery</p>
         </div>
         <button id="vm-banner-cta">Obtenir une réduction</button>
       </div>
@@ -38,31 +27,32 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { VTIconPlus } from '@vue/theme'
+import { ref, onMounted } from "vue";
+import { VTIconPlus } from "@vue/theme";
 
-const isVisible = ref<Boolean>(true)
-const showFlash = ref<Boolean>(false)
-const nameStorage = 'VUEMASTERY-BANNER-FREE_WEEKEND-MAY-10-12-2024'
+const isVisible = ref<Boolean>(true);
+const showFlash = ref<Boolean>(false);
+const nameStorage = "VUEMASTERY-BANNER-BLACK-FRIDAY-NOV-20-DEC-4-2024";
 
 const closeBanner = () => {
   // Hide the banner
-  isVisible.value = false
+  isVisible.value = false;
   // Save action in the local storage
-  localStorage.setItem(nameStorage, String(true))
-  document.documentElement.classList.remove('vuemastery-menu-fixed')
-}
+  localStorage.setItem(nameStorage, String(true));
+  document.documentElement.classList.remove("vuemastery-menu-fixed");
+};
 
 onMounted(() => {
-  isVisible.value = !localStorage.getItem(nameStorage)
+  isVisible.value = !localStorage.getItem(nameStorage);
   if (isVisible.value) {
-    document.documentElement.classList.add('vuemastery-menu-fixed')
+    document.documentElement.classList.add("vuemastery-menu-fixed");
     setTimeout(() => {
-      showFlash.value = true
-    }, 2000)
+      showFlash.value = true;
+    }, 2000);
   }
-})
+});
 </script>
+
 <style scoped>
 .vuemastery-banner-wrapper {
   position: fixed;
@@ -88,9 +78,8 @@ onMounted(() => {
 }
 
 .vuemastery-banner-wrapper:before {
-  content: '';
-  background: url(/vuemastery/background-bubbles-vuemastery.svg) left
-    center no-repeat;
+  content: "";
+  background: url(/vuemastery/background-bubbles-vuemastery.svg) left center no-repeat;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -101,21 +90,6 @@ onMounted(() => {
   transform: scale(1.1);
   width: 100%;
   height: 100%;
-}
-.vuemastery-banner-wrapper:after {
-  content: '';
-  background: url(/vuemastery/lock-vuemastery.svg) right center no-repeat;
-  background-size: auto 100%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.vuemastery-banner-wrapper:hover:after {
-  background-image: url(/vuemastery/unlock-vuemastery.svg);
 }
 
 #vm-banner {
@@ -159,16 +133,6 @@ onMounted(() => {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.vm-banner-title span{
-  background: linear-gradient(145deg, #c3ffac, #86ec87, #38a56a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.vm-banner-title {
-  font-size: 12px;
 }
 
 .vm-banner-sub {
@@ -250,6 +214,9 @@ onMounted(() => {
     left: 10px;
     width: 40px;
   }
+  .vm-banner-title {
+    font-size: 14px;
+  }
   .vm-banner-sub {
     font-size: 12px;
     margin: 0;
@@ -264,18 +231,13 @@ onMounted(() => {
   left: 0;
 }
 .vuemastery-background-dim:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: 0.5s;
   transition-delay: 0.5s;
 }
