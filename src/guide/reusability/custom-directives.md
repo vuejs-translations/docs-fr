@@ -25,7 +25,7 @@ En plus du jeu de directives par défaut fourni par Vue (comme `v-model` ou `v-s
 
 Nous avons introduit deux formes de code réutilisable dans Vue : [les composants](/guide/essentials/component-basics) et [les composables](./composables). Les composants sont les principaux éléments de construction, alors que les composables sont axés sur la réutilisation de la logique d'état. Les directives personnalisées, quant à elles, sont principalement destinées à réutiliser la logique qui implique un accès de bas niveau au DOM sur des éléments simples.
 
-Une directive personnalisée se définit comme un objet contenant des hooks du cycle de vie, similaires à ceux d'un composant. Les hooks reçoivent l'élément auquel la directive est liée. Voici un exemple d'une directive qui met le focus sur un champ de saisie lorsque l'élément est inséré dans le DOM par Vue :
+Une directive personnalisée se définit comme un objet contenant des hooks du cycle de vie, similaires à ceux d'un composant. Les hooks reçoivent l'élément auquel la directive est liée. Voici un exemple de directive qui ajoute une classe à un élément lorsqu'il est inséré dans le DOM par Vue :
 
 <div class="composition-api">
 

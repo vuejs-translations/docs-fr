@@ -1,2 +1,2 @@
-Cet exemple récupère les derniers commits Vue.js depuis l'API de GitHub et les affiche sous forme de liste.
-Vous pouvez passer d'une branche à l'autre.
+Cet exemple récupère les derniers commits de Vue Core à partir de l'API de GitHub et les affiche sous forme de liste.
+Vous pouvez basculer entre les deux branches principales.
