@@ -15,7 +15,7 @@
       <div class="vm-banner-wrapper">
         <div class="vm-banner-content">
           <h1 class="vm-banner-title">BLACK FRIDAY</h1>
-          <p class="vm-banner-sub">Obtenir 60% de réduction sur une année de Vue Mastery</p>
+          <p class="vm-banner-sub">Obtenez 60% de réduction sur une année de Vue Mastery</p>
         </div>
         <button id="vm-banner-cta">Obtenir une réduction</button>
       </div>
