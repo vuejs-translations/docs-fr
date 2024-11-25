@@ -376,7 +376,7 @@ Avec Vue 3.5 et `@vue/language-tools` 2.1 (qui alimente à la fois le service li
 Dans les cas où l'auto-inférence n'est pas possible, vous pouvez toujours convertir le template ref en un type explicite via l'argument générique :
 
 ```ts
-const el = useTemplateRef<HTMLInputElement>(null)
+const el = useTemplateRef<HTMLInputElement>('el')
 ```
 
 <details>
@@ -438,7 +438,7 @@ Dans les cas où le type exact du composant n'est pas disponible ou n'est pas im
 import { useTemplateRef } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
 
-const child = useTemplateRef<ComponentPublicInstance | null>(null)
+const child = useTemplateRef<ComponentPublicInstance>('child')
 ```
 
 Dans le cas où le composant référencé est un [composant générique](/guide/typescript/overview.html#generic-components), par exemple `MyGenericModal` :
@@ -467,7 +467,7 @@ import { useTemplateRef } from 'vue'
 import MyGenericModal from './MyGenericModal.vue'
 import type { ComponentExposed } from 'vue-component-type-helpers'
 
-const modal = useTemplateRef<ComponentExposed<typeof MyGenericModal>>(null)
+const modal = useTemplateRef<ComponentExposed<typeof MyGenericModal>>('modal')
 
 const openModal = () => {
   modal.value?.open('newValue')
