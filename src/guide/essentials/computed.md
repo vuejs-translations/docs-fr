@@ -280,10 +280,10 @@ export default {
     // jusqu'à ce que count soit inférieur ou égal à 3
     alwaysSmall(previous) {
       if (this.count <= 3) {
-        return this.count;
+        return this.count
       }
 
-      return previous;
+      return previous
     }
   }
 }
@@ -303,10 +303,10 @@ const count = ref(2)
 // jusqu'à ce que count soit inférieur ou égal à 3
 const alwaysSmall = computed((previous) => {
   if (count.value <= 3) {
-    return count.value;
+    return count.value
   }
 
-  return previous;
+  return previous
 })
 </script>
 ```
@@ -327,13 +327,13 @@ export default {
     alwaysSmall: {
       get(previous) {
         if (this.count <= 3) {
-          return this.count;
+          return this.count
         }
 
         return previous;
       },
       set(newValue) {
-        this.count = newValue * 2;
+        this.count = newValue * 2
       }
     }
   }
@@ -352,13 +352,13 @@ const count = ref(2)
 const alwaysSmall = computed({
   get(previous) {
     if (count.value <= 3) {
-      return count.value;
+      return count.value
     }
 
-    return previous;
+    return previous
   },
   set(newValue) {
-    count.value = newValue * 2;
+    count.value = newValue * 2
   }
 })
 </script>
