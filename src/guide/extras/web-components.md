@@ -300,7 +300,7 @@ declare module 'vue' {
 }
 ```
 
-## Composants personnalisés sans Vue, et TypeScript
+## Composants personnalisés sans Vue, et TypeScript {#non-vue-web-components-and-typescript}
 
 Voici la méthode recommandée pour activer la vérification de type dans les templates SFC des
 éléments personnalisés qui ne sont pas construits avec Vue.
