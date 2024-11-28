@@ -1,6 +1,29 @@
 <script setup>
 import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 </script>
+<style>
+.lambdatest {
+  background-color: var(--vt-c-bg-soft);
+  border-radius: 8px;
+  padding: 12px 16px 12px 12px;
+  font-size: 13px;
+  a {
+    display: flex;
+    color: var(--vt-c-text-2);
+  }
+  img {
+    background-color: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-right: 24px;
+  }
+  .testing-partner {
+    color: var(--vt-c-text-1);
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+</style>
 
 # Tester {#testing}
 
@@ -266,6 +289,16 @@ Lorsque les tests End-to-end (E2E) sont exécutés dans des pipelines d'intégra
 - [Playwright](https://playwright.dev/) est une excellente solution de test E2E qui prend en charge Chromium, WebKit et Firefox. Testez sur Windows, Linux et macOS, localement ou sur CI, headless ou non avec l'émulation mobile native de Google Chrome pour Android et Mobile Safari. Il dispose d'une interface utilisateur informative, d'une excellente débogabilité, d'assertions intégrées, d'une parallélisation, de traces et est conçu pour éliminer les tests défectueux. La prise en charge des [tests de composants](https://playwright.dev/docs/test-components) est disponible, mais est considérée comme expérimentale. Playwright est open source et maintenu par Microsoft.
 
 - [Cypress](https://www.cypress.io/) dispose d'une interface graphique informative, une excellente déboguabilité, des assertions et des stubs intégrés, une résistance à la "flakiness" des tests, une parallélisation et des instantanés. Comme mentionné ci-dessus, il offre également un support pour [les tests de composants](https://docs.cypress.io/guides/component-testing/introduction). Il prend en charge les navigateurs basés sur Chromium, Firefox et Electron. Le support de WebKit est disponible, mais marqué comme expérimental. Cypress est sous licence MIT, mais certaines fonctionnalités comme la parallélisation nécessitent un abonnement à Cypress Cloud.
+
+<div class="lambdatest">
+  <a href="https://lambdatest.com" target="_blank">
+    <img src="/images/lambdatest.svg">
+    <div>
+      <div class="testing-partner">Outil de tests sponsorisé</div>
+      <div>Lambdatest est une plateforme cloud permettant d'exécuter des tests de régression E2E, d'accessibilité et visuels sur tous les principaux navigateurs et appareils réels, avec une génération de tests assistée par l'IA !</div>
+    </div>
+  </a>
+</div>
 
 ### Autres options {#other-options-2}
 
