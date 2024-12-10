@@ -298,12 +298,12 @@ function BaseLayout(slots) {
 
 ## Slots conditionnels {#conditional-slots}
 
-Il arrive que l'on veuille rendre quelque chose en fonction de la présence ou non d'un slot.
+Il arrive que l'on veuille rendre quelque chose en fonction de la transmission ou non d'un contenu à un slot.
 
 Vous pouvez utiliser la propriété [$slots](/api/component-instance.html#slots) en combinaison avec un [v-if](/guide/essentials/conditional.html#v-if) pour y parvenir.
 
 Dans l'exemple ci-dessous, nous définissons un composant Card avec trois slots conditionnels : `header`, `footer` et `default`.
-Lorsque l'en-tête / le pied de page / la valeur par défaut sont présents, nous voulons les envelopper pour leur donner un style supplémentaire :
+Lorsque l'en-tête / le pied de page / du texte par défaut est présent, nous voulons l'envelopper pour lui donner un style supplémentaire :
 
 ```vue-html
 <template>
