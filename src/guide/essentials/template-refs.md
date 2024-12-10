@@ -316,6 +316,8 @@ defineExpose({
 
 Lorsqu'un parent accède à une instance de ce composant via les refs du template, l'instance récupérée aura la forme suivante : `{ a: number, b: number }` (les refs sont automatiquement désenveloppées comme sur les instances classiques).
 
+Notez que defineExpose doit être appelé avant toute opération await. Sinon, les propriétés et les méthodes exposées après l'opération await ne seront pas accessibles.
+
 Voir aussi : [Typer les refs du template d'un composant](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 </div>
