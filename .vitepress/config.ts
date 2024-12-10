@@ -190,10 +190,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: "Liaisons des entrées d'un formulaire",
           link: '/guide/essentials/forms'
         },
-        {
-          text: 'Les hooks du cycle de vie',
-          link: '/guide/essentials/lifecycle'
-        },
         { text: 'Observateurs', link: '/guide/essentials/watchers' },
         {
           text: 'Les refs du template',
@@ -202,6 +198,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {
           text: 'Principes fondamentaux des Composants',
           link: '/guide/essentials/component-basics'
+        },
+        {
+          text: 'Les hooks du cycle de vie',
+          link: '/guide/essentials/lifecycle'
         }
       ]
     },
