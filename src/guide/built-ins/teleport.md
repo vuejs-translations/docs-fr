@@ -6,9 +6,9 @@
 
 ## Utilisation basique {#basic-usage}
 
-Parfois, nous pouvons être confrontés au scénario suivant : une partie du template d'un composant lui appartient logiquement, mais d'un point de vue visuel, elle devrait être affichée ailleurs dans le DOM, en dehors de l'application Vue.
+Parfois, nous pouvons être confrontés au scénario suivant : une partie du template d'un composant lui appartient logiquement, mais d'un point de vue visuel, elle devrait être affichée ailleurs dans le DOM, peut-être même en dehors de l'application Vue.
 
-L'exemple le plus courant est la création d'une modale plein écran. Idéalement, nous souhaitons que le bouton de la modale et la modale elle-même soient situés dans le même composant, puisqu'ils sont tous les deux liés à l'état d'ouverture / fermeture de la modale. Mais cela signifie que la modale sera rendue à côté du bouton, profondément imbriquée dans la hiérarchie du DOM de l'application. Cela peut causer des problèmes délicats lors du positionnement de la modale via CSS.
+L'exemple le plus courant est la création d'une modale plein écran. Idéalement, nous souhaitons que le code du bouton de la modale et la modale elle-même soient écrits dans le même composant à fichier unique, puisqu'ils sont tous les deux liés à l'état d'ouverture / fermeture de la modale. Mais cela signifie que la modale sera rendue à côté du bouton, profondément imbriquée dans la hiérarchie du DOM de l'application. Cela peut causer des problèmes délicats lors du positionnement de la modale via CSS.
 
 Considérez la structure HTML suivante.
 
@@ -169,11 +169,11 @@ Dans certains cas, nous pouvons vouloir désactiver `<Teleport>` de manière con
 </Teleport>
 ```
 
-L'état "isMobile" peut être mis à jour dynamiquement à la détection de changements de media query.
+Nous pourrions alors mettre à jour dynamiquement `isMobile`.
 
 ## Plusieurs Teleports sur la même cible {#multiple-teleports-on-the-same-target}
 
-Un cas d'utilisation courant serait un composant `<Modal>` réutilisable, avec la possibilité que plusieurs instances soient actives en même temps. Pour ce type de scénario, plusieurs composants `<Teleport>` peuvent monter leur contenu sur le même élément cible. L'ordre sera le même qu'avec un simple ajout - les derniers montages seront situés après les premiers dans l'élément cible.
+Un cas d'utilisation courant serait un composant `<Modal>` réutilisable, avec la possibilité que plusieurs instances soient actives en même temps. Pour ce type de scénario, plusieurs composants `<Teleport>` peuvent monter leur contenu sur le même élément cible. L'ordre sera le même qu'avec un simple ajout avec les derniers montages seront situés après les précédents, mais tous à l'intérieur de l'élément cible.
 
 Étant donné l'utilisation suivante :
 
