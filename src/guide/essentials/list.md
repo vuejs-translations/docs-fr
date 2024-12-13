@@ -223,10 +223,6 @@ Comme le modèle `v-if`, vous pouvez aussi utiliser une balise `<template>` avec
 
 ## `v-for` avec `v-if` {#v-for-with-v-if}
 
-:::warning Note
-Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite. Référez vous aux [bonnes pratiques](/style-guide/rules-essential#avoid-v-if-with-v-for) pour plus de détails.
-:::
-
 Lorsqu'ils existent sur le même nœud, `v-if` a une priorité plus importante que `v-for`. Cela signifie que la condition du `v-if` n'aura pas accès aux variables de la portée du `v-for` :
 
 ```vue-html
@@ -247,6 +243,17 @@ Cela peut être résolu en déplaçant le `v-for` sur une balise `<template>` en
   </li>
 </template>
 ```
+
+:::warning Note
+Il n'est **pas** recommandé d'utiliser `v-if` et `v-for` sur le même élément à cause de la préséance implicite.
+
+Il y a deux cas courants où cela peut être tentant :
+
+- Pour filtrer les éléments d'une liste (par exemple `v-for="user in users" v-if="user.isActive"`). Dans ce cas, remplacez `users` par une nouvelle propriété calculée qui retourne votre liste filtrée (par exemple `activeUsers`).
+
+- Pour éviter de rendre une liste si elle doit être cachée (par exemple, `v-for="user in users" v-if="shouldShowUsers"`). Dans ce cas, déplacez le `v-if` dans un élément conteneur (par exemple `ul`, `ol`).
+
+:::
 
 ## Maintenir l'état avec `key` {#maintaining-state-with-key}
 
@@ -274,7 +281,7 @@ Lorsque vous utilisez `<template v-for>`, la `key` doit être placée sur le con
 Ici, `key` est un attribut spécial qui est lié avec `v-bind`. Il ne doit pas être confondu avec la variable de clé de propriété utilisée dans le cas d'un [`v-for` avec un objet](#v-for-with-an-object).
 :::
 
-[Il est recommandé](/style-guide/rules-essential#use-keyed-v-for) de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
+Il est recommandé de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
 
 La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez vous à la [documentation de l'API `key`](/api/built-in-special-attributes#key).
 
@@ -348,7 +355,7 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 On pourrait penser que cela va pousser Vue à se débarrasser du DOM actuel et à rendre à nouveau toute la liste - heureusement, ça n'est pas le cas. Vue implémente des approches intelligentes afin de maximiser la réutilisation des éléments du DOM, de manière à ce que remplacer un tableau par un autre tableau composé en partie des mêmes éléments soit une opération très efficace.
 
-## Afficher des résultats filtrés/triés  {#displaying-filtered-sorted-results}
+## Afficher des résultats filtrés/triés {#displaying-filtered-sorted-results}
 
 Il arrive parfois que nous voulions afficher une version filtrée ou triée d'un tableau sans muter ou remettre à zéro les données originales. Dans ce cas, on peut créer une propriété calculée qui retourne le tableau filtré ou trié.
 
