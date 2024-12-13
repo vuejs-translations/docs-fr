@@ -1,5 +1,9 @@
 # Règles de priorité B : Fortement recommandées {#priority-b-rules-strongly-recommended}
 
+::: warning Note
+Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
+:::
+
 Ces règles améliorent la lisibilité et/ou l'expérience des développeurs dans la plupart des projets. Votre code fonctionnera toujours si vous les enfreignez, mais les violations doivent être rares et bien justifiées.
 
 ## Fichiers de composants {#component-files}
