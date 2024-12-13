@@ -1,5 +1,10 @@
 # Règles de priorité A : Essentielles {#priority-a-rules-essential}
 
+::: warning Note
+Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
+
+:::
+
 Ces règles aident à prévenir les erreurs, donc apprenez les et tenez-y vous coûte que coûte. Il peut y avoir des exceptions, mais elles sont rares et devraient être faites par ceux ayant une expertise à la fois dans JavaScript et dans Vue.
 
 ## Utilisez des noms de composants avec plusieurs mots {#use-multi-word-component-names}
