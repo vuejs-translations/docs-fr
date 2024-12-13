@@ -1,5 +1,9 @@
 # Règles de priorité C : Recommandées {#priority-c-rules-recommended}
 
+::: warning Note
+Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
+:::
+
 Lorsqu'il existe plusieurs options correctes, un choix arbitraire peut être fait pour assurer une certaine cohérence. Dans ces règles, nous décrivons chaque option acceptable et suggérons un choix par défaut. Cela signifie que vous être libres de faire un choix différent dans votre code, tant que vous restez cohérent et avez une bonne raison. Vous avez certainement une bonne raison ! En adaptant les standards de la communauté, vous :
 
 1. Entraînerez votre cerveau à analyser plus facilement la plupart du code que vous rencontrerez
@@ -123,7 +127,7 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
 
 ## Lignes vides dans les options du composant/de l'instance {#empty-lines-in-component-instance-options}
 
-**Vous pouvez être tenté d'ajouter une ligne vide entre les propriétés  multi-lignes, notamment si les options ne peuvent plus tenir sur votre écran sans défilement.**
+**Vous pouvez être tenté d'ajouter une ligne vide entre les propriétés multi-lignes, notamment si les options ne peuvent plus tenir sur votre écran sans défilement.**
 
 Lorsque les composants commencent à prendre beaucoup d'espace ou deviennent difficiles à lire, l'ajout d'espaces entre les propriétés multi-lignes peut les rendre plus faciles à parcourir. Dans certains éditeurs, comme Vim, des options de formatage comme celle-ci peuvent également faciliter la navigation au clavier.
 
