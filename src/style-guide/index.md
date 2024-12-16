@@ -4,6 +4,11 @@ outline: deep
 
 # Bonnes pratiques {#style-guide}
 
+::: warning Note
+Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
+
+:::
+
 Voici le guide de style officiel pour du code spécifique à Vue. Si vous travaillez sur un projet Vue, c'est une super référence pour éviter les erreurs, les pertes de temps, et les anti-patterns. Toutefois, nous ne pensons pas que des bonnes pratiques puisse être idéales pour n'importe quelle équipe ou projet, donc les écarts faits en pleine conscience en fonction de votre expérience, la pile technique environnante, et vos valeurs personnelles sont encouragés.
 
 La plupart du temps, nous évitons également les suggestions à propos du JavaScript ou de l'HTML en général. Que vous utilisiez des points-virgules ou des virgules ne nous dérange pas. Cela ne nous dérange pas non plus que vous utilisiez des simples ou doubles guillemets pour les valeurs des attributs. Il y a cependant des exceptions pour lesquelles nous pensons qu'un pattern particulier peut aider dans le contexte de Vue.

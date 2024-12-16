@@ -1,5 +1,9 @@
 # Règles de priorité D: À utiliser avec précaution {#priority-d-rules-use-with-caution}
 
+::: warning Note
+Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
+:::
+
 Certaines fonctionnalités de Vue existent pour prévoir de rares cas particuliers ou des migrations plus douces depuis une base de code héritée. Toutefois, lorsqu'elles sont surexploitées, elles peuvent rendre le code plus difficile à maintenir ou même devenir une source de bugs. Ces règles mettent en lumière ces fonctionnalités potentiellement risquées, en décrivant quand et pourquoi elles devraient être évitées.
 
 ## Sélecteurs d'éléments avec `scoped` {#element-selectors-with-scoped}
