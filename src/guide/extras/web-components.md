@@ -238,7 +238,7 @@ export function register() {
 }
 ```
 
-On peut utiliser les éléments d'un fichier Vue,
+On peut utiliser les éléments d'un fichier Vue :
 
 ```vue
 <script setup>
@@ -253,7 +253,7 @@ register()
 </template>
 ```
 
-ou dans tout autre framework, par exemple avec JSX, et avec des noms personnalisés :
+Ou dans tout autre framework, par exemple avec JSX, et avec des noms personnalisés :
 
 ```jsx
 import { MyFoo, MyBar } from 'path/to/elements.js'
@@ -263,8 +263,8 @@ customElements.define('some-bar', MyBar)
 
 export function MyComponent() {
   return <>
-    <some-foo ...>
-      <some-bar ...></some-bar>
+    <some-foo ... >
+      <some-bar ... ></some-bar>
     </some-foo>
   </>
 }
@@ -293,8 +293,10 @@ customElements.define('some-element', SomeElement)
 // Ajouter le nouveau type d'élément au type GlobalComponents de Vue
 declare module 'vue' {
   interface GlobalComponents {
-    // Veillez à indiquer ici le type de composant Vue (SomeComponent, *et non* SomeElement).
-    // Les éléments personnalisés requièrent un trait d'union dans leur nom, utilisez donc le nom de l'élément avec trait d'union comme ici.
+    // Veillez à indiquer ici le type de composant Vue
+    // (SomeComponent, *et non* SomeElement).
+    // Les éléments personnalisés requièrent un trait d'union dans leur nom,
+    // utilisez donc le nom de l'élément avec trait d'union comme ici.
     'some-element': typeof SomeComponent
   }
 }
@@ -302,15 +304,13 @@ declare module 'vue' {
 
 ## Composants personnalisés sans Vue, et TypeScript {#non-vue-web-components-and-typescript}
 
-Voici la méthode recommandée pour activer la vérification de type dans les templates SFC des
-éléments personnalisés qui ne sont pas construits avec Vue.
+Voici la méthode recommandée pour activer la vérification de type dans les templates SFC des éléments personnalisés qui ne sont pas construits avec Vue.
 
 > [!Note]
 > Cette approche est une façon possible de procéder, mais elle peut varier en fonction du
 > framework utilisé pour créer les éléments personnalisés.
 
-Supposons que nous ayons un élément personnalisé avec des propriétés JS et des événements définis, et
-qu'il soit livré dans une bibliothèque appelée `some-lib` :
+Supposons que nous ayons un élément personnalisé avec des propriétés JS et des événements définis, et qu'il soit livré dans une bibliothèque appelée `some-lib` :
 
 ```ts
 // file: some-lib/src/SomeElement.ts
@@ -348,11 +348,9 @@ export class AppleFellEvent extends Event {
 }
 ```
 
-Les détails de la mise en œuvre ont été omis, mais l'essentiel est que nous disposons
-de définitions de types pour deux choses : les types de propriétés et les types d'événements.
+Les détails de la mise en œuvre ont été omis, mais l'essentiel est que nous disposons de définitions de types pour deux choses : les types de propriétés et les types d'événements.
 
-Créons un assistant de type pour enregistrer facilement des définitions
-de types d'éléments personnalisés dans Vue :
+Créons un assistant de type pour enregistrer facilement des définitions de types d'éléments personnalisés dans Vue :
 
 ```ts
 // fichier: some-lib/src/DefineCustomElement.ts
@@ -367,7 +365,8 @@ type DefineCustomElement<
   // lit spécifiquement les définitions d'objets du type `$props`.Notez que nous
   // combine les props de l'élément avec les props HTML globaux et les props spéciaux de Vue.
 
-  /** @deprecated N'utilisez pas la propriété $props sur un élément personnalisé ref, ceci est réservé aux templates de type prop uniquement. */
+  /** @deprecated N'utilisez pas la propriété $props sur un élément personnalisé ref,
+   ceci est réservé aux templates de type prop uniquement. */
   $props: HTMLAttributes &
     Partial<Pick<ElementType, SelectedAttributes>> &
     PublicProps
@@ -375,7 +374,8 @@ type DefineCustomElement<
   // Utiliser $emit pour définir spécifiquement les types d'événements. Vue lit spécifiquement même les types d'événements
   // depuis le type `$emit`. Notez que `$emit` attend un format particulier
   // à laquelle nous faisons correspondre `Events`.
-  /** @deprecated N'utilisez pas la propriété $emit sur une référence d'élément personnalisé, ceci est réservé aux template de type prop uniquement. */
+  /** @deprecated N'utilisez pas la propriété $emit sur une référence d'élément personnalisé,
+   ceci est réservé aux template de type prop uniquement. */
   $emit: VueEmit<Events>
 }
 
@@ -390,13 +390,12 @@ type VueEmit<T extends EventMap> = EmitFn<{
 ```
 
 > [!Note]
-> Nous avons marqué `$props` et `$emit` comme dépréciés de sorte que lorsque nous obtenons une `référence` vers un fichier
-> nous ne serons pas tentés d'utiliser ces propriétés, étant donné que ces
+> Nous avons marqué `$props` et `$emit` comme dépréciés de sorte que lorsque nous obtenons une `ref` à
+> un élément personnalisé, nous ne serons pas tentés d'utiliser ces propriétés, car ces
 > propriétés ne servent qu'à vérifier le type des éléments personnalisés.
 > Ces propriétés n'existent pas réellement sur les instances d'éléments personnalisés.
 
-En utilisant l'assistant de type, nous pouvons maintenant sélectionner les propriétés JS qui doivent être exposées
-pour la vérification de type dans les templates Vue :
+En utilisant l'assistant de type, nous pouvons maintenant sélectionner les propriétés JS qui doivent être exposées pour la vérification de type dans les templates Vue :
 
 ```ts
 // fichier: some-lib/src/SomeElement.vue.ts
@@ -421,15 +420,14 @@ declare module 'vue' {
 }
 ```
 
-Supposons que `some-lib` compile ses fichiers source TypeScript dans un dossier `dist/`. Un utilisateur de
-`some-lib` peut alors importer `SomeElement` et l'utiliser dans un SFC Vue comme suit :
+Supposons que `some-lib` compile ses fichiers source TypeScript dans un dossier `dist/`. Un utilisateur de `some-lib` peut alors importer `SomeElement` et l'utiliser dans un SFC Vue comme suit :
 
 ```vue
 <script setup lang="ts">
 // Cette opération permet de créer et d'enregistrer l'élément dans le navigateur.
 import 'some-lib/dist/SomeElement.js'
 
-// Un utilisateur qui utilise TypeScript et Vue doit importer en plus le fichiere
+// Un utilisateur qui utilise TypeScript et Vue doit importer en plus le fichier
 // Définition de type spécifique à Vue (les utilisateurs d'autres frameworks peuvent importer d'autres
 // définitions de types spécifiques au framework).
 import type {} from 'some-lib/dist/SomeElement.vue.js'
@@ -446,7 +444,8 @@ onMounted(() => {
     el.value!.someMethod()
   )
 
-  // N'utilisez pas ces props, ils sont `undefined` (l'IDE les affichera barrés) :
+  // N'utilisez pas ces props, ils sont `undefined`
+  // l'IDE les affichera barrés
   el.$props
   el.$emit
 })
@@ -467,8 +466,7 @@ onMounted(() => {
 </template>
 ```
 
-Si un élément n'a pas de définition de type, les types de propriétés et d'événements peuvent être
-définis de manière plus manuelle :
+Si un élément n'a pas de définition de type, les types de propriétés et d'événements peuvent être définis de manière plus manuelle :
 
 ```vue
 <script setup lang="ts">
@@ -503,11 +501,7 @@ declare module 'vue' {
 </template>
 ```
 
-Les auteurs d'éléments personnalisés ne doivent pas exporter automatiquement les définitions de types d'éléments personnalisés
-spécifiques au framework à partir de leurs bibliothèques, par exemple ils ne doivent pas
-les exporter à partir d'un fichier `index.ts` qui exporte également le reste de la bibliothèque,
-sinon les utilisateurs auront des erreurs inattendues d'augmentation de module.
-Les utilisateurs doivent importer le fichier de définition de type spécifique au framework dont ils ont besoin.
+Les auteurs d'éléments personnalisés ne doivent pas exporter automatiquement les définitions de types d'éléments personnalisés spécifiques au framework à partir de leurs bibliothèques, par exemple ils ne doivent pas les exporter à partir d'un fichier `index.ts` qui exporte également le reste de la bibliothèque, sinon les utilisateurs auront des erreurs inattendues d'augmentation de module. Les utilisateurs doivent importer le fichier de définition de type spécifique au framework dont ils ont besoin.
 
 ## Web Components vs. les composants Vue {#web-components-vs-vue-components}
 
