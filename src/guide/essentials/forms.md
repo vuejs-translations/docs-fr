@@ -77,7 +77,7 @@ De plus, `v-model` peut être utilisé sur des entrées de différents types, de
 Pour les langages nécessitant un [IME](https://en.wikipedia.org/wiki/Input_method) (chinois, japonais, coréen etc.), vous remarquerez que `v-model` n'est pas mis à jour pendant la composition de l'IME. Si vous souhaitez également réagir à ces mises à jour, utilisez votre propre écouteur d'événements `input` et votre propre liaison `value` au lieu d'utiliser `v-model`.
 :::
 
-### Texte multiligne {#multiline-text}
+### Texte Multiligne {#multiline-text}
 
 ```vue-html
 <span>Multiline message is:</span>
