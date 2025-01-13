@@ -123,12 +123,12 @@ Enregistre un composant global si un nom et une définition de composant sont pa
   const app = createApp({})
 
   // enregistre un objet d'options
-  app.component('my-component', {
+  app.component('MyComponent', {
     /* ... */
   })
 
   // récupère un composant enregistré
-  const MyComponent = app.component('my-component')
+  const MyComponent = app.component('MyComponent')
   ```
 
 - **Voir aussi** [Enregistrement des composants](/guide/components/registration)
@@ -156,17 +156,17 @@ Enregistre une directive personnalisée globale si un nom et une définition de 
   })
 
   // enregistrement (options de directive)
-  app.directive('my-directive', {
+  app.directive('myDirective', {
     /* custom directive hooks */
   })
 
   // enregistrement (raccourci d'une fonction de directive)
-  app.directive('my-directive', () => {
+  app.directive('myDirective', () => {
     /* ... */
   })
 
   // récupère une directive enregistrée
-  const myDirective = app.directive('my-directive')
+  const myDirective = app.directive('myDirective')
   ```
 
 - **Voir aussi** [Directives personnalisées](/guide/reusability/custom-directives)
@@ -636,13 +636,13 @@ Configurer un préfixe pour tous les identifiants générés via [useId()](/api/
 - **Example**
 
   ```js
-  app.config.idPrefix = 'my-app'
+  app.config.idPrefix = 'myApp'
   ```
 
   ```js
   // in a component:
-  const id1 = useId() // 'my-app:0'
-  const id2 = useId() // 'my-app:1'
+  const id1 = useId() // 'myApp:0'
+  const id2 = useId() // 'myApp:1'
   ```
 
 ## app.config.throwUnhandledErrorInProduction <sup class="vt-badge" data-text="3.5+" /> {#app-config-throwunhandlederrorinproduction}
