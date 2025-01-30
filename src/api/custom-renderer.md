@@ -22,12 +22,8 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
       key: string,
       prevValue: any,
       nextValue: any,
-      // le reste n'est pas utilisé pour la plupart des moteurs de rendu personnalisés.
-      isSVG?: boolean,
-      prevChildren?: VNode<HostNode, HostElement>[],
-      parentComponent?: ComponentInternalInstance | null,
-      parentSuspense?: SuspenseBoundary | null,
-      unmountChildren?: UnmountChildrenFn
+      namespace?: ElementNamespace,
+      parentComponent?: ComponentInternalInstance | null
     ): void
     insert(
       el: HostNode,
@@ -37,7 +33,7 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
     remove(el: HostNode): void
     createElement(
       type: string,
-      isSVG?: boolean,
+      namespace?: ElementNamespace,
       isCustomizedBuiltIn?: string,
       vnodeProps?: (VNodeProps & { [key: string]: any }) | null
     ): HostElement
@@ -47,8 +43,6 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
     setElementText(node: HostElement, text: string): void
     parentNode(node: HostNode): HostElement | null
     nextSibling(node: HostNode): HostNode | null
-
-    // optionnel, spécifique au DOM
     querySelector?(selector: string): HostElement | null
     setScopeId?(el: HostElement, id: string): void
     cloneNode?(node: HostNode): HostNode
@@ -56,7 +50,9 @@ Crée un rendu personnalisé. En fournissant des API de création et de manipula
       content: string,
       parent: HostElement,
       anchor: HostNode | null,
-      isSVG: boolean
+      namespace: ElementNamespace,
+      start?: HostNode | null,
+      end?: HostNode | null
     ): [HostNode, HostNode]
   }
   ```
