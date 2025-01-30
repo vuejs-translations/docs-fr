@@ -93,7 +93,7 @@ Déclare les props d'un composant.
 
   - **`required`** : Définit si la prop est requise. Dans tout autre environnement que celui de production, un message d'avertissement sera affiché dans la console si cette valeur est vraie et que la prop n'est pas passée.
 
-  - **`validator`** : Fonction de validation personnalisée qui prend la valeur de la prop comme seul argument. En mode développement, un message d'avertissement sera envoyé à la console si cette fonction renvoie une valeur fausse (c'est-à-dire si la validation échoue).
+  - **`validator`** : Fonction de validation personnalisée qui prend la valeur de la prop et l'object props comme arguments. En mode développement, un message d'avertissement sera envoyé à la console si cette fonction renvoie une valeur fausse (c'est-à-dire si la validation échoue).
 
 - **Exemple**
 
