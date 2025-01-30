@@ -59,21 +59,18 @@ html:not(.banner-dismissed) {
 }
 
 .banner-dismissed .banner {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 5px;
+  display: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.banner button {
+button {
   position: absolute;
   right: 0;
   top: 0;
-  padding: 20px 10px;
+  padding: 5px;
 }
 
 .close {
@@ -82,13 +79,10 @@ a:hover {
   fill: #fff;
   transform: rotate(45deg);
 }
-
 /*
 @media (max-width: 720px) {
   a > span {
     display: none;
   }
-}
 } */
-
 </style>
