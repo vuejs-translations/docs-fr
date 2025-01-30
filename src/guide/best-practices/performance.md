@@ -10,7 +10,7 @@ Vue est conçu pour être performant dans la plupart des cas d'utilisation coura
 
 Tout d'abord, discutons des deux principaux aspects de la performance web :
 
-- **Performance de chargement des pages** : rapidité avec laquelle l'application affiche le contenu et devient interactive lors de la première visite. Elle est généralement mesurée à l'aide de mesures web vitales comme [Largest Contentful Paint (LCP)](https://web.dev/lcp/) et [First Input Delay (FID)](https://web.dev/fid/).
+- **Performance de chargement des pages** : rapidité avec laquelle l'application affiche le contenu et devient interactive lors de la première visite. Elle est généralement mesurée à l'aide de mesures web vitales comme [Largest Contentful Paint (LCP)](https://web.dev/lcp/) et [Interaction to Next Paint](https://web.dev/articles/inp).
 
 - **Performance de mise à jour** : vitesse à laquelle l'application se met à jour en réponse aux entrées de l'utilisateur. Par exemple, la vitesse à laquelle une liste se met à jour lorsque l'utilisateur tape dans un champ de recherche, ou la vitesse à laquelle la page change lorsque l'utilisateur clique sur un lien de navigation dans une application monopage (SPA).
 
