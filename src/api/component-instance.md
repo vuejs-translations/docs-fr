@@ -42,7 +42,7 @@ Le nœud du DOM racine que l'instance du composant gère.
 
   ```ts
   interface ComponentPublicInstance {
-    $el: Node | undefined
+    $el: any
   }
   ```
 

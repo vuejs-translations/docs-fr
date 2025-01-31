@@ -215,6 +215,12 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
   - Un hook `errorCaptured` peut retourner `false` pour empêcher l'erreur de se propager plus loin. Cela revient à dire "cette erreur a été traitée et doit être ignorée". Cela empêchera tout autre hook `errorCaptured` ou `app.config.errorHandler` d'être invoqué pour cette erreur.
 
+  **Mises en garde concernant la capture d'erreurs**
+  
+    - Dans les composants avec la fonction asynchrone `setup()` (avec le *top-level* `await`) Vue **essayera toujours** de rendre le template du composant, même si `setup()` a lancé une erreur. Cela causera probablement plus d'erreurs parce que pendant le rendu, le template du composant peut essayer d'accéder à des propriétés inexistantes du contexte `setup()` qui a échoué. Lorsque vous capturez des erreurs dans de tels composants, soyez prêt à gérer les erreurs provenant à la fois de l'échec de la fonction asynchrone `setup()` (elles arriveront toujours en premier) et de l'échec du processus de rendu.
+
+  - <sup class="vt-badge" data-text="SSR only"></sup> Remplacer le composant enfant erroné par le composant parent à l'intérieur de `<Suspense>` causera des erreurs d'hydratation dans SSR. Au lieu de cela, essayez de séparer la logique qui peut éventuellement être lancée depuis le `setup()` de l'enfant dans une fonction séparée et exécutez-la dans le `setup()` du composant parent, où vous pouvez en toute sécurité  capturer avec `try/catch` le processus d'exécution et faire le remplacement si nécessaire avant de rendre le composant enfant actuel.
+
 ## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
 
 Appelé lorsqu'une dépendance réactive a été traquée par l'effet de rendu du composant.

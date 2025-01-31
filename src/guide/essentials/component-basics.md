@@ -468,7 +468,7 @@ Quelque chose de grave s'est produit.
 
 Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>` :
 
-```vue{4}
+```vue{5}
 <!-- AlertBox.vue -->
 <template>
   <div class="alert-box">
