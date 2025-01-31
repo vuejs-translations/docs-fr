@@ -215,11 +215,11 @@ Appelé lorsqu'une erreur venant d'un composant descendant a été capturée.
 
   - Un hook `errorCaptured` peut retourner `false` pour empêcher l'erreur de se propager plus loin. Cela revient à dire "cette erreur a été traitée et doit être ignorée". Cela empêchera tout autre hook `errorCaptured` ou `app.config.errorHandler` d'être invoqué pour cette erreur.
 
-  **Error Capturing Caveats**
+  **Mises en garde concernant la capture d'erreurs**
   
-  - In components with async `setup()` function (with top-level `await`) Vue **will always** try to render component template, even if `setup()` throwed error. This will likely cause more errors because during render component's template might try to access non-existing properties of failed `setup()` context. When capturing errors in such components, be ready to handle errors from both failed async `setup()` (they will always come first) and failed render process.
+    - Dans les composants avec la fonction asynchrone `setup()` (avec le *top-level* `await`) Vue **essayera toujours** de rendre le template du composant, même si `setup()` a lancé une erreur. Cela causera probablement plus d'erreurs parce que pendant le rendu, le template du composant peut essayer d'accéder à des propriétés inexistantes du contexte `setup()` qui a échoué. Lorsque vous capturez des erreurs dans de tels composants, soyez prêt à gérer les erreurs provenant à la fois de l'échec de la fonction asynchrone `setup()` (elles arriveront toujours en premier) et de l'échec du processus de rendu.
 
-  - <sup class="vt-badge" data-text="SSR only"></sup> Replacing errored child component in parent component deep inside `<Suspense>` will cause hydration mismatches in SSR. Instead, try to separate logic that can possibly throw from child `setup()` into separate function and execute it in the parent component's `setup()`, where you can safely `try/catch` the execution process and make replacement if needed before rendering the actual child component.
+  - <sup class="vt-badge" data-text="SSR only"></sup> Remplacer le composant enfant erroné par le composant parent à l'intérieur de `<Suspense>` causera des erreurs d'hydratation dans SSR. Au lieu de cela, essayez de séparer la logique qui peut éventuellement être lancée depuis le `setup()` de l'enfant dans une fonction séparée et exécutez-la dans le `setup()` du composant parent, où vous pouvez en toute sécurité  capturer avec `try/catch` le processus d'exécution et faire le remplacement si nécessaire avant de rendre le composant enfant actuel.
 
 ## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
 
