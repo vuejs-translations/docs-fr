@@ -11,7 +11,7 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 - **Type :**
 
   ```ts
-  function onMounted(callback: () => void): void
+  function onMounted(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -53,7 +53,7 @@ Enregistre une fonction de rappel à appeler après que le composant ait mis à 
 - **Type :**
 
   ```ts
-  function onUpdated(callback: () => void): void
+  function onUpdated(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -96,7 +96,7 @@ Enregistre une fonction de rappel qui sera appelée après le démontage du comp
 - **Type :**
 
   ```ts
-  function onUnmounted(callback: () => void): void
+  function onUnmounted(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -135,7 +135,7 @@ Enregistre un hook qui sera appelé juste avant le montage du composant.
 - **Type :**
 
   ```ts
-  function onBeforeMount(callback: () => void): void
+  function onBeforeMount(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -151,7 +151,7 @@ Enregistre un hook qui sera appelé juste avant que le composant ne soit sur le 
 - **Type :**
 
   ```ts
-  function onBeforeUpdate(callback: () => void): void
+  function onBeforeUpdate(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -167,7 +167,7 @@ Enregistre un hook à appeler juste avant le démontage d'une instance de compos
 - **Type :**
 
   ```ts
-  function onBeforeUnmount(callback: () => void): void
+  function onBeforeUnmount(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Détails**
@@ -282,7 +282,7 @@ Enregistre une fonction de rappel qui sera appelée après que l'instance du com
 - **Type :**
 
   ```ts
-  function onActivated(callback: () => void): void
+  function onActivated(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
@@ -296,7 +296,7 @@ Enregistre une fonction de rappel à appeler après que l'instance du composant 
 - **Type :**
 
   ```ts
-  function onDeactivated(callback: () => void): void
+  function onDeactivated(callback: () => void, target?: ComponentInternalInstance | null): void
   ```
 
 - **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
