@@ -13,6 +13,7 @@ Vous devez ajouter un lien en haut de chaque page qui mène directement à la zo
 Typiquement, cela se fait en haut de `App.vue` car ce sera le premier élément pouvant être ciblé sur toutes vos pages :
 
 ```vue-html
+<span ref="backToTop" tabindex="-1" />
 <ul class="skip-links">
   <li>
     <a href="#main" ref="skipLink" class="skip-link">Skip to main content</a>
@@ -23,6 +24,9 @@ Typiquement, cela se fait en haut de `App.vue` car ce sera le premier élément 
 Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style suivant :
 
 ```css
+.skip-links {
+  list-style: none;
+}
 .skip-link {
   white-space: nowrap;
   margin: 1em auto;
@@ -40,7 +44,7 @@ Pour masquer le lien lorsqu'il n'est pas ciblé, vous pouvez ajouter le style su
 }
 ```
 
-Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref de template du lien d'évitement (en supposant l'utilisation de `vue-router`) :
+Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus au tout début de la page, juste avant le lien d'évitement. Cela peut être réalisé en appelant focus sur la ref de template du lien d'évitement (en supposant l'utilisation de `vue-router`) :
 
 <div class="options-api">
 
@@ -49,7 +53,7 @@ Lorsque qu'un utilisateur change d'itinéraire, redonnez le focus sur le lien d'
 export default {
   watch: {
     $route() {
-      this.$refs.skipLink.focus()
+      this.$refs.backToTop.focus()
     }
   }
 }
@@ -65,12 +69,12 @@ import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const skipLink = ref()
+const backToTop = ref()
 
 watch(
   () => route.path,
   () => {
-    skipLink.value.focus()
+    backToTop.value.focus()
   }
 )
 </script>
