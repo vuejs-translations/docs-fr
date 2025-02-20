@@ -142,6 +142,22 @@ computed: {
 <div :class="classObject"></div>
 ```
 
+Là encore, la liaison de style objet est souvent utilisée avec des propriétés calculées qui renvoient des objets.
+
+Les directives `:style` peuvent également coexister avec des attributs de style ordinaires, tout comme `:class`.
+
+Template:
+
+```vue-html
+<h1 style="color: red" :style="'font-size: 1em'">hello</h1>
+```
+
+Il rendra :
+
+```vue-html
+<h1 style="color: red; font-size: 1em;">hello</h1>
+```
+
 ### Liaison par tableau {#binding-to-arrays-1}
 
 Nous pouvons lier `:class` à un tableau pour appliquer une liste de classes :
