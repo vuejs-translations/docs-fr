@@ -68,23 +68,23 @@ Cependant d'autres façons de faire existent. Dans Vue, le framework a le contr�
 
 Nous aborderons ci-dessous quelques optimisations importantes réalisées par le compilateur de templates Vue dans le but d'améliorer les performances d'exécution du DOM virtuel.
 
-### Hissage statique (_Static hoisting_) {#static-hoisting}
+### Cache Statique {#cache-static}
 
 Il arrive régulièrement que certaines parties d'un template ne contiennent pas de liaisons dynamiques :
 
 ```vue-html{2-3}
 <div>
-  <div>foo</div> <!-- hissée -->
-  <div>bar</div> <!-- hissée -->
+  <div>foo</div> <!-- en cache -->
+  <div>bar</div> <!-- en cache -->
   <div>{{ dynamic }}</div>
 </div>
 ```
 
-[Inspection dans l'explorateur de template](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2PmZvbzwvZGl2PiA8IS0tIGhvaXN0ZWQgLS0+XG4gIDxkaXY+YmFyPC9kaXY+IDwhLS0gaG9pc3RlZCAtLT5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj5cbiIsIm9wdGlvbnMiOnsiaG9pc3RTdGF0aWMiOnRydWV9fQ==)
+[Inspection dans l'explorateur de template](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2PmZvbzwvZGl2PiA8IS0tIGNhY2hlZCAtLT5cbiAgPGRpdj5iYXI8L2Rpdj4gPCEtLSBjYWNoZWQgLS0+XG4gIDxkaXY+e3sgZHluYW1pYyB9fTwvZGl2PlxuPC9kaXY+XG4iLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)
 
-Les divs `foo` et `bar` sont statiques - recréer des vnodes et les différencier à chaque rendu est inutile. Le compilateur Vue extrait automatiquement les appels de création de vnodes de la fonction de rendu, et réutilise les mêmes vnodes à chaque rendu. Le moteur de rendu est également capable de ne pas les différencier quand il remarque que l'ancien et le nouveau vnode sont les mêmes.
+Les divs `foo` et `bar` sont statiques - recréer des vnodes et les différencier à chaque rendu est inutile. Le moteur de rendu crée ces vnodes lors du rendu initial, les met en cache et réutilise les mêmes vnodes lors de chaque rendu ultérieur. Le moteur de rendu est également capable de ne pas les différencier quand il remarque que l'ancien et le nouveau vnode sont les mêmes.
 
-En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils seront condensés en un seul "vnode statique" qui contient une simple chaîne de caractères HTML pour tous ces nœuds ([Exemple](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Ces vnodes statiques sont montés en modifiant directement `innerHTML`. Ils mettent également en cache les nœuds du DOM correspondants lors du montage initial - si le même élément de contenu est réutilisé ailleurs dans l'application, de nouveaux nœuds du DOM sont créés en utilisant la méthode native `cloneNode()`, ce qui est extrêmement efficace.
+En outre, lorsqu'il y a suffisamment d'éléments statiques consécutifs, ils seront condensés en un seul "vnode statique" qui contient une simple chaîne de caractères HTML pour tous ces nœuds ([Exemple](https://template-explorer.vuejs.org/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Ces vnodes statiques sont montés en modifiant directement `innerHTML`.
 
 ### Marques de correction {#patch-flags}
 
