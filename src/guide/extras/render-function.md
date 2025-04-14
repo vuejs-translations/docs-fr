@@ -708,6 +708,26 @@ Si la directive est enregistrée par son nom et ne peut être importée directem
 
 Avec la Composition API, les refs de template sont créées en transmettant le `ref()` lui-même en tant que props au vnode :
 
+Avec la Composition API, lors de l'utilisation de [`useTemplateRef()`](/api/composition-api-helpers#usetemplateref) <sup class="vt-badge" data-text="3.5+" /> les références des templates sont créées en passant la valeur de la chaîne en tant que prop au vnode :
+
+```js
+import { h, useTemplateRef } from 'vue'
+
+export default {
+  setup() {
+    const divEl = useTemplateRef('my-div')
+
+    // <div ref="my-div">
+    return () => h('div', { ref: 'my-div' })
+  }
+}
+```
+
+<details>
+<summary>UUtilisation avant 3.5</summary>
+
+Dans les versions antérieures à la 3.5 où useTemplateRef() n'a pas été introduite, les refs de templates sont créés en passant le ref() lui-même en tant que prop au vnode :
+
 ```js
 import { h, ref } from 'vue'
 
@@ -720,22 +740,7 @@ export default {
   }
 }
 ```
-
-or (with version >= 3.5)
-
-```js
-import { h, useTemplateRef } from 'vue'
-
-export default {
-  setup() {
-    const divEl = useTemplateRef('my-div')
-
-    // <div ref="divEl">
-    return () => h('div', { ref: 'my-div' })
-  }
-}
-```
-
+</details>
 </div>
 <div class="options-api">
 
