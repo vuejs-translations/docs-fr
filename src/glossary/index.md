@@ -155,14 +155,14 @@ JavaScript utilise le hissage pour certaines constructions, telles que `var`, `i
 
 Dans un contexte Vue, le compilateur applique le *hissage statique* pour améliorer les performances. Lors de la compilation d'un composant, les valeurs statiques sont déplacées hors de la portée du composant. Ces valeurs statiques sont qualifiées de hissées parce qu'elles sont créées en dehors du composant.
 
-## cache static {#cache-static}
+## cache statique {#cache-static}
 
 Le terme *cache* est utilisé pour décrire le stockage temporaire de données fréquemment consultées afin d'améliorer les performances.
 
 Le compilateur de template Vue identifie ces VNodes statiques, les met en cache lors du rendu initial et réutilise les mêmes VNodes pour chaque nouveau rendu.
 
 Pour plus de détails, voir :
-- [Guide - Mécanismes de rendu - Cache Static](/guide/extras/rendering-mechanism.html#cache-static)
+- [Guide - Mécanismes de rendu - Cache Statique](/guide/extras/rendering-mechanism.html#cache-static)
 
 ## template depuis le DOM {#in-dom-template}
 
