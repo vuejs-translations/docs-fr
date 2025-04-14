@@ -278,7 +278,7 @@ export default {
     // Ce calcul renvoie la valeur de count lorsqu'elle est inférieure ou égale à 3.
     // Lorsque count est >=4, la dernière valeur qui remplit notre condition est renvoyée.
     // jusqu'à ce que count soit inférieur ou égal à 3
-    alwaysSmall(previous) {
+    alwaysSmall(_, previous) {
       if (this.count <= 3) {
         return this.count
       }
