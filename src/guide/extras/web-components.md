@@ -306,9 +306,9 @@ declare module 'vue' {
 
 Voici la méthode recommandée pour activer la vérification de type dans les templates SFC des éléments personnalisés qui ne sont pas construits avec Vue.
 
-> [!Note]
-> Cette approche est une façon possible de procéder, mais elle peut varier en fonction du
-> framework utilisé pour créer les éléments personnalisés.
+:::tip Note
+Cette approche est une façon possible de procéder, mais elle peut varier en fonction du framework utilisé pour créer les éléments personnalisés.
+:::
 
 Supposons que nous ayons un élément personnalisé avec des propriétés JS et des événements définis, et qu'il soit livré dans une bibliothèque appelée `some-lib` :
 
@@ -389,11 +389,9 @@ type VueEmit<T extends EventMap> = EmitFn<{
 }>
 ```
 
-> [!Note]
-> Nous avons marqué `$props` et `$emit` comme dépréciés de sorte que lorsque nous obtenons une `ref` à
-> un élément personnalisé, nous ne serons pas tentés d'utiliser ces propriétés, car ces
-> propriétés ne servent qu'à vérifier le type des éléments personnalisés.
-> Ces propriétés n'existent pas réellement sur les instances d'éléments personnalisés.
+:::tip Note
+Nous avons marqué `$props` et `$emit` comme dépréciés de sorte que lorsque nous obtenons une `ref` à un élément personnalisé, nous ne serons pas tentés d'utiliser ces propriétés, car ces propriétés ne servent qu'à vérifier le type des éléments personnalisés. Ces propriétés n'existent pas réellement sur les instances d'éléments personnalisés.
+:::
 
 En utilisant l'assistant de type, nous pouvons maintenant sélectionner les propriétés JS qui doivent être exposées pour la vérification de type dans les templates Vue :
 
