@@ -113,7 +113,7 @@ L'extension du navigateur Vue devtools vous permet d'explorer l'arborescence des
 ![devtools screenshot](./images/devtools.png)
 
 - [Documentation](https://devtools.vuejs.org/)
-- [Extension Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- [Extension Chrome](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - [Addon Firefox](https://addons.mozilla.org/fr/firefox/addon/vue-js-devtools/)
 - [Plugin Vite](https://devtools.vuejs.org/guide/vite-plugin)
 - [Application autonome Electron](https://devtools.vuejs.org/guide/installation.html#standalone)
