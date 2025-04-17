@@ -153,10 +153,16 @@ Le terme *hissage* est utilisé pour décrire l'exécution d'une section de code
 
 JavaScript utilise le hissage pour certaines constructions, telles que `var`, `import` et les déclarations de fonctions.
 
-Dans le contexte de Vue, le compilateur de template applique le *hissage statique* pour améliorer les performances. Lors de la conversion d'un template en fonction de rendu, les VNodes correspondant au contenu statique peuvent être créés une fois et réutilisés. Ces VNodes statiques sont décrits comme hissés parce qu'ils sont créés en dehors de la fonction de rendu, avant qu'elle ne s'exécute. Une forme similaire de hissage est appliquée aux objets statiques ou aux tableaux générés par le compilateur de template.
+Dans un contexte Vue, le compilateur applique le *hissage statique* pour améliorer les performances. Lors de la compilation d'un composant, les valeurs statiques sont déplacées hors de la portée du composant. Ces valeurs statiques sont qualifiées de hissées parce qu'elles sont créées en dehors du composant.
+
+## cache statique {#cache-static}
+
+Le terme *cache* est utilisé pour décrire le stockage temporaire de données fréquemment consultées afin d'améliorer les performances.
+
+Le compilateur de template Vue identifie ces VNodes statiques, les met en cache lors du rendu initial et réutilise les mêmes VNodes pour chaque nouveau rendu.
 
 Pour plus de détails, voir :
-- [Guide - Mécanismes de rendu - Hissage statique](/guide/extras/rendering-mechanism.html#static-hoisting)
+- [Guide - Mécanismes de rendu - Cache Statique](/guide/extras/rendering-mechanism.html#cache-static)
 
 ## template depuis le DOM {#in-dom-template}
 

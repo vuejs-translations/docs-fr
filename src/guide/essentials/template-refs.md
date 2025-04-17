@@ -113,115 +113,6 @@ Voir aussi : [Typer les refs du template](/guide/typescript/composition-api#typi
 
 </div>
 
-## Refs à l'intérieur d'un `v-for` {#refs-inside-v-for}
-
-> Requiert v3.5 ou ultérieure
-
-<div class="composition-api">
-
-Lorsque `ref` est utilisée à l'intérieur d'un `v-for`, la ref correspondante doit contenir un tableau, qui sera alimenté avec les éléments après le montage :
-
-```vue
-<script setup>
-import { ref, useTemplateRef, onMounted } from 'vue'
-
-const list = ref([
-  /* ... */
-])
-
-const itemRefs = useTemplateRef('items')
-
-onMounted(() => console.log(itemRefs.value))
-</script>
-
-<template>
-  <ul>
-    <li v-for="item in list" ref="items">
-      {{ item }}
-    </li>
-  </ul>
-</template>
-```
-
-[Essayer en ligne](https://play.vuejs.org/#eNp9UsluwjAQ/ZWRLwQpDepyQoDUIg6t1EWUW91DFAZq6tiWF4oU5d87dtgqVRyyzLw3b+aN3bB7Y4ptQDZkI1dZYTw49MFMuBK10dZDAxZXOQSHC6yNLD3OY6zVsw7K4xJaWFldQ49UelxxVWnlPEhBr3GszT6uc7jJ4fazf4KFx5p0HFH+Kme9CLle4h6bZFkfxhNouAIoJVqfHQSKbSkDFnVpMhEpovC481NNVcr3SaWlZzTovJErCqgydaMIYBRk+tKfFLC9Wmk75iyqg1DJBWfRxT7pONvTAZom2YC23QsMpOg0B0l0NDh2YjnzjpyvxLrYOK1o3ckLZ5WujSBHr8YL2gxnw85lxEop9c9TynkbMD/kqy+svv/Jb9wu5jh7s+jQbpGzI+ZLu0byEuHZ+wvt6Ays9TJIYl8A5+i0DHHGjvYQ1JLGPuOlaR/TpRFqvXCzHR2BO5iKg0Zmm/ic0W2ZXrB+Gve2uEt1dJKs/QXbwePE)
-
-<details>
-<summary>Utilisation avant 3.5</summary>
-
-Dans les versions antérieurs à la 3.5 où `useTemplateRef()` n'était pas encore introduit, nous devions déclarer une ref avec un nom qui corresponde à la valeur de l'attribut ref du template. La ref devait également contenir un valeur sous forme de tableau :
-
-In versions before 3.5 where `useTemplateRef()` was not introduced, we need to declare a ref with a name that matches the template ref attribute's value. The ref should also contain an array value:
-
-```vue
-<script setup>
-import { ref, onMounted } from 'vue'
-
-const list = ref([
-  /* ... */
-])
-
-const itemRefs = ref([])
-
-onMounted(() => console.log(itemRefs.value))
-</script>
-
-<template>
-  <ul>
-    <li v-for="item in list" ref="itemRefs">
-      {{ item }}
-    </li>
-  </ul>
-</template>
-```
-
-</details>
-
-</div>
-<div class="options-api">
-
-Lorsque `ref` est utilisée à l'intérieur d'un `v-for`, la valeur ref qui en résulte sera un tableau contenant les éléments correspondants :
-
-```vue
-<script>
-export default {
-  data() {
-    return {
-      list: [
-        /* ... */
-      ]
-    }
-  },
-  mounted() {
-    console.log(this.$refs.items)
-  }
-}
-</script>
-
-<template>
-  <ul>
-    <li v-for="item in list" ref="items">
-      {{ item }}
-    </li>
-  </ul>
-</template>
-```
-
-[Essayer en ligne](https://play.vuejs.org/#eNpFjk0KwjAQha/yCC4Uaou6kyp4DuOi2KkGYhKSiQildzdNa4WQmTc/37xeXJwr35HEUdTh7pXjszT0cdYzWuqaqBm9NEDbcLPeTDngiaM3PwVoFfiI667AvsDhNpWHMQzF+L9sNEztH3C3JlhNpbaPNT9VKFeeulAqplfY5D1p0qurxVQSqel0w5QUUEedY8q0wnvbWX+SYgRAmWxIiuSzm4tBinkc6HvkuSE7TIBKq4lZZWhdLZfE8AWp4l3T)
-
-</div>
-
-À noter que le tableau ref ne garantit **pas** le même ordre que celui du tableau source.
-
-## Les fonctions refs {#function-refs}
-
-Au lieu d'une chaîne de caractères comme clé, l'attribut `ref` peut également être lié à une fonction, qui sera appelée à chaque mise à jour du composant et vous donne une flexibilité totale sur l'endroit où stocker la référence à l'élément. La fonction reçoit la référence à l'élément comme premier argument :
-
-```vue-html
-<input :ref="(el) => { /* assigne l'élément à une propriété ou à une ref */ }">
-```
-
-Notez l'utilisation d'une liaison dynamique `:ref` permettant de passer une fonction au lieu d'un nom de ref en chaîne de caractères. Lorsque l'élément est démonté, l'argument sera `null`. Vous pouvez, bien entendu, utiliser une méthode au lieu d'une fonction en une ligne.
-
 ## Ref sur un composant {#ref-on-component}
 
 > Cette section considère [les composants](/guide/essentials/component-basics) comme acquis. N'hésitez pas à la passer et revenir plus tard.
@@ -348,3 +239,112 @@ export default {
 Dans l'exemple ci-dessus, un parent référençant ce composant via une ref du template n'aura pas accès à `publicData` et `publicMethod`.
 
 </div>
+
+## Refs à l'intérieur d'un `v-for` {#refs-inside-v-for}
+
+> Requiert v3.5 ou ultérieure
+
+<div class="composition-api">
+
+Lorsque `ref` est utilisée à l'intérieur d'un `v-for`, la ref correspondante doit contenir un tableau, qui sera alimenté avec les éléments après le montage :
+
+```vue
+<script setup>
+import { ref, useTemplateRef, onMounted } from 'vue'
+
+const list = ref([
+  /* ... */
+])
+
+const itemRefs = useTemplateRef('items')
+
+onMounted(() => console.log(itemRefs.value))
+</script>
+
+<template>
+  <ul>
+    <li v-for="item in list" ref="items">
+      {{ item }}
+    </li>
+  </ul>
+</template>
+```
+
+[Essayer en ligne](https://play.vuejs.org/#eNp9UsluwjAQ/ZWRLwQpDepyQoDUIg6t1EWUW91DFAZq6tiWF4oU5d87dtgqVRyyzLw3b+aN3bB7Y4ptQDZkI1dZYTw49MFMuBK10dZDAxZXOQSHC6yNLD3OY6zVsw7K4xJaWFldQ49UelxxVWnlPEhBr3GszT6uc7jJ4fazf4KFx5p0HFH+Kme9CLle4h6bZFkfxhNouAIoJVqfHQSKbSkDFnVpMhEpovC481NNVcr3SaWlZzTovJErCqgydaMIYBRk+tKfFLC9Wmk75iyqg1DJBWfRxT7pONvTAZom2YC23QsMpOg0B0l0NDh2YjnzjpyvxLrYOK1o3ckLZ5WujSBHr8YL2gxnw85lxEop9c9TynkbMD/kqy+svv/Jb9wu5jh7s+jQbpGzI+ZLu0byEuHZ+wvt6Ays9TJIYl8A5+i0DHHGjvYQ1JLGPuOlaR/TpRFqvXCzHR2BO5iKg0Zmm/ic0W2ZXrB+Gve2uEt1dJKs/QXbwePE)
+
+<details>
+<summary>Utilisation avant 3.5</summary>
+
+Dans les versions antérieurs à la 3.5 où `useTemplateRef()` n'était pas encore introduit, nous devions déclarer une ref avec un nom qui corresponde à la valeur de l'attribut ref du template. La ref devait également contenir un valeur sous forme de tableau :
+
+In versions before 3.5 where `useTemplateRef()` was not introduced, we need to declare a ref with a name that matches the template ref attribute's value. The ref should also contain an array value:
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const list = ref([
+  /* ... */
+])
+
+const itemRefs = ref([])
+
+onMounted(() => console.log(itemRefs.value))
+</script>
+
+<template>
+  <ul>
+    <li v-for="item in list" ref="itemRefs">
+      {{ item }}
+    </li>
+  </ul>
+</template>
+```
+
+</details>
+
+</div>
+<div class="options-api">
+
+Lorsque `ref` est utilisée à l'intérieur d'un `v-for`, la valeur ref qui en résulte sera un tableau contenant les éléments correspondants :
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      list: [
+        /* ... */
+      ]
+    }
+  },
+  mounted() {
+    console.log(this.$refs.items)
+  }
+}
+</script>
+
+<template>
+  <ul>
+    <li v-for="item in list" ref="items">
+      {{ item }}
+    </li>
+  </ul>
+</template>
+```
+
+[Essayer en ligne](https://play.vuejs.org/#eNpFjk0KwjAQha/yCC4Uaou6kyp4DuOi2KkGYhKSiQildzdNa4WQmTc/37xeXJwr35HEUdTh7pXjszT0cdYzWuqaqBm9NEDbcLPeTDngiaM3PwVoFfiI667AvsDhNpWHMQzF+L9sNEztH3C3JlhNpbaPNT9VKFeeulAqplfY5D1p0qurxVQSqel0w5QUUEedY8q0wnvbWX+SYgRAmWxIiuSzm4tBinkc6HvkuSE7TIBKq4lZZWhdLZfE8AWp4l3T)
+
+</div>
+
+À noter que le tableau ref ne garantit **pas** le même ordre que celui du tableau source.
+
+## Les fonctions refs {#function-refs}
+
+Au lieu d'une chaîne de caractères comme clé, l'attribut `ref` peut également être lié à une fonction, qui sera appelée à chaque mise à jour du composant et vous donne une flexibilité totale sur l'endroit où stocker la référence à l'élément. La fonction reçoit la référence à l'élément comme premier argument :
+
+```vue-html
+<input :ref="(el) => { /* assigne l'élément à une propriété ou à une ref */ }">
+```
+
+Notez l'utilisation d'une liaison dynamique `:ref` permettant de passer une fonction au lieu d'un nom de ref en chaîne de caractères. Lorsque l'élément est démonté, l'argument sera `null`. Vous pouvez, bien entendu, utiliser une méthode au lieu d'une fonction en une ligne.
