@@ -330,7 +330,7 @@ En comparaison, des propriétés telles que `height` ou `margin` déclencheront 
 
 Vous pouvez vous connecter au processus de transition avec JavaScript en écoutant les événements sur le composant `<Transition>` :
 
-```html
+```vue-html
 <Transition
   @before-enter="onBeforeEnter"
   @enter="onEnter"

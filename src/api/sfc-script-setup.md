@@ -522,6 +522,18 @@ defineProps<{
 </script>
 ```
 
+Vous pouvez utiliser la directive `@vue-generic` pour passer des types explicites, lorsque le type ne peut pas être déduit :
+
+```vue
+<template>
+  <!-- @vue-generic {import('@/api').Actor} -->
+  <ApiSelect v-model="selectedPeopleIds" endpoint="/api/actors" id-prop="actorId" />
+
+  <!-- @vue-generic {import('@/api').Genre} -->
+  <ApiSelect v-model="selectedGenreIds" endpoint="/api/genres" id-prop="genreId" />
+</template>
+```
+
 Pour utiliser une référence d'un composant générique dans une 'ref', il convient d'utiliser la librairie [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) au lieu de `InstanceType` qui ne fonctionnera pas.
 
 ```vue

@@ -123,6 +123,8 @@ const message = inject('message')
 </script>
 ```
 
+Si plusieurs parents fournissent des données avec la même clé, l'injection se résoudra à la valeur du parent le plus proche dans la chaîne des parents du composant.
+
 Si la valeur fournie est une référence, elle sera injectée telle quelle et **ne sera pas** automatiquement exposée. Cela permet au composant injecteur de conserver la connexion de réactivité au composant fournisseur.
 
 [Exemple complet provide + inject avec réactivité](https://play.vuejs.org/#eNqFUUFugzAQ/MrKF1IpxfeIVKp66Kk/8MWFDXYFtmUbpArx967BhURRU9/WOzO7MzuxV+fKcUB2YlWovXYRAsbBvQije2d9hAk8Xo7gvB11gzDDxdseCuIUG+ZN6a7JjZIvVRIlgDCcw+d3pmvTglz1okJ499I0C3qB1dJQT9YRooVaSdNiACWdQ5OICj2WwtTWhAg9hiBbhHNSOxQKu84WT8LkNQ9FBhTHXyg1K75aJHNUROxdJyNSBVBp44YI43NvG+zOgmWWYGt7dcipqPhGZEe2ef07wN3lltD+lWN6tNkV/37+rdKjK2rzhRTt7f3u41xhe37/xJZGAL2PLECXa9NKdD/a6QTTtGnP88LgiXJtYv4BaLHhvg==)
@@ -168,6 +170,8 @@ export default {
   }
 }
 ```
+
+Si plusieurs parents fournissent des données avec la même clé, l'injection se résoudra à la valeur du parent le plus proche dans la chaîne des parents du composant.
 
 [Exemple complet provide + inject](https://play.vuejs.org/#eNqNkcFqwzAQRH9l0EUthOhuRKH00FO/oO7B2JtERZaEvA4F43+vZCdOTAIJCImRdpi32kG8h7A99iQKobs6msBvpTNt8JHxcTC2wS76FnKrJpVLZelKR39TSUO7qreMoXRA7ZPPkeOuwHByj5v8EqI/moZeXudCIBL30Z0V0FLXVXsqIA9krU8R+XbMR9rS0mqhS4KpDbZiSgrQc5JKQqvlRWzEQnyvuc9YuWbd4eXq+TZn0IvzOeKr8FvsNcaK/R6Ocb9Uc4FvefpE+fMwP0wH8DU7wB77nIo6x6a2hvNEME5D0CpbrjnHf+8excI=)
 
