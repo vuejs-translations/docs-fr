@@ -283,7 +283,7 @@ Ici, `key` est un attribut spécial qui est lié avec `v-bind`. Il ne doit pas �
 
 Il est recommandé de fournir un attribut `key` avec `v-for` dès que possible, sauf si le contenu du DOM itéré est simple (c'est-à-dire qu'il ne comporte pas de composants ou d'éléments du DOM avec un état), ou si vous comptez intentionnellement sur le comportement par défaut dans un but de gain de performances.
 
-La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez vous à la [documentation de l'API `key`](/api/built-in-special-attributes#key).
+La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères et des nombres. N'utilisez pas d'objets comme clé de `v-for`. Pour l'utilisation détaillée de l'attribut `key`, référez-vous à la [documentation de l'API `key`](/api/built-in-special-attributes#key).
 
 ## `v-for` avec un composant {#v-for-with-a-component}
 
@@ -310,7 +310,7 @@ La raison pour laquelle on n'injecte pas automatiquement `item` dans le composan
 
 <div class="composition-api">
 
-Regardez [cet exemple d'une simple todo list](https://play.vuejs.org/#eNp1U8Fu2zAM/RXCGGAHTWx02ylwgxZYB+ywYRhyq3dwLGYRYkuCJTsZjPz7KMmK3ay9JBQfH/meKA/Rk1Jp32G0jnJdtVwZ0Gg6tSkEb5RsDQzQ4h4usG9lAzGVxldoK5n8ZrAZsTQLCduRygAKUUmhDQg8WWyLZwMPtmESx4sAGkL0mH6xrMH+AHC2hvuljw03Na4h/iLBHBAY1wfUbsTFVcwoH28o2/KIIDuaQ0TTlvrwNu/TDe+7PDlKXZ6EZxTiN4kuRI3W0dk4u4yUf7bZfScqw6WAkrEf3m+y8AOcw7Qv6w5T1elDMhs7Nbq7e61gdmme60SQAvgfIhExiSSJeeb3SBukAy1D1aVBezL5XrYN9Csp1rrbNdykqsUehXkookl0EVGxlZHX5Q5rIBLhNHFlbRD6xBiUzlOeuZJQz4XqjI+BxjSSYe2pQWwRBZizV01DmsRWeJA1Qzv0Of2TwldE5hZRlVd+FkbuOmOksJLybIwtkmfWqg+7qz47asXpSiaN3lxikSVwwfC8oD+/sEnV+oh/qcxmU85mebepgLjDBD622Mg+oDrVquYVJm7IEu4XoXKTZ1dho3gnmdJhedEymn9ab3ysDPdc4M9WKp28xE5JbB+rzz/Trm3eK3LAu8/E7p2PNzYM/i3ChR7W7L7hsSIvR7L2Aal1EhqTp80vF95sw3WcG7r8A0XaeME=) pour comprendre comment rendre une liste de composant en utilsant `v-for`, et en passant des données différentes à chaque instance.
+Regardez [cet exemple d'une simple todo list](https://play.vuejs.org/#eNp1U8Fu2zAM/RXCGGAHTWx02ylwgxZYB+ywYRhyq3dwLGYRYkuCJTsZjPz7KMmK3ay9JBQfH/meKA/Rk1Jp32G0jnJdtVwZ0Gg6tSkEb5RsDQzQ4h4usG9lAzGVxldoK5n8ZrAZsTQLCduRygAKUUmhDQg8WWyLZwMPtmESx4sAGkL0mH6xrMH+AHC2hvuljw03Na4h/iLBHBAY1wfUbsTFVcwoH28o2/KIIDuaQ0TTlvrwNu/TDe+7PDlKXZ6EZxTiN4kuRI3W0dk4u4yUf7bZfScqw6WAkrEf3m+y8AOcw7Qv6w5T1elDMhs7Nbq7e61gdmme60SQAvgfIhExiSSJeeb3SBukAy1D1aVBezL5XrYN9Csp1rrbNdykqsUehXkookl0EVGxlZHX5Q5rIBLhNHFlbRD6xBiUzlOeuZJQz4XqjI+BxjSSYe2pQWwRBZizV01DmsRWeJA1Qzv0Of2TwldE5hZRlVd+FkbuOmOksJLybIwtkmfWqg+7qz47asXpSiaN3lxikSVwwfC8oD+/sEnV+oh/qcxmU85mebepgLjDBD622Mg+oDrVquYVJm7IEu4XoXKTZ1dho3gnmdJhedEymn9ab3ysDPdc4M9WKp28xE5JbB+rzz/Trm3eK3LAu8/E7p2PNzYM/i3ChR7W7L7hsSIvR7L2Aal1EhqTp80vF95sw3WcG7r8A0XaeME=) pour comprendre comment rendre une liste de composants en utilisant `v-for`, et en passant des données différentes à chaque instance.
 
 </div>
 <div class="options-api">
@@ -335,7 +335,7 @@ Vue est capable de détecter quand une méthode de mutation d'un tableau réacti
 
 ### Remplacer un tableau {#replacing-an-array}
 
-Les méthodes de mutation, comme leur nom l'indique, vont entrainer des mutations du tableau sur lequel elles sont appelées. En comparaison, il existe également des méthodes non-mutantes, par exemple `filter()`, `concat()` et `slice()`, qui ne modifie pas le tableau original mais **retournent toujours un nouveau tableau**. Lorsqu'on travaille avec des méthodes non-mutantes, il faut remplacer l'ancien tableau par le nouveau :
+Les méthodes de mutation, comme leur nom l'indique, vont entrainer des mutations du tableau sur lequel elles sont appelées. En comparaison, il existe également des méthodes non-mutantes, par exemple `filter()`, `concat()` et `slice()`, qui ne modifient pas le tableau original mais **retournent toujours un nouveau tableau**. Lorsqu'on travaille avec des méthodes non-mutantes, il faut remplacer l'ancien tableau par le nouveau :
 
 <div class="composition-api">
 
