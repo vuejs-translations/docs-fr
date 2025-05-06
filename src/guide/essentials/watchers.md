@@ -224,10 +224,10 @@ watch(
 
 </div>
 
-À partir de la version 3.5, l'option `deep` peut aussi être un numbre indiquant la profondeur maximale à traverser, c'est-à-dire de combien de niveaux Vue traverse un objet avec des propriétés imbriquées.
+À partir de la version 3.5, l'option `deep` peut aussi être un nombre indiquant la profondeur maximale à traverser, c'est-à-dire de combien de niveaux Vue traverse un objet avec des propriétés imbriquées.
 
 :::warning À utiliser avec précaution
-Les observateurs profonds nécessitent de traverser toutes les propriétés imbriquées de l'objet observé, et peuvent être consommateur de ressources lorsqu'ils sont utilisés sur des structures importantes de données. Utilisez les seulement si nécessaire, en ayant conscience des implications en matière de performances.
+Les observateurs profonds nécessitent de traverser toutes les propriétés imbriquées de l'objet observé, et peuvent être consommateurs de ressources lorsqu'ils sont utilisés sur des structures importantes de données. Utilisez-les seulement si nécessaire, en ayant conscience des implications en matière de performances.
 :::
 
 ## Les observateurs impatients {#eager-watchers}
