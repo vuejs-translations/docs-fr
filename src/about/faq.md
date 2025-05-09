@@ -17,9 +17,10 @@ En général, Vue 3 offre des paquets plus petits, de meilleures performances, u
 - Vous devez prendre en charge IE11. Vue 3 exploite les fonctionnalités JavaScript modernes et ne prend pas en charge IE11.
 
 ## Est-ce que Vue 2 est toujours maintenu ? {#is-vue-2-still-supported}
+
 Si vous avez l'intention de migrer une application Vue 2 existante vers Vue 3, consultez le [guide de migration](https://v3-migration.vuejs.org/).
 
-Vue 2.7, qui a été publiée en juillet 2022, est la dernière version mineure de Vue 2. Vue 2 est maintenant entré en mode maintenance : de nouvelles fonctionnalités ne seront plus publiées, mais Vue 2 continuera à recevoir des corrections de bugs critiques et des mises à jour de sécurité pendant 18 mois à partir de la date de sortie de la version 2.7. Cela signifie que **Vue 2 atteindra sa fin de vie le 31 décembre 2023**.
+Vue 2.7, qui a été publiée en juillet 2022, est la dernière version mineure de Vue 2. Vue 2 est maintenant entré en mode maintenance : de nouvelles fonctionnalités ne seront plus publiées, mais Vue 2 continuera à recevoir des corrections de bugs critiques et des mises à jour de sécurité pendant 18 mois à partir de la date de sortie de la version 2.7. Cela signifie que **Vue 2 a atteint sa fin de vie le 31 décembre 2023**.
 
 Nous pensons que cela devrait laisser suffisamment de temps à la majeure partie de l'écosystème pour migrer vers Vue 3. Cependant, nous comprenons également que certaines équipes ou certains projets ne peuvent pas effectuer la mise à niveau dans ce délai tout en devant répondre aux exigences de sécurité et de conformité. Nous nous associons à des experts du secteur pour fournir un support étendu pour Vue 2 aux équipes ayant de tels besoins. Si votre équipe prévoit d'utiliser Vue 2 au-delà de la fin de l'année 2023, assurez-vous d'anticiper et d'en savoir plus sur [Vue 2 Extended LTS](https://v2.vuejs.org/lts/).
 
