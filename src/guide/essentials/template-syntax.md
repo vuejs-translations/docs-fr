@@ -133,8 +133,11 @@ Vous pouvez les lier à un seul élément en utilisant `v-bind` sans argument :
 Jusqu'à présent, nous n'avons lié que des clés de propriété simples dans nos templates. Mais Vue prend en charge toute la puissance des expressions JavaScript dans toutes les liaisons de données :
 
 ```html
-{{ number + 1 }} {{ ok ? 'YES' : 'NO' }} {{
-message.split('').reverse().join('') }}
+{{ number + 1 }}
+
+{{ ok ? 'YES' : 'NO' }}
+
+{{ message.split('').reverse().join('') }}
 
 <div :id="`list-${id}`"></div>
 ```
