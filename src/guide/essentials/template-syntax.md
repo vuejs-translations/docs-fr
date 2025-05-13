@@ -68,7 +68,7 @@ Les attributs commençant par `:` peuvent sembler un peu différents du HTML nor
 
 - Supporté à partir de la version 3.4
 
-Si l'attribut a le même nom que la valeur liée, la syntaxe peut être raccourcie pour omettre la valeur de l'attribut :
+Si l'attribut porte le même nom que le nom de la variable de la valeur JavaScript à lier, la syntaxe peut encore être raccourcie pour omettre la valeur de l'attribut :
 
 ```vue-html
 <!-- pareil que :id="id" -->
