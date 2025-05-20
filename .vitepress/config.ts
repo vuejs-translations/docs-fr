@@ -840,21 +840,21 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true
     },
-    plugins: [
-      llmstxt({
-        ignoreFiles: [
-          'about/team/**/*',
-          'about/team.md',
-          'about/privacy.md',
-          'about/coc.md',
-          'developers/**/*',
-          'ecosystem/themes.md',
-          'examples/**/*',
-          'partners/**/*',
-          'sponsor/**/*',
-          'index.md'
-        ],
-        customLLMsTxtTemplate: `\
+    // plugins: [
+    //   llmstxt({
+    //     ignoreFiles: [
+    //       'about/team/**/*',
+    //       'about/team.md',
+    //       'about/privacy.md',
+    //       'about/coc.md',
+    //       'developers/**/*',
+    //       'ecosystem/themes.md',
+    //       'examples/**/*',
+    //       'partners/**/*',
+    //       'sponsor/**/*',
+    //       'index.md'
+    //     ],
+        /**customLLMsTxtTemplate: `\
 # Vue.js
 
 Vue.js - Le Framework JavaScript Évolutif
@@ -863,6 +863,6 @@ Vue.js - Le Framework JavaScript Évolutif
 
 {toc}`
       }) as Plugin
-    ]
+    ]**/
   }
 })
