@@ -97,7 +97,7 @@ N'utilisez que rarement les propriétés globales, car cela peut rapidement deve
 
 ### Provide / Inject avec les plugins {#provide-inject-with-plugins}
 
-Les plugins nous permettent également d'utiliser `inject` pour fournir une fonction ou un attribut aux utilisateurs du plugin. Par exemple, nous pouvons permettre à l'application d'avoir accès au paramètre `options` pour pouvoir utiliser l'objet translations.
+Les plugins nous permettent également d'utiliser `provide` pour donner aux utilisateurs du plugin l'accès à une fonction ou à un attribut. Par exemple, nous pouvons permettre à l'application d'avoir accès au paramètre `options` pour pouvoir utiliser l'objet translations.
 
 ```js{10}
 // plugins/i18n.js
