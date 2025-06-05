@@ -11,7 +11,10 @@ Enregistre une fonction de rappel qui sera appelée après le montage du composa
 - **Type :**
 
   ```ts
-  function onMounted(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onMounted(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -53,7 +56,10 @@ Enregistre une fonction de rappel à appeler après que le composant ait mis à 
 - **Type :**
 
   ```ts
-  function onUpdated(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onUpdated(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -96,7 +102,10 @@ Enregistre une fonction de rappel qui sera appelée après le démontage du comp
 - **Type :**
 
   ```ts
-  function onUnmounted(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onUnmounted(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -135,7 +144,10 @@ Enregistre un hook qui sera appelé juste avant le montage du composant.
 - **Type :**
 
   ```ts
-  function onBeforeMount(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onBeforeMount(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -151,7 +163,10 @@ Enregistre un hook qui sera appelé juste avant que le composant ne soit sur le 
 - **Type :**
 
   ```ts
-  function onBeforeUpdate(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onBeforeUpdate(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -167,7 +182,10 @@ Enregistre un hook à appeler juste avant le démontage d'une instance de compos
 - **Type :**
 
   ```ts
-  function onBeforeUnmount(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onBeforeUnmount(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Détails**
@@ -209,8 +227,8 @@ Enregistre un hook qui sera appelé lorsqu'une erreur venant d'un composant desc
   :::tip
   En production, le troisième argument (`info`) sera un code raccourci plutôt que toute la chaîne d'information. Vous pouvez trouver le code correspondant dans la [Référence des erreurs en production](/error-reference/#runtime-errors).
   :::
-  
-  Vous pouvez modifier l'état du composant dans `errorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important de ne pas rendre le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
+
+  Vous pouvez modifier l'état du composant dans `onErrorCaptured()` pour afficher un état d'erreur à l'utilisateur. Cependant, il est important de ne pas rendre le contenu original à l'origine de l'erreur, sinon le composant sera bloqué dans une boucle de rendu infinie.
 
   Le hook peut retourner `false` pour empêcher la propagation de l'erreur. Consultez les détails sur la propagation des erreurs ci-dessous.
 
@@ -282,7 +300,10 @@ Enregistre une fonction de rappel qui sera appelée après que l'instance du com
 - **Type :**
 
   ```ts
-  function onActivated(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onActivated(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
@@ -296,7 +317,10 @@ Enregistre une fonction de rappel à appeler après que l'instance du composant 
 - **Type :**
 
   ```ts
-  function onDeactivated(callback: () => void, target?: ComponentInternalInstance | null): void
+  function onDeactivated(
+    callback: () => void,
+    target?: ComponentInternalInstance | null
+  ): void
   ```
 
 - **Voir aussi** [Guide - Cycle de vie d'une instance mise en cache](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
