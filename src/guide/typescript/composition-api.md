@@ -1,5 +1,9 @@
 # TypeScript avec la Composition API {#typescript-with-composition-api}
 
+<ScrimbaLink href="https://scrimba.com/links/vue-ts-composition-api" title="Leçon gratuite de TypeScript Vue.js avec la Composition API"  type="scrimba">
+  Voir une leçon vidéo interactive sur Scrimba
+</ScrimbaLink>
+
 > Cette page part du principe que vous avez déjà pris connaissance de comment [utiliser Vue avec TypeScript](./overview).
 
 ## Typer les props des composants {#typing-component-props}
@@ -467,7 +471,8 @@ import { useTemplateRef } from 'vue'
 import MyGenericModal from './MyGenericModal.vue'
 import type { ComponentExposed } from 'vue-component-type-helpers'
 
-const modal = useTemplateRef<ComponentExposed<typeof MyGenericModal>>('modal')
+const modal =
+  useTemplateRef<ComponentExposed<typeof MyGenericModal>>('modal')
 
 const openModal = () => {
   modal.value?.open('newValue')
