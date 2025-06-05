@@ -1,5 +1,9 @@
 # Principes fondamentaux des composants {#components-basics}
 
+<ScrimbaLink href="https://scrimba.com/links/vue-component-basics" title="Leçon gratuite sur les composants Vue.js" type="scrimba">
+  Voir une leçon vidéo interactive sur Scrimba
+</ScrimbaLink>
+
 Les composants nous permettent de fractionner l'UI en morceaux indépendants et réutilisables, sur lesquels nous pouvons réfléchir de manière isolée. Il est courant pour une application d'être organisée en un arbre de composants imbriqués.
 
 ![Component Tree](./images/components.png)

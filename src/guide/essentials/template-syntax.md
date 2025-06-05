@@ -1,5 +1,9 @@
 # Syntaxe de template {#template-syntax}
 
+<ScrimbaLink href="https://scrimba.com/links/vue-template-syntax" title="Leçon gratuite sur la syntaxe des templates Vue.js" type="scrimba">
+  Voir une leçon vidéo interactive sur Scrimba
+</ScrimbaLink>
+
 Vue utilise une syntaxe de template basée sur HTML pour permettre de lier de manière déclarative le DOM rendu aux données de l'instance du composant sous-jacent. Tous les templates Vue sont du HTML syntaxiquement valide qui peut être analysé par des navigateurs et des analyseurs HTML conformes aux spécifications.
 
 Sous le capot, Vue compile les templates en code JavaScript hautement optimisé. Combiné avec le système de réactivité, Vue est capable de déterminer intelligemment le nombre minimal de composants à restituer et d'appliquer la quantité minimale de manipulations DOM lorsque l'état de l'application change.
@@ -133,11 +137,8 @@ Vous pouvez les lier à un seul élément en utilisant `v-bind` sans argument :
 Jusqu'à présent, nous n'avons lié que des clés de propriété simples dans nos templates. Mais Vue prend en charge toute la puissance des expressions JavaScript dans toutes les liaisons de données :
 
 ```html
-{{ number + 1 }}
-
-{{ ok ? 'YES' : 'NO' }}
-
-{{ message.split('').reverse().join('') }}
+{{ number + 1 }} {{ ok ? 'YES' : 'NO' }} {{
+message.split('').reverse().join('') }}
 
 <div :id="`list-${id}`"></div>
 ```
