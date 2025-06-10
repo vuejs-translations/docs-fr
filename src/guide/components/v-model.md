@@ -1,5 +1,9 @@
 # v-model du composant {#component-v-model}
 
+<ScrimbaLink href="https://scrimba.com/links/vue-component-v-model" title="Leçon Vue.js gratuite sur le composant v-model" type="scrimba">
+  Voir une leçon vidéo interactive sur Scrimba
+</ScrimbaLink>
+
 ## Utilisation de base {#basic-usage}
 
 `v-model` peut être utilisé sur un composant pour implémenter une liaison à double sens.
