@@ -263,7 +263,13 @@ Désormais lorsque vous allez exécuter `fullName.value = 'John Doe'`, le mutate
 
 - Supporté à partir de la version 3.4
 
+<p class="options-api">
 Si vous en avez besoin, vous pouvez obtenir la valeur précédente renvoyée par la propriété calculée en accédant au premier argument du getter :
+</p>
+
+<p class="composition-api">
+Si vous en avez besoin, vous pouvez obtenir la valeur précédente renvoyée par la propriété calculée en accédant au premier argument du getter :
+</p>
 
 <div class="options-api">
 
@@ -325,7 +331,7 @@ export default {
   },
   computed: {
     alwaysSmall: {
-      get(previous) {
+      get(_, previous) {
         if (this.count <= 3) {
           return this.count
         }
