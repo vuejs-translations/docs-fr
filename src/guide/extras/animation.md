@@ -160,6 +160,8 @@ const tweened = reactive({
   number: 0
 })
 
+// Note: Pour les entrées plus supérieures que Number.MAX_SAFE_INTEGER (9007199254740991),
+// le résultat peut être incohérent en raison des limitations sur la précision des nombres en JavaScript.
 watch(number, (n) => {
   gsap.to(tweened, { duration: 0.5, number: Number(n) || 0 })
 })
@@ -183,6 +185,8 @@ export default {
       tweened: 0
     }
   },
+  // Note: Pour les entrées plus supérieures que Number.MAX_SAFE_INTEGER (9007199254740991),
+  // le résultat peut être incohérent en raison des limitations sur la précision des nombres en JavaScript.
   watch: {
     number(n) {
       gsap.to(this, { duration: 0.5, tweened: Number(n) || 0 })
