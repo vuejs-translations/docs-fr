@@ -40,8 +40,7 @@ Afin de mieux comprendre comment créer vos propres plugins Vue.js, nous allons 
 
 Commençons par configurer l'objet plugin. Il est recommandé de le créer dans un fichier séparé et de l'exporter, comme montré ci-dessous, afin que la logique reste contenue et séparée.
 
-```js
-// plugins/i18n.js
+```js [plugins/i18n.js]
 export default {
   install: (app, options) => {
     // Le code du plugin s'écrit ici
@@ -57,8 +56,7 @@ Nous voulons créer une fonction de traduction. Cette fonction recevra une chaî
 
 Puisque cette fonction devrait être disponible globalement dans tous les templates, nous allons nous en assurer en l'attachant à `app.config.globalProperties` dans notre plugin :
 
-```js{4-11}
-// plugins/i18n.js
+```js{4-11} [plugins/i18n.js]
 export default {
   install: (app, options) => {
     // injecte une méthode globalement disponible $translate()
@@ -99,8 +97,7 @@ N'utilisez que rarement les propriétés globales, car cela peut rapidement deve
 
 Les plugins nous permettent également d'utiliser `provide` pour donner aux utilisateurs du plugin l'accès à une fonction ou à un attribut. Par exemple, nous pouvons permettre à l'application d'avoir accès au paramètre `options` pour pouvoir utiliser l'objet translations.
 
-```js{10}
-// plugins/i18n.js
+```js{10} [plugins/i18n.js]
 export default {
   install: (app, options) => {
     app.provide('i18n', options)

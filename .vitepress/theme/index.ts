@@ -13,6 +13,8 @@ import VueSchoolLink from './components/VueSchoolLink.vue'
 import ScrimbaLink from './components/ScrimbaLink.vue'
 // import Banner from './components/Banner.vue'
 // import TextAd from './components/TextAd.vue'
+import 'vitepress/dist/client/theme-default/styles/components/vp-code-group.css'
+import 'virtual:group-icons.css'
 
 export default Object.assign({}, VPTheme, {
   Layout: () => {

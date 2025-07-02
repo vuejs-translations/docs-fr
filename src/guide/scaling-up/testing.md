@@ -61,8 +61,7 @@ En général, les tests unitaires vont détecter des problèmes concernant la lo
 
 Prenons par exemple cette fonction `increment` :
 
-```js
-// helpers.js
+```js [helpers.js]
 export function increment(current, max = 10) {
   if (current < max) {
     return current + 1
@@ -75,8 +74,7 @@ Comme cette fonction est très autonome, il sera facile de l'appeler et de véri
 
 Si l'une de ces assertions échoue, il est clair que le problème est contenu dans la fonction `increment`.
 
-```js{4-16}
-// helpers.spec.js
+```js{4-16} [helpers.spec.js]
 import { increment } from './helpers'
 
 describe('increment', () => {
@@ -149,10 +147,9 @@ Les tests de composant doivent se concentrer sur les interfaces publiques du com
 
   Nous ne savons rien de l'implémentation de Stepper, seulement que l'"entrée" est la prop `max` et que la "sortie" est l'état du DOM tel que l'utilisateur le verra.
 
-<VTCodeGroup>
-  <VTCodeGroupTab label="Vue Test Utils">
+::: code-group
 
-```js
+```js [Vue Test Utils]
 const valueSelector = '[data-testid=stepper-value]'
 const buttonSelector = '[data-testid=increment]'
 
@@ -169,10 +166,7 @@ await wrapper.find(buttonSelector).trigger('click')
 expect(wrapper.find(valueSelector).text()).toContain('1')
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="Cypress">
-
-```js
+```js [Cypress]
 const valueSelector = '[data-testid=stepper-value]'
 const buttonSelector = '[data-testid=increment]'
 
@@ -191,10 +185,7 @@ cy.get(valueSelector)
   .should('contain.text', '1')
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="Testing Library">
-
-```js
+```js [Testing Library]
 const { getByText } = render(Stepper, {
   props: {
     max: 1
@@ -213,8 +204,7 @@ getByText('1')
 await fireEvent.click(button)
 ```
 
-  </VTCodeGroupTab>
-</VTCodeGroup>
+:::
 
 **NE FAITES PAS**
 
@@ -318,8 +308,7 @@ Dans un projet Vue basé sur Vite, lancez :
 
 Ensuite, modifiez la configuration Vite pour ajouter le bloc d'option `test` :
 
-```js{6-12}
-// vite.config.js
+```js{6-12} [vite.config.js]
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -337,7 +326,7 @@ export default defineConfig({
 :::tip
 Si vous utilisez TypeScript, ajoutez, add `vitest/globals` dans le champ `types` de votre `tsconfig.json`.
 
-```json
+```json [tsconfig.json]
 {
   "compilerOptions": {
     "types": ["vitest/globals"]
@@ -349,8 +338,7 @@ Si vous utilisez TypeScript, ajoutez, add `vitest/globals` dans le champ `types`
 
 Créez ensuite un fichier se terminant par `*.test.js` dans votre projet. Vous pouvez placer tous les fichiers de test dans un répertoire de test à la racine du projet ou dans des répertoires de test à côté de vos fichiers sources. Vitest les recherchera automatiquement à l'aide de la convention de nommage.
 
-```js
-// MyComponent.test.js
+```js [MyComponent.test.js]
 import { render } from '@testing-library/vue'
 import MyComponent from './MyComponent.vue'
 
@@ -368,7 +356,7 @@ test('it should work', () => {
 
 Enfin, mettez à jour `package.json` pour ajouter le script de test et lancez-le :
 
-```json{4}
+```json{4} [package.json]
 {
   // ...
   "scripts": {
@@ -394,8 +382,7 @@ Un composable dépend d'une instance de composant hôte quand il utilise une des
 
 Si un composable utilise uniquement les API de réactivité, alors il peut être testé directement en l'invoquant et en vérifiant l'état et les méthodes qu'il retourne :
 
-```js
-// counter.js
+```js [counter.js]
 import { ref } from 'vue'
 
 export function useCounter() {
@@ -409,8 +396,7 @@ export function useCounter() {
 }
 ```
 
-```js
-// counter.test.js
+```js [counter.test.js]
 import { useCounter } from './counter.js'
 
 test('useCounter', () => {
@@ -424,8 +410,7 @@ test('useCounter', () => {
 
 Un composable qui s'appuie sur des hooks de cycle de vie ou Provide / Inject doit être contenu dans un composant enveloppe pour être testé. Nous pouvons créer une fonction utilitaire comme ci-dessous :
 
-```js
-// test-utils.js
+```js [test-utils.js]
 import { createApp } from 'vue'
 
 export function withSetup(composable) {

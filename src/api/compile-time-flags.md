@@ -40,8 +40,7 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 `@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez [l'option de configuration `define`](https://vitejs.dev/config/shared-options.html#define) de Vite :
 
-```js
-// vite.config.js
+```js [vite.config.js]
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -56,8 +55,7 @@ export default defineConfig({
 
 `@vue/cli-service` fournit automatiquement des valeurs par défaut pour certains de ces indicateurs. Pour configurer / modifier les valeurs :
 
-```js
-// vue.config.js
+```js [vue.config.js]
 module.exports = {
   chainWebpack: (config) => {
     config.plugin('define').tap((definitions) => {
@@ -76,8 +74,7 @@ module.exports = {
 
 Les indicateurs doivent être définis à l'aide de la fonction [DefinePlugin](https://webpack.js.org/plugins/define-plugin/) de webpack :
 
-```js
-// webpack.config.js
+```js [webpack.config.js]
 module.exports = {
   // ...
   plugins: [
@@ -94,8 +91,7 @@ module.exports = {
 
 Les indicateurs doivent être définis à l'aide de [@rollup/plugin-replace](https://github.com/rollup/plugins/tree/master/packages/replace) :
 
-```js
-// rollup.config.js
+```js [rollup.config.js]
 import replace from '@rollup/plugin-replace'
 
 export default {

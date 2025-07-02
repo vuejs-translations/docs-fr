@@ -24,8 +24,7 @@ app.config.compilerOptions.isCustomElement = (tag) => tag.includes('-')
 
 #### Exemple pour une config Vite {#example-vite-config}
 
-```js
-// vite.config.js
+```js [vite.config.js]
 import vue from '@vitejs/plugin-vue'
 
 export default {
