@@ -6,6 +6,7 @@ import llmstxt from 'vitepress-plugin-llms'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 // import { textAdPlugin } from './textAdMdPlugin'
+import { groupIconMdPlugin,groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -811,6 +812,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     theme: 'github-dark',
     config(md) {
       md.use(headerPlugin)
+        .use(groupIconMdPlugin)
       // .use(textAdPlugin)
     }
   },
@@ -840,21 +842,21 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true
     },
-    // plugins: [
-    //   llmstxt({
-    //     ignoreFiles: [
-    //       'about/team/**/*',
-    //       'about/team.md',
-    //       'about/privacy.md',
-    //       'about/coc.md',
-    //       'developers/**/*',
-    //       'ecosystem/themes.md',
-    //       'examples/**/*',
-    //       'partners/**/*',
-    //       'sponsor/**/*',
-    //       'index.md'
-    //     ],
-        /**customLLMsTxtTemplate: `\
+    plugins: [
+      llmstxt({
+        ignoreFiles: [
+          'about/team/**/*',
+          'about/team.md',
+          'about/privacy.md',
+          'about/coc.md',
+          'developers/**/*',
+          'ecosystem/themes.md',
+          'examples/**/*',
+          'partners/**/*',
+          'sponsor/**/*',
+          'index.md'
+        ],
+        customLLMsTxtTemplate: `\
 # Vue.js
 
 Vue.js - Le Framework JavaScript Évolutif
@@ -862,7 +864,13 @@ Vue.js - Le Framework JavaScript Évolutif
 ## Table des matières
 
 {toc}`
+      }) as Plugin,
+      groupIconVitePlugin({
+        customIcon: {
+          cypress: 'vscode-icons:file-type-cypress',
+          'testing library': 'logos:testing-library'
+        }
       }) as Plugin
-    ]**/
+    ]
   }
 })
