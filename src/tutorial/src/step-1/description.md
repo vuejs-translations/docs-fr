@@ -32,8 +32,7 @@ import { ... } from 'vue/dist/vue.esm-bundler.js'
 
 dans vos scripts ou configurez votre outil de build pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vitejs.dev/):
 
-```js
-// vite.config.js
+```js [vite.config.js]
 export default {
   resolve: {
     alias: {
@@ -59,8 +58,7 @@ import { ... } from 'vue/dist/vue.esm-bundler.js'
 
 inside your scripts or configure your build tool to resolve `vue` accordingly. Sample config for [Vite](https://vitejs.dev/):
 
-```js
-// vite.config.js
+```js [vite.config.js]
 export default {
   resolve: {
     alias: {

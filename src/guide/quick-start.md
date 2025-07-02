@@ -30,25 +30,18 @@ Dans cette section, nous allons vous présenter comment créer une [Single Page 
 
 Assurez-vous d'avoir une version à jour de [Node.js](https://nodejs.org/) d'installée et que votre répertoire de travail courant est bien celui où vous souhaitez créer un projet. Exécutez la commande suivante dans votre invite de commandes (sans le symbole `$`) :
 
-<VTCodeGroup>
-  <VTCodeGroupTab label="npm">
+::: code-group
 
-```sh
+```sh [npm]
 $ npm create vue@latest
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="pnpm">
-
-```sh
+```sh [pnpm]
 $ pnpm create vue@latest
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="yarn">
-
-```sh
-# For Yarn (v1+)
+```sh [yarn]
+# Avec Yarn (v1+)
 $ yarn create vue
 
 # Avec Yarn Moderne (v2+)
@@ -58,15 +51,10 @@ $ yarn create vue@latest
 $ yarn dlx create-vue@latest
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="bun">
-
-```sh
+```sh [bun]
 $ bun create vue@latest
 ```
-
-  </VTCodeGroupTab>
-</VTCodeGroup>
+:::
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel de création de projets Vue. Des questions (en anglais) vous seront posées pour un certain nombre de fonctionnalités optionnelles telles que la prise en charge de TypeScript et des tests :
 
@@ -86,44 +74,34 @@ Cette commande installera et exécutera [create-vue](https://github.com/vuejs/cr
 
 Si vous n'êtes pas sûr d'une option, choisissez simplement `No` en appuyant sur entrée pour le moment. Une fois le projet créé, suivez les instructions pour installer les dépendances et démarrer le serveur de développement :
 
-<VTCodeGroup>
-  <VTCodeGroupTab label="npm">
+::: code-group
 
-```sh-vue
+```sh-vue [npm]
 $ cd {{'<votre-nouveau-projet>'}}
 $ npm install
 $ npm run dev
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="pnpm">
-
-```sh-vue
+```sh-vue [pnpm]
 $ cd {{'<votre-nouveau-projet>'}}
 $ pnpm install
 $ pnpm run dev
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="yarn">
-
-```sh-vue
+```sh-vue [yarn]
 $ cd {{'<votre-nouveau-projet>'}}
 $ yarn
 $ yarn dev
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="bun">
-
-```sh-vue
+```sh-vue [bun]
 $ cd {{'<votre-nouveau-projet>'}}
 $ bun install
 $ bun run dev
 ```
 
-  </VTCodeGroupTab>
-</VTCodeGroup>
+:::
+
 
 Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! Notez que les composants d'exemple dans le projet généré sont écrits avec la [Composition API](/guide/introduction#composition-api) et `<script setup>`, plutôt que l'[Options API](/guide/introduction#options-api). Voici quelques conseils supplémentaires :
 
@@ -134,36 +112,25 @@ Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! N
 
 Dès que vous êtes prêts à livrer votre application en production, exécutez la commande suivante :
 
-<VTCodeGroup>
-  <VTCodeGroupTab label="npm">
+::: code-group
 
-```sh
+```sh [npm]
 $ npm run build
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="pnpm">
-
-```sh
+```sh [pnpm]
 $ pnpm run build
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="yarn">
-
-```sh
+```sh [yarn]
 $ yarn build
 ```
 
-  </VTCodeGroupTab>
-  <VTCodeGroupTab label="bun">
-
-```sh
+```sh [bun]
 $ bun run build
 ```
 
-  </VTCodeGroupTab>
-</VTCodeGroup>
+:::
 
 Cela créera une version de votre application prête pour la production dans le répertoire `./dist` du projet. Consultez le [Guide du déploiement en production](/guide/best-practices/production-deployment) pour en savoir plus sur l'envoi de votre application en production.
 
@@ -386,8 +353,7 @@ Bien qu'il soit possible d'utiliser Vue sans outil de build, une alternative à 
 
 Au fur et à mesure que nous progressons dans le guide, il se peut que nous devions diviser notre code en plusieurs fichiers JavaScript distincts afin d'en faciliter la gestion. Par exemple :
 
-```html
-<!-- index.html -->
+```html [index.html]
 <div id="app"></div>
 
 <script type="module">
@@ -400,8 +366,7 @@ Au fur et à mesure que nous progressons dans le guide, il se peut que nous devi
 
 <div class="options-api">
 
-```js
-// my-component.js
+```js [my-component.js]
 export default {
   data() {
     return { count: 0 }
@@ -413,8 +378,7 @@ export default {
 </div>
 <div class="composition-api">
 
-```js
-// my-component.js
+```js [my-component.js]
 import { ref } from 'vue'
 export default {
   setup() {

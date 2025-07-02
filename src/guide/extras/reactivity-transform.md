@@ -293,8 +293,7 @@ Ce qui suit ne s'applique qu'aux versions 3.3 et inférieures de Vue. La prise e
 - S'applique aux SFC et aux fichiers js(x)/ts(x). Une vérification rapide de l'utilisation est effectuée sur les fichiers avant d'appliquer la transformation, il ne devrait donc pas y avoir de perte de performance pour les fichiers n'utilisant pas les macros.
 - Notez que `reactivityTransform` est désormais une option au niveau de la racine du plugin au lieu d'être imbriquée comme `script.refSugar`, puisqu'elle n'affecte pas seulement les SFC.
 
-```js
-// vite.config.js
+```js [vite.config.js]
 export default {
   plugins: [
     vue({
@@ -309,8 +308,7 @@ export default {
 - N'affecte actuellement que les SFC
 - Nécessite `vue-loader@>=17.0.0`.
 
-```js
-// vue.config.js
+```js [vue.config.js]
 module.exports = {
   chainWebpack: (config) => {
     config.module
@@ -331,8 +329,7 @@ module.exports = {
 - N'affecte actuellement que les SFC
 - Nécessite `vue-loader@>=17.0.0`.
 
-```js
-// webpack.config.js
+```js [webpack.config.js]
 module.exports = {
   module: {
     rules: [
