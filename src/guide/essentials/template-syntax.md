@@ -82,7 +82,7 @@ Si l'attribut porte le même nom que le nom de la variable de la valeur JavaScri
 <div v-bind:id></div>
 ```
 
-C'est similaire au raccourci pour déclarer un objet en JavaScript. Notez que cette fonctionnalité n'est disponible pour la version Vue 3.4 et plus.
+C'est similaire au raccourci pour déclarer un objet en JavaScript. Notez que cette fonctionnalité n'est disponible que pour les versions 3.4 et suivantes de Vue.
 
 ### Attributs booléens {#boolean-attributes}
 
