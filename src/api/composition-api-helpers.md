@@ -132,3 +132,7 @@ Utilisé pour générer des identifiants uniques par application pour les attrib
   Les identifiants générés par `useId()` sont également garantis stables entre les rendus du serveur et du client, de sorte qu'ils peuvent être utilisés dans des applications SSR sans entraîner de disparités d'hydratation.
 
   Si vous avez plus d'une instance d'application Vue sur la même page, vous pouvez éviter les conflits d'ID en donnant à chaque application un préfixe d'ID via [`app.config.idPrefix`](/api/application#app-config-idprefix).
+
+  :::warning Caution
+  `useId()` ne doit pas être appelé à l'intérieur d'une propriété `computed()` car elle peut causer des conflits d'instance. A la place, il faut déclarer l'ID en dehors de `computed()` et le référencer dans la fonction calculée.
+  :::
