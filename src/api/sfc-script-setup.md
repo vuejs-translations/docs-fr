@@ -298,16 +298,20 @@ function inc() {
 :::warning
 Si vous avez une valeur `default` pour la propriété `defineModel` et que vous ne fournissez aucune valeur pour cette propriété à partir du composant parent, cela peut provoquer une désynchronisation entre les composants parent et enfant. Dans l'exemple ci-dessous, le composant parent `myRef` est undefined, mais le composant enfant `model` vaut 1 :
 
-```js
-// composant enfant :
+```vue [Child.vue]
+<script setup>
 const model = defineModel({ default: 1 })
-
-// composant parent :
-const myRef = ref()
+</script>
 ```
 
-```html
-<Child v-model="myRef"></Child>
+```vue [Parent.vue]
+<script setup>
+const myRef = ref()
+</script>
+
+<template>
+  <Child v-model="myRef"></Child>
+</template>
 ```
 
 :::

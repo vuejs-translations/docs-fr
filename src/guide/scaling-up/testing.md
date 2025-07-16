@@ -74,7 +74,7 @@ Comme cette fonction est très autonome, il sera facile de l'appeler et de véri
 
 Si l'une de ces assertions échoue, il est clair que le problème est contenu dans la fonction `increment`.
 
-```js{4-16} [helpers.spec.js]
+```js{3-15} [helpers.spec.js]
 import { increment } from './helpers'
 
 describe('increment', () => {
@@ -429,7 +429,7 @@ export function withSetup(composable) {
 }
 ```
 
-```js
+```js [foo.test.js]
 import { withSetup } from './test-utils'
 import { useFoo } from './foo'
 
