@@ -469,8 +469,7 @@ Voici une démo utilisant la [bibliothèque GSAP](https://gsap.com/) pour réali
 
 Les transitions peuvent être réutilisées via le système de composants de Vue. Pour créer une transition réutilisable, nous pouvons créer un composant qui encapsule le composant `<Transition>` et transmet le contenu de l'emplacement :
 
-```vue{5}
-<!-- MyTransition.vue -->
+```vue{6} [MyTransition.vue]
 <script>
 // Logique du hook JavaScript...
 </script>

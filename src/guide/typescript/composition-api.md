@@ -418,8 +418,7 @@ Dans les cas où l'auto-inférence n'est pas possible (par exemple, utilisation 
 
 Pour obtenir le type d'instance d'un composant importé, nous devons d'abord obtenir son type via `typeof`, puis utiliser l'utilitaire intégré `InstanceType` de TypeScript pour extraire son type d'instance :
 
-```vue{5}
-<!-- App.vue -->
+```vue{6,7} [App.vue]
 <script setup lang="ts">
 import { useTemplateRef } from 'vue'
 import Foo from './Foo.vue'
@@ -447,8 +446,7 @@ const child = useTemplateRef<ComponentPublicInstance>('child')
 
 Dans le cas où le composant référencé est un [composant générique](/guide/typescript/overview.html#generic-components), par exemple `MyGenericModal` :
 
-```vue
-<!-- MyGenericModal.vue -->
+```vue [MyGenericModal.vue]
 <script setup lang="ts" generic="ContentType extends string | number">
 import { ref } from 'vue'
 
@@ -464,8 +462,7 @@ defineExpose({
 
 Il doit être référencé en utilisant `ComponentExposed` de la bibliothèque [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) car `InstanceType` ne fonctionnera pas.
 
-```vue
-<!-- App.vue -->
+```vue [App.vue]
 <script setup lang="ts">
 import { useTemplateRef } from 'vue'
 import MyGenericModal from './MyGenericModal.vue'

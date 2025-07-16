@@ -297,7 +297,7 @@ provide('read-only-count', readonly(count))
 
 Afin de rendre les injections liées de manière réactive au fournisseur, nous devons fournir une propriété calculée à l'aide de la fonction [computed()](/api/reactivity-core#computed) :
 
-```js{10}
+```js{12}
 import { computed } from 'vue'
 
 export default {
@@ -327,8 +327,7 @@ Jusqu'à présent, nous avons utilisé dans les exemples des clés d'injection q
 
 Il est recommandé d'exporter les Symbols dans un fichier dédié :
 
-```js
-// keys.js
+```js [keys.js]
 export const myInjectionKey = Symbol()
 ```
 

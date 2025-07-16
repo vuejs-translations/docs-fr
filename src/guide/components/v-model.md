@@ -12,8 +12,7 @@
 
 À partir de Vue 3.4, l'approche recommandée consiste à utiliser la macro [`defineModel()`](/api/sfc-script-setup#definemodel) :
 
-```vue
-<!-- Child.vue -->
+```vue [Child.vue]
 <script setup>
 const model = defineModel()
 
@@ -30,8 +29,7 @@ function update() {
 
 Le parent peut alors lier une valeur avec `v-model` :
 
-```vue-html
-<!-- Parent.vue -->
+```vue-html [Parent.vue]
 <Child v-model="countModel" />
 ```
 
@@ -63,8 +61,7 @@ const model = defineModel()
 
 C'est ainsi que l'on mettrait en œuvre le même composant enfant que celui présenté ci-dessus avant la version 3.4 :
 
-```vue
-<!-- Child.vue -->
+```vue [Child.vue]
 <script setup>
 const props = defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
@@ -80,8 +77,7 @@ const emit = defineEmits(['update:modelValue'])
 
 Ensuite, `v-model="foo"` dans le composant parent sera compilé en :
 
-```vue-html
-<!-- Parent.vue -->
+```vue-html [Parent.vue]
 <Child
   :modelValue="foo"
   @update:modelValue="$event => (foo = $event)"
@@ -103,20 +99,20 @@ const model = defineModel({ default: 0 })
 :::warning
 Si vous avez une valeur `default` pour la propriété `defineModel` et que vous ne fournissez aucune valeur pour cette propriété à partir du composant parent, cela peut provoquer une désynchronisation entre les composants parent et enfant. Dans l'exemple ci-dessous, le composant parent `myRef` est undefined, mais le composant enfant `model` vaut 1 :
 
-**Composant enfant :**
-
-```js
+```vue [Child.vue]
+<script setup>
 const model = defineModel({ default: 1 })
+</script>
 ```
 
-**Composant parent :**
-
-```
+```vue [Parent.vue]
+<script setup>
 const myRef = ref()
-```
+</script>
 
-```html
-<Child v-model="myRef"></Child>
+<template>
+  <Child v-model="myRef"></Child>
+</template>
 ```
 
 :::
@@ -156,8 +152,7 @@ Toutefois, pour que cela fonctionne, le composant `<CustomInput>` doit faire deu
 
 Voici cela en action :
 
-```vue
-<!-- CustomInput.vue -->
+```vue [CustomInput.vue]
 <script>
 export default {
   props: ['modelValue'],
@@ -183,8 +178,7 @@ Maintenant, `v-model` devrait fonctionner parfaitement avec ce composant :
 
 Une autre façon d'implémenter `v-model` dans ce composant consiste à utiliser une propriété `calculée` en écriture avec à la fois un accesseur et un mutateur. La méthode `get` doit renvoyer la propriété `modelValue` et la méthode `set` doit émettre l'événement correspondant :
 
-```vue
-<!-- CustomInput.vue -->
+```vue [CustomInput.vue]
 <script>
 export default {
   props: ['modelValue'],
@@ -221,8 +215,7 @@ export default {
 
 Dans le composant enfant, nous pouvons prendre en charge l'argument correspondant en passant une chaîne à `defineModel()` comme premier argument :
 
-```vue
-<!-- MyComponent.vue -->
+```vue [MyComponent.vue]
 <script setup>
 const title = defineModel('title')
 </script>
@@ -243,8 +236,7 @@ const title = defineModel('title', { required: true })
 <details>
 <summary>Utilisation avant la 3.4</summary>
 
-```vue
-<!-- MyComponent.vue -->
+```vue [MyComponent.vue]
 <script setup>
 defineProps({
   title: {
@@ -271,8 +263,7 @@ defineEmits(['update:title'])
 
 Dans ce cas, au lieu de la prop `modelValue` et de l'événement `update:modelValue` par défaut, le composant enfant doit s'attendre à une prop `title` et émettre un événement `update:title` pour mettre à jour la valeur du parent :
 
-```vue
-<!-- MyComponent.vue -->
+```vue [MyComponent.vue]
 <script>
 export default {
   props: ['title'],
@@ -412,7 +403,7 @@ console.log(modifiers) // { capitalize: true }
 
 Pour ajuster conditionnellement la façon dont la valeur doit être lue / écrite en fonction des modificateurs, nous pouvons passer les options `get` et `set` à `defineModel()`. Ces deux options reçoivent la valeur sur get / set du modèle ref et doivent retourner une valeur transformée. C'est ainsi que nous pouvons utiliser l'option `set` pour implémenter le modificateur `capitalize` :
 
-```vue{6-8}
+```vue{4-6}
 <script setup>
 const [model, modifiers] = defineModel({
   set(value) {
@@ -577,10 +568,10 @@ console.log(lastNameModifiers) // { uppercase: true }
 ```vue{5,6,10,11}
 <script setup>
 const props = defineProps({
-firstName: String,
-lastName: String,
-firstNameModifiers: { default: () => ({}) },
-lastNameModifiers: { default: () => ({}) }
+  firstName: String,
+  lastName: String,
+  firstNameModifiers: { default: () => ({}) },
+  lastNameModifiers: { default: () => ({}) }
 })
 defineEmits(['update:firstName', 'update:lastName'])
 

@@ -188,8 +188,7 @@ Les props sont des attributs personnalisés que l'on peut enregistrer sur un com
 
 <div class="options-api">
 
-```vue
-<!-- BlogPost.vue -->
+```vue [BlogPost.vue]
 <script>
 export default {
   props: ['title']
@@ -206,8 +205,7 @@ Lorsqu'une valeur est passée à un attribut prop, il devient une propriété de
 </div>
 <div class="composition-api">
 
-```vue
-<!-- BlogPost.vue -->
+```vue [BlogPost.vue]
 <script setup>
 defineProps(['title'])
 </script>
@@ -352,8 +350,7 @@ Qui pourra être utilisée dans le template afin de contrôler la taille de poli
 
 Maintenant ajoutons un bouton dans le template du composant `<BlogPost>` :
 
-```vue{5}
-<!-- BlogPost.vue, omitting <script> -->
+```vue{5} [BlogPost.vue]
 <template>
   <div class="blog-post">
     <h4>{{ title }}</h4>
@@ -373,8 +370,7 @@ Pour le moment le bouton ne fait rien - nous voulons que le clique communique au
 
 Ensuite le composant enfant peut émettre lui-même un événement en appelant la méthode intégrée [**`$emit`**](/api/component-instance#emit), et en lui passant le nom de l'événement :
 
-```vue{5}
-<!-- BlogPost.vue, en omettant <script> -->
+```vue{5} [BlogPost.vue]
 <template>
   <div class="blog-post">
     <h4>{{ title }}</h4>
@@ -400,8 +396,7 @@ Nous pouvons, de manière facultative, déclarer les événements émis en utili
 
 <div class="options-api">
 
-```vue{5}
-<!-- BlogPost.vue -->
+```vue{5} [BlogPost.vue]
 <script>
 export default {
   props: ['title'],
@@ -413,8 +408,7 @@ export default {
 </div>
 <div class="composition-api">
 
-```vue{4}
-<!-- BlogPost.vue -->
+```vue{4} [BlogPost.vue]
 <script setup>
 defineProps(['title'])
 defineEmits(['enlarge-text'])
@@ -472,8 +466,7 @@ Quelque chose de grave s'est produit.
 
 Cela peut être réalisé en utilisant l'élément personnalisé de Vue `<slot>` :
 
-```vue{5}
-<!-- AlertBox.vue -->
+```vue{5} [AlertBox.vue]
 <template>
   <div class="alert-box">
     <strong>Il s'agit d'une Erreur à des fins de Démonstration</strong>

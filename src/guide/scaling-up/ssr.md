@@ -156,8 +156,8 @@ Remarquez que nous devons réutiliser la même implémentation d'application cô
 
 Ici, nous allons démontrer la configuration la plus simple. Tout d'abord, divisons la logique de création d'application en un fichier dédié, `app.js`:
 
-```js
-// app.js (partagé entre le serveur et le client)
+```js [app.js]
+// (partagé entre le serveur et le client)
 import { createSSRApp } from 'vue'
 
 export function createApp() {
@@ -266,8 +266,8 @@ Techniquement, nous pouvons ré-initialiser tous les modules JavaScript à chaqu
 
 La solution recommandée est de créer une nouvelle instance de l'application entière - y compris le routeur et les stores globaux - à chaque demande. Ensuite, au lieu de l'importer directement dans nos composants, nous fournissons l'état partagé en utilisant [provide au niveau de l'application](/guide/components/provide-inject#app-level-provide) et l'injecterons dans les composants qui en ont besoin :
 
-```js
-// app.js (partagé entre le serveur et le client)
+```js [app.js]
+// (partagé entre le serveur et le client)
 import { createSSRApp } from 'vue'
 import { createStore } from './store.js'
 

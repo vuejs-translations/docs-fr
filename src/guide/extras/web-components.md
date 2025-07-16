@@ -43,8 +43,7 @@ export default {
 
 #### Exemple avec une config Vue CLI {#example-vue-cli-config}
 
-```js
-// vue.config.js
+```js [vue.config.js]
 module.exports = {
   chainWebpack: (config) => {
     config.module
@@ -218,8 +217,7 @@ Si les éléments personnalisés seront utilisés dans une application qui utili
 
 Il est recommandé d'exporter les constructeurs d'éléments individuels pour donner à vos utilisateurs la possibilité de les importer à la demande et de les enregistrer avec les noms de balises souhaités. Vous pouvez également exporter une fonction pratique pour enregistrer automatiquement tous les éléments. Voici un exemple de point d'entrée d'une bibliothèque d'éléments personnalisés Vue :
 
-```js
-// elements.js
+```js [elements.js]
 
 import { defineCustomElement } from 'vue'
 import Foo from './MyFoo.ce.vue'
@@ -312,8 +310,7 @@ framework utilisé pour créer les éléments personnalisés.
 
 Supposons que nous ayons un élément personnalisé avec des propriétés JS et des événements définis, et qu'il soit livré dans une bibliothèque appelée `some-lib` :
 
-```ts
-// file: some-lib/src/SomeElement.ts
+```ts [some-lib/src/SomeElement.ts]
 
 // Définir une classe avec des propriétés JS typées
 export class SomeElement extends HTMLElement {
@@ -352,9 +349,7 @@ Les détails de la mise en œuvre ont été omis, mais l'essentiel est que nous 
 
 Créons un assistant de type pour enregistrer facilement des définitions de types d'éléments personnalisés dans Vue :
 
-```ts
-// fichier: some-lib/src/DefineCustomElement.ts
-
+```ts [some-lib/src/DefineCustomElement.ts]
 // Nous pouvons réutiliser ce type d'aide pour chaque élément que nous devons définir.
 type DefineCustomElement<
   ElementType extends HTMLElement,
@@ -398,9 +393,7 @@ Ces propriétés n'existent pas réellement sur les instances d'éléments perso
 
 En utilisant l'assistant de type, nous pouvons maintenant sélectionner les propriétés JS qui doivent être exposées pour la vérification de type dans les templates Vue :
 
-```ts
-// fichier: some-lib/src/SomeElement.vue.ts
-
+```ts [some-lib/src/SomeElement.vue.ts]
 import {
   SomeElement,
   SomeElementAttributes,
@@ -423,7 +416,7 @@ declare module 'vue' {
 
 Supposons que `some-lib` compile ses fichiers source TypeScript dans un dossier `dist/`. Un utilisateur de `some-lib` peut alors importer `SomeElement` et l'utiliser dans un SFC Vue comme suit :
 
-```vue
+```vue [SomeElementImpl.vue]
 <script setup lang="ts">
 // Cette opération permet de créer et d'enregistrer l'élément dans le navigateur.
 import 'some-lib/dist/SomeElement.js'
@@ -469,7 +462,7 @@ onMounted(() => {
 
 Si un élément n'a pas de définition de type, les types de propriétés et d'événements peuvent être définis de manière plus manuelle :
 
-```vue
+```vue [SomeElementImpl.vue]
 <script setup lang="ts">
 // Supposons que `some-lib` soit du JS simple sans définition de type, et TypeScript
 // ne peut pas déduire les types :
