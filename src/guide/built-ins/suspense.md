@@ -91,7 +91,7 @@ Si aucune dépendance asynchrone n'a été rencontrée lors du rendu initial, `<
 
 Une fois dans un état résolu, `<Suspense>` ne reviendra à un état d'attente que si le nœud racine du slot `#default` est remplacé. Les nouvelles dépendances asynchrones imbriquées plus profondément dans l'arbre ne feront **pas** repasser le `<Suspense>` à l'état d'attente.
 
-Lorsqu'il y a un retour en arrière, le contenu de secours ne sera pas immédiatement affiché. À la place, `<Suspense>` affichera le contenu `#default` précédent en attendant que le nouveau contenu et ses dépendances asynchrones soient résolus. Ce comportement peut être configuré avec la prop `timeout` : `<Suspense>` basculera vers un contenu de secours si le rendu du nouveau contenu par défaut prend plus de temps que la valeur de `timeout`. Une valeur de `timeout` de `0` fera que le contenu de secours sera affiché immédiatement lorsque le contenu par défaut sera remplacé.
+Lorsqu'il y a un retour en arrière, le contenu de secours ne sera pas immédiatement affiché. À la place, `<Suspense>` affichera le contenu `#default` précédent en attendant que le nouveau contenu et ses dépendances asynchrones soient résolus. Ce comportement peut être configuré avec la prop `timeout` : `<Suspense>` basculera vers un contenu de secours si le rendu du nouveau contenu par défaut prend plus de temps que la valeur de `timeout`  en millisecondes. Une valeur de `timeout` de `0` fera que le contenu de secours sera affiché immédiatement lorsque le contenu par défaut sera remplacé.
 
 ## Événements {#events}
 
