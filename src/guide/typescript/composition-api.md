@@ -478,3 +478,41 @@ const openModal = () => {
 ```
 
 Notez qu'avec `@vue/language-tools` 2.1+, les types des refs statiques des templates peuvent être automatiquement déduits et ce qui précède n'est nécessaire que dans les cas extrêmes.
+
+## Typer les directives globales personnalisées {#typing-global-custom-directives}
+
+Afin d'obtenir des indications de type et une vérification de type pour les directives personnalisées globales déclarées avec `app.directive()`, vous pouvez étendre `ComponentCustomProperties`
+
+```ts [src/directives/highlight.ts]
+import type { Directive } from 'vue'
+
+export type HighlightDirective = Directive<HTMLElement, string>
+
+declare module 'vue' {
+  export interface ComponentCustomProperties {
+    // préfixe avec v (v-highlight)
+    vHighlight: HighlightDirective
+  }
+}
+
+export default {
+  mounted: (el, binding) => {
+    el.style.backgroundColor = binding.value
+  }
+} satisfies HighlightDirective
+```
+
+```ts [main.ts]
+import highlight from './directives/highlight'
+// ...autre code
+const app = createApp(App)
+app.directive('highlight', highlight)
+```
+
+Utilisation dans un composant
+
+```vue [App.vue]
+<template>
+  <p v-highlight="'blue'">This sentence is important!</p>
+</template>
+```
