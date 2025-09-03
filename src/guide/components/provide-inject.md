@@ -323,7 +323,7 @@ La fonction `computed()` est généralement utilisée dans les composants utilis
 
 ## Injection avec des Symbols en tant que clés {#working-with-symbol-keys}
 
-Jusqu'à présent, nous avons utilisé dans les exemples des clés d'injection qui étaient des chaînes de caractères. Si vous travaillez dans une application de taille importante avec de nombreux fournisseurs de dépendances, ou si vous créez des composants qui seront utilisés par d'autres développeurs, il est préférable d'utiliser des clés d'injection utilisant des [Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) pour éviter les collisions potentielles.
+Jusqu'à présent, nous avons utilisé dans les exemples des clés d'injection qui étaient des chaînes de caractères. Si vous travaillez dans une application de taille importante avec de nombreux fournisseurs de dépendances, ou si vous créez des composants qui seront utilisés par d'autres développeurs, il est préférable d'utiliser des clés d'injection utilisant des [Symbols](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Symbol) pour éviter les collisions potentielles.
 
 Il est recommandé d'exporter les Symbols dans un fichier dédié :
 
