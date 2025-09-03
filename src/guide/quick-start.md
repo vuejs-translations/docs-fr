@@ -23,8 +23,8 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 :::tip Pré-requis
 
 - Être familier avec l'invite de commandes
-- Avoir installé [Node.js](https://nodejs.org/) version 18.3 ou plus
-  :::
+- Avoir installé [Node.js](https://nodejs.org/) version `^20.19.0 || >=22.12.0`
+:::
 
 Dans cette section, nous allons vous présenter comment créer une [Single Page Application avec Vue](/guide/extras/ways-of-using-vue#single-page-application-spa) sur votre machine locale. Le projet créé utilisera une configuration de build basée sur [Vite](https://vitejs.dev) et nous permettra d'utiliser les [composants monofichiers](/guide/scaling-up/sfc) (SFCs).
 
