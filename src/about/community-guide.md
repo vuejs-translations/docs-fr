@@ -16,7 +16,7 @@ Notre [Code de bonne conduite](/about/coc) est un guide destiné à faciliter no
 
 ### Restez informé(e) {#stay-in-the-know}
 
-- Suivez notre [compte Twitter officiel](https://twitter.com/vuejs).
+- Suivez notre [compte Twitter officiel](https://x.com/vuejs).
 - Suivez les [membres de l'équipe](./team) sur Twitter ou GitHub.
 - Suivez les [discussions RFC](https://github.com/vuejs/rfcs).
 - Abonnez-vous au [blog officiel](https://blog.vuejs.org/).
@@ -28,7 +28,7 @@ Notre [Code de bonne conduite](/about/coc) est un guide destiné à faciliter no
 - [Communauté DEV](https://dev.to/t/vue) : Partagez et discutez des sujets liés à Vue sur Dev.to.
 - [Rencontres](https://events.vuejs.org/meetups) : Vous souhaitez trouver des passionnés de Vue comme vous ? Vous souhaitez devenir un leader de la communauté ? Nous avons l'aide et le soutien dont vous avez besoin ici même !
 - [GitHub](https://github.com/vuejs) : Si vous souhaiter signaler un bug ou réclamer une fonctionnalité, les issues GitHub sont là pour ça. Veuillez respecter les règles spécifiées dans le modèle des issues de chaque dépôt.
-- [Communauté Twitter (non officielle)](https://twitter.com/i/communities/1516368750634840064) : Une communauté Twitter, où vous pouvez rencontrer d'autres passionnés de Vue, obtenir de l'aide ou simplement discuter de Vue.
+- [Communauté Twitter (non officielle)](https://x.com/i/communities/1516368750634840064) : Une communauté Twitter, où vous pouvez rencontrer d'autres passionnés de Vue, obtenir de l'aide ou simplement discuter de Vue.
 
 ### Explorez l'écosystème {#explore-the-ecosystem}
 
