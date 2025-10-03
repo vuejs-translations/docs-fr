@@ -43,7 +43,7 @@ Vous pouvez également essayer de convaincre votre employeur de sponsoriser Vue 
 - **Spécial Mondial** :
   - Limité à un sponsor mondial <span v-if="!data?.special">Actuellement vacant. [Prendre contact](mailto:sponsor@vuejs.org?subject=Vue.js%20special%20sponsor%20inquiry)!</span><span v-else>(actuellement pourvu).</span>
   - (Exclusif) Emplacement exclusif du logo sur la première page de [vuejs.org](/).
-  - (Exclusif) Mise en avant spéciale et retweets réguliers des principaux lancements de produits via [le compte X officiel de Vue](https://twitter.com/vuejs) (320k followers).
+  - (Exclusif) Mise en avant spéciale et retweets réguliers des principaux lancements de produits via [le compte X officiel de Vue](https://x.com/vuejs) (320k followers).
 - **Platine (USD$2,000/mois)** :
   - Emplacement imposant pour votre logo sur la première page de [vuejs.org](/).
   - Emplacement imposant pour votre logo dans la barre latérale de chacunes des pages.
