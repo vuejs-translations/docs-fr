@@ -2,7 +2,7 @@
 
 ## Qui maintient Vue? {#who-maintains-vue}
 
-Vue est un projet indépendant, piloté par la communauté. Il a été créé par [Evan You](https://twitter.com/youyuxi) en 2014 comme un projet personnel. Aujourd’hui, Vue est activement maintenu par [une équipe composée de membres à temps plein et de bénévoles du monde entier](/about/team), où Evan occupe le poste de chef de projet. Vous pouvez en apprendre davantage sur l'histoire de Vue dans ce [documentaire](https://www.youtube.com/watch?v=OrxmtDw4pVI).
+Vue est un projet indépendant, piloté par la communauté. Il a été créé par [Evan You](https://x.com/youyuxi) en 2014 comme un projet personnel. Aujourd’hui, Vue est activement maintenu par [une équipe composée de membres à temps plein et de bénévoles du monde entier](/about/team), où Evan occupe le poste de chef de projet. Vous pouvez en apprendre davantage sur l'histoire de Vue dans ce [documentaire](https://www.youtube.com/watch?v=OrxmtDw4pVI).
 
 Le développement de Vue est principalement financé par des sponsors et nous sommes financièrement viables depuis 2016. Si vous ou votre entreprise bénéficiez de Vue, envisagez de [nous sponsoriser](/sponsor/) pour soutenir son développement !
 
