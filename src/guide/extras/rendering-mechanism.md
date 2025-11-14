@@ -10,7 +10,7 @@ Comment Vue fait pour partir d'un template et le transformer en nœuds du DOM ? 
 
 Vous avez probablement entendu parler du terme "virtual DOM", sur lequel le système de rendu de Vue s'appuie.
 
-Le DOM virtuel (VDOM) est un concept de programmation dans lequel une représentation idéale, ou "virtuelle", d'une interface utilisateur est conservée en mémoire et synchronisée avec le DOM "réel". Le concept a été lancé par [React](https://reactjs.org/), et a été adapté dans de nombreux autres frameworks avec différentes implémentations, y compris Vue.
+Le DOM virtuel (VDOM) est un concept de programmation dans lequel une représentation idéale, ou "virtuelle", d'une interface utilisateur est conservée en mémoire et synchronisée avec le DOM "réel". Le concept a été lancé par [React](https://react.dev/), et a été adapté dans de nombreux autres frameworks avec différentes implémentations, y compris Vue.
 
 Le DOM virtuel est plus un modèle qu'une technologie spécifique, il n'y a donc pas d'implémentation canonique. Nous pouvons illustrer ce concept à l'aide d'un exemple simple :
 
