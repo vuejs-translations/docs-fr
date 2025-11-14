@@ -80,4 +80,4 @@ Il y a beaucoup de choses que vous pouvez faire pour aider Vue à se développer
 - **Organisez une rencontre.** S'il n'y a pas encore de rencontre Vue dans votre région, vous pouvez créer la vôtre ! Utilisez les [ressources de events.vuejs.org](https://events.vuejs.org/resources/#getting-started) pour faire de votre rencontre une réussite !
 - **Aidez les organisateurs d'une rencontre.** Il n'y a jamais trop d'aide quand il s'agit d'organiser un événement, alors offrez votre aide aux organisateurs locaux pour faire de chaque événement un succès.
 
-Si vous avez des questions sur la façon dont vous pouvez vous impliquer davantage au sein de votre communauté locale Vue, contactez-nous sur Twitter à l'adresse [@vuejs_events](https://www.twitter.com/vuejs_events) !
+Si vous avez des questions sur la façon dont vous pouvez vous impliquer davantage au sein de votre communauté locale Vue, contactez-nous sur Twitter à l'adresse [@vuejs_events](https://www.x.com/vuejs_events) !
