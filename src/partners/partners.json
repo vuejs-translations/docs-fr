@@ -29,28 +29,6 @@
     "platinum": true
   },
   {
-    "name": "Passionate People",
-    "logo": "passionatepeople.png",
-    "flipLogo": true,
-    "intro": "Nous vous fournissons des capacités techniques supplémentaires afin de dynamiser vos parcours de transformation numérique grâce à nos équipes d'ingénieurs et de consultants qualifiés. Des ingénieurs JavaScript Full stack prêts à travailler avec vous et vos équipes.",
-    "description": [
-      "Fondée en octobre 2017, Passionate People est la principale société de conseil en JavaScript aux Pays-Bas.",
-      "Notre objectif est d'aider nos clients à accélérer leurs initiatives de transformation numérique à grande échelle, et notre démarche qualité est la plus élevée du secteur.",
-      "Nous avons une large base de clients couvrant des secteurs tels que la FinTech, l'e-commerce, la logistique, la chaîne d'approvisionnement, l'automatisation industrielle, etc. Pour atteindre leurs objectifs numériques et rendre leurs produits évolutifs et sécurisés pour des millions d'utilisateurs, des entreprises comme Albert Heijn Digital, GrandVision, Nationale Nederlanden, Talpa et AKQA nous ont fait confiance pour fournir un excellent travail.",
-      "En plus d'être le principal cabinet de conseil en JavaScript aux Pays-Bas, Passionate People est également fier d'accueillir les plus grandes conférences tech et les plus grands événements communautaires du monde.",
-      "En commençant en février 2018 avec Frontend Love et Vue.js Amsterdam, nous sommes désormais responsables de nombreuses autres conférences en Europe sous la marque Frontend Love : React Live, AngularNL, Vue.js Amsterdam et JS World Conference."
-    ],
-    "proficiencies": ["Vue", "Nuxt", "Node.js", "JAMStack"],
-    "region": ["Europe"],
-    "location": ["Amsterdam, Pays-Bas"],
-    "website": {
-      "text": "passionatepeople.io",
-      "url": "https://passionatepeople.io/"
-    },
-    "contact": "info@passionatepeople.io",
-    "platinum": true
-  },
-  {
     "name": "Monterail",
     "logo": "monterail.png",
     "hero": "monterail-hero.png",
