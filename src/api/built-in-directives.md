@@ -8,7 +8,7 @@ Met à jour le contenu texte d'un élément.
 
 - **Détails**
 
-  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, de sorte qu'elle écrasera tout contenu existant dans l'élément. Si vous devez mettre à jour `textContent`, vous devez utiliser les [interpolations moustaches](/guide/essentials/template-syntax#text-interpolation) à la place.
+  `v-text` fonctionne en définissant la propriété [textContent](https://developer.mozilla.org/fr/docs/Web/API/Node/textContent) de l'élément, ce qui écrase tout contenu existant à l'intérieur de l'élément. Si vous devez mettre à jour uniquement une partie du `textContent`, vous devez plutôt utiliser les [interpolations de texte](/guide/essentials/template-syntax#text-interpolation) (c'est-à-dire <span v-pre>`<span>Conserver ceci mais mettre à jour {{dynamicPortion}}</span>`</span>).
 
 - **Exemple**
 
