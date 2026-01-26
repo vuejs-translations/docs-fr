@@ -785,8 +785,8 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     algolia: {
       indexName: 'fr-vuejs',
-      appId: 'ML0LEBN7FQ',
-      apiKey: '10e7a8b13e6aec4007343338ab134e05',
+      appId: 'HH5AXEOM9U',
+      apiKey: 'b33b47187a1497e2a75b99d8a4deee38',
     },
 
     carbonAds: {
