@@ -198,9 +198,9 @@ Et un autre pour l'index :
 
 </div>
 
-## `v-for` avec une portée {#v-for-with-a-range}
+## `v-for` avec une plage {#v-for-with-a-range}
 
-`v-for` peut également prendre un nombre entier. Dans ce cas il va répéter le template un certain nombre de fois, basé sur une portée `1...n`.
+`v-for` peut également prendre un nombre entier. Dans ce cas il va répéter le template un certain nombre de fois, basé sur une plage `1...n`.
 
 ```vue-html
 <span v-for="n in 10">{{ n }}</span>
