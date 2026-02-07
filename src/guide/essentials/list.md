@@ -289,7 +289,7 @@ La liaison `key` attend des valeurs - c'est-à-dire des chaînes de caractères 
 
 > Cette section part du principe que vous connaissez déjà les [Composants](/guide/essentials/component-basics). N'hésitez pas à la sauter et à revenir plus tard !
 
-Vous pouvez utiliser `v-for` directement sur un composant, comme avec n'importe quel élément (n'oubliez pas de fournir une `key`):
+Vous pouvez utiliser `v-for` directement sur un composant, comme avec n'importe quel élément (n'oubliez pas de fournir une `key`) :
 
 ```vue-html
 <MyComponent v-for="item in items" :key="item.id" />
