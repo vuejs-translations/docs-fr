@@ -29,7 +29,7 @@ const options = ref([
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-user-inputs-in-vue" title="Cours gratuits sur les entrées utilisateurs avec Vue.js"/>
 </div>
 
-Lorsque nous devons gérer des formulaires côté front, il arrive souvent que nous ayons besoin de synchroniser l'état des éléments de saisi du formulaire avec l'état correspondant en JavaScript. Cela peut être encombrant de connecter les liaisons des valeurs et de changer les écouteurs d'événements :
+Lorsque nous devons gérer des formulaires côté front, il arrive souvent que nous ayons besoin de synchroniser l'état des éléments de saisie du formulaire avec l'état correspondant en JavaScript. Cela peut être encombrant de connecter les liaisons des valeurs et de changer les écouteurs d'événements :
 
 ```vue-html
 <input
