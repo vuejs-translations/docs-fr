@@ -251,7 +251,7 @@ Pour résoudre ce problème, Vue fournit des **modificateurs d'événements** po
 ```
 
 ::: tip
-L'ordre est important lorsqu'on utilise des modificateurs car le code correspondant est généré dans le même ordre. De ce fait, utiliser `@click.prevent.self` empêchera **l'action par défaut du clic sur l'élément lui-même et ses enfants**, alors que `@click.self.prevent` empêchera seulement l'action par défaut de click sur l'élément lui-même.
+L'ordre est important lorsqu'on utilise des modificateurs car le code correspondant est généré dans le même ordre. De ce fait, utiliser `@click.prevent.self` empêchera **l'action par défaut du clic sur l'élément lui-même et ses enfants**, alors que `@click.self.prevent` empêchera seulement l'action par défaut de clic sur l'élément lui-même.
 :::
 
 Les modificateurs `.capture`, `.once`, et `.passive` imitent les [options de la méthode native `addEventListener`](https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener#options):
