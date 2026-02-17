@@ -400,10 +400,10 @@ Installe un gestionnaire global pour les erreurs non détectées se propageant d
   }
   ```
 
-- **Default**
+- **Défaut**
 
-  The default error handler will re-throw errors during development and log errors during production.
-  You can configure this using the [throwUnhandledErrorInProduction](#app-config-throwunhandlederrorinproduction) property.
+  Le gestionnaire d'erreurs par défaut relancera les erreurs pendant le développement et les affichera dans le journal en production.
+  Vous pouvez configurer cela à l'aide de la propriété [throwUnhandledErrorInProduction](#app-config-throwunhandlederrorinproduction).
 
 ## app.config.warnHandler {#app-config-warnhandler}
 
