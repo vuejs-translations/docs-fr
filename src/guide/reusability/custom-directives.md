@@ -110,7 +110,7 @@ app.directive('highlight', {
 })
 ```
 
-Il est possible de saisir des directives personnalisées globales en étendant l'interface `ComponentCustomProperties` à partir de `vue`.
+Il est possible de saisir des directives personnalisées globales en étendant l'interface `GlobalDirectives` à partir de `vue`.
 
 Plus de détails : [Typer les directives globales personnalisées](/guide/typescript/composition-api#typing-global-custom-directives) <sup class="vt-badge ts" />
 
