@@ -219,20 +219,20 @@ const vnode = h('button', ['Hello'])
 
 <template>
   <!-- Via <component /> -->
-  <component :is="vnode">Hi</component>
+  <component :is="vnode">Bonjour</component>
 
-  <!-- Or directly as element -->
+  <!-- Ou directement comme un élément -->
   <vnode />
-  <vnode>Hi</vnode>
+  <vnode>Bonjour</vnode>
 </template>
 ```
 
-A vnode object has been declared in `setup()`, you can use it like a normal component for rendering.
+Un objet vnode a été déclaré dans `setup()`, vous pouvez l'utiliser comme un composant normal pour le rendu.
 
 :::warning
-A vnode represents an already created render output, not a component definition. Using a vnode in `<template>` does not create a new component instance, and the vnode will be rendered as-is.
+Un vnode représente une sortie déjà rendu, pas une définition d'un composant. Utiliser un vnode dans le `<template>` ne crée pas une nouvelle instance de composant, mais le vnode sera rendu tel qu'il est.
 
-This pattern should be used with care and is not a replacement for normal components.
+Ce pattern doit être utilisé avec attention et n'est pas un remplaçant des composants normaux.
 :::
 
 ## JSX / TSX {#jsx-tsx}
