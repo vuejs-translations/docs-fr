@@ -219,7 +219,7 @@ const vnode = h('button', ['Hello'])
 
 <template>
   <!-- Via <component /> -->
-  <component :is="vnode">Hi</component>
+  <component :is="vnode">Bonjour</component>
 
   <!-- Ou directement comme un élément -->
   <vnode />

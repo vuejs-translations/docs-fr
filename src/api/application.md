@@ -400,6 +400,11 @@ Installe un gestionnaire global pour les erreurs non détectées se propageant d
   }
   ```
 
+- **Défaut**
+
+  Le gestionnaire d'erreurs par défaut relancera les erreurs pendant le développement et les affichera dans le journal en production.
+  Vous pouvez configurer cela à l'aide de la propriété [throwUnhandledErrorInProduction](#app-config-throwunhandlederrorinproduction).
+
 ## app.config.warnHandler {#app-config-warnhandler}
 
 Ajoute un gestionnaire personnalisé pour les avertissements d'exécution de Vue.
