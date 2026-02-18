@@ -105,7 +105,7 @@ p {{ msg }}
 
 Notez que l'intégration avec divers pré-processeurs peut différer selon les outils utilisés. Consultez la documentation correspondante pour des exemples :
 
-- [Vite](https://vitejs.dev/guide/features.html#css-pre-processors)
+- [Vite](https://vite.dev/guide/features.html#css-pre-processors)
 - [Vue CLI](https://cli.vuejs.org/guide/css.html#pre-processors)
 - [webpack + vue-loader](https://vue-loader.vuejs.org/guide/pre-processors.html#using-pre-processors)
 

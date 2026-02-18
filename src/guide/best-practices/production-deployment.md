@@ -32,8 +32,8 @@ Si vous utilisez une configuration personnalisée, assurez-vous que :
 
 Références supplémentaires :
 
-- [Guide de build de production Vite](https://vitejs.dev/guide/build.html)
-- [Guide déploiement Vite](https://vitejs.dev/guide/static-deploy.html)
+- [Guide de build de production Vite](https://vite.dev/guide/build.html)
+- [Guide déploiement Vite](https://vite.dev/guide/static-deploy.html)
 - [Guide de déploiement Vue CLI](https://cli.vuejs.org/guide/deployment.html)
 
 ## Suivi des erreurs d'exécution {#tracking-runtime-errors}

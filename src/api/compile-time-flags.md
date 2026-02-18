@@ -38,7 +38,7 @@ Voir [Guides de configuration](#configuration-guides) pour savoir comment les co
 
 ### Vite {#vite}
 
-`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez [l'option de configuration `define`](https://vitejs.dev/config/shared-options.html#define) de Vite :
+`@vitejs/plugin-vue` fournit automatiquement des valeurs par défaut pour ces indicateurs. Pour changer les valeurs par défaut, utilisez [l'option de configuration `define`](https://vite.dev/config/shared-options.html#define) de Vite :
 
 ```js [vite.config.js]
 import { defineConfig } from 'vite'

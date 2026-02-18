@@ -107,7 +107,7 @@ Vous devriez maintenant avoir votre premier projet Vue en cours d'exécution ! N
 
 - L'environnement de développement recommandé est [Visual Studio Code](https://code.visualstudio.com/) + [l'extension Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Si vous utilisez d'autres éditeurs, lisez la [section sur le support des environnements de développement](/guide/scaling-up/tooling#ide-support).
 - [Guide - Outils](/guide/scaling-up/tooling) fournit plus de détails sur les utilitaires, notamment sur l'intégration avec les frameworks back-end.
-- Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://vitejs.dev).
+- Pour en savoir plus sur l'outil de compilation Vite, consultez la [documentation Vite](https://vite.dev).
 - Si vous avez choisi d'utiliser TypeScript, consultez le [Guide d'utilisation de TypeScript](typescript/overview).
 
 Dès que vous êtes prêts à livrer votre application en production, exécutez la commande suivante :

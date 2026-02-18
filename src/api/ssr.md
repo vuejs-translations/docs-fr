@@ -213,7 +213,7 @@ Une API d'exécution utilisée pour récupérer l'objet de contexte transmis à 
   import { useSSRContext } from 'vue'
 
   // ne l'appelez que lors du rendu côté serveur
-  // https://vitejs.dev/guide/ssr.html#conditional-logic
+  // https://vite.dev/guide/ssr.html#conditional-logic
   if (import.meta.env.SSR) {
     const ctx = useSSRContext()
     // ...attache des propriétés au contexte

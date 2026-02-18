@@ -21,7 +21,7 @@ Il est également recommandé d'utiliser ces terrains de jeu en ligne pour fourn
 
 ### Vite {#vite}
 
-[Vite](https://vitejs.dev/) est un outil de construction léger et rapide avec un support de première classe pour les composants monofichiers de Vue. Il a été créé par Evan You, qui est également l'auteur de Vue !
+[Vite](https://vite.dev/) est un outil de construction léger et rapide avec un support de première classe pour les composants monofichiers de Vue. Il a été créé par Evan You, qui est également l'auteur de Vue !
 
 Pour commencer avec Vite + Vue, exécutez simplement :
 
@@ -51,7 +51,7 @@ $ bun create vue@latest
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel d'élaboration d'un projet Vue.
 
-- Pour en savoir plus sur Vite, consultez la [doc Vite](https://vitejs.dev).
+- Pour en savoir plus sur Vite, consultez la [doc Vite](https://vite.dev).
 - Pour configurer le comportement spécifique de Vue dans un projet Vite, par exemple en passant des options au compilateur Vue, consultez la documentation de [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#readme).
 
 Les deux terrains de jeu en ligne mentionnés ci-dessus prennent également en charge le téléchargement de fichiers en tant que projet Vite.
