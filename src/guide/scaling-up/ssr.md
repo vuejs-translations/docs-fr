@@ -226,7 +226,7 @@ Une implémentation complète serait assez complexe et dépend de la chaîne d'o
 
 ### Vite SSR {#vite-ssr}
 
-Vite fournit [un support natif pour le rendu côté serveur de Vue](https://vitejs.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
+Vite fournit [un support natif pour le rendu côté serveur de Vue](https://vite.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
 
 Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour le build. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
 

@@ -94,7 +94,7 @@ Les balises `<style>` à l'intérieur des SFC sont généralement injectées com
 
 Vous pouvez jouer avec les SFC et explorer comment ils sont compilés dans le [Playground de Vue](https://play.vuejs.org/).
 
-Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vitejs.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outils pour SFC](/guide/scaling-up/tooling).
+Dans les projets concrets, nous intégrons généralement le compilateur SFC à un outil de construction tel que [Vite](https://vite.dev/) ou [Vue CLI](http://cli.vuejs.org/) (qui est basé sur [webpack](https://webpack.js.org/)), et Vue fournit des outils de création officiels pour vous permettre de démarrer avec les SFC aussi vite que possible. Pour plus de détails, consultez la section [Outils pour SFC](/guide/scaling-up/tooling).
 
 ## Qu'en est-il de la séparation des responsabilités ? {#what-about-separation-of-concerns}
 

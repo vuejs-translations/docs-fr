@@ -10,7 +10,7 @@ Vue est écrit en TypeScript lui-même et fournit un support TypeScript nativeme
 
 ## Configuration du projet {#project-setup}
 
-[`create-vue`](https://github.com/vuejs/create-vue), l'outil officiel de création de projet, offre les options pour construire un projet propulsé par [Vite](https://vitejs.dev/) et fonctionnant avec TypeScript.
+[`create-vue`](https://github.com/vuejs/create-vue), l'outil officiel de création de projet, offre les options pour construire un projet propulsé par [Vite](https://vite.dev/) et fonctionnant avec TypeScript.
 
 ### Vue d'ensemble {#overview}
 

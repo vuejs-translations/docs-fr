@@ -30,7 +30,7 @@ Si vous êtes sur le point d'utiliser le mode HTML sans outil de build dans vos 
 import { ... } from 'vue/dist/vue.esm-bundler.js'
 ```
 
-dans vos scripts ou configurez votre outil de build pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vitejs.dev/):
+dans vos scripts ou configurez votre outil de build pour résoudre `vue` en conséquence. Exemple de configuration pour [Vite](https://vite.dev/):
 
 ```js [vite.config.js]
 export default {
@@ -56,7 +56,7 @@ If you're about to use HTML-mode without a build step in your own applications, 
 import { ... } from 'vue/dist/vue.esm-bundler.js'
 ```
 
-inside your scripts or configure your build tool to resolve `vue` accordingly. Sample config for [Vite](https://vitejs.dev/):
+inside your scripts or configure your build tool to resolve `vue` accordingly. Sample config for [Vite](https://vite.dev/):
 
 ```js [vite.config.js]
 export default {
