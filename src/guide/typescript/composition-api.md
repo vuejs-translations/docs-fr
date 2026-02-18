@@ -481,7 +481,7 @@ Notez qu'avec `@vue/language-tools` 2.1+, les types des refs statiques des templ
 
 ## Typer les directives globales personnalisées {#typing-global-custom-directives}
 
-Afin d'obtenir des indications de type et une vérification de type pour les directives personnalisées globales déclarées avec `app.directive()`, vous pouvez étendre `ComponentCustomProperties`
+Afin d'obtenir des indications de type et une vérification de type pour les directives personnalisées globales déclarées avec `app.directive()`, vous pouvez étendre `GlobalDirectives`
 
 ```ts [src/directives/highlight.ts]
 import type { Directive } from 'vue'
@@ -489,7 +489,7 @@ import type { Directive } from 'vue'
 export type HighlightDirective = Directive<HTMLElement, string>
 
 declare module 'vue' {
-  export interface ComponentCustomProperties {
+  export interface GlobalDirectives {
     // préfixe avec v (v-highlight)
     vHighlight: HighlightDirective
   }
