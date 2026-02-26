@@ -235,6 +235,33 @@ Un vnode représente une sortie déjà rendu, pas une définition d'un composant
 Ce pattern doit être utilisé avec attention et n'est pas un remplaçant des composants normaux.
 :::
 
+### Utilisation des Vnodes dans `<template>` {#using-vnodes-in-template}
+
+```vue
+<script setup>
+import { h } from 'vue'
+
+const vnode = h('button', ['Hello'])
+</script>
+
+<template>
+  <!-- Via <component /> -->
+  <component :is="vnode">Bonjour</component>
+
+  <!-- Ou directement en tant qu'élément -->
+  <vnode />
+  <vnode>Bonjour</vnode>
+</template>
+```
+
+Un objet vnode a été déclaré dans `setup()`, vous pouvez l'utiliser comme un composant normal pour le rendu.
+
+:::warning
+Un vnode représente un rendu déjà créé, et non une définition de composant. L'utilisation d'un vnode dans `<template>` ne crée pas une nouvelle instance de composant, et le vnode sera rendu tel quel.
+
+Ce modèle doit être utilisé avec précaution et ne remplace pas les composants normaux.
+:::
+
 ## JSX / TSX {#jsx-tsx}
 
 Le [JSX](https://facebook.github.io/jsx/) est une extension de JavaScript semblable au XML qui permet d'écrire du code de cette manière :
