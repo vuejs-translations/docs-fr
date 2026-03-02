@@ -486,7 +486,7 @@ export default {
 
 </div>
 
-Cela fonctionne dans les versions antérieures à la 3.5. De plus, `onCleanup` passé en argument de la fonction est lié à l'instance de l'observateur et n'est donc pas soumis à la contrainte de synchronisation de `onWatcherCleanup`.
+La fonction `onCleanup` transmise via l'argument de fonction est liée à l'instance de l'observateur, elle n'est donc pas soumise à la contrainte synchrone de `onWatcherCleanup`.
 
 ## Timing de nettoyage des rappels {#callback-flush-timing}
 
