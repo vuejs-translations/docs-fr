@@ -201,7 +201,7 @@ const emit = defineEmits<{
 
 - Lors de l'utilisation de la déclaration de type, la déclaration à l'exécution équivalente est automatiquement générée à partir de l'analyse statique pour supprimer la nécessité d'une double déclaration tout en garantissant un comportement d'exécution correct.
 
-  - En mode dev, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple ici `foo: String` est déduit du type `foo: string`. Si le type est une référence à un type importé, le résultat déduit sera `foo: null` (égal au type `any`) car le compilateur ne dispose pas d'informations sur les fichiers externes.
+  - En mode dev, le compilateur essaiera de déduire la validation d'exécution correspondante à partir des types. Par exemple ici `foo: String` est déduit du type `foo: string`. Les types importés sont également résolus, à condition que TypeScript soit installé en tant que dépendance pair.
 
   - En mode prod, le compilateur générera la déclaration au format tableau pour réduire la taille du bundle (les props ici seront compilées dans `['foo', 'bar']`)
 
