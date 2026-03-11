@@ -27,7 +27,7 @@ pnpm i
 pnpm run dev
 ```
 
-Ce projet nécessite la version `v18` ou plus récente de Node.js. Et il es recommandé d'activer corepack :
+Ce projet nécessite la version `v20` ou plus récente de Node.js. Et il es recommandé d'activer corepack :
 
 ```bash
 corepack enable
