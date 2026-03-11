@@ -500,5 +500,29 @@
       "twitter": "edison11051"
     },
     "sponsor": true
+  },
+  {
+    "name": "Vincent Ngai • SerKo",
+    "title": "Full Stack Developer",
+    "projects": [
+      {
+        "label": "vuejs/language-tools",
+        "url": "https://github.com/vuejs/language-tools"
+      },
+      {
+        "label": "Vue AI",
+        "url": "https://github.com/vuejs-ai"
+      }
+    ],
+    "location": ["Hong Kong", "Taiwan"],
+    "languages": ["Chinois", "Anglais"],
+    "website": {
+      "label": "serko.dev",
+      "url": "https://serko.dev"
+    },
+    "socials": {
+      "github": "serkodev",
+      "twitter": "serkodev"
+    }
   }
 ]
