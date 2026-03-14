@@ -54,7 +54,7 @@ const props = defineProps<Props>()
 </script>
 ```
 
-Cela fonctionne également si `Props` est importé d'une source externe. Cette fonctionnalité nécessite que TypeScript soit une dépendance peer de Vue.
+Cela fonctionne également si `Props` est importé depuis un autre fichier, tel qu'une importation relative, un alias de chemin (par exemple, `@/types`) ou une dépendance externe (par exemple, `node_modules`). Cette fonctionnalité nécessite que TypeScript soit une dépendance de même niveau que Vue.
 
 ```vue
 <script setup lang="ts">
