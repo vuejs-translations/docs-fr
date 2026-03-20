@@ -150,7 +150,7 @@ const open = ref(false)
 Vous pouvez combiner `<Teleport>` avec [`<Transition>`](./transition) pour créer des modales animées - voir l'[exemple ici](/examples/#modal).
 
 :::tip
-La cible de téléportation `to` doit être déjà présente dans le DOM lorsque le composant `<Teleport>` est monté. Idéalement, il devrait s'agir d'un élément extérieur à l'ensemble de l'application Vue. Si vous ciblez un autre élément rendu par Vue, vous devez vous assurer que cet élément est monté avant le composant `<Teleport>`.
+La cible de téléportation `to` doit déjà figurer dans le DOM au moment où le composant `<Teleport>` est monté. Idéalement, il devrait s'agir d'un élément situé en dehors de l'application Vue. Si vous ciblez un autre élément rendu par Vue, vous devez vous assurer que cet élément est monté avant le `<Teleport>`. Si vous utilisez le SSR, consultez [Gestion des téléportations en SSR](/guide/scaling-up/ssr#teleports).
 :::
 
 ## Utilisation avec les composants {#using-with-components}
