@@ -56,9 +56,9 @@ Ce problème ne concerne que les auteurs de bibliothèques, car dans les applica
 
 ## Pré-releases {#pre-releases}
 
-Les releases mineures passent généralement par un nombre variable de versions bêta. Les releases majeures passent par une phase alpha et une phase bêta.
+Les versions mineures et majeures passent généralement par une série de phases de pré-lancement : **alpha**, **bêta** et **candidate à la publication (RC)**. Le nombre et le type de versions préliminaires dépendent de l'ampleur des modifications. Par exemple, une version mineure comportant des mises à jour limitées peut ne comporter qu'une phase bêta, tandis qu'une version majeure inclura généralement les trois phases afin de permettre des tests approfondis et de recueillir les commentaires de la communauté.
 
-De plus, nous publions chaque semaine des versions canary des branches « main » et « minor » sur GitHub. Ils sont publiés sous forme de packages différents pour éviter de polluer les métadonnées npm du canal stable. Vous pouvez les installer via `npx install-vue@canary` ou `npx install-vue@canary-minor`, ​​respectivement.
+Vous pouvez installer les dernières versions préliminaires depuis npm à l'aide de `npx install-vue@alpha`, `npx install-vue@beta` ou `npx install-vue@rc`. Pour tester les modifications qui ne sont pas encore incluses dans les versions préliminaires taguées, chaque commit du dépôt [vuejs/core](https://github.com/vuejs/core) est publié sous forme d'aperçu temporaire en publication continue, que vous pouvez installer à l'aide de `npx install-vue@edge`.
 
 Les pré-releases sont destinées aux tests d'intégration et de stabilité, ainsi qu'aux utilisateurs précoces qui peuvent fournir des retours sur les fonctionnalités instables. N'utilisez pas les pré-releases en production. Elles sont considérées comme instables et peuvent contenir des modifications importante de l'une à l'autre, il faut donc toujours se référer aux versions exactes lorsque vous utilisez des pré-releases.
 
