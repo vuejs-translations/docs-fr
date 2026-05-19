@@ -83,7 +83,7 @@ interface Props {
 const { msg = 'hello', labels = ['one', 'two'] } = defineProps<Props>()
 ```
 
-Dans les versions 3.4 et suivantes, la destructuration réactive des props n'est pas activé par défaut. Une alternative est d'utiliser la macro de compilation `withDefaults` :
+Dans la version 3.4 et les versions antérieures, la destructuration réactive des props n'est pas activé par défaut. Une alternative est d'utiliser la macro de compilation `withDefaults` :
 
 ```ts
 interface Props {
