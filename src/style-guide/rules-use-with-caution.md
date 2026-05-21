@@ -1,9 +1,5 @@
 # Règles de priorité D: À utiliser avec précaution {#priority-d-rules-use-with-caution}
 
-::: warning Note
-Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
-:::
-
 Certaines fonctionnalités de Vue existent pour prévoir de rares cas particuliers ou des migrations plus douces depuis une base de code héritée. Toutefois, lorsqu'elles sont surexploitées, elles peuvent rendre le code plus difficile à maintenir ou même devenir une source de bugs. Ces règles mettent en lumière ces fonctionnalités potentiellement risquées, en décrivant quand et pourquoi elles devraient être évitées.
 
 ## Sélecteurs d'éléments avec `scoped` {#element-selectors-with-scoped}
@@ -179,8 +175,6 @@ defineProps({
 
 ```vue
 <script setup>
-import { getCurrentInstance } from 'vue'
-
 const props = defineProps({
   todo: {
     type: Object,
@@ -188,21 +182,16 @@ const props = defineProps({
   }
 })
 
-const instance = getCurrentInstance()
-
-function removeTodo() {
-  const parent = instance.parent
-  if (!parent) return
-
-  parent.props.todos = parent.props.todos.filter((todo) => {
-    return todo.id !== props.todo.id
-  })
+function renameTodo() {
+  // Modifie l'objet réactif du parent via la prop
+  // En d'autres termes, l'enfant accède à un état appartenant au parent et le modifie.
+  props.todo.text = 'renamed by child'
 }
 </script>
 <template>
   <span>
     {{ todo.text }}
-    <button @click="removeTodo">×</button>
+    <button @click="renameTodo">renommer</button>
   </span>
 </template>
 ```
@@ -231,20 +220,25 @@ const emit = defineEmits(['input'])
 
 ```vue
 <script setup>
-defineProps({
+const props = defineProps({
   todo: {
     type: Object,
     required: true
   }
 })
 
-const emit = defineEmits(['delete'])
+const emit = defineEmits(['update:todo'])
+
+function renameTodo() {
+  // Émet un nouvel objet — le parent est responsable de la mise à jour.
+  emit('update:todo', { ...props.todo, text: 'renamed by parent' })
+}
 </script>
 
 <template>
   <span>
     {{ todo.text }}
-    <button @click="emit('delete')">×</button>
+    <button @click="renameTodo">renommer</button>
   </span>
 </template>
 ```

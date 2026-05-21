@@ -1,9 +1,5 @@
 # Règles de priorité B : Fortement recommandées {#priority-b-rules-strongly-recommended}
 
-::: warning Note
-Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
-:::
-
 Ces règles améliorent la lisibilité et/ou l'expérience des développeurs dans la plupart des projets. Votre code fonctionnera toujours si vous les enfreignez, mais les violations doivent être rares et bien justifiées.
 
 ## Fichiers de composants {#component-files}
@@ -101,23 +97,15 @@ Quelques avantages de cette convention :
 
 - Puisque les noms des composants doivent toujours être des mots composés, cette convention vous fait éviter d'avoir à choisir des préfixes arbitraires pour des composants simples (e.g. MyButton, VueButton).
 
-- Étant donné que ces composants sont fréquemment utilisés, vous pouvez simplement les rendre globaux au lieu de les importer partout. Un préfixe rend cela possible avec Webpack :
+- Étant donné que ces composants sont fréquemment utilisés, vous pouvez simplement les rendre globaux au lieu de les importer partout. Un préfixe rend cela possible avec Vite :
 
   ```js
-  const requireComponent = require.context(
-    './src',
-    true,
-    /Base[A-Z]\w+\.(vue|js)$/
-  )
-  requireComponent.keys().forEach(function (fileName) {
-    let baseComponentConfig = requireComponent(fileName)
-    baseComponentConfig =
-      baseComponentConfig.default || baseComponentConfig
-    const baseComponentName =
-      baseComponentConfig.name ||
-      fileName.replace(/^.+\//, '').replace(/\.\w+$/, '')
-    app.component(baseComponentName, baseComponentConfig)
-  })
+  const modules = import.meta.glob('./src/**/Base*.vue', { eager: true })
+  for (const path in modules) {
+    const config = modules[path].default
+    const name = config.name || path.match(/Base[A-Z]\w+/)[0]
+    app.component(name, config)
+  }
   ```
 
   :::
@@ -317,7 +305,7 @@ components/
 
 Les composants auto-fermants n'indiquent pas seulement qu'ils n'ont pas de contenu, mais aussi qu'ils ne sont pas censés en avoir. C'est la différence entre une page blanche dans un livre et une autre intitulée «Cette page est laissée vierge intentionnellement». Votre code est également plus propre sans la balise de fermeture inutile.
 
-Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermants - seulement les [éléments officiels "void"](https://www.w3.org/TR/html/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
+Malheureusement, HTML n'autorise pas que les éléments personnalisés soient auto-fermants - seulement les [éléments officiels "void"](https://html.spec.whatwg.org/multipage/syntax.html#void-elements). C'est pourquoi la stratégie n'est possible que lorsque le compilateur de templates de Vue peut atteindre le template avant le DOM, puis servir le HTML conforme aux spécifications.
 
 <div class="style-example style-example-bad">
 <h3>À éviter</h3>
