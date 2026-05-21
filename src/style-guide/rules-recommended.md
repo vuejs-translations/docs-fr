@@ -1,9 +1,5 @@
 # Règles de priorité C : Recommandées {#priority-c-rules-recommended}
 
-::: warning Note
-Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
-:::
-
 Lorsqu'il existe plusieurs options correctes, un choix arbitraire peut être fait pour assurer une certaine cohérence. Dans ces règles, nous décrivons chaque option acceptable et suggérons un choix par défaut. Cela signifie que vous être libres de faire un choix différent dans votre code, tant que vous restez cohérent et avez une bonne raison. Vous avez certainement une bonne raison ! En adaptant les standards de la communauté, vous :
 
 1. Entraînerez votre cerveau à analyser plus facilement la plupart du code que vous rencontrerez
@@ -40,6 +36,7 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
    - `inheritAttrs`
    - `props`
    - `emits`
+   - `expose`
 
 6. **Composition API** (le point d'entrée pour l'utilisation de la Composition API)
 
@@ -67,6 +64,7 @@ Voici l'ordre par défaut que nous recommandons pour les options d'un composant.
      - `errorCaptured`
      - `renderTracked`
      - `renderTriggered`
+     - `serverPrefetch` (SSR seulement)
 
 9. **Propriétés non réactives** (propriétés de l'instance indépendantes du système de réactivité)
 

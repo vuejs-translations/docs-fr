@@ -1,9 +1,5 @@
 # Règles de priorité A : Essentielles {#priority-a-rules-essential}
 
-::: warning Note
-Ce guide de style Vue.js est obsolète et doit être revu. Si vous avez des questions ou des suggestions, veuillez [ouvrir une issue](https://github.com/vuejs/docs/issues/new).
-:::
-
 Ces règles aident à prévenir les erreurs, donc apprenez les et tenez-y vous coûte que coûte. Il peut y avoir des exceptions, mais elles sont rares et devraient être faites par ceux ayant une expertise à la fois dans JavaScript et dans Vue.
 
 ## Utilisez des noms de composants avec plusieurs mots {#use-multi-word-component-names}
@@ -337,7 +333,7 @@ Ou encore, nous pouvons utiliser une balise `<template>` avec `v-for` pour envel
 
 Pour les applications, les styles du composant `App` et des composants de mise en page peuvent être globaux, mais tous les autres styles des composants devraient avoir une portée limitée.
 
-Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc). Cela ne nécessite _pas_ que l'[attribut `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](https://vue-loader.vuejs.org/en/features/css-modules), une stratégie basée sur les classes telle que [BEM](http://getbem.com/), ou tout autre librairie/convention.
+Cela n'est pertinent que pour les [composants monofichiers](/guide/scaling-up/sfc). Cela ne nécessite _pas_ que l'[attribut `scoped`](/api/sfc-css-features#scoped-css) soit utilisé. La limitation de la portée peut se faire via des [modules CSS](/api/sfc-css-features#css-modules), une stratégie basée sur les classes telle que [BEM](https://getbem.com/), ou tout autre librairie/convention.
 
 **Toutefois, pour les librairies de composants, il est préférable d'utiliser une stratégie basée sur les classes au lieu d'utiliser l'attribut `scoped`.**
 
