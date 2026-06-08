@@ -227,10 +227,10 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 ![Outils de développeur de Chrome montrant le nom du champs accessible via aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
 
-When this pattern is used inside a reusable component, generate the IDs with
-[`useId()`](/api/composition-api-helpers.html#useid) instead of hard-coding
-them. This keeps each component instance's `id` values unique while still
-linking the visible text to the form control:
+Lorsque ce modèle est utilisé au sein d'un composant réutilisable, générez les identifiants à l'aide de
+[`useId()`](/api/composition-api-helpers.html#useid) au lieu de les coder en dur.
+Cela permet de garantir l'unicité des valeurs `id` de chaque instance de composant tout en
+maintenant le lien entre le texte affiché et le contrôle du formulaire :
 
 ```vue
 <script setup>
