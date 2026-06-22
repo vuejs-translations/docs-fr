@@ -196,7 +196,7 @@ De plus, pour charger les fichiers client dans le navigateur, nous devons égale
 
 1. Servir les fichiers client en ajoutant `server.use(express.static('.'))` dans `server.js`.
 2. Charger l'entrée client en ajoutant `<script type="module" src="/client.js"></script>` au fichier HTML.
-3. Prendre en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://github.com/WICG/import-maps) au fichier HTML.
+3. Prendre en charge l'utilisation comme `import * from 'vue'` dans le navigateur en ajoutant [Import Map](https://html.spec.whatwg.org/multipage/webappapis.html#import-maps) au fichier HTML.
 
 [Essayez l'exemple complété sur StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js). Le bouton est maintenant interactif !
 
