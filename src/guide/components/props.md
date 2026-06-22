@@ -338,6 +338,30 @@ Sera équivalent à :
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
+### Comportement de fusion lors de la combinaison de liaisons {#merge-behavior-when-combining-bindings}
+
+Lorsque `v-bind` est utilisé en même temps que des liaisons explicites sur le même composant, Vue appelle en interne `mergeProps()` pour les combiner. La stratégie de fusion dépend du type de clé :
+
+- **Props réguliers** — c'est la dernière valeur qui prévaut :
+
+```vue-html
+<!-- title === 'bar' -->
+<BlogPost title="foo" v-bind="{ title: 'bar' }" />
+```
+
+- **Event listeners** — lorsque vous passez des écouteurs dans un objet `v-bind`, [utilisez la convention de clé `onEventName`](/guide/extras/render-function#v-on). Tous les gestionnaires pour le même événement seront appelés (voir [`v-on` Héritage des écouteurs](/guide/components/attrs#v-on-listener-inheritance)) :
+
+```vue-html
+<!-- logs 1 et 2 -->
+<BlogPost @click="console.log(1)" v-bind="{ onClick: () => console.log(2) }" />
+```
+
+- **`class` et `style`** suivent une stratégie de fusion similaire (voir [`class` et `style` Fusion](/guide/components/attrs#class-and-style-merging)).
+
+:::tip
+Les règles de fusion complètes sont décrites dans la référence API de [`mergeProps()`](/api/render-function#mergeprops).
+:::
+
 ## Flux de données à sens unique {#one-way-data-flow}
 
 Tous les props forment une **liaison unidirectionnelle** entre la propriété enfant et la propriété parent : lorsque la propriété parent est mise à jour, elle descendra vers l'enfant, mais pas l'inverse. Cela empêche les composants enfants de muter accidentellement l'état du parent, ce qui peut rendre le flux de données de votre application plus difficile à comprendre.
