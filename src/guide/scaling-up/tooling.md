@@ -187,4 +187,8 @@ Le loader officiel qui assure le support des composants monofichiers de Vue dans
 - [Vue sur Codepen](https://codepen.io/pen/editor/vue)
 - [Vue sur WebComponents.dev](https://webcomponents.dev/create/cevue)
 
-<!-- TODO ## Backend Framework Integrations -->
+## Intégrations avec les frameworks backend {#backend-framework-integrations}
+
+Si vous utilisez Vue avec [Laravel](https://laravel.com/), le framework fournit un [plugin Vite](https://laravel.com/docs/vite) officiel qui gère le bundling des assets et le hot-module replacement dès le départ.
+
+Pour tout autre backend, consultez le [guide d'intégration backend](https://vite.dev/guide/backend-integration.html) de Vite pour le brancher manuellement.
