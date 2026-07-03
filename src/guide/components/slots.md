@@ -26,7 +26,7 @@ Le template de `<FancyButton>` ressemble à ceci :
 
 L'élément `<slot>` est un **emplacement du slot** qui indique où le **contenu du slot** fourni par le parent doit être affiché.
 
-![slot diagram](./images/slots.png)
+![Diagramme montrant le contenu de slot du parent injecté dans la sortie de slot du composant enfant](./images/slots.png)
 
 <!-- https://www.figma.com/file/uXgOHSQYUcc1elWGPTskfs/slot -->
 
@@ -207,7 +207,7 @@ Pour passer un slot nommé, nous devons utiliser un élément `<template>` avec 
 
 `v-slot` a un raccourci dédié `#`, donc `<template v-slot:header>` peut être raccourci en juste `<template #header>`. Pensez-y comme "rendre ce fragment de template dans le slot 'header' du composant enfant".
 
-![named slots diagram](./images/named-slots.png)
+![Diagramme montrant plusieurs slots nommés dans un composant de mise en page, avec le contenu du parent dirigé vers les slots header, main et footer correspondants](./images/named-slots.png)
 
 <!-- https://www.figma.com/file/2BhP8gVZevttBu9oUmUUyz/named-slot -->
 
@@ -367,7 +367,7 @@ La réception des props de slot est un peu différente lorsque vous utilisez un 
 </MyComponent>
 ```
 
-![scoped slots diagram](./images/scoped-slots.svg)
+![Diagramme montrant un slot à portée limitée où le composant enfant renvoie des données au contenu de slot fourni par le parent](./images/scoped-slots.svg)
 
 <!-- https://www.figma.com/file/QRneoj8eIdL1kw3WQaaEyc/scoped-slot -->
 

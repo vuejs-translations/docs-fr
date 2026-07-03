@@ -59,7 +59,7 @@ Notez que cela ne signifie pas que l'appel doit être placé littéralement dans
 
 Ci-dessous figure le diagramme du cycle de vie d'une instance. Vous n'avez pas besoin de le comprendre entièrement pour le moment, mais au fur et à mesure que vous apprendrez et construirez, il sera une référence utile.
 
-![Diagramme du cycle de vie d'un composant](./images/lifecycle.png)
+![Diagramme montrant le cycle de vie complet d'un composant Vue, de la création à la destruction, incluant tous les hooks majeurs du cycle de vie et les processus internes comme la compilation du template et le montage](./images/lifecycle.png)
 
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
