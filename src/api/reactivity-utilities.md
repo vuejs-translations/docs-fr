@@ -265,3 +265,13 @@ Les proxys créés par [`readonly()`](./reactivity-core#readonly) et [`shallowRe
   ```ts
   function isReadonly(value: unknown): boolean
   ```
+
+## isShallow() {#isshallow}
+
+Checks if an object is a proxy created by [`shallowRef`](./reactivity-advanced#shallowref), [`shallowReactive()`](./reactivity-advanced#shallowreactive) or [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
+
+- **Type**
+
+  ```ts
+  function isShallow(value: unknown): boolean
+  ```
