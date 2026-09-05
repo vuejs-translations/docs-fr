@@ -68,21 +68,21 @@ onMounted(load)
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Accessible</h2>
-      <p>
-        S’appuie sur les standards HTML, CSS et JavaScript en proposant une API et une documentation traduite en plusieurs langues.
-      </p>
-    </div>
-    <div class="vt-box">
-      <h2>Performant</h2>
-      <p>
-        Se repose sur un système de réactivité, optimisé à la compilation sans devoir y penser par soi-même.
-      </p>
-    </div>
-    <div class="vt-box">
       <h2>Polyvalent</h2>
       <p>
         Un écosystème riche et utilisable progressivement qui peut évoluer selon les besoins, d’une simple librairie à un framework complet.
+      </p>
+    </div>
+    <div class="vt-box">
+      <h2>Convivial</h2>
+      <p>
+        S'appuie sur les standards HTML, CSS et JavaScript en proposant une API intuitive et une documentation de classe mondiale.
+      </p>
+    </div>
+    <div class="vt-box">
+      <h2>Efficace</h2>
+      <p>
+        Un système de rendu réactif et optimisé par le compilateur qui nécessite rarement une optimisation manuelle.
       </p>
     </div>
   </section>
@@ -263,6 +263,10 @@ html:not(.dark) .accent,
 
 #highlights .vt-box {
   background-color: transparent;
+}
+
+#highlights .vt-box h2::first-letter{
+  color: var(--vt-c-green);
 }
 
 #spsrs {
