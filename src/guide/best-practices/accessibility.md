@@ -227,6 +227,34 @@ Utiliser [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Access
 
 ![Outils de développeur de Chrome montrant le nom du champs accessible via aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
 
+Lorsque ce modèle est utilisé au sein d'un composant réutilisable, générez les identifiants à l'aide de
+[`useId()`](/api/composition-api-helpers.html#useid) au lieu de les coder en dur.
+Cela permet de garantir l'unicité des valeurs `id` de chaque instance de composant tout en
+maintenant le lien entre le texte affiché et le contrôle du formulaire :
+
+```vue
+<script setup>
+import { useId } from 'vue'
+
+const sectionId = useId()
+const nameId = useId()
+</script>
+
+<template>
+  <section class="form-section">
+    <h2 :id="sectionId">Billing</h2>
+
+    <label :id="nameId" :for="`${nameId}-input`">Name: </label>
+    <input
+      :id="`${nameId}-input`"
+      type="text"
+      name="name"
+      :aria-labelledby="`${sectionId} ${nameId}`"
+    />
+  </section>
+</template>
+```
+
 #### `aria-describedby` {#aria-describedby}
 
 L'attribut [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) est utilisé de la même manière que `aria-labelledby` à l'exception qu'il fournit une description avec de l'information supplémentaire pour l'utilisateur. Cela peut être utilisé pour décrire le critère pour n'importe quel champ :
