@@ -732,6 +732,11 @@ export default defineConfigWithTheme<ThemeConfig>({
         repo: 'https://github.com/vuejs-translations/docs-uk'
       },
       {
+        link: 'https://de.vuejs.org',
+        text: 'Deutsch',
+        repo: 'https://github.com/vuejs-translations/docs-de'
+      },
+      {
         link: 'https://ko.vuejs.org',
         text: '한국어',
         repo: 'https://github.com/vuejs-translations/docs-ko'
