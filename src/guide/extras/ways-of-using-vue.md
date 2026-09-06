@@ -33,7 +33,7 @@ Les SPAs entièrement côté client posent problème lorsque l'application est s
 
 Vue fournit des API de première classe pour "rendre" une application Vue en chaînes HTML sur le serveur. Cela permet au serveur de renvoyer de l'HTML déjà rendu, permettant aux utilisateurs finaux de voir immédiatement le contenu tandis que le JavaScript est en cours de téléchargement. Vue hydratera alors l'application côté client pour la rendre interactive. Cela s'appelle [Rendu côté serveur ou _Server-Side Rendering_ (SSR)](/guide/scaling-up/ssr) et améliore considérablement les métriques Core Web Vital telles que [Largest Contentful Paint (LCP)](https://web.dev/lcp/).
 
-Il y a des frameworks basés sur Vue, par exemple [Nuxt](https://nuxt.com/), qui permettent de développer une application avec Vue et JavaScript.
+Il existe également des [frameworks Vue](/guide/quick-start#frameworks) de plus haut niveau, construits sur ce paradigme et fournissant un support SSR intégré pour développer des applications full stack.
 
 ## JAMStack / SSG {#jamstack-ssg}
 
@@ -47,7 +47,7 @@ Il existe deux types de SSG : monopage et multi-page. Les deux types pré-renden
 
 Les SSG monopages conviennent mieux si vous attendez une interactivité non négligeable, des sessions profondes ou des éléments / états persistants à travers les navigations. Dans le cas contraire, une SSG à plusieurs pages serait un choix plus judicieux.
 
-L'équipe Vue maintient également un générateur de site statique appelé [VitePress](https://vitepress.dev/), qui alimente le site web que vous êtes en train de lire en ce moment même! VitePress prend en charge les deux types de SSG. [Nuxt](https://nuxt.com/) prend également en charge le SSG. Vous pouvez même mélanger SSR et SSG pour différentes routes dans la même application Nuxt.
+L'équipe Vue maintient un générateur de site statique appelé [VitePress](https://vitepress.dev/), qui alimente le site web que vous êtes en train de lire en ce moment même et qui prend en charge les deux types de SSG ! De plus, n'hésitez pas à consulter d'autres [frameworks Vue](/guide/quick-start#frameworks) qui supportent généralement le SSG.
 
 ## Au-delà du web {#beyond-the-web}
 
