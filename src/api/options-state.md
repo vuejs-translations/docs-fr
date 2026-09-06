@@ -144,7 +144,8 @@ Déclare les propriétés calculées à exposer à l'instance du composant.
 
   type ComputedGetter<T> = (
     this: ComponentPublicInstance,
-    vm: ComponentPublicInstance
+    vm: ComponentPublicInstance,
+    previous?: T
   ) => T
 
   type ComputedSetter<T> = (

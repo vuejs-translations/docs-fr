@@ -280,7 +280,7 @@ type DebuggerEvent = {
 
 ### Débogage des propriétés calculées {#computed-debugging}
 
-<!-- TODO options API equivalent -->
+<div class="composition-api">
 
 Nous pouvons déboguer les propriétés calculées en passant à `computed()` un second objet d'options avec des fonctions de rappel `onTrack` et `onTrigger` :
 
@@ -312,9 +312,17 @@ count.value++
 Les propriétés calculées `onTrack` et `onTrigger` ne fonctionnent qu'en mode développement.
 :::
 
+</div>
+
+<div class="options-api">
+
+Les options de débogage des propriétés calculées ne sont disponibles que via la fonction `computed()` de la Composition API.
+
+</div>
+
 ### Débogage des observateurs {#watcher-debugging}
 
-<!-- TODO options API equivalent -->
+<div class="composition-api">
 
 Comme pour `computed()`, les observateurs prennent aussi en charge les options `onTrack` et `onTrigger` :
 
@@ -337,6 +345,32 @@ watchEffect(callback, {
   }
 })
 ```
+
+</div>
+
+<div class="options-api">
+
+Les observateurs déclarés avec la syntaxe objet prennent également en charge les options `onTrack` et `onTrigger` :
+
+```js
+export default {
+  watch: {
+    source: {
+      handler() {
+        // ...
+      },
+      onTrack(e) {
+        debugger
+      },
+      onTrigger(e) {
+        debugger
+      }
+    }
+  }
+}
+```
+
+</div>
 
 :::tip
 Les options d'observation `onTrack` et `onTrigger` ne fonctionnent qu'en mode développement.

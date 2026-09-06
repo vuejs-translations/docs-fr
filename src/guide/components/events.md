@@ -208,7 +208,7 @@ Plus de détails : [Typer les données émises par les composants](/guide/typesc
 </div>
 <div class="options-api">
 
-```js
+```ts
 export default {
   emits: {
     submit(payload: { email: string, password: string }) {

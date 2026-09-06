@@ -27,7 +27,7 @@ aside: false
 - [العربية / Arabic](https://ar.vuejs.org/) [[source](https://github.com/vuejs-translations/docs-ar)]
 - [Español / Spanish](https://vue3-spanish-docs.netlify.app/) [[source](https://github.com/icarusgk/vuejs-spanish-docs)]
 
-## Commencer une nouvelle traduction {#starting-a-new-translation}
+## Contribuer aux traductions {#contributing-to-translations}
 
 La documentation de Vue a récemment subi une révision majeure, ainsi les traductions dans d'autres langues sont toujours manquantes ou en cours de développement.
 

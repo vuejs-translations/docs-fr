@@ -47,7 +47,7 @@ Vous pouvez également essayer de convaincre votre employeur de sponsoriser Vue 
 - **Platine (USD$2,000/mois)** :
   - Emplacement imposant pour votre logo sur la première page de [vuejs.org](/).
   - Emplacement imposant pour votre logo dans la barre latérale de chacunes des pages.
-  - Emplacement imposant pour votre logo dans le fichier README de [`vuejs/core`](https://github.com/vuejs/core) et [`vuejs/vue`](https://github.com/vuejs/core).
+  - Emplacement imposant pour votre logo dans le fichier README de [`vuejs/core`](https://github.com/vuejs/core) et [`vuejs/vue`](https://github.com/vuejs/vue).
 - **Or (USD$500/mois)** :
   - Grand emplacement pour votre logo sur la première page de [vuejs.org](/).
   - Grand emplacement pour votre logo dans le fichier README de `vuejs/core` et `vuejs/vue`.

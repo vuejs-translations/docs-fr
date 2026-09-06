@@ -350,22 +350,25 @@ Comme indiqué dans [Portée du rendu](#render-scope), le contenu du slot n'a pa
 
 Cependant, il existe des cas où il peut être utile que le contenu d'un slot puisse utiliser des données provenant à la fois de la portée du parent et de la portée de l'enfant. Pour y parvenir, nous avons besoin d'un moyen pour l'enfant de transmettre des données à un slot pour son affichage.
 
-En fait, nous pouvons faire exactement cela - nous pouvons transmettre des attributs à un emplacement de slot comme on transmettrait des props à un composant :
+En fait, nous pouvons faire exactement cela - nous pouvons transmettre des attributs à un emplacement de slot comme on transmettrait des props à un composant. Le template parent reçoit les props de slot avec `v-slot`, tandis que le template enfant passe des props à l'emplacement de slot lors du rendu :
 
 ```vue-html
-<!-- template de <MyComponent> -->
-<div>
-  <slot :text="greetingMessage" :count="1"></slot>
-</div>
+<!-- Template parent (utilisation) -->
+<ChildComponent v-slot="receivedProps">
+  {{ receivedProps.text }} {{ receivedProps.count }}
+</ChildComponent>
 ```
-
-La réception des props de slot est un peu différente lorsque vous utilisez un seul slot par défaut par rapport à l'utilisation de slots nommés. Nous allons d'abord montrer comment recevoir des props en utilisant un seul slot par défaut, en utilisant `v-slot` directement sur la balise du composant enfant :
 
 ```vue-html
-<MyComponent v-slot="slotProps">
-  {{ slotProps.text }} {{ slotProps.count }}
-</MyComponent>
+<!-- Template enfant (définition du slot) -->
+<!-- rendu avec des props ! -->
+<slot
+  text="hello"
+  :count="1"
+/>
 ```
+
+La réception des props de slot est un peu différente lorsque vous utilisez un seul slot par défaut par rapport à l'utilisation de slots nommés. L'exemple ci-dessus reçoit les props en utilisant un seul slot par défaut, en utilisant `v-slot` directement sur la balise `ChildComponent`.
 
 ![Diagramme montrant un slot à portée limitée où le composant enfant renvoie des données au contenu de slot fourni par le parent](./images/scoped-slots.svg)
 
@@ -373,12 +376,12 @@ La réception des props de slot est un peu différente lorsque vous utilisez un 
 
 <div class="composition-api">
 
-[Essayer en ligne](https://play.vuejs.org/#eNp9kMEKgzAMhl8l9OJlU3aVOhg7C3uAXsRlTtC2tFE2pO++dA5xMnZqk+b/8/2dxMnadBxQ5EL62rWWwCMN9qh021vjCMrn2fBNoya4OdNDkmarXhQnSstsVrOOC8LedhVhrEiuHca97wwVSsTj4oz1SvAUgKJpgqWZEj4IQoCvZm0Gtgghzss1BDvIbFkqdmID+CNdbbQnaBwitbop0fuqQSgguWPXmX+JePe1HT/QMtJBHnE51MZOCcjfzPx04JxsydPzp2Szxxo7vABY1I/p)
+[Essayer en ligne](https://play.vuejs.org/#eJxlj00Kg0AMha8SsnHTKt2KDhQv0ANkUzTFgfljJkpBvHsZhYK6fS+878uCzxDKeWKssUl91EEgsUxBkdM2+CjQjdoMnbfBO3YCn+gtFGV1jPNEQa6p9g1FjlwjbIN5CytyAM1pZ74n46UljNyznnl4RR8S4XYMsCxwKErhr8C6XoveTy43G+SkpbLSXwNveLXOjx9Fs9cukZkt4cjGeMI9qzdeS/jYk+rEWH9AQHet)
 
 </div>
 <div class="options-api">
 
-[Essayer en ligne](https://play.vuejs.org/#eNqFkNFqxCAQRX9l8CUttAl9DbZQ+rzQD/AlJLNpwKjoJGwJ/nvHpAnusrAg6FzHO567iE/nynlCUQsZWj84+lBmGJ31BKffL8sng4bg7O0IRVllWnpWKAOgDF7WBx2em0kTLElt975QbwLkhkmIyvCS1TGXC8LR6YYwVSTzH8yvQVt6VyJt3966oAR38XhaFjjEkvBCECNcia2d2CLyOACZQ7CDrI6h4kXcAF7lcg+za6h5et4JPdLkzV4B9B6RBtOfMISmxxqKH9TarrGtATxMgf/bDfM/qExEUCdEDuLGXAmoV06+euNs2JK7tyCrzSNHjX9aurQf)
+[Essayer en ligne](https://play.vuejs.org/#eJxlkMEKgzAMhl8l5LLLpuwqKoy9wB4gl6GRCTUtNYogffdRywbq9f+Tfl+64sO5bJ4YCyzHxvdOa5J+cNYrPD+9aZ92cFZYFDpvB7hk+T6OyxcSEl62pZa792QUVhKA5jc1FimAw6MxCySBpMz/eJJSeXDmrVzHgfIgMt9GY7Ui9NxwP3P78taNhHUirCvsikx5UQjhXDR2kthskMNddVT6a+AVz2fHP9uLRq8kEZkV4YeNsYQpKzZeRXhPSX5ghC8NDY0G)
 
 </div>
 
@@ -387,35 +390,32 @@ Les props passés au slot par l'enfant sont disponibles en tant que valeur de la
 Vous pouvez considérer un "scoped slot" comme une fonction transmise au composant enfant. Le composant enfant l'appelle ensuite, en passant des props comme arguments :
 
 ```js
-MyComponent({
+ChildComponent({
   // passage du slot par défaut, mais en tant que fonction
-  default: (slotProps) => {
-    return `${slotProps.text} ${slotProps.count}`
+  default: (receivedProps) => {
+    return `${receivedProps.text} ${receivedProps.count}`
   }
 })
 
-function MyComponent(slots) {
-  const greetingMessage = 'hello'
-  return `<div>${
-    // appel de la fonction slot avec les props !
-    slots.default({ text: greetingMessage, count: 1 })
-  }</div>`
+function ChildComponent(slots) {
+  // appel de la fonction slot avec les props !
+  return slots.default({ text: 'hello', count: 1 })
 }
 ```
 
 En fait, c'est très proche de la façon dont les "scoped slots" sont compilés et de la façon dont vous utiliseriez les "scoped slots" dans les [fonctions de rendu](/guide/extras/render-function) manuelles.
 
-Remarquez comment `v-slot="slotProps"` correspond à la signature de la fonction slot. Tout comme avec les arguments de fonction, nous pouvons utiliser la déstructuration dans `v-slot` :
+Remarquez comment `v-slot="receivedProps"` correspond à la signature de la fonction slot. Tout comme avec les arguments de fonction, nous pouvons utiliser la déstructuration dans `v-slot` :
 
 ```vue-html
-<MyComponent v-slot="{ text, count }">
+<ChildComponent v-slot="{ text, count }">
   {{ text }} {{ count }}
-</MyComponent>
+</ChildComponent>
 ```
 
 ### Scoped slots nommés {#named-scoped-slots}
 
-Les Scoped slots nommés fonctionnent de la même manière - les props du slot sont accessibles en tant que valeur de la directive `v-slot` : `v-slot:name="slotProps"`. Lorsque vous utilisez le raccourci, cela ressemble à ceci :
+Les scoped slots nommés fonctionnent de la même manière - les props du slot sont accessibles en tant que valeur de la directive `v-slot` : `v-slot:name="receivedProps"`. Lorsque vous utilisez le raccourci, cela ressemble à ceci :
 
 ```vue-html
 <MyComponent>
@@ -436,7 +436,7 @@ Les Scoped slots nommés fonctionnent de la même manière - les props du slot s
 Passer des props à un slot nommé :
 
 ```vue-html
-<slot name="header" message="hello"></slot>
+<slot name="header" message="hello" />
 ```
 
 Notez que l'attribut `name` d'un slot ne sera pas inclus dans les props car il est réservé - donc le `headerProps` résultant serait `{ message: 'hello' }`.
@@ -446,7 +446,7 @@ Si vous mélangez des slots nommés avec des "scoped slots" par défaut, vous de
 ```vue-html
 <!-- <MyComponent> template -->
 <div>
-  <slot :message="hello"></slot>
+  <slot message="hello" />
   <slot name="footer" />
 </div>
 ```
@@ -497,7 +497,7 @@ Dans `<FancyList>`, nous pouvons afficher le même `<slot>` plusieurs fois avec 
 ```vue-html
 <ul>
   <li v-for="item in items">
-    <slot name="item" v-bind="item"></slot>
+    <slot name="item" v-bind="item" />
   </li>
 </ul>
 ```

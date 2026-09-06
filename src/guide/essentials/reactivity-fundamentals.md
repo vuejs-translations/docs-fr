@@ -578,7 +578,7 @@ Pour que la fonction debounced de chaque instance de composant soit indépendant
 export default {
   created() {
     // chaque instance a maintenant sa propre copie du gestionnaire debounced
-    this.debouncedClick = _.debounce(this.click, 500)
+    this.debouncedClick = debounce(this.click, 500)
   },
   unmounted() {
     // c'est aussi une bonne idée d'annuler le minuteur

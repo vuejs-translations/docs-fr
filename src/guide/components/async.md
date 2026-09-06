@@ -117,7 +117,7 @@ Dans Vue 3.5+, les composants asynchrones peuvent contrôler le moment où ils s
 
 - Vue fournit un certain nombre de stratégies d'hydratation intégrées. Ces stratégies intégrées doivent être importées individuellement afin qu'elles puissent être supprimées si elles ne sont pas utilisées.
 
-- La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau (par exemple, Nuxt).
+- La conception est intentionnellement de bas niveau pour plus de flexibilité. Le sucre syntaxique du compilateur peut potentiellement être construit sur cette base à l'avenir, soit dans le noyau, soit dans des solutions de plus haut niveau telles que les [frameworks Vue](/guide/quick-start#frameworks).
 
 ### Hydratation quand stable  {#hydrate-on-idle}
 
