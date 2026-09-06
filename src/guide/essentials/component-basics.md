@@ -6,7 +6,7 @@
 
 Les composants nous permettent de fractionner l'UI en morceaux indépendants et réutilisables, sur lesquels nous pouvons réfléchir de manière isolée. Il est courant pour une application d'être organisée en un arbre de composants imbriqués.
 
-![Component Tree](./images/components.png)
+![Diagramme montrant une structure d'arbre de composants avec un composant racine se ramifiant en plusieurs composants enfants et sous-enfants imbriqués](./images/components.png)
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
