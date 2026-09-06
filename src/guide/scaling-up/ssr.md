@@ -214,21 +214,7 @@ Pour une application SSR en production, plusieurs considérations supplémentair
 
 - Gestion du routage, de la récupération de données et des stores de gestion d'état de manière universelle.
 
-Une implémentation complète serait assez complexe et dépend de la chaîne d'outils de build que vous avez choisie. Par conséquent, nous vous recommandons fortement d'adopter une solution plus élevée et orientée afin d'abstraire la complexité pour vous. Ci-dessous, nous présenterons quelques solutions SSR recommandées dans l'écosystème Vue.
-
-### Nuxt {#nuxt}
-
-[Nuxt](https://nuxt.com/) est une plateforme Vue simplifiée pour développer des applications universelles et peut être utilisée comme générateur de site statique. Nous vous recommandons fortement de l'essayer.
-
-### Quasar {#quasar}
-
-[Quasar](https://quasar.dev) est une plateforme basée sur Vue qui vous permet de développer des applications pour plusieurs plateformes (SSR, SPA, PWA, mobile, bureau, extension de navigateur) avec un seul code de base. Il fournit également des composants d'interface utilisateur conformes à Material Design.
-
-### Vite SSR {#vite-ssr}
-
-Vite fournit [un support natif pour le rendu côté serveur de Vue](https://vite.dev/guide/ssr.html), mais il est intentionnellement de bas niveau. Si vous souhaitez utiliser directement avec Vite, consultez [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin communautaire qui fait abstraction de nombreux détails complexes pour vous.
-
-Vous pouvez également trouver un exemple de projet Vue + Vite SSR en utilisant une configuration manuelle ici, qui peut servir de base pour le build. Notez que ceci n'est recommandé que si vous avez de l'expérience avec SSR / outils de build et que vous souhaitez avoir un contrôle complet sur l'architecture de haut niveau.
+Une implémentation complète serait assez complexe et dépend de la chaîne d'outils de build que vous avez choisie. Par conséquent, nous vous recommandons fortement d'utiliser des [frameworks Vue](/guide/quick-start#frameworks) si vous avez besoin du SSR, car ils ont souvent un support SSR intégré.
 
 ## Écrire du code SSR propre {#writing-ssr-friendly-code}
 

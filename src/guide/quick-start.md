@@ -399,6 +399,24 @@ Pour démarrer un serveur HTTP local, installez d'abord [Node.js](https://nodejs
 
 Vous avez peut-être remarqué que le template du composant importé est souligné comme une chaîne JavaScript. Si vous utilisez VS Code, vous pouvez installer l'extension [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) et préfixer les chaînes avec un commentaire `/*html*/` pour obtenir la coloration syntaxique.
 
+## Frameworks {#frameworks}
+
+Il existe des frameworks Vue qui prennent en charge le [SSR](/guide/scaling-up/ssr) et d'autres fonctionnalités dès le départ :
+- [Nuxt](https://nuxt.com/)
+- [Vike](https://vike.dev/)
+- [Astro](https://astro.build/)
+- [Quasar](https://quasar.dev/)
+
+:::tip
+La recommandation générale est d'utiliser un framework uniquement si vous avez besoin du SSR.
+
+Si vous n'avez pas besoin du SSR, vous pouvez simplement utiliser [Vite](https://vite.dev/) (c'est ce que génère la section ci-dessus [Créer une application Vue](#creating-a-vue-application)).
+:::
+
+:::info
+Les frameworks Vue utilisent généralement Vite sous le capot, donc utiliser Vite directement plutôt qu'un framework Vue est une configuration plus simple si vous n'avez pas besoin du SSR. Cela dit, les frameworks proposent aussi des fonctionnalités supplémentaires, telles que des thèmes d'interface, ce qui peut également être une raison de préférer un framework Vue plutôt que d'utiliser uniquement Vite.
+:::
+
 ## Étapes suivantes {#next-steps}
 
 Si vous avez raté l'[Introduction](/guide/introduction), nous vous recommandons fortement d'en prendre connaissance avant de continuer sur la documentation.
