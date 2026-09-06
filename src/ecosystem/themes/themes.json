@@ -1,15 +1,22 @@
 [
   {
     "name": "Nuxt UI",
-    "description": "[Nuxt UI](https://ui.nuxt.com/) is an intuitive, open-source UI library for Vue and Nuxt applications. Built with Tailwind CSS and Reka UI, it provides 100+ beautifully crafted, accessible components with a flexible CSS-first design system.",
-    "seeMoreUrl": "https://ui.nuxt.com",
+    "description": "[Nuxt UI](https://ui.nuxt.com/) est une bibliothèque UI open-source avec plus de 125 composants accessibles basés sur Tailwind CSS pour Vue et Nuxt. Construite sur Reka UI avec un système de design flexible et CSS-first, elle fonctionne avec Vite, Inertia et le SSR dès le départ.",
+    "seeMoreUrl": "https://ui.nuxt.com/",
     "products": [
       {
         "name": "Dashboard",
         "price": 0,
-        "description": "Professional Vue Dashboard Template showcasing Nuxt UI capabilities.",
-        "url": "https://vue-dashboard-template.nuxt.dev",
-        "image": "https://res.cloudinary.com/nuxt/image/upload/v1742036101/nuxt-ui/nuxt-ui-dashboard-social-card_kpeysq.png"
+        "description": "Template de tableau de bord Vue avec mise en page multi-colonnes et graphiques.",
+        "url": "https://dashboard-vue-template.nuxt.dev",
+        "image": "https://ui.nuxt.com/assets/templates/vue/dashboard-light.png"
+      },
+      {
+        "name": "Chat",
+        "price": 0,
+        "description": "Template de chatbot IA Vue avec streaming, authentification et historique de conversation.",
+        "url": "https://chat-vue-template.nuxt.dev",
+        "image": "https://ui.nuxt.com/assets/templates/vue/chat-light.png"
       }
     ]
   },
@@ -319,7 +326,7 @@
         "url": "https://codedthemes.com/item/able-pro-vuejs-admin-dashboard/?ref=evan.vuejs",
         "image": "https://org-public-assets.s3.us-west-2.amazonaws.com/Banners/Able+pro-pro-vue.png"
       },
-       {
+      {
         "name": "Able Pro Vue Laravel Admin Dashboard Template",
         "price": 69,
         "description": "A powerful Vue + Laravel Dashboard Theme",
