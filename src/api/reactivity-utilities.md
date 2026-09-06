@@ -268,7 +268,7 @@ Les proxys créés par [`readonly()`](./reactivity-core#readonly) et [`shallowRe
 
 ## isShallow() {#isshallow}
 
-Checks if an object is a proxy created by [`shallowRef`](./reactivity-advanced#shallowref), [`shallowReactive()`](./reactivity-advanced#shallowreactive) or [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
+Vérifie si un objet est un proxy créé par [`shallowRef`](./reactivity-advanced#shallowref), [`shallowReactive()`](./reactivity-advanced#shallowreactive) ou [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
 
 - **Type**
 
