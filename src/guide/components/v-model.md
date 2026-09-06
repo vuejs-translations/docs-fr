@@ -524,7 +524,7 @@ export default {
 Pour les liens `v-model` avec à la fois un argument et un modificateur, le nom de la prop générée sera `arg + "Modifiers"`. Par exemple :
 
 ```vue-html
-<MyComponent v-model:title.capitalize="myText">
+<MyComponent v-model:title.capitalize="myText" />
 ```
 
 Les déclarations correspondantes doivent être :
