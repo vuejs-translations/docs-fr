@@ -283,6 +283,6 @@ Vous verrez d'autres exemples de modificateurs plus tard, [pour `v-on`](./event-
 
 Et enfin, voici la syntaxe complète de la directive visualisée :
 
-![graphique de syntaxe de directive](./images/directive.png)
+![Diagramme visualisant la syntaxe complète d'une directive, incluant le nom de la directive, l'argument, les modificateurs et la valeur](./images/directive.png)
 
 <!-- https://www.figma.com/file/lxB7KSd8uTdSMIWS70c4L2/Directive -->

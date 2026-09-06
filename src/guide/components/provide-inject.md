@@ -6,7 +6,7 @@
 
 Habituellement, lorsque nous devons transmettre des données du parent à un composant enfant, nous utilisons des [props](/guide/components/props). Cependant, imaginez le cas où nous avons un arbre de composants important, et qu'un composant profondément imbriqué aurait besoin d'accéder à des informations d'un de ses composants parents. Avec seulement des props, nous devrions passer la même prop sur toute la chaîne composants parents :
 
-![prop drilling diagram](./images/prop-drilling.png)
+![Diagramme montrant des props passées à travers plusieurs niveaux de composants uniquement pour atteindre un enfant profondément imbriqué](./images/prop-drilling.png)
 
 <!-- https://www.figma.com/file/yNDTtReM2xVgjcGVRzChss/prop-drilling -->
 
@@ -14,7 +14,7 @@ Notez que bien que le composant `<Footer>` n'utilise pas du tout ces props, il d
 
 Nous pouvons résoudre le "props drilling" avec `provide` et `inject`. Un composant parent peut servir de **fournisseur de dépendances** pour tous ses descendants. Tout composant enfant de l'arborescence, quelle que soit sa profondeur, peut **injecter** des dépendances fournies par des composants présent dans sa chaîne de composants parents.
 
-![Provide/inject scheme](./images/provide-inject.png)
+![Diagramme montrant le mécanisme provide/inject où un composant parent fournit une dépendance qui peut être injectée directement par un enfant profondément imbriqué, en contournant les composants intermédiaires](./images/provide-inject.png)
 
 <!-- https://www.figma.com/file/PbTJ9oXis5KUawEOWdy2cE/provide-inject -->
 
