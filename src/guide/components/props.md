@@ -156,7 +156,7 @@ Si vous préférez avoir plus de distinction visuelle entre les props déstructu
 
 ### Passer des props déstructurées dans des fonctions {#passing-destructured-props-into-functions}
 
-Lorsque nous passons une prop déstructuré dans une fonction, par exemple :
+Lorsque nous passons une prop déstructurée dans une fonction, par exemple :
 
 ```js
 const { foo } = defineProps(['foo'])
