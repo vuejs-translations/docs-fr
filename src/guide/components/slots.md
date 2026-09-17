@@ -102,6 +102,11 @@ Le contenu du slot **n'a pas** accès aux données du composant enfant. Les expr
 
 > Les expressions présentes dans le template du parent n'ont accès qu'à la portée du parent ; les expressions dans le template de l'enfant n'ont accès qu'à la portée du composant enfant.
 
+::: tip Note
+Parce que le contenu du slot fait partie de la portée de rendu du parent, un bloc `<style scoped>` déclaré dans le composant enfant **ne s'appliquera pas** à ce contenu. Si vous devez styliser le contenu des slots, faites-le depuis le composant parent, ou utilisez le modificateur `:deep()` dans la feuille de style à portée limitée de l'enfant (voir [CSS à portée limitée](/api/sfc-css-features#scoped-css) pour plus de détails).
+:::
+
+
 ## Contenu par défaut {#fallback-content}
 
 Il existe des cas où il est utile de spécifier un contenu par défaut pour un slot, à rendre uniquement lorsqu'aucun contenu n'est fourni. Par exemple, dans un composant `<SubmitButton>` :
