@@ -12,7 +12,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 `<TransitionGroup>` prend en charge les mêmes props, classes de transition CSS et écouteurs de hooks JavaScript que `<Transition>`, avec les différences suivantes :
 
-- Par défaut, il ne rend pas d'élément en contenant d'autres. Mais vous pouvez spécifier un élément à rendre avec la prop `tag`.
+- Il accepte une prop `tag`, qui spécifie un élément à rendre comme contenant autour de la liste. Par défaut, il ne rend pas d'élément en contenant, tout comme `<Transition>`.
 
 - [Les modes de transition](./transition#transition-modes) ne sont pas disponibles, car nous n'alternons plus entre des éléments qui s'excluent mutuellement.
 
