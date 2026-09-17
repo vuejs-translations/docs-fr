@@ -626,6 +626,4 @@ Le composant personnalisé `<blog-post-row>` sera relevé comme contenu invalide
 Lorsqu'il est utilisé sur des éléments HTML natifs, la valeur de `is` doit être préfixée de `vue:` afin d'être interprétée comme un composant Vue. Cela est nécessaire afin d'éviter les confusions avec les [éléments personnalisés intégrés](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example).
 :::
 
-C'est tout ce que vous avez besoin de savoir à propos des mises en garde concernant l'analyse du template DOM pour le moment - et d'ailleurs, la fin des _Essentiels_ de Vue. Félicitations ! Il y a encore à apprendre, mais d'abord, nous vous recommandons de prendre une pause afin d'expérimenter Vue par vous-même - construisez quelque chose d'amusant, ou découvrez certains des [Exemples](/examples/) si ça n'est pas déjà fait.
-
-Dès que vous vous sentez à l'aise avec le savoir que vous venez de digérer, avancez dans le guide pour découvrir les composants en profondeur.
+C'est tout ce que vous avez besoin de savoir à propos des mises en garde concernant l'analyse du template DOM pour le moment.
