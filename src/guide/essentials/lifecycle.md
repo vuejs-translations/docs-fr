@@ -64,3 +64,8 @@ Ci-dessous figure le diagramme du cycle de vie d'une instance. Vous n'avez pas b
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
 Consultez la <span class="composition-api">[référence de l'API des hooks du cycle de vie](/api/composition-api-lifecycle)</span><span class="options-api">[référence de l'API des hooks du cycle de vie](/api/options-lifecycle)</span> pour plus de détails sur tous les hooks du cycle de vie et leurs utilisations respectives.
+
+Et voilà la fin des _Essentiels_ de Vue. Félicitations ! Il y a encore à apprendre, mais d'abord, nous vous recommandons de prendre une pause afin d'expérimenter Vue par vous-même - construisez quelque chose d'amusant, ou découvrez certains des [Exemples](/examples/) si ça n'est pas déjà fait.
+
+Dès que vous vous sentez à l'aise avec le savoir que vous venez de digérer, avancez dans le guide pour découvrir les composants en profondeur.
+
