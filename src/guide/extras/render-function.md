@@ -237,7 +237,7 @@ Ce pattern doit être utilisé avec attention et n'est pas un remplaçant des co
 
 ## JSX / TSX {#jsx-tsx}
 
-Le [JSX](https://facebook.github.io/jsx/) est une extension de JavaScript semblable au XML qui permet d'écrire du code de cette manière :
+Le [JSX](https://react.dev/learn/writing-markup-with-jsx) est une extension de JavaScript semblable au XML qui permet d'écrire du code de cette manière :
 
 ```jsx
 const vnode = <div>hello</div>
