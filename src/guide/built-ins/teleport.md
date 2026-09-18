@@ -1,7 +1,5 @@
 # Teleport {#teleport}
 
- <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Leçon gratuit sur Teleport de Vue.js"/>
-
 `<Teleport>` est un composant natif qui nous permet de "téléporter" une partie du template d'un composant dans un nœud du DOM qui existe en dehors de la hiérarchie du DOM de ce composant.
 
 ## Utilisation basique {#basic-usage}
