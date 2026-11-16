@@ -47,7 +47,7 @@ Il existe deux types de SSG : monopage et multi-page. Les deux types pré-renden
 
 Les SSG monopages conviennent mieux si vous attendez une interactivité non négligeable, des sessions profondes ou des éléments / états persistants à travers les navigations. Dans le cas contraire, une SSG à plusieurs pages serait un choix plus judicieux.
 
-L'équipe Vue maintient un générateur de site statique appelé [VitePress](https://vitepress.dev/), qui alimente le site web que vous êtes en train de lire en ce moment même et qui prend en charge les deux types de SSG ! De plus, n'hésitez pas à consulter d'autres [frameworks Vue](/guide/quick-start#frameworks) qui supportent généralement le SSG.
+The Vue team maintains a static-site generator called [VitePress](https://vitepress.dev/), which powers this website you are reading right now and supports both flavors of SSG! In addition, be sure to check out other [Vue frameworks](/guide/quick-start#frameworks) that usually support SSG.
 
 ## Au-delà du web {#beyond-the-web}
 
