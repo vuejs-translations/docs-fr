@@ -54,6 +54,10 @@ $ yarn dlx create-vue@latest
 ```sh [bun]
 $ bun create vue@latest
 ```
+
+```sh [vite+]
+$ vp create vue@latest
+```
 :::
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel de création de projets Vue. Des questions (en anglais) vous seront posées pour un certain nombre de fonctionnalités optionnelles telles que la prise en charge de TypeScript et des tests :
@@ -100,6 +104,11 @@ $ bun install
 $ bun run dev
 ```
 
+```sh-vue [vite+]
+$ cd {{'<your-project-name>'}}
+$ vp install
+$ vp run dev
+
 :::
 
 
@@ -128,6 +137,10 @@ $ yarn build
 
 ```sh [bun]
 $ bun run build
+```
+
+```sh [vite+]
+$ vp run build
 ```
 
 :::

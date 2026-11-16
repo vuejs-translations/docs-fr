@@ -47,6 +47,10 @@ $ yarn dlx create-vue@latest
 $ bun create vue@latest
 ```
 
+```sh [vite+]
+$ vp create vue@latest
+```
+
 :::
 
 Cette commande installera et exécutera [create-vue](https://github.com/vuejs/create-vue), l'outil officiel d'élaboration d'un projet Vue.
