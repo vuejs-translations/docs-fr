@@ -218,6 +218,51 @@ export default defineComponent({
 })
 ```
 
+## Typer les slots d'un composant {#typing-component-slots}
+
+Dans `<script setup>`, les slots peuvent être typés avec la macro `defineSlots()` <sup class="vt-badge" data-text="3.3+" />, qui prend un littéral de type dont chaque clé est un nom de slot et chaque valeur est une fonction recevant les props de ce slot :
+
+```vue
+<script setup lang="ts">
+defineSlots<{
+  default(props: { msg: string }): any
+}>()
+</script>
+
+<template>
+  <slot msg="hello" />
+</template>
+```
+
+Bien que Vue puisse déduire les types des slots à partir de l'utilisation de `<slot>` dans le template, `defineSlots()` vous permet de déclarer un contrat explicite afin que les composants parents bénéficient d'une meilleure vérification de types et d'une meilleure autocomplétion pour les noms de slots et leurs props. Consultez [defineSlots()](/api/sfc-script-setup#defineslots) pour plus de détails.
+
+### Transférer des slots dans des composants récursifs {#forwarding-slots-in-recursive-components}
+
+Un composant peut transférer toutes les props d'un slot vers le slot d'un composant enfant avec `<template #default="slotProps"><slot v-bind="slotProps" /></template>`. Lorsque cet enfant est le composant lui-même, aussi appelé [composant récursif](/api/sfc-script-setup#recursive-components), TypeScript ne peut pas déduire le type de `slotProps` et signale `'slotProps' implicitly has type 'any'`, à moins que le type du slot ne soit déclaré explicitement avec `defineSlots()` :
+
+```vue
+<script setup lang="ts">
+const props = defineProps<{ tier: number }>()
+
+defineSlots<{
+  default(props: { value: number }): any
+}>()
+</script>
+
+<template>
+  <div>
+    <TreeNode v-if="props.tier > 1" :tier="props.tier - 1">
+      <template #default="slotProps">
+        <slot v-bind="slotProps" />
+      </template>
+    </TreeNode>
+    <div v-else>
+      <slot :value="props.tier" />
+    </div>
+  </div>
+</template>
+```
+
 ## Typer `ref()` {#typing-ref}
 
 Le type des refs est déduit à partir de leur valeur initiale :
