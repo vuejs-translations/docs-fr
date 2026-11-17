@@ -218,9 +218,9 @@ export default defineComponent({
 })
 ```
 
-## Typing Component Slots {#typing-component-slots}
+## Typer les slots d'un composant {#typing-component-slots}
 
-In `<script setup>`, slots can be typed with the `defineSlots()` macro <sup class="vt-badge" data-text="3.3+" />, which takes a type literal where each key is a slot name and each value is a function receiving that slot's props:
+Dans `<script setup>`, les slots peuvent être typés avec la macro `defineSlots()` <sup class="vt-badge" data-text="3.3+" />, qui prend un littéral de type dont chaque clé est un nom de slot et chaque valeur est une fonction recevant les props de ce slot :
 
 ```vue
 <script setup lang="ts">
@@ -234,12 +234,13 @@ defineSlots<{
 </template>
 ```
 
-While Vue can infer slot types from `<slot>` usage in the template, `defineSlots()` allows you to declare an explicit contract so parent components have better type checking and auto-completion for slot names and slot props. See [defineSlots()](/api/sfc-script-setup#defineslots) for more details.
+Bien que Vue puisse déduire les types des slots à partir de l'utilisation de `<slot>` dans le template, `defineSlots()` vous permet de déclarer un contrat explicite afin que les composants parents bénéficient d'une meilleure vérification de types et d'une meilleure autocomplétion pour les noms de slots et leurs props. Consultez [defineSlots()](/api/sfc-script-setup#defineslots) pour plus de détails.
 
-### Forwarding Slots in Recursive Components {#forwarding-slots-in-recursive-components}
+### Transférer des slots dans des composants récursifs {#forwarding-slots-in-recursive-components}
 
-A component can forward all of a slot's props to a child component's slot with `<template #default="slotProps"><slot v-bind="slotProps" /></template>`. When that child is the component itself, also known as a [recursive component](/api/sfc-script-setup#recursive-components), TypeScript can't infer the type of `slotProps` and reports `'slotProps' implicitly has type 'any'` unless the slot type is declared explicitly with `defineSlots()`:
+Un composant peut transférer toutes les props d'un slot vers le slot d'un composant enfant avec `<template #default="slotProps"><slot v-bind="slotProps" /></template>`. Lorsque cet enfant est le composant lui-même, aussi appelé [composant récursif](/api/sfc-script-setup#recursive-components), TypeScript ne peut pas déduire le type de `slotProps` et signale `'slotProps' implicitly has type 'any'`, à moins que le type du slot ne soit déclaré explicitement avec `defineSlots()` :
 
+```vue
 <script setup lang="ts">
 const props = defineProps<{ tier: number }>()
 
@@ -261,7 +262,6 @@ defineSlots<{
   </div>
 </template>
 ```
-
 
 ## Typer `ref()` {#typing-ref}
 
