@@ -105,9 +105,10 @@ $ bun run dev
 ```
 
 ```sh-vue [vite+]
-$ cd {{'<your-project-name>'}}
+$ cd {{'<votre-nouveau-projet>'}}
 $ vp install
 $ vp run dev
+```
 
 :::
 
